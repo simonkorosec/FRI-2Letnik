@@ -1,0 +1,12 @@
+Datoteko index.html odpremo v poljubnem spletnem brskalniku. 
+Vzgorno vnosno polje vnesemo točke v predvpisani obliki (v x1 y1 z1). 
+Nato kliknemo gumb "Transformiraj" in v spodnjem polju se nam prikažejo nove vrednosti v enaki obliki. 
+
+
+Opis datotek:
+index.html - osnovna html stran v kateri povezujemo ostale skripte
+vektor.js  - hrani razred Vector4f
+matrika.js - hrani razred Matrix4f
+manager.js - hrani razred PointManager 
+transformation.js - hrani razred Transformation 
+transformPoint.js - hrani razred TransformPoints

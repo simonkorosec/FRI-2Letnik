@@ -1,0 +1,53 @@
+dim(md) 	# dimenzije date frama
+head()  	# default 6 vrstic
+summary()	# povzetek atributov
+
+#sprememba tipa atributov
+as.numeric
+as.integer
+as.double
+as.logical
+as.factor
+....
+
+# ukazi za vizualizacijo
+barplot, boxplot 
+# spodnja iz zgornja črta nakazujeta kaj lahko pričakujemo
+
+mean(md[comedy,"rating"])
+mean(md[!comedy,"rating"])	#ne komedije
+
+
+boxplot(rating ~ Comedy, data=md)
+# ~ predstavlja formulo
+# 
+
+ctrl + r
+
+
+levo od ~ je ciljna spr. desno od nje so atributi 
+drevo -> levo da, desno ne
+
+
+cut(dejanskeVrednosti, meje, oznake)   #oznake opcijsko
+meje -> pari vrednosti, leva meja ni vključena, desna vključena
+
+
+sample(zalogaVrednosti, dolzina, ponavljanje) # naključno izbere iz ZV
+
+k-kratno prečno preverjanje
+
+?
+
+K=10
+množico razdelimo na K blokov
+
+vzamemo blok iz množice za testiranje, ostali bloki so za učenje, nato testeraš na odstranjenem bloku
+ponovimo K-krat
+vsak blok testiramo in jih povprečimo
+povprečje je ocena modela na celotni množici
+
+?
+
+errorest(formula, podatki, funkcijaZaGradnjoModela, funkcijaZaTestiranjeModela)
+

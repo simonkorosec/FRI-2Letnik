@@ -1,0 +1,11 @@
+SmallStudent: root/kaboom
+SimpleArbiter: tester/tester
+
+adduser ""
+
+test_task.py
+
+
+
+
+iptables nat za drugo vajo
