@@ -1,0 +1,24 @@
+Kakšen je vidni prostor pri enotočkovni prespektivni projekciji?
+Prirezana štiristrana piramida
+
+Fiksni cevovod OpenGL za izračun barve na površini trikotnika uporablja?
+
+Kaj interpolira Phongova interpolacija in kaj Gouraudova?
+Phongova – interpolacija normal med oglišči
+Gouraudova – interpolacija barv med oglišči
+
+V katerem barvnem prostoru se prikazujejo barve na zaslonu?
+RGB, sRGB
+
+Kakšen je vidni prostor pri pravokotni projekciji?
+Kvader
+
+Katere osnovne tipe virov svetlobe pozna OpenGL?
+Točkovni, usmerjeni, reflektorski
+
+Koliko kontrolnih točk potrebujemo za opis bikubične Bezierove krpe in katere izmed njih se interpolirajo in katere aproksimirajo?
+
+Katere izmed barvnih sistemov uporablja OpenGL?
+RGB, HSV, HSL
+
+Kaj je značilno za monokromatski vir svetlobe?

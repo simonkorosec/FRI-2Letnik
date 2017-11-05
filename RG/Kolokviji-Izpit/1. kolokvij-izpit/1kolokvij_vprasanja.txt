@@ -1,0 +1,21 @@
+Kaj je ortonormirana matrika? Matrika katere inverz je transponirana matrika sama.
+
+Katere linearne transformacije poznaš? Razteg, zrcaljenje, vrtenje, strig.
+
+Kaj uporabimo za prehod iz levosuènega v desnosuèni koordinatni system? Uporabimo zrcaljenje.
+
+Glavna delitev projekcij in razlikovanje? Perspektivne in vzporedne, loèijo se po projekcijskih žarkih. Pri perspektivni se križajo v 1 toèki, pri vzporednih pa so vzporedni.
+
+Kaj je kavalirska projekcija in znaèilnosti? Ohranja mere, je vzporedna, 2 tipa žarkov, je poševna in dobra za tehnièno risanje.
+
+Kateri so koordinatni sistemi v procesu izdelave posnetka sintetiènega sveta? Lokalni, sveta, kamere in naprave.
+
+Kateri je najbolj inovativen naèin podajanja koordinatnega sistema pogleda? Lokacija, kma in kako si obrnjen (x, y, z).
+
+Kje pri sprehodu skozi grafièni cevovod preidemo iz homogenih v nehomogene koordinate? V koordinatnem sistemu naprave.
+
+Kakšne oblike je vidno polje perspektivne projekcije in kako ga parametriziramo? Vidno polje je presekana piramida, parametriziramo ga na 2 naèina (sredina, poševno).
+
+Kakšna je celotna transformacijska veriga, ki se pred izrisom na ekran izvede na toèki predmeta predstavljeni v koordinatnem sistemu predmeta? S transformacijo modela (matrika M).
+
+Kdaj pridemo do vzporedne poševne projekcije? Do vzporedne poševne projekcije pridemo v koraku, ko smo v koordinatnem sistemu kamere in izvedemo strig.
