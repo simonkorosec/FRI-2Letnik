@@ -1,0 +1,60 @@
+Kaj je ortonormirana matrika? Matrika katere inverz je transponirana matrika sama.
+
+Katere linearne transformacije poznaš? Razteg, zrcaljenje, vrtenje, strig.
+
+Kaj uporabimo za prehod iz levosuènega v desnosuèni koordinatni system? Uporabimo zrcaljenje.
+
+Glavna delitev projekcij in razlikovanje? Perspektivne in vzporedne, loèijo se po projekcijskih žarkih. Pri perspektivni se križajo v 1 toèki, pri vzporednih pa so vzporedni.
+
+Kaj je kavalirska projekcija in znaèilnosti? Ohranja mere, je vzporedna, 2 tipa žarkov, je poševna in dobra za tehnièno risanje.
+
+Kateri so koordinatni sistemi v procesu izdelave posnetka sintetiènega sveta? Lokalni, sveta, kamere in naprave.
+
+Kateri je najbolj inovativen naèin podajanja koordinatnega sistema pogleda? Lokacija, kma in kako si obrnjen (x, y, z).
+
+Kje pri sprehodu skozi grafièni cevovod preidemo iz homogenih v nehomogene koordinate? V koordinatnem sistemu naprave.
+
+Kakšne oblike je vidno polje perspektivne projekcije in kako ga parametriziramo? Vidno polje je presekana piramida, parametriziramo ga na 2 naèina (sredina, poševno).
+
+Kakšna je celotna transformacijska veriga, ki se pred izrisom na ekran izvede na toèki predmeta predstavljeni v koordinatnem sistemu predmeta? S transformacijo modela (matrika M).
+
+Kdaj pridemo do vzporedne poševne projekcije? Do vzporedne poševne projekcije pridemo v koraku, ko smo v koordinatnem sistemu kamere in izvedemo strig.
+
+
+//-----------------------------------
+RG:
+KAJ?
+modeliranje: angl. geometry
+animacija: angl. animation
+upodabljanje: angl. rendering
+
+transformacije:
+linearne transformacije: zrcaljenje, razteg, striženje, vrtenje
+afine transformacije: linearne transformacije, premik 
+homogene koordinate: predstavitev tocke, predstavitev vektorja
+ortogonalne transformacije: zrcaljenje, vrtenje, premik
+toge transformacije: vrtenje, premik
+veriženje transformacij: vrstni red transformacij, vektor kot vrsticna matrika
+vrtenje: okrog koordinatnih osi, okrog poljubne osi, okrog poljubne tocke
+prehodi med koordinatnimi sistemi
+
+projekcije:
+vzporedne
+pravokotne: od zgoraj, celna, stranska
+
+pravokotne: aksonometricne
+poševne: kavalirska, kabinetna
+
+perspektivne: enobežna, dvobežna, tribežna
+
+
+graficni cevovod (model)
+geometrija: tocke, ki dolocajo oglišca, povezave tock v veckotnike, lastnosti (barva, koordinate teksture, normala)
+teksture, luci, kamera, …
+sekvencni vstop v cevovod
+koordinatni sistem predmeta
+
+transformacija modela in pogleda: prehod v koordinate pogleda
+izracunosvetlitve: sprehod cez vse deklarirane luci osvetlitev za vsako oglišce
+projekcija: prehod iz 3D koordinat v 2D
+rasterizacija in prekrivanje: izris primitivov, ugotavljanje vidnosti
