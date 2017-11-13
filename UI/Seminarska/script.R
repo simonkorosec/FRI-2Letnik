@@ -1,4 +1,9 @@
+#doma
 # setwd("C:/Users/Simon Korošec/Documents/GitHub/FRI-2Letnik/UI/Seminarska")
+#laptop
+# setwd("C:/Users/Uporabnik/Documents/FRI-2Letnik/UI/Seminarska")
+
+
 
 pod 			<- read.table("podatkiSem1.txt", sep=",", header=T)
 
@@ -15,7 +20,7 @@ pod$Mesec <- as.factor(pod$Mesec)
 # pod$Datum <- NULL
 
 
-# Delitev na letne èase
+# Delitev na letne case
 zima <- pod$Mesec == "februar" | pod$Mesec == "januar" | pod$Mesec == "december"
 pomlad <- pod$Mesec == "marec" | pod$Mesec == "april" | pod$Mesec == "maj"
 poletje <- pod$Mesec == "junij" | pod$Mesec == "julij" | pod$Mesec == "avgust"
@@ -31,7 +36,7 @@ pod$Letni_cas <- as.factor(pod$Letni_cas)
 
 
 #
-# modeli za O3
+# modeli za PM10
 #
 library(CORElearn)
 source("mojefunkcije.R")
@@ -42,30 +47,38 @@ sel <- sample(1:nrow(pod), size=as.integer(nrow(pod)*0.7), replace=F)
 learn <- pod[sel,]
 test <- pod[-sel,]
 
-modelDT <- CoreModel(O3 ~ ., learn, model="tree")
-modelNB <- CoreModel(O3 ~ ., learn, model="bayes")
-modelKNN <- CoreModel(O3 ~ ., data = learn, model="knn", kInNN = 7)
+modelDT <- CoreModel(PM10 ~ ., learn, model="tree")
+modelNB <- CoreModel(PM10 ~ ., learn, model="bayes")
+modelKNN <- CoreModel(PM10 ~ ., data = learn, model="knn", kInNN = 7)
 
 predDT <- predict(modelDT, test, type = "class")
-caDT <- CA(test$O3, predDT)
-caDT
+caDT <- CA(test$PM10, predDT)
+caDT # 0,88 # 0,89
 
 predNB <- predict(modelNB, test, type="class")
-caNB <- CA(test$O3, predNB)
-caNB
+caNB <- CA(test$PM10, predNB)
+caNB # 0,79 # 0,84
 
 predKNN <- predict(modelKNN, test, type="class")
-caKNN <- CA(test$O3, predKNN)
-caKNN
+caKNN <- CA(test$PM10, predKNN)
+caKNN # 0,89 # 0,89
 
-#
-#> caDT
-#[1] 0.7885375
-#> caNB
-#[1] 0.6047431
-#> caKNN
-#[1] 0.798419 
-#
+
+# Cela formula
+# 
+# Glasovanje 0,885
+# Utezeno G. 0,883
+# Bagging    0,892
+# Random F.	 0,905
+# Boosting   0,895
+
+# Krajša formula
+# 
+# Glasovanje 0,892
+# Utezeno G. 0,897
+# Bagging    ??
+# Random F.	 0,892
+# Boosting   0,876
 
 
 

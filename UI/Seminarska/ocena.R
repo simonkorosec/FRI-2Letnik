@@ -80,6 +80,10 @@ pod$PM10 <- cut(pod$PM10, c(-Inf,35,Inf),labels=c("NIZKA","VISOKA"))
 
 
 ##
-PM10 ~ Sunki_vetra_max + Padavine_mean + Padavine_sum + Temperatura_lokacija_max + 
-    Temperatura_lokacija_min
+PM10 ~ Sunki_vetra_max + Padavine_mean + Padavine_sum + Temperatura_lokacija_max + Temperatura_lokacija_min
+
+
+modelDT <- CoreModel(PM10 ~ Sunki_vetra_max + Padavine_mean + Padavine_sum + Temperatura_lokacija_max + Temperatura_lokacija_min, learn, model="tree")
+modelNB <- CoreModel(PM10 ~ Sunki_vetra_max + Padavine_mean + Padavine_sum + Temperatura_lokacija_max + Temperatura_lokacija_min, learn, model="bayes")
+modelKNN <- CoreModel(PM10 ~ Sunki_vetra_max + Padavine_mean + Padavine_sum + Temperatura_lokacija_max + Temperatura_lokacija_min, data = learn, model="knn", kInNN = 7)
 ##

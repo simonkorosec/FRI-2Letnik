@@ -1,0 +1,13 @@
+Izvajanje testC
+  Log datoteka: testC.log
+  Izhod programa: testC.out
+  Ukazna vrstica: java Naloga0 eho Izpisi to na stdout.
+  Izhodni status: 0
+  Realni cas izvajanja: 129
+  Uporabniski cas izvajanja: 112
+  Sistemski cas izvajanja: 28
+  Procesorski cas izvajanja: 140
+Preverjanje testC
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1
