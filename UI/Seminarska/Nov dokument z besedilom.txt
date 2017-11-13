@@ -1,0 +1,20 @@
+evaluator <- function(subset) {
+#k-fold cross validation
+k <- 5
+splits <- runif(nrow(pod))
+results = sapply(1:k, function(i) {
+test.idx <- (splits >= (i - 1) / k) & (splits < i / k)
+train.idx <- !test.idx
+test <- pod[test.idx, , drop=FALSE]
+train <- pod[train.idx, , drop=FALSE]
+tree <- rpart(as.simple.formula(subset, "PM10"), train)
+error.rate = sum(test$PM10 != predict(tree, test, type="c")) / nrow(test)
+return(1 - error.rate)
+})
+print(subset)
+print(mean(results))
+return(mean(results))
+}
+subset <- forward.search(names(pod)[-5], evaluator)
+f <- as.simple.formula(subset, "PM10")
+print(f
