@@ -30,7 +30,6 @@ function PointManager() {
 
     this.izpis = function() {
         var besedilo = "";
-        //console.log(vektorji.length);
         for (var i = 0; i < this.vektorji.length; i++) {
             var str = "v " + this.vektorji[i].koordinati[0] + " " +
                 this.vektorji[i].koordinati[1] + " " +
