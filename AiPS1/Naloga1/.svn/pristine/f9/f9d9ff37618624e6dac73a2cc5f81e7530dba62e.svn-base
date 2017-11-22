@@ -1,0 +1,35 @@
+
+1 2 67 8 9 0 1 clear 0 print 1 print 2 print
+1 2 67 8 9 0
+
+
+23 45 87 0 4 1 fun 765 65 0 9 13 0 print 1 print 1 clear 1 reverse 1 print
+23 45 87 0 13
+765 65 0 9
+
+61 2 33 11 1 dup2 5 40 fun dup dup2 56 -4 swap 0 reverse 23 0 print 40 print 40 reverse 40 print
+1 11 1 11 33 2 61 23
+dup dup2 56 -4 swap
+swap -4 56 dup2 dup
+61 2 33 11 3 1 fun dup 56 1 -6 8 1 fun - 4 + 0 23 + 0 print 1 print  
+dup 56 1 - 4 + 0 23 + 0 print
+98 5 52 4 1 fun dup + 0 reverse 1 clear 2 1 fun 15 dup2 0 print 1 print
+98 5 52
+15 dup2
+11 -5 8 -45 16 72 0 33 56 7 8 3 -30 2 2 2 move 5 3 move 4 4 15 move 0 reverse 0 print 1 print 2 print 3 print 4 print 15 print 
+-45 8 -5 11
+
+2 -30
+3 8 7 56 33
+
+4 0 72 16
+7 12 4 5 1 fun 2 2 fun dup2 ! 3 4 2 3 3 move 3 reverse 7 2 4 move echo 1 print 2 print 3 print 4 print  
+12
+2 2 fun dup2 !
+
+3 4 2
+7 4
+
+  
+ 
+

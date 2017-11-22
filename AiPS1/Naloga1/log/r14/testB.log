@@ -1,0 +1,12 @@
+Izvajanje testB
+  Log datoteka: testB.log
+  Izhod programa: testB.out
+  Ukazna vrstica: java Naloga1 calc
+  Izhodni status: 0
+  Realni cas izvajanja: 177
+  Uporabniski cas izvajanja: 160
+  Sistemski cas izvajanja: 31
+  Procesorski cas izvajanja: 191
+Preverjanje testB
+  Izhodni status: ok
+  Standardni izhod: err

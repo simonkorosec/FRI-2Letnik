@@ -1,0 +1,12 @@
+Izvajanje testG
+  Log datoteka: testG.log
+  Izhod programa: testG.out
+  Ukazna vrstica: java Naloga1 calc
+  Izhodni status: 0
+  Realni cas izvajanja: 176
+  Uporabniski cas izvajanja: 158
+  Sistemski cas izvajanja: 35
+  Procesorski cas izvajanja: 193
+Preverjanje testG
+  Izhodni status: ok
+  Standardni izhod: err

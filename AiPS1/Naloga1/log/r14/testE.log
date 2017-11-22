@@ -1,0 +1,12 @@
+Izvajanje testE
+  Log datoteka: testE.log
+  Izhod programa: testE.out
+  Ukazna vrstica: java Naloga1 calc
+  Izhodni status: 0
+  Realni cas izvajanja: 174
+  Uporabniski cas izvajanja: 156
+  Sistemski cas izvajanja: 37
+  Procesorski cas izvajanja: 193
+Preverjanje testE
+  Izhodni status: ok
+  Standardni izhod: err

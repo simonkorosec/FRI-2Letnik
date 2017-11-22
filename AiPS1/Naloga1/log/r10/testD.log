@@ -1,0 +1,11 @@
+Izvajanje testD
+  Log datoteka: testD.log
+  Izhod programa: testD.out
+  Ukazna vrstica: java Naloga1 calc
+  Izhodni status: 1
+  Realni cas izvajanja: 166
+  Uporabniski cas izvajanja: 167
+  Sistemski cas izvajanja: 28
+  Procesorski cas izvajanja: 195
+Preverjanje testD
+  Izhodni status: err

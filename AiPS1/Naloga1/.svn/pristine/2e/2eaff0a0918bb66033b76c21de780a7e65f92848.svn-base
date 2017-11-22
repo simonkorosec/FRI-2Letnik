@@ -1,0 +1,12 @@
+Izvajanje testK
+  Log datoteka: testK.log
+  Izhod programa: testK.out
+  Ukazna vrstica: java Naloga1 calc
+  Izhodni status: 0
+  Realni cas izvajanja: 159
+  Uporabniski cas izvajanja: 148
+  Sistemski cas izvajanja: 38
+  Procesorski cas izvajanja: 186
+Preverjanje testK
+  Izhodni status: ok
+  Standardni izhod: err

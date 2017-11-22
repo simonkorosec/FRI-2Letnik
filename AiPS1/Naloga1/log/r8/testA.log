@@ -1,0 +1,13 @@
+Izvajanje testA
+  Log datoteka: testA.log
+  Izhod programa: testA.out
+  Ukazna vrstica: java Naloga1 calc
+  Izhodni status: 0
+  Realni cas izvajanja: 183
+  Uporabniski cas izvajanja: 175
+  Sistemski cas izvajanja: 24
+  Procesorski cas izvajanja: 199
+Preverjanje testA
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

@@ -1,0 +1,6 @@
+Prevajanje izvorne kode: 
+  Izvorna datoteka: Naloga1.java
+  Log prevajanja: compile.log
+  Izhod prevajalnika: compile.out
+  Ukazna vrstica: javac -encoding UTF-8 'Naloga1.java'
+  Prevajanje: ok

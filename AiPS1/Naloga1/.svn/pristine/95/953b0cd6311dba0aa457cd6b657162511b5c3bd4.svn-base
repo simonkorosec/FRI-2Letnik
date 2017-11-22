@@ -1,0 +1,23 @@
+13 20 35 10 dup 0 print
+13 20 35 10 10
+133 dup 0 print dup dup 0 print dup dup echo dup dup 0 print
+133 133
+133 133 133 133
+133
+133 133 133 133 133 133 133 133
+13 45 15 78 0 dup2 0 print
+13 45 15 78 0 78 0
+5 44 -2 23 -98 34 dup2 0 print dup2 dup2 0 print
+5 44 -2 23 -98 34 -98 34
+5 44 -2 23 -98 34 -98 34 -98 34 -98 34
+43 -2 0 34 swap 0 print swap swap 0 print
+43 -2 34 0
+43 -2 34 0
+56 3 -45 456 2 0 print 0 reverse 12 0 765 -45 0 print 0 reverse 0 print
+56 3 -45 456 2
+2 456 -45 3 56 12 0 765 -45
+-45 765 0 12 56 3 -45 456 2
+18 11 0 67 -6 dup2 0 reverse 67 dup 0 reverse 0 print 18 76 swap 0 reverse dup dup dup2 56 0 13 34 -45 swap 0 reverse 0 print 16 89 dup2 swap 0 reverse 6 15 dup 0 print
+67 67 18 11 0 67 -6 67 -6
+34 -45 13 0 56 67 67 67 67 67 67 18 11 0 67 -6 67 -6 76 18
+16 89 89 16 18 76 -6 67 -6 67 0 11 18 67 67 67 67 67 67 56 0 13 -45 34 6 15 15

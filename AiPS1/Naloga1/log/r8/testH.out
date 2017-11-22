@@ -1,0 +1,9 @@
+1 2 67 8 9 0
+
+
+23 45 87 0 13
+765 65 0 9
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
+	at Stack.reverse(Naloga1.java:401)
+	at Naloga1.izvajanje(Naloga1.java:149)
+	at Naloga1.main(Naloga1.java:18)

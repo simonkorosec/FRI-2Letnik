@@ -1,0 +1,11 @@
+Izvajanje testI
+  Log datoteka: testI.log
+  Izhod programa: testI.out
+  Ukazna vrstica: java Naloga1 calc
+  Izhodni status: 1
+  Realni cas izvajanja: 167
+  Uporabniski cas izvajanja: 156
+  Sistemski cas izvajanja: 34
+  Procesorski cas izvajanja: 190
+Preverjanje testI
+  Izhodni status: err

@@ -1,0 +1,7 @@
+2169 734 26 -17 -355 -68 78 -31 -112 65 -25 56 987 0 null
+-3367 -622 0 7 -335 0 102 37 0 -301 -43 56 -987 0 null
+7 1288 37968 1 39 60 3450 1156 -1080 -102 3136 -2024 -306 0 0 0 null
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at Stack.deljeno(Naloga1.java:356)
+	at Naloga1.izvajanje(Naloga1.java:129)
+	at Naloga1.main(Naloga1.java:19)

@@ -1,0 +1,10 @@
+1 2 4 8 9 5 10 3 6 7
+2 3 4 5 6 7 8 9 1
+O Vrba srecna draga vas domaca, kjer hisa mojega stoji oceta, da b' uka zeja me iz tvojga sveta, speljala ne bila golfiva kaca. null
+O Vrba draga hisa me iz mojega tvojga sveta, vas stoji speljala ne oceta, bila golfiva srecna domaca, da kaca. b' kjer uka zeja
+Exception in thread "main" java.lang.NumberFormatException: For input string: "kaca."
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.parseInt(Integer.java:615)
+	at Naloga1.izvajanje(Naloga1.java:155)
+	at Naloga1.main(Naloga1.java:19)

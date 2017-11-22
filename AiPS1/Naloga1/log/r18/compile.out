@@ -1,0 +1,6 @@
+Naloga1.java:19: error: cannot find symbol
+                izvajanje(ukazi);
+                          ^
+  symbol:   variable ukazi
+  location: class Naloga1
+1 error

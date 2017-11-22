@@ -1,0 +1,27 @@
+8 -5 12 45 987 then 0 print then then 0 print
+8 -5 12 45
+8 -5
+8 12 45 -987 else 0 print then else 0 print
+8 12 45 -987
+8 12 45
+?13 ?21 ?36 0 print
+
+else ?13 ?21 ?36 0 print
+13 21 36
+else ?34 ?189 ?34 6 else ?999 0 print
+34 189 34 6
+42 10 28 <= dup then ?21 ?dup ?+ ?dup ?dup2 0 print
+42 1 42 42 42 42
+42 10 28 >= dup then ?21 ?dup ?+ ?dup ?dup2 0 print
+42 0
+42 10 28 <= dup then ?21 ?dup ?+ ?dup ?dup2 else ?dup ?- ?dup ?0 ?reverse 0 print
+42 1 42 42 42 42
+42 10 28 >= dup then ?21 ?dup ?+ ?dup ?dup2 else ?dup ?- ?dup ?0 ?reverse 0 print
+0 0 42
+1 then ?2 ?else ?3 ?then ?4 ?else ?5 ?then ?6 0 print
+2
+else ?45 then -1 ?0 35 ?88 . ?0 ?reverse -12 then ?5 67 . -45 ?3 dup2 ?dup2 odd 87 653 0 print 0 reverse else 7 6 ?-45 0 ?99 even 8 else ?! len . 0 print
+3588 0 -1 567 -45 3 -45 3 -45 1 87 653
+653 87 1 -45 3 -45 3 -45 567 -1 0 3588 7 6 15
+  
+

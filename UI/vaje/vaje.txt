@@ -54,3 +54,10 @@ errorest(formula, podatki, funkcijaZaGradnjoModela, funkcijaZaTestiranjeModela)
 # Če NB dela zelo slabo je lahko razlog da so atributi povezani
 
 
+
+
+
+
+
+## REGRESIJA
+

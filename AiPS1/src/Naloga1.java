@@ -1,328 +1,436 @@
+import java.util.Scanner;
+
 public class Naloga1 {
-    boolean pogoj = false;
+    private static boolean pogoj;
+    private static Sequence skladovi;
+    private static Stack glavniSklad;
 
+    public static void main(String[] args) {
+        if (true || args.length != 0 && args[0].equals("calc")) {
+            Scanner sc = new Scanner(System.in);
 
+            while (sc.hasNextLine()) {
+                pogoj = false;
+                skladovi = new Sequence();
+                glavniSklad = skladovi.getSklad(0);
+                String ukaz = sc.nextLine();
+
+                String[] ukazi = ukaz.split(" ");
+                izvajanje(ukazi);
+            }
+        }
+    }
+
+    private static void izvajanje(String[] ukazi) {
+        for (int i = 0; i < ukazi.length; i++) {
+            String ukaz = ukazi[i];
+            if (ukaz.startsWith("?") && !pogoj)
+                continue;
+            else if (ukaz.startsWith("?") && pogoj)
+                ukaz = ukaz.substring(1);
+
+            switch (ukaz) {
+                case "then":
+                    int st = Integer.parseInt(glavniSklad.pop());
+                    pogoj = st != 0;
+                    break;
+                case "else":
+                    pogoj = !pogoj;
+                    break;
+                case "run":
+                    run(Integer.parseInt(glavniSklad.pop()));
+                    break;
+                case "loop": {
+                    int sklad = Integer.parseInt(glavniSklad.pop());
+                    int koliko = Integer.parseInt(glavniSklad.pop());
+                    for (int j = 0; j < koliko; j++) {
+                        run(sklad);
+                    }
+                    break;
+                }
+                case "fun": {
+                    int kam = Integer.parseInt(glavniSklad.pop());
+                    int koliko = Integer.parseInt(glavniSklad.pop());
+                    Stack sklad = skladovi.getSklad(kam);
+                    for (int k = 0; k < koliko; k++) {
+                        sklad.push(ukazi[++i]);
+                    }
+                    break;
+                }
+                case "move": {
+                    int kam = Integer.parseInt(glavniSklad.pop());
+                    int koliko = Integer.parseInt(glavniSklad.pop());
+                    Stack sklad = skladovi.getSklad(kam);
+                    for (int j = 0; j < koliko; j++) {
+                        sklad.push(glavniSklad.pop());
+                    }
+                    break;
+                }
+                case "echo":
+                    glavniSklad.echo();
+                    break;
+                case "pop":
+                    glavniSklad.pop();
+                    break;
+                case "dup":
+                    glavniSklad.dup();
+                    break;
+                case "dup2":
+                    glavniSklad.dup2();
+                    break;
+                case "swap":
+                    glavniSklad.swap();
+                    break;
+                case "char":
+                    glavniSklad.znak();
+                    break;
+                case "even":
+                    glavniSklad.even();
+                    break;
+                case "odd":
+                    glavniSklad.odd();
+                    break;
+                case "!":
+                    glavniSklad.faktor();
+                    break;
+                case "len":
+                    glavniSklad.len();
+                    break;
+                case "<>":
+                    glavniSklad.primerjajRazlicna();
+                    break;
+                case "<":
+                    glavniSklad.primerjajManjsi();
+                    break;
+                case "<=":
+                    glavniSklad.primerjajManjsiEnak();
+                    break;
+                case "==":
+                    glavniSklad.primerjajEnaka();
+                    break;
+                case ">":
+                    glavniSklad.primerjajVecji();
+                    break;
+                case ">=":
+                    glavniSklad.primerjajVecjiEnak();
+                    break;
+                case "+":
+                    glavniSklad.vsota();
+                    break;
+                case "-":
+                    glavniSklad.razlika();
+                    break;
+                case "*":
+                    glavniSklad.krat();
+                    break;
+                case "/":
+                    glavniSklad.deljeno();
+                    break;
+                case "%":
+                    glavniSklad.ostanek();
+                    break;
+                case ".":
+                    glavniSklad.stakni();
+                    break;
+                case "rnd":
+                    glavniSklad.random();
+                    break;
+                case "print":
+                    Stack sklad = skladovi.getSklad(Integer.parseInt(glavniSklad.pop()));
+                    sklad.print();
+                    break;
+                case "clear":
+                    Stack sklad1 = skladovi.getSklad(Integer.parseInt(glavniSklad.pop()));
+                    sklad1.clear();
+                    break;
+                case "reverse":
+                    Stack sklad2 = skladovi.getSklad(Integer.parseInt(glavniSklad.pop()));
+                    sklad2.reverse();
+                    break;
+                case "preorder":
+                    System.out.println(preorder(Integer.parseInt(glavniSklad.pop()),0));
+                    break;
+                case "postorder":
+                    System.out.println(postorder(Integer.parseInt(glavniSklad.pop()),0).trim());
+                    break;
+                default:
+                    glavniSklad.push(ukaz);
+                    break;
+            }
+
+        }
+    }
+
+    private static void run(int stSklada) {
+        String [] ukazi = skladovi.getSklad(stSklada).toString().split(" ");
+        izvajanje(ukazi);
+    }
+
+    private static String preorder(int stopnja, int i) {
+        String[] sklad = glavniSklad.getSklad();
+        int stEl = glavniSklad.getStElementov();
+        StringBuilder sb = new StringBuilder(sklad[i]);
+        for (int j = 1; j <= stopnja; j++) {
+            int nov = (stopnja * i) + j;
+            if (nov < stEl)
+                sb.append(" ").append(preorder(stopnja, nov));
+        }
+
+        return sb.toString();
+    }
+
+    private static String postorder(int stopnja, int i) {
+        String[] sklad = glavniSklad.getSklad();
+        int stEl = glavniSklad.getStElementov();
+        StringBuilder sb = new StringBuilder();
+        for (int j = 1; j <= stopnja; j++) {
+            int nov = (stopnja * i) + j;
+            if (nov < stEl)
+                sb.append(postorder(stopnja, nov));
+        }
+
+        sb.append(" ").append(sklad[i]);
+        return sb.toString();
+    }
 }
 
-interface StackInterface{
-    //int StElementov = 0;
+class Stack {
 
-    void dodaj(String str);
+    private int steviloElementov = 0;
+    private String[] elementi = new String[64];
 
-    void echo();
-    void pop();
-    void dup();
-    void dup2();
-    void swap();
-
-    void znak();
-    void even();
-    void odd();
-    void faktor();
-    void len();
-
-    void primerjajRazlicna();
-    void primerjajManjsi();
-    void primerjajManjsiEnak();
-    void primerjajEnaka();
-    void primerjajVecji();
-    void primerjajVecjiEnak();
-
-    void vsota();
-    void razlika();
-    void krat();
-    void deljeno();
-    void ostanek();
-    void stakni();
-    void random();
-
-    void then();
-    void elseT();
-
-    void print();
-    void clear();
-    void run();
-    void move();
-    void reverse();
-
-
-}
-
-class Stack implements StackInterface {
-
-    int steviloElementov = -1;
-    String [] elementi = new String[64];
-
-    @Override
-    public void dodaj(String str) {
+    void push(String str) {
         this.elementi[this.steviloElementov++] = str;
     }
 
-    @Override
-    public void echo() {
-        if (steviloElementov == -1)
+    void echo() {
+        if (steviloElementov == 0)
             System.out.println();
         else
-            System.out.println(this.elementi[this.steviloElementov]);
+            System.out.println(this.elementi[this.steviloElementov - 1]);
     }
 
-    @Override
-    public void pop() {
-        this.elementi[this.steviloElementov--] = null;
+    String pop() {
+        String tmp = this.elementi[this.steviloElementov - 1];
+        this.elementi[--this.steviloElementov] = null;
+        return tmp;
     }
 
-    @Override
-    public void dup() {
-        this.elementi[++this.steviloElementov] = this.elementi[this.steviloElementov - 1];
+    void dup() {
+        this.push(this.elementi[this.steviloElementov - 1]);
     }
 
-    @Override
-    public void dup2() {
-        String x = this.elementi[this.steviloElementov - 1];
-        String y = this.elementi[this.steviloElementov];
-        this.elementi[++this.steviloElementov] = x;
-        this.elementi[++this.steviloElementov] = y;
+    void dup2() {
+        String x = this.elementi[this.steviloElementov - 2];
+        String y = this.elementi[this.steviloElementov - 1];
+        this.push(x);
+        this.push(y);
     }
 
-    @Override
-    public void swap() {
-        String tmp = this.elementi[this.steviloElementov];
-        this.elementi[this.steviloElementov] = this.elementi[this.steviloElementov - 1];
-        this.elementi[this.steviloElementov - 1] = tmp;
+    void swap() {
+        String tmp = this.elementi[this.steviloElementov - 1];
+        this.elementi[this.steviloElementov - 1] = this.elementi[this.steviloElementov - 2];
+        this.elementi[this.steviloElementov - 2] = tmp;
     }
 
-    @Override
-    public void znak() {
-        int koda = Integer.parseInt(this.elementi[this.steviloElementov]);
-        this.elementi[this.steviloElementov] = Character.toString((char) koda);
+    void znak() {
+        int koda = Integer.parseInt(this.pop());
+        this.push(Character.toString((char) koda));
     }
 
-    @Override
-    public void even() {
-        int vrh = Integer.parseInt(this.elementi[this.steviloElementov]);
+    void even() {
+        int vrh = Integer.parseInt(this.pop());
         if (vrh % 2 == 0)
-            this.elementi[this.steviloElementov] = "1";
+            this.push("1");
         else
-            this.elementi[this.steviloElementov] = "0";
+            this.push("0");
     }
 
-    @Override
-    public void odd() {
-        int vrh = Integer.parseInt(this.elementi[this.steviloElementov]);
+    void odd() {
+        int vrh = Integer.parseInt(this.pop());
         if (vrh % 2 == 0)
-            this.elementi[this.steviloElementov] = "0";
+            this.push("0");
         else
-            this.elementi[this.steviloElementov] = "1";
+            this.push("1");
     }
 
-    @Override
-    public void faktor() {
-        int st = Integer.parseInt(this.elementi[this.steviloElementov]);
+    void faktor() {
+        int st = Integer.parseInt(this.pop());
         int fact = 1;
         for (int i = 1; i <= st; i++) {
-            fact*=i;
+            fact *= i;
         }
-        this.elementi[this.steviloElementov] = Integer.toString(fact);
+        this.push(Integer.toString(fact));
     }
 
-    @Override
-    public void len() {
-        int dolzina = this.elementi[this.steviloElementov].length();
-        this.elementi[this.steviloElementov] = Integer.toString(dolzina);
+    void len() {
+        this.push(Integer.toString(this.pop().length()));
     }
 
-    @Override
-    public void primerjajRazlicna() {
-        int x = Integer.parseInt(this.elementi[this.steviloElementov - 1]);
-        int y = Integer.parseInt(this.elementi[this.steviloElementov]);
-        this.pop();
+    void primerjajRazlicna() {
+        int y = Integer.parseInt(this.pop());
+        int x = Integer.parseInt(this.pop());
 
         if (x != y)
-            this.elementi[this.steviloElementov] = "1";
+            this.push("1");
         else
-            this.elementi[this.steviloElementov] = "0";
+            this.push("0");
     }
 
-    @Override
-    public void primerjajManjsi() {
-        int x = Integer.parseInt(this.elementi[this.steviloElementov - 1]);
-        int y = Integer.parseInt(this.elementi[this.steviloElementov]);
-        this.pop();
+    void primerjajManjsi() {
+        int y = Integer.parseInt(this.pop());
+        int x = Integer.parseInt(this.pop());
 
         if (x < y)
-            this.elementi[this.steviloElementov] = "1";
+            this.push("1");
         else
-            this.elementi[this.steviloElementov] = "0";
+            this.push("0");
     }
 
-    @Override
-    public void primerjajManjsiEnak() {
-        int x = Integer.parseInt(this.elementi[this.steviloElementov - 1]);
-        int y = Integer.parseInt(this.elementi[this.steviloElementov]);
-        this.pop();
+    void primerjajManjsiEnak() {
+        int y = Integer.parseInt(this.pop());
+        int x = Integer.parseInt(this.pop());
 
         if (x <= y)
-            this.elementi[this.steviloElementov] = "1";
+            this.push("1");
         else
-            this.elementi[this.steviloElementov] = "0";
+            this.push("0");
     }
 
-    @Override
-    public void primerjajEnaka() {
-        int x = Integer.parseInt(this.elementi[this.steviloElementov - 1]);
-        int y = Integer.parseInt(this.elementi[this.steviloElementov]);
-        this.pop();
+    void primerjajEnaka() {
+        int y = Integer.parseInt(this.pop());
+        int x = Integer.parseInt(this.pop());
 
         if (x == y)
-            this.elementi[this.steviloElementov] = "1";
+            this.push("1");
         else
-            this.elementi[this.steviloElementov] = "0";
+            this.push("0");
     }
 
-    @Override
-    public void primerjajVecji() {
-        int x = Integer.parseInt(this.elementi[this.steviloElementov - 1]);
-        int y = Integer.parseInt(this.elementi[this.steviloElementov]);
-        this.pop();
+    void primerjajVecji() {
+        int y = Integer.parseInt(this.pop());
+        int x = Integer.parseInt(this.pop());
 
         if (x > y)
-            this.elementi[this.steviloElementov] = "1";
+            this.push("1");
         else
-            this.elementi[this.steviloElementov] = "0";
+            this.push("0");
     }
 
-    @Override
-    public void primerjajVecjiEnak() {
-        int x = Integer.parseInt(this.elementi[this.steviloElementov - 1]);
-        int y = Integer.parseInt(this.elementi[this.steviloElementov]);
-        this.pop();
+    void primerjajVecjiEnak() {
+        int y = Integer.parseInt(this.pop());
+        int x = Integer.parseInt(this.pop());
 
         if (x >= y)
-            this.elementi[this.steviloElementov] = "1";
+            this.push("1");
         else
-            this.elementi[this.steviloElementov] = "0";
+            this.push("0");
     }
 
-    @Override
-    public void vsota() {
-        int x = Integer.parseInt(this.elementi[this.steviloElementov - 1]);
-        int y = Integer.parseInt(this.elementi[this.steviloElementov]);
-        this.pop();
+    void vsota() {
+        int y = Integer.parseInt(this.pop());
+        int x = Integer.parseInt(this.pop());
 
-        this.elementi[this.steviloElementov] = Integer.toString(x+y);
-
+        this.push(Integer.toString(x + y));
     }
 
-    @Override
-    public void razlika() {
-        int x = Integer.parseInt(this.elementi[this.steviloElementov - 1]);
-        int y = Integer.parseInt(this.elementi[this.steviloElementov]);
-        this.pop();
+    void razlika() {
+        int y = Integer.parseInt(this.pop());
+        int x = Integer.parseInt(this.pop());
 
-        this.elementi[this.steviloElementov] = Integer.toString(x-y);
+        this.push(Integer.toString(x - y));
 
     }
 
-    @Override
-    public void krat() {
-        int x = Integer.parseInt(this.elementi[this.steviloElementov - 1]);
-        int y = Integer.parseInt(this.elementi[this.steviloElementov]);
-        this.pop();
+    void krat() {
+        int y = Integer.parseInt(this.pop());
+        int x = Integer.parseInt(this.pop());
 
-        this.elementi[this.steviloElementov] = Integer.toString(x*y);
+        this.push(Integer.toString(x * y));
+    }
+
+    void deljeno() {
+        int y = Integer.parseInt(this.pop());
+        int x = Integer.parseInt(this.pop());
+
+        this.push(Integer.toString(x / y));
+    }
+
+    void ostanek() {
+        int y = Integer.parseInt(this.pop());
+        int x = Integer.parseInt(this.pop());
+        int neg = 1;
+        if (x < 0)
+            neg = -1;
+
+        int ostan = (Math.abs(x) % Math.abs(y)) * neg ;
+
+        this.push(Integer.toString(ostan));
 
     }
 
-    @Override
-    public void deljeno() {
-        int x = Integer.parseInt(this.elementi[this.steviloElementov - 1]);
-        int y = Integer.parseInt(this.elementi[this.steviloElementov]);
-        this.pop();
+    void stakni() {
+        String y = this.pop();
+        String x = this.pop();
 
-        this.elementi[this.steviloElementov] = Integer.toString(x/y);
+        this.push(x + y);
 
     }
 
-    @Override
-    public void ostanek() {
-        int x = Integer.parseInt(this.elementi[this.steviloElementov - 1]);
-        int y = Integer.parseInt(this.elementi[this.steviloElementov]);
-        this.pop();
+    void random() {
+        int x = Integer.parseInt(this.pop());
+        int y = Integer.parseInt(this.pop());
 
-        this.elementi[this.steviloElementov] = Integer.toString(x%y);
-
-    }
-
-    @Override
-    public void stakni() {
-        String x = this.elementi[this.steviloElementov - 1];
-        String y = this.elementi[this.steviloElementov];
-        this.pop();
-
-        this.elementi[this.steviloElementov] = x + y;
+        int rnd = x + (int) (Math.random() * (y - x) + 1);
+        this.push(Integer.toString(rnd));
 
     }
 
-    @Override
-    public void random() {
-        int x = Integer.parseInt(this.elementi[this.steviloElementov - 1]);
-        int y = Integer.parseInt(this.elementi[this.steviloElementov]);
-
-        int rnd = x + (int)(Math.random() * (y - x) + 1);
-        this.dodaj(Integer.toString(rnd));
-
+    void print() {
+        System.out.println(this.toString());
     }
 
-    @Override
-    public void then() {
-
-    }
-
-    @Override
-    public void elseT() {
-
-    }
-
-    @Override
-    public void print() {
-        for (int i = 0; i <= this.steviloElementov; i++) {
-            System.out.printf("%s ", this.elementi[this.steviloElementov]);
-        }
-        System.out.printf("\n");
-    }
-
-    @Override
-    public void clear() {
-        this.steviloElementov = -1;
+    void clear() {
+        this.steviloElementov = 0;
         this.elementi = new String[64];
     }
 
-    @Override
-    public void run() {
-
-    }
-
-    @Override
-    public void move() {
-
-    }
-
-    @Override
-    public void reverse() {
-        for (int i = 0; i <= this.steviloElementov/2; i++) {
-            String tmp = this.elementi[this.steviloElementov];
-            this.elementi[this.steviloElementov] = this.elementi[i];
+    void reverse() {
+        for (int i = 0; i < this.steviloElementov / 2; i++) {
+            String tmp = this.elementi[this.steviloElementov - i -1];
+            this.elementi[this.steviloElementov - i -1] = this.elementi[i];
             this.elementi[i] = tmp;
         }
     }
+
+    public String toString() {
+        StringBuilder besedilo = new StringBuilder();
+
+        for (int i = 0; i < this.steviloElementov; i++) {
+            besedilo.append(this.elementi[i]).append(" ");
+        }
+        return besedilo.toString().trim();
+    }
+
+    public String[] getSklad() {
+        return this.elementi;
+    }
+
+    public int getStElementov() {
+        return this.steviloElementov;
+    }
 }
 
-class  Sequence {
-    Stack [] skladi = new Stack[42];
+class Sequence {
+    private final Stack[] skladi = new Stack[42];
 
     Sequence() {
         for (int i = 0; i < 42; i++) {
             skladi[i] = new Stack();
         }
+    }
+
+    Stack getSklad(int i) {
+        return skladi[i];
     }
 }

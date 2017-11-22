@@ -1,0 +1,15 @@
+
+16 72 33 56 7 8 3 -30 2 1 1 fun dup 0 print 1 print 1 run  0 print
+16 72 33 56 7 8 3 -30 2
+dup
+16 72 33 56 7 8 3 -30 2 2
+5 1 23 5 -5 5 1 fun 1 + 2 * 10 0 print 1 print 1 run 0 print 0 1 1 run run print
+5 1 23 5 -5
+1 + 2 * 10
+5 1 23 5 -8 10
+Exception in thread "main" java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:592)
+	at java.lang.Integer.parseInt(Integer.java:615)
+	at Naloga1.izvajanje(Naloga1.java:139)
+	at Naloga1.main(Naloga1.java:19)

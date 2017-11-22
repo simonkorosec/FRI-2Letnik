@@ -1,0 +1,11 @@
+Izvajanje testH
+  Log datoteka: testH.log
+  Izhod programa: testH.out
+  Ukazna vrstica: java Naloga1 calc
+  Izhodni status: 1
+  Realni cas izvajanja: 173
+  Uporabniski cas izvajanja: 158
+  Sistemski cas izvajanja: 32
+  Procesorski cas izvajanja: 190
+Preverjanje testH
+  Izhodni status: err

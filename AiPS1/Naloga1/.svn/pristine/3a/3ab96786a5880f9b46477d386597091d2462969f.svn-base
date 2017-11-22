@@ -1,0 +1,19 @@
+244 106 null
+null
+null 243 36 null
+null 36 36 null
+null
+null
+99 64 76 6 6 88 79 94 98 35 19 5 6 60 87 51 81 17 94 56 null
+99 64 76 6 6 88 79 94 98 35 19 5 6 60 87 51 81 17 94 null null
+Exception in thread "main" java.lang.NumberFormatException: For input string: "null"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.parseInt(Integer.java:615)
+	at Stack.primerjajVecji(Naloga1.java:311)
+	at Naloga1.izvajanje(Naloga1.java:114)
+	at Naloga1.run(Naloga1.java:166)
+	at Naloga1.izvajanje(Naloga1.java:49)
+	at Naloga1.run(Naloga1.java:166)
+	at Naloga1.izvajanje(Naloga1.java:43)
+	at Naloga1.main(Naloga1.java:19)
