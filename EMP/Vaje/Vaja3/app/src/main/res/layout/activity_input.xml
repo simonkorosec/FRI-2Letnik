@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="20dp"
     android:gravity="center"
-    tools:context="com.example.uporabnik.vaja3.InputActivity">
+    tools:context="emp.fri.si.vaja3.InputActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

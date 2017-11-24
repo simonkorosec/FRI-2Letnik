@@ -2,17 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ae23ba5-9d1e-458b-81f4-5b988e2ea07a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../AiPS1/src/Vaja3/ArrayDeque.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../AiPS1/src/Vaja3/Izziv3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../UI/vaje/.RData" afterPath="$PROJECT_DIR$/../../UI/vaje/.RData" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../UI/vaje/.Rhistory" afterPath="$PROJECT_DIR$/../../UI/vaje/.Rhistory" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../AiPS1/out/production/AiPS1/Iziv3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/androidTest/java/com/example/uporabnik/vaja3/ExampleInstrumentedTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/java/com/example/uporabnik/vaja3/DisplayActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/java/com/example/uporabnik/vaja3/InputActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/test/java/com/example/uporabnik/vaja3/ExampleUnitTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../KPOV/kpov.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../AiPS1/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga1/log/oddaja.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga1/log/oddaja.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga1/src/Naloga1.java" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga1/src/Naloga1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/src/Naloga1.java" afterPath="$PROJECT_DIR$/../../AiPS1/src/Naloga1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/src/Vaja3/ArrayDeque.java" afterPath="$PROJECT_DIR$/../../AiPS1/src/Vaja3/ArrayDeque.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/src/Vaja3/Izziv3.java" afterPath="$PROJECT_DIR$/../../AiPS1/src/Vaja3/Izziv3.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/.idea/misc.xml" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/build.gradle" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/proguard-rules.pro" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/proguard-rules.pro" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/layout/activity_display.xml" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/layout/activity_display.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/layout/activity_input.xml" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/app/src/main/res/layout/activity_input.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/build.gradle" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/../../EMP/Vaje/Vaja3/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bezier.html" afterPath="$PROJECT_DIR$/bezier.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bezier.js" afterPath="$PROJECT_DIR$/bezier.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../UI/vaje/vaje.txt" afterPath="$PROJECT_DIR$/../../UI/vaje/vaje.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,22 +48,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="bezier.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bezier.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bezier.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="483">
+              <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bezier.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bezier.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bezier.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="61" column="38" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+            <state relative-caret-position="283">
+              <caret line="81" column="18" lean-forward="false" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
               <folding>
+                <element signature="e#80#152#0" expanded="false" />
+                <element signature="n#Tocka#0" expanded="false" />
+                <element signature="n#!!block;n#draw#0;n#BezierKrivulja#0" expanded="false" />
+                <element signature="n#!!block;n#odstrani#0;n#BezierKrivulja#0" expanded="false" />
+                <element signature="n#!!block;n#izrisTocke#0" expanded="false" />
+                <element signature="n#!!block;n#vnosTock#0" expanded="false" />
+                <element signature="n#!!block;n#dotProduct#0" expanded="false" />
+                <element signature="e#2544#2581#0" expanded="false" />
+                <element signature="n#!!block;n#izrisZlepka#0" expanded="false" />
+                <element signature="n#!!block;n#izrisKrivulje#0" expanded="false" />
+                <element signature="n#!!block;n#posodobiDropDown#0" expanded="false" />
+                <element signature="e#3695#3864#0" expanded="false" />
+                <element signature="n#!!block;n#ponovniIzris#0" expanded="false" />
+                <element signature="n#!!block;n#odstraniKrivuljo#0" expanded="false" />
                 <element signature="n#!!block;n#zmnoziMatriki#0" expanded="false" />
               </folding>
             </state>
@@ -56,7 +92,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/proba.html" />
+        <option value="$PROJECT_DIR$/proba.js" />
         <option value="$PROJECT_DIR$/bezier.js" />
+        <option value="$PROJECT_DIR$/bezier.html" />
       </list>
     </option>
   </component>
@@ -67,8 +106,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1115" />
-    <option name="width" value="813" />
+    <option name="x" value="952" />
+    <option name="width" value="976" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -171,7 +210,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -184,21 +223,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="DN2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DN2" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -231,18 +256,24 @@
       <workItem from="1511175522592" duration="100000" />
       <workItem from="1511209357590" duration="43000" />
       <workItem from="1511338741603" duration="4127000" />
+      <workItem from="1511374696582" duration="10176000" />
+      <workItem from="1511447843583" duration="2102000" />
+      <workItem from="1511460036166" duration="759000" />
+      <workItem from="1511543583248" duration="3000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4270000" />
+    <option name="totallyTimeSpent" value="20307000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1115" y="0" width="813" height="1050" extended-state="0" />
+    <frame x="952" y="0" width="976" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36012527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -254,7 +285,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -265,10 +295,140 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/bezier.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="53" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bezier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3087">
+          <caret line="147" column="1" lean-forward="false" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
+          <folding>
+            <element signature="e#80#152#0" expanded="false" />
+            <element signature="n#Tocka#0" expanded="false" />
+            <element signature="n#!!block;n#draw#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#odstrani#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#izrisTocke#0" expanded="false" />
+            <element signature="n#!!block;n#vnosTock#0" expanded="false" />
+            <element signature="n#!!block;n#dotProduct#0" expanded="false" />
+            <element signature="e#2544#2581#0" expanded="false" />
+            <element signature="n#!!block;n#izrisZlepka#0" expanded="false" />
+            <element signature="n#!!block;n#izrisKrivulje#0" expanded="false" />
+            <element signature="n#!!block;n#posodobiDropDown#0" expanded="false" />
+            <element signature="e#3695#3864#0" expanded="false" />
+            <element signature="n#!!block;n#ponovniIzris#0" expanded="false" />
+            <element signature="n#!!block;n#odstraniKrivuljo#0" expanded="false" />
+            <element signature="n#!!block;n#zmnoziMatriki#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bezier.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="53" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bezier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3087">
+          <caret line="147" column="1" lean-forward="true" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
+          <folding>
+            <element signature="e#80#152#0" expanded="false" />
+            <element signature="n#Tocka#0" expanded="false" />
+            <element signature="n#!!block;n#draw#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#odstrani#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#izrisTocke#0" expanded="false" />
+            <element signature="n#!!block;n#vnosTock#0" expanded="false" />
+            <element signature="n#!!block;n#dotProduct#0" expanded="false" />
+            <element signature="e#2544#2581#0" expanded="false" />
+            <element signature="n#!!block;n#izrisZlepka#0" expanded="false" />
+            <element signature="n#!!block;n#izrisKrivulje#0" expanded="false" />
+            <element signature="n#!!block;n#posodobiDropDown#0" expanded="false" />
+            <element signature="e#3695#3864#0" expanded="false" />
+            <element signature="n#!!block;n#ponovniIzris#0" expanded="false" />
+            <element signature="n#!!block;n#odstraniKrivuljo#0" expanded="false" />
+            <element signature="n#!!block;n#zmnoziMatriki#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bezier.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="53" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bezier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2079">
+          <caret line="99" column="23" lean-forward="false" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="23" />
+          <folding>
+            <element signature="e#80#152#0" expanded="false" />
+            <element signature="n#Tocka#0" expanded="false" />
+            <element signature="n#!!block;n#draw#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#odstrani#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#izrisTocke#0" expanded="false" />
+            <element signature="n#!!block;n#vnosTock#0" expanded="false" />
+            <element signature="n#!!block;n#dotProduct#0" expanded="false" />
+            <element signature="e#2544#2581#0" expanded="false" />
+            <element signature="n#!!block;n#izrisZlepka#0" expanded="false" />
+            <element signature="n#!!block;n#izrisKrivulje#0" expanded="false" />
+            <element signature="n#!!block;n#posodobiDropDown#0" expanded="false" />
+            <element signature="e#3695#3864#0" expanded="false" />
+            <element signature="n#!!block;n#ponovniIzris#0" expanded="false" />
+            <element signature="n#!!block;n#odstraniKrivuljo#0" expanded="false" />
+            <element signature="n#!!block;n#zmnoziMatriki#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bezier.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bezier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1281">
+          <caret line="61" column="38" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+          <folding>
+            <element signature="e#80#152#0" expanded="false" />
+            <element signature="n#Tocka#0" expanded="false" />
+            <element signature="n#!!block;n#draw#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#odstrani#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#izrisTocke#0" expanded="false" />
+            <element signature="n#!!block;n#vnosTock#0" expanded="false" />
+            <element signature="n#!!block;n#dotProduct#0" expanded="false" />
+            <element signature="e#2544#2581#0" expanded="false" />
+            <element signature="n#!!block;n#izrisZlepka#0" expanded="false" />
+            <element signature="n#!!block;n#izrisKrivulje#0" expanded="false" />
+            <element signature="n#!!block;n#posodobiDropDown#0" expanded="false" />
+            <element signature="e#3695#3864#0" expanded="false" />
+            <element signature="n#!!block;n#ponovniIzris#0" expanded="false" />
+            <element signature="n#!!block;n#odstraniKrivuljo#0" expanded="false" />
+            <element signature="n#!!block;n#zmnoziMatriki#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bezier.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -282,6 +442,20 @@
         <state relative-caret-position="693">
           <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
+            <element signature="e#80#152#0" expanded="false" />
+            <element signature="n#Tocka#0" expanded="false" />
+            <element signature="n#!!block;n#draw#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#odstrani#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#izrisTocke#0" expanded="false" />
+            <element signature="n#!!block;n#vnosTock#0" expanded="false" />
+            <element signature="n#!!block;n#dotProduct#0" expanded="false" />
+            <element signature="e#2544#2581#0" expanded="false" />
+            <element signature="n#!!block;n#izrisZlepka#0" expanded="false" />
+            <element signature="n#!!block;n#izrisKrivulje#0" expanded="false" />
+            <element signature="n#!!block;n#posodobiDropDown#0" expanded="false" />
+            <element signature="e#3695#3864#0" expanded="false" />
+            <element signature="n#!!block;n#ponovniIzris#0" expanded="false" />
+            <element signature="n#!!block;n#odstraniKrivuljo#0" expanded="false" />
             <element signature="n#!!block;n#zmnoziMatriki#0" expanded="false" />
           </folding>
         </state>
@@ -300,6 +474,46 @@
         <state relative-caret-position="189">
           <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding>
+            <element signature="e#80#152#0" expanded="false" />
+            <element signature="n#Tocka#0" expanded="false" />
+            <element signature="n#!!block;n#draw#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#odstrani#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#izrisTocke#0" expanded="false" />
+            <element signature="n#!!block;n#vnosTock#0" expanded="false" />
+            <element signature="n#!!block;n#dotProduct#0" expanded="false" />
+            <element signature="e#2544#2581#0" expanded="false" />
+            <element signature="n#!!block;n#izrisZlepka#0" expanded="false" />
+            <element signature="n#!!block;n#izrisKrivulje#0" expanded="false" />
+            <element signature="n#!!block;n#posodobiDropDown#0" expanded="false" />
+            <element signature="e#3695#3864#0" expanded="false" />
+            <element signature="n#!!block;n#ponovniIzris#0" expanded="false" />
+            <element signature="n#!!block;n#odstraniKrivuljo#0" expanded="false" />
+            <element signature="n#!!block;n#zmnoziMatriki#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proba.html" />
+    <entry file="file://$PROJECT_DIR$/proba.js" />
+    <entry file="file://$PROJECT_DIR$/bezier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="81" column="18" lean-forward="false" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
+          <folding>
+            <element signature="e#80#152#0" expanded="false" />
+            <element signature="n#Tocka#0" expanded="false" />
+            <element signature="n#!!block;n#draw#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#odstrani#0;n#BezierKrivulja#0" expanded="false" />
+            <element signature="n#!!block;n#izrisTocke#0" expanded="false" />
+            <element signature="n#!!block;n#vnosTock#0" expanded="false" />
+            <element signature="n#!!block;n#dotProduct#0" expanded="false" />
+            <element signature="e#2544#2581#0" expanded="false" />
+            <element signature="n#!!block;n#izrisZlepka#0" expanded="false" />
+            <element signature="n#!!block;n#izrisKrivulje#0" expanded="false" />
+            <element signature="n#!!block;n#posodobiDropDown#0" expanded="false" />
+            <element signature="e#3695#3864#0" expanded="false" />
+            <element signature="n#!!block;n#ponovniIzris#0" expanded="false" />
+            <element signature="n#!!block;n#odstraniKrivuljo#0" expanded="false" />
             <element signature="n#!!block;n#zmnoziMatriki#0" expanded="false" />
           </folding>
         </state>
@@ -307,19 +521,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bezier.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="483">
+          <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bezier.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="61" column="38" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
-          <folding>
-            <element signature="n#!!block;n#zmnoziMatriki#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
