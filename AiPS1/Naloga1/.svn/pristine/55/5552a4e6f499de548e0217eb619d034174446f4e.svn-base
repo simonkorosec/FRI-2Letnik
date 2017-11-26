@@ -383,7 +383,7 @@ class Stack {
         int x = Integer.parseInt(this.pop());
         int y = Integer.parseInt(this.pop());
 
-        int rnd = x + (int) (Math.random() * ((y - x) + 1));
+        int rnd = x + (int) (Math.random() * (y - x) + 1);
         this.push(Integer.toString(rnd));
 
     }

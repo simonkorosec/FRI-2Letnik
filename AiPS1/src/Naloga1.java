@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Naloga1 {
@@ -163,7 +164,8 @@ public class Naloga1 {
 
     private static void run(int stSklada) {
         String [] ukazi = skladovi.getSklad(stSklada).toString().split(" ");
-        izvajanje(ukazi);
+        if (!ukazi[0].equals(""))
+            izvajanje(ukazi);
     }
 
     private static String preorder(int stopnja, int i) {
@@ -381,7 +383,7 @@ class Stack {
         int x = Integer.parseInt(this.pop());
         int y = Integer.parseInt(this.pop());
 
-        int rnd = x + (int) (Math.random() * (y - x) + 1);
+        int rnd = x + (int) (Math.random() * ((y - x) + 1));
         this.push(Integer.toString(rnd));
 
     }
