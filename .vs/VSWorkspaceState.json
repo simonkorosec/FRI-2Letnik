@@ -1,9 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\RG",
-    "\\RG\\DN1"
+    "\\RG\\Seminarska",
+    "\\RG\\Seminarska\\scripts",
+    "\\RG\\Vaje",
+    "\\RG\\Vaje\\scripts",
+    "\\UI",
+    "\\UI\\Seminarska"
   ],
-  "SelectedNode": "\\RG\\DN1\\matrika.js",
+  "SelectedNode": "\\UI\\Seminarska\\Nov dokument z besedilom.txt",
   "PreviewInSolutionExplorer": false
 }
