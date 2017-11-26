@@ -44,6 +44,7 @@ var lastTime = 0;
 // mvPop    ... pop top matrix from stack
 // degToRad ... convert degrees to radians
 //
+// noinspection JSUnusedGlobalSymbols
 function mvPushMatrix() {
     var copy = mat4.create();
     mat4.set(mvMatrix, copy);
@@ -51,7 +52,7 @@ function mvPushMatrix() {
 }
 
 function mvPopMatrix() {
-    if (mvMatrixStack.length == 0) {
+    if (mvMatrixStack.length === 0) {
         throw "Invalid popMatrix!";
     }
     mvMatrix = mvMatrixStack.pop();
@@ -74,7 +75,8 @@ function initGL(canvas) {
         gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
         gl.viewportWidth = canvas.width;
         gl.viewportHeight = canvas.height;
-    } catch (e) { }
+    } catch (e) {
+    }
 
     // If we don't have a GL context, give up now
     if (!gl) {
@@ -102,7 +104,7 @@ function getShader(gl, id) {
     var shaderSource = "";
     var currentChild = shaderScript.firstChild;
     while (currentChild) {
-        if (currentChild.nodeType == 3) {
+        if (currentChild.nodeType === 3) {
             shaderSource += currentChild.textContent;
         }
         currentChild = currentChild.nextSibling;
@@ -111,9 +113,9 @@ function getShader(gl, id) {
     // Now figure out what type of shader script we have,
     // based on its MIME type.
     var shader;
-    if (shaderScript.type == "x-shader/x-fragment") {
+    if (shaderScript.type === "x-shader/x-fragment") {
         shader = gl.createShader(gl.FRAGMENT_SHADER);
-    } else if (shaderScript.type == "x-shader/x-vertex") {
+    } else if (shaderScript.type === "x-shader/x-vertex") {
         shader = gl.createShader(gl.VERTEX_SHADER);
     } else {
         return null;  // Unknown shader type
@@ -199,7 +201,7 @@ function initTextures() {
     wallTexture.image = new Image();
     wallTexture.image.onload = function () {
         handleTextureLoaded(wallTexture)
-    }
+    };
     wallTexture.image.src = "./assets/wall.png";
 }
 
@@ -231,7 +233,7 @@ function handleLoadedWorld(data) {
     var vertexTextureCoords = [];
     for (var i in lines) {
         var vals = lines[i].replace(/^\s+/, "").split(/\s+/);
-        if (vals.length == 5 && vals[0] != "//") {
+        if (vals.length === 5 && vals[0] !== "//") {
             // It is a line describing a vertex; get X, Y and Z first
             vertexPositions.push(parseFloat(vals[0]));
             vertexPositions.push(parseFloat(vals[1]));
@@ -269,10 +271,10 @@ function loadWorld() {
     var request = new XMLHttpRequest();
     request.open("GET", "./assets/world.txt");
     request.onreadystatechange = function () {
-        if (request.readyState == 4) {
+        if (request.readyState === 4) {
             handleLoadedWorld(request.responseText);
         }
-    }
+    };
     request.send();
 }
 
@@ -288,7 +290,7 @@ function drawScene() {
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
     // If buffers are empty we stop loading the application.
-    if (worldVertexTextureCoordBuffer == null || worldVertexPositionBuffer == null) {
+    if (worldVertexTextureCoordBuffer === null || worldVertexPositionBuffer === null) {
         return;
     }
 
@@ -334,10 +336,10 @@ function drawScene() {
 //
 function animate() {
     var timeNow = new Date().getTime();
-    if (lastTime != 0) {
+    if (lastTime !== 0) {
         var elapsed = timeNow - lastTime;
 
-        if (speed != 0) {
+        if (speed !== 0) {
             xPosition -= Math.sin(degToRad(yaw)) * speed * elapsed;
             zPosition -= Math.cos(degToRad(yaw)) * speed * elapsed;
 

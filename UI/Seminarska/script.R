@@ -107,15 +107,16 @@ wrapper(pod, className="O3", classModel="tree", folds=10)
 
 
 
+#
+# Grafi
+#
 
 
 
+povpLetniCasi <- data.frame(pod$Letni_cas, pod$PM10, pod$O3)
 
-
-
-
-
-
+plot(povpLetniCasi$pod.Letni_cas, povpLetniCasi$pod.O3)
+plot(povpLetniCasi$pod.Letni_cas, povpLetniCasi$pod.PM10)
 
 
 
