@@ -32,7 +32,7 @@ pod$Letni_cas[poletje] <- "poletje"
 pod$Letni_cas[jesen] <- "jesen"
 
 pod$Letni_cas <- as.factor(pod$Letni_cas)
-#pod$Mesec <- NULL
+# pod$Mesec <- NULL
 
 
 #
@@ -118,6 +118,44 @@ povpLetniCasi <- data.frame(pod$Letni_cas, pod$PM10, pod$O3)
 plot(povpLetniCasi$pod.Letni_cas, povpLetniCasi$pod.O3)
 plot(povpLetniCasi$pod.Letni_cas, povpLetniCasi$pod.PM10)
 
+
+
+
+
+#
+# 1 Naloga
+#
+
+pod <- read.table("podatkiSem1.txt", sep=",", header=T)
+pod$Datum <- as.Date(pod$Datum, "%Y-%m-%d")
+
+library(lubridate)
+pod$Leto <- year(pod$Datum)
+pod$Leto <- as.factor(pod$Leto)
+
+
+leto13 <- pod[pod$Leto == 2013,]
+leto14 <- pod[pod$Leto == 2014,]
+leto15 <- pod[pod$Leto == 2015,]
+leto16 <- pod[pod$Leto == 2016,]
+
+mean(leto13$PM10[leto13$Mesec == "oktober"])
+
+v <- levels(as.factor(leto13$Mesec))
+v
+
+
+for (m in v) {
+	print(m)
+	print(mean(leto13$PM10[leto13$Mesec == m]))
+}
+
+
+
+plot(y=leto13$PM10, x=leto13$Datum)
+points(y=leto14$PM10, x=leto14$Datum, col="#ff0000")
+points(y=leto15$PM10, x=leto15$Datum, col="#00ff00")
+points(y=leto16$PM10, x=leto16$Datum, col="#0000ff")
 
 
 

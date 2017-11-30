@@ -1,8 +1,11 @@
 let canvas;
 let ctx;
 let dropDwn;
-let tocke = [];
+let tockeZlepka = [];
+let vseTocke =  [];
+let krivulje = [];
 let zlepki = [];
+let stZlepkov = 1;
 let bezMat = [[1, -3, 3, -1],
     [0, 3, -6, 3],
     [0, 0, 3, -3],
@@ -38,7 +41,7 @@ class BezierKrivulja {
         this.p2 = p2;
         this.p3 = p3;
         this.vidna = true;
-        this.barva = "#000000";
+
     }
 
     draw() {
@@ -50,14 +53,13 @@ class BezierKrivulja {
         let prejsnaTocka = this.p0;
         let novaTocka;
 
-        for (let t = 0; t <= 1; t += 0.02) {
+        for (let t = 0; t <= 1; t += 0.01) {
             ctx.beginPath();
             let tMat = [[1], [t], [Math.pow(t, 2)], [Math.pow(t, 3)]];
             let tmp = zmnoziMatriki(priprava, tMat);
             novaTocka = new Tocka(tmp[0][0], tmp[1][0]);
             ctx.moveTo(prejsnaTocka.x, prejsnaTocka.y);
             ctx.lineTo(novaTocka.x, novaTocka.y);
-            ctx.strokeStyle = this.barva;
             ctx.stroke();
             prejsnaTocka = novaTocka;
         }
@@ -70,7 +72,7 @@ class BezierKrivulja {
 
     }
 
-    odstrani() {
+    odstraniK() {
         this.p0.vidna = false;
         this.p1.vidna = false;
         this.p2.vidna = false;
@@ -78,9 +80,61 @@ class BezierKrivulja {
         this.vidna = false;
     }
 
-    spremeniBarvo(b) {
-        this.barva = b;
+}
+
+class Zlepek {
+    constructor() {
+        this.deli = [];
+        this.barva = "#000000";
+        this.vidna = true;
     }
+
+    dodajKrivuljo(krivulja) {
+        this.deli.push(krivulja);
+    }
+
+    odstraniZ() {
+        this.vidna = false;
+        for (let i = 0; i < this.deli.length; i++) {
+            this.deli[i].odstraniK()
+        }
+    }
+
+    drawZlepek() {
+        ctx.strokeStyle = this.barva;
+        for (let i = 0; i < this.deli.length; i++) {
+            this.deli[i].draw();
+        }
+        ctx.strokeStyle = "#000000";
+    }
+
+    spremeniBarvo(barva) {
+        this.barva = barva;
+    }
+
+    popraviZveznost() {
+        let prvaK = this.deli[this.deli.length - 2];
+        let drugaK = this.deli[this.deli.length - 1];
+
+        let a = prvaK.p2;
+        let b = drugaK.p1;
+        let p = prvaK.p3;
+
+        let AB = [b.x - a.x, b.y - a.y];
+        let AP = [p.x - a.x, p.y - a.y];
+
+        let tmp = dotProduct(AP, AB) / dotProduct(AB, AB);
+        let premik = [0, 0];
+        premik[0] = tmp * AB[0];
+        premik[1] = tmp * AB[1];
+
+        p.x = a.x + premik[0];
+        p.y = a.y + premik[1];
+
+        ponovniIzris();
+
+    }
+
 }
 
 function priprava() {
@@ -91,35 +145,40 @@ function priprava() {
 }
 
 function izrisTocke(toc) {
-    if (tocke.length % 3 === 1 )
+    if (tockeZlepka.length % 3 === 1)
         toc.izrisKvadrata();
     else
         toc.izrisKroga();
 }
 
 function vnosTock(event) {
+
+    if (zlepki.length !== stZlepkov)
+        zlepki.push(new Zlepek());
+
     let x = event.offsetX;
     let y = event.offsetY;
     let toc = new Tocka(x, y);
-    tocke.push(toc);
+    tockeZlepka.push(toc);
+    vseTocke.push(toc);
     izrisTocke(toc);
 
-    if (tocke.length > 3 && tocke.length % 3 === 1)
+    if (tockeZlepka.length > 3 && tockeZlepka.length % 3 === 1)
         izrisKrivulje();
 
 }
 
 function dotProduct(v1, v2) {
     let rez = 0.0;
-    for(let i = 0; i < v1.length; i++) {
+    for (let i = 0; i < v1.length; i++) {
         rez += v1[i] * v2[i];
     }
     return rez;
 }
 
-function izrisZlepka() {
-    let prvaK = zlepki[zlepki.length - 2];
-    let drugaK = zlepki[zlepki.length - 1];
+function zdruziKrivulji() {
+    let prvaK = krivulje[krivulje.length - 2];
+    let drugaK = krivulje[krivulje.length - 1];
 
     let a = prvaK.p2;
     let b = drugaK.p1;
@@ -140,16 +199,18 @@ function izrisZlepka() {
 }
 
 function izrisKrivulje() {
-    let p0 = tocke[tocke.length - 4];
-    let p1 = tocke[tocke.length - 3];
-    let p2 = tocke[tocke.length - 2];
-    let p3 = tocke[tocke.length - 1];
+    let p0 = tockeZlepka[tockeZlepka.length - 4];
+    let p1 = tockeZlepka[tockeZlepka.length - 3];
+    let p2 = tockeZlepka[tockeZlepka.length - 2];
+    let p3 = tockeZlepka[tockeZlepka.length - 1];
     let b = new BezierKrivulja(p0, p1, p2, p3);
     b.draw();
-    zlepki.push(b);
+    krivulje.push(b);
+    zlepki[stZlepkov - 1].dodajKrivuljo(b);
 
-    if (zlepki.length > 1) {
-        izrisZlepka();
+    if (krivulje.length > 1) {
+        //zdruziKrivulji();
+        zlepki[stZlepkov - 1].popraviZveznost();
     }
 
     posodobiDropDown();
@@ -160,13 +221,12 @@ function posodobiDropDown() {
     dropDwn.innerHTML = "";
     let opt = document.createElement("option");
     opt.innerHTML = "Izberite krivuljo";
-    opt.selected = true;
     opt.disabled = true;
     dropDwn.appendChild(opt);
 
     for (let i = 0; i < zlepki.length; i++) {
         let option = document.createElement("option");
-        option.innerHTML = "Krivulja " + i;
+        option.innerHTML = "Zlepek " + i;
         option.value = i;
         dropDwn.appendChild(option);
     }
@@ -178,7 +238,7 @@ function ponovniIzris() {
     // Ponoven izris krivulj
     for (let i = 0; i < zlepki.length;) {
         if (zlepki[i].vidna) {
-            zlepki[i].draw();
+            zlepki[i].drawZlepek();
             i++;
         }
         else {
@@ -187,8 +247,8 @@ function ponovniIzris() {
     }
 
     // Ponoven izris točk
-    for (let i = 0; i < tocke.length;) {
-        let tocke2 = tocke[i];
+    for (let i = 0; i < vseTocke.length;) {
+        let tocke2 = vseTocke[i];
         if (tocke2.vidna) {
             if (tocke2.interpolerana) {
                 tocke2.izrisKvadrata();
@@ -197,20 +257,37 @@ function ponovniIzris() {
             }
             i++;
         } else {
-            tocke.splice(i, 1);
+            vseTocke.splice(i, 1);
         }
 
     }
 }
 
-function odstraniKrivuljo() {
+function odstraniZlepek() {
     let indeks = dropDwn.value;
-    let krivulja = zlepki[indeks];
-    //console.log(zlepki[indeks]);
 
-    krivulja.odstrani();
+    zlepki[indeks].odstraniZ();
     ponovniIzris();
+    posodobiDropDown();
+}
 
+function novZlepek() {
+    stZlepkov++;
+    krivulje = [];
+    tockeZlepka = [];
+}
+
+function spremeniBarvoZlepka() {
+    let indeks = dropDwn.value;
+    let barva = document.getElementById("colorSelect");
+    zlepki[indeks].spremeniBarvo(barva.value);
+    //zlepki[indeks].spremeniBarvo("#0ff0a5");
+    ponovniIzris();
+}
+
+function premik(event) {
+    console.log(event.offsetX);
+    console.log(event.offsetY);
 }
 
 function zmnoziMatriki(input1, input2) {
