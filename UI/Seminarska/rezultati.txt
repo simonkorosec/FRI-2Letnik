@@ -1,0 +1,55 @@
+#
+# PM10 
+#
+večinski -> 0.868414
+
+DT 	-> 0.8795699
+RF 	-> 0.9056452
+RFN -> 0.9048387
+KNN -> 0.8967742
+
+glasovanje 		-> 0.9045699
+uteženo glas. 	-> 0.905914
+bagging 		-> 0.9126344
+nak. gozd 		-> 0.9287634
+boosting 		-> 0.9233871
+umetna mreža 	-> 0.9112903
+
+
+
+
+#
+# O3
+#
+večinski -> 0.609328
+
+DT 	-> 
+RF 	-> 
+RFN -> 
+KNN -> 
+
+glasovanje 		-> 0.8037634
+uteženo glas. 	-> 0.8212366
+bagging 		-> 0.8387097
+nak. gozd 		-> 0.8306452
+boosting 		-> 0.8387097
+umetna mreža 	-> 0.7903226
+
+
+#
+# O3 - 2
+#
+večinski -> 0.609328
+
+DT 	-> 
+RF 	-> 
+RFN -> 
+KNN -> 
+
+glasovanje 		-> 0.8435484
+uteženo glas. 	-> 0.8258065
+bagging 		-> 0.8037634
+nak. gozd 		-> 0.8239247
+boosting 		-> 0.8387097
+umetna mreža 	-> 0.7903226
+
