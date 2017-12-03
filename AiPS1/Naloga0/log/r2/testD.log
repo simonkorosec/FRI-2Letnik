@@ -1,0 +1,13 @@
+Izvajanje testD
+  Log datoteka: testD.log
+  Izhod programa: testD.out
+  Ukazna vrstica: java Naloga0 macka
+  Izhodni status: 0
+  Realni cas izvajanja: 167
+  Uporabniski cas izvajanja: 151
+  Sistemski cas izvajanja: 40
+  Procesorski cas izvajanja: 191
+Preverjanje testD
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1
