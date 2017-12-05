@@ -2,16 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18dde3c0-2747-4f70-a61a-976de6a7657f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Naloga0.class" afterPath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Naloga0.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Naloga1.class" afterPath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Naloga1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/PrviIziv.class" afterPath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/PrviIziv.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Sequence.class" afterPath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Sequence.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Stack.class" afterPath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Stack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dan5/Dan05.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Naloga0.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Naloga1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/PrviIziv.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Sequence.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Stack.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Vaja3/ArrayDeque.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Vaja3/Collection.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Vaja3/CollectionException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Vaja3/Deque.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Vaja3/Izziv3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Vaja3/Sequence.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AiPS1/out/production/AiPS1/Vaja3/Stack.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AiPS1/.idea/misc.xml" afterPath="$PROJECT_DIR$/../AiPS1/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AiPS1/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../AiPS1/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AiPS1/AiPS1.iml" afterPath="$PROJECT_DIR$/../AiPS1/AiPS1.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AiPS1/src/Naloga1.java" afterPath="$PROJECT_DIR$/../AiPS1/src/Naloga1.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +33,7 @@
       <file leaf-file-name="Dan01.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dan1/Dan01.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="170">
               <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -38,7 +45,7 @@
       <file leaf-file-name="Dan02.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dan2/Dan02.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="255">
               <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -47,12 +54,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dan03.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Dan03.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dan3/Dan03.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
+            <state relative-caret-position="68">
               <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dan05.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Dan5/Dan05.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,14 +100,14 @@
         <option value="$PROJECT_DIR$/src/Dan1/Dan01.java" />
         <option value="$PROJECT_DIR$/src/Dan2/Dan02.java" />
         <option value="$PROJECT_DIR$/src/Dan3/Dan03.java" />
+        <option value="$PROJECT_DIR$/src/Dan5/Dan05.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="678" />
-    <option name="y" value="-25" />
-    <option name="width" value="976" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -153,7 +172,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -166,31 +185,11 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Advent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Advent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Advent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Advent" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -204,7 +203,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Dan03">
+  <component name="RunManager" selected="Application.Dan05">
     <configuration name="Dan01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Dan01" />
@@ -246,6 +245,25 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="Dan3.Dan03" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Advent" />
+      <envs />
+    </configuration>
+    <configuration name="Dan05" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Dan5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="Dan5.Dan05" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -338,16 +356,18 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.Dan01" />
       <item index="1" class="java.lang.String" itemvalue="Application.Dan02" />
       <item index="2" class="java.lang.String" itemvalue="Application.Dan03" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Dan05" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.Dan03" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Dan02" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Dan01" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.Dan05" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Dan03" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Dan02" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Dan01" />
       </list>
     </recent_temporary>
   </component>
@@ -365,7 +385,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -376,7 +396,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897604" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -386,7 +406,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993576" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -400,10 +420,40 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Dan1/Dan01.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dan2/Dan02.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dan3/Dan03.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dan1/Dan01.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -428,7 +478,7 @@
     <entry file="file://$PROJECT_DIR$/src/Dan01.java" />
     <entry file="file://$PROJECT_DIR$/src/Dan2/Dan02.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="255">
           <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -438,7 +488,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Dan1/Dan01.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="170">
           <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -448,9 +498,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Dan3/Dan03.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
+        <state relative-caret-position="68">
           <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dan5/Dan05.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
