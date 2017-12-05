@@ -6,7 +6,4 @@
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
 *.class
-Advent/.idea/workspace.xml
-AiPS1/.idea/inspectionProfiles/Project_Default.xml
-AiPS1/.idea/workspace.xml
-Advent/.idea/workspace.xml
+*.xml
