@@ -7,17 +7,14 @@
 
 pod 			<- read.table("podatkiSem1.txt", sep=",", header=T)
 
-# pod_Koper 		<- pod[pod$Postaja == "Koper",]
-# pod_Ljubljana 	<- pod[pod$Postaja == "Ljubljana",]
-
 # Nerabiš same 0
-# pod$Glob_sevanje_min <- NULL
+pod$Glob_sevanje_min <- NULL
 
 # Sprememba tipa v datum
 pod$Datum <- as.Date(pod$Datum, "%Y-%m-%d")
 pod$Mesec <- months(pod$Datum)
 pod$Mesec <- as.factor(pod$Mesec)
-# pod$Datum <- NULL
+pod$Datum <- NULL
 
 
 # Delitev na letne case
