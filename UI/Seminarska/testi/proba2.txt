@@ -1,0 +1,47 @@
+n <- nrow(pod)
+k <- 10
+bucket.id <- rep(1:k, length.out=n)
+s <- sample(1:n, n, FALSE)
+bucket.id <- bucket.id[s]
+
+cv.dt <- vector()
+for (i in 1:k)
+{	
+	print(paste("Processing fold", i))
+	flush.console()
+
+	sel <- bucket.id == i	
+	learn <- pod[!sel,]
+	test <- pod[sel,]
+	observed <- pod[sel,]$PM10
+
+	modelDT <- CoreModel(formula, learn, model="tree")
+	modelRF <- CoreModel(formula, learn, model="rf")
+	modelRFN <- CoreModel(formula, learn, model="rfNear")
+	modelKNN <- CoreModel(formula, learn, model="knn", kInNN = 5)
+
+	predDT <- predict(modelDT, test, type = "class")
+	predRF <- predict(modelRF, test, type="class")
+	predKNN <- predict(modelKNN, test, type="class")
+	predRFN <- predict(modelRFN, test, type="class")
+
+	caDT <- CA(observed, predDT)
+	caRF <- CA(observed, predRF)
+	caRFN <- CA(observed, predRFN)
+	caKNN <- CA(observed, predKNN)
+
+	predDT.prob <- predict(modelDT, test, type="probability")
+	predRF.prob <- predict(modelRF, test, type="probability")
+	predRFN.prob <- predict(modelRFN, test, type="probability")
+	predKNN.prob <- predict(modelKNN, test, type="probability")
+
+	pred.prob <- caDT * predDT.prob + caRF * predRF.prob + caRFN * predRFN.prob + caKNN * predKNN.prob
+	predicted <- levels(learn$PM10)[apply(pred.prob, 1, which.max)]
+
+	
+	cv.dt[i] <- CA(observed, predicted)
+	
+}
+
+cv.dt
+mean(cv.dt)

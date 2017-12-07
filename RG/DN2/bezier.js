@@ -53,7 +53,7 @@ class BezierKrivulja {
         let prejsnaTocka = this.p0;
         let novaTocka;
 
-        for (let t = 0; t <= 1; t += 0.01) {
+        for (let t = 0; t <= 1; t += 0.001) {
             ctx.beginPath();
             let tMat = [[1], [t], [Math.pow(t, 2)], [Math.pow(t, 3)]];
             let tmp = zmnoziMatriki(priprava, tMat);

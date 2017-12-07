@@ -1,0 +1,25 @@
+n <- nrow(pod)
+k <- 15
+bucket.id <- rep(1:k, length.out=n)
+s <- sample(1:n, n, FALSE)
+bucket.id <- bucket.id[s]
+
+cv.dt <- vector()
+for (i in 1:k)
+{	
+	print(paste("Processing fold", i))
+	flush.console()
+
+	sel <- bucket.id == i	
+	learn <- pod[!sel,]
+	test <- pod[sel,]
+	observed <- pod[sel,]$PM10
+
+	svm <- ksvm(formula, data = learn, kernel = "rbfdot")
+	predicted <- predict(svm, test, type = "response")
+	
+	cv.dt[i] <- CA(observed, predicted)
+}
+
+cv.dt
+mean(cv.dt)

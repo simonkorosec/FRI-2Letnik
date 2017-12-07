@@ -1,0 +1,26 @@
+n <- nrow(pod)
+k <- 15
+bucket.id <- rep(1:k, length.out=n)
+s <- sample(1:n, n, FALSE)
+bucket.id <- bucket.id[s]
+
+cv.dt <- vector()
+for (i in 1:k)
+{	
+	print(paste("Processing fold", i))
+	flush.console()
+
+	sel <- bucket.id == i	
+	learn <- norm.data[!sel,]
+	test <- norm.data[sel,]
+	observed <- norm.data$PM10
+
+	nn <- nnet(formula, data = learn, size = 8, decay = 0.05, maxit = 1000)
+	predicted <- predict(nn, norm.data, type = "class")	
+	
+	cv.dt[i] <- CA(observed, predicted)
+}
+
+mean(cv.dt)
+
+#  0.9128271

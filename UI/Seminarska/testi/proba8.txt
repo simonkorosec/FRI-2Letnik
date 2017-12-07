@@ -1,0 +1,8 @@
+# wrapper
+PM10 ~ Temperatura_lokacija_min + Sunki_vetra_max + Padavine_mean + postaja + Temperatura_Krvavec_min + O3 + Sunki_vetra_mean + Temperatura_lokacija_mean 
+
+# ReliefFequalK
+PM10 ~ Temperatura_lokacija_max + Temperatura_lokacija_mean + Letni_cas + O3 + Glob_sevanje_mean + Vlaga_mean + Temperatura_Krvavec_mean
+
+# ReliefFsqrDistance
+PM10 ~ Temperatura_lokacija_max + Temperatura_lokacija_mean + Letni_cas + O3 + Temperatura_Krvavec_mean + Pritisk_max + Pritisk_mean + Glob_sevanje_max  + Vlaga_min + Glob_sevanje_mean

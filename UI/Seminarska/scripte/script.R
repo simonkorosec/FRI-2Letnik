@@ -5,7 +5,7 @@
 
 
 
-pod 			<- read.table("podatkiSem1.txt", sep=",", header=T)
+pod <- read.table("podatkiSem1.txt", sep=",", header=T)
 
 # Nerabiš same 0
 pod$Glob_sevanje_min <- NULL
