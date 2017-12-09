@@ -1,0 +1,7 @@
+Datoteko bezier.html odpremo v poljubnem spletnem brskalniku. 
+
+Na platno s miškinom klikom dodajamo točke.
+Preko spustnega menija izberamo zlepke in jih nato s klikom na gumb "Izbris" odstranimo oziroma spremenimo barvo s klikom na gumb "Spremeni barvo". 
+Barva se bo spremenila na označeno barvo v sosednjem okencu.
+
+Premik točk - ni implementerano :(

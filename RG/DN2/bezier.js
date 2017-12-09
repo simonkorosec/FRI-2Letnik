@@ -176,28 +176,6 @@ function dotProduct(v1, v2) {
     return rez;
 }
 
-function zdruziKrivulji() {
-    let prvaK = krivulje[krivulje.length - 2];
-    let drugaK = krivulje[krivulje.length - 1];
-
-    let a = prvaK.p2;
-    let b = drugaK.p1;
-    let p = prvaK.p3;
-
-    let AB = [b.x - a.x, b.y - a.y];
-    let AP = [p.x - a.x, p.y - a.y];
-
-    let tmp = dotProduct(AP, AB) / dotProduct(AB, AB);
-    let premik = [0, 0];
-    premik[0] = tmp * AB[0];
-    premik[1] = tmp * AB[1];
-
-    p.x = a.x + premik[0];
-    p.y = a.y + premik[1];
-
-    ponovniIzris();
-}
-
 function izrisKrivulje() {
     let p0 = tockeZlepka[tockeZlepka.length - 4];
     let p1 = tockeZlepka[tockeZlepka.length - 3];
@@ -209,7 +187,6 @@ function izrisKrivulje() {
     zlepki[stZlepkov - 1].dodajKrivuljo(b);
 
     if (krivulje.length > 1) {
-        //zdruziKrivulji();
         zlepki[stZlepkov - 1].popraviZveznost();
     }
 
@@ -265,8 +242,14 @@ function ponovniIzris() {
 
 function odstraniZlepek() {
     let indeks = dropDwn.value;
-
     zlepki[indeks].odstraniZ();
+    if (zlepki.length === 1){
+        tockeZlepka = [];
+        vseTocke =  [];
+        krivulje = [];
+        zlepki = [];
+        stZlepkov = 1;
+    }
     ponovniIzris();
     posodobiDropDown();
 }
@@ -283,11 +266,6 @@ function spremeniBarvoZlepka() {
     zlepki[indeks].spremeniBarvo(barva.value);
     //zlepki[indeks].spremeniBarvo("#0ff0a5");
     ponovniIzris();
-}
-
-function premik(event) {
-    console.log(event.offsetX);
-    console.log(event.offsetY);
 }
 
 function zmnoziMatriki(input1, input2) {
