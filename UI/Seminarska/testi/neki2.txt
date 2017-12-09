@@ -1,0 +1,4 @@
+#### ocene
+sort(attrEval(PM10 ~ ., pod, "ReliefFsqrDistance"), decreasing = TRUE)
+sort(attrEval(PM10 ~ ., pod, "ReliefFequalK"), decreasing = TRUE)
+sort(attrEval(PM10 ~ ., pod, "ReliefFexpRank"), decreasing = TRUE)

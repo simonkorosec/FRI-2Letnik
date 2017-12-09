@@ -3,62 +3,68 @@ package Dan6;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Dan06 {
 
-    static int[] trenutni;
-    static ArrayList<int[]> prejsni;
+    private static int [] trenutni;
+    private static ArrayList<int[]> prejsni;
 
     public static void main(String[] args) {
-        try {
-            //Scanner sc = new Scanner(new File("src/Dan6/input.txt"));
-            //String[] s = sc.nextLine().split(" ");
+        prejsni = new ArrayList<>();
 
-            //trenutni = new int[s.length];
-            trenutni = new int[]{0,2,7,0};
-            prejsni = new ArrayList<>();
-            /*for (int i = 0; i < s.length; i++) {
-                trenutni[i] = Integer.parseInt(s[i]);
-            }*/
-            add();
-            premik();
-            int koraki = 0;
-            while (!equals()){
-                add();
-                premik();
-                koraki++;
-                System.out.println(koraki);
-            }
-            System.out.println(koraki);
-
-        } catch (Exception e) {
+        try (Scanner sc = new Scanner(new File("src/Dan6/input.txt"))) {
+            String [] s = sc.nextLine().split("\\s+");
+            System.out.println(Arrays.toString(s));
+            trenutni = Arrays.stream(s).mapToInt(Integer::parseInt).toArray();
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
+        int i = 0;
+
+        do {
+            add();
+            pomik();
+            i++;
+        } while (equals());
+
+        System.out.println(i);
+
     }
 
     private static void add() {
         int [] p = new int[trenutni.length];
-        int i = 0;
-        for (int k : trenutni) {
-            p[i++] = k;
-        }
+        System.arraycopy(trenutni, 0, p, 0, trenutni.length);
+
         prejsni.add(p);
     }
 
-    static void premik(){
-        int index = maxIndex();
-        int koliko = trenutni[index];
-        trenutni[index] = 0;
-
-        for (int i = koliko; i > 0; i--) {
-            trenutni[(index + 1) % trenutni.length]++;
-            index++;
+    private static boolean equals() {
+        int k = 0;
+        for (int[] t : prejsni) {
+            if (Arrays.equals(trenutni, t)) {
+                System.out.println(prejsni.size() - k);
+                return false;
+            }
+            k++;
         }
-        //prejsni.add(trenutni);
+        return true;
+
     }
 
-    static int maxIndex() {
+    private static void pomik() {
+        int index = getMax();
+        int koliko = trenutni[index];
+        trenutni[index] = 0;
+        for (int i = koliko; i > 0; i--){
+            index = (index + 1) % trenutni.length;
+            trenutni[index]++;
+        }
+    }
+
+    private static int getMax() {
         int max = 0;
         for (int i = 1; i < trenutni.length; i++) {
             if (trenutni[i] > trenutni[max])
@@ -67,14 +73,4 @@ public class Dan06 {
         return max;
     }
 
-    static boolean equals(){
-
-        for (int[] ints : prejsni) {
-            for (int j = 0; j < ints.length; j++) {
-                if (trenutni[j] != ints[j])
-                    return false;
-            }
-        }
-        return true;
-    }
 }

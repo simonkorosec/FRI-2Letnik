@@ -1,6 +1,0 @@
-O3 ~ Mesec + Vlaga_min + PM10 + Temperatura_Krvavec_mean + Vlaga_max + Pritisk_max + Pritisk_mean + Postaja + Padavine_mean + Padavine_sum + Glob_sevanje_mean + Temperatura_Krvavec_min + Temperatura_lokacija_max + Sunki_vetra_min + Hitrost_vetra_mean + Hitrost_vetra_max + Vlaga_mean
-
-
-
-
-O3 ~ Temperatura_lokacija_max + Mesec + Vlaga_mean + PM10 + Glob_sevanje_mean + Temperatura_Krvavec_min + Pritisk_min + Padavine_mean + Temperatura_Krvavec_max + Pritisk_mean + Vlaga_min + Temperatura_Krvavec_mean + Pritisk_max + Postaja + Sunki_vetra_min + Temperatura_lokacija_mean + Hitrost_vetra_mean + Sunki_vetra_max + Padavine_sum + Vlaga_max + Letni_cas + Hitrost_vetra_min 
