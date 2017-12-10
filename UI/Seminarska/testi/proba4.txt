@@ -13,7 +13,7 @@ for (i in 1:k)
 	sel <- bucket.id == i	
 	learn <- pod[!sel,]
 	test <- pod[sel,]
-	observed <- pod[sel,]$PM10
+	observed <- pod[sel,]$O3
 
 	rf <- randomForest(formula, learn)
 	predicted <- predict(rf, test, type = "class")

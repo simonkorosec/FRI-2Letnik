@@ -1,0 +1,12 @@
+Izvajanje testD2
+  Log datoteka: testD2.log
+  Izhod programa: testD2.out
+  Ukazna vrstica: java Naloga2 trace heap down
+  Izhodni status: 0
+  Realni cas izvajanja: 177
+  Uporabniski cas izvajanja: 162
+  Sistemski cas izvajanja: 35
+  Procesorski cas izvajanja: 197
+Preverjanje testD2
+  Izhodni status: ok
+  Standardni izhod: err

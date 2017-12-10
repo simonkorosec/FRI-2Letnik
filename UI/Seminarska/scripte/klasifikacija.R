@@ -23,7 +23,7 @@ pod$PM10 <- cut(pod$PM10, c(-Inf,35,Inf),labels=c("NIZKA","VISOKA"))
 library(CORElearn)
 library(randomForest)
 library(ipred)
-library(adabag)
+#library(adabag)
 
 source("mojefunkcije.R")
 
@@ -53,19 +53,6 @@ mean(v)
 #
 # Glasovanje
 #
-
-voting <- function(predictions)
-{
-	res <- vector()
-
-  	for (i in 1 : nrow(predictions))  	
-	{
-		vec <- unlist(predictions[i,])
-    		res[i] <- names(which.max(table(vec)))
-  	}
-
-  	factor(res, levels=levels(predictions[,1]))
-}
 
 sel <- sample(1:nrow(pod), size=as.integer(nrow(pod)*0.7), replace=F)
 learn <- pod[sel,]

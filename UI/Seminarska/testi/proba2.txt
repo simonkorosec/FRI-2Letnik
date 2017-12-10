@@ -1,5 +1,5 @@
 n <- nrow(pod)
-k <- 10
+k <- 1
 bucket.id <- rep(1:k, length.out=n)
 s <- sample(1:n, n, FALSE)
 bucket.id <- bucket.id[s]
@@ -13,12 +13,12 @@ for (i in 1:k)
 	sel <- bucket.id == i	
 	learn <- pod[!sel,]
 	test <- pod[sel,]
-	observed <- pod[sel,]$PM10
+	observed <- pod[sel,]$O3
 
 	modelDT <- CoreModel(formula, learn, model="tree")
 	modelRF <- CoreModel(formula, learn, model="rf")
 	modelRFN <- CoreModel(formula, learn, model="rfNear")
-	modelKNN <- CoreModel(formula, learn, model="knn", kInNN = 5)
+	modelKNN <- CoreModel(formula, learn, model="knn", kInNN = 25)
 
 	predDT <- predict(modelDT, test, type = "class")
 	predRF <- predict(modelRF, test, type="class")
@@ -36,12 +36,11 @@ for (i in 1:k)
 	predKNN.prob <- predict(modelKNN, test, type="probability")
 
 	pred.prob <- caDT * predDT.prob + caRF * predRF.prob + caRFN * predRFN.prob + caKNN * predKNN.prob
-	predicted <- levels(learn$PM10)[apply(pred.prob, 1, which.max)]
+	predicted <- levels(learn$O3)[apply(pred.prob, 1, which.max)]
 
 	
 	cv.dt[i] <- CA(observed, predicted)
 	
 }
 
-cv.dt
 mean(cv.dt)

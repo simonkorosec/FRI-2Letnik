@@ -1,0 +1,12 @@
+Izvajanje testC2
+  Log datoteka: testC2.log
+  Izhod programa: testC2.out
+  Ukazna vrstica: java Naloga2 trace bubble down
+  Izhodni status: 0
+  Realni cas izvajanja: 172
+  Uporabniski cas izvajanja: 167
+  Sistemski cas izvajanja: 33
+  Procesorski cas izvajanja: 200
+Preverjanje testC2
+  Izhodni status: ok
+  Standardni izhod: err

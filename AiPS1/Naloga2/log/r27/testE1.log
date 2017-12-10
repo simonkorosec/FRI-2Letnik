@@ -1,0 +1,12 @@
+Izvajanje testE1
+  Log datoteka: testE1.log
+  Izhod programa: testE1.out
+  Ukazna vrstica: java Naloga2 trace merge up
+  Izhodni status: 0
+  Realni cas izvajanja: 179
+  Uporabniski cas izvajanja: 161
+  Sistemski cas izvajanja: 39
+  Procesorski cas izvajanja: 200
+Preverjanje testE1
+  Izhodni status: ok
+  Standardni izhod: err

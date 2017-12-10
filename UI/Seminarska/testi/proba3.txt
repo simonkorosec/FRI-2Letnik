@@ -1,5 +1,5 @@
 n <- nrow(pod)
-k <- 20
+k <- 15
 bucket.id <- rep(1:k, length.out=n)
 s <- sample(1:n, n, FALSE)
 bucket.id <- bucket.id[s]

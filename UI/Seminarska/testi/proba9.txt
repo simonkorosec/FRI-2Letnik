@@ -1,5 +1,5 @@
 n <- nrow(pod)
-k <- 15
+k <- 1
 bucket.id <- rep(1:k, length.out=n)
 s <- sample(1:n, n, FALSE)
 bucket.id <- bucket.id[s]
@@ -13,9 +13,9 @@ for (i in 1:k)
 	sel <- bucket.id == i	
 	learn <- pod[!sel,]
 	test <- pod[sel,]
-	observed <- pod[sel,]$PM10
+	observed <- pod[sel,]$O3
 
-	modelKNN <- CoreModel(formula, learn, model="knn", kInNN = 20)
+	modelKNN <- CoreModel(formula, learn, model="rf")
 	predKNN <- predict(modelKNN, test, type="class")
 	cv.dt[i] <- CA(observed, predKNN)
 }

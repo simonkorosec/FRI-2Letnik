@@ -1,19 +1,29 @@
-pod$Glob_sevanje_max   <- NULL
-pod$Glob_sevanje_min   <- NULL
-pod$Hitrost_vetra_max   <- NULL
-pod$Hitrost_vetra_min   <- NULL
-pod$Sunki_vetra_max   <- NULL
-pod$Sunki_vetra_min   <- NULL
-pod$Pritisk_max  <- NULL
-pod$Pritisk_min   <- NULL
-pod$Vlaga_max   <- NULL
-pod$Vlaga_min   <- NULL
-pod$Temperatura_Krvavec_max    <- NULL
-pod$Temperatura_Krvavec_min   <- NULL
-pod$Temperatura_lokacija_max   <- NULL
-pod$Temperatura_lokacija_min   <- NULL
+pod <- read.table("podatkiSem1.txt", sep=",", header=T)
+pod$Glob_sevanje_min <- NULL
+pod$Datum <- as.Date(pod$Datum, "%Y-%m-%d")
+pod$Mesec <- months(pod$Datum)
+pod$Mesec <- as.factor(pod$Mesec)
+zima <- pod$Mesec == "februar" | pod$Mesec == "januar" | pod$Mesec == "december"
+pomlad <- pod$Mesec == "marec" | pod$Mesec == "april" | pod$Mesec == "maj"
+poletje <- pod$Mesec == "junij" | pod$Mesec == "julij" | pod$Mesec == "avgust"
+jesen <- pod$Mesec == "september" | pod$Mesec == "oktober" | pod$Mesec == "november"
+pod$Letni_cas[zima] <- "zima"
+pod$Letni_cas[pomlad] <- "pomlad"
+pod$Letni_cas[poletje] <- "poletje"
+pod$Letni_cas[jesen] <- "jesen"
+pod$Letni_cas <- as.factor(pod$Letni_cas)
+pod$Mesec <- NULL
+pod$Datum <- NULL
+
+#
+# Klasifikacija
+#
+#pod$O3 <- cut(pod$O3, c(-Inf, 60, 120, 180, Inf), labels=c("NIZKA", "SREDNJA", "VISOKA", "EKSTREMNA"))
+#pod$PM10 <- cut(pod$PM10, c(-Inf,35,Inf),labels=c("NIZKA","VISOKA"))
 
 
+source("mojefunkcije.R")
+source("wrapper.R")
 
-
-
+library(e1071)
+library(kernlab)
