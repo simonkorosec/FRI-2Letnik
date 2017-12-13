@@ -15,7 +15,7 @@ for (i in 1:k)
 	test <- pod[sel,]
 	observed <- pod[sel,]$O3
 
-	modelKNN <- CoreModel(formula, learn, model="rf")
+	modelKNN <- CoreModel(formula, learn, model="knn", kInNN = 15)
 	predKNN <- predict(modelKNN, test, type="class")
 	cv.dt[i] <- CA(observed, predKNN)
 }

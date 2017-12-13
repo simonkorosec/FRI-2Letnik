@@ -15,7 +15,7 @@ for (i in 1:k)
 	test <- norm.data[sel,]
 	observed <- norm.data$PM10
 
-	nn <- nnet(formula, data = learn, size = 8, decay = 0.05, maxit = 1000)
+	nn <- nnet(formula, data = learn, size = 8, decay = 0.005, maxit = 10000)
 	predicted <- predict(nn, norm.data, type = "class")	
 	
 	cv.dt[i] <- CA(observed, predicted)

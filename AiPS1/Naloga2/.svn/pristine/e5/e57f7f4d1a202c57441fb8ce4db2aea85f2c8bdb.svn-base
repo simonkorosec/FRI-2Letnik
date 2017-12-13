@@ -1,0 +1,12 @@
+Izvajanje testC3
+  Log datoteka: testC3.log
+  Izhod programa: testC3.out
+  Ukazna vrstica: java Naloga2 count bubble up
+  Izhodni status: 0
+  Realni cas izvajanja: 486
+  Uporabniski cas izvajanja: 527
+  Sistemski cas izvajanja: 33
+  Procesorski cas izvajanja: 560
+Preverjanje testC3
+  Izhodni status: ok
+  Standardni izhod: err

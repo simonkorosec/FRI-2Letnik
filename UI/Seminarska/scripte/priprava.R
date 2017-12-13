@@ -1,3 +1,9 @@
+#
+# Priprava nove učne množice
+#
+
+
+
 pod <- read.table("podatkiSem1.txt", sep=",", header=T)
 pod$Glob_sevanje_min <- NULL
 pod$Datum <- as.Date(pod$Datum, "%Y-%m-%d")
@@ -15,15 +21,7 @@ pod$Letni_cas <- as.factor(pod$Letni_cas)
 pod$Mesec <- NULL
 pod$Datum <- NULL
 
-#
-# Klasifikacija
-#
-#pod$O3 <- cut(pod$O3, c(-Inf, 60, 120, 180, Inf), labels=c("NIZKA", "SREDNJA", "VISOKA", "EKSTREMNA"))
-#pod$PM10 <- cut(pod$PM10, c(-Inf,35,Inf),labels=c("NIZKA","VISOKA"))
+# Zapis nove množice podatkov
+write.table(pod, "noviPodatki.txt", sep=",", row.names=FALSE)
 
 
-source("mojefunkcije.R")
-source("wrapper.R")
-
-library(e1071)
-library(kernlab)

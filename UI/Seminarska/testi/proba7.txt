@@ -15,12 +15,9 @@ for (i in 1:k)
 	test <- pod[sel,]
 	observed <- pod[sel,]$O3
 
-	#svm <- ksvm(formula, data = learn, kernel = "rbfdot")
-	#predicted <- predict(svm, test, type = "response")
+	svm <- ksvm(formula, data = learn, kernel = "rbfdot")
+	predicted <- predict(svm, test, type = "response")
 	
-	sm <- svm(formula, data = learn)
-	predicted <- predict(sm, test, type="class")
-
 	
 	cv.dt[i] <- CA(observed, predicted)
 }
