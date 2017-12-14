@@ -7,3 +7,6 @@
 .vs/VSWorkspaceState.json
 *.class
 *.xml
+*.svn-base
+AiPS1/Naloga2/.svn/wc.db
+AiPS1/.idea/workspace.xml

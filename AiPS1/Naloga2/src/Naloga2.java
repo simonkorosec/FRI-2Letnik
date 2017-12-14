@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Naloga2 {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         String[] b = sc.nextLine().split(" ");
         int[] a = new int[b.length];
@@ -31,12 +32,21 @@ public class Naloga2 {
             case "quick":
                 quickSort(a, trace, up);
                 break;
+            case "radix":
+                radixSort(a, trace, up);
+                break;
+            case "bucket":
+                bucketSort(a, trace, up);
+                break;
             default:
                 break;
         }
     }
 
     private static void insertionSort(int[] array, boolean trace, boolean up) {
+        if (trace)
+            izpis(array, -1);
+
         if (up)
             insertionUp(array, trace);
         else
@@ -66,9 +76,6 @@ public class Naloga2 {
 
     private static void insertionUp(int[] array, boolean trace) {
         int locilo = 1;
-        if (trace) {
-            izpis(array, -1);
-        }
         for (int i = 1; i < array.length; i++) {
             int j = i;
             while (j > 0 && array[j - 1] > array[j]) {
@@ -85,9 +92,6 @@ public class Naloga2 {
 
     private static void insertionDown(int[] array, boolean trace) {
         int locilo = 1;
-        if (trace) {
-            izpis(array, -1);
-        }
         for (int i = 1; i < array.length; i++) {
             int j = i;
             while (j > 0 && array[j - 1] < array[j]) {
@@ -235,34 +239,34 @@ public class Naloga2 {
     }
 
     private static void maxHeap(int[] array, int i, int velikost) {
-        int max = i;
+        int root = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
-        if (left < velikost && array[i] < array[left])
-            max = left;
-        if (right < velikost && array[max] < array[right])
-            max = right;
+        if (left < velikost && array[root] < array[left])
+            root = left;
+        if (right < velikost && array[root] < array[right])
+            root = right;
 
-        if (max != i) {
-            swap(array, i, max);
-            maxHeap(array, max, velikost);
+        if (root != i) {
+            swap(array, i, root);
+            maxHeap(array, root, velikost);
         }
     }
 
     private static void minHeap(int[] array, int i, int velikost) {
-        int min = i;
+        int root = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
-        if (left < velikost && array[i] > array[left])
-            min = left;
-        if (right < velikost && array[min] > array[right])
-            min = right;
+        if (left < velikost && array[root] > array[left])
+            root = left;
+        if (right < velikost && array[root] > array[right])
+            root = right;
 
-        if (min != i) {
-            swap(array, i, min);
-            minHeap(array, min, velikost);
+        if (root != i) {
+            swap(array, i, root);
+            minHeap(array, root, velikost);
         }
     }
 
@@ -281,7 +285,7 @@ public class Naloga2 {
         if (array.length <= 1)
             return;
         int mid;
-        if (array.length <= 2)
+        if (array.length % 2 == 0)
             mid = array.length / 2;
         else
             mid = array.length / 2 + 1;
@@ -323,7 +327,7 @@ public class Naloga2 {
         if (array.length <= 1)
             return;
         int mid;
-        if (array.length <= 2)
+        if (array.length % 2 == 0)
             mid = array.length / 2;
         else
             mid = array.length / 2 + 1;
@@ -409,7 +413,7 @@ public class Naloga2 {
             return;
         int r = partitionDown(array, left, right);
         if (trace)
-            izpis(array, r - 1, r + 1, left, right);
+            izpis(array, r, r + 1, left, right);
 
         quickSortDown(array, left, r - 1, trace);
         quickSortDown(array, r + 1, right, trace);
@@ -421,7 +425,7 @@ public class Naloga2 {
         while (true) {
             do {
                 l++;
-            } while (l < right && array[l] >= p);
+            } while (l < right && array[l] > p);
             do {
                 r--;
             } while (array[r] < p);
@@ -431,6 +435,183 @@ public class Naloga2 {
         }
         swap(array, left, r);
         return r;
+    }
+
+    private static void radixSort(int[] array, boolean trace, boolean up) {
+        if (up)
+            radixUp(array, trace);
+        else
+            radixDown(array, trace);
+
+    }
+
+    private static void radixUp(int[] array, boolean trace) {
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max)
+                max = array[i];
+        }
+
+        if (trace)
+            izpis(array, -1);
+
+        for (int e = 1; max / e > 0; e *= 10) {
+            int[] tmpArray = new int[array.length];
+            int[] count = new int[10];
+
+            for (int el : array)
+                count[(el / e) % 10]++;
+
+            for (int i = 1; i < 10; i++)
+                count[i] += count[i - 1];
+
+            for (int i = array.length - 1; i >= 0; i--) {
+                tmpArray[count[((array[i] / e) % 10)] - 1] = array[i];
+                count[(array[i] / e) % 10]--;
+            }
+
+            System.arraycopy(tmpArray, 0, array, 0, array.length);
+
+            if (trace)
+                izpis(array, -1);
+        }
+    }
+
+    private static void radixDown(int[] array, boolean trace) {
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max)
+                max = array[i];
+        }
+
+        if (trace)
+            izpis(array, -1);
+
+        for (int e = 1; max / e > 0; e *= 10) {
+            int[] tmpArray = new int[array.length];
+            int[] count = new int[10];
+
+            for (int el : array)
+                count[9 - (el / e) % 10]++;
+
+            for (int i = 1; i < 10; i++)
+                count[i] += count[i - 1];
+
+            for (int i = array.length - 1; i >= 0; i--) {
+                tmpArray[count[9 - ((array[i] / e) % 10)] - 1] = array[i];
+                count[9 - (array[i] / e) % 10]--;
+            }
+
+            System.arraycopy(tmpArray, 0, array, 0, array.length);
+            if (trace)
+                izpis(array, -1);
+        }
+    }
+
+    private static void bucketSort(int[] array, boolean trace, boolean up) {
+        if (up)
+            bucketUp(array, trace);
+        else
+            bucketDown(array, trace);
+
+    }
+
+    private static void bucketDown(int[] array, boolean trace) {
+        if (trace)
+            izpis(array, -1);
+
+        int max = array[0];
+        int min = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max)
+                max = array[i];
+            if (array[i] < min)
+                min = array[i];
+        }
+
+        int k = array.length / 2;
+        double v = (max - min + 1.0) / k;
+
+        int [] tmpArray = new int[array.length];
+        int [] bucket = new int[k];
+
+        for (int anArray : array) {
+            int p = (int) ((anArray - min) / v);
+            bucket[k - 1 - p]++;
+        }
+
+        for (int i = 1; i < bucket.length; i++)
+            bucket[i] += bucket[i- 1];
+
+        for (int i = array.length - 1; i >= 0; i--) {
+            int p = (int) ((array[i] - min) / v);
+            tmpArray[bucket[k - 1 - p] - 1] = array[i];
+            bucket[k - 1 - p]--;
+        }
+
+        System.arraycopy(tmpArray, 0, array, 0, tmpArray.length);
+
+        if (trace)
+            izpis(array, bucket);
+
+        insertionDown(array, trace);
+
+    }
+
+    private static void bucketUp(int[] array, boolean trace) {
+        if (trace)
+            izpis(array, -1);
+
+        int max = array[0];
+        int min = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max)
+                max = array[i];
+            if (array[i] < min)
+                min = array[i];
+        }
+
+        int k = array.length / 2;
+        double v = (max - min + 1.0) / k;
+
+        int [] tmpArray = new int[array.length];
+        int [] bucket = new int[k];
+
+        for (int anArray : array) {
+            int p = (int) ((anArray - min) / v);
+            bucket[p]++;
+        }
+
+        for (int i = 1; i < bucket.length; i++)
+            bucket[i] += bucket[i- 1];
+
+        for (int i = array.length - 1; i >= 0; i--) {
+            int p = (int) ((array[i] - min) / v);
+            tmpArray[bucket[p]-1] = array[i];
+            bucket[p]--;
+        }
+
+        System.arraycopy(tmpArray, 0, array, 0, tmpArray.length);
+
+        if (trace)
+            izpis(array, bucket);
+
+        insertionUp(array, trace);
+    }
+
+    private static void izpis(int[] array, int [] locila) {
+        StringBuilder sb = new StringBuilder();
+        int p = (locila.length > 1) ? 1 : 0;
+        int locilo = locila[p];
+        for (int k = 0; k < array.length; k++) {
+            sb.append(array[k]).append(" ");
+            if (locilo == k + 1) {
+                sb.append("| ");
+                p++;
+                locilo = (p < locila.length) ? locila[p] : 0;
+            }
+        }
+        System.out.println(sb.toString().trim());
     }
 
     private static void izpis(int[] array, int locilo) {

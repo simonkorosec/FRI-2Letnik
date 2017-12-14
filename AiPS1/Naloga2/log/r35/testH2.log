@@ -1,0 +1,12 @@
+Izvajanje testH2
+  Log datoteka: testH2.log
+  Izhod programa: testH2.out
+  Ukazna vrstica: java Naloga2 trace bucket down
+  Izhodni status: 0
+  Realni cas izvajanja: 167
+  Uporabniski cas izvajanja: 163
+  Sistemski cas izvajanja: 25
+  Procesorski cas izvajanja: 188
+Preverjanje testH2
+  Izhodni status: ok
+  Standardni izhod: err

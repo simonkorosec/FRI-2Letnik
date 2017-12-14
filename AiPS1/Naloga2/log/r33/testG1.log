@@ -1,0 +1,11 @@
+Izvajanje testG1
+  Log datoteka: testG1.log
+  Izhod programa: testG1.out
+  Ukazna vrstica: java Naloga2 trace radix up
+  Izhodni status: 1
+  Realni cas izvajanja: 180
+  Uporabniski cas izvajanja: 163
+  Sistemski cas izvajanja: 30
+  Procesorski cas izvajanja: 193
+Preverjanje testG1
+  Izhodni status: err

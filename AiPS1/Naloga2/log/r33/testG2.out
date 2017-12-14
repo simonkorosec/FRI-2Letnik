@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 666
+	at Naloga2.radixDown(Naloga2.java:487)
+	at Naloga2.radixSort(Naloga2.java:447)
+	at Naloga2.main(Naloga2.java:36)

@@ -1,0 +1,12 @@
+Izvajanje testG3
+  Log datoteka: testG3.log
+  Izhod programa: testG3.out
+  Ukazna vrstica: java Naloga2 count radix up
+  Izhodni status: 0
+  Realni cas izvajanja: 293
+  Uporabniski cas izvajanja: 353
+  Sistemski cas izvajanja: 37
+  Procesorski cas izvajanja: 390
+Preverjanje testG3
+  Izhodni status: ok
+  Standardni izhod: err

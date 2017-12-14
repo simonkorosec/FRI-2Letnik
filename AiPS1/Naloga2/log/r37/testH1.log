@@ -1,0 +1,12 @@
+Izvajanje testH1
+  Log datoteka: testH1.log
+  Izhod programa: testH1.out
+  Ukazna vrstica: java Naloga2 trace bucket up
+  Izhodni status: 0
+  Realni cas izvajanja: 162
+  Uporabniski cas izvajanja: 154
+  Sistemski cas izvajanja: 33
+  Procesorski cas izvajanja: 187
+Preverjanje testH1
+  Izhodni status: ok
+  Standardni izhod: err

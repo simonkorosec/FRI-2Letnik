@@ -1,0 +1,12 @@
+Izvajanje testA3
+  Log datoteka: testA3.log
+  Izhod programa: testA3.out
+  Ukazna vrstica: java Naloga2 count insert up
+  Izhodni status: 0
+  Realni cas izvajanja: 273
+  Uporabniski cas izvajanja: 359
+  Sistemski cas izvajanja: 37
+  Procesorski cas izvajanja: 396
+Preverjanje testA3
+  Izhodni status: ok
+  Standardni izhod: err
