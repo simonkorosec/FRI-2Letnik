@@ -37,37 +37,13 @@ var joggingAngle = 0;
 // Helper variable for animation
 var lastTime = 0;
 
-
-// Array of all wall positions
 var wallPositions = [];
 
 
-function Wall() {
-    this.points = [];
-
-    this.isFull = function () {
-        if (this.points.length >= 12){
-            this.points = this.points.slice(0,4);   // Only keep first 4 points rest are identical
-            return true;                            // becuse we dont look at the Y axias with walls
-        }
-        return false;
-    };
-
-    this.checkCollision = function () {
-        var odmik = 0.13;   // So the player can't see throught the wall when he turns near a wall
-
-        var minX = Math.min(this.points[0], this.points[2]) - odmik;
-        var maxX = Math.max(this.points[0], this.points[2]) + odmik;
-        var minZ = Math.min(this.points[1], this.points[3]) - odmik;
-        var maxZ = Math.max(this.points[1], this.points[3]) + odmik;
-
-        return (zPosition > minZ && zPosition < maxZ) &&
-            (xPosition > minX && xPosition < maxX);
-
-    };
+class Wall {
+    points = [];
 
 }
-
 
 //
 // Matrix utility functions
@@ -76,6 +52,7 @@ function Wall() {
 // mvPop    ... pop top matrix from stack
 // degToRad ... convert degrees to radians
 //
+// noinspection JSUnusedGlobalSymbols
 function mvPushMatrix() {
     var copy = mat4.create();
     mat4.set(mvMatrix, copy);
@@ -262,24 +239,13 @@ function handleLoadedWorld(data) {
     var vertexCount = 0;
     var vertexPositions = [];
     var vertexTextureCoords = [];
-    var numWalls = 0;
-    wallPositions.push(new Wall());
-
     for (var i in lines) {
-
-        if (wallPositions[numWalls].isFull()) {
-            wallPositions.push(new Wall());
-            numWalls++;
-        }
-
         var vals = lines[i].replace(/^\s+/, "").split(/\s+/);
         if (vals.length === 5 && vals[0] !== "//") {
             // It is a line describing a vertex; get X, Y and Z first
             vertexPositions.push(parseFloat(vals[0]));
             vertexPositions.push(parseFloat(vals[1]));
             vertexPositions.push(parseFloat(vals[2]));
-
-            wallPositions[numWalls].points.push(parseFloat(vals[0]), parseFloat(vals[2]));
 
             // And then the texture coords
             vertexTextureCoords.push(parseFloat(vals[3]));
@@ -373,14 +339,12 @@ function drawScene() {
 
 
 function checkCollision() {
-
-    // Check collision for each wall in array
-    for (var i = 0; i < wallPositions.length; i++) {
-        if (wallPositions[i].checkCollision()){
-            return true;
-        }
+    var odmik = 0.2;
+    if (zPosition < 0.5 - odmik && zPosition > -11.5 + odmik){
+        return false;
     }
-    return false;
+    return true;
+
 }
 
 //
@@ -404,14 +368,10 @@ function animate() {
             joggingAngle += elapsed * 0.6;
             yPosition = Math.sin(degToRad(joggingAngle)) / 20 + 0.4;
 
-            // If collision reverte move to previous position
-            if (checkCollision()) {
+            if (checkCollision()){
                 xPosition = prevX;
                 yPosition = prevY;
                 zPosition = prevZ;
-
-                playBump();
-
             }
         }
 
@@ -421,27 +381,6 @@ function animate() {
     }
     lastTime = timeNow;
 }
-
-
-// Play bump sound upon collision
-// Only one sound will play at a time
-var playingBump = false;    // if alredy playing
-var currAudio = [];         // last audio effect
-function playBump() {
-    var audio = new Audio("./assets/bump-sound.mp3");
-    if (!playingBump) {     // if not playing play sound
-        audio.play();
-        playingBump = true;
-        currAudio.push(audio);
-    }
-
-    // If last audio ended remove it from array and check playing to false
-    if (currAudio[0].ended){
-        playingBump = false;
-        currAudio.pop();
-    }
-}
-
 
 //
 // Keyboard handling helper functions
@@ -466,31 +405,31 @@ function handleKeyUp(event) {
 // input handling. Function continuisly updates helper variables.
 //
 function handleKeys() {
-    if (currentlyPressedKeys[38]) {
-        // Up cursor key
+    if (currentlyPressedKeys[33]) {
+        // Page Up
         pitchRate = 0.1;
-    } else if (currentlyPressedKeys[40]) {
-        // Down cursor key
+    } else if (currentlyPressedKeys[34]) {
+        // Page Down
         pitchRate = -0.1;
     } else {
         pitchRate = 0;
     }
 
-    if (currentlyPressedKeys[37]) {
-        // Left cursor key
+    if (currentlyPressedKeys[37] || currentlyPressedKeys[65]) {
+        // Left cursor key or A
         yawRate = 0.1;
-    } else if (currentlyPressedKeys[39]) {
-        // Right cursor key
+    } else if (currentlyPressedKeys[39] || currentlyPressedKeys[68]) {
+        // Right cursor key or D
         yawRate = -0.1;
     } else {
         yawRate = 0;
     }
 
-    if (currentlyPressedKeys[87]) {
-        // W key
+    if (currentlyPressedKeys[38] || currentlyPressedKeys[87]) {
+        // Up cursor key or W
         speed = 0.003;
-    } else if (currentlyPressedKeys[83]) {
-        // S key
+    } else if (currentlyPressedKeys[40] || currentlyPressedKeys[83]) {
+        // Down cursor key
         speed = -0.003;
     } else {
         speed = 0;

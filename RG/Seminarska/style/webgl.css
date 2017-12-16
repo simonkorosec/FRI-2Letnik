@@ -9,11 +9,7 @@ canvas {
 }
 
 h1 {
-	text-align: left;
-}
-
-h2 {
-	text-align: left;
+	text-align: center;
 }
 
 ul {
@@ -30,4 +26,10 @@ td {
 	left:150px;
 	font-size:2em;
 	color: white;
+}
+
+#help-info {
+    padding-top: 3em;
+    margin: auto;
+    text-align: center;
 }
