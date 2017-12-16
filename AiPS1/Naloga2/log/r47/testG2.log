@@ -1,0 +1,13 @@
+Izvajanje testG2
+  Log datoteka: testG2.log
+  Izhod programa: testG2.out
+  Ukazna vrstica: java Naloga2 trace radix down
+  Izhodni status: 0
+  Realni cas izvajanja: 165
+  Uporabniski cas izvajanja: 163
+  Sistemski cas izvajanja: 30
+  Procesorski cas izvajanja: 193
+Preverjanje testG2
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

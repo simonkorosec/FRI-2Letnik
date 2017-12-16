@@ -2,61 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="971dc068-2e58-4af0-abf4-86ab1d81fefe" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Advent/src/Dan11/Dan11.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Izziv5.java" />
-      <change beforePath="$PROJECT_DIR$/../Advent/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Advent/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/../Advent/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Advent/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Naloga2/log/oddaja.log" afterPath="$PROJECT_DIR$/Naloga2/log/oddaja.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/compile.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/compile.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testA1.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testA1.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testA1.out" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testA1.out" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testA2.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testA2.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testA2.out" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testA2.out" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testA3.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testA3.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testB1.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testB1.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testB1.out" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testB1.out" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testB2.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testB2.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testB2.out" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testB2.out" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testB3.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testB3.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testC1.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testC1.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testC1.out" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testC1.out" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testC2.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testC2.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testC2.out" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testC2.out" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testC3.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testC3.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testD1.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testD1.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testD1.out" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testD1.out" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testD2.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testD2.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testD2.out" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testD2.out" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testD3.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testD3.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testE1.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testE1.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testE1.out" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testE1.out" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testE2.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testE2.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testE2.out" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testE2.out" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testE3.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testE3.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testF1.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testF1.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testF1.out" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testF1.out" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testF2.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testF2.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testF2.out" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testF2.out" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testF3.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testF3.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testG1.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testG1.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testG2.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testG2.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testG3.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testG3.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testH1.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testH1.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testH2.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testH2.log" />
-      <change beforePath="$PROJECT_DIR$/Naloga2/log/r27/testH3.log" afterPath="$PROJECT_DIR$/Naloga2/log/r27/testH3.log" />
       <change beforePath="$PROJECT_DIR$/Naloga2/src/Naloga2.java" afterPath="$PROJECT_DIR$/Naloga2/src/Naloga2.java" />
       <change beforePath="$PROJECT_DIR$/src/Naloga2.java" afterPath="$PROJECT_DIR$/src/Naloga2.java" />
-      <change beforePath="$PROJECT_DIR$/../UI/Seminarska/.RData" afterPath="$PROJECT_DIR$/../UI/Seminarska/.RData" />
-      <change beforePath="$PROJECT_DIR$/../UI/Seminarska/.Rhistory" afterPath="$PROJECT_DIR$/../UI/Seminarska/.Rhistory" />
-      <change beforePath="$PROJECT_DIR$/../UI/Seminarska/rezultati.xlsx" afterPath="$PROJECT_DIR$/../UI/Seminarska/rezultati.xlsx" />
-      <change beforePath="$PROJECT_DIR$/../UI/Seminarska/scripte/grafi.R" afterPath="$PROJECT_DIR$/../UI/Seminarska/scripte/grafi.R" />
-      <change beforePath="$PROJECT_DIR$/../UI/Seminarska/scripte/klasifikacija.R" afterPath="$PROJECT_DIR$/../UI/Seminarska/scripte/klasifikacija.R" />
-      <change beforePath="$PROJECT_DIR$/../UI/Seminarska/scripte/priprava.R" afterPath="$PROJECT_DIR$/../UI/Seminarska/scripte/priprava.R" />
-      <change beforePath="$PROJECT_DIR$/../UI/Seminarska/testi/proba6.txt" afterPath="$PROJECT_DIR$/../UI/Seminarska/testi/proba6.txt" />
-      <change beforePath="$PROJECT_DIR$/../UI/Seminarska/testi/proba7.txt" afterPath="$PROJECT_DIR$/../UI/Seminarska/testi/proba7.txt" />
-      <change beforePath="$PROJECT_DIR$/../UI/Seminarska/testi/proba9.txt" afterPath="$PROJECT_DIR$/../UI/Seminarska/testi/proba9.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,38 +20,92 @@
       <file leaf-file-name="Naloga2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Naloga2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="478" column="51" lean-forward="true" selection-start-line="478" selection-start-column="51" selection-end-line="478" selection-end-column="51" />
+            <state relative-caret-position="105">
+              <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
-                <element signature="method#heapUp#0;class#Naloga2#0" expanded="false" />
-                <element signature="method#heapDown#0;class#Naloga2#0" expanded="false" />
-                <element signature="method#createHeap#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
-                <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
-                <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
-                <element signature="method#getMax#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
                 <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+                <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+                <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+                <element signature="e#24225#24226#0" expanded="true" />
+                <element signature="e#24282#24283#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Naloga2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Naloga2/src/Naloga2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="807">
+              <caret line="865" column="1" lean-forward="false" selection-start-line="865" selection-start-column="1" selection-end-line="865" selection-end-column="1" />
+              <folding>
+                <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
+                <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+                <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+                <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+                <element signature="e#24411#24412#0" expanded="true" />
+                <element signature="e#24468#24469#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,17 +136,16 @@
         <option value="$PROJECT_DIR$/src/StdDraw.java" />
         <option value="$PROJECT_DIR$/src/Izziv4.java" />
         <option value="$PROJECT_DIR$/src/Naloga1.java" />
-        <option value="$PROJECT_DIR$/Naloga2/src/Naloga2.java" />
         <option value="$PROJECT_DIR$/src/Vaja3/Naloga2.java" />
         <option value="$PROJECT_DIR$/src/neki.java" />
         <option value="$PROJECT_DIR$/src/Izziv5.java" />
+        <option value="$PROJECT_DIR$/Naloga2/src/Naloga2.java" />
         <option value="$PROJECT_DIR$/src/Naloga2.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="499" />
-    <option name="y" value="-18" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="952" />
     <option name="width" value="976" />
     <option name="height" value="1050" />
   </component>
@@ -210,7 +212,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -223,35 +225,14 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="AiPS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AiPS1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AiPS1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AiPS1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/stdlib.jar!/" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
     <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
@@ -457,8 +438,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
-    <editor active="true" />
+    <frame x="952" y="0" width="976" height="1050" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -468,7 +448,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33369684" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41786107" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -500,17 +480,17 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4514722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32819384" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41786107" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3361169" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.282881" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -521,7 +501,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="18" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -531,35 +511,311 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapUp#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#createHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
             <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#getMax#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Naloga2/src/Naloga2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Naloga2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Naloga2/src/Naloga2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Naloga2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Naloga2/src/Naloga2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding>
+            <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Naloga2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Naloga2/src/Naloga2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9282">
+          <caret line="442" column="73" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="559" selection-end-column="0" />
+          <folding>
+            <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Naloga2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Naloga2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -568,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -577,35 +832,42 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapUp#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#createHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
             <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#getMax#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -614,7 +876,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -623,35 +884,42 @@
         <state relative-caret-position="252">
           <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapUp#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#createHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
             <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#getMax#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -660,7 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,35 +936,42 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapUp#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#createHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
             <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#getMax#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -707,35 +981,42 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapUp#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#createHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
             <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#getMax#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -745,35 +1026,42 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapUp#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#createHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
             <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#getMax#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -783,35 +1071,42 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapUp#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#createHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
             <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#getMax#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -942,52 +1237,95 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Naloga2/src/Naloga2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Naloga2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="478" column="51" lean-forward="true" selection-start-line="478" selection-start-column="51" selection-end-line="478" selection-end-column="51" />
+        <state relative-caret-position="807">
+          <caret line="865" column="1" lean-forward="false" selection-start-line="865" selection-start-column="1" selection-end-line="865" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapUp#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#heapDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#createHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
             <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
             <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
-            <element signature="method#getMax#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
             <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24411#24412#0" expanded="true" />
+            <element signature="e#24468#24469#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Naloga2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+          <folding>
+            <element signature="method#insertionSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#insertionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#insertionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#selectionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bubbleDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#heapSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#maxHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#minHeap#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#mergDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSortUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#partitionUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#quickSortDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#partitionDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixSort#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#radixDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketDown#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#bucketUp#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#0;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#1;class#Naloga2#0" expanded="false" />
+            <element signature="method#izpis#2;class#Naloga2#0" expanded="false" />
+            <element signature="method#swap#0;class#Naloga2#0" expanded="false" />
+            <element signature="e#24225#24226#0" expanded="true" />
+            <element signature="e#24282#24283#0" expanded="true" />
           </folding>
         </state>
       </provider>

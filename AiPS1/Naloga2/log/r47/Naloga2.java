@@ -2,50 +2,40 @@ import java.util.Scanner;
 
 public class Naloga2 {
     public static void main(String[] args) {
-
-        args = new String[]{"count", "insert", "up"};
-
         Scanner sc = new Scanner(System.in);
-        Scanner l = new Scanner(sc.nextLine());
-        /*String[] b = sc.nextLine().split(" ");
+        String[] b = sc.nextLine().split(" ");
         int[] a = new int[b.length];
         for (int i = 0; i < b.length; i++) {
             a[i] = Integer.parseInt(b[i]);
-        }*/
-
-        ResizableArray a = new ResizableArray();
-        while (l.hasNextInt()) {
-            a.add(l.nextInt());
         }
-        a.fixArray();
 
         boolean trace = args[0].equals("trace");
         boolean up = args[2].equals("up");
 
         switch (args[1]) {
             case "insert":
-                insertionSort(a.array, trace, up);
+                insertionSort(a, trace, up);
                 break;
             case "select":
-                selectionSort(a.array, trace, up);
+                selectionSort(a, trace, up);
                 break;
             case "bubble":
-                bubbleSort(a.array, trace, up);
+                bubbleSort(a, trace, up);
                 break;
             case "heap":
-                heapSort(a.array, trace, up);
+                heapSort(a, trace, up);
                 break;
             case "merge":
-                mergSort(a.array, trace, up);
+                mergSort(a, trace, up);
                 break;
             case "quick":
-                quickSort(a.array, trace, up);
+                quickSort(a, trace, up);
                 break;
             case "radix":
-                radixSort(a.array, trace, up);
+                radixSort(a, trace, up);
                 break;
             case "bucket":
-                bucketSort(a.array, trace, up);
+                bucketSort(a, trace, up);
                 break;
             default:
                 break;
@@ -67,6 +57,8 @@ public class Naloga2 {
                 System.out.printf("%d %d | ", r[0], r[1]);
                 r = insertionDown(array, false);
                 System.out.printf("%d %d", r[0], r[1]);
+
+
             } else {
                 int[] r = insertionDown(array, false);
                 System.out.printf("%d %d | ", r[0], r[1]);
@@ -175,21 +167,13 @@ public class Naloga2 {
         int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
         for (int i = 1; i < array.length; i++) {
             int j = i;
-            boolean loop = true;
-
-            //rez[1]++;
-            rez[0] += 2;
             while (j > 0 && array[j - 1] > array[j]) {
                 rez[1]++;
                 swap(array, j - 1, j);
-                rez[0]++;
+                rez[0] += 3;
                 j--;
-                loop = false;
             }
-            if (loop) {
-                rez[1]++;
-            }
-
+            rez[1]++;
             locilo++;
             if (trace) {
                 izpis(array, locilo);
@@ -204,18 +188,12 @@ public class Naloga2 {
         int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
         for (int i = 1; i < array.length; i++) {
             int j = i;
-
-            rez[1]++;
-            rez[0] += 2;
             while (j > 0 && array[j - 1] < array[j]) {
-                if (array[j - 1] < array[j]) {
-                    rez[1]++;
-                }
+                rez[1]++;
                 swap(array, j - 1, j);
-                rez[0]++;
+                rez[0] += 3;
                 j--;
             }
-
             locilo++;
             if (trace) {
                 izpis(array, locilo);
@@ -826,41 +804,4 @@ public class Naloga2 {
         array[j] = tmp;
     }
 
-}
-
-
-class ResizableArray {
-
-    int[] array;
-    private int size;
-
-    ResizableArray() {
-        this.array = new int[10];
-        this.size = 0;
-    }
-
-    void add(int x) {
-        if (this.isFull()) {
-            this.resize();
-        }
-        this.array[this.size] = x;
-        this.size++;
-
-    }
-
-    private boolean isFull() {
-        return this.size == this.array.length - 1;
-    }
-
-    private void resize() {
-        int[] tmp = new int[this.array.length * 2];
-        System.arraycopy(this.array, 0, tmp, 0, this.array.length);
-        this.array = tmp;
-    }
-
-    void fixArray() {
-        int[] tmp = new int[this.size];
-        System.arraycopy(this.array, 0, tmp, 0, this.size);
-        this.array = tmp;
-    }
 }
