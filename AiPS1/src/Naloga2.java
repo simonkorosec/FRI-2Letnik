@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Naloga2 {
     public static void main(String[] args) {
 
-        args = new String[]{"count", "insert", "up"};
+        args = new String[]{"count", "radix", "down"};
 
         Scanner sc = new Scanner(System.in);
         Scanner l = new Scanner(sc.nextLine());
@@ -76,9 +76,9 @@ public class Naloga2 {
     private static void selectionSort(int[] array, boolean trace, boolean up) {
         if (trace) {
             if (up)
-                selectionUp(array, trace);
+                selectionUp(array, true);
             else
-                selectionDown(array, trace);
+                selectionDown(array, true);
         } else {
             if (up) {
                 int[] r = selectionUp(array, false);
@@ -103,9 +103,9 @@ public class Naloga2 {
     private static void bubbleSort(int[] array, boolean trace, boolean up) {
         if (trace) {
             if (up)
-                bubbleUp(array, trace);
+                bubbleUp(array, true);
             else
-                bubbleDown(array, trace);
+                bubbleDown(array, true);
         } else {
             if (up) {
                 int[] r = bubbleUp(array, false);
@@ -126,43 +126,144 @@ public class Naloga2 {
     }
 
     private static void heapSort(int[] array, boolean trace, boolean up) {
-        if (up)
-            heapSortUp(array, trace);
-        else
-            heapSortDown(array, trace);
+        if (trace) {
+            if (up)
+                heapSortUp(array, true);
+            else
+                heapSortDown(array, true);
+        } else {
+            if (up) {
+                int[] r = heapSortUp(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = heapSortUp(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = heapSortDown(array, false);
+                System.out.printf("%d %d", r[0], r[1]);
+            } else {
+                int[] r = heapSortDown(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = heapSortDown(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = heapSortUp(array, false);
+                System.out.printf("%d %d", r[0], r[1]);
+            }
+        }
     }
 
-    private static void mergSort(int[] array, boolean trace, boolean max) {
-        if (trace)
+    private static void mergSort(int[] array, boolean trace, boolean up) {
+        if (trace) {
             izpis(array, -1);
+        }
 
-        if (max)
-            mergSortUp(array, trace);
-        else
-            mergSortDown(array, trace);
-
+        if (trace) {
+            if (up) {
+                mergSortUp(array, true);
+            } else {
+                mergSortDown(array, true);
+            }
+        } else {
+            if (up) {
+                int[] r = mergSortUp(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = mergSortUp(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = mergSortDown(array, false);
+                System.out.printf("%d %d", r[0], r[1]);
+            } else {
+                int[] r = mergSortDown(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = mergSortDown(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = mergSortUp(array, false);
+                System.out.printf("%d %d", r[0], r[1]);
+            }
+        }
     }
 
-    private static void quickSort(int[] array, boolean trace, boolean max) {
-        if (trace)
+    private static void quickSort(int[] array, boolean trace, boolean up) {
+        if (trace) {
             izpis(array, -1);
+        }
 
-        if (max)
-            quickSortUp(array, 0, array.length - 1, trace);
-        else
-            quickSortDown(array, 0, array.length - 1, trace);
+        if (trace) {
+            if (up) {
+                quickSortUp(array, 0, array.length - 1, true);
+            } else {
+                quickSortDown(array, 0, array.length - 1, true);
+            }
+        } else {
+            if (up) {
+                int[] r = quickSortUp(array, 0, array.length - 1, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = quickSortUp(array, 0, array.length - 1, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = quickSortDown(array, 0, array.length - 1, false);
+                System.out.printf("%d %d", r[0], r[1]);
+            } else {
+                int[] r = quickSortDown(array, 0, array.length - 1, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = quickSortDown(array, 0, array.length - 1, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = quickSortUp(array, 0, array.length - 1, false);
+                System.out.printf("%d %d", r[0], r[1]);
+            }
+        }
 
-        if (trace)
+        if (trace) {
             izpis(array, -1);
+        }
+    }
 
+    private static void radixSort(int[] array, boolean trace, boolean up) {
+        if (trace) {
+            if (up) {
+                radixUp(array, true);
+            } else {
+                radixDown(array, true);
+            }
+        } else {
+            if (up) {
+                int[] r = radixUp(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = radixUp(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = radixDown(array, false);
+                System.out.printf("%d %d", r[0], r[1]);
+            } else {
+                int[] r = radixDown(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = radixDown(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = radixUp(array, false);
+                System.out.printf("%d %d", r[0], r[1]);
+            }
+        }
     }
 
     private static void bucketSort(int[] array, boolean trace, boolean up) {
-        if (up)
-            bucketUp(array, trace);
-        else
-            bucketDown(array, trace);
-
+        if (trace) {
+            if (up) {
+                bucketUp(array, true);
+            } else {
+                bucketDown(array, true);
+            }
+        } else {
+            if (up) {
+                int[] r = bucketUp(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = bucketUp(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = bucketDown(array, false);
+                System.out.printf("%d %d", r[0], r[1]);
+            } else {
+                int[] r = bucketDown(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = bucketDown(array, false);
+                System.out.printf("%d %d | ", r[0], r[1]);
+                r = bucketUp(array, false);
+                System.out.printf("%d %d", r[0], r[1]);
+            }
+        }
     }
 
     private static int[] insertionUp(int[] array, boolean trace) {
@@ -170,18 +271,20 @@ public class Naloga2 {
         int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
         for (int i = 1; i < array.length; i++) {
             int j = i;
-            boolean loop = true;
+            boolean loop = false;
 
-            //rez[1]++;
             rez[0] += 2;
+            rez[1]++;
             while (j > 0 && array[j - 1] > array[j]) {
-                rez[1]++;
+                if (loop) {
+                    rez[1]++;
+                }
                 swap(array, j - 1, j);
                 rez[0]++;
                 j--;
-                loop = false;
+                loop = true;
             }
-            if (loop) {
+            if (j > 0 && loop) {
                 rez[1]++;
             }
 
@@ -199,16 +302,21 @@ public class Naloga2 {
         int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
         for (int i = 1; i < array.length; i++) {
             int j = i;
+            boolean loop = false;
 
             rez[1]++;
             rez[0] += 2;
             while (j > 0 && array[j - 1] < array[j]) {
-                if (array[j - 1] < array[j]) {
+                if (loop) {
                     rez[1]++;
                 }
                 swap(array, j - 1, j);
                 rez[0]++;
                 j--;
+                loop = true;
+            }
+            if (j > 0 && loop) {
+                rez[1]++;
             }
 
             locilo++;
@@ -272,11 +380,11 @@ public class Naloga2 {
         if (trace) {
             izpis(array, -1);
         }
-        int zadnjiSwap = 1;
+        int meja = 0;
         for (int i = 1; i < array.length; i++) {
             boolean u = true;
             int trenutni = 0;
-            for (int j = array.length - 1; j >= zadnjiSwap; j--) {
+            for (int j = array.length - 1; j > meja; j--) {
                 rez[1]++;
                 if (array[j - 1] > array[j]) {
                     swap(array, j - 1, j);
@@ -285,9 +393,11 @@ public class Naloga2 {
                     u = false;
                 }
             }
-            if (u) continue;
-            zadnjiSwap = trenutni;
-            locilo = zadnjiSwap;
+            if (u) {
+                break;
+            }
+            meja = trenutni;
+            locilo = meja;
             if (trace) {
                 izpis(array, locilo);
             }
@@ -301,11 +411,12 @@ public class Naloga2 {
         if (trace) {
             izpis(array, -1);
         }
-        int zadnjiSwap = 1;
+
+        int meja = 0;
         for (int i = 1; i < array.length; i++) {
             boolean u = true;
             int trenutni = 0;
-            for (int j = array.length - 1; j >= zadnjiSwap; j--) {
+            for (int j = array.length - 1; j > meja; j--) {
                 rez[1]++;
                 if (array[j - 1] < array[j]) {
                     swap(array, j - 1, j);
@@ -314,13 +425,19 @@ public class Naloga2 {
                     u = false;
                 }
             }
-            if (u) continue;
-            zadnjiSwap = trenutni;
-            locilo = zadnjiSwap;
+            if (u) {
+                break;
+            }
+            meja = trenutni;
+            locilo = meja;
             if (trace) {
                 izpis(array, locilo);
             }
         }
+        if (trace) {
+            izpis(array, array.length - 1);
+        }
+
         return rez;
     }
 
@@ -332,17 +449,23 @@ public class Naloga2 {
         int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
 
         for (int i = (array.length / 2) - 1; i >= 0; i--) {
-            maxHeap(array, i, array.length);
+            int[] t = maxHeap(array, i, array.length);
+            rez[0] += t[0];
+            rez[1] += t[1];
         }
+        rez[0] -= 3;
 
         for (int last = array.length - 1; last >= 0; last--) {
             if (trace) {
                 izpis(array, last + 1);
             }
+
             swap(array, 0, last);
             rez[0] += 3;
-            maxHeap(array, 0, last);
 
+            int[] t = maxHeap(array, 0, last);
+            rez[0] += t[0];
+            rez[1] += t[1];
         }
 
         return rez;
@@ -353,10 +476,12 @@ public class Naloga2 {
             izpis(array, -1);
         }
 
-        int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
+        int[] rez = new int[]{-3, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
 
         for (int i = (array.length / 2) - 1; i >= 0; i--) {
-            minHeap(array, i, array.length);
+            int[] t = minHeap(array, i, array.length);
+            rez[0] += t[0];
+            rez[1] += t[1];
         }
         for (int last = array.length - 1; last >= 0; last--) {
             if (trace) {
@@ -364,42 +489,79 @@ public class Naloga2 {
             }
             swap(array, 0, last);
             rez[0] += 3;
-            minHeap(array, 0, last);
+
+            int[] t = minHeap(array, 0, last);
+            rez[0] += t[0];
+            rez[1] += t[1];
         }
 
         return rez;
     }
 
-    private static void maxHeap(int[] array, int i, int velikost) {
-        int root = i;
+    private static int[] maxHeap(int[] array, int i, int velikost) {
+        int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
+
+        int maximum = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
-        if (left < velikost && array[root] < array[left])
-            root = left;
-        if (right < velikost && array[root] < array[right])
-            root = right;
-
-        if (root != i) {
-            swap(array, i, root);
-            maxHeap(array, root, velikost);
+        if (left < velikost && array[maximum] < array[left]) {
+            maximum = left;
         }
+        if (left < velikost) {
+            rez[1]++;
+        }
+
+        if (right < velikost && array[maximum] < array[right]) {
+            maximum = right;
+        }
+        if (right < velikost) {
+            rez[1]++;
+        }
+
+        if (maximum != i) {
+            swap(array, i, maximum);
+            rez[0] += 3;
+
+            int[] t = maxHeap(array, maximum, velikost);
+            rez[0] += t[0];
+            rez[1] += t[1];
+        }
+
+        return rez;
     }
 
-    private static void minHeap(int[] array, int i, int velikost) {
+    private static int[] minHeap(int[] array, int i, int velikost) {
+        int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
+
         int root = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
-        if (left < velikost && array[root] > array[left])
+        if (left < velikost && array[root] > array[left]) {
             root = left;
-        if (right < velikost && array[root] > array[right])
+        }
+        if (left < velikost) {
+            rez[1]++;
+        }
+
+        if (right < velikost && array[root] > array[right]) {
             root = right;
+        }
+        if (right < velikost) {
+            rez[1]++;
+        }
 
         if (root != i) {
             swap(array, i, root);
-            minHeap(array, root, velikost);
+            rez[0] += 3;
+
+            int[] t = minHeap(array, root, velikost);
+            rez[0] += t[0];
+            rez[1] += t[1];
         }
+
+        return rez;
     }
 
     private static int[] mergSortUp(int[] array, boolean trace) {
@@ -407,17 +569,21 @@ public class Naloga2 {
 
         if (array.length > 1) {
             int mid;
-            if (array.length % 2 == 0)
+            if (array.length % 2 == 0) {
                 mid = array.length / 2;
-            else
+            } else {
                 mid = array.length / 2 + 1;
-            if (trace)
+            }
+            if (trace) {
                 izpis(array, mid);
+            }
 
             int[] left = new int[mid];
             int[] right = new int[array.length - mid];
             System.arraycopy(array, 0, left, 0, mid);
+            rez[0] += mid;
             System.arraycopy(array, mid, right, 0, right.length);
+            rez[0] += right.length;
 
 
             int[] t = mergSortUp(left, trace);
@@ -441,19 +607,24 @@ public class Naloga2 {
 
         while (i < left.length && j < right.length) {
             rez[1]++;
-            if (left[i] <= right[j])
+            if (left[i] <= right[j]) {
                 tmp[k++] = left[i++];
-            else
+            } else {
                 tmp[k++] = right[j++];
+            }
         }
-        while (i < left.length)
+        while (i < left.length) {
             tmp[k++] = left[i++];
-        while (j < right.length)
+        }
+        while (j < right.length) {
             tmp[k++] = right[j++];
+        }
 
         System.arraycopy(tmp, 0, array, 0, array.length);
-        if (trace)
+        rez[0] += array.length;
+        if (trace) {
             izpis(array, -1);
+        }
         return rez;
     }
 
@@ -462,17 +633,21 @@ public class Naloga2 {
 
         if (array.length > 1) {
             int mid;
-            if (array.length % 2 == 0)
+            if (array.length % 2 == 0) {
                 mid = array.length / 2;
-            else
+            } else {
                 mid = array.length / 2 + 1;
-            if (trace)
+            }
+            if (trace) {
                 izpis(array, mid);
+            }
 
             int[] left = new int[mid];
             int[] right = new int[array.length - mid];
             System.arraycopy(array, 0, left, 0, mid);
+            rez[0] += mid;
             System.arraycopy(array, mid, right, 0, right.length);
+            rez[0] += right.length;
 
             int[] t = mergSortDown(left, trace);
             rez[0] += t[0];
@@ -496,32 +671,44 @@ public class Naloga2 {
 
         while (i < left.length && j < right.length) {
             rez[1]++;
-            if (left[i] >= right[j])
+            if (left[i] >= right[j]) {
                 tmp[k++] = left[i++];
-            else
+            } else {
                 tmp[k++] = right[j++];
+            }
         }
-        while (i < left.length)
+        while (i < left.length) {
             tmp[k++] = left[i++];
-        while (j < right.length)
+        }
+        while (j < right.length) {
             tmp[k++] = right[j++];
+        }
 
         System.arraycopy(tmp, 0, array, 0, array.length);
-        if (trace)
+        rez[0] += array.length;
+
+        if (trace) {
             izpis(array, -1);
+        }
         return rez;
     }
 
     private static int[] quickSortUp(int[] array, int left, int right, boolean trace) {
         int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
 
-        if (left >= right)
+        if (left >= right) {
             return rez;
-        int r = partitionUp(array, left, right);
-        if (trace)
-            izpis(array, r, r + 1, left, right);
+        }
+        int[] t = partitionUp(array, left, right);
+        int r = t[2];
+        rez[0] += t[0];
+        rez[1] += t[1];
 
-        int[] t = quickSortUp(array, left, r - 1, trace);
+        if (trace) {
+            izpis(array, r, r + 1, left, right);
+        }
+
+        t = quickSortUp(array, left, r - 1, trace);
         rez[0] += t[0];
         rez[1] += t[1];
 
@@ -532,22 +719,33 @@ public class Naloga2 {
         return rez;
     }
 
-    private static int partitionUp(int[] array, int left, int right) {
+    private static int[] partitionUp(int[] array, int left, int right) {
+        int[] rez = new int[]{0, 0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
+
         int p = array[left];
+        rez[0]++;
+
         int l = left, r = right + 1;
         while (true) {
             do {
                 l++;
+                rez[1]++;
             } while (l < right && array[l] < p);
             do {
                 r--;
+                rez[1]++;
             } while (array[r] > p);
-            if (l >= r)
+            if (l >= r) {
                 break;
+            }
             swap(array, l, r);
+            rez[0] += 3;
         }
         swap(array, left, r);
-        return r;
+        rez[0] += 3;
+        rez[2] = r;
+
+        return rez;
     }
 
     private static int[] quickSortDown(int[] array, int left, int right, boolean trace) {
@@ -555,11 +753,15 @@ public class Naloga2 {
 
         if (left >= right)
             return rez;
-        int r = partitionDown(array, left, right);
+        int[] t = partitionDown(array, left, right);
+        int r = t[2];
+        rez[0] += t[0];
+        rez[1] += t[1];
+
         if (trace)
             izpis(array, r, r + 1, left, right);
 
-        int[] t = quickSortDown(array, left, r - 1, trace);
+        t = quickSortDown(array, left, r - 1, trace);
         rez[0] += t[0];
         rez[1] += t[1];
 
@@ -569,69 +771,84 @@ public class Naloga2 {
         return rez;
     }
 
-    private static int partitionDown(int[] array, int left, int right) {
+    private static int[] partitionDown(int[] array, int left, int right) {
+        int[] rez = new int[]{0, 0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
+
         int p = array[left];
+        rez[0]++;
         int l = left, r = right + 1;
         while (true) {
             do {
                 l++;
+                rez[1]++;
             } while (l < right && array[l] > p);
             do {
                 r--;
+                rez[1]++;
             } while (array[r] < p);
             if (l >= r)
                 break;
             swap(array, l, r);
+            rez[0] += 3;
         }
         swap(array, left, r);
-        return r;
-    }
+        rez[0] += 3;
+        rez[2] = r;
 
-    private static void radixSort(int[] array, boolean trace, boolean up) {
-        if (up)
-            radixUp(array, trace);
-        else
-            radixDown(array, trace);
-
+        return rez;
     }
 
     private static int[] radixUp(int[] array, boolean trace) {
         int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
 
         int max = array[0];
+        rez[0]++;
         for (int i = 1; i < array.length; i++) {
-            rez[1]++;
-            if (array[i] > max)
+            //rez[1]++;
+            if (array[i] > max) {
                 max = array[i];
+                //rez[0]++;
+            }
         }
 
-        if (trace)
+        if (trace) {
             izpis(array, -1);
+        }
 
+        int m = 0;
         for (int e = 1; max / e > 0; e *= 10) {
             int[] tmpArray = new int[array.length];
             int[] count = new int[10];
 
             for (int el : array) {
                 count[(el / e) % 10]++;
-                rez[1]++;
+                //rez[1]++;
             }
 
-            for (int i = 1; i < 10; i++)
+            for (int i = 1; i < 10; i++) {
                 count[i] += count[i - 1];
+            }
 
             for (int i = array.length - 1; i >= 0; i--) {
                 tmpArray[count[((array[i] / e) % 10)] - 1] = array[i];
-                rez[0]++;
+                //rez[1]++;
+                //rez[0]++;
                 count[(array[i] / e) % 10]--;
             }
 
             System.arraycopy(tmpArray, 0, array, 0, array.length);
-            rez[0] += array.length;
+            //rez[0] += array.length;
 
-            if (trace)
+            if (trace) {
                 izpis(array, -1);
+            }
+
+            m++;
+
         }
+
+        rez[1] = 2 * array.length * m;
+        rez[0] = 2 * array.length * m;
 
         return rez;
     }
@@ -640,40 +857,50 @@ public class Naloga2 {
         int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
 
         int max = array[0];
+        //rez[0]++;
         for (int i = 1; i < array.length; i++) {
-            rez[1]++;
-
-            if (array[i] > max)
+            //rez[1]++;
+            if (array[i] > max) {
                 max = array[i];
+                //rez[0]++;
+            }
         }
 
-        if (trace)
+        if (trace) {
             izpis(array, -1);
+        }
 
+        int m = 0;
         for (int e = 1; max / e > 0; e *= 10) {
             int[] tmpArray = new int[array.length];
             int[] count = new int[10];
 
             for (int el : array) {
                 count[9 - (el / e) % 10]++;
-                rez[1]++;
+                //rez[1]++;
             }
 
-            for (int i = 1; i < 10; i++)
+            for (int i = 1; i < 10; i++) {
                 count[i] += count[i - 1];
+            }
 
             for (int i = array.length - 1; i >= 0; i--) {
                 tmpArray[count[9 - ((array[i] / e) % 10)] - 1] = array[i];
-                rez[0]++;
+                //rez[0]++;
                 count[9 - (array[i] / e) % 10]--;
+                //rez[1]++;
             }
 
             System.arraycopy(tmpArray, 0, array, 0, array.length);
-            rez[0] += array.length;
+            //rez[0] += array.length;
 
-            if (trace)
+            if (trace) {
                 izpis(array, -1);
+            }
+            m++;
         }
+        rez[1] = 2 * array.length * m;
+        rez[0] = 2 * array.length * m;
 
         return rez;
     }
@@ -681,17 +908,20 @@ public class Naloga2 {
     private static int[] bucketDown(int[] array, boolean trace) {
         int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
 
-        if (trace)
+        if (trace) {
             izpis(array, -1);
+        }
 
         int max = array[0];
         int min = array[0];
         for (int i = 1; i < array.length; i++) {
             rez[1] += 2;
-            if (array[i] > max)
+            if (array[i] > max) {
                 max = array[i];
-            if (array[i] < min)
+            }
+            if (array[i] < min) {
                 min = array[i];
+            }
         }
 
         int k = array.length / 2;
@@ -700,14 +930,15 @@ public class Naloga2 {
         int[] tmpArray = new int[array.length];
         int[] bucket = new int[k];
 
-        for (int anArray : array) {
-            int p = (int) ((anArray - min) / v);
+        for (int element : array) {
+            int p = (int) ((element - min) / v);
             bucket[k - 1 - p]++;
             rez[1]++;
         }
 
-        for (int i = 1; i < bucket.length; i++)
+        for (int i = 1; i < bucket.length; i++) {
             bucket[i] += bucket[i - 1];
+        }
 
         for (int i = array.length - 1; i >= 0; i--) {
             int p = (int) ((array[i] - min) / v);
@@ -719,8 +950,9 @@ public class Naloga2 {
         System.arraycopy(tmpArray, 0, array, 0, tmpArray.length);
         rez[0] += tmpArray.length;
 
-        if (trace)
+        if (trace) {
             izpis(array, bucket);
+        }
 
         int[] t = insertionDown(array, trace);
         rez[0] += t[0];
@@ -732,16 +964,20 @@ public class Naloga2 {
     private static int[] bucketUp(int[] array, boolean trace) {
         int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
 
-        if (trace)
+        if (trace) {
             izpis(array, -1);
+        }
 
         int max = array[0];
         int min = array[0];
         for (int i = 1; i < array.length; i++) {
-            if (array[i] > max)
+            rez[1] += 2;
+            if (array[i] > max) {
                 max = array[i];
-            if (array[i] < min)
+            }
+            if (array[i] < min) {
                 min = array[i];
+            }
         }
 
         int k = array.length / 2;
@@ -750,14 +986,15 @@ public class Naloga2 {
         int[] tmpArray = new int[array.length];
         int[] bucket = new int[k];
 
-        for (int anArray : array) {
-            int p = (int) ((anArray - min) / v);
+        for (int element : array) {
+            int p = (int) ((element - min) / v);
             bucket[p]++;
             rez[1]++;
         }
 
-        for (int i = 1; i < bucket.length; i++)
+        for (int i = 1; i < bucket.length; i++) {
             bucket[i] += bucket[i - 1];
+        }
 
         for (int i = array.length - 1; i >= 0; i--) {
             int p = (int) ((array[i] - min) / v);
@@ -769,8 +1006,9 @@ public class Naloga2 {
         System.arraycopy(tmpArray, 0, array, 0, tmpArray.length);
         rez[0] += tmpArray.length;
 
-        if (trace)
+        if (trace) {
             izpis(array, bucket);
+        }
 
         int[] t = insertionUp(array, trace);
         rez[0] += t[0];

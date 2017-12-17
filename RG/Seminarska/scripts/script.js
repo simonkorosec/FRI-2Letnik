@@ -65,7 +65,6 @@ function Wall() {
             (xPosition > minX && xPosition < maxX);
 
     };
-
 }
 
 
@@ -411,7 +410,6 @@ function animate() {
                 zPosition = prevZ;
 
                 playBump();
-
             }
         }
 
@@ -422,9 +420,25 @@ function animate() {
     lastTime = timeNow;
 }
 
+// checkFinish
+// Checks if player reached the escape door
+//
+function checkFinish() {
+    if (xPosition > -10.5 && xPosition < -9.5 && zPosition > -0.5 && zPosition < 0.5){
+        pitch = 0;
+        pitchRate = 0;
+        yaw = 0;
+        yawRate = 0;
+        xPosition = 0;
+        yPosition = 0.4;
+        zPosition = 0;
+        speed = 0;
+
+    }
+}
 
 // Play bump sound upon collision
-// Only one sound will play at a time
+// Only one sound should play at a time
 var playingBump = false;    // if alredy playing
 var currAudio = [];         // last audio effect
 function playBump() {
@@ -476,11 +490,11 @@ function handleKeys() {
         pitchRate = 0;
     }
 
-    if (currentlyPressedKeys[37]) {
-        // Left cursor key
+    if (currentlyPressedKeys[65] || currentlyPressedKeys[37]) {
+        // A or left cursor key
         yawRate = 0.1;
-    } else if (currentlyPressedKeys[39]) {
-        // Right cursor key
+    } else if (currentlyPressedKeys[68] || currentlyPressedKeys[39]) {
+        // D or right cursor key
         yawRate = -0.1;
     } else {
         yawRate = 0;
@@ -535,6 +549,7 @@ function start() {
                 requestAnimationFrame(animate);
                 handleKeys();
                 drawScene();
+                checkFinish();
             }
         }, 15);
     }

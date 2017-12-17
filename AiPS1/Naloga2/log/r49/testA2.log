@@ -1,0 +1,12 @@
+Izvajanje testA2
+  Log datoteka: testA2.log
+  Izhod programa: testA2.out
+  Ukazna vrstica: java Naloga2 trace insert down
+  Izhodni status: 0
+  Realni cas izvajanja: 173
+  Uporabniski cas izvajanja: 170
+  Sistemski cas izvajanja: 38
+  Procesorski cas izvajanja: 208
+Preverjanje testA2
+  Izhodni status: ok
+  Standardni izhod: err

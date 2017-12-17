@@ -1,0 +1,12 @@
+Izvajanje testE2
+  Log datoteka: testE2.log
+  Izhod programa: testE2.out
+  Ukazna vrstica: java Naloga2 trace merge down
+  Izhodni status: 0
+  Realni cas izvajanja: 174
+  Uporabniski cas izvajanja: 169
+  Sistemski cas izvajanja: 40
+  Procesorski cas izvajanja: 209
+Preverjanje testE2
+  Izhodni status: ok
+  Standardni izhod: err

@@ -1,0 +1,12 @@
+Izvajanje testF1
+  Log datoteka: testF1.log
+  Izhod programa: testF1.out
+  Ukazna vrstica: java Naloga2 trace quick up
+  Izhodni status: 0
+  Realni cas izvajanja: 177
+  Uporabniski cas izvajanja: 171
+  Sistemski cas izvajanja: 41
+  Procesorski cas izvajanja: 212
+Preverjanje testF1
+  Izhodni status: ok
+  Standardni izhod: err

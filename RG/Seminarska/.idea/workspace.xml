@@ -5,300 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4105b3bd-a913-4ef9-9858-1e6a11ca8c8e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../Advent/src/Dan13/Dan13.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../Advent/src/Dan14/Dan14.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../Advent/src/Dan15/Dan15.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../Advent/src/Dan16/Dan16.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Advent/out/production/Advent/Dan12/test.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Advent/out/production/Advent/META-INF/Advent.kotlin_module" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Advent/.idea/misc.xml" afterPath="$PROJECT_DIR$/../../Advent/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../Advent/src/Dan17/Dan17.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RGsem.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/script-Copy.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Advent/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../Advent/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/.idea/misc.xml" afterPath="$PROJECT_DIR$/../../AiPS1/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../AiPS1/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/oddaja.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/oddaja.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/compile.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/compile.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testA1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testA1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testA1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testA1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testA2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testA2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testA2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testA2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testA3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testA3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testB1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testB1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testB1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testB1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testB2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testB2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testB2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testB2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testB3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testB3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testC1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testC1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testC1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testC1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testC2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testC2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testC2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testC2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testC3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testC3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testD1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testD1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testD1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testD1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testD2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testD2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testD2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testD2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testD3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testD3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testE1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testE1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testE1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testE1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testE2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testE2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testE2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testE2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testE3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testE3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testF1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testF1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testF1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testF1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testF2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testF2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testF2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testF2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testF3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testF3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testG1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testG1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testG2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testG2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testG3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testG3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testH1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testH1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testH2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testH2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testH3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r29/testH3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/compile.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/compile.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testA1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testA1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testA1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testA1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testA2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testA2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testA2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testA2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testA3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testA3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testB1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testB1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testB1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testB1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testB2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testB2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testB2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testB2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testB3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testB3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testC1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testC1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testC1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testC1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testC2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testC2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testC2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testC2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testC3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testC3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testD1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testD1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testD1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testD1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testD2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testD2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testD2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testD2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testD3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testD3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testE1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testE1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testE1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testE1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testE2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testE2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testE2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testE2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testE3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testE3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testF1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testF1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testF1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testF1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testF2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testF2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testF2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testF2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testF3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testF3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testG1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testG1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testG1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testG1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testG2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testG2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testG2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testG2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testG3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testG3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testH1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testH1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testH2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testH2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testH3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r31/testH3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/compile.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/compile.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testA1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testA1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testA1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testA1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testA2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testA2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testA2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testA2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testA3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testA3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testB1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testB1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testB1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testB1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testB2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testB2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testB2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testB2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testB3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testB3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testC1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testC1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testC1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testC1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testC2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testC2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testC2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testC2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testC3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testC3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testD1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testD1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testD1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testD1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testD2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testD2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testD2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testD2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testD3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testD3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testE1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testE1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testE1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testE1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testE2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testE2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testE2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testE2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testE3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testE3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testF1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testF1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testF1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testF1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testF2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testF2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testF2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testF2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testF3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testF3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testG1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testG1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testG1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testG1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testG2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testG2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testG2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testG2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testG3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testG3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testG3.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testG3.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testH1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testH1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testH2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testH2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testH3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r33/testH3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/compile.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/compile.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testA1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testA1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testA1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testA1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testA2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testA2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testA2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testA2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testA3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testA3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testB1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testB1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testB1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testB1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testB2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testB2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testB2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testB2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testB3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testB3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testC1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testC1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testC1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testC1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testC2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testC2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testC2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testC2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testC3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testC3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testD1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testD1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testD1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testD1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testD2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testD2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testD2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testD2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testD3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testD3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testE1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testE1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testE1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testE1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testE2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testE2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testE2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testE2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testE3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testE3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testF1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testF1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testF1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testF1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testF2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testF2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testF2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testF2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testF3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testF3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testG1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testG1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testG1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testG1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testG2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testG2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testG2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testG2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testG3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testG3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testG3.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testG3.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testH1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testH1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testH2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testH2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testH3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r35/testH3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/compile.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/compile.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testA1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testA1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testA1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testA1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testA2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testA2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testA2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testA2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testA3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testA3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testB1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testB1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testB1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testB1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testB2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testB2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testB2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testB2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testB3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testB3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testC1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testC1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testC1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testC1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testC2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testC2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testC2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testC2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testC3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testC3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testD1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testD1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testD1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testD1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testD2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testD2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testD2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testD2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testD3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testD3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testE1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testE1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testE1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testE1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testE2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testE2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testE2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testE2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testE3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testE3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testF1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testF1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testF1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testF1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testF2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testF2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testF2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testF2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testF3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testF3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testG1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testG1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testG1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testG1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testG2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testG2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testG2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testG2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testG3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testG3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testH1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testH1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testH2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testH2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testH3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r37/testH3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/compile.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/compile.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testA1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testA1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testA1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testA1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testA2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testA2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testA2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testA2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testA3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testA3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testB1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testB1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testB1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testB1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testB2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testB2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testB2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testB2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testB3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testB3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testC1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testC1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testC1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testC1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testC2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testC2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testC2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testC2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testC3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testC3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testD1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testD1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testD1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testD1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testD2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testD2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testD2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testD2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testD3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testD3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testE1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testE1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testE1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testE1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testE2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testE2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testE2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testE2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testE3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testE3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testF1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testF1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testF1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testF1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testF2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testF2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testF2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testF2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testF3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testF3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testG1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testG1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testG1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testG1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testG2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testG2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testG2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testG2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testG3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testG3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testH1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testH1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testH1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testH1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testH2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testH2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testH2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testH2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testH3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r39/testH3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/compile.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/compile.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testA1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testA1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testA1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testA1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testA2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testA2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testA2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testA2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testA3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testA3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testB1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testB1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testB1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testB1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testB2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testB2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testB2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testB2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testB3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testB3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testC1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testC1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testC1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testC1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testC2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testC2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testC2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testC2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testC3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testC3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testD1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testD1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testD1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testD1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testD2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testD2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testD2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testD2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testD3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testD3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testE1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testE1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testE1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testE1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testE2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testE2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testE2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testE2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testE3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testE3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testF1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testF1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testF1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testF1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testF2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testF2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testF2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testF2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testF3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testF3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testG1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testG1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testG1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testG1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testG2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testG2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testG2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testG2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testG3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testG3.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testH1.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testH1.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testH1.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testH1.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testH2.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testH2.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testH2.out" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testH2.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testH3.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/r41/testH3.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/src/Naloga2.java" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/src/Naloga2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/src/Izziv5.java" afterPath="$PROJECT_DIR$/../../AiPS1/src/Izziv5.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/src/Naloga2.java" afterPath="$PROJECT_DIR$/../../AiPS1/src/Naloga2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/world.txt" afterPath="$PROJECT_DIR$/assets/world.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/script.js" afterPath="$PROJECT_DIR$/scripts/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/webgl.css" afterPath="$PROJECT_DIR$/style/webgl.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -315,8 +33,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="53" column="24" lean-forward="true" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+            <state relative-caret-position="901">
+              <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
               <folding>
                 <element signature="e#1766#1770#0" expanded="true" />
                 <element signature="e#1776#1780#0" expanded="true" />
@@ -338,21 +56,8 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="437" column="74" lean-forward="false" selection-start-line="437" selection-start-column="74" selection-end-line="437" selection-end-column="74" />
-              <folding>
-                <element signature="n#!!block;n#getShader#0" expanded="false" />
-                <element signature="n#!!block;n#initShaders#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="world.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/world.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+            <state relative-caret-position="17">
+              <caret line="66" column="6" lean-forward="false" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -368,6 +73,10 @@
       <find>triangle</find>
       <find>wall</find>
       <find>wall.</find>
+      <find>F</find>
+      <find>8.5</find>
+      <find>7.5</find>
+      <find>C</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -378,6 +87,7 @@
       <list>
         <option value="$PROJECT_DIR$/style/webgl.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/assets/world.txt" />
         <option value="$PROJECT_DIR$/scripts/script.js" />
       </list>
     </option>
@@ -513,11 +223,13 @@
       <workItem from="1511693596051" duration="1707000" />
       <workItem from="1513252586659" duration="4564000" />
       <workItem from="1513435244599" duration="5747000" />
+      <workItem from="1513513317594" duration="3488000" />
+      <workItem from="1513530981701" duration="598000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16368000" />
+    <option name="totallyTimeSpent" value="20454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -526,7 +238,6 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3611691" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -539,6 +250,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -557,6 +269,67 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+          <folding>
+            <element signature="e#1766#1770#0" expanded="true" />
+            <element signature="e#1776#1780#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/webgl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="66" column="6" lean-forward="false" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="24" lean-forward="true" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+          <folding>
+            <element signature="e#1766#1770#0" expanded="true" />
+            <element signature="e#1776#1780#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/webgl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/world.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6086">
+          <caret line="437" column="74" lean-forward="false" selection-start-line="437" selection-start-column="74" selection-end-line="437" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
           <folding>
@@ -570,7 +343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -578,10 +350,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#getShader#0" expanded="false" />
-            <element signature="n#!!block;n#initShaders#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -600,10 +369,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3978">
           <caret line="234" column="55" lean-forward="false" selection-start-line="234" selection-start-column="28" selection-end-line="234" selection-end-column="61" />
-          <folding>
-            <element signature="n#!!block;n#getShader#0" expanded="false" />
-            <element signature="n#!!block;n#initShaders#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -622,10 +388,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3621">
           <caret line="213" column="70" lean-forward="true" selection-start-line="213" selection-start-column="70" selection-end-line="213" selection-end-column="70" />
-          <folding>
-            <element signature="n#!!block;n#getShader#0" expanded="false" />
-            <element signature="n#!!block;n#initShaders#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -633,7 +396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,11 +406,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/world.txt">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-          <folding />
+        <state relative-caret-position="901">
+          <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+          <folding>
+            <element signature="e#1766#1770#0" expanded="true" />
+            <element signature="e#1776#1780#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -660,25 +425,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/assets/world.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="53" column="24" lean-forward="true" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-          <folding>
-            <element signature="e#1766#1770#0" expanded="true" />
-            <element signature="e#1776#1780#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="237">
+          <caret line="429" column="24" lean-forward="true" selection-start-line="429" selection-start-column="23" selection-end-line="429" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="437" column="74" lean-forward="false" selection-start-line="437" selection-start-column="74" selection-end-line="437" selection-end-column="74" />
-          <folding>
-            <element signature="n#!!block;n#getShader#0" expanded="false" />
-            <element signature="n#!!block;n#initShaders#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="66" column="6" lean-forward="false" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

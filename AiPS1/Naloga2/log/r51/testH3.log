@@ -1,0 +1,12 @@
+Izvajanje testH3
+  Log datoteka: testH3.log
+  Izhod programa: testH3.out
+  Ukazna vrstica: java Naloga2 count bucket down
+  Izhodni status: 0
+  Realni cas izvajanja: 377
+  Uporabniski cas izvajanja: 565
+  Sistemski cas izvajanja: 35
+  Procesorski cas izvajanja: 600
+Preverjanje testH3
+  Izhodni status: ok
+  Standardni izhod: err
