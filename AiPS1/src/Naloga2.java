@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Naloga2 {
     public static void main(String[] args) {
 
-        args = new String[]{"count", "radix", "down"};
+        args = new String[]{"count", "bucket", "down"};
 
         Scanner sc = new Scanner(System.in);
         Scanner l = new Scanner(sc.nextLine());
@@ -912,17 +912,21 @@ public class Naloga2 {
             izpis(array, -1);
         }
 
-        int max = array[0];
-        int min = array[0];
+        int max = 0;
+        int min = 0;
         for (int i = 1; i < array.length; i++) {
             rez[1] += 2;
-            if (array[i] > max) {
-                max = array[i];
+            if (array[i] > array[max]) {
+                max = i;
             }
-            if (array[i] < min) {
-                min = array[i];
+            if (array[i] < array[min]) {
+                min = i;
             }
         }
+
+        max = array[max];
+        min = array[min];
+        rez[0] += 2;
 
         int k = array.length / 2;
         double v = (max - min + 1.0) / k;
@@ -968,17 +972,22 @@ public class Naloga2 {
             izpis(array, -1);
         }
 
-        int max = array[0];
-        int min = array[0];
+        int max = 0;
+        int min = 0;
         for (int i = 1; i < array.length; i++) {
             rez[1] += 2;
-            if (array[i] > max) {
-                max = array[i];
+            if (array[i] > array[max]) {
+                max = i;
             }
-            if (array[i] < min) {
-                min = array[i];
+            if (array[i] < array[min]) {
+                min = i;
             }
         }
+
+        max = array[max];
+        min = array[min];
+        rez[0] += 2;
+
 
         int k = array.length / 2;
         double v = (max - min + 1.0) / k;
@@ -1012,7 +1021,7 @@ public class Naloga2 {
 
         int[] t = insertionUp(array, trace);
         rez[0] += t[0];
-        rez[1] += t[1];
+        rez[1] += t[1]-3;
 
         return rez;
     }
@@ -1060,7 +1069,6 @@ public class Naloga2 {
     }
 
 }
-
 
 class ResizableArray {
 

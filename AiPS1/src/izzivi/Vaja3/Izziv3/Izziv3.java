@@ -1,4 +1,4 @@
-package Vaja3;
+package izzivi.Vaja3.Izziv3;
 
 public class Izziv3 {
     public static void main(String[] args) {

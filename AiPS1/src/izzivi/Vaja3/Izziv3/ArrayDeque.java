@@ -1,4 +1,4 @@
-package Vaja3;
+package izzivi.Vaja3.Izziv3;
 
 
 public class ArrayDeque<T> implements Deque<T>, Stack<T>, Sequence<T> {
@@ -32,7 +32,7 @@ public class ArrayDeque<T> implements Deque<T>, Stack<T>, Sequence<T> {
     @Override
     public T top() throws CollectionException {
         if (this.isEmpty())
-            throw new CollectionException(ERR_MSG_EMPTY);
+            throw new CollectionException(izzivi.Vaja3.Collection.ERR_MSG_EMPTY);
         return this.elementi[(this.back - 1 + this.elementi.length) % this.elementi.length];
     }
 
@@ -44,7 +44,7 @@ public class ArrayDeque<T> implements Deque<T>, Stack<T>, Sequence<T> {
     @Override
     public T pop() throws CollectionException {
         if (this.isEmpty())
-            throw new CollectionException(ERR_MSG_EMPTY);
+            throw new CollectionException(izzivi.Vaja3.Collection.ERR_MSG_EMPTY);
         T tmp = this.elementi[(this.back - 1 + this.elementi.length) % this.elementi.length];
         this.elementi[(this.back - 1 + this.elementi.length) % this.elementi.length] = null;
         this.back = (this.back - 1 + this.elementi.length) % this.elementi.length;
@@ -55,21 +55,21 @@ public class ArrayDeque<T> implements Deque<T>, Stack<T>, Sequence<T> {
     @Override
     public T front() throws CollectionException {
         if (this.isEmpty())
-            throw new CollectionException(ERR_MSG_EMPTY);
+            throw new CollectionException(izzivi.Vaja3.Collection.ERR_MSG_EMPTY);
         return this.elementi[this.front];
     }
 
     @Override
     public T back() throws CollectionException {
         if (this.isEmpty())
-            throw new CollectionException(ERR_MSG_EMPTY);
+            throw new CollectionException(izzivi.Vaja3.Collection.ERR_MSG_EMPTY);
         return this.elementi[(this.back - 1 + this.elementi.length) % this.elementi.length];
     }
 
     @Override
     public void enqueue(T x) throws CollectionException {
         if (this.isFull())
-            throw new CollectionException(ERR_MSG_FULL);
+            throw new CollectionException(izzivi.Vaja3.Collection.ERR_MSG_FULL);
         this.elementi[this.back] = x;
         this.stElementov++;
         this.back = (this.back + 1) % this.elementi.length;
@@ -78,7 +78,7 @@ public class ArrayDeque<T> implements Deque<T>, Stack<T>, Sequence<T> {
     @Override
     public void enqueueFront(T x) throws CollectionException {
         if (this.isFull())
-            throw new CollectionException(ERR_MSG_FULL);
+            throw new CollectionException(izzivi.Vaja3.Collection.ERR_MSG_FULL);
         this.front = (this.front - 1 + this.elementi.length) % this.elementi.length;
         this.elementi[this.front] = x;
         this.stElementov++;
@@ -87,7 +87,7 @@ public class ArrayDeque<T> implements Deque<T>, Stack<T>, Sequence<T> {
     @Override
     public T dequeue() throws CollectionException {
         if (this.isEmpty())
-            throw new CollectionException(ERR_MSG_EMPTY);
+            throw new CollectionException(izzivi.Vaja3.Collection.ERR_MSG_EMPTY);
         T tmp = this.elementi[this.front];
         this.elementi[this.front] = null;
         this.front = (this.front + 1) % this.elementi.length;
@@ -98,7 +98,7 @@ public class ArrayDeque<T> implements Deque<T>, Stack<T>, Sequence<T> {
     @Override
     public T dequeueBack() throws CollectionException {
         if (this.isEmpty())
-            throw new CollectionException(ERR_MSG_EMPTY);
+            throw new CollectionException(izzivi.Vaja3.Collection.ERR_MSG_EMPTY);
         T tmp = this.elementi[(this.back - 1 + this.elementi.length) % this.elementi.length];
         this.elementi[(this.back - 1 + this.elementi.length) % this.elementi.length] = null;
         this.back = (this.back - 1 + this.elementi.length) % this.elementi.length;
@@ -119,7 +119,7 @@ public class ArrayDeque<T> implements Deque<T>, Stack<T>, Sequence<T> {
         if (i < 0 || i > this.stElementov)
             throw new CollectionException(ERR_MSG_INDEX);
         if (/*i == this.stElementov ||*/ this.isFull())
-            throw new CollectionException(ERR_MSG_FULL);
+            throw new CollectionException(izzivi.Vaja3.Collection.ERR_MSG_FULL);
         if (i == this.stElementov) {
             this.back = (this.back + 1) % this.elementi.length;
             this.stElementov++;

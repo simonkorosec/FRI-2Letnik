@@ -1,3 +1,5 @@
+package izzivi.Vaja3;
+
 public class Izziv4 {
 
     public static void main(String[] args) {

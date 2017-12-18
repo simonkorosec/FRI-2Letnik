@@ -1,3 +1,5 @@
+package izzivi.Vaja3;
+
 public class PrviIziv {
 
     private static int [] generateTable(int n){
