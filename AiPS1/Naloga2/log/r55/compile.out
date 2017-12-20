@@ -1,0 +1,4 @@
+Naloga2.java:1105: error: class, interface, or enum expected
+}import java.util.Scanner;
+ ^
+1 error

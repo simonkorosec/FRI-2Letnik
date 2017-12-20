@@ -1,0 +1,13 @@
+Izvajanje testD3
+  Log datoteka: testD3.log
+  Izhod programa: testD3.out
+  Ukazna vrstica: java Naloga2 count heap down
+  Izhodni status: 0
+  Realni cas izvajanja: 373
+  Uporabniski cas izvajanja: 524
+  Sistemski cas izvajanja: 57
+  Procesorski cas izvajanja: 581
+Preverjanje testD3
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Naloga2 {
     public static void main(String[] args) {
 
-        args = new String[]{"count", "bucket", "down"};
+        args = new String[]{"count", "radix", "up"};
 
         Scanner sc = new Scanner(System.in);
         Scanner l = new Scanner(sc.nextLine());
@@ -483,6 +483,7 @@ public class Naloga2 {
             rez[0] += t[0];
             rez[1] += t[1];
         }
+
         for (int last = array.length - 1; last >= 0; last--) {
             if (trace) {
                 izpis(array, last + 1);
@@ -801,29 +802,30 @@ public class Naloga2 {
     private static int[] radixUp(int[] array, boolean trace) {
         int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
 
-        int max = array[0];
-        rez[0]++;
-        for (int i = 1; i < array.length; i++) {
-            //rez[1]++;
-            if (array[i] > max) {
-                max = array[i];
-                //rez[0]++;
-            }
-        }
-
         if (trace) {
             izpis(array, -1);
         }
 
+        int dolzina = 1;
         int m = 0;
-        for (int e = 1; max / e > 0; e *= 10) {
+        boolean najden = false;
+        for (int e = 1; m < dolzina; e *= 10, m++) {
             int[] tmpArray = new int[array.length];
             int[] count = new int[10];
 
             for (int el : array) {
                 count[(el / e) % 10]++;
-                //rez[1]++;
+                rez[1]++;
+
+                if (!najden) {
+                    //rez[1]++;
+                    if (Integer.toString(el).length() > dolzina) {
+                        dolzina = Integer.toString(el).length();
+                    }
+                }
             }
+
+            najden = true;
 
             for (int i = 1; i < 10; i++) {
                 count[i] += count[i - 1];
@@ -831,24 +833,18 @@ public class Naloga2 {
 
             for (int i = array.length - 1; i >= 0; i--) {
                 tmpArray[count[((array[i] / e) % 10)] - 1] = array[i];
-                //rez[1]++;
-                //rez[0]++;
+                rez[1]++;
+                rez[0]++;
                 count[(array[i] / e) % 10]--;
             }
 
             System.arraycopy(tmpArray, 0, array, 0, array.length);
-            //rez[0] += array.length;
+            rez[0] += array.length;
 
             if (trace) {
                 izpis(array, -1);
             }
-
-            m++;
-
         }
-
-        rez[1] = 2 * array.length * m;
-        rez[0] = 2 * array.length * m;
 
         return rez;
     }
@@ -856,29 +852,29 @@ public class Naloga2 {
     private static int[] radixDown(int[] array, boolean trace) {
         int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
 
-        int max = array[0];
-        //rez[0]++;
-        for (int i = 1; i < array.length; i++) {
-            //rez[1]++;
-            if (array[i] > max) {
-                max = array[i];
-                //rez[0]++;
-            }
-        }
-
         if (trace) {
             izpis(array, -1);
         }
 
+        int dolzina = 1;
         int m = 0;
-        for (int e = 1; max / e > 0; e *= 10) {
+        boolean najden = false;
+        for (int e = 1; m < dolzina; e *= 10, m++) {
             int[] tmpArray = new int[array.length];
             int[] count = new int[10];
 
             for (int el : array) {
                 count[9 - (el / e) % 10]++;
-                //rez[1]++;
+                rez[1]++;
+
+                if (!najden) {
+                    if (Integer.toString(el).length() > dolzina) {
+                        dolzina = Integer.toString(el).length();
+                    }
+                }
             }
+
+            najden = true;
 
             for (int i = 1; i < 10; i++) {
                 count[i] += count[i - 1];
@@ -886,21 +882,18 @@ public class Naloga2 {
 
             for (int i = array.length - 1; i >= 0; i--) {
                 tmpArray[count[9 - ((array[i] / e) % 10)] - 1] = array[i];
-                //rez[0]++;
                 count[9 - (array[i] / e) % 10]--;
-                //rez[1]++;
+                rez[0]++;
+                rez[1]++;
             }
 
             System.arraycopy(tmpArray, 0, array, 0, array.length);
-            //rez[0] += array.length;
+            rez[0] += array.length;
 
             if (trace) {
                 izpis(array, -1);
             }
-            m++;
         }
-        rez[1] = 2 * array.length * m;
-        rez[0] = 2 * array.length * m;
 
         return rez;
     }
@@ -948,6 +941,7 @@ public class Naloga2 {
             int p = (int) ((array[i] - min) / v);
             tmpArray[bucket[k - 1 - p] - 1] = array[i];
             rez[0]++;
+            rez[1]++;
             bucket[k - 1 - p]--;
         }
 
@@ -1009,6 +1003,7 @@ public class Naloga2 {
             int p = (int) ((array[i] - min) / v);
             tmpArray[bucket[p] - 1] = array[i];
             rez[0]++;
+            rez[1]++;
             bucket[p]--;
         }
 
@@ -1021,7 +1016,7 @@ public class Naloga2 {
 
         int[] t = insertionUp(array, trace);
         rez[0] += t[0];
-        rez[1] += t[1]-3;
+        rez[1] += t[1];
 
         return rez;
     }
