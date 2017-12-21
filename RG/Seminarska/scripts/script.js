@@ -1,27 +1,19 @@
-// Global variable definitionvar canvas;
 var canvas;
 var gl;
 var shaderProgram;
 
-// Buffers
 var worldVertexPositionBuffer = null;
 var worldVertexTextureCoordBuffer = null;
 
-// Model-view and projection matrix and model-view matrix stack
 var mvMatrixStack = [];
 var mvMatrix = mat4.create();
 var pMatrix = mat4.create();
 
-// Variables for storing textures
 var wallTexture;
-
-// Variable that stores  loading state of textures.
 var texturesLoaded = false;
 
-// Keyboard handling helper variable for reading the status of keys
 var currentlyPressedKeys = {};
 
-// Variables for storing current position and speed
 var pitch = 0;
 var pitchRate = 0;
 var yaw = 0;
@@ -30,31 +22,26 @@ var xPosition = 0;
 var yPosition = 0.4;
 var zPosition = 0;
 var speed = 0;
-
-// Used to make us "jog" up and down as we move forward.
 var joggingAngle = 0;
 
-// Helper variable for animation
 var lastTime = 0;
 
-
-// Array of all wall positions
 var wallPositions = [];
-
+var gameStart = false;
 
 function Wall() {
     this.points = [];
 
-    this.isFull = function () {
-        if (this.points.length >= 12){
-            this.points = this.points.slice(0,4);   // Only keep first 4 points rest are identical
-            return true;                            // becuse we dont look at the Y axias with walls
+    this.isFull = function() {
+        if (this.points.length >= 12) {
+            this.points = this.points.slice(0, 4); // Only keep first 4 points rest are identical
+            return true; // becuse we dont look at the Y axias with walls
         }
         return false;
     };
 
-    this.checkCollision = function () {
-        var odmik = 0.13;   // So the player can't see throught the wall when he turns near a wall
+    this.checkCollision = function() {
+        var odmik = 0.13; // So the player can't see throught the wall when he turns near a wall
 
         var minX = Math.min(this.points[0], this.points[2]) - odmik;
         var maxX = Math.max(this.points[0], this.points[2]) + odmik;
@@ -68,13 +55,6 @@ function Wall() {
 }
 
 
-//
-// Matrix utility functions
-//
-// mvPush   ... push current matrix on matrix stack
-// mvPop    ... pop top matrix from stack
-// degToRad ... convert degrees to radians
-//
 function mvPushMatrix() {
     var copy = mat4.create();
     mat4.set(mvMatrix, copy);
@@ -92,45 +72,27 @@ function degToRad(degrees) {
     return degrees * Math.PI / 180;
 }
 
-//
-// initGL
-//
-// Initialize WebGL, returning the GL context or null if
-// WebGL isn't available or could not be initialized.
-//
 function initGL(canvas) {
     var gl = null;
     try {
-        // Try to grab the standard context. If it fails, fallback to experimental.
         gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
         gl.viewportWidth = canvas.width;
         gl.viewportHeight = canvas.height;
-    } catch (e) {
-    }
+    } catch (e) {}
 
-    // If we don't have a GL context, give up now
     if (!gl) {
         alert("Unable to initialize WebGL. Your browser may not support it.");
     }
     return gl;
 }
 
-//
-// getShader
-//
-// Loads a shader program by scouring the current document,
-// looking for a script with the specified ID.
-//
 function getShader(gl, id) {
     var shaderScript = document.getElementById(id);
 
-    // Didn't find an element with the specified ID; abort.
     if (!shaderScript) {
         return null;
     }
 
-    // Walk through the source element's children, building the
-    // shader source string.
     var shaderSource = "";
     var currentChild = shaderScript.firstChild;
     while (currentChild) {
@@ -140,24 +102,19 @@ function getShader(gl, id) {
         currentChild = currentChild.nextSibling;
     }
 
-    // Now figure out what type of shader script we have,
-    // based on its MIME type.
     var shader;
     if (shaderScript.type === "x-shader/x-fragment") {
         shader = gl.createShader(gl.FRAGMENT_SHADER);
     } else if (shaderScript.type === "x-shader/x-vertex") {
         shader = gl.createShader(gl.VERTEX_SHADER);
     } else {
-        return null;  // Unknown shader type
+        return null;
     }
 
-    // Send the source to the shader object
     gl.shaderSource(shader, shaderSource);
 
-    // Compile the shader program
     gl.compileShader(shader);
 
-    // See if it compiled successfully
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
         alert(gl.getShaderInfoLog(shader));
         return null;
@@ -166,96 +123,63 @@ function getShader(gl, id) {
     return shader;
 }
 
-//
-// initShaders
-//
-// Initialize the shaders, so WebGL knows how to light our scene.
-//
 function initShaders() {
     var fragmentShader = getShader(gl, "shader-fs");
     var vertexShader = getShader(gl, "shader-vs");
 
-    // Create the shader program
     shaderProgram = gl.createProgram();
     gl.attachShader(shaderProgram, vertexShader);
     gl.attachShader(shaderProgram, fragmentShader);
     gl.linkProgram(shaderProgram);
 
-    // If creating the shader program failed, alert
     if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
         alert("Unable to initialize the shader program.");
     }
 
-    // start using shading program for rendering
     gl.useProgram(shaderProgram);
 
-    // store location of aVertexPosition variable defined in shader
     shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "aVertexPosition");
 
-    // turn on vertex position attribute at specified position
     gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
 
-    // store location of aVertexNormal variable defined in shader
     shaderProgram.textureCoordAttribute = gl.getAttribLocation(shaderProgram, "aTextureCoord");
 
-    // store location of aTextureCoord variable defined in shader
     gl.enableVertexAttribArray(shaderProgram.textureCoordAttribute);
 
-    // store location of uPMatrix variable defined in shader - projection matrix 
     shaderProgram.pMatrixUniform = gl.getUniformLocation(shaderProgram, "uPMatrix");
-    // store location of uMVMatrix variable defined in shader - model-view matrix 
     shaderProgram.mvMatrixUniform = gl.getUniformLocation(shaderProgram, "uMVMatrix");
-    // store location of uSampler variable defined in shader
     shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
 }
 
-//
-// setMatrixUniforms
-//
-// Set the uniforms in shaders.
-//
 function setMatrixUniforms() {
     gl.uniformMatrix4fv(shaderProgram.pMatrixUniform, false, pMatrix);
     gl.uniformMatrix4fv(shaderProgram.mvMatrixUniform, false, mvMatrix);
 }
 
-//
-// initTextures
-//
-// Initialize the textures we'll be using, then initiate a load of
-// the texture images. The handleTextureLoaded() callback will finish
-// the job; it gets called each time a texture finishes loading.
-//
+
 function initTextures() {
     wallTexture = gl.createTexture();
     wallTexture.image = new Image();
-    wallTexture.image.onload = function () {
+    wallTexture.image.onload = function() {
         handleTextureLoaded(wallTexture)
     };
-    wallTexture.image.src = "./assets/wall.png";
+    wallTexture.image.src = "./assets/wall.jpg";
 }
 
 function handleTextureLoaded(texture) {
     gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
 
-    // Third texture usus Linear interpolation approximation with nearest Mipmap selection
     gl.bindTexture(gl.TEXTURE_2D, texture);
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
     gl.generateMipmap(gl.TEXTURE_2D);
-
     gl.bindTexture(gl.TEXTURE_2D, null);
 
-    // when texture loading is finished we can draw scene.
     texturesLoaded = true;
 }
 
-//
-// handleLoadedWorld
-//
-// Initialisation of world 
-//
+
 function handleLoadedWorld(data) {
     var lines = data.split("\n");
     var vertexCount = 0;
@@ -264,25 +188,24 @@ function handleLoadedWorld(data) {
     var numWalls = 0;
     wallPositions.push(new Wall());
 
-    for (var i in lines) {
 
+    for (var i in lines) {
+        //console.log(i);
         if (wallPositions[numWalls].isFull()) {
             wallPositions.push(new Wall());
             numWalls++;
         }
 
-        var vals = lines[i].replace(/^\s+/, "").split(/\s+/);
+        var vals = lines[i].trim().replace(/^\s+/, "").split(/\s+/);
         if (vals.length === 5 && vals[0] !== "//") {
-            // It is a line describing a vertex; get X, Y and Z first
-            vertexPositions.push(parseFloat(vals[0]));
-            vertexPositions.push(parseFloat(vals[1]));
-            vertexPositions.push(parseFloat(vals[2]));
+            vertexPositions.push(parseFloat(vals[0])); // X
+            vertexPositions.push(parseFloat(vals[1])); // Y
+            vertexPositions.push(parseFloat(vals[2])); // Z
 
             wallPositions[numWalls].points.push(parseFloat(vals[0]), parseFloat(vals[2]));
 
-            // And then the texture coords
-            vertexTextureCoords.push(parseFloat(vals[3]));
-            vertexTextureCoords.push(parseFloat(vals[4]));
+            vertexTextureCoords.push(parseFloat(vals[3])); // T1
+            vertexTextureCoords.push(parseFloat(vals[4])); // T2
 
             vertexCount += 1;
         }
@@ -303,15 +226,11 @@ function handleLoadedWorld(data) {
     document.getElementById("loadingtext").textContent = "";
 }
 
-//
-// loadWorld
-//
-// Loading world 
-//
+
 function loadWorld() {
     var request = new XMLHttpRequest();
     request.open("GET", "./assets/world.txt");
-    request.onreadystatechange = function () {
+    request.onreadystatechange = function() {
         if (request.readyState === 4) {
             handleLoadedWorld(request.responseText);
         }
@@ -319,53 +238,32 @@ function loadWorld() {
     request.send();
 }
 
-//
-// drawScene
-//
-// Draw the scene.
-//
+
 function drawScene() {
-    // set the rendering environment to full canvas size
     gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
-    // Clear the canvas before we start drawing on it.
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    // If buffers are empty we stop loading the application.
     if (worldVertexTextureCoordBuffer === null || worldVertexPositionBuffer === null) {
         return;
     }
 
-    // Establish the perspective with which we want to view the
-    // scene. Our field of view is 45 degrees, with a width/height
-    // ratio of 640:480, and we only want to see objects between 0.1 units
-    // and 100 units away from the camera.
     mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0, pMatrix);
-
-    // Set the drawing position to the "identity" point, which is
-    // the center of the scene.
     mat4.identity(mvMatrix);
 
-    // Now move the drawing position a bit to where we want to start
-    // drawing the world.
     mat4.rotate(mvMatrix, degToRad(-pitch), [1, 0, 0]);
     mat4.rotate(mvMatrix, degToRad(-yaw), [0, 1, 0]);
     mat4.translate(mvMatrix, [-xPosition, -yPosition, -zPosition]);
 
-    // Activate textures
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, wallTexture);
     gl.uniform1i(shaderProgram.samplerUniform, 0);
 
-    // Set the texture coordinates attribute for the vertices.
     gl.bindBuffer(gl.ARRAY_BUFFER, worldVertexTextureCoordBuffer);
     gl.vertexAttribPointer(shaderProgram.textureCoordAttribute, worldVertexTextureCoordBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
-    // Draw the world by binding the array buffer to the world's vertices
-    // array, setting attributes, and pushing it to GL.
     gl.bindBuffer(gl.ARRAY_BUFFER, worldVertexPositionBuffer);
     gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, worldVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
-    // Draw the cube.
     setMatrixUniforms();
     gl.drawArrays(gl.TRIANGLES, 0, worldVertexPositionBuffer.numItems);
 }
@@ -375,18 +273,13 @@ function checkCollision() {
 
     // Check collision for each wall in array
     for (var i = 0; i < wallPositions.length; i++) {
-        if (wallPositions[i].checkCollision()){
+        if (wallPositions[i].checkCollision()) {
             return true;
         }
     }
     return false;
 }
 
-//
-// animate
-//
-// Called every time before redeawing the screen.
-//
 function animate() {
     var timeNow = new Date().getTime();
     if (lastTime !== 0) {
@@ -420,11 +313,8 @@ function animate() {
     lastTime = timeNow;
 }
 
-// checkFinish
-// Checks if player reached the escape door
-//
 function checkFinish() {
-    if (xPosition > -10.5 && xPosition < -9.5 && zPosition > -0.5 && zPosition < 0.5){
+    if (xPosition > -10.5 && xPosition < -9.5 && zPosition > -0.5 && zPosition < 0.5) {
         pitch = 0;
         pitchRate = 0;
         yaw = 0;
@@ -437,120 +327,101 @@ function checkFinish() {
     }
 }
 
-// Play bump sound upon collision
-// Only one sound should play at a time
-var playingBump = false;    // if alredy playing
-var currAudio = [];         // last audio effect
+var playingBump = false;
+var currAudio = [];
+
 function playBump() {
     var audio = new Audio("./assets/bump-sound.mp3");
-    if (!playingBump) {     // if not playing play sound
+    if (!playingBump) {
         audio.play();
         playingBump = true;
         currAudio.push(audio);
     }
 
-    // If last audio ended remove it from array and check playing to false
-    if (currAudio[0].ended){
+    if (currAudio[0].ended) {
         playingBump = false;
         currAudio.pop();
     }
 }
 
-
-//
-// Keyboard handling helper functions
-//
-// handleKeyDown    ... called on keyDown event
-// handleKeyUp      ... called on keyUp event
-//
 function handleKeyDown(event) {
-    // storing the pressed state for individual key
     currentlyPressedKeys[event.keyCode] = true;
 }
 
 function handleKeyUp(event) {
-    // reseting the pressed state for individual key
     currentlyPressedKeys[event.keyCode] = false;
 }
 
-//
-// handleKeys
-//
-// Called every time before redeawing the screen for keyboard
-// input handling. Function continuisly updates helper variables.
-//
 function handleKeys() {
     if (currentlyPressedKeys[38]) {
-        // Up cursor key
+        // Up
         pitchRate = 0.1;
     } else if (currentlyPressedKeys[40]) {
-        // Down cursor key
+        // Down
         pitchRate = -0.1;
     } else {
         pitchRate = 0;
     }
 
     if (currentlyPressedKeys[65] || currentlyPressedKeys[37]) {
-        // A or left cursor key
+        // A | left 
         yawRate = 0.1;
     } else if (currentlyPressedKeys[68] || currentlyPressedKeys[39]) {
-        // D or right cursor key
+        // D | right
         yawRate = -0.1;
     } else {
         yawRate = 0;
     }
 
     if (currentlyPressedKeys[87]) {
-        // W key
+        // W
         speed = 0.003;
     } else if (currentlyPressedKeys[83]) {
-        // S key
+        // S
         speed = -0.003;
     } else {
         speed = 0;
     }
 }
 
-//
-// start
-//
-// Called when the canvas is created to get the ball rolling.
-// Figuratively, that is. There's nothing moving in this demo.
-//
+function playGame() {
+    gameStart = true;
+    var x = document.getElementById("splashScreen");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
 function start() {
     canvas = document.getElementById("glcanvas");
 
-    gl = initGL(canvas);      // Initialize the GL context
+    gl = initGL(canvas);
 
-    // Only continue if WebGL is available and working
     if (gl) {
-        gl.clearColor(0.0, 0.0, 0.0, 1.0);                      // Set clear color to black, fully opaque
-        gl.clearDepth(1.0);                                     // Clear everything
-        gl.enable(gl.DEPTH_TEST);                               // Enable depth testing
-        gl.depthFunc(gl.LEQUAL);                                // Near things obscure far things
+        gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        gl.clearDepth(1.0);
+        gl.enable(gl.DEPTH_TEST);
+        gl.depthFunc(gl.LEQUAL);
 
-        // Initialize the shaders; this is where all the lighting for the
-        // vertices and so forth is established.
         initShaders();
-
-        // Next, load and set up the textures we'll be using.
         initTextures();
-
-        // Initialise world objects
         loadWorld();
 
-        // Bind keyboard handling functions to document handlers
         document.onkeydown = handleKeyDown;
         document.onkeyup = handleKeyUp;
 
-        // Set up to draw the scene periodically.
-        setInterval(function () {
-            if (texturesLoaded) { // only draw scene and animate when textures are loaded.
+
+        setInterval(function() {
+            if (gameStart && texturesLoaded) {
                 requestAnimationFrame(animate);
                 handleKeys();
                 drawScene();
                 checkFinish();
             }
         }, 15);
+
+
     }
 }

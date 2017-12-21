@@ -11,33 +11,25 @@
         <script id="shader-fs" type="x-shader/x-fragment">
             precision mediump float;
 
-            // uniform attribute for setting texture coordinates
             varying vec2 vTextureCoord;
-
-            // uniform attribute for setting 2D sampler
             uniform sampler2D uSampler;
 
             void main(void) {
-            // sample the fragment color from texture
             gl_FragColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
             }
         </script>
 
         <!-- Vertex shader program -->
         <script id="shader-vs" type="x-shader/x-vertex">
-            // atributes for setting vertex position and texture coordinates
             attribute vec3 aVertexPosition;
             attribute vec2 aTextureCoord;
 
             uniform mat4 uMVMatrix;	// model-view matrix
             uniform mat4 uPMatrix;	// projection matrix
 
-            // variable for passing texture coordinates
-            // from vertex shader to fragment shader
             varying vec2 vTextureCoord;
 
             void main(void) {
-            // calculate the vertex position
             gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
             vTextureCoord = aTextureCoord;
             }
@@ -46,10 +38,16 @@
 	<body onload="start()">
 	<h1>Labirint</h1>
 	<div id="content">
-		<canvas id="glcanvas" width="1280px" height="720px">
+		<div id="splashScreen">
+            <p> Welcome </p>
+            <p> Pres the start button to play the game </p>
+            <button id="startBtn" onclick="playGame()">Start</button>
+        </div>
+        <canvas id="glcanvas" width="1280px" height="720px">
 			No <code>&lt;canvas&gt;</code> suppport in your browser.
 		</canvas>
 		<div id="loadingtext">Loading world...</div>
+
 	</div>
 
     <div id="help-info">
