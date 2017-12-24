@@ -1,0 +1,13 @@
+Izvajanje testD1
+  Log datoteka: testD1.log
+  Izhod programa: testD1.out
+  Ukazna vrstica: java Naloga2 trace heap up
+  Izhodni status: 0
+  Realni cas izvajanja: 180
+  Uporabniski cas izvajanja: 186
+  Sistemski cas izvajanja: 29
+  Procesorski cas izvajanja: 215
+Preverjanje testD1
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

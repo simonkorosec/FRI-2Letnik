@@ -2,9 +2,6 @@ import java.util.Scanner;
 
 public class Naloga2 {
     public static void main(String[] args) {
-
-        args = new String[]{"count", "radix", "up"};
-
         Scanner sc = new Scanner(System.in);
         Scanner l = new Scanner(sc.nextLine());
 
@@ -446,26 +443,29 @@ public class Naloga2 {
             izpis(array, -1);
         }
 
-        int[] rez = new int[]{0, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
+        int[] rez = new int[]{-3, 0};   // rez[0] -> Premiki  | rez[1] -> Primerjave
+                                        // Naredili bomo 3 premike preveč zato začnemo na -3
 
         for (int i = (array.length / 2) - 1; i >= 0; i--) {
             int[] t = maxHeap(array, i, array.length);
             rez[0] += t[0];
             rez[1] += t[1];
         }
-        rez[0] -= 3;
+
+        if (trace) {
+            izpis(array, array.length);
+        }
 
         for (int last = array.length - 1; last >= 0; last--) {
-            if (trace) {
-                izpis(array, last + 1);
-            }
-
             swap(array, 0, last);
             rez[0] += 3;
-
             int[] t = maxHeap(array, 0, last);
             rez[0] += t[0];
             rez[1] += t[1];
+
+            if (trace && last > 0) {
+                izpis(array, last);
+            }
         }
 
         return rez;
@@ -477,6 +477,7 @@ public class Naloga2 {
         }
 
         int[] rez = new int[]{-3, 0};    // rez[0] -> Premiki  | rez[1] -> Primerjave
+                                         // Naredili bomo 3 premike preveč zato začnemo na -3
 
         for (int i = (array.length / 2) - 1; i >= 0; i--) {
             int[] t = minHeap(array, i, array.length);
@@ -484,16 +485,20 @@ public class Naloga2 {
             rez[1] += t[1];
         }
 
+        if (trace) {
+            izpis(array, array.length);
+        }
+
         for (int last = array.length - 1; last >= 0; last--) {
-            if (trace) {
-                izpis(array, last + 1);
-            }
             swap(array, 0, last);
             rez[0] += 3;
-
             int[] t = minHeap(array, 0, last);
             rez[0] += t[0];
             rez[1] += t[1];
+
+            if (trace && last > 0) {
+                izpis(array, last);
+            }
         }
 
         return rez;
@@ -505,6 +510,9 @@ public class Naloga2 {
         int maximum = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
+
+
+
 
         if (left < velikost && array[maximum] < array[left]) {
             maximum = left;

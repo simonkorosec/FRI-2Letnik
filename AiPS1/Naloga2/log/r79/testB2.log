@@ -1,0 +1,13 @@
+Izvajanje testB2
+  Log datoteka: testB2.log
+  Izhod programa: testB2.out
+  Ukazna vrstica: java Naloga2 trace select down
+  Izhodni status: 0
+  Realni cas izvajanja: 188
+  Uporabniski cas izvajanja: 185
+  Sistemski cas izvajanja: 31
+  Procesorski cas izvajanja: 216
+Preverjanje testB2
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

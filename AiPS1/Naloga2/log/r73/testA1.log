@@ -1,0 +1,13 @@
+Izvajanje testA1
+  Log datoteka: testA1.log
+  Izhod programa: testA1.out
+  Ukazna vrstica: java Naloga2 trace insert up
+  Izhodni status: 0
+  Realni cas izvajanja: 194
+  Uporabniski cas izvajanja: 181
+  Sistemski cas izvajanja: 40
+  Procesorski cas izvajanja: 221
+Preverjanje testA1
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

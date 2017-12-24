@@ -1,0 +1,13 @@
+Izvajanje testF3
+  Log datoteka: testF3.log
+  Izhod programa: testF3.out
+  Ukazna vrstica: java Naloga2 count quick down
+  Izhodni status: 0
+  Realni cas izvajanja: 623
+  Uporabniski cas izvajanja: 948
+  Sistemski cas izvajanja: 52
+  Procesorski cas izvajanja: 1000
+Preverjanje testF3
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

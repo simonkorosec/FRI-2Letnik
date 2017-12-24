@@ -1,0 +1,13 @@
+Izvajanje testF2
+  Log datoteka: testF2.log
+  Izhod programa: testF2.out
+  Ukazna vrstica: java Naloga2 trace quick down
+  Izhodni status: 0
+  Realni cas izvajanja: 186
+  Uporabniski cas izvajanja: 174
+  Sistemski cas izvajanja: 36
+  Procesorski cas izvajanja: 210
+Preverjanje testF2
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

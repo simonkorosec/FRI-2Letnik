@@ -1,0 +1,13 @@
+Izvajanje testB1
+  Log datoteka: testB1.log
+  Izhod programa: testB1.out
+  Ukazna vrstica: java Naloga2 trace select up
+  Izhodni status: 0
+  Realni cas izvajanja: 202
+  Uporabniski cas izvajanja: 186
+  Sistemski cas izvajanja: 35
+  Procesorski cas izvajanja: 221
+Preverjanje testB1
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

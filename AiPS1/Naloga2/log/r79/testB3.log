@@ -1,0 +1,13 @@
+Izvajanje testB3
+  Log datoteka: testB3.log
+  Izhod programa: testB3.out
+  Ukazna vrstica: java Naloga2 count select down
+  Izhodni status: 0
+  Realni cas izvajanja: 812
+  Uporabniski cas izvajanja: 1197
+  Sistemski cas izvajanja: 48
+  Procesorski cas izvajanja: 1245
+Preverjanje testB3
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

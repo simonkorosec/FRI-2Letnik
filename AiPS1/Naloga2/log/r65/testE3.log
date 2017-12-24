@@ -1,0 +1,13 @@
+Izvajanje testE3
+  Log datoteka: testE3.log
+  Izhod programa: testE3.out
+  Ukazna vrstica: java Naloga2 count merge up
+  Izhodni status: 0
+  Realni cas izvajanja: 350
+  Uporabniski cas izvajanja: 497
+  Sistemski cas izvajanja: 52
+  Procesorski cas izvajanja: 549
+Preverjanje testE3
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1
