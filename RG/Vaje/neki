@@ -1,0 +1,60 @@
+    var vertices = [
+        x-o, y-o,  z+o,
+        x+o, y-o,  z+o,
+        x+o, y+o,  z+o,
+        x-o, y+o,  z+o,
+
+        x-o, y-o, z-o,
+        x-o, y+o, z-o,
+        x+o, y+o, z-o,
+        x+o, y-o, z-o,
+
+        x-o, y+o, z-o,
+        x-o, y+o, z+o,
+        x+o, y+o, z+o,
+        x+o, y+o, z-o,
+
+        x-o, y-o, z-o,
+        x+o, y-o, z-o,
+        x+o, y-o, z+o,
+        x-o, y-o, z+o,
+
+        x+o, y-o, z-o,
+        x+o, y+o, z-o,
+        x+o, y+o, z+o,
+        x+o, y-o, z+o,
+
+        x-o, y-o, z-o,
+        x-o, y-o, z+o,
+        x-o, y+o, z+o,
+        x-o, y+o, z-o,
+        x2-o, y2-o,  z2+o,
+        x2+o, y2-o,  z2+o,
+        x2+o, y2+o,  z2+o,
+        x2-o, y2+o,  z2+o,
+
+        x2-o, y2-o, z2-o,
+        x2-o, y2+o, z2-o,
+        x2+o, y2+o, z2-o,
+        x2+o, y2-o, z2-o,
+
+        x2-o, y2+o, z2-o,
+        x2-o, y2+o, z2+o,
+        x2+o, y2+o, z2+o,
+        x2+o, y2+o, z2-o,
+
+        x2-o, y2-o, z2-o,
+        x2+o, y2-o, z2-o,
+        x2+o, y2-o, z2+o,
+        x2-o, y2-o, z2+o,
+
+        x2+o, y2-o, z2-o,
+        x2+o, y2+o, z2-o,
+        x2+o, y2+o, z2+o,
+        x2+o, y2-o, z2+o,
+
+        x2-o, y2-o, z2-o,
+        x2-o, y2-o, z2+o,
+        x2-o, y2+o, z2+o,
+        x2-o, y2+o, z2-o
+    ];

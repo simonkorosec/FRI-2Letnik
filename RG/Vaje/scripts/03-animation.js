@@ -4,10 +4,11 @@ var gl;
 var shaderProgram;
 
 // Buffers
-var triangleVertexPositionBuffer;
-var triangleVertexColorBuffer;
-var squareVertexPositionBuffer;
-var squareVertexColorBuffer;
+var worldVertexPositionBuffer;
+var cubeVertexNormalBuffer;
+var worldVertexTextureCoordBuffer;
+var cubeVertexIndexBuffer;
+
 
 // Model-view and projection matrix and model-view matrix stack
 var mvMatrixStack = [];
@@ -20,7 +21,7 @@ var rotationSquare = 0;
 
 // Helper variable for animation
 var lastTime = 0;
-
+var positionCubeZ = -7.0;
 //
 // Matrix utility functions
 //
@@ -178,78 +179,38 @@ function setMatrixUniforms() {
 // two objects -- a simple two-dimensional square.
 //
 function initBuffers() {
-  // TRIANGLE
-  // Create a buffer for the triangle's vertices.
-  triangleVertexPositionBuffer = gl.createBuffer();
-
-  // Select the triangleVertexPositionBuffer as the one to apply vertex
-  // operations to from here out.
-  gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexPositionBuffer);
-  var vertices = [
-     0.0,  1.0,  0.0,
-    -1.0, -1.0,  0.0,
-     1.0, -1.0,  0.0
-  ];
-
-  // Pass the list of vertices into WebGL to build the shape. We
-  // do this by creating a Float32Array from the JavaScript array,
-  // then use it to fill the current vertex buffer.
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
-  triangleVertexPositionBuffer.itemSize = 3;
-  triangleVertexPositionBuffer.numItems = 3;
-
-  // Now set up the colors for the vertices
-  triangleVertexColorBuffer = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexColorBuffer);
-  var colors = [
-      1.0, 0.0, 0.0, 1.0,   // red
-      0.0, 1.0, 0.0, 1.0,   // green
-      0.0, 0.0, 1.0, 1.0    // blue
-  ];
-
-  // Pass the colors into WebGL
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
-  triangleVertexColorBuffer.itemSize = 4;
-  triangleVertexColorBuffer.numItems = 3;
-
-  // SQUARE
-  // Create a buffer for the square's vertices.
-  squareVertexPositionBuffer = gl.createBuffer();
+  worldVertexPositionBuffer = gl.createBuffer();
   
-  // Select the squareVertexPositionBuffer as the one to apply vertex
+  // Select the worldVertexPositionBuffer as the one to apply vertex
   // operations to from here out.
-  gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer);
+  gl.bindBuffer(gl.ARRAY_BUFFER, worldVertexPositionBuffer);
   
-  // Now create an array of vertices for the square. Note that the Z
-  // coordinate is always 0 here.
-  vertices = [
-     1.0,  1.0,  0.0,
-    -1.0,  1.0,  0.0,
-     1.0, -1.0,  0.0,
-    -1.0, -1.0,  0.0
-  ];
+  // Now create an array of vertices for the cube.
+  vertices = [0.202008,2.418635,-4.07776,0.202007,1.329363,-2.124945,0.397098,2.39944,-4.078627,0.584691,2.342592,-4.081196,0.757578,2.250277,-4.085368,0.909114,2.126041,-4.090982,1.033477,1.974659,-4.097824,1.125887,1.801948,-4.105629,1.182793,1.614546,-4.114098,1.202008,1.419655,-4.122906,1.182793,1.224764,-4.131713,1.125887,1.037362,-4.140182,1.033477,0.864651,-4.147987,0.909114,0.713269,-4.154829,0.757578,0.589033,-4.160443,0.584691,0.496717,-4.164615,0.397098,0.43987,-4.167184,0.202007,0.420675,-4.168052,0.006917,0.43987,-4.167184,-0.180676,0.496718,-4.164615,-0.353563,0.589034,-4.160443,-0.5051,0.71327,-4.154829,-0.629463,0.864652,-4.147987,-0.721872,1.037363,-4.140182,-0.778778,1.224765,-4.131713,-0.797992,1.419656,-4.122906,-0.778778,1.614548,-4.114098,-0.721871,1.80195,-4.105629,-0.629461,1.97466,-4.097824,-0.505098,2.126042,-4.090982,-0.353562,2.250278,-4.085368,-0.180674,2.342593,-4.081196,0.006919,2.399441,-4.078627];
   
   // Now pass the list of vertices into WebGL to build the shape. We
   // do this by creating a Float32Array from the JavaScript array,
   // then use it to fill the current vertex buffer.
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
-  squareVertexPositionBuffer.itemSize = 3;
-  squareVertexPositionBuffer.numItems = 4;
+  worldVertexPositionBuffer.itemSize = 3;
+  worldVertexPositionBuffer.numItems = vertices.length;
 
-  // Now set up the colors for the vertices
-  squareVertexColorBuffer = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexColorBuffer);
-  colors = [
-    1.0,  1.0,  1.0,  1.0,    // white
-    1.0,  0.0,  0.0,  1.0,    // red
-    0.0,  1.0,  0.0,  1.0,    // green
-    0.0,  0.0,  1.0,  1.0     // blue
-  ];
+
+    // Build the element array buffer; this specifies the indices
+  // into the vertex array for each face's vertices.
+  cubeVertexIndexBuffer = gl.createBuffer();
+  gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cubeVertexIndexBuffer);
   
-  // Pass the colors into WebGL
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
-  squareVertexColorBuffer.itemSize = 4;
-  squareVertexColorBuffer.numItems = 4;
+  // This array defines each face as two triangles, using the
+  // indices into the vertex array to specify each triangle's
+  // position.
+  var cubeVertexIndices = [0,1,2];
+  //,2,1,3,3,1,4,4,1,5,5,1,6,6,1,7,7,1,8,8,1,9,9,1,10,10,1,11,11,1,12,12,1,13,13,1,14,14,1,15,15,1,16,16,1,17,17,1,18,18,1,19,19,1,20,20,1,21,21,1,22,22,1,23,23,1,24,24,1,25,25,1,26,26,1,27,27,1,28,28,1,29,29,1,30,30,1,31,31,1,32,32,1,0];
+  
+  // Now send the element array to GL
+  gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(cubeVertexIndices), gl.STATIC_DRAW);
+  cubeVertexIndexBuffer.itemSize = 1;
+  cubeVertexIndexBuffer.numItems = 3;
 }
 
 //
@@ -272,59 +233,26 @@ function drawScene() {
   // Set the drawing position to the "identity" point, which is
   // the center of the scene.
   mat4.identity(mvMatrix);
-  
-  // TRIANGLE:
 
   // Now move the drawing position a bit to where we want to start
-  // drawing the triangle.
-  mat4.translate(mvMatrix, [-1.5, 0.0, -7.0]);
-  
-  // Save the current matrix, then rotate before we draw.
-  mvPushMatrix();
-  mat4.rotate(mvMatrix, degToRad(rotationTriangle), [0, 1, 0]);
+  // drawing the cube.
+  mat4.translate(mvMatrix, [0.0, 0.0, positionCubeZ]);
 
-  // Draw the triangle by binding the array buffer to the square's vertices
+  // Rotate before we draw.
+
+
+  // Draw the cube by binding the array buffer to the cube's vertices
   // array, setting attributes, and pushing it to GL.
-  gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexPositionBuffer);
-  gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, triangleVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
-
-  // Set the colors attribute for the vertices.
-  gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexColorBuffer);
-  gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, triangleVertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
-
-  // Draw the triangle.
-  setMatrixUniforms();
-  gl.drawArrays(gl.TRIANGLES, 0, triangleVertexPositionBuffer.numItems);
-
-  // Restore the original matrix
-  mvPopMatrix();
-
-
-  // SQUARE:
-
-  // Save the current matrix, then rotate before we draw.
-  mvPushMatrix();
-  mat4.rotate(mvMatrix, degToRad(rotationSquare), [1, 0, 0]);
-
-  // Now move the drawing position a bit to where we want to start
-  // drawing the square.
-  mat4.translate(mvMatrix, [3.0, 0.0, 0.0]);
-
-  // Draw the square by binding the array buffer to the square's vertices
-  // array, setting attributes, and pushing it to GL.
-  gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer);
-  gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, squareVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+  gl.bindBuffer(gl.ARRAY_BUFFER, worldVertexPositionBuffer);
+  gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, worldVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
   
-  // Set the colors attribute for the vertices.
-  gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexColorBuffer);
-  gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, squareVertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
 
-  // Draw the square.
+  // set uniforms for lights as defined in the document
+
+  // Draw the cube.
+  gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cubeVertexIndexBuffer);
   setMatrixUniforms();
-  gl.drawArrays(gl.TRIANGLE_STRIP, 0, squareVertexPositionBuffer.numItems);
-
-  // Restore the original matrix
-  mvPopMatrix();
+  gl.drawElements(gl.TRIANGLES, cubeVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
 }
 
 //

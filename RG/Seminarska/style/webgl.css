@@ -28,8 +28,27 @@ td {
 	color: white;
 }
 
+#hud {
+    position: absolute;
+    top: 100px;
+    left: 350px;
+    font-size: 1em;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+}
+
 #help-info {
     padding-top: 3em;
     margin: auto;
     text-align: center;
+}
+
+#splashScreen {
+	padding-bottom: 2em;
+}
+
+#gameOverScreen, #gameFinishScreen{
+    display: none;
+    padding-bottom: 2em;
 }

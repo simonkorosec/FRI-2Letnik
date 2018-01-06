@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="3" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4105b3bd-a913-4ef9-9858-1e6a11ca8c8e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../Advent/src/Dan17/Dan17.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RGsem.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/script-Copy.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Advent/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../Advent/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../AiPS1/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/oddaja.log" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/log/oddaja.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/Naloga2/src/Naloga2.java" afterPath="$PROJECT_DIR$/../../AiPS1/Naloga2/src/Naloga2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/src/Izziv5.java" afterPath="$PROJECT_DIR$/../../AiPS1/src/Izziv5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../AiPS1/src/Naloga2.java" afterPath="$PROJECT_DIR$/../../AiPS1/src/Naloga2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/world.txt" afterPath="$PROJECT_DIR$/assets/world.txt" />
+    <list default="true" id="10f0626d-a36f-4ecf-805d-9b417ab9ff51" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/maze.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/nacrt.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/wall.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/Thumbs.db" afterPath="$PROJECT_DIR$/assets/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/script.js" afterPath="$PROJECT_DIR$/scripts/script.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -33,12 +24,9 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-              <folding>
-                <element signature="e#1766#1770#0" expanded="true" />
-                <element signature="e#1776#1780#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="170">
+              <caret line="59" column="18" lean-forward="true" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,8 +34,8 @@
       <file leaf-file-name="webgl.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/webgl.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+            <state relative-caret-position="833">
+              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,51 +44,116 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="66" column="6" lean-forward="false" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="312">
+              <caret line="804" column="5" lean-forward="true" selection-start-line="804" selection-start-column="5" selection-end-line="804" selection-end-column="5" />
+              <folding>
+                <element signature="n#!!block;n#Wall#0" expanded="false" />
+                <element signature="n#!!block;n#Door#0" expanded="false" />
+                <element signature="n#!!block;n#Key#0" expanded="false" />
+                <element signature="e#3529#4239#0" expanded="false" />
+                <element signature="e#4196#4233#0" expanded="false" />
+                <element signature="n#!!block;n#HealthBox#0" expanded="false" />
+                <element signature="n#!!block;n#Laser#0" expanded="false" />
+                <element signature="n#!!block;n#mvPushMatrix#0" expanded="false" />
+                <element signature="n#!!block;n#mvPopMatrix#0" expanded="false" />
+                <element signature="n#!!block;n#degToRad#0" expanded="false" />
+                <element signature="n#!!block;n#initGL#0" expanded="false" />
+                <element signature="n#!!block;n#getShader#0" expanded="false" />
+                <element signature="e#7719#7791#0" expanded="false" />
+                <element signature="n#!!block;n#initShaders#0" expanded="false" />
+                <element signature="n#!!block;n#setMatrixUniforms#0" expanded="false" />
+                <element signature="n#!!block;n#initTextures#0" expanded="false" />
+                <element signature="n#!!block;n#handleTextureLoaded#0" expanded="false" />
+                <element signature="n#!!block;n#handleLoadedWorld#0" expanded="false" />
+                <element signature="n#!!block;n#handleLoadedDoors#0" expanded="false" />
+                <element signature="n#!!block;n#initLaserPositions#0" expanded="false" />
+                <element signature="n#!!block;n#loadWorld#0" expanded="false" />
+                <element signature="n#!!block;n#loadDoors#0" expanded="false" />
+                <element signature="n#!!block;n#readyLaser#0" expanded="false" />
+                <element signature="e#14993#15721#0" expanded="false" />
+                <element signature="e#16046#16583#0" expanded="false" />
+                <element signature="e#16920#17192#0" expanded="false" />
+                <element signature="n#!!doc;n#drawLaser#0" expanded="false" />
+                <element signature="n#!!block;n#drawLaser#0" expanded="false" />
+                <element signature="n#!!block;n#drawWalls#0" expanded="false" />
+                <element signature="n#!!block;n#drawDoors#0" expanded="false" />
+                <element signature="n#!!block;n#drawKey1#0" expanded="false" />
+                <element signature="n#!!block;n#drawKey2#0" expanded="false" />
+                <element signature="n#!!block;n#drawHP1#0" expanded="false" />
+                <element signature="n#!!block;n#drawHP2#0" expanded="false" />
+                <element signature="n#!!block;n#drawScene#0" expanded="false" />
+                <element signature="n#!!block;n#checkCollision#0" expanded="false" />
+                <element signature="n#!!block;n#getPlayerBox#0" expanded="false" />
+                <element signature="n#!!block;n#animate#0" expanded="false" />
+                <element signature="n#!!block;n#finish#0" expanded="false" />
+                <element signature="n#!!block;n#checkFinish#0" expanded="false" />
+                <element signature="n#!!block;n#playBump#0" expanded="false" />
+                <element signature="n#!!block;n#playPickUp#0" expanded="false" />
+                <element signature="n#!!block;n#handleKeyDown#0" expanded="false" />
+                <element signature="n#!!block;n#handleKeyUp#0" expanded="false" />
+                <element signature="n#!!block;n#handleKeys#0" expanded="false" />
+                <element signature="n#!!block;n#playGame#0" expanded="false" />
+                <element signature="n#!!block;n#gameOver#0" expanded="false" />
+                <element signature="n#!!block;n#updateHUD#0" expanded="false" />
+                <element signature="n#!!block;n#checkHitLaser#0" expanded="false" />
+                <element signature="n#!!block;n#initKey1#0" expanded="false" />
+                <element signature="e#30127#30834#0" expanded="false" />
+                <element signature="e#31143#31586#0" expanded="false" />
+                <element signature="e#32032#32281#0" expanded="false" />
+                <element signature="n#!!block;n#initKey2#0" expanded="false" />
+                <element signature="e#32621#33328#0" expanded="false" />
+                <element signature="e#33641#34084#0" expanded="false" />
+                <element signature="n#!!block;n#initHealth1#0" expanded="false" />
+                <element signature="e#35136#35843#0" expanded="false" />
+                <element signature="e#36164#36607#0" expanded="false" />
+                <element signature="e#37071#37320#0" expanded="false" />
+                <element signature="n#!!block;n#initHealth2#0" expanded="false" />
+                <element signature="e#37675#38382#0" expanded="false" />
+                <element signature="e#38707#39150#0" expanded="false" />
+                <element signature="e#39620#39869#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>world.txt</find>
-      <find>world</find>
-      <find>txt</find>
-      <find>triangle</find>
-      <find>wall</find>
-      <find>wall.</find>
-      <find>F</find>
-      <find>8.5</find>
-      <find>7.5</find>
-      <find>C</find>
+      <find>A11</find>
+      <find>-10.5</find>
+      <find>conso</find>
+      <find>scale</find>
+      <find>loadin</find>
+      <find>CCapture</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/assets/world.txt" />
+        <option value="$PROJECT_DIR$/assets/doors.txt" />
+        <option value="$PROJECT_DIR$/scripts/parse-obj.js" />
+        <option value="$PROJECT_DIR$/scripts/cy.js" />
+        <option value="$PROJECT_DIR$/scripts/glMatrix-0.9.5.min.js" />
         <option value="$PROJECT_DIR$/style/webgl.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/assets/world.txt" />
         <option value="$PROJECT_DIR$/scripts/script.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <annotation-enable>false</annotation-enable>
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
-  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -110,44 +163,6 @@
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Bitwise operation issuesJavaScript</id>
-          </State>
-          <State>
-            <id>GeneralJavaScript</id>
-          </State>
-          <State>
-            <id>JavaScript</id>
-          </State>
-          <State>
-            <id>Potentially confusing code constructsJavaScript</id>
-          </State>
-          <State>
-            <id>Probable bugsJavaScript</id>
-          </State>
-          <State>
-            <id>Spelling</id>
-          </State>
-          <State>
-            <id>XPath</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>SpellCheckingInspection</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -163,39 +178,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Seminarska" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Seminarska" type="462c0819:PsiDirectoryNode" />
+              <item name="RG_seminarska" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RG_seminarska" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Seminarska" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Seminarska" type="462c0819:PsiDirectoryNode" />
+              <item name="RG_seminarska" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RG_seminarska" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
-    <property name="JavaScriptPreferStrict" value="false" />
-    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Simon Korošec\Documents\GitHub\FRI-2Letnik\RG\Seminarska\scripts" />
-    </key>
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -214,30 +220,32 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4105b3bd-a913-4ef9-9858-1e6a11ca8c8e" name="Default" comment="" />
-      <created>1511600276413</created>
+      <changelist id="10f0626d-a36f-4ecf-805d-9b417ab9ff51" name="Default" comment="" />
+      <created>1514885401084</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1511600276413</updated>
-      <workItem from="1511600278990" duration="4350000" />
-      <workItem from="1511693596051" duration="1707000" />
-      <workItem from="1513252586659" duration="4564000" />
-      <workItem from="1513435244599" duration="5747000" />
-      <workItem from="1513513317594" duration="3488000" />
-      <workItem from="1513530981701" duration="598000" />
+      <updated>1514885401084</updated>
+      <workItem from="1514885405201" duration="512000" />
+      <workItem from="1514886844059" duration="56000" />
+      <workItem from="1514886908258" duration="27702000" />
+      <workItem from="1514998236818" duration="10415000" />
+      <workItem from="1515056148500" duration="14883000" />
+      <workItem from="1515171653856" duration="771000" />
+      <workItem from="1515176210540" duration="1565000" />
+      <workItem from="1515178470137" duration="992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20454000" />
+    <option name="totallyTimeSpent" value="56896000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3611691" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18893528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -249,8 +257,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -262,181 +269,614 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-          <folding>
-            <element signature="e#1766#1770#0" expanded="true" />
-            <element signature="e#1776#1780#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/webgl.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        <state relative-caret-position="833">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="66" column="6" lean-forward="false" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="3536">
+          <caret line="1432" column="50" lean-forward="true" selection-start-line="1432" selection-start-column="50" selection-end-line="1432" selection-end-column="50" />
+          <folding>
+            <element signature="n#!!block;n#Wall#0" expanded="false" />
+            <element signature="n#!!block;n#Door#0" expanded="false" />
+            <element signature="n#!!block;n#Key#0" expanded="false" />
+            <element signature="e#3529#4239#0" expanded="false" />
+            <element signature="e#4196#4233#0" expanded="false" />
+            <element signature="n#!!block;n#HealthBox#0" expanded="false" />
+            <element signature="n#!!block;n#Laser#0" expanded="false" />
+            <element signature="n#!!block;n#mvPushMatrix#0" expanded="false" />
+            <element signature="n#!!block;n#mvPopMatrix#0" expanded="false" />
+            <element signature="n#!!block;n#degToRad#0" expanded="false" />
+            <element signature="n#!!block;n#initGL#0" expanded="false" />
+            <element signature="n#!!block;n#getShader#0" expanded="false" />
+            <element signature="e#7719#7791#0" expanded="false" />
+            <element signature="n#!!block;n#initShaders#0" expanded="false" />
+            <element signature="n#!!block;n#setMatrixUniforms#0" expanded="false" />
+            <element signature="n#!!block;n#initTextures#0" expanded="false" />
+            <element signature="n#!!block;n#handleTextureLoaded#0" expanded="false" />
+            <element signature="n#!!block;n#handleLoadedWorld#0" expanded="false" />
+            <element signature="n#!!block;n#handleLoadedDoors#0" expanded="false" />
+            <element signature="n#!!block;n#initLaserPositions#0" expanded="false" />
+            <element signature="n#!!block;n#loadWorld#0" expanded="false" />
+            <element signature="n#!!block;n#loadDoors#0" expanded="false" />
+            <element signature="n#!!block;n#readyLaser#0" expanded="false" />
+            <element signature="e#14993#15721#0" expanded="false" />
+            <element signature="e#16046#16583#0" expanded="false" />
+            <element signature="e#16920#17192#0" expanded="false" />
+            <element signature="n#!!doc;n#drawLaser#0" expanded="false" />
+            <element signature="n#!!block;n#drawLaser#0" expanded="false" />
+            <element signature="n#!!block;n#drawWalls#0" expanded="false" />
+            <element signature="n#!!block;n#drawDoors#0" expanded="false" />
+            <element signature="n#!!block;n#drawKey1#0" expanded="false" />
+            <element signature="n#!!block;n#drawKey2#0" expanded="false" />
+            <element signature="n#!!block;n#drawHP1#0" expanded="false" />
+            <element signature="n#!!block;n#drawHP2#0" expanded="false" />
+            <element signature="n#!!block;n#drawScene#0" expanded="false" />
+            <element signature="n#!!block;n#checkCollision#0" expanded="false" />
+            <element signature="n#!!block;n#getPlayerBox#0" expanded="false" />
+            <element signature="n#!!block;n#animate#0" expanded="false" />
+            <element signature="n#!!block;n#finish#0" expanded="false" />
+            <element signature="n#!!block;n#checkFinish#0" expanded="false" />
+            <element signature="n#!!block;n#playBump#0" expanded="false" />
+            <element signature="n#!!block;n#playPickUp#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeyDown#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeyUp#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeys#0" expanded="false" />
+            <element signature="n#!!block;n#playGame#0" expanded="false" />
+            <element signature="n#!!block;n#gameOver#0" expanded="false" />
+            <element signature="n#!!block;n#updateHUD#0" expanded="false" />
+            <element signature="n#!!block;n#checkHitLaser#0" expanded="false" />
+            <element signature="n#!!block;n#initKey1#0" expanded="false" />
+            <element signature="e#30127#30834#0" expanded="false" />
+            <element signature="e#31143#31586#0" expanded="false" />
+            <element signature="e#32032#32281#0" expanded="false" />
+            <element signature="n#!!block;n#initKey2#0" expanded="false" />
+            <element signature="e#32621#33328#0" expanded="false" />
+            <element signature="e#33641#34084#0" expanded="false" />
+            <element signature="n#!!block;n#initHealth1#0" expanded="false" />
+            <element signature="e#35136#35843#0" expanded="false" />
+            <element signature="e#36164#36607#0" expanded="false" />
+            <element signature="e#37071#37320#0" expanded="false" />
+            <element signature="n#!!block;n#initHealth2#0" expanded="false" />
+            <element signature="e#37675#38382#0" expanded="false" />
+            <element signature="e#38707#39150#0" expanded="false" />
+            <element signature="e#39620#39869#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="24" lean-forward="true" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-          <folding>
-            <element signature="e#1766#1770#0" expanded="true" />
-            <element signature="e#1776#1780#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/webgl.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        <state relative-caret-position="833">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="901" column="0" lean-forward="false" selection-start-line="901" selection-start-column="0" selection-end-line="901" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#Wall#0" expanded="false" />
+            <element signature="n#!!block;n#Door#0" expanded="false" />
+            <element signature="n#!!block;n#Key#0" expanded="false" />
+            <element signature="e#3529#4239#0" expanded="false" />
+            <element signature="e#4196#4233#0" expanded="false" />
+            <element signature="n#!!block;n#HealthBox#0" expanded="false" />
+            <element signature="n#!!block;n#Laser#0" expanded="false" />
+            <element signature="n#!!block;n#mvPushMatrix#0" expanded="false" />
+            <element signature="n#!!block;n#mvPopMatrix#0" expanded="false" />
+            <element signature="n#!!block;n#degToRad#0" expanded="false" />
+            <element signature="n#!!block;n#initGL#0" expanded="false" />
+            <element signature="n#!!block;n#getShader#0" expanded="false" />
+            <element signature="e#7719#7791#0" expanded="false" />
+            <element signature="n#!!block;n#initShaders#0" expanded="false" />
+            <element signature="n#!!block;n#setMatrixUniforms#0" expanded="false" />
+            <element signature="n#!!block;n#initTextures#0" expanded="false" />
+            <element signature="n#!!block;n#handleTextureLoaded#0" expanded="false" />
+            <element signature="n#!!block;n#handleLoadedWorld#0" expanded="false" />
+            <element signature="n#!!block;n#handleLoadedDoors#0" expanded="false" />
+            <element signature="n#!!block;n#initLaserPositions#0" expanded="false" />
+            <element signature="n#!!block;n#loadWorld#0" expanded="false" />
+            <element signature="n#!!block;n#loadDoors#0" expanded="false" />
+            <element signature="n#!!block;n#readyLaser#0" expanded="false" />
+            <element signature="e#14993#15721#0" expanded="false" />
+            <element signature="e#16046#16583#0" expanded="false" />
+            <element signature="e#16920#17192#0" expanded="false" />
+            <element signature="n#!!doc;n#drawLaser#0" expanded="false" />
+            <element signature="n#!!block;n#drawLaser#0" expanded="false" />
+            <element signature="n#!!block;n#drawWalls#0" expanded="false" />
+            <element signature="n#!!block;n#drawDoors#0" expanded="false" />
+            <element signature="n#!!block;n#drawKey1#0" expanded="false" />
+            <element signature="n#!!block;n#drawKey2#0" expanded="false" />
+            <element signature="n#!!block;n#drawHP1#0" expanded="false" />
+            <element signature="n#!!block;n#drawHP2#0" expanded="false" />
+            <element signature="n#!!block;n#drawScene#0" expanded="false" />
+            <element signature="n#!!block;n#checkCollision#0" expanded="false" />
+            <element signature="n#!!block;n#getPlayerBox#0" expanded="false" />
+            <element signature="n#!!block;n#animate#0" expanded="false" />
+            <element signature="n#!!block;n#finish#0" expanded="false" />
+            <element signature="n#!!block;n#checkFinish#0" expanded="false" />
+            <element signature="n#!!block;n#playBump#0" expanded="false" />
+            <element signature="n#!!block;n#playPickUp#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeyDown#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeyUp#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeys#0" expanded="false" />
+            <element signature="n#!!block;n#playGame#0" expanded="false" />
+            <element signature="n#!!block;n#gameOver#0" expanded="false" />
+            <element signature="n#!!block;n#updateHUD#0" expanded="false" />
+            <element signature="n#!!block;n#checkHitLaser#0" expanded="false" />
+            <element signature="n#!!block;n#initKey1#0" expanded="false" />
+            <element signature="e#30127#30834#0" expanded="false" />
+            <element signature="e#31143#31586#0" expanded="false" />
+            <element signature="e#32032#32281#0" expanded="false" />
+            <element signature="n#!!block;n#initKey2#0" expanded="false" />
+            <element signature="e#32621#33328#0" expanded="false" />
+            <element signature="e#33641#34084#0" expanded="false" />
+            <element signature="n#!!block;n#initHealth1#0" expanded="false" />
+            <element signature="e#35136#35843#0" expanded="false" />
+            <element signature="e#36164#36607#0" expanded="false" />
+            <element signature="e#37071#37320#0" expanded="false" />
+            <element signature="n#!!block;n#initHealth2#0" expanded="false" />
+            <element signature="e#37675#38382#0" expanded="false" />
+            <element signature="e#38707#39150#0" expanded="false" />
+            <element signature="e#39620#39869#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/webgl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14994">
+          <caret line="882" column="20" lean-forward="false" selection-start-line="882" selection-start-column="20" selection-end-line="882" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!block;n#Wall#0" expanded="false" />
+            <element signature="n#!!block;n#Door#0" expanded="false" />
+            <element signature="n#!!block;n#Key#0" expanded="false" />
+            <element signature="e#3529#4239#0" expanded="false" />
+            <element signature="e#4196#4233#0" expanded="false" />
+            <element signature="n#!!block;n#HealthBox#0" expanded="false" />
+            <element signature="n#!!block;n#Laser#0" expanded="false" />
+            <element signature="n#!!block;n#mvPushMatrix#0" expanded="false" />
+            <element signature="n#!!block;n#mvPopMatrix#0" expanded="false" />
+            <element signature="n#!!block;n#degToRad#0" expanded="false" />
+            <element signature="n#!!block;n#initGL#0" expanded="false" />
+            <element signature="n#!!block;n#getShader#0" expanded="false" />
+            <element signature="e#7719#7791#0" expanded="false" />
+            <element signature="n#!!block;n#initShaders#0" expanded="false" />
+            <element signature="n#!!block;n#setMatrixUniforms#0" expanded="false" />
+            <element signature="n#!!block;n#initTextures#0" expanded="false" />
+            <element signature="n#!!block;n#handleTextureLoaded#0" expanded="false" />
+            <element signature="n#!!block;n#handleLoadedWorld#0" expanded="false" />
+            <element signature="n#!!block;n#handleLoadedDoors#0" expanded="false" />
+            <element signature="n#!!block;n#initLaserPositions#0" expanded="false" />
+            <element signature="n#!!block;n#loadWorld#0" expanded="false" />
+            <element signature="n#!!block;n#loadDoors#0" expanded="false" />
+            <element signature="n#!!block;n#readyLaser#0" expanded="false" />
+            <element signature="e#14993#15721#0" expanded="false" />
+            <element signature="e#16046#16583#0" expanded="false" />
+            <element signature="e#16920#17192#0" expanded="false" />
+            <element signature="n#!!doc;n#drawLaser#0" expanded="false" />
+            <element signature="n#!!block;n#drawLaser#0" expanded="false" />
+            <element signature="n#!!block;n#drawWalls#0" expanded="false" />
+            <element signature="n#!!block;n#drawDoors#0" expanded="false" />
+            <element signature="n#!!block;n#drawKey1#0" expanded="false" />
+            <element signature="n#!!block;n#drawKey2#0" expanded="false" />
+            <element signature="n#!!block;n#drawHP1#0" expanded="false" />
+            <element signature="n#!!block;n#drawHP2#0" expanded="false" />
+            <element signature="n#!!block;n#drawScene#0" expanded="false" />
+            <element signature="n#!!block;n#checkCollision#0" expanded="false" />
+            <element signature="n#!!block;n#getPlayerBox#0" expanded="false" />
+            <element signature="n#!!block;n#animate#0" expanded="false" />
+            <element signature="n#!!block;n#finish#0" expanded="false" />
+            <element signature="n#!!block;n#checkFinish#0" expanded="false" />
+            <element signature="n#!!block;n#playBump#0" expanded="false" />
+            <element signature="n#!!block;n#playPickUp#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeyDown#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeyUp#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeys#0" expanded="false" />
+            <element signature="n#!!block;n#playGame#0" expanded="false" />
+            <element signature="n#!!block;n#gameOver#0" expanded="false" />
+            <element signature="n#!!block;n#updateHUD#0" expanded="false" />
+            <element signature="n#!!block;n#checkHitLaser#0" expanded="false" />
+            <element signature="n#!!block;n#initKey1#0" expanded="false" />
+            <element signature="e#30127#30834#0" expanded="false" />
+            <element signature="e#31143#31586#0" expanded="false" />
+            <element signature="e#32032#32281#0" expanded="false" />
+            <element signature="n#!!block;n#initKey2#0" expanded="false" />
+            <element signature="e#32621#33328#0" expanded="false" />
+            <element signature="e#33641#34084#0" expanded="false" />
+            <element signature="n#!!block;n#initHealth1#0" expanded="false" />
+            <element signature="e#35136#35843#0" expanded="false" />
+            <element signature="e#36164#36607#0" expanded="false" />
+            <element signature="e#37071#37320#0" expanded="false" />
+            <element signature="n#!!block;n#initHealth2#0" expanded="false" />
+            <element signature="e#37675#38382#0" expanded="false" />
+            <element signature="e#38707#39150#0" expanded="false" />
+            <element signature="e#39620#39869#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/webgl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/world.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/doors.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2669">
+          <caret line="632" column="0" lean-forward="true" selection-start-line="632" selection-start-column="0" selection-end-line="632" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#Wall#0" expanded="false" />
+            <element signature="n#!!block;n#Door#0" expanded="false" />
+            <element signature="n#!!block;n#Key#0" expanded="false" />
+            <element signature="e#3529#4239#0" expanded="false" />
+            <element signature="e#4196#4233#0" expanded="false" />
+            <element signature="n#!!block;n#HealthBox#0" expanded="false" />
+            <element signature="n#!!block;n#Laser#0" expanded="false" />
+            <element signature="n#!!block;n#mvPushMatrix#0" expanded="false" />
+            <element signature="n#!!block;n#mvPopMatrix#0" expanded="false" />
+            <element signature="n#!!block;n#degToRad#0" expanded="false" />
+            <element signature="n#!!block;n#initGL#0" expanded="false" />
+            <element signature="n#!!block;n#getShader#0" expanded="false" />
+            <element signature="e#7719#7791#0" expanded="false" />
+            <element signature="n#!!block;n#initShaders#0" expanded="false" />
+            <element signature="n#!!block;n#setMatrixUniforms#0" expanded="false" />
+            <element signature="n#!!block;n#initTextures#0" expanded="false" />
+            <element signature="n#!!block;n#handleTextureLoaded#0" expanded="false" />
+            <element signature="n#!!block;n#handleLoadedWorld#0" expanded="false" />
+            <element signature="n#!!block;n#handleLoadedDoors#0" expanded="false" />
+            <element signature="n#!!block;n#initLaserPositions#0" expanded="false" />
+            <element signature="n#!!block;n#loadWorld#0" expanded="false" />
+            <element signature="n#!!block;n#loadDoors#0" expanded="false" />
+            <element signature="n#!!block;n#readyLaser#0" expanded="false" />
+            <element signature="e#14993#15721#0" expanded="false" />
+            <element signature="e#16046#16583#0" expanded="false" />
+            <element signature="e#16920#17192#0" expanded="false" />
+            <element signature="n#!!doc;n#drawLaser#0" expanded="false" />
+            <element signature="n#!!block;n#drawLaser#0" expanded="false" />
+            <element signature="n#!!block;n#drawWalls#0" expanded="false" />
+            <element signature="n#!!block;n#drawDoors#0" expanded="false" />
+            <element signature="n#!!block;n#drawKey1#0" expanded="false" />
+            <element signature="n#!!block;n#drawKey2#0" expanded="false" />
+            <element signature="n#!!block;n#drawHP1#0" expanded="false" />
+            <element signature="n#!!block;n#drawHP2#0" expanded="false" />
+            <element signature="n#!!block;n#drawScene#0" expanded="false" />
+            <element signature="n#!!block;n#checkCollision#0" expanded="false" />
+            <element signature="n#!!block;n#getPlayerBox#0" expanded="false" />
+            <element signature="n#!!block;n#animate#0" expanded="false" />
+            <element signature="n#!!block;n#finish#0" expanded="false" />
+            <element signature="n#!!block;n#checkFinish#0" expanded="false" />
+            <element signature="n#!!block;n#playBump#0" expanded="false" />
+            <element signature="n#!!block;n#playPickUp#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeyDown#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeyUp#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeys#0" expanded="false" />
+            <element signature="n#!!block;n#playGame#0" expanded="false" />
+            <element signature="n#!!block;n#gameOver#0" expanded="false" />
+            <element signature="n#!!block;n#updateHUD#0" expanded="false" />
+            <element signature="n#!!block;n#checkHitLaser#0" expanded="false" />
+            <element signature="n#!!block;n#initKey1#0" expanded="false" />
+            <element signature="e#30127#30834#0" expanded="false" />
+            <element signature="e#31143#31586#0" expanded="false" />
+            <element signature="e#32032#32281#0" expanded="false" />
+            <element signature="n#!!block;n#initKey2#0" expanded="false" />
+            <element signature="e#32621#33328#0" expanded="false" />
+            <element signature="e#33641#34084#0" expanded="false" />
+            <element signature="n#!!block;n#initHealth1#0" expanded="false" />
+            <element signature="e#35136#35843#0" expanded="false" />
+            <element signature="e#36164#36607#0" expanded="false" />
+            <element signature="e#37071#37320#0" expanded="false" />
+            <element signature="n#!!block;n#initHealth2#0" expanded="false" />
+            <element signature="e#37675#38382#0" expanded="false" />
+            <element signature="e#38707#39150#0" expanded="false" />
+            <element signature="e#39620#39869#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="3" lean-forward="false" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/world.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6120">
+          <caret line="360" column="0" lean-forward="true" selection-start-line="360" selection-start-column="0" selection-end-line="360" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#Wall#0" expanded="false" />
+            <element signature="n#!!block;n#Door#0" expanded="false" />
+            <element signature="n#!!block;n#Key#0" expanded="false" />
+            <element signature="e#3529#4239#0" expanded="false" />
+            <element signature="e#4196#4233#0" expanded="false" />
+            <element signature="n#!!block;n#HealthBox#0" expanded="false" />
+            <element signature="n#!!block;n#Laser#0" expanded="false" />
+            <element signature="n#!!block;n#mvPushMatrix#0" expanded="false" />
+            <element signature="n#!!block;n#mvPopMatrix#0" expanded="false" />
+            <element signature="n#!!block;n#degToRad#0" expanded="false" />
+            <element signature="n#!!block;n#initGL#0" expanded="false" />
+            <element signature="n#!!block;n#getShader#0" expanded="false" />
+            <element signature="e#7719#7791#0" expanded="false" />
+            <element signature="n#!!block;n#initShaders#0" expanded="false" />
+            <element signature="n#!!block;n#setMatrixUniforms#0" expanded="false" />
+            <element signature="n#!!block;n#initTextures#0" expanded="false" />
+            <element signature="n#!!block;n#handleTextureLoaded#0" expanded="false" />
+            <element signature="n#!!block;n#handleLoadedWorld#0" expanded="false" />
+            <element signature="n#!!block;n#handleLoadedDoors#0" expanded="false" />
+            <element signature="n#!!block;n#initLaserPositions#0" expanded="false" />
+            <element signature="n#!!block;n#loadWorld#0" expanded="false" />
+            <element signature="n#!!block;n#loadDoors#0" expanded="false" />
+            <element signature="n#!!block;n#readyLaser#0" expanded="false" />
+            <element signature="e#14993#15721#0" expanded="false" />
+            <element signature="e#16046#16583#0" expanded="false" />
+            <element signature="e#16920#17192#0" expanded="false" />
+            <element signature="n#!!doc;n#drawLaser#0" expanded="false" />
+            <element signature="n#!!block;n#drawLaser#0" expanded="false" />
+            <element signature="n#!!block;n#drawWalls#0" expanded="false" />
+            <element signature="n#!!block;n#drawDoors#0" expanded="false" />
+            <element signature="n#!!block;n#drawKey1#0" expanded="false" />
+            <element signature="n#!!block;n#drawKey2#0" expanded="false" />
+            <element signature="n#!!block;n#drawHP1#0" expanded="false" />
+            <element signature="n#!!block;n#drawHP2#0" expanded="false" />
+            <element signature="n#!!block;n#drawScene#0" expanded="false" />
+            <element signature="n#!!block;n#checkCollision#0" expanded="false" />
+            <element signature="n#!!block;n#getPlayerBox#0" expanded="false" />
+            <element signature="n#!!block;n#animate#0" expanded="false" />
+            <element signature="n#!!block;n#finish#0" expanded="false" />
+            <element signature="n#!!block;n#checkFinish#0" expanded="false" />
+            <element signature="n#!!block;n#playBump#0" expanded="false" />
+            <element signature="n#!!block;n#playPickUp#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeyDown#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeyUp#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeys#0" expanded="false" />
+            <element signature="n#!!block;n#playGame#0" expanded="false" />
+            <element signature="n#!!block;n#gameOver#0" expanded="false" />
+            <element signature="n#!!block;n#updateHUD#0" expanded="false" />
+            <element signature="n#!!block;n#checkHitLaser#0" expanded="false" />
+            <element signature="n#!!block;n#initKey1#0" expanded="false" />
+            <element signature="e#30127#30834#0" expanded="false" />
+            <element signature="e#31143#31586#0" expanded="false" />
+            <element signature="e#32032#32281#0" expanded="false" />
+            <element signature="n#!!block;n#initKey2#0" expanded="false" />
+            <element signature="e#32621#33328#0" expanded="false" />
+            <element signature="e#33641#34084#0" expanded="false" />
+            <element signature="n#!!block;n#initHealth1#0" expanded="false" />
+            <element signature="e#35136#35843#0" expanded="false" />
+            <element signature="e#36164#36607#0" expanded="false" />
+            <element signature="e#37071#37320#0" expanded="false" />
+            <element signature="n#!!block;n#initHealth2#0" expanded="false" />
+            <element signature="e#37675#38382#0" expanded="false" />
+            <element signature="e#38707#39150#0" expanded="false" />
+            <element signature="e#39620#39869#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/doors.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/doors.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FRI-2Letnik/RG/Vaje/scripts/07-lighting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/cy.js" />
+    <entry file="file://$PROJECT_DIR$/scripts/parse-obj.js" />
+    <entry file="file://$PROJECT_DIR$/scripts/glMatrix-0.9.5.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="14" column="323" lean-forward="false" selection-start-line="14" selection-start-column="323" selection-end-line="14" selection-end-column="323" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/world.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/webgl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CCapture.all.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="0" column="23435" lean-forward="false" selection-start-line="0" selection-start-column="23427" selection-end-line="0" selection-end-column="23435" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CCapture.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CCapture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="553" column="17" lean-forward="false" selection-start-line="553" selection-start-column="9" selection-end-line="553" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <caret line="59" column="18" lean-forward="true" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6086">
-          <caret line="437" column="74" lean-forward="false" selection-start-line="437" selection-start-column="74" selection-end-line="437" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+        <state relative-caret-position="312">
+          <caret line="804" column="5" lean-forward="true" selection-start-line="804" selection-start-column="5" selection-end-line="804" selection-end-column="5" />
           <folding>
-            <element signature="e#1766#1770#0" expanded="true" />
-            <element signature="e#1776#1780#0" expanded="true" />
+            <element signature="n#!!block;n#Wall#0" expanded="false" />
+            <element signature="n#!!block;n#Door#0" expanded="false" />
+            <element signature="n#!!block;n#Key#0" expanded="false" />
+            <element signature="e#3529#4239#0" expanded="false" />
+            <element signature="e#4196#4233#0" expanded="false" />
+            <element signature="n#!!block;n#HealthBox#0" expanded="false" />
+            <element signature="n#!!block;n#Laser#0" expanded="false" />
+            <element signature="n#!!block;n#mvPushMatrix#0" expanded="false" />
+            <element signature="n#!!block;n#mvPopMatrix#0" expanded="false" />
+            <element signature="n#!!block;n#degToRad#0" expanded="false" />
+            <element signature="n#!!block;n#initGL#0" expanded="false" />
+            <element signature="n#!!block;n#getShader#0" expanded="false" />
+            <element signature="e#7719#7791#0" expanded="false" />
+            <element signature="n#!!block;n#initShaders#0" expanded="false" />
+            <element signature="n#!!block;n#setMatrixUniforms#0" expanded="false" />
+            <element signature="n#!!block;n#initTextures#0" expanded="false" />
+            <element signature="n#!!block;n#handleTextureLoaded#0" expanded="false" />
+            <element signature="n#!!block;n#handleLoadedWorld#0" expanded="false" />
+            <element signature="n#!!block;n#handleLoadedDoors#0" expanded="false" />
+            <element signature="n#!!block;n#initLaserPositions#0" expanded="false" />
+            <element signature="n#!!block;n#loadWorld#0" expanded="false" />
+            <element signature="n#!!block;n#loadDoors#0" expanded="false" />
+            <element signature="n#!!block;n#readyLaser#0" expanded="false" />
+            <element signature="e#14993#15721#0" expanded="false" />
+            <element signature="e#16046#16583#0" expanded="false" />
+            <element signature="e#16920#17192#0" expanded="false" />
+            <element signature="n#!!doc;n#drawLaser#0" expanded="false" />
+            <element signature="n#!!block;n#drawLaser#0" expanded="false" />
+            <element signature="n#!!block;n#drawWalls#0" expanded="false" />
+            <element signature="n#!!block;n#drawDoors#0" expanded="false" />
+            <element signature="n#!!block;n#drawKey1#0" expanded="false" />
+            <element signature="n#!!block;n#drawKey2#0" expanded="false" />
+            <element signature="n#!!block;n#drawHP1#0" expanded="false" />
+            <element signature="n#!!block;n#drawHP2#0" expanded="false" />
+            <element signature="n#!!block;n#drawScene#0" expanded="false" />
+            <element signature="n#!!block;n#checkCollision#0" expanded="false" />
+            <element signature="n#!!block;n#getPlayerBox#0" expanded="false" />
+            <element signature="n#!!block;n#animate#0" expanded="false" />
+            <element signature="n#!!block;n#finish#0" expanded="false" />
+            <element signature="n#!!block;n#checkFinish#0" expanded="false" />
+            <element signature="n#!!block;n#playBump#0" expanded="false" />
+            <element signature="n#!!block;n#playPickUp#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeyDown#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeyUp#0" expanded="false" />
+            <element signature="n#!!block;n#handleKeys#0" expanded="false" />
+            <element signature="n#!!block;n#playGame#0" expanded="false" />
+            <element signature="n#!!block;n#gameOver#0" expanded="false" />
+            <element signature="n#!!block;n#updateHUD#0" expanded="false" />
+            <element signature="n#!!block;n#checkHitLaser#0" expanded="false" />
+            <element signature="n#!!block;n#initKey1#0" expanded="false" />
+            <element signature="e#30127#30834#0" expanded="false" />
+            <element signature="e#31143#31586#0" expanded="false" />
+            <element signature="e#32032#32281#0" expanded="false" />
+            <element signature="n#!!block;n#initKey2#0" expanded="false" />
+            <element signature="e#32621#33328#0" expanded="false" />
+            <element signature="e#33641#34084#0" expanded="false" />
+            <element signature="n#!!block;n#initHealth1#0" expanded="false" />
+            <element signature="e#35136#35843#0" expanded="false" />
+            <element signature="e#36164#36607#0" expanded="false" />
+            <element signature="e#37071#37320#0" expanded="false" />
+            <element signature="n#!!block;n#initHealth2#0" expanded="false" />
+            <element signature="e#37675#38382#0" expanded="false" />
+            <element signature="e#38707#39150#0" expanded="false" />
+            <element signature="e#39620#39869#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/world.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
-          <folding>
-            <element signature="e#1766#1770#0" expanded="true" />
-            <element signature="e#1776#1780#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3978">
-          <caret line="234" column="55" lean-forward="false" selection-start-line="234" selection-start-column="28" selection-end-line="234" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1766#1770#0" expanded="true" />
-            <element signature="e#1776#1780#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3621">
-          <caret line="213" column="70" lean-forward="true" selection-start-line="213" selection-start-column="70" selection-end-line="213" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/script-Copy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DN1/vektor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-          <folding>
-            <element signature="e#1766#1770#0" expanded="true" />
-            <element signature="e#1776#1780#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/webgl.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/world.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="429" column="24" lean-forward="true" selection-start-line="429" selection-start-column="23" selection-end-line="429" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="66" column="6" lean-forward="false" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>

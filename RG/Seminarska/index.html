@@ -1,62 +1,108 @@
 ﻿<!DOCTYPE html>
 <html>
-	<head>
-		<title>Labirint</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link rel="stylesheet" href="./style/webgl.css" type="text/css">
-		<script type="text/javascript" src="./scripts/glMatrix-0.9.5.min.js"></script>
-		<script src="./scripts/script.js" type="text/javascript"></script>
+<head>
+    <title>Labirint</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="keywords" content="HTML,CSS,JavaScript,WebGL">
+	<meta name="author" content="Simon Korošec">
+    <link rel="stylesheet" href="./style/webgl.css" type="text/css">
+    <script type="text/javascript" src="./scripts/glMatrix-0.9.5.min.js"></script>
+    <script src="./scripts/script.js" type="text/javascript"></script>
 
-        <!-- Fragment shader program -->
-        <script id="shader-fs" type="x-shader/x-fragment">
-            precision mediump float;
+    <!-- Fragment shader program -->
+    <script id="shader-fs" type="x-shader/x-fragment">
+			precision mediump float;
 
-            varying vec2 vTextureCoord;
-            uniform sampler2D uSampler;
+	    	// uniform attribute for setting texture coordinates
+			varying vec2 vTextureCoord;
+            varying vec3 vLightWeighting;
 
-            void main(void) {
-            gl_FragColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+			// uniform attribute for setting 2D sampler
+			uniform sampler2D uSampler;
+
+			void main(void) {
+		    	// sample the fragment color from texture
+		        vec4 textureColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+		        gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
+			}
+
+    </script>
+
+
+    <!-- Vertex shader program -->
+    <script id="shader-vs" type="x-shader/x-vertex">
+    		// atributes for setting vertex position and texture coordinates
+		    attribute vec3 aVertexPosition;
+		    attribute vec2 aTextureCoord;
+
+		    uniform mat4 uMVMatrix;	// model-view matrix
+		    uniform mat4 uPMatrix;	// projection matrix
+
+            uniform vec3 uAmbientColor;	// ambient color uniform
+
+		    varying vec2 vTextureCoord;
+		    varying vec3 vLightWeighting;
+
+		    void main(void) {
+		    	// calculate the vertex position
+		        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+		        vTextureCoord = aTextureCoord;
+		        vLightWeighting = uAmbientColor;
+		    }
+
+    </script>
+    <script type="text/javascript">
+        window.addEventListener("keydown", function (e) {
+            // space and arrow keys
+            if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+                e.preventDefault();
             }
-        </script>
-
-        <!-- Vertex shader program -->
-        <script id="shader-vs" type="x-shader/x-vertex">
-            attribute vec3 aVertexPosition;
-            attribute vec2 aTextureCoord;
-
-            uniform mat4 uMVMatrix;	// model-view matrix
-            uniform mat4 uPMatrix;	// projection matrix
-
-            varying vec2 vTextureCoord;
-
-            void main(void) {
-            gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
-            vTextureCoord = aTextureCoord;
-            }
-        </script>
-	</head>
-	<body onload="start()">
-	<h1>Labirint</h1>
-	<div id="content">
-		<div id="splashScreen">
-            <p> Welcome </p>
-            <p> Pres the start button to play the game </p>
+        }, false);
+    </script>
+</head>
+<body onload="start()">
+    <h1 id="title">Smrtonosni Labirint</h1>
+    <div id="content">
+        <div id="splashScreen">
+            <p> 
+				<h3>Welcome</h3>
+				You are trapped in a labirynt. There are two boxes which contain the keys that will let you escape.<br />
+				Find at least one. And beware of the lasers. <br />
+                Press the start button to play the game.
+            </p>
             <button id="startBtn" onclick="playGame()">Start</button>
         </div>
-        <canvas id="glcanvas" width="1280px" height="720px">
-			No <code>&lt;canvas&gt;</code> suppport in your browser.
-		</canvas>
-		<div id="loadingtext">Loading world...</div>
-
-	</div>
+        <div id="gameOverScreen">
+            <p> Game Over <br/>
+                Press the button to try again.
+            </p>
+            <button id="playAgainBtn" onclick="playGame()">Play again</button>
+        </div>
+        <div id="gameFinishScreen">
+            <p> Congratulations <br/>
+                Press the button to try again.
+            </p>
+            <button id="playAgainBtn2" onclick="playGame()">Play again</button>
+        </div>
+        <canvas id="glcanvas" width="1280" height="720">
+            No <code>&lt;canvas&gt;</code> support in your browser.
+        </canvas>
+        <div id="loadingtext">Loading world...</div>
+        <div id="hud"></div>
+    </div>
 
     <div id="help-info">
         <h2>Tutorial</h2>
         <p>
-            Use W to move forward and S to move backward. <br />
-            Use arrow keys to look around the room. <br />
+            There are two keys on the map. Each unlocks one door that enables you to escape. <br/>
+            The red lasers damage you, if your health drops to 0 you lose. You can replenish your health with HP boxes.
+        </p>
+        <p>
+            Use W to move forward and S to move backward. <br/>
+            Use arrow keys or A / D to look around the room. <br/>
+            Use 'C' to crouch and 'SPACE' to levitate. <br/>
         </p>
     </div>
 
-	</body>
+</body>
 </html>

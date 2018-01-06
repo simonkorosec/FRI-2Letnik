@@ -364,43 +364,16 @@ function drawScene() {
   // Set the drawing position to the "identity" point, which is
   // the center of the scene.
   mat4.identity(mvMatrix);
-  
+
   // PYRAMID:
 
   // Now move the drawing position a bit to where we want to start
   // drawing the pyramid.
   mat4.translate(mvMatrix, [-1.5, 0.0, -7.0]);
   
-  // Save the current matrix, then rotate before we draw.
   mvPushMatrix();
-  mat4.rotate(mvMatrix, degToRad(rotationPyramid), [0, 1, 0]);
-
-  // Draw the pyramid by binding the array buffer to the cube's vertices
-  // array, setting attributes, and pushing it to GL.
-  gl.bindBuffer(gl.ARRAY_BUFFER, pyramidVertexPositionBuffer);
-  gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, pyramidVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
-
-  // Set the colors attribute for the vertices.
-  gl.bindBuffer(gl.ARRAY_BUFFER, pyramidVertexColorBuffer);
-  gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, pyramidVertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
-
-  // Draw the pyramid.
-  setMatrixUniforms();
-  gl.drawArrays(gl.TRIANGLES, 0, pyramidVertexPositionBuffer.numItems);
-
-  // Restore the original matrix
-  mvPopMatrix();
-
-
-  // CUBE:
-
-  // Now move the drawing position a bit to where we want to start
-  // drawing the cube.
-  mat4.translate(mvMatrix, [3.0, 0.0, 0.0]);
-
-  // Save the current matrix, then rotate before we draw.
-  mvPushMatrix();
-  mat4.rotate(mvMatrix, degToRad(rotationCube), [1, 1, 1]);
+  mat4.scale(mvMatrix, [1, 0.2, 0.2]);
+//  mat4.rotate(mvMatrix, degToRad(90), [1, 0, 0]);
 
   // Draw the cube by binding the array buffer to the cube's vertices
   // array, setting attributes, and pushing it to GL.
@@ -419,6 +392,36 @@ function drawScene() {
 
   // Restore the original matrix
   mvPopMatrix();
+  
+  // CUBE:
+
+  // Now move the drawing position a bit to where we want to start
+  // drawing the cube.
+  mat4.translate(mvMatrix, [3.0, 0.0, 0.0]);
+
+  // Save the current matrix, then rotate before we draw.
+  mvPushMatrix();
+  mat4.scale(mvMatrix, [0.2, 0.2, 1]);
+  //mat4.rotate(mvMatrix, degToRad(rotationCube), [1, 0, 0]);
+
+  // Draw the cube by binding the array buffer to the cube's vertices
+  // array, setting attributes, and pushing it to GL.
+  gl.bindBuffer(gl.ARRAY_BUFFER, worldVertexPositionBuffer);
+  gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, worldVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+  
+  // Set the colors attribute for the vertices.
+  gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexColorBuffer);
+  gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, cubeVertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
+
+  gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cubeVertexIndexBuffer);
+
+  // Draw the cube.
+  setMatrixUniforms();
+  gl.drawElements(gl.TRIANGLES, cubeVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
+
+  // Restore the original matrix
+  mvPopMatrix();
+
 }
 
 //

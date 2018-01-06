@@ -1,0 +1,7 @@
+Da lahko igro igramo moramo najprej postaviti spletni strežnik. 
+Najbolj preprosto je, da se v terminalu premaknemo v direktorij v katerem imamo shranjeno igrico in z ukazom
+"python -m http.server 80" ustvarimo spletni strežnik.
+Potrebujemo python 3. V primeru, da imamo python 2.7 uporabimo ukaz "python -m SimpleHTTPServer 80".
+
+Ko imamo delujoč strežnik odpremo brskalnik (Firefox ali Chrome) in v url vrstico vpišemo "localhost".
+Odpreti bi se nam morala stran v kateri lahko igramo igro.
