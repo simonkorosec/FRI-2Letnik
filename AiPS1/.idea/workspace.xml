@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="971dc068-2e58-4af0-abf4-86ab1d81fefe" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/izzivi/Oseba.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../RG/DN3/quadTree.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/izzivi/Vaja3/Izziv4.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/izzivi/Vaja3/Izziv5.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/izzivi/Vaja3/Izziv6.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/izzivi/Vaja3/PrviIziv.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/izzivi/Vaja3/StdDraw.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../RG/Seminarska/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../RG/Seminarska/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../RG/DN3/index.html" afterPath="$PROJECT_DIR$/../RG/DN3/index.html" />
+      <change beforePath="$PROJECT_DIR$/../RG/DN3/quadTree.js" afterPath="$PROJECT_DIR$/../RG/DN3/quadTree.js" />
+      <change beforePath="$PROJECT_DIR$/../RG/DN3/script.js" afterPath="$PROJECT_DIR$/../RG/DN3/script.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,20 +24,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Izziv6.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/izzivi/Izziv6.java">
+      <file leaf-file-name="Sudoku.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/izzivi/Sudoku/Sudoku.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="1" />
+            <state relative-caret-position="306">
+              <caret line="106" column="39" lean-forward="true" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
               <folding>
-                <element signature="class#CollectionException#0" expanded="false" />
-                <element signature="method#LinkedSequence#0;class#LinkedSequence#0" expanded="false" />
-                <element signature="method#set#0;class#LinkedSequence#0" expanded="false" />
-                <element signature="method#insert#0;class#LinkedSequence#0" expanded="false" />
-                <element signature="method#delete#0;class#LinkedSequence#0" expanded="false" />
-                <element signature="method#toString#0;class#LinkedSequence#0" expanded="false" />
-                <element signature="method#swap#0;class#LinkedSequence#0" expanded="false" />
-                <element signature="class#Node#0;class#LinkedSequence#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#parseProblem#0;class#Sudoku#0" expanded="false" />
+                <element signature="e#1567#1568#0" expanded="true" />
+                <element signature="e#1597#1598#0" expanded="true" />
+                <element signature="method#randomizeSudoku#0;class#SudokuTable#0" expanded="false" />
+                <element signature="docComment;method#checkInput#0;class#SudokuTable#0" expanded="false" />
+                <element signature="method#checkInput#0;class#SudokuTable#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -93,6 +86,7 @@
         <option value="$PROJECT_DIR$/src/izzivi/Izziv5.java" />
         <option value="$PROJECT_DIR$/src/Naloga2.java" />
         <option value="$PROJECT_DIR$/src/izzivi/Izziv6.java" />
+        <option value="$PROJECT_DIR$/src/izzivi/Sudoku/Sudoku.java" />
       </list>
     </option>
   </component>
@@ -205,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Izziv6">
+  <component name="RunManager" selected="Application.Sudoku">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -246,9 +240,9 @@
       <module name="AiPS1" />
       <envs />
     </configuration>
-    <configuration name="Naloga1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Naloga2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Naloga1" />
+      <option name="MAIN_CLASS_NAME" value="Naloga2" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -260,9 +254,14 @@
       <module name="AiPS1" />
       <envs />
     </configuration>
-    <configuration name="Naloga2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Naloga2" />
+    <configuration name="Sudoku" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="izzivi.Sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="izzivi.Sudoku.Sudoku" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -363,19 +362,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Naloga1" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Naloga2" />
-      <item index="2" class="java.lang.String" itemvalue="Application.neki" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Izziv5" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Izziv6" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Naloga2" />
+      <item index="1" class="java.lang.String" itemvalue="Application.neki" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Izziv5" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Izziv6" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Sudoku" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Izziv6" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Naloga2" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Izziv5" />
-        <item index="3" class="java.lang.String" itemvalue="Application.neki" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Naloga1" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Sudoku" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Izziv6" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Naloga2" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Izziv5" />
+        <item index="4" class="java.lang.String" itemvalue="Application.neki" />
       </list>
     </recent_temporary>
   </component>
@@ -401,12 +400,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30299786" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43040684" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -416,13 +416,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44962883" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4914347" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -461,18 +460,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="45" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Naloga2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Naloga2/src/Naloga2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1921">
@@ -689,8 +681,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/izzivi/Izziv6.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="1" />
+        <state relative-caret-position="102">
+          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
           <folding>
             <element signature="class#CollectionException#0" expanded="false" />
             <element signature="method#LinkedSequence#0;class#LinkedSequence#0" expanded="false" />
@@ -700,6 +692,22 @@
             <element signature="method#toString#0;class#LinkedSequence#0" expanded="false" />
             <element signature="method#swap#0;class#LinkedSequence#0" expanded="false" />
             <element signature="class#Node#0;class#LinkedSequence#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/izzivi/Sudoku/Sudoku.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="106" column="39" lean-forward="true" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#parseProblem#0;class#Sudoku#0" expanded="false" />
+            <element signature="e#1567#1568#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="method#randomizeSudoku#0;class#SudokuTable#0" expanded="false" />
+            <element signature="docComment;method#checkInput#0;class#SudokuTable#0" expanded="false" />
+            <element signature="method#checkInput#0;class#SudokuTable#0" expanded="false" />
           </folding>
         </state>
       </provider>

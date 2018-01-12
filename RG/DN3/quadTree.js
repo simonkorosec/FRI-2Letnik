@@ -6,16 +6,16 @@ class QuadTree {
 
         this.balls = [];
         this.children = [];
-        this.max_balls = 5;
+        this.max_balls = 4;
         this.max_levels = 5;
     }
 
     split() {
         let newLevel = this.level + 1;
-        let x = Math.round(this.square.x);
-        let y = Math.round(this.square.y);
-        let width = Math.round(this.square.width / 2);
-        let height = Math.round(this.square.height / 2);
+        let x = Math.floor(this.square.x);
+        let y = Math.floor(this.square.y);
+        let width = Math.floor(this.square.width / 2);
+        let height = Math.floor(this.square.height / 2);
 
         // Leva zgori
         this.children[0] = new QuadTree(newLevel, new Square(x, y, width, height));
@@ -33,17 +33,6 @@ class QuadTree {
         let middleX = this.square.x + this.square.width / 2;
         let middleY = this.square.y + this.square.height / 2;
 
-        // V keri kvadrat spada krog
-        /*if (ball.x < middleX && ball.x + ball.r < middleX && ball.y < middleY && ball.y + ball.r < middleY) {
-            quadrant = 0;
-        } else if (ball.x > middleX && ball.x + ball.r > middleX && ball.y < middleY && ball.y + ball.r < middleY) {
-            quadrant = 3;
-        } else if (ball.x < middleX && ball.x + ball.r < middleX && ball.y > middleY && ball.y + ball.r > middleY) {
-            quadrant = 1;
-        } else if (ball.x > middleX && ball.x + ball.r > middleX && ball.y > middleY && ball.y + ball.r > middleY) {
-            quadrant = 2;
-        }*/
-
         let top = (ball.y < middleY + this.square.diff && ball.y + ball.r < middleY + this.square.diff);
         let bottom = (ball.y > middleY - this.square.diff);
 
@@ -58,6 +47,23 @@ class QuadTree {
                 quadrant = 1;
             } else if (bottom) {
                 quadrant = 2;
+            }
+        }
+
+        // Če ne spada nikamor ceu ga damo ke k spada središče
+        if (quadrant === -1) {
+            if (ball.x < middleX) {
+                if (ball.y < middleY) {
+                    quadrant = 0;
+                } else {
+                    quadrant = 3;
+                }
+            } else {
+                if (ball.y < middleY) {
+                    quadrant = 1;
+                } else {
+                    quadrant = 2;
+                }
             }
         }
 
@@ -84,11 +90,7 @@ class QuadTree {
 
             for (let i = 0; i < this.balls.length;) {
                 quadrant = this.getQuadrant(this.balls[i]);
-                if (quadrant !== -1) {
-                    this.children[quadrant].insertBall(this.balls.splice(i, 1)[0]);
-                } else {
-                    i = i + 1;
-                }
+                this.children[quadrant].insertBall(this.balls.splice(i, 1)[0]);
             }
         }
     }

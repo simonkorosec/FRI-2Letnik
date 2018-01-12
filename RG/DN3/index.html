@@ -9,11 +9,25 @@
     <script type="text/javascript" src="quadTree.js"></script>
 </head>
 <body onload="start()">
-    <div style="width: 100%; text-align:center;">
-        <canvas id="myCanvas" width="640" height="640" style="border:3px solid #000000; display: inline;">
+    <div style="margin: 0 auto; position: relative;">
+        <canvas id="myCanvas" width="840" height="840" style="border:5px solid #000000;">
 
         </canvas>
+        <div style="display:inline-block; vertical-align: top; margin-left: 1%;">
+            <p>
+                Number of balls added per click:
+                <input id="numOfBalls" type="number" value="10">
+            </p>
+            <p>
+                <input type="button" id="clearBalls" onclick="clearBalls()" value="Clear all balls">
+            </p>
+            <p>
+                <input type="radio" name="grid" id="showGrid" value="true" checked="checked"> Show grid<br>
+                <input type="radio" name="grid" id="hideGrid" value="false"> Hide grid<br>
+            </p>
+        </div>
     </div>
+
 
 </body>
 </html>

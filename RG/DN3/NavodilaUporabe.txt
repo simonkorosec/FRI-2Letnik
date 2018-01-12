@@ -1,0 +1,6 @@
+Datoteko index.html odpremo v brskalniku.
+Vnosno polje pred katerim piše "Number of balls added per click" nadziramo koliko žogic dodajamo s klikom na platno.
+Gumb "Clear all balls" odstrani vse žogice na platnu.
+Z izbirnim poljem nadziramo prikaz razdelilne mreže.
+"Show grid" - prikažemo mrežo
+"Hide grid" - skrijemo mrežo
