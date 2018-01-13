@@ -1,5 +1,6 @@
 package izzivi.Sudoku;
 
+
 import java.io.IOException;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -10,8 +11,8 @@ public class Sudoku {
 
         String [] in2 = "000 040 000 400 608 003 009 020 100 012 904 360 090 000 040 043 701 520 005 060 400 100 809 005 000 010 000".split(" ");
 
-        SudokuTable sudokuTable = new SudokuTable(28);
-        //SudokuTable sudokuTable = new SudokuTable(parseProblem(in2));
+        //SudokuTable sudokuTable = new SudokuTable(28);
+        SudokuTable sudokuTable = new SudokuTable(parseProblem(in2));
         sudokuTable.printTable();
         sudokuTable.solve();
     }
