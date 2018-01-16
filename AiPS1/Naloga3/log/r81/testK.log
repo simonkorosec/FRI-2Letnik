@@ -1,0 +1,11 @@
+Izvajanje testK
+  Log datoteka: testK.log
+  Izhod programa: testK.out
+  Ukazna vrstica: java Naloga3 undirected ham
+  Izhodni status: 1
+  Realni cas izvajanja: 170
+  Uporabniski cas izvajanja: 157
+  Sistemski cas izvajanja: 40
+  Procesorski cas izvajanja: 197
+Preverjanje testK
+  Izhodni status: err

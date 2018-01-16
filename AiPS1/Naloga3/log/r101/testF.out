@@ -1,0 +1,10 @@
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException
+	at java.lang.System.arraycopy(Native Method)
+	at ResizableArray.fixArray(Naloga3.java:255)
+	at ResizableArray.add(Naloga3.java:231)
+	at Graph.bfs(Naloga3.java:173)
+	at Graph.bfs(Naloga3.java:177)
+	at Graph.bfs(Naloga3.java:177)
+	at Graph.bfs(Naloga3.java:177)
+	at Graph.bfs(Naloga3.java:140)
+	at Naloga3.main(Naloga3.java:42)

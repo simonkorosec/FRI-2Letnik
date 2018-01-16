@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Naloga1 {
     private static boolean pogoj;
-    private static Sequence skladovi;
+    private static Sequence1 skladovi;
     private static Stack glavniSklad;
 
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class Naloga1 {
 
             while (sc.hasNextLine()) {
                 pogoj = false;
-                skladovi = new Sequence();
+                skladovi = new Sequence1();
                 glavniSklad = skladovi.getSklad(0);
                 String ukaz = sc.nextLine();
 
@@ -422,10 +422,10 @@ class Stack {
     }
 }
 
-class Sequence {
+class Sequence1 {
     private final Stack[] skladi = new Stack[42];
 
-    Sequence() {
+    Sequence1() {
         for (int i = 0; i < 42; i++) {
             skladi[i] = new Stack();
         }

@@ -1,0 +1,12 @@
+Izvajanje testA
+  Log datoteka: testA.log
+  Izhod programa: testA.out
+  Ukazna vrstica: java Naloga3 undirected walks 6
+  Izhodni status: 0
+  Realni cas izvajanja: 188
+  Uporabniski cas izvajanja: 196
+  Sistemski cas izvajanja: 32
+  Procesorski cas izvajanja: 228
+Preverjanje testA
+  Izhodni status: ok
+  Standardni izhod: err

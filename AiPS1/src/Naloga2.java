@@ -7,7 +7,7 @@ public class Naloga2 {
 
         ResizableArray a = new ResizableArray();
         while (l.hasNextInt()) {
-            a.add(l.nextInt());
+            a.enqueue(l.nextInt());
         }
         a.fixArray();
 
@@ -1083,7 +1083,7 @@ public class Naloga2 {
 //        this.size = 0;
 //    }
 //
-//    void add(int x) {
+//    void enqueue(int x) {
 //        if (this.isFull()) {
 //            this.resize();
 //        }

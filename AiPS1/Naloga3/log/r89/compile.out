@@ -1,0 +1,6 @@
+Naloga3.java:23: error: cannot find symbol
+            System.out.println(Arrays.toString(s));
+                               ^
+  symbol:   variable Arrays
+  location: class Naloga3
+1 error

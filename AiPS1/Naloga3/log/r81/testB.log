@@ -1,0 +1,12 @@
+Izvajanje testB
+  Log datoteka: testB.log
+  Izhod programa: testB.out
+  Ukazna vrstica: java Naloga3 directed walks 8
+  Izhodni status: 0
+  Realni cas izvajanja: 536
+  Uporabniski cas izvajanja: 767
+  Sistemski cas izvajanja: 136
+  Procesorski cas izvajanja: 903
+Preverjanje testB
+  Izhodni status: ok
+  Standardni izhod: err
