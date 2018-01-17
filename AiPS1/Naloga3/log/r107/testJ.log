@@ -1,0 +1,12 @@
+Izvajanje testJ
+  Log datoteka: testJ.log
+  Izhod programa: testJ.out
+  Ukazna vrstica: java Naloga3 directed comp
+  Izhodni status: 0
+  Realni cas izvajanja: 191
+  Uporabniski cas izvajanja: 194
+  Sistemski cas izvajanja: 31
+  Procesorski cas izvajanja: 225
+Preverjanje testJ
+  Izhodni status: ok
+  Standardni izhod: err

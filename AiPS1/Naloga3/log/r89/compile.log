@@ -1,0 +1,6 @@
+Prevajanje izvorne kode: 
+  Izvorna datoteka: Naloga3.java
+  Log prevajanja: compile.log
+  Izhod prevajalnika: compile.out
+  Ukazna vrstica: javac -encoding UTF-8 'Naloga3.java'
+  Prevajanje: napaka, glej compile.out

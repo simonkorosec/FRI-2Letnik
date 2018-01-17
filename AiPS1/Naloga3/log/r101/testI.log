@@ -1,0 +1,12 @@
+Izvajanje testI
+  Log datoteka: testI.log
+  Izhod programa: testI.out
+  Ukazna vrstica: java Naloga3 undirected comp
+  Izhodni status: 0
+  Realni cas izvajanja: 180
+  Uporabniski cas izvajanja: 187
+  Sistemski cas izvajanja: 35
+  Procesorski cas izvajanja: 222
+Preverjanje testI
+  Izhodni status: ok
+  Standardni izhod: err

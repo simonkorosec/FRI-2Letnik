@@ -1,0 +1,12 @@
+Izvajanje testD
+  Log datoteka: testD.log
+  Izhod programa: testD.out
+  Ukazna vrstica: java Naloga3 directed dfs
+  Izhodni status: 0
+  Realni cas izvajanja: 183
+  Uporabniski cas izvajanja: 179
+  Sistemski cas izvajanja: 38
+  Procesorski cas izvajanja: 217
+Preverjanje testD
+  Izhodni status: ok
+  Standardni izhod: err
