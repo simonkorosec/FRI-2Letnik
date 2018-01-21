@@ -1,0 +1,11 @@
+Izvajanje testL
+  Log datoteka: testL.log
+  Izhod programa: testL.out
+  Ukazna vrstica: java Naloga3 undirected ham
+  Izhodni status: 0
+  Realni cas izvajanja: 172
+  Uporabniski cas izvajanja: 168
+  Sistemski cas izvajanja: 24
+  Procesorski cas izvajanja: 192
+Preverjanje testL
+  Izhodni status: ok

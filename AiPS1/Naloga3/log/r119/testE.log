@@ -1,0 +1,13 @@
+Izvajanje testE
+  Log datoteka: testE.log
+  Izhod programa: testE.out
+  Ukazna vrstica: java Naloga3 undirected bfs
+  Izhodni status: 0
+  Realni cas izvajanja: 185
+  Uporabniski cas izvajanja: 183
+  Sistemski cas izvajanja: 44
+  Procesorski cas izvajanja: 227
+Preverjanje testE
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

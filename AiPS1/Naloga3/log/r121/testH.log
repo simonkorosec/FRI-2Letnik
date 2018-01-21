@@ -1,0 +1,13 @@
+Izvajanje testH
+  Log datoteka: testH.log
+  Izhod programa: testH.out
+  Ukazna vrstica: java Naloga3 directed sp 71
+  Izhodni status: 0
+  Realni cas izvajanja: 215
+  Uporabniski cas izvajanja: 222
+  Sistemski cas izvajanja: 46
+  Procesorski cas izvajanja: 268
+Preverjanje testH
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

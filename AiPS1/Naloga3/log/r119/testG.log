@@ -1,0 +1,12 @@
+Izvajanje testG
+  Log datoteka: testG.log
+  Izhod programa: testG.out
+  Ukazna vrstica: java Naloga3 undirected sp 88
+  Izhodni status: 0
+  Realni cas izvajanja: 186
+  Uporabniski cas izvajanja: 193
+  Sistemski cas izvajanja: 30
+  Procesorski cas izvajanja: 223
+Preverjanje testG
+  Izhodni status: ok
+  Standardni izhod: err

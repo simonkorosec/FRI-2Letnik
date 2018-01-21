@@ -1,0 +1,11 @@
+Izvajanje testF
+  Log datoteka: testF.log
+  Izhod programa: testF.out
+  Ukazna vrstica: java Naloga3 directed bfs
+  Izhodni status: 1
+  Realni cas izvajanja: 205
+  Uporabniski cas izvajanja: 201
+  Sistemski cas izvajanja: 29
+  Procesorski cas izvajanja: 230
+Preverjanje testF
+  Izhodni status: err

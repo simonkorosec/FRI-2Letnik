@@ -1,0 +1,13 @@
+Izvajanje testC
+  Log datoteka: testC.log
+  Izhod programa: testC.out
+  Ukazna vrstica: java Naloga3 undirected dfs
+  Izhodni status: 0
+  Realni cas izvajanja: 185
+  Uporabniski cas izvajanja: 195
+  Sistemski cas izvajanja: 35
+  Procesorski cas izvajanja: 230
+Preverjanje testC
+  Izhodni status: ok
+  Standardni izhod: ok
+  Tocke: 1

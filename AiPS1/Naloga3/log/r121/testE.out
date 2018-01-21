@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.NullPointerException
+	at Graph.bfs(Naloga3.java:153)
+	at Graph.bfs(Naloga3.java:141)
+	at Naloga3.main(Naloga3.java:41)
