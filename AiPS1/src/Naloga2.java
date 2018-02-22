@@ -9,7 +9,7 @@ public class Naloga2 {
         while (l.hasNextInt()) {
             a.enqueue(l.nextInt());
         }
-        a.fixArray();
+        //a.fixArray();
 
         boolean trace = args[0].equals("trace");
         boolean up = args[2].equals("up");
