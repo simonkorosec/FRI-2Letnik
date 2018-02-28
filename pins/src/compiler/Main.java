@@ -74,6 +74,7 @@ public class Main {
 				while (lexAn.lexAn().token != Token.EOF) {
 				}
 				break;
+
 			}
 			
 			// Neznana faza prevajanja.

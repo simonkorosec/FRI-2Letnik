@@ -1,0 +1,3 @@
+javac compiler\Main.java
+
+java compiler.Main test.pins --phase=lexan --dump=lexan

@@ -48,6 +48,21 @@ public class LexAn {
      * @return Naslednji simbol iz izvorne datoteke.
      */
     public Symbol lexAn() {
+        Symbol symbol = nextSymbol();
+
+        if (this.dump){
+            this.dump(symbol);
+        }
+
+        return symbol;
+    }
+
+    /**
+     * Najde simbol za trenutni znak
+     *
+     * @return Simbol za trenutni znak
+     */
+    private Symbol nextSymbol() {
         // TODO Izpis napak in col -1 pri besedah
 
         while (true) {
@@ -57,6 +72,7 @@ public class LexAn {
 
             // Pregled konca datoteke
             if (this.currChar == -1) {
+                this.closeFile();
                 return new Symbol(Token.EOF, "", line, col, line, col);
             }
 
@@ -274,6 +290,7 @@ public class LexAn {
 
     }
 
+
     /**
      * Izpise simbol v datoteko z vmesnimi rezultati.
      *
@@ -295,10 +312,6 @@ public class LexAn {
         try {
             this.currChar = this.fis.read();
             this.colNum++;
-//            if (this.currChar == 10 || this.currChar == 13) {
-//                this.lineNum++;
-//                this.colNum = 1;
-//            }
         } catch (IOException ignored) {
         }
     }
@@ -313,7 +326,7 @@ public class LexAn {
 
     private void closeFile() {
         try {
-            fis.close();
+            this.fis.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
