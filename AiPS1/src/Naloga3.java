@@ -3,9 +3,6 @@ import java.util.Scanner;
 public class Naloga3 {
 
     public static void main(String[] args) {
-        args = new String[]{"directed", "bfs", "3"};
-
-
         String usmerjenost = args[0];
         String algoritem = args[1];
         int arg = 0;
@@ -18,14 +15,12 @@ public class Naloga3 {
         Scanner sc = new Scanner(System.in);
 
         int velikost = Integer.parseInt(sc.nextLine().trim());
-        System.out.println(velikost);
         int[][] povezave = new int[velikost][velikost];
 
         while (sc.hasNextLine()) {
             String[] s = sc.nextLine().trim().split(" ");
             int i = Integer.parseInt(s[0]);
             int j = Integer.parseInt(s[1]);
-            System.out.println(i+" "+j);
             povezave[i][j] = 1;
             if (usmerjenost.equals("undirected")) {
                 povezave[j][i] = 1;
@@ -33,7 +28,6 @@ public class Naloga3 {
         }
 
         Graph graph = new Graph(povezave);
-/*
         switch (algoritem) {
             case "walks":
                 printMatrix(graph.walks(arg));
@@ -46,7 +40,15 @@ public class Naloga3 {
             case "bfs":
                 System.out.println(graph.bfs());
                 break;
-        }*/
+            case "sp":
+                graph.sp(arg);
+                break;
+            case "comp":
+                graph.comp(usmerjenost);
+                break;
+            case "ham":
+                graph.ham();
+        }
 
 
     }
@@ -63,12 +65,15 @@ public class Naloga3 {
 }
 
 class Graph {
-    private int[][] povezave;
-    private int stVozlisc;
-    private ResizableArray vhodDFS;
-    private ResizableArray izhodDFS;
-    private ResizableArray sledBFS;
-    private int[] pomozniBFS;
+    private int[][] povezave;           // tabela povezav v grafu
+    private int stVozlisc;              // število vozlišč
+    private ResizableArray vhodDFS;     // array vhodnih vozlišč za DFS
+    private ResizableArray izhodDFS;    // array izhodnih vozlišč za DFS
+    private StringBuilder izhodBFS;     // array izhodnih vozlišč za BFS
+    private int[] dolzina;              // array v koliko korakih pride do vozlišča za SP
+    private int[] komponente;            // array za skupine komponent
+    private int stKomp;
+    private int[] potHamilton;
 
 
     Graph(int[][] povezave) {
@@ -116,73 +121,300 @@ class Graph {
         return sled;
     }
 
-    private void dfs(int n, boolean[] obiskani) {
-        if (obiskani[n]) {
-            return;
-        }
-
-        this.vhodDFS.enqueue(n); // Dodaj ko pridem
-        obiskani[n] = true;
-        for (int i = 0; i < this.povezave[n].length; i++) {
-            if (this.povezave[n][i] == 1) {
-                if (!obiskani[i]) {
-                    dfs(i, obiskani);
-                }
+    private void dfs(int v, boolean[] obiskani) {
+        this.vhodDFS.enqueue(v); // Dodaj ko pridem
+        obiskani[v] = true;
+        for (int i = 0; i < this.povezave[v].length; i++) {
+            if (this.povezave[v][i] == 1 && !obiskani[i]) {
+                dfs(i, obiskani);
             }
         }
 
-        this.izhodDFS.enqueue(n); // Dodaj ko zapustim
+        this.izhodDFS.enqueue(v); // Dodaj ko zapustim
     }
 
-    String bfs() {
+    public String bfs() {
+        this.dolzina = new int[this.stVozlisc];
+        izhodBFS = new StringBuilder();
+        boolean obiskani[] = new boolean[this.stVozlisc];
+
+        for (int i = 0; i < this.stVozlisc; i++) {
+            if (!obiskani[i]) {
+                bfs(i, obiskani);
+            }
+        }
+
+
+        return izhodBFS.toString();
+    }
+
+    private void bfs(int n, boolean[] obiskani) {
+        ResizableArray sledBFS = new ResizableArray();
+        sledBFS.enqueue(n);
+        obiskani[n] = true;
+        this.dolzina[n] = 0;
+
+        while (!sledBFS.isEmpty()) {
+            int v = sledBFS.dequeue();
+            if (this.izhodBFS != null) {
+                this.izhodBFS.append(v).append(" ");
+            }
+
+            for (int i = 0; i < this.povezave[v].length; i++) {
+                if (this.povezave[v][i] == 1 && !obiskani[i]) {
+                    obiskani[i] = true;
+                    sledBFS.enqueue(i);
+
+                    this.dolzina[i] = this.dolzina[v] + 1;
+                }
+            }
+        }
+    }
+
+    void sp(int v) {
+        boolean obiskani[] = new boolean[this.stVozlisc];
+        this.dolzina = new int[this.stVozlisc];
+        for (int i = 0; i < this.dolzina.length; i++) {
+            this.dolzina[i] = -1;
+        }
+
+
+        bfs(v, obiskani);
+
+        for (int i = 0; i < this.stVozlisc; i++) {
+            System.out.printf("%d %d\n", i, this.dolzina[i]);
+        }
+
+    }
+
+    public void comp(String usmerjenost) {
+        if (usmerjenost.equals("undirected")) {
+            undirectedComp(0);
+        } else {
+            directedComp();
+        }
+    }
+
+    private void directedComp() {
         boolean[] obiskani = new boolean[this.stVozlisc];
-        pomozniBFS = new int[this.stVozlisc];
-        this.sledBFS = new ResizableArray();
+        this.izhodDFS = new ResizableArray();
 
         for (int i = 0; i < obiskani.length; i++) {
             if (!obiskani[i]) {
-                bfs(obiskani, i);
+                dfsDirComp(i, obiskani);
+            }
+        }
+        obiskani = new boolean[this.stVozlisc];
+        int[] vrstniRed = this.izhodDFS.getArray();
+
+        for (int i = 0; i < vrstniRed.length / 2; i++) {
+            int tmp = vrstniRed[i];
+            vrstniRed[i] = vrstniRed[vrstniRed.length - 1 - i];
+            vrstniRed[vrstniRed.length - 1 - i] = tmp;
+        }
+
+        obrniGraf();
+        this.komponente = new int[this.stVozlisc];
+        for (int v : vrstniRed) {
+            if (!obiskani[v]) {
+                dfDirComp2(v, obiskani, v);
+            }
+        }
+
+        StringBuilder[] sb = new StringBuilder[this.stVozlisc];
+
+        izpisKomponent(sb);
+        sb = uredi(sb);
+
+        for (StringBuilder aSb : sb) {
+            if (aSb != null) {
+                System.out.println(aSb.toString());
             }
         }
 
 
-        StringBuilder sb = new StringBuilder();
-        int[] array = sledBFS.getArray();
-        for (int anArray : array) {
-            sb.append(anArray).append(" ");
-        }
-        return sb.toString().trim();
     }
 
-    private void bfs(boolean[] obiskani, int v) {
-        ResizableArray zaPregled = new ResizableArray();
-        zaPregled.enqueue(v);
-
-        while (!zaPregled.isEmpty()){
-            v = zaPregled.dequeue();
-            this.sledBFS.enqueue(v);
-            obiskani[v] = true;
-
-            int[] sosedi = sosedi(v);
-            for (int i = 0; i < sosedi.length; i++) {
-                if (!obiskani[sosedi[i]]  && this.pomozniBFS[sosedi[i]] == 0){
-                    zaPregled.enqueue(sosedi[i]);
-                    this.pomozniBFS[sosedi[i]] = 1;
-                }
+    private StringBuilder[] uredi(StringBuilder[] in) {
+        int j = 0;
+        for (StringBuilder anIn : in) {
+            if (anIn != null) {
+                j++;
             }
-
         }
+
+        StringBuilder[] sb = new StringBuilder[j];
+        j = 0;
+        for (StringBuilder anIn : in) {
+            if (anIn != null) {
+                sb[j++] = anIn;
+            }
+        }
+
+        for (int i = 1; i < sb.length; i++) {
+            int k = Integer.parseInt(sb[i - 1].toString().split(" ")[0]);
+            int h = Integer.parseInt(sb[i].toString().split(" ")[0]);
+
+            if (k > h) {
+                StringBuilder tmp = sb[i - 1];
+                sb[i - 1] = sb[i];
+                sb[i] = tmp;
+            }
+        }
+
+        return sb;
     }
 
-    private  int[] sosedi(int v){
-        ResizableArray array = new ResizableArray();
+    private void dfDirComp2(int v, boolean[] obiskani, int comp) {
+        obiskani[v] = true;
+        this.komponente[v] = comp;
         for (int i = 0; i < this.povezave[v].length; i++) {
-            if (this.povezave[v][i] == 1){
-                array.enqueue(i);
+            if (this.povezave[v][i] == 1 && !obiskani[i]) {
+                dfDirComp2(i, obiskani, comp);
+            }
+        }
+    }
+
+    private void dfsDirComp(int v, boolean[] obiskani) {
+        obiskani[v] = true;
+        for (int i = 0; i < this.povezave[v].length; i++) {
+            if (this.povezave[v][i] == 1 && !obiskani[i]) {
+                dfsDirComp(i, obiskani);
+            }
+        }
+        this.izhodDFS.enqueue(v); // Dodaj ko zapustim
+    }
+
+    private void obrniGraf() {
+        int[][] tmp = new int[this.povezave.length][this.povezave.length];
+        for (int i = 0; i < this.povezave.length; i++) {
+            for (int j = 0; j < this.povezave[i].length; j++) {
+                tmp[j][i] = this.povezave[i][j];
+            }
+        }
+        this.povezave = tmp;
+    }
+
+    private void izpisKomponent(StringBuilder[] sb) {
+        for (int i = 0; i < this.stVozlisc; i++) {
+            int k = this.komponente[i];
+            if (sb[k] == null) {
+                sb[k] = new StringBuilder();
+            }
+            sb[k].append(i).append(" ");
+        }
+    }
+
+    private void undirectedComp(int ham) {
+        boolean[] obiskani = new boolean[this.stVozlisc];
+        this.komponente = new int[this.stVozlisc];
+        int comp = 0;
+        for (int i = 0; i < obiskani.length; i++) {
+            if (!obiskani[i]) {
+                dfsUndirComp(i, obiskani, comp);
+                comp++;
+            }
+        }
+        if (ham == 1) {
+            this.stKomp = comp;
+            return;
+        }
+
+        StringBuilder[] sb = new StringBuilder[comp];
+
+        izpisKomponent(sb);
+
+        for (StringBuilder aSb : sb) {
+            System.out.println(aSb.toString());
+        }
+
+    }
+
+    private void dfsUndirComp(int v, boolean[] obiskani, int comp) {
+        obiskani[v] = true;
+        this.komponente[v] = comp;
+        for (int i = 0; i < this.povezave[v].length; i++) {
+            if (this.povezave[v][i] == 1 && !obiskani[i]) {
+                dfsUndirComp(i, obiskani, comp);
+            }
+        }
+    }
+
+    public void ham() {
+        dodajPovezave();
+
+        this.potHamilton = new int[this.stVozlisc];
+        for (int i = 0; i < this.stVozlisc; i++) {
+            this.potHamilton[i] = -1;
+        }
+
+        this.potHamilton[0] = 0;
+        if (solveHamilton(1)){
+            for (int aPotHamilton : this.potHamilton) {
+                System.out.printf("%d ", aPotHamilton);
+            }
+            System.out.println();
+        } else {
+            System.out.println("NEDELA");
+        }
+    }
+
+    private boolean solveHamilton(int poz) {
+        if (poz == this.stVozlisc) {
+            return this.povezave[poz - 1][this.potHamilton[0]] == 1;
+        }
+
+        for (int i = 0; i < this.stVozlisc; i++) {
+            if (lahkoVstavim(i, poz)){
+                this.potHamilton[poz] = i;
+                if (solveHamilton(poz+1)){
+                    return true;
+                }
+                this.potHamilton[poz] = -1;
             }
         }
 
-        return array.getArray();
+        return false;
+    }
+
+    private boolean lahkoVstavim(int i, int poz) {
+        if (this.povezave[this.potHamilton[poz-1]][i] == 0){
+            return false;
+        }
+
+        for (int j = 0; j < poz; j++) {
+            if (this.potHamilton[j] == i){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private void dodajPovezave() {
+        undirectedComp(1);
+        ResizableArray[] tmp = new ResizableArray[this.stKomp];
+        for (int i = 0; i < this.stVozlisc; i++) {
+            int k = this.komponente[i];
+            if (tmp[k] == null) {
+                tmp[k] = new ResizableArray();
+            }
+            tmp[k].enqueue(i);
+        }
+
+        for (int i = 1; i < this.stKomp; i++) {
+            int k = tmp[i].getLast();
+            int j = tmp[i-1].getFirst();
+
+            this.povezave[k][j] = 1;
+            this.povezave[j][k] = 1;
+        }
+        int k = tmp[0].getLast();
+        int j = tmp[this.stKomp - 1].getFirst();
+
+        this.povezave[k][j] = 1;
+        this.povezave[j][k] = 1;
+
     }
 
     private int[][] multiplyMatrix(int[][] mat1, int[][] mat2) {
@@ -219,10 +451,12 @@ class ResizableArray {
     private int back;
     private int front;
     private int size;
+    private int count;
 
     ResizableArray() {
         this.array = new int[10];
-        this.size = 0;
+        this.size = 10;
+        this.count = 0;
         this.front = 0;
         this.back = 0;
     }
@@ -231,49 +465,47 @@ class ResizableArray {
         if (this.isFull()) {
             this.resize();
         }
-        this.array[this.back] = x;
-        this.back++;
-        this.size++;
 
-        if (this.back == this.array.length) {
-            this.fixArray();
-        }
+        this.array[this.back] = x;
+        this.back = this.back + 1;
+        this.count++;
     }
 
     public int dequeue() {
         int tmp = this.array[this.front];
         this.array[this.front] = 0;
         this.front = this.front + 1;
-        this.size--;
+        this.count--;
         return tmp;
     }
 
     private boolean isFull() {
-        return this.size == this.array.length - 1;
+        return this.back == this.size;
     }
 
     private void resize() {
         int[] tmp = new int[this.array.length * 2];
         System.arraycopy(this.array, 0, tmp, 0, this.array.length);
         this.array = tmp;
+        this.size = this.array.length;
     }
 
-    void fixArray() {
-        int[] tmp = new int[this.size];
-        System.arraycopy(this.array, this.front, tmp, 0, this.size-1);
-        this.array = tmp;
-        this.front = 0;
-        this.back = this.size - 1;
-    }
+//    void fixArray() {
+//        int[] tmp = new int[this.size];
+//        System.arraycopy(this.array, this.front, tmp, 0, this.size - 1);
+//        this.array = tmp;
+//        this.front = 0;
+//        this.back = this.size - 1;
+//    }
 
     public int[] getArray() {
-        int[] tmp = new int[this.size];
-        System.arraycopy(this.array, 0, tmp, 0, tmp.length);
+        int[] tmp = new int[this.count];
+        System.arraycopy(this.array, this.front, tmp, 0, tmp.length);
         return tmp;
     }
 
     public boolean isEmpty() {
-        return this.size == 0;
+        return this.count == 0;
     }
 
     @Override
@@ -288,4 +520,11 @@ class ResizableArray {
         return sb.toString();
     }
 
+    public int getLast() {
+        return this.array[this.back - 1];
+    }
+
+    public int getFirst() {
+        return this.array[this.front];
+    }
 }
