@@ -30,8 +30,6 @@ public class LexAn {
      * @param dump           Ali se izpisujejo vmesni rezultati.
      */
     public LexAn(String sourceFileName, boolean dump) {
-        // TODO
-
         this.openFile(sourceFileName);
         this.dump = dump;
 
@@ -48,13 +46,19 @@ public class LexAn {
      * @return Naslednji simbol iz izvorne datoteke.
      */
     public Symbol lexAn() {
-        Symbol symbol = nextSymbol();
+        try {
+            Symbol symbol = nextSymbol();
 
-        if (this.dump){
-            this.dump(symbol);
+            if (this.dump) {
+                this.dump(symbol);
+            }
+
+            return symbol;
+        } catch (LexAnError lexAnError) {
+            this.dumpErr(lexAnError.getMessage());
+            Report.error(lexAnError.getMessage());
         }
-
-        return symbol;
+        return null;
     }
 
     /**
@@ -62,7 +66,7 @@ public class LexAn {
      *
      * @return Simbol za trenutni znak
      */
-    private Symbol nextSymbol() {
+    private Symbol nextSymbol() throws LexAnError {
         // TODO Izpis napak in col -1 pri besedah
 
         while (true) {
@@ -73,21 +77,25 @@ public class LexAn {
             // Pregled konca datoteke
             if (this.currChar == -1) {
                 this.closeFile();
-                return new Symbol(Token.EOF, "", line, col, line, col);
+                return new Symbol(Token.EOF, "EOF", line, col, line, col);
             }
 
             // Pregled belega besedila
-            if (this.currChar == 32 || this.currChar == 9 ) {
+            if (this.currChar == 32 || this.currChar == 9) {   // Presledek in tab
                 nextCharr();
                 continue;
-            } else if (this.currChar == 10) {
+            } else if (this.currChar == 10) {                   // Konc vrstice \n
                 this.lineNum++;
                 this.colNum = 0;
                 nextCharr();
                 continue;
-            } else if (this.currChar == 13){
+            } else if (this.currChar == 13) {                    // Konc vrstice \r
                 this.colNum = 0;
                 nextCharr();
+                if (this.currChar == 10) {                      // Konc vrstice \r\n
+                    this.lineNum++;
+                    nextCharr();
+                }
                 continue;
             }
 
@@ -122,7 +130,8 @@ public class LexAn {
             if (this.currChar == (int) '!') {
                 nextCharr();
                 if (this.currChar == (int) '=') {
-                    return new Symbol(Token.NEQ, "!=", line, col, this.lineNum, this.colNum);
+                    nextCharr();
+                    return new Symbol(Token.NEQ, "!=", line, col, this.lineNum, this.colNum - 1);
                 } else {
                     return new Symbol(Token.NOT, "!", line, col, line, col);
                 }
@@ -130,7 +139,8 @@ public class LexAn {
             if (this.currChar == (int) '=') {
                 nextCharr();
                 if (this.currChar == (int) '=') {
-                    return new Symbol(Token.EQU, "==", line, col, this.lineNum, this.colNum);
+                    nextCharr();
+                    return new Symbol(Token.EQU, "==", line, col, this.lineNum, this.colNum - 1);
                 } else {
                     return new Symbol(Token.ASSIGN, "=", line, col, line, col);
                 }
@@ -138,7 +148,8 @@ public class LexAn {
             if (this.currChar == (int) '<') {
                 nextCharr();
                 if (this.currChar == (int) '=') {
-                    return new Symbol(Token.LEQ, "<=", line, col, this.lineNum, this.colNum);
+                    nextCharr();
+                    return new Symbol(Token.LEQ, "<=", line, col, this.lineNum, this.colNum - 1);
                 } else {
                     return new Symbol(Token.LTH, "<", line, col, line, col);
                 }
@@ -146,7 +157,8 @@ public class LexAn {
             if (this.currChar == (int) '>') {
                 nextCharr();
                 if (this.currChar == (int) '=') {
-                    return new Symbol(Token.GEQ, ">=", line, col, this.lineNum, this.colNum);
+                    nextCharr();
+                    return new Symbol(Token.GEQ, ">=", line, col, this.lineNum, this.colNum - 1);
                 } else {
                     return new Symbol(Token.GTH, ">", line, col, line, col);
                 }
@@ -198,6 +210,8 @@ public class LexAn {
                     if (this.currChar == 10 || this.currChar == 13) {
                         nextCharr();
                         break;
+                    } else if (this.currChar == -1) {
+                        break;
                     }
                     nextCharr();
                 }
@@ -211,7 +225,7 @@ public class LexAn {
                         string.append((char) this.currChar);
                         nextCharr();
                     } else {
-                        return new Symbol(Token.INT_CONST, string.toString(), line, col, this.lineNum, this.colNum);
+                        return new Symbol(Token.INT_CONST, string.toString(), line, col, this.lineNum, this.colNum - 1);
                     }
                 }
             }
@@ -231,37 +245,37 @@ public class LexAn {
                         String s = string.toString();
                         switch (s) {
                             case "arr":
-                                return new Symbol(Token.KW_ARR, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.KW_ARR, s, line, col, this.lineNum, this.colNum - 1);
                             case "else":
-                                return new Symbol(Token.KW_ELSE, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.KW_ELSE, s, line, col, this.lineNum, this.colNum - 1);
                             case "for":
-                                return new Symbol(Token.KW_FOR, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.KW_FOR, s, line, col, this.lineNum, this.colNum - 1);
                             case "fun":
-                                return new Symbol(Token.KW_FUN, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.KW_FUN, s, line, col, this.lineNum, this.colNum - 1);
                             case "if":
-                                return new Symbol(Token.KW_IF, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.KW_IF, s, line, col, this.lineNum, this.colNum - 1);
                             case "then":
-                                return new Symbol(Token.KW_THEN, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.KW_THEN, s, line, col, this.lineNum, this.colNum - 1);
                             case "typ":
-                                return new Symbol(Token.KW_TYP, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.KW_TYP, s, line, col, this.lineNum, this.colNum - 1);
                             case "var":
-                                return new Symbol(Token.KW_VAR, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.KW_VAR, s, line, col, this.lineNum, this.colNum - 1);
                             case "where":
-                                return new Symbol(Token.KW_WHERE, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.KW_WHERE, s, line, col, this.lineNum, this.colNum - 1);
                             case "while":
-                                return new Symbol(Token.KW_WHILE, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.KW_WHILE, s, line, col, this.lineNum, this.colNum - 1);
                             case "logical":
-                                return new Symbol(Token.LOGICAL, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.LOGICAL, s, line, col, this.lineNum, this.colNum - 1);
                             case "integer":
-                                return new Symbol(Token.INTEGER, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.INTEGER, s, line, col, this.lineNum, this.colNum - 1);
                             case "string":
-                                return new Symbol(Token.STRING, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.STRING, s, line, col, this.lineNum, this.colNum - 1);
                             case "true":
-                                return new Symbol(Token.LOG_CONST, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.LOG_CONST, s, line, col, this.lineNum, this.colNum - 1);
                             case "false":
-                                return new Symbol(Token.LOG_CONST, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.LOG_CONST, s, line, col, this.lineNum, this.colNum - 1);
                             default:
-                                return new Symbol(Token.IDENTIFIER, s, line, col, this.lineNum, this.colNum);
+                                return new Symbol(Token.IDENTIFIER, s, line, col, this.lineNum, this.colNum - 1);
                         }
                     }
                 }
@@ -269,6 +283,7 @@ public class LexAn {
 
             // Prebere string konstante
             if (this.currChar == (int) '\'') {
+                string.append('\'');
                 while (true) {
                     nextCharr();
                     if (this.currChar == (int) '\'') {
@@ -276,15 +291,28 @@ public class LexAn {
                         if (this.currChar == (int) '\'') {
                             string.append('\'');
                         } else {
-                            return new Symbol(Token.STR_CONST, string.toString(), line, col, this.lineNum, this.colNum);
+                            string.append('\'');
+                            return new Symbol(Token.STR_CONST, string.toString(), line, col, this.lineNum, this.colNum - 1);
                         }
-                    }
-
-                    if (this.currChar >= 32 && this.currChar <= 126) {
+                    } else if (this.currChar >= 32 && this.currChar <= 126) {
                         string.append((char) this.currChar);
+                    } else if (this.currChar == 10 || this.currChar == 13) {
+                        Position p = new Position(line, col, this.lineNum, this.colNum);
+                        throw new LexAnError("[" + p.toString() + "] " + "String const extends multiple lines.");
+                    } else if (this.currChar == -1) {
+                        Position p = new Position(line, col, this.lineNum, this.colNum);
+                        throw new LexAnError("[" + p.toString() + "] " + "String const not closed.");
+                    } else {
+                        Position p = new Position(this.lineNum, this.colNum);
+                        throw new LexAnError("[" + p.toString() + "] " + "Invalid character in string '" + (char) this.currChar + "'");
+
                     }
                 }
             }
+
+            Position p = new Position(this.lineNum, this.colNum);
+            String e = "[" + p.toString() + "] " + "Invalid character '" + (char) this.currChar + "'";
+            throw new LexAnError(e);
 
         }
 
@@ -304,6 +332,19 @@ public class LexAn {
         else
             Report.dumpFile().println("[" + symb.position.toString() + "] " + symb.toString());
     }
+
+
+    /**
+     * Izpis napake v datoteko
+     *
+     * @param error Besedilo napake
+     */
+    private void dumpErr(String error) {
+        if (!dump) return;
+        if (Report.dumpFile() == null) return;
+        Report.dumpFile().println(error);
+    }
+
 
     /**
      * Preberi naslednji znak v datoteki
@@ -332,4 +373,11 @@ public class LexAn {
         }
     }
 
+}
+
+
+class LexAnError extends Exception {
+    LexAnError(String e) {
+        super(e);
+    }
 }

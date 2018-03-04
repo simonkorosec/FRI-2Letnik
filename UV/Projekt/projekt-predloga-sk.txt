@@ -1,0 +1,5 @@
+Opis izletov v gore
+
+Simon Korošec; sk7196@student.uni-lj.si
+
+Izdelati mislim spleto aplikacijo na kateri bodo podani opisi izletov v gore. Opise bodo podajali registrirani uporabniki. Uporabniki bodo lahko podali oceno izleta in ga tudi komentirali. Za izdelavo mislim uporabiti tehnologije HTML, CSS, JavaScript in PHP.

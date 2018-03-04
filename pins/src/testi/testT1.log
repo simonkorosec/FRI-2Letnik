@@ -1,0 +1,21 @@
+[1:1-1:7] LOGICAL:logical
+[1:9-1:12] IDENTIFIER:True
+[1:14-1:17] LOG_CONST:true
+[2:2-2:8] LOGICAL:logical
+[2:10-2:14] IDENTIFIER:False
+[2:16-2:20] LOG_CONST:false
+[3:2-3:8] INTEGER:integer
+[3:10-3:10] IDENTIFIER:a
+[3:12-3:12] INT_CONST:5
+[4:2-4:8] INTEGER:integer
+[4:10-4:10] IDENTIFIER:A
+[4:12-4:14] INT_CONST:556
+[5:2-5:7] STRING:string
+[5:9-5:12] IDENTIFIER:neki
+[5:14-5:32] STR_CONST:'kr en cudn string'
+[6:2-6:2] IDENTIFIER:a
+[6:3-6:3] ADD:+
+[6:4-6:4] IDENTIFIER:A
+[6:6-6:7] NEQ:!=
+[6:9-6:11] INT_CONST:600
+EOF:EOF
