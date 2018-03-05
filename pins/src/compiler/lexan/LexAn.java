@@ -69,7 +69,7 @@ public class LexAn {
      */
     private Symbol nextSymbol() {
         while (true) {
-            String error = null;
+            String error;
             StringBuilder string = new StringBuilder("");
             int col = this.colNum;
             int line = this.lineNum;
@@ -316,7 +316,7 @@ public class LexAn {
                 }
             }
 
-            error(error);
+            error(null);
 
         }
 
