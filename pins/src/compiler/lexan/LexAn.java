@@ -46,19 +46,20 @@ public class LexAn {
      * @return Naslednji simbol iz izvorne datoteke.
      */
     public Symbol lexAn() {
-        try {
-            Symbol symbol = nextSymbol();
+        Symbol symbol = nextSymbol();
 
-            if (this.dump) {
-                this.dump(symbol);
-            }
-
-            return symbol;
-        } catch (LexAnError lexAnError) {
-            this.dumpErr(lexAnError.getMessage());
-            Report.error(lexAnError.getMessage());
+        if (this.dump) {
+            this.dump(symbol);
         }
-        return null;
+
+        // Izpis na zaslon
+        if (symbol.token == Token.EOF) {
+            System.out.println(symbol.toString());
+        } else {
+            System.out.println("[" + symbol.position.toString() + "] " + symbol.toString());
+        }
+
+        return symbol;
     }
 
     /**
@@ -66,10 +67,9 @@ public class LexAn {
      *
      * @return Simbol za trenutni znak
      */
-    private Symbol nextSymbol() throws LexAnError {
-        // TODO Izpis napak in col -1 pri besedah
-
+    private Symbol nextSymbol() {
         while (true) {
+            String error = null;
             StringBuilder string = new StringBuilder("");
             int col = this.colNum;
             int line = this.lineNum;
@@ -90,12 +90,12 @@ public class LexAn {
                 nextCharr();
                 continue;
             } else if (this.currChar == 13) {                    // Konc vrstice \r
-                this.colNum = 0;
                 nextCharr();
                 if (this.currChar == 10) {                      // Konc vrstice \r\n
                     this.lineNum++;
                     nextCharr();
                 }
+                this.colNum = 1;
                 continue;
             }
 
@@ -224,8 +224,12 @@ public class LexAn {
                     if (this.currChar >= (int) '0' && this.currChar <= (int) '9') {
                         string.append((char) this.currChar);
                         nextCharr();
-                    } else {
+                    } else if (this.currChar == -1 || this.currChar == 9 || this.currChar == 10 || this.currChar == 13 || this.currChar == 32){
                         return new Symbol(Token.INT_CONST, string.toString(), line, col, this.lineNum, this.colNum - 1);
+                    } else {
+                        Position p = new Position(this.lineNum, this.colNum);
+                        error = "[" + p.toString() + "] " + "Missing whitespace after INT_CONST '" + string.append((char) this.currChar).toString() +"'.";
+                        error(error);
                     }
                 }
             }
@@ -298,21 +302,21 @@ public class LexAn {
                         string.append((char) this.currChar);
                     } else if (this.currChar == 10 || this.currChar == 13) {
                         Position p = new Position(line, col, this.lineNum, this.colNum);
-                        throw new LexAnError("[" + p.toString() + "] " + "String const extends multiple lines.");
+                        error = "[" + p.toString() + "] " + "String const extends multiple lines.";
+                        error(error);
                     } else if (this.currChar == -1) {
                         Position p = new Position(line, col, this.lineNum, this.colNum);
-                        throw new LexAnError("[" + p.toString() + "] " + "String const not closed.");
+                        error = "[" + p.toString() + "] " + "String const not closed.";
+                        error(error);
                     } else {
                         Position p = new Position(this.lineNum, this.colNum);
-                        throw new LexAnError("[" + p.toString() + "] " + "Invalid character in string '" + (char) this.currChar + "'");
-
+                        error = "[" + p.toString() + "] " + "Invalid character in string '" + (char) this.currChar + "'";
+                        error(error);
                     }
                 }
             }
 
-            Position p = new Position(this.lineNum, this.colNum);
-            String e = "[" + p.toString() + "] " + "Invalid character '" + (char) this.currChar + "'";
-            throw new LexAnError(e);
+            error(error);
 
         }
 
@@ -342,7 +346,7 @@ public class LexAn {
     private void dumpErr(String error) {
         if (!dump) return;
         if (Report.dumpFile() == null) return;
-        Report.dumpFile().println(error);
+        Report.dumpFile().println(":-(" + error);
     }
 
 
@@ -373,11 +377,14 @@ public class LexAn {
         }
     }
 
-}
+    private void error(String error){
+        if (error == null) {
+            Position p = new Position(this.lineNum, this.colNum);
+            error = "[" + p.toString() + "] " + "Invalid character '" + (char) this.currChar + "'";
+        }
+        this.dumpErr(error);
+        Report.error(error);
 
-
-class LexAnError extends Exception {
-    LexAnError(String e) {
-        super(e);
     }
+
 }
