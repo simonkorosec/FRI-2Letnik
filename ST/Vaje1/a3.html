@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 3: HTML & CSS</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="container">
+    <div id="header"><h1>Web technologies</h1></div>
+    <div id="table_div">
+        <table>
+        <caption>The list of class participants</caption>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Role</th>
+            </tr>
+            <tr>
+                <td>Aleš</td><td>Smrdel</td><td>Lecturer</td>
+            </tr>
+            <tr>
+                <td>David</td><td>Jelenec</td><td>Assistant</td>
+            </tr>
+            <tr>
+                <td>Simon</td><td>Korošec</td><td>Student</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="form_div">
+        <form>
+            <fieldset>
+                <legend>New participant:</legend>
+                <p>First name <input type="text" /></p>
+                <p>Last name <input type="text" /></p>
+                <p>Role <select> <option>Lecturer</option><option>Assistant</option><option>Student</option></select></p>
+                <input type="button" value="Clear">
+                <input type="button" value="Submit">
+
+            </fieldset>
+        </form>
+    </div>
+    <div id="footer">
+        A simple footer
+    </div>
+</div>
+</body>
+</html>

@@ -215,6 +215,7 @@ public class LexAn {
                     }
                     nextCharr();
                 }
+                //this.lineNum++;
                 continue;
             }
 
@@ -224,12 +225,8 @@ public class LexAn {
                     if (this.currChar >= (int) '0' && this.currChar <= (int) '9') {
                         string.append((char) this.currChar);
                         nextCharr();
-                    } else if (this.currChar == -1 || this.currChar == 9 || this.currChar == 10 || this.currChar == 13 || this.currChar == 32){
-                        return new Symbol(Token.INT_CONST, string.toString(), line, col, this.lineNum, this.colNum - 1);
                     } else {
-                        Position p = new Position(this.lineNum, this.colNum);
-                        error = "[" + p.toString() + "] " + "Missing whitespace after INT_CONST '" + string.append((char) this.currChar).toString() +"'.";
-                        error(error);
+                        return new Symbol(Token.INT_CONST, string.toString(), line, col, this.lineNum, this.colNum - 1);
                     }
                 }
             }

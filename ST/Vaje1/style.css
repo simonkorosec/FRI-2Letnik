@@ -1,0 +1,47 @@
+div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 6px;
+}
+
+#container {
+    padding: 0 0 0 0;
+}
+#header {
+    background-color: #daff6b;
+}
+
+#table_div {
+    background-color: #ffef2f;
+}
+
+#form_div {
+    background-color: #40ff36;
+}
+
+#footer {
+    background-color: #2d32ff;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 2px solid #ff327f;
+}
+
+th {
+    background-color: #ff327f;
+    color: white;
+}
+
+h1 {
+    margin: 0 0 0 0;
+}
+
+fieldset {
+    display: inline;
+}
