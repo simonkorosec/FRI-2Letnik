@@ -95,6 +95,90 @@ public class BSTSetNode {
     public boolean remove(BSTSetNode element) {
         int comp = this.compare(element);
 
+
+        if (comp == 0) {
+            if (this.left == null && this.right == null) {
+                int c = this.compare(this.parent);
+                if (c < 0) {
+                    this.parent.setRight(null);
+                } else if (c > 0) {
+                    this.parent.setLeft(null);
+                }
+                this.parent = null;
+            } else if (this.right != null && this.left != null) {
+                BSTSetNode min = getRight().findMin();
+                int c = this.compare(this.parent);
+                if (min.getKey() < min.parent.getKey()) {
+                    min.parent.setLeft(null);
+                } else if (min.getKey() > min.parent.getKey()) {
+                    min.parent.setRight(null);
+                }
+                min.parent = this.parent;
+                if (min.getKey() < min.parent.getKey()) {
+                    min.parent.setLeft(min);
+                } else if (min.getKey() > min.parent.getKey()) {
+                    min.parent.setRight(min);
+                }
+                min.setLeft(this.left);
+                min.left.parent = min;
+                if (this.right != null) {
+                    min.setRight(this.right);
+                    min.right.parent = min;
+                }
+
+                this.right = null;
+                this.left = null;
+                this.parent = null;
+
+            } else if (this.left != null) {
+                if (this.key > this.parent.getKey()) {
+                    this.parent.setRight(this.left);
+                    this.left.parent = this.parent;
+
+                    this.left = null;
+                    this.parent = null;
+
+                } else if (this.key < this.parent.getKey()) {
+                    this.parent.setLeft(this.left);
+                    this.left.parent = this.parent;
+
+                    this.left = null;
+                    this.parent = null;
+                }
+            } else if (this.right != null) {
+                if (this.key > this.parent.getKey()) {
+                    this.parent.setRight(this.right);
+                    this.right.parent = this.parent;
+
+                    this.right = null;
+                    this.parent = null;
+
+                } else if (this.key < this.parent.getKey()) {
+                    this.parent.setLeft(this.right);
+                    this.right.parent = this.parent;
+
+                    this.right = null;
+                    this.parent = null;
+                }
+            }
+
+
+            return true;
+
+        } else if (comp < 0) {
+            if (this.left == null) {
+                return false;
+            }
+            return this.left.remove(element);
+        } else {
+            if (this.right == null) {
+                return false;
+            }
+            return this.right.remove(element);
+        }
+
+
+/*
         if (comp == 0) {
             if (this.left == null && this.right == null) {
                 int c = this.compare(this.parent);
@@ -126,6 +210,7 @@ public class BSTSetNode {
             }
             return this.right.remove(element);
         }
+*/
     }
 
     /**
@@ -229,7 +314,7 @@ public class BSTSetNode {
         List<BSTSetNode> zaPregled = new LinkedList<>();
         zaPregled.add(this);
 
-        while (!zaPregled.isEmpty()){
+        while (!zaPregled.isEmpty()) {
             BSTSetNode el = zaPregled.remove(0);
             list.add(el.getKey());
 
