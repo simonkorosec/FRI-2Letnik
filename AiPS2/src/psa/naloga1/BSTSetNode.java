@@ -97,40 +97,20 @@ public class BSTSetNode {
 
 
         if (comp == 0) {
-            if (this.left == null && this.right == null) {
+            if (this.left == null && this.right == null) { // list
                 int c = this.compare(this.parent);
-                if (c < 0) {
+                if (c <= 0) {
                     this.parent.setRight(null);
-                } else if (c > 0) {
+                } else {
                     this.parent.setLeft(null);
                 }
                 this.parent = null;
-            } else if (this.right != null && this.left != null) {
+            } else if (this.right != null && this.left != null) { // 2 otroka
                 BSTSetNode min = getRight().findMin();
-                int c = this.compare(this.parent);
-                if (min.getKey() < min.parent.getKey()) {
-                    min.parent.setLeft(null);
-                } else if (min.getKey() > min.parent.getKey()) {
-                    min.parent.setRight(null);
-                }
-                min.parent = this.parent;
-                if (min.getKey() < min.parent.getKey()) {
-                    min.parent.setLeft(min);
-                } else if (min.getKey() > min.parent.getKey()) {
-                    min.parent.setRight(min);
-                }
-                min.setLeft(this.left);
-                min.left.parent = min;
-                if (this.right != null) {
-                    min.setRight(this.right);
-                    min.right.parent = min;
-                }
+                this.setKey(min.getKey());
+                this.right.remove(min);
 
-                this.right = null;
-                this.left = null;
-                this.parent = null;
-
-            } else if (this.left != null) {
+            } else if (this.left != null) {     // samo levi otrok
                 if (this.key > this.parent.getKey()) {
                     this.parent.setRight(this.left);
                     this.left.parent = this.parent;
@@ -145,8 +125,8 @@ public class BSTSetNode {
                     this.left = null;
                     this.parent = null;
                 }
-            } else if (this.right != null) {
-                if (this.key > this.parent.getKey()) {
+            } else {    // samo desn otrok
+                if (this.key >= this.parent.getKey()) {
                     this.parent.setRight(this.right);
                     this.right.parent = this.parent;
 
@@ -177,40 +157,6 @@ public class BSTSetNode {
             return this.right.remove(element);
         }
 
-
-/*
-        if (comp == 0) {
-            if (this.left == null && this.right == null) {
-                int c = this.compare(this.parent);
-                if (c < 0) {
-                    this.parent.setRight(null);
-                } else if (c > 0) {
-                    this.parent.setLeft(null);
-                }
-                this.parent = null;
-            } else if (this.right == null) {
-                this.left.parent = this.parent;
-                this.parent.setRight(this.getLeft());
-            } else {
-                BSTSetNode min = getRight().findMin();
-                min.parent.setLeft(null);
-                min.parent = null;
-                this.setKey(min.getKey());
-            }
-            return true;
-
-        } else if (comp < 0) {
-            if (this.left == null) {
-                return false;
-            }
-            return this.left.remove(element);
-        } else {
-            if (this.right == null) {
-                return false;
-            }
-            return this.right.remove(element);
-        }
-*/
     }
 
     /**
