@@ -49,20 +49,20 @@ prefx_expression -> postfx_expression .
 postfx_expression -> atom_expression postfx_expression' .
 postfx_expression' -> [ expression ] postfx_expression' .
 postfx_expression' -> .
-atom_expression -> log constant .
-atom_expression -> int constant .
-atom_expression -> str constant .
+atom_expression -> log_constant .
+atom_expression -> int_constant .
+atom_expression -> str_constant .
 atom_expression -> identifer atom_expression' .
+atom_expression -> { atom_expression'' .
+atom_expression -> ( expressions ) .
 atom_expression' -> .
 atom_expression' -> ( expressions ) .
-atom_expression -> { atom_expression'' .
 atom_expression'' -> expression = expression } .
 atom_expression'' -> if expression then expression atom_expression''' .
-atom_expression''' -> } .
-atom_expression''' -> else expression } .
 atom_expression'' -> while expression : expression } .
 atom_expression'' -> for identifer = expression , expression , expression : expression } .
-atom_expression -> ( expressions ) .
+atom_expression''' -> } .
+atom_expression''' -> else expression } .
 expressions -> expression expressions' .
 expressions' -> , expression expressions' .
 expressions' -> .

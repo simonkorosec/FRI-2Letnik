@@ -1,0 +1,4 @@
+source -> defnitions .
+defnitions -> defnition defnitions' .
+defnition -> variable_defnition .
+variable_defnition -> var identifer : type .

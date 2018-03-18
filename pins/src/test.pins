@@ -1,0 +1,4 @@
+var a : 555;
+typ b : string;
+typ abc : arr [ 55 ] arr [ 5 ] integer;
+fun i ( j : int ) : string = +-5
