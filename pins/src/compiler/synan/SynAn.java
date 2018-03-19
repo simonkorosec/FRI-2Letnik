@@ -44,6 +44,10 @@ public class SynAn {
     private void source() {
         dump("source -> defnitions");
         defnitions();
+
+        if (currSybol.token != Token.EOF) {
+            Report.error(currSybol.position, "Expected ; found " + currSybol.lexeme);
+        }
     }
 
     private void defnitions() {

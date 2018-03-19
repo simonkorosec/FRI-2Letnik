@@ -1,5 +1,2 @@
-fun f(i:integer):integer=i+1;
 var i:integer;
 typ j:logical
-
-test.pins --phase=synan --dump=synan

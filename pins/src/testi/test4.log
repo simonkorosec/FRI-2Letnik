@@ -1,0 +1,10 @@
+source -> defnitions
+defnitions -> defnition defnitions'
+defnition -> variable_defnition
+variable_defnition -> var identifer : type
+type -> integer
+defnitions' -> ; defnition defnitions'
+defnition -> variable_defnition
+variable_defnition -> var identifer : type
+type -> integer
+defnitions' -> ; defnition defnitions'

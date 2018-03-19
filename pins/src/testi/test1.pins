@@ -1,3 +1,4 @@
-var i:integer;
-typ j:logical
-
+var aa: logical;
+var u8 : logical;
+typ abc : arr [ 12 ] arr [ 442323 ] integer;
+fun i ( j : int ) : string = +-5

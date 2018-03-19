@@ -1,0 +1,42 @@
+source -> defnitions
+defnitions -> defnition defnitions'
+defnition -> variable_defnition
+variable_defnition -> var identifer : type
+type -> logical
+defnitions' -> ; defnition defnitions'
+defnition -> variable_defnition
+variable_defnition -> var identifer : type
+type -> logical
+defnitions' -> ; defnition defnitions'
+defnition -> type_defnition
+type_defnition -> typ identifer : type
+type -> arr [ int_constant ] type
+type -> arr [ int_constant ] type
+type -> integer
+defnitions' -> ; defnition defnitions'
+defnition -> function_defnition
+function_defnition -> fun identifer ( parameters ) : type = expression
+parameters -> parameter parameters'
+parameter -> identifer : type
+type -> identifer
+parameters' -> .
+type -> string
+expression -> logical_ior_expression expression'
+logical_ior_expression -> logical_and_expression logical_ior_expression'
+logical_and_expression -> compare_expression logical_and_expression'
+compare_expression -> additive_expression compare_expression'
+additive_expression -> multiplicative_expression additive_expression'
+multiplicative_expression -> prefx_expression multiplicative_expression'
+prefx_expression -> + prefx_expression
+prefx_expression -> - prefx_expression
+prefx_expression -> postfx_expression
+postfx_expression -> atom_expression postfx_expression'
+atom_expression -> int_constant
+postfx_expression' -> .
+multiplicative_expression' -> .
+additive_expression' -> .
+compare_expression' -> .
+logical_and_expression' -> .
+logical_ior_expression' -> .
+expression' -> .
+defnitions' -> .
