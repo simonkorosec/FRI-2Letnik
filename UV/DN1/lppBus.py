@@ -1,3 +1,4 @@
+import json
 import sys
 import requests
 import dateutil.parser
@@ -92,9 +93,11 @@ def arrivals_to_station(station_name, line_num=-1):
         exit(0)
 
 
-# arrivals_to_station("pošta")
+def write_data(station_name="", line_num=-1, after_time=None):
+    data = {"station_name": station_name, "line_num": line_num, "after_time": after_time}
+    with open('_data.txt', 'w') as outfile:
+        json.dump(data, outfile)
 
-# get_arrival_on_station("Živalski vrt")
 
 stat_name = ""
 line = -1
@@ -169,3 +172,6 @@ if len(sys.argv) > 1:
         print("Unknown arguments. Try:")
         print("arrivals to (station name) [line (line number) at (time in format H:M)]")
         print("departures from (station name) [line (line number)]")
+        exit()
+
+    write_data(stat_name, line, time)

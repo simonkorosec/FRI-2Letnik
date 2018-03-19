@@ -1,9 +1,10 @@
 import requests
 
 od = "Živalski vrt"
-do = "BTC, Šmartinska cesta 152, 1000 Ljubljana"
-api_key = " AIzaSyBsPC63YFK5z05Ab2krX1rM_Ry-KTaEdyc"
-r = requests.get("https://maps.googleapis.com/maps/api/directions/json?origin=" + od + "&destination=" + do + "&mode=transit&alternatives=true&key=" + api_key + "")
+do = "Kolodvor"
+api_key = "AIzaSyBsPC63YFK5z05Ab2krX1rM_Ry-KTaEdyc"
+#r = requests.get("https://maps.googleapis.com/maps/api/directions/json?origin=" + od + "&destination=" + do + "&mode=transit&alternatives=true&key=" + api_key + "")
+r = requests.get("https://maps.googleapis.com/maps/api/directions/json?origin=Živalski vrt&destination=kolodvor&mode=transit&alternatives=true&key=AIzaSyBsPC63YFK5z05Ab2krX1rM_Ry-KTaEdyc")
 routes = r.json()["routes"]
 
 i = 0
