@@ -47,18 +47,9 @@ public class LexAn {
      */
     public Symbol lexAn() {
         Symbol symbol = nextSymbol();
-
         if (this.dump) {
             this.dump(symbol);
         }
-
-        // Izpis na zaslon
-        if (symbol.token == Token.EOF) {
-            System.out.println(symbol.toString());
-        } else {
-            System.out.println("[" + symbol.position.toString() + "] " + symbol.toString());
-        }
-
         return symbol;
     }
 

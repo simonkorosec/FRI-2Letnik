@@ -42,19 +42,19 @@ public class SynAn {
     }
 
     private void source() {
-        dump("source -> defnitions .");
+        dump("source -> defnitions");
         defnitions();
     }
 
     private void defnitions() {
-        dump("defnitions -> defnition defnitions' .");
+        dump("defnitions -> defnition defnitions'");
         defnition();
         defnitions1();
     }
 
     private void defnitions1() {
         if (currSybol.token == Token.SEMIC) {
-            dump("defnitions' -> ; defnition defnitions' .");
+            dump("defnitions' -> ; defnition defnitions'");
             nextSymbol();
             defnition();
             defnitions1();
@@ -66,17 +66,17 @@ public class SynAn {
     private void defnition() {
         switch (currSybol.token) {
             case Token.KW_TYP:
-                dump("defnition -> type_defnition .");
+                dump("defnition -> type_defnition");
                 nextSymbol();
                 typeDef();
                 break;
             case Token.KW_FUN:
-                dump("defnition -> function_defnition .");
+                dump("defnition -> function_defnition");
                 nextSymbol();
                 funDef();
                 break;
             case Token.KW_VAR:
-                dump("defnition -> variable_defnition .");
+                dump("defnition -> variable_defnition");
                 nextSymbol();
                 varDef();
                 break;
@@ -87,7 +87,7 @@ public class SynAn {
     }
 
     private void varDef() {
-        dump("variable_defnition -> var identifer : type .");
+        dump("variable_defnition -> var identifer : type");
         if (currSybol.token != Token.IDENTIFIER) {
             Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme);
         }
@@ -100,32 +100,32 @@ public class SynAn {
     }
 
     private void funDef() {
-        dump("function_defnition -> fun identifer ( parameters ) : type = expression .");
+        dump("function_defnition -> fun identifer ( parameters ) : type = expression");
 
         if (currSybol.token != Token.IDENTIFIER) {
-            Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + "expected IDENTIFIER");
+            Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + " expected IDENTIFIER");
         }
         nextSymbol();
         if (currSybol.token != Token.LPARENT) {
-            Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + "expected LPARENT");
+            Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + " expected LPARENT");
         }
 
         nextSymbol();
         parameters();
 
         if (currSybol.token != Token.RPARENT) {
-            Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + "expected RPARENT");
+            Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + " expected RPARENT");
         }
         nextSymbol();
         if (currSybol.token != Token.COLON) {
-            Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + "expected COLON");
+            Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + " expected COLON");
         }
 
         nextSymbol();
         type();
 
         if (currSybol.token != Token.ASSIGN) {
-            Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + "expected ASSIGN");
+            Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + " expected ASSIGN");
         }
 
         nextSymbol();
@@ -134,27 +134,27 @@ public class SynAn {
     }
 
     private void expression() {
-        dump("expression -> logical_ior_expression expression' .");
+        dump("expression -> logical_ior_expression expression'");
 
         logical_ior_expression();
         expression1();
     }
 
     private void logical_ior_expression() {
-        dump("logical_ior_expression -> logical_and_expression logical_ior_expression' .");
+        dump("logical_ior_expression -> logical_and_expression logical_ior_expression'");
 
         logical_and_expression();
         logical_ior_expression1();
     }
 
     private void logical_and_expression() {
-        dump("logical_and_expression -> compare_expression logical_and_expression' .");
+        dump("logical_and_expression -> compare_expression logical_and_expression'");
         compare_expression();
         logical_and_expression1();
     }
 
     private void compare_expression() {
-        dump("compare_expression -> additive_expression compare_expression' .");
+        dump("compare_expression -> additive_expression compare_expression'");
         additive_expression();
         compare_expression1();
     }
@@ -162,27 +162,27 @@ public class SynAn {
     private void compare_expression1() {
 
         if (currSybol.token == Token.EQU) {
-            dump("compare_expression' -> == additive_expression .");
+            dump("compare_expression' -> == additive_expression");
             nextSymbol();
             additive_expression();
         } else if (currSybol.token == Token.NEQ) {
-            dump("compare_expression' -> != additive_expression .");
+            dump("compare_expression' -> != additive_expression");
             nextSymbol();
             additive_expression();
         } else if (currSybol.token == Token.LEQ) {
-            dump("compare_expression' -> <= additive_expression .");
+            dump("compare_expression' -> <= additive_expression");
             nextSymbol();
             additive_expression();
         } else if (currSybol.token == Token.GEQ) {
-            dump("compare_expression' -> >= additive_expression .");
+            dump("compare_expression' -> >= additive_expression");
             nextSymbol();
             additive_expression();
         } else if (currSybol.token == Token.LTH) {
-            dump("compare_expression' -> < additive_expression .");
+            dump("compare_expression' -> < additive_expression");
             nextSymbol();
             additive_expression();
         } else if (currSybol.token == Token.GTH) {
-            dump("compare_expression' -> > additive_expression .");
+            dump("compare_expression' -> > additive_expression");
             nextSymbol();
             additive_expression();
         } else {
@@ -191,38 +191,38 @@ public class SynAn {
     }
 
     private void additive_expression() {
-        dump("additive_expression -> multiplicative_expression additive_expression' .");
+        dump("additive_expression -> multiplicative_expression additive_expression'");
         multiplicative_expression();
         additive_expression1();
     }
 
     private void multiplicative_expression() {
-        dump("multiplicative_expression -> prefx_expression multiplicative_expression' .");
+        dump("multiplicative_expression -> prefx_expression multiplicative_expression'");
         prefx_expression();
         multiplicative_expression1();
     }
 
     private void prefx_expression() {
         if (currSybol.token == Token.ADD) {
-            dump("prefx_expression -> + prefx_expression .");
+            dump("prefx_expression -> + prefx_expression");
             nextSymbol();
             prefx_expression();
         } else if (currSybol.token == Token.SUB) {
-            dump("prefx_expression -> - prefx_expression .");
+            dump("prefx_expression -> - prefx_expression");
             nextSymbol();
             prefx_expression();
         } else if (currSybol.token == Token.NOT) {
-            dump("prefx_expression -> ! prefx_expression .");
+            dump("prefx_expression -> ! prefx_expression");
             nextSymbol();
             prefx_expression();
         } else {
-            dump("prefx_expression -> postfx_expression .");
+            dump("prefx_expression -> postfx_expression");
             postfx_expression();
         }
     }
 
     private void postfx_expression() {
-        dump("postfx_expression -> atom_expression postfx_expression' .");
+        dump("postfx_expression -> atom_expression postfx_expression'");
         atom_expression();
         postfx_expression1();
 
@@ -231,29 +231,29 @@ public class SynAn {
     private void atom_expression() {
         switch (currSybol.token) {
             case Token.LOG_CONST:
-                dump("atom_expression -> log_constant .");
+                dump("atom_expression -> log_constant");
                 nextSymbol();
                 break;
             case Token.INT_CONST:
-                dump("atom_expression -> int_constant .");
+                dump("atom_expression -> int_constant");
                 nextSymbol();
                 break;
             case Token.STR_CONST:
-                dump("atom_expression -> str_constant .");
+                dump("atom_expression -> str_constant");
                 nextSymbol();
                 break;
             case Token.IDENTIFIER:
-                dump("atom_expression -> identifer atom_expression' .");
+                dump("atom_expression -> identifer atom_expression'");
                 nextSymbol();
                 atom_expression1();
                 break;
             case Token.LBRACE:
-                dump("atom_expression -> { atom_expression'' .");
+                dump("atom_expression -> { atom_expression''");
                 nextSymbol();
                 atom_expression2();
                 break;
             case Token.LPARENT:
-                dump("atom_expression -> ( expressions ) .");
+                dump("atom_expression -> ( expressions )");
                 nextSymbol();
                 expressions();
                 if (currSybol.token != Token.RPARENT) {
@@ -270,11 +270,11 @@ public class SynAn {
 
     private void atom_expression1() {
         if (currSybol.token == Token.LPARENT) {
-            dump("atom_expression' -> ( expressions ) .");
+            dump("atom_expression' -> ( expressions )");
             nextSymbol();
             expressions();
             if (currSybol.token != Token.RPARENT) {
-                Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + "expected RPARENT");
+                Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + " expected RPARENT");
             }
         } else {
             dump("atom_expression' -> .");
@@ -283,7 +283,7 @@ public class SynAn {
 
     private void atom_expression2() {
         if (currSybol.token == Token.KW_IF) {
-            dump("atom_expression'' -> if expression then expression atom_expression''' .");
+            dump("atom_expression'' -> if expression then expression atom_expression'''");
             nextSymbol();
             expression();
             if (currSybol.token != Token.KW_THEN) {
@@ -294,7 +294,7 @@ public class SynAn {
             atom_expression3();
 
         } else if (currSybol.token == Token.KW_WHILE) {
-            dump("atom_expression'' -> while expression : expression } .");
+            dump("atom_expression'' -> while expression : expression }");
             nextSymbol();
             expression();
             if (currSybol.token != Token.COLON) {
@@ -307,7 +307,7 @@ public class SynAn {
             }
 
         } else if (currSybol.token == Token.KW_FOR) {
-            dump("atom_expression'' -> for identifer = expression , expression , expression : expression } .");
+            dump("atom_expression'' -> for identifer = expression , expression , expression : expression }");
             nextSymbol();
             if (currSybol.token != Token.IDENTIFIER) {
                 Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme);
@@ -357,7 +357,7 @@ public class SynAn {
             dump("atom_expression''' -> } .");
             nextSymbol();
         } else if (currSybol.token == Token.KW_ELSE) {
-            dump("atom_expression''' -> else expression } .");
+            dump("atom_expression''' -> else expression }");
             nextSymbol();
             expression();
             if (currSybol.token != Token.RBRACE) {
@@ -368,7 +368,7 @@ public class SynAn {
     }
 
     private void expressions() {
-        dump("expressions -> expression expressions' .");
+        dump("expressions -> expression expressions'");
         expression();
         //nextSymbol();
         expressions1();
@@ -376,7 +376,7 @@ public class SynAn {
 
     private void expressions1() {
         if (currSybol.token == Token.COMMA) {
-            dump("expressions' -> , expression expressions' .");
+            dump("expressions' -> , expression expressions'");
             nextSymbol();
             expression();
             expressions1();
@@ -387,11 +387,11 @@ public class SynAn {
 
     private void postfx_expression1() {
         if (currSybol.token == Token.LBRACKET) {
-            dump("postfx_expression' -> [ expression ] postfx_expression' .");
+            dump("postfx_expression' -> [ expression ] postfx_expression'");
             nextSymbol();
             expression();
             if (currSybol.token != Token.RBRACKET) {
-                Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + "expected RBRACKET");
+                Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + " expected RBRACKET");
             }
             nextSymbol();
             postfx_expression1();
@@ -402,17 +402,17 @@ public class SynAn {
 
     private void multiplicative_expression1() {
         if (currSybol.token == Token.MUL) {
-            dump("multiplicative_expression' -> * prefx_expression multiplicative_expression' .");
+            dump("multiplicative_expression' -> * prefx_expression multiplicative_expression'");
             nextSymbol();
             prefx_expression();
             multiplicative_expression1();
         } else if (currSybol.token == Token.DIV) {
-            dump("multiplicative_expression' -> / prefx_expression multiplicative_expression' .");
+            dump("multiplicative_expression' -> / prefx_expression multiplicative_expression'");
             nextSymbol();
             prefx_expression();
             multiplicative_expression1();
         } else if (currSybol.token == Token.MOD) {
-            dump("multiplicative_expression' -> % prefx_expression multiplicative_expression' .");
+            dump("multiplicative_expression' -> % prefx_expression multiplicative_expression'");
             nextSymbol();
             prefx_expression();
             multiplicative_expression1();
@@ -423,12 +423,12 @@ public class SynAn {
 
     private void additive_expression1() {
         if (currSybol.token == Token.ADD) {
-            dump("additive_expression' -> + multiplicative_expression additive_expression' .");
+            dump("additive_expression' -> + multiplicative_expression additive_expression'");
             nextSymbol();
             multiplicative_expression();
             additive_expression1();
         } else if (currSybol.token == Token.SUB) {
-            dump("additive_expression' -> - multiplicative_expression additive_expression' .");
+            dump("additive_expression' -> - multiplicative_expression additive_expression'");
             nextSymbol();
             multiplicative_expression();
             additive_expression1();
@@ -439,7 +439,7 @@ public class SynAn {
 
     private void logical_and_expression1() {
         if (currSybol.token == Token.AND) {
-            dump("logical_and_expression' -> & compare_expression logical_and_expression' .");
+            dump("logical_and_expression' -> & compare_expression logical_and_expression'");
             nextSymbol();
             compare_expression();
             logical_and_expression1();
@@ -451,7 +451,7 @@ public class SynAn {
 
     private void logical_ior_expression1() {
         if (currSybol.token == Token.IOR) {
-            dump("logical_ior_expression' -> | logical_and_expression logical_ior_expression' .");
+            dump("logical_ior_expression' -> | logical_and_expression logical_ior_expression'");
             nextSymbol();
             logical_and_expression();
             logical_ior_expression1();
@@ -462,7 +462,7 @@ public class SynAn {
 
     private void expression1() {
         if (currSybol.token == Token.LBRACE) {
-            dump("expression' -> { WHERE defnitions } .");
+            dump("expression' -> { WHERE defnitions }");
             nextSymbol();
             if (currSybol.token != Token.KW_WHERE) {
                 Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme);
@@ -481,14 +481,14 @@ public class SynAn {
     }
 
     private void parameters() {
-        dump("parameters -> parameter parameters' .");
+        dump("parameters -> parameter parameters'");
         parameter();
         parameters1();
     }
 
     private void parameters1() {
         if (currSybol.token == Token.COMMA) {
-            dump("parameters' -> , parameter parameters' .");
+            dump("parameters' -> , parameter parameters'");
             nextSymbol();
             parameter();
             parameters1();
@@ -498,7 +498,7 @@ public class SynAn {
     }
 
     private void parameter() {
-        dump("parameter -> identifer : type .");
+        dump("parameter -> identifer : type");
 
         if (currSybol.token != Token.IDENTIFIER) {
             Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + "expected IDENTIFIER");
@@ -513,7 +513,7 @@ public class SynAn {
     }
 
     private void typeDef() {
-        dump("type_defnition -> typ identifer : type .");
+        dump("type_defnition -> typ identifer : type");
 
         if (currSybol.token != Token.IDENTIFIER) {
             Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme);
@@ -529,40 +529,40 @@ public class SynAn {
     private void type() {
         switch (currSybol.token) {
             case Token.LOGICAL:
-                dump("type -> logical .");
+                dump("type -> logical");
                 nextSymbol();
                 break;
             case Token.INTEGER:
-                dump("type -> integer .");
+                dump("type -> integer");
                 nextSymbol();
                 break;
             case Token.STRING:
-                dump("type -> string .");
+                dump("type -> string");
                 nextSymbol();
                 break;
             case Token.IDENTIFIER:
-                dump("type -> identifer .");
+                dump("type -> identifer");
                 nextSymbol();
                 break;
             case Token.KW_ARR:
-                dump("type -> arr [ int_constant ] type .");
+                dump("type -> arr [ int_constant ] type");
                 nextSymbol();
                 if (currSybol.token != Token.LBRACKET) {
-                    Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + "expected LBRACKET");
+                    Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + " expected LBRACKET");
                 }
                 nextSymbol();
                 if (currSybol.token != Token.INT_CONST) {
-                    Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + "expected INT_CONST");
+                    Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + " expected INT_CONST");
                 }
                 nextSymbol();
                 if (currSybol.token != Token.RBRACKET) {
-                    Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + "expected RBRACKET");
+                    Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + " expected RBRACKET");
                 }
                 nextSymbol();
                 type();
                 break;
             default:
-                Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + "expected type");
+                Report.error(currSybol.position, "Unknow production: " + currSybol.lexeme + " expected type");
                 break;
         }
     }

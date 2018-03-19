@@ -1,21 +1,22 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class SkladTest {
 
-    @org.junit.Before
+    @Before
     public void setUp() throws Exception {
     }
 
-    @org.junit.Test
+    @Test
     public void push() {
         Sklad sklad = new Sklad();
         String a = "a";
         sklad.push(a);
     }
 
-    @org.junit.Test
+    @Test
     public void pop() {
         Sklad<String> sklad = new Sklad<>();
         String a = "test";
@@ -65,7 +66,9 @@ public class SkladTest {
         sklad.push(c);
 
         assertEquals(c, sklad.peek());
+        assertEquals(c, sklad.peek());
         assertEquals(c, sklad.pop());
+        assertEquals(b, sklad.peek());
         assertEquals(b, sklad.peek());
         assertEquals(b, sklad.pop());
     }
@@ -73,6 +76,7 @@ public class SkladTest {
     @Test
     public void count() {
         Sklad<String> sklad = new Sklad<>();
+        assertEquals(0, sklad.count());
         String a = "a";
         String b = "b";
         String c = "c";
@@ -84,6 +88,6 @@ public class SkladTest {
         assertEquals(c, sklad.pop());
         assertEquals(b, sklad.pop());
         assertEquals(a, sklad.pop());
-
+        assertEquals(0, sklad.count());
     }
 }

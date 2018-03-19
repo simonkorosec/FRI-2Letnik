@@ -53,7 +53,7 @@ def get_arrival_on_station(station_name, line_num=-1, after_time=None):
                         continue
 
                     if izpis == 0:
-                        print("name: {}, number: {}".format(route["route_name"], route["route_group_number"]))
+                        print("Name: {}, number: {}".format(route["route_name"].split(";")[0], route["route_group_number"]))
                         izpis = -13
 
                     date = dateutil.parser.parse(t["arrival_time"])
@@ -95,8 +95,8 @@ def arrivals_to_station(station_name, line_num=-1):
 
 def write_data(station_name="", line_num=-1, after_time=None):
     data = {"station_name": station_name, "line_num": line_num, "after_time": after_time}
-    with open('_data.txt', 'w') as outfile:
-        json.dump(data, outfile)
+    with open('_data.txt', 'w', encoding='utf8') as outfile:
+        json.dump(data, outfile, ensure_ascii=False)
 
 
 stat_name = ""
@@ -139,7 +139,19 @@ if len(sys.argv) > 1:
             else:
                 i += 1
 
+        if stat_name == "":
+            try:
+                with open('_data.txt', encoding="utf-8") as json_data:
+                    d = json.load(json_data)
+                    stat_name = d["station_name"]
+            except FileNotFoundError:
+                print("Specify the station name.")
+                print("arrivals to (station name) [line (line number) at (time in format H:M)]")
+                print("departures from (station name) [line (line number)]")
+                exit(1)
+
         get_arrival_on_station(station_name=stat_name, line_num=line, after_time=time)
+
     elif str(sys.argv[1]).lower() == "departures":
         i = 2
         while i < len(sys.argv):
@@ -166,6 +178,17 @@ if len(sys.argv) > 1:
             else:
                 i += 1
 
+        if stat_name == "":
+            try:
+                with open('_data.txt', encoding="utf-8") as json_data:
+                    d = json.load(json_data)
+                    stat_name = d["station_name"]
+            except FileNotFoundError:
+                print("Specify the station name.")
+                print("arrivals to (station name) [line (line number) at (time in format H:M)]")
+                print("departures from (station name) [line (line number)]")
+                exit(1)
+
         arrivals_to_station(station_name=stat_name, line_num=line)
 
     else:
@@ -175,3 +198,9 @@ if len(sys.argv) > 1:
         exit()
 
     write_data(stat_name, line, time)
+
+else:
+    print("No arguments. Try:")
+    print("arrivals to (station name) [line (line number) at (time in format H:M)]")
+    print("departures from (station name) [line (line number)]")
+    exit()

@@ -1,4 +1,5 @@
-var a : 555;
-typ b : string;
-typ abc : arr [ 55 ] arr [ 5 ] integer;
-fun i ( j : int ) : string = +-5
+fun f(i:integer):integer=i+1;
+var i:integer;
+typ j:logical
+
+test.pins --phase=synan --dump=synan
