@@ -5,6 +5,7 @@ package aps2.hashmap;
  */
 public class HashMapOpenAddressing {
     private Element table[]; // table content, if element is not present, use Integer.MIN_VALUE for Element's key
+    private boolean pomozna[];
     private aps2.hashmap.HashFunction.HashingMethod h;
     private CollisionProbeSequence c;
     private int m;
@@ -17,6 +18,7 @@ public class HashMapOpenAddressing {
 
     public HashMapOpenAddressing(int m, aps2.hashmap.HashFunction.HashingMethod h, CollisionProbeSequence c) {
         this.table = new Element[m];
+        this.pomozna = new boolean[m];
         this.h = h;
         this.c = c;
         this.m = m;
@@ -24,6 +26,7 @@ public class HashMapOpenAddressing {
         // init empty slot as MIN_VALUE
         for (int i = 0; i < m; i++) {
             table[i] = new Element(Integer.MIN_VALUE, "");
+            pomozna[i] = false;
         }
     }
 
@@ -39,12 +42,21 @@ public class HashMapOpenAddressing {
      * @return true, if element was added; false otherwise.
      */
     public boolean add(int k, String v) {
+        for (int i = 0; i < this.m; i++) {
+            int index = nextHash(k, i);
+        }
+
         int index = hashIndex(k);
         if (this.table[index].key == Integer.MIN_VALUE) {
             this.table[index] = new Element(k, v);
             return true;
         }
-return false;
+        return false;
+    }
+
+    private int nextHash(int k, int i) {
+
+
     }
 
     /**
