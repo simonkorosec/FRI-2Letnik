@@ -1,42 +1,52 @@
-source -> defnitions
-defnitions -> defnition defnitions'
-defnition -> variable_defnition
-variable_defnition -> var identifer : type
-type -> logical
-defnitions' -> ; defnition defnitions'
-defnition -> variable_defnition
-variable_defnition -> var identifer : type
-type -> logical
-defnitions' -> ; defnition defnitions'
-defnition -> type_defnition
-type_defnition -> typ identifer : type
-type -> arr [ int_constant ] type
-type -> arr [ int_constant ] type
-type -> integer
-defnitions' -> ; defnition defnitions'
-defnition -> function_defnition
-function_defnition -> fun identifer ( parameters ) : type = expression
-parameters -> parameter parameters'
-parameter -> identifer : type
-type -> identifer
-parameters' -> .
-type -> string
-expression -> logical_ior_expression expression'
-logical_ior_expression -> logical_and_expression logical_ior_expression'
-logical_and_expression -> compare_expression logical_and_expression'
-compare_expression -> additive_expression compare_expression'
-additive_expression -> multiplicative_expression additive_expression'
-multiplicative_expression -> prefx_expression multiplicative_expression'
-prefx_expression -> + prefx_expression
-prefx_expression -> - prefx_expression
-prefx_expression -> postfx_expression
-postfx_expression -> atom_expression postfx_expression'
-atom_expression -> int_constant
-postfx_expression' -> .
-multiplicative_expression' -> .
-additive_expression' -> .
-compare_expression' -> .
-logical_and_expression' -> .
-logical_ior_expression' -> .
-expression' -> .
-defnitions' -> .
+AbsDefs 1:1-8:1:
+  AbsTypeDef 1:1-1:17: int
+    AbsAtomType 1:11-1:17: INTEGER
+  AbsVarDef 2:1-2:18: bool
+    AbsAtomType 2:12-2:18: LOGICAL
+  AbsFunDef 4:1-8:1: main
+    AbsPar 4:10-4:30: args
+      AbsArrType 4:17-4:30:
+        [1]
+        AbsAtomType 4:25-4:30: STRING
+    AbsTypeName 4:35-4:37: int
+    AbsExprs 4:41-8:1:
+      AbsBinExpr 5:2-5:10: EQU
+        AbsBinExpr 5:2-5:4: ADD
+          AbsVarName 5:2-5:2: a
+          AbsVarName 5:4-5:4: b
+        AbsVarName 5:9-5:10: ab
+      AbsIfThenElse 6:2-6:44:
+        AbsExprs 6:6-6:13:
+          AbsBinExpr 6:7-6:12: EQU
+            AbsVarName 6:7-6:7: a
+            AbsAtomConst 6:12-6:12: INTEGER(5)
+        AbsBinExpr 6:20-6:28: ASSIGN
+          AbsVarName 6:21-6:21: a
+          AbsBinExpr 6:25-6:27: ADD
+            AbsAtomConst 6:25-6:25: INTEGER(5)
+            AbsAtomConst 6:27-6:27: INTEGER(8)
+        AbsBinExpr 6:35-6:43: ASSIGN
+          AbsVarName 6:36-6:36: a
+          AbsBinExpr 6:40-6:42: SUB
+            AbsAtomConst 6:40-6:40: INTEGER(8)
+            AbsAtomConst 6:42-6:42: INTEGER(5)
+      AbsFor 7:2-7:48:
+        AbsVarName 7:7-7:7: x
+        AbsBinExpr 7:11-7:18: MOD
+          AbsBinExpr 7:11-7:16: MUL
+            AbsBinExpr 7:11-7:14: DIV
+              AbsAtomConst 7:11-7:12: INTEGER(48)
+              AbsAtomConst 7:14-7:14: INTEGER(8)
+            AbsAtomConst 7:16-7:16: INTEGER(5)
+          AbsAtomConst 7:18-7:18: INTEGER(2)
+        AbsBinExpr 7:22-7:28: LEQ
+          AbsVarName 7:22-7:22: x
+          AbsAtomConst 7:27-7:28: INTEGER(48)
+        AbsBinExpr 7:31-7:33: ADD
+          AbsVarName 7:31-7:31: x
+          AbsAtomConst 7:33-7:33: INTEGER(8)
+        AbsBinExpr 7:37-7:47: ASSIGN
+          AbsVarName 7:38-7:38: y
+          AbsBinExpr 7:42-7:46: ADD
+            AbsVarName 7:42-7:42: y
+            AbsVarName 7:46-7:46: y

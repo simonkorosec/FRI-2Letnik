@@ -1,42 +1,17 @@
-source -> defnitions
-defnitions -> defnition defnitions'
-defnition -> function_defnition
-function_defnition -> fun identifer ( parameters ) : type = expression
-parameters -> parameter parameters'
-parameter -> identifer : type
-type -> integer
-parameters' -> .
-type -> integer
-expression -> logical_ior_expression expression'
-logical_ior_expression -> logical_and_expression logical_ior_expression'
-logical_and_expression -> compare_expression logical_and_expression'
-compare_expression -> additive_expression compare_expression'
-additive_expression -> multiplicative_expression additive_expression'
-multiplicative_expression -> prefx_expression multiplicative_expression'
-prefx_expression -> postfx_expression
-postfx_expression -> atom_expression postfx_expression'
-atom_expression -> identifer atom_expression'
-atom_expression' -> .
-postfx_expression' -> .
-multiplicative_expression' -> .
-additive_expression' -> + multiplicative_expression additive_expression'
-multiplicative_expression -> prefx_expression multiplicative_expression'
-prefx_expression -> postfx_expression
-postfx_expression -> atom_expression postfx_expression'
-atom_expression -> int_constant
-postfx_expression' -> .
-multiplicative_expression' -> .
-additive_expression' -> .
-compare_expression' -> .
-logical_and_expression' -> .
-logical_ior_expression' -> .
-expression' -> .
-defnitions' -> ; defnition defnitions'
-defnition -> variable_defnition
-variable_defnition -> var identifer : type
-type -> integer
-defnitions' -> ; defnition defnitions'
-defnition -> type_defnition
-type_defnition -> typ identifer : type
-type -> logical
-defnitions' -> .
+AbsDefs 1:1-1:84:
+  AbsFunDef 1:1-1:84: mul
+    AbsPar 1:11-1:21: a
+      AbsAtomType 1:15-1:21: INTEGER
+    AbsPar 1:24-1:34: b
+      AbsAtomType 1:28-1:34: INTEGER
+    AbsAtomType 1:39-1:45: INTEGER
+    AbsWhere 1:49-1:84:
+      AbsExprs 1:49-1:59:
+        AbsBinExpr 1:50-1:58: ASSIGN
+          AbsVarName 1:51-1:51: c
+          AbsBinExpr 1:55-1:57: MUL
+            AbsVarName 1:55-1:55: a
+            AbsVarName 1:57-1:57: b
+      AbsDefs 1:69-1:83:
+        AbsVarDef 1:69-1:83: c
+          AbsAtomType 1:77-1:83: INTEGER

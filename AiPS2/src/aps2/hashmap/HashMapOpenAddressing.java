@@ -1,5 +1,8 @@
 package aps2.hashmap;
 
+import org.junit.Test;
+import org.omg.PortableInterceptor.INACTIVE;
+
 /**
  * Hash map with open addressing.
  */
@@ -44,19 +47,15 @@ public class HashMapOpenAddressing {
     public boolean add(int k, String v) {
         for (int i = 0; i < this.m; i++) {
             int index = nextHash(k, i);
+            if (this.table[index].key == Integer.MIN_VALUE) {
+                this.table[index] = new Element(k, v);
+                this.pomozna[index] = true;
+                return true;
+            }
+
         }
 
-        int index = hashIndex(k);
-        if (this.table[index].key == Integer.MIN_VALUE) {
-            this.table[index] = new Element(k, v);
-            return true;
-        }
         return false;
-    }
-
-    private int nextHash(int k, int i) {
-
-
     }
 
     /**
@@ -66,7 +65,16 @@ public class HashMapOpenAddressing {
      * @return true, if the element was removed; otherwise false
      */
     public boolean remove(int k) {
-        throw new UnsupportedOperationException("You need to implement this function!");
+        if (this.contains(k)) {
+            for (int i = 0; i < this.m; i++) {
+                if (this.table[i].key == k) {
+                    this.table[i] = new Element(Integer.MIN_VALUE, "");
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -76,7 +84,17 @@ public class HashMapOpenAddressing {
      * @return true, if the element was found; false otherwise.
      */
     public boolean contains(int k) {
-        throw new UnsupportedOperationException("You need to implement this function!");
+        for (int i = 0; i < this.m; i++) {
+            int index = nextHash(k, i);
+            if (this.table[index].key != Integer.MIN_VALUE && this.table[index].key == k) {
+                return true;
+            }
+            if (this.table[index].key == Integer.MIN_VALUE && !this.pomozna[index]) {
+                break;
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -86,7 +104,17 @@ public class HashMapOpenAddressing {
      * @return The value for the given key or null, if such a key does not exist.
      */
     public String get(int k) {
-        throw new UnsupportedOperationException("You need to implement this function!");
+        for (int i = 0; i < this.m; i++) {
+            int index = nextHash(k, i);
+            if (this.table[index].key != Integer.MIN_VALUE && this.table[index].key == k) {
+                return this.table[index].value;
+            }
+            if (this.table[index].key == Integer.MIN_VALUE && !this.pomozna[index]) {
+                break;
+            }
+        }
+
+        return null;
     }
 
     private int hashIndex(int k) {
@@ -95,6 +123,18 @@ public class HashMapOpenAddressing {
         }
         return aps2.hashmap.HashFunction.KnuthMethod(k, this.m);
     }
+
+    private int nextHash(int k, int i) {
+        if (this.c == CollisionProbeSequence.LinearProbing) {
+            return (hashIndex(k) + i) % this.m;
+        } else if (this.c == CollisionProbeSequence.QuadraticProbing) {
+            return (hashIndex(k) + i * i) % this.m;
+        } else if (this.c == CollisionProbeSequence.DoubleHashing) {
+            return (hashIndex(k) + i * hashIndex(k)) % this.m;
+        }
+        return -1;
+    }
+
 
 }
 

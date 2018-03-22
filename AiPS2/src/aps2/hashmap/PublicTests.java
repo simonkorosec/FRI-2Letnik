@@ -79,4 +79,27 @@ public class PublicTests extends TestCase {
 		assertFalse(hm.contains(11));
 		assertEquals("F", hm.get(6));
 	}
+
+
+    public void testHashMapOpenAddressingRemove() {
+        aps2.hashmap.HashMapOpenAddressing hm =
+                new aps2.hashmap.HashMapOpenAddressing(
+                        5,
+                        aps2.hashmap.HashFunction.HashingMethod.DivisionMethod,
+                        aps2.hashmap.HashMapOpenAddressing.CollisionProbeSequence.LinearProbing
+                );
+
+        hm.add(0, "A");
+        hm.add(5, "B");
+        hm.add(10, "C");
+        hm.add(15, "D");
+        hm.add(20, "E");
+
+        assertTrue(hm.remove(10));
+        assertTrue(hm.remove(20));
+        assertFalse(hm.remove(20));
+
+        assertEquals("D", hm.get(15));
+    }
+
 }

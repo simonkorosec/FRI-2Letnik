@@ -90,4 +90,24 @@ public class SkladTest {
         assertEquals(a, sklad.pop());
         assertEquals(0, sklad.count());
     }
+
+    @Test
+    public void testSearchFound() {
+        Sklad<String> sklad = new Sklad<>();
+        sklad.push("a");
+        assertEquals(0, sklad.search("a"));
+        assertEquals(0, sklad.search("a"));
+        sklad.push("b");
+        assertEquals(1, sklad.search("a"));
+        sklad.push("c");
+        sklad.push("d");
+        assertEquals(3, sklad.search("a"));
+    }
+    @Test
+    public void testSearchNotFound() {
+        Sklad<String> sklad = new Sklad<>();
+        sklad.push("a");
+        sklad.push("c");
+        assertEquals(-1, sklad.search("b"));
+    }
 }

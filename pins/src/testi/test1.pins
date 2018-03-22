@@ -1,4 +1,8 @@
-var aa: logical;
-var u8 : logical;
-typ abc : arr [ 12 ] arr [ 442323 ] integer;
-fun i ( j : int ) : string = +-5
+typ int : integer;
+var bool : logical;
+
+fun main(args : arr [1] string) : int = (
+	a+b == ab,
+	{if (a == 5) then {a = 5+8} else {a = 8-5}},
+	{for x = 48/8*5%2 , x <= 48, x+8 : {y = y + y}}
+)

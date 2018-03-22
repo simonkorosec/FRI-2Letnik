@@ -22,4 +22,9 @@ public class Element {
 		
 		return false;
 	}
+
+    @Override
+    public String toString() {
+        return String.format("{%d:"+this.value+"}", this.key);
+    }
 }

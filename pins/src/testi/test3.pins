@@ -1,5 +1,14 @@
-fun f(i:integer,j:integer):integer =
-  (i+j,-1-i,+1+j,k) {where fun f(i:integer,j:integer):integer =
-  (i+j,-1-i,+1+j,k) {where var k:integer};
-var i:integer};
-var i:integer
+fun test(x : integer, y : integer, z: integer) : integer = (
+    a + b - c,
+    x + (y + z),
+    !a + b * c,
+    x * y + z
+) {where typ int : integer;
+		var bool : logical;
+
+		fun main(args : arr [1] string) : int = (
+			a+b == ab,
+			{if (a == 5) then {a = 5+8} else {a = 8-5}},
+			{for x = 48/8*5%2 , x <= 48, x+8 : {y = y + y}}
+		)
+	}

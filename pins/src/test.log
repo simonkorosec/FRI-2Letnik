@@ -1,0 +1,60 @@
+AbsDefs 1:1-10:64:
+  AbsFunDef 1:1-10:64: test
+    AbsPar 1:10-1:16: x
+      AbsTypeName 1:14-1:16: int
+    AbsTypeName 1:21-1:23: int
+    AbsWhere 1:27-10:64:
+      AbsExprs 1:27-10:1:
+        AbsBinExpr 2:5-2:21: MUL
+          AbsExprs 2:5-2:11:
+            AbsBinExpr 2:6-2:10: ADD
+              AbsAtomConst 2:6-2:6: INTEGER(2)
+              AbsAtomConst 2:10-2:10: INTEGER(3)
+          AbsExprs 2:15-2:21:
+            AbsBinExpr 2:16-2:20: ADD
+              AbsAtomConst 2:16-2:16: INTEGER(4)
+              AbsAtomConst 2:20-2:20: INTEGER(5)
+        AbsBinExpr 3:5-3:23: DIV
+          AbsExprs 3:5-3:11:
+            AbsBinExpr 3:6-3:10: ADD
+              AbsAtomConst 3:6-3:6: INTEGER(2)
+              AbsVarName 3:10-3:10: x
+          AbsExprs 3:15-3:23:
+            AbsBinExpr 3:16-3:22: ADD
+              AbsVarName 3:16-3:18: num
+              AbsAtomConst 3:22-3:22: INTEGER(5)
+        AbsBinExpr 4:5-4:14: SUB
+          AbsVarName 4:5-4:7: num
+          AbsVarName 4:11-4:14: bool
+        AbsExprs 5:5-9:5:
+          AbsUnExpr 6:9-6:10: ADD
+            AbsAtomConst 6:10-6:10: INTEGER(1)
+          AbsUnExpr 7:9-7:13: NOT
+            AbsVarName 7:10-7:13: text
+          AbsFor 8:9-8:76:
+            AbsVarName 8:16-8:19: bool
+            AbsUnExpr 8:23-8:29: SUB
+              AbsUnExpr 8:24-8:29: SUB
+                AbsUnExpr 8:25-8:29: SUB
+                  AbsUnExpr 8:26-8:29: SUB
+                    AbsVarName 8:27-8:29: num
+            AbsUnExpr 8:32-8:43: NOT
+              AbsBinExpr 8:33-8:43: ARR
+                AbsBinExpr 8:33-8:39: ARR
+                  AbsVarName 8:33-8:35: num
+                  AbsAtomConst 8:37-8:38: INTEGER(10)
+                AbsAtomConst 8:41-8:42: INTEGER(20)
+            AbsBinExpr 8:46-8:53: LTH
+              AbsVarName 8:46-8:48: num
+              AbsAtomConst 8:52-8:53: INTEGER(10)
+            AbsBinExpr 8:57-8:73: ASSIGN
+              AbsUnExpr 8:59-8:63: NOT
+                AbsVarName 8:60-8:63: test
+              AbsAtomConst 8:67-8:71: STRING(123)
+      AbsDefs 10:11-10:62:
+        AbsVarDef 10:11-10:23: num
+          AbsTypeName 10:21-10:23: int
+        AbsVarDef 10:26-10:43: bool
+          AbsAtomType 10:37-10:43: LOGICAL
+        AbsVarDef 10:46-10:62: text
+          AbsAtomType 10:57-10:62: STRING

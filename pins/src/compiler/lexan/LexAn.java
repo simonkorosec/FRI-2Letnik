@@ -206,7 +206,6 @@ public class LexAn {
                     }
                     nextCharr();
                 }
-                //this.lineNum++;
                 continue;
             }
 
@@ -275,7 +274,7 @@ public class LexAn {
 
             // Prebere string konstante
             if (this.currChar == (int) '\'') {
-                string.append('\'');
+                //string.append('\'');
                 while (true) {
                     nextCharr();
                     if (this.currChar == (int) '\'') {
@@ -283,7 +282,7 @@ public class LexAn {
                         if (this.currChar == (int) '\'') {
                             string.append('\'');
                         } else {
-                            string.append('\'');
+                            //string.append('\'');
                             return new Symbol(Token.STR_CONST, string.toString(), line, col, this.lineNum, this.colNum - 1);
                         }
                     } else if (this.currChar >= 32 && this.currChar <= 126) {

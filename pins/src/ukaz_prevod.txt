@@ -1,2 +1,6 @@
 javac compiler\Main.java
-java compiler.Main ./testi/test1.pins --phase=synan --dump=synan
+java compiler.Main ./testi/test1.pins --phase=ast --dump=ast
+java compiler.Main ./testi/test2.pins --phase=ast --dump=ast
+java compiler.Main ./testi/test3.pins --phase=ast --dump=ast
+java compiler.Main ./testi/test4.pins --phase=ast --dump=ast
+java compiler.Main ./testi/test5.pins --phase=ast --dump=ast

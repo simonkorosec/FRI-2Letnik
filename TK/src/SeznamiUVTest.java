@@ -10,13 +10,12 @@ Izziv:
  */
 
 
-
 public class SeznamiUVTest {
 
     static SeznamiUV uv;
 
     @BeforeClass
-    public static void setUpClass(){
+    public static void setUpClass() {
         uv = new SeznamiUV();
     }
 
@@ -28,7 +27,7 @@ public class SeznamiUVTest {
 
     @Before
     public void setUp() {
-       // uv = new SeznamiUV();
+        // uv = new SeznamiUV();
     }
 
     @Test
@@ -38,11 +37,10 @@ public class SeznamiUVTest {
         assertEquals("OK", uv.processInput("push Test2"));
     }
 
-    @Ignore("To be implemented later.")
     @Test
     public void testPushMultipleWords() {
         System.out.println("testPushMultipleWords");
-        assertEquals("OK", uv.processInput("push \"Test with multiple word \""));
+        assertEquals("OK", uv.processInput("push \"Test with multiple word\""));
         assertEquals("1", uv.processInput("count"));
         assertEquals("OK", uv.processInput("push \"Another test with multiple words\""));
         assertEquals("2", uv.processInput("count"));
@@ -63,7 +61,6 @@ public class SeznamiUVTest {
         assertEquals("Test1", uv.processInput("pop"));
     }
 
-    @Ignore ("To be implemented")
     @Test
     public void testPopMultipleWords() {
         System.out.println("testPopMultipleWords");
@@ -121,10 +118,67 @@ public class SeznamiUVTest {
     }
 
     @Test
-    public void testTopOk() {
-        System.out.println("testTopOk");
+    public void testTopSingleWord() {
+        System.out.println("testTopSingleWord");
         assertEquals("OK", uv.processInput("push Test1"));
         assertEquals("OK", uv.processInput("push Test2"));
         assertEquals("OK", uv.processInput("top Test2"));
+    }
+
+    @Test
+    public void testTopMultipleWords() {
+        assertEquals("OK", uv.processInput("push \"Test with multiple words\""));
+        assertEquals("OK", uv.processInput("top \"Test with multiple words\""));
+    }
+
+    @Test
+    public void testTopEmpty() {
+        assertEquals("Error: stack is empty", uv.processInput("top test"));
+    }
+
+    @Test
+    public void testTopNoString() {
+        assertEquals("Error: please specify a string", uv.processInput("top"));
+    }
+
+    @Test
+    public void testTopWrongElement() {
+        assertEquals("OK", uv.processInput("push Test1"));
+        assertEquals("Error: wrong element", uv.processInput("top Test2"));
+    }
+
+    @Test
+    public void testSearchBasic0() {
+        uv.processInput("push Test1");
+        assertEquals("0", uv.processInput("search Test1"));
+    }
+
+    @Test
+    public void testSearchBasic1() {
+        uv.processInput("push Test2");
+        uv.processInput("push Test1");
+        assertEquals("1", uv.processInput("search Test2"));
+    }
+
+    @Test
+    public void testSearchBasicN() {
+        uv.processInput("push Test3");
+        uv.processInput("push Test2");
+        uv.processInput("push Test1");
+        assertEquals("2", uv.processInput("search Test3"));
+    }
+
+    @Test
+    public void testSearchNotContains() {
+        uv.processInput("push Test3");
+        uv.processInput("push Test2");
+        uv.processInput("push Test1");
+        assertEquals("-1", uv.processInput("search Test4"));
+    }
+
+    @Test
+    public void testSearchErrorString() {
+        uv.processInput("push Test1");
+        assertEquals("Error: please specify a string", uv.processInput("search"));
     }
 }

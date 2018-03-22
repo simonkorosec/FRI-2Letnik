@@ -14,10 +14,15 @@ public class SeznamiUV {
 
         switch (token) {
             case "push":
-                if (sc.hasNext())
-                    sklad.push(sc.next());
-                else
+                if (sc.hasNext()) {
+                    StringBuilder sb = new StringBuilder();
+                    while (sc.hasNext()) {
+                        sb.append(sc.next()).append(" ");
+                    }
+                    sklad.push(sb.toString().trim().replace("\"", ""));
+                } else {
                     result = "Error: please specify a string";
+                }
                 break;
             case "pop":
                 if (!sklad.isEmpty())
@@ -31,6 +36,45 @@ public class SeznamiUV {
                 break;
             case "count":
                 result = String.format("%d", sklad.count());
+                break;
+            case "top":
+                if (sc.hasNext()) {
+                    if (sklad.isEmpty()){
+                        result = "Error: stack is empty";
+                        break;
+                    }
+
+                    StringBuilder sb = new StringBuilder();
+                    while (sc.hasNext()) {
+                        sb.append(sc.next()).append(" ");
+                    }
+                    String primerjava = sb.toString().trim().replace("\"", "");
+                    String top = sklad.peek();
+
+                    result = (top.equals(primerjava)) ? "OK" : "Error: wrong element";
+
+                } else {
+                    result = "Error: please specify a string";
+                }
+                break;
+            case "search":
+                if (sc.hasNext()) {
+                    if (sklad.isEmpty()){
+                        result = "Error: stack is empty";
+                        break;
+                    }
+
+                    StringBuilder sb = new StringBuilder();
+                    while (sc.hasNext()) {
+                        sb.append(sc.next()).append(" ");
+                    }
+                    String iskanje = sb.toString().trim().replace("\"", "");
+                    int poz = sklad.search(iskanje);
+                    result = String.format("%d", poz);
+
+                } else {
+                    result = "Error: please specify a string";
+                }
                 break;
         }
         return result;

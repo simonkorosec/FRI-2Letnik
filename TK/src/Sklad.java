@@ -33,7 +33,7 @@ public class Sklad<Tip> {
         return (null == vrh);
     }
 
-    public Tip peek(){
+    public Tip peek() {
         return vrh.vrednost;
     }
 
@@ -41,14 +41,36 @@ public class Sklad<Tip> {
         Sklad<Tip> pomozni = new Sklad<>();
         int st = 0;
 
-        while (!this.isEmpty()){
+        while (!this.isEmpty()) {
             pomozni.push(this.pop());
             st++;
         }
-        while (!pomozni.isEmpty()){
+        while (!pomozni.isEmpty()) {
             this.push(pomozni.pop());
         }
 
         return st;
+    }
+
+    public int search(Tip iskani) {
+        Sklad<Tip> pomozni = new Sklad<>();
+        int st = 0;
+        boolean found = false;
+
+        while (!this.isEmpty()) {
+            Tip e = this.pop();
+            pomozni.push(e);
+            if (e.equals(iskani)) {
+                found = true;
+                break;
+            }
+            st++;
+        }
+
+        while (!pomozni.isEmpty()) {
+            this.push(pomozni.pop());
+        }
+
+        return (found) ? st : -1;
     }
 }
