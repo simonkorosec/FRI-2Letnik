@@ -8,12 +8,17 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    static double stageWidth;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        stageWidth = primaryStage.getWidth();
+
+        primaryStage.widthProperty().addListener(((observable, oldValue, newValue) -> stageWidth = primaryStage.getWidth()));
     }
 
 
