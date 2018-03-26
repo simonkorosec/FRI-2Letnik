@@ -6,7 +6,6 @@
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
 *.class
-*.xml
 *.svn-base
 AiPS1/Naloga2/.svn/wc.db
 AiPS1/.idea/workspace.xml
@@ -14,3 +13,11 @@ AiPS1/.idea/workspace.xml
 pins/out/production/
 
 RG/Kolokviji-Izpit/Predavanja
+.idea/workspace.xml
+AiPS2/.idea/workspace.xml
+pins/.idea/workspace.xml
+RG/DN3/.idea/workspace.xml
+ST/.idea/workspace.xml
+TK/.idea/workspace.xml
+UV/DN1/.idea/workspace.xml
+UV/DN2/.idea/workspace.xml
