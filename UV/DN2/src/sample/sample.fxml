@@ -36,7 +36,8 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem mnemonicParsing="false" onAction="#showAbout" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#showHelp" text="Help" />
                     </items>
                 </Menu>
             </menus>
@@ -73,7 +74,9 @@
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                            <children>
                               <ListView fx:id="attachmentsListView" layoutX="14.0" layoutY="14.0" prefHeight="139.0" prefWidth="378.0" />
-                              <Button layoutX="289.0" layoutY="168.0" mnemonicParsing="false" onAction="#addAttachment" text="Add Attachment" />
+                              <Button layoutX="14.0" layoutY="168.0" mnemonicParsing="false" onAction="#addAttachment" text="Add Attachment" />
+                              <Button layoutX="127.0" layoutY="168.0" mnemonicParsing="false" onAction="#saveAttachment" text="Save Attachment" />
+                              <Button layoutX="242.0" layoutY="168.0" mnemonicParsing="false" onAction="#deleteAttachment" text="Delete Attachment" />
                            </children></AnchorPane>
                     </items>
                   </SplitPane>
