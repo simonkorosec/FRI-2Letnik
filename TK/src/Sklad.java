@@ -1,13 +1,16 @@
+
 class Element<Tip> {
+
     public Tip vrednost;
     public Element<Tip> vezava;
 
     public Element(Tip e) {
-        vrednost = e;
+        this.vrednost = e;
     }
 }
 
-public class Sklad<Tip> {
+public class Sklad<Tip> implements Seznam {
+
     private Element<Tip> vrh;
 
     public Sklad() {
@@ -20,57 +23,82 @@ public class Sklad<Tip> {
     }
 
     public Tip pop() {
-        if (null == vrh) {
+        if (vrh == null) {
             throw new java.util.NoSuchElementException();
         }
-
         Tip e = vrh.vrednost;
         vrh = vrh.vezava;
         return e;
     }
 
     public boolean isEmpty() {
-        return (null == vrh);
+        return (vrh == null);
     }
 
     public Tip peek() {
+        if (isEmpty()) {
+            throw new java.util.NoSuchElementException();
+        }
         return vrh.vrednost;
     }
 
     public int count() {
-        Sklad<Tip> pomozni = new Sklad<>();
-        int st = 0;
-
-        while (!this.isEmpty()) {
-            pomozni.push(this.pop());
-            st++;
-        }
-        while (!pomozni.isEmpty()) {
-            this.push(pomozni.pop());
+        if (isEmpty()) {
+            return 0;
         }
 
-        return st;
+        int stElementov = 0;
+        Element<Tip> tmp = vrh;
+        while (tmp != null) {
+            stElementov++;
+            tmp = tmp.vezava;
+        }
+        return stElementov;
     }
 
-    public int search(Tip iskani) {
-        Sklad<Tip> pomozni = new Sklad<>();
-        int st = 0;
-        boolean found = false;
+    public boolean top(Tip e) {
+        if (vrh == null) {
+            throw new java.util.NoSuchElementException();
+        }
+        return vrh.vrednost.equals(e);
+    }
 
-        while (!this.isEmpty()) {
-            Tip e = this.pop();
-            pomozni.push(e);
-            if (e.equals(iskani)) {
-                found = true;
-                break;
+    public int search(Tip e) {
+        Element<Tip> tmp = vrh;
+        int i = 0;
+        while (null != tmp) {
+            if (tmp.vrednost.equals(e)) {
+                return i;
             }
-            st++;
+            i++;
+            tmp = tmp.vezava;
         }
-
-        while (!pomozni.isEmpty()) {
-            this.push(pomozni.pop());
-        }
-
-        return (found) ? st : -1;
+        return -1;
     }
+
+    @Override
+    public void add(Object e) {
+        this.push((Tip) e);
+    }
+
+    @Override
+    public Object removeFirst() {
+        return this.pop();
+    }
+
+    @Override
+    public Object getFirst() {
+        return this.peek();
+    }
+
+    @Override
+    public int size() {
+        return this.count();
+    }
+
+    @Override
+    public int depth() {
+        return this.count();
+    }
+
 }

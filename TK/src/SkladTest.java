@@ -1,35 +1,43 @@
-import org.junit.Before;
-import org.junit.Test;
-
+import org.junit.*;
 import static org.junit.Assert.*;
 
 public class SkladTest {
 
+    static Sklad<String> instance;
+
+    public SkladTest() {
+    }
+
+    @BeforeClass
+    public static void setUpOnce() {
+        instance = new Sklad<>();
+    }
+
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
+        while (!instance.isEmpty()) {
+            instance.pop();
+        }
     }
 
     @Test
-    public void push() {
-        Sklad sklad = new Sklad();
-        String a = "a";
-        sklad.push(a);
+    public void testPush() {
+        String a = "Test";
+        instance.push(a);
     }
 
     @Test
-    public void pop() {
-        Sklad<String> sklad = new Sklad<>();
-        String a = "test";
-        sklad.push(a);
-        String b = sklad.pop();
-        assertEquals("test", b);
+    public void testPop() {
+        String a = "Test";
+        instance.push(a);
+        String b = instance.pop();
+        assertEquals("Test", b);
     }
 
     @Test
     public void testWithTwoElements() {
-        Sklad<String> instance = new Sklad<>();
-        String a = "Prvi test";
-        String b = "Drugi test";
+        String a = "Prvi element";
+        String b = "Drugi element";
         instance.push(a);
         instance.push(b);
         assertEquals(b, instance.pop());
@@ -38,76 +46,140 @@ public class SkladTest {
 
     @Test(expected = java.util.NoSuchElementException.class)
     public void testPopOnEmptyStack() {
-        Sklad<String> instance = new Sklad<>();
         String a = instance.pop();
     }
 
     @Test
     public void testIsEmptyOnEmpty() {
-        Sklad<String> instance = new Sklad<>();
         assertTrue(instance.isEmpty());
     }
 
     @Test
     public void testIsEmptyOnFull() {
-        Sklad<String> instance = new Sklad<>();
         instance.push("Test");
         assertFalse(instance.isEmpty());
     }
 
-    @Test
-    public void peek() {
-        Sklad<String> sklad = new Sklad<>();
-        String a = "a";
-        String b = "b";
-        String c = "c";
-        sklad.push(a);
-        sklad.push(b);
-        sklad.push(c);
-
-        assertEquals(c, sklad.peek());
-        assertEquals(c, sklad.peek());
-        assertEquals(c, sklad.pop());
-        assertEquals(b, sklad.peek());
-        assertEquals(b, sklad.peek());
-        assertEquals(b, sklad.pop());
+    @Test(expected = java.util.NoSuchElementException.class)
+    public void testPeekOnEmptyStack() {
+        String a = instance.peek();
     }
 
     @Test
-    public void count() {
-        Sklad<String> sklad = new Sklad<>();
-        assertEquals(0, sklad.count());
-        String a = "a";
-        String b = "b";
-        String c = "c";
-        sklad.push(a);
-        sklad.push(b);
-        sklad.push(c);
-
-        assertEquals(3, sklad.count());
-        assertEquals(c, sklad.pop());
-        assertEquals(b, sklad.pop());
-        assertEquals(a, sklad.pop());
-        assertEquals(0, sklad.count());
+    public void testPeekOnFullStack() {
+        String a = "Vrednost 1";
+        String b = "Vrednost 2";
+        instance.push(a);
+        instance.push(b);
+        String c = instance.peek();
+        assertEquals(c, b);
     }
 
     @Test
-    public void testSearchFound() {
-        Sklad<String> sklad = new Sklad<>();
-        sklad.push("a");
-        assertEquals(0, sklad.search("a"));
-        assertEquals(0, sklad.search("a"));
-        sklad.push("b");
-        assertEquals(1, sklad.search("a"));
-        sklad.push("c");
-        sklad.push("d");
-        assertEquals(3, sklad.search("a"));
+    public void testPeekSame() {
+        instance.push("Test1");
+        instance.push("Test2");
+        instance.push("Test3");
+        assertEquals("Test3", instance.peek());
+        assertEquals("Test3", instance.pop());
+        assertEquals("Test2", instance.pop());
+        assertEquals("Test1", instance.pop());
+        assertTrue(instance.isEmpty());
     }
+
     @Test
+    public void testCountEmpty() {
+        assertEquals(0, instance.count());
+    }
+
+    @Test(timeout = 100)
+    public void testCountNonEmpty() {
+        instance.push("Vrednost 1");
+        instance.push("Vrednost 2");
+        instance.push("Vrednost 3");
+        assertEquals(3, instance.count());
+    }
+
+    @Test
+    public void testCountSame() {
+        instance.push("Test1");
+        instance.push("Test2");
+        instance.push("Test3");
+        assertEquals(3, instance.count());
+        assertEquals("Test3", instance.pop());
+        assertEquals("Test2", instance.pop());
+        assertEquals("Test1", instance.pop());
+        assertTrue(instance.isEmpty());
+    }
+
+    @Test
+    public void testTopTrue() {
+        instance.push("Test");
+        assertTrue(instance.top("Test"));
+    }
+
+    @Test
+    public void testTopFalse() {
+        instance.push("Test1");
+        assertFalse(instance.top("Test2"));
+    }
+
+    @Test(expected = java.util.NoSuchElementException.class)
+    public void testTopEmpty() {
+        assertFalse(instance.top("Test"));
+    }
+
+    @Test
+    public void testTopSame() {
+        instance.push("Test1");
+        instance.push("Test2");
+        instance.push("Test3");
+        assertTrue(instance.top("Test3"));
+        assertEquals("Test3", instance.pop());
+        assertEquals("Test2", instance.pop());
+        assertEquals("Test1", instance.pop());
+        assertTrue(instance.isEmpty());
+    }
+
+    @Test
+    public void testSearchEmpty() {
+        assertEquals(-1, instance.search("Test"));
+    }
+
+    @Test(timeout = 100)
+    public void testSearchFoundTop() {
+        instance.push("Vrednost 1");
+        instance.push("Vrednost 2");
+        instance.push("Vrednost 3");
+        assertEquals(0, instance.search("Vrednost 3"));
+    }
+
+    @Test(timeout = 100)
+    public void testSearchFoundNonTop() {
+        instance.push("Vrednost 1");
+        instance.push("Vrednost 2");
+        instance.push("Vrednost 3");
+        assertEquals(2, instance.search("Vrednost 1"));
+    }
+
+    @Test(timeout = 100)
     public void testSearchNotFound() {
-        Sklad<String> sklad = new Sklad<>();
-        sklad.push("a");
-        sklad.push("c");
-        assertEquals(-1, sklad.search("b"));
+        instance.push("Vrednost 1");
+        instance.push("Vrednost 2");
+        instance.push("Vrednost 3");
+        assertEquals(-1, instance.search("Vrednost"));
     }
+
+    @Test
+    public void testSearchSame() {
+        instance.push("Test1");
+        instance.push("Test2");
+        instance.push("Test3");
+        assertEquals(1, instance.search("Test2"));
+        assertEquals("Test3", instance.pop());
+        assertEquals("Test2", instance.pop());
+        assertEquals("Test1", instance.pop());
+        assertTrue(instance.isEmpty());
+    }
+
 }
