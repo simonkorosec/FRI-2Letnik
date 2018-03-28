@@ -28,6 +28,7 @@ public class Sklad<Tip> implements Seznam {
         }
         Tip e = vrh.vrednost;
         vrh = vrh.vezava;
+
         return e;
     }
 
@@ -78,6 +79,7 @@ public class Sklad<Tip> implements Seznam {
 
     @Override
     public void add(Object e) {
+        //noinspection unchecked
         this.push((Tip) e);
     }
 

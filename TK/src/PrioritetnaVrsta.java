@@ -1,13 +1,24 @@
+
 public class PrioritetnaVrsta<Tip extends Comparable> implements Seznam<Tip> {
     private Object[] heap;
     private int end = 0;
+    private int maxSize = 0;
+
 
     public PrioritetnaVrsta() {
         this(100);
     }
 
     public PrioritetnaVrsta(int maxSize) {
-        heap = new Object[maxSize];
+        this.heap = new Object[maxSize];
+        this.maxSize = maxSize;
+    }
+
+    private void resize() {
+        Object[] tmp = new Object[maxSize * 2];
+        System.arraycopy(heap, 0, tmp, 0, heap.length);
+        maxSize = maxSize * 2;
+        heap = tmp;
     }
 
     private void bubbleUp() {
@@ -29,6 +40,10 @@ public class PrioritetnaVrsta<Tip extends Comparable> implements Seznam<Tip> {
 
     @Override
     public void add(Tip e) {
+        if (end + 1 == maxSize) {
+            this.resize();
+        }
+
         heap[end++] = e;
         bubbleUp();
     }

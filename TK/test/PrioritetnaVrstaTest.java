@@ -8,24 +8,12 @@ public class PrioritetnaVrstaTest {
     
     public PrioritetnaVrstaTest() {}
 
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-    
     @Before
     public void setUp() {
         pv = new PrioritetnaVrsta<>(10);
     }
-    
-    @After
-    public void tearDown() {
-    }
-	
-	
+
+
     /** Test metod razreda <PrioritetnaVrsta> */
 	
     // testi dodajanja
@@ -41,7 +29,6 @@ public class PrioritetnaVrstaTest {
         pv.add("Test2");
     }
     
-    @Ignore("To be implemented later...")
     @Test
     public void testAddOverflow() {
         pv = new PrioritetnaVrsta<>(2);
