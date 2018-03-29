@@ -16,19 +16,20 @@ public class Controller {
 
     private static final String TMP_DIR = ".randomTestFolder";
 
-    public MenuItem fileOpen;
+    public MenuItem MenuFileOpen;
     public ImageView imageView;
     public TextField urlInputField;
     public ProgressBar progressBar;
     public Label labelUsedStorage;
     public TextArea inputArea;
-    public MenuItem exitButton;
+    public MenuItem MenuExitButton;
     public ListView<String> attachmentsListView;
 
     private SteganographicImage stgImage;
     private int maxStored;
     private int used;
     private File openedFile = null;
+    private boolean openedURL = false;
 
     private void errorWindow(String error) {
         Alert alert = new Alert(Alert.AlertType.ERROR, error, ButtonType.OK);
@@ -68,8 +69,8 @@ public class Controller {
             listAttachments();
         } catch (IOException e) {
             errorWindow("Sorry there was a problem with opening the image. :(");
-        } catch (NullPointerException e) {
-            // Pass
+        } catch (NullPointerException e){
+            // User closed the chose file window do nothing but still have to catch the Exception
         }
 
     }
@@ -77,10 +78,8 @@ public class Controller {
     private void loadImg(File file) {
         try {
             loadImg(file.toURI().toURL().toExternalForm());
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (NullPointerException e) {
-            // Pass
+        } catch (MalformedURLException | NullPointerException e) {
+            errorWindow("Uppss there was an error opening the image :(");
         }
     }
 
@@ -105,8 +104,9 @@ public class Controller {
 
             loadImg(url);
 
+            openedURL = true;
             syncProgressBar();
-
+            listAttachments();
         } else {
             errorWindow("Not a valid URL");
         }
@@ -203,6 +203,11 @@ public class Controller {
     }
 
     public void save() {
+        if (openedURL) {
+            saveAs();
+            return;
+        }
+
         String name = openedFile.getName();
         String ext = name.substring(name.lastIndexOf('.') + 1, openedFile.getName().length());
 
@@ -219,6 +224,13 @@ public class Controller {
         //Set extension filter
         FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files", "*.png");
         fileChooser.getExtensionFilters().addAll(extFilterPNG);
+
+        try {
+            String name = openedFile.getName();
+            fileChooser.setInitialFileName(name);
+        } catch (NullPointerException e) {
+            // pass
+        }
 
         //Show save file dialog
         File saveTo = fileChooser.showSaveDialog(null);
