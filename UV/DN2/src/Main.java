@@ -1,5 +1,3 @@
-package sample;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,7 +19,7 @@ public class Main extends Application {
             close();
         });
 
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Steganografija");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
 
