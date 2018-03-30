@@ -2,12 +2,12 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 
 <title>Simple JavaScript App</title>
 
 <nav>
-    <div class="topnav" id="myTopnav">
+    <div class="navBar" id="myNavBar">
         <a href="index.html" class="active">Domov</a>
         <a href="search.html">Iskanje</a>
         <a href="input.html">Vnos</a>
@@ -18,7 +18,18 @@
 </nav>
 
 
-
+<article>
+    <div class="container">
+        <form class="searchForm" id="basicSearch" action="">
+            <fieldset>
+                <input placeholder="Iskani Hrib" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" class="searchBtn">Iskanje</button>
+            </fieldset>
+        </form>
+    </div>
+</article>
 
 
 <footer>
@@ -29,4 +40,4 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-<script src="./script.js"></script>
+<script src="js/script.js"></script>
