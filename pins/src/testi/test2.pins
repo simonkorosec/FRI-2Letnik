@@ -1,1 +1,0 @@
-fun mul ( a : integer, b : integer) : integer = ({c = a*b}) { where var c : integer}

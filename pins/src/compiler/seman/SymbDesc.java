@@ -12,7 +12,7 @@ import compiler.abstr.tree.*;
 public class SymbDesc {
 
 	/** Nivo vidnosti. */
-	private static HashMap<AbsTree, Integer> scope = new HashMap<AbsTree, Integer>();
+	private static HashMap<AbsTree, Integer> scope = new HashMap<>();
 
 	/**
 	 * Doloci globino nivoja vidnosti za dano definicijo imena.
@@ -34,12 +34,11 @@ public class SymbDesc {
 	 * @return Globina nivoja vidnosti.
 	 */
 	public static Integer getScope(AbsTree node) {
-		Integer nodeScope = scope.get(node);
-		return nodeScope;
+		return scope.get(node);
 	}
 
 	/** Definicija imena. */
-	private static HashMap<AbsTree, AbsDef> nameDef = new HashMap<AbsTree, AbsDef>();
+	private static HashMap<AbsTree, AbsDef> nameDef = new HashMap<>();
 
 	/**
 	 * Poveze vozlisce drevesa z definicijo imena.
@@ -61,8 +60,7 @@ public class SymbDesc {
 	 * @return Definicija imena.
 	 */
 	public static AbsDef getNameDef(AbsTree node) {
-		AbsDef def = nameDef.get(node);
-		return def;
+		return nameDef.get(node);
 	}
 
 }
