@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    line-height: 30px;
+    color: #777;
+    background: #E0E0E0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    font-size: small;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin: auto;
+    width: 100%;
+    display: none;
+}
+
+.pageTitleDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageTitle {
+    text-align: center;
+    font-size: xx-large;
+    color: #333;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+/************* TABLE LIST *************/
+
+.tableList {
+    width: 100%;
+    background: #F9F9F9;
+    /*padding: 25px;*/
+    margin: 5% auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3), 0 5px 5px 0 rgba(0, 0, 0, 0.34);
+}
+
+.tableList td{
+    padding: 0 25px 0 25px;
+}
+
+.rangeName{
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: black;
+}
+
+.row1 {
+    background-color: #f5f5f5;
+}
+
+.row2 {
+    background-color: #eeeeee;
+}
+/************* SEARCH FORM *************/
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.inputForm input[type="text"],
+.inputForm button[type="submit"],
+.inputForm button[type="button"],
+.inputForm textarea,
+.inputForm select,
+.inputForm select option{
+    font: 400 12px/16px 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+.inputForm input[type="text"],
+.inputForm textarea,
+.inputForm select {
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+
+.inputForm textarea {
+    resize: none;
+}
+
+.inputForm {
+    background: #F9F9F9;
+    padding: 25px;
+    margin: 5% auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3), 0 5px 5px 0 rgba(0, 0, 0, 0.34);
+}
+
+fieldset {
+    border: medium none !important;
+    margin: 0 0 10px;
+    min-width: 100%;
+    padding: 0;
+    width: 100%;
+}
+
+.inputForm button[type="submit"],
+.inputForm button[type="button"]{
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #4CAF50;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.inputForm button[type="submit"]:hover,
+.inputForm button[type="button"]:hover {
+    background: #43A047;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}
+
+select:invalid{
+    color: #777;
+}
+
+select option {
+    color: black;
+}
+
+/************* MENU *************/
+
+/* Add a black background color to the top navigation */
+.navBar {
+    background-color: #2d3a3a;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.navBar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.navBar a:hover {
+    background-color: #3fa15f;
+    color: black;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Hide the elements for mobile users */
+.navBar a:not(:first-child) {
+    display: none;
+}
+
+/* Show menu icon */
+.navBar a.icon {
+    float: right;
+    display: block;
+}
+
+.navBar.responsive {
+    position: relative;
+}
+
+.navBar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.navBar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+}
+
+/* Bigger screens */
+@media only screen and (min-width: 600px) {
+    body {
+        background: linear-gradient(rgba(224, 224, 224, .7), rgba(224, 224, 224, .7)), url("../images/bg-01.jpg") no-repeat;
+        /*background-size: cover;*/
+    }
+
+    .pageTitle {
+        font-size: 3.58318rem;
+    }
+
+    .pageTitleDiv {
+        margin: 4% auto;
+    }
+
+    .inputForm {
+        margin: 25% auto;
+    }
+
+    .navBar a:not(:first-child) {
+        display: block;
+    }
+
+    /* Hide the link that should open and close the navBar */
+    .navBar a.icon {
+        display: none;
+    }
+
+}

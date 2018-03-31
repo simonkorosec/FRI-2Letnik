@@ -1,2 +1,6 @@
 javac compiler\Main.java
-java compiler.Main test.pins --phase=seman --dump=seman
+java compiler.Main ./testi/testP1.pins --phase=seman --dump=seman
+java compiler.Main ./testi/testP2.pins --phase=seman --dump=seman
+java compiler.Main ./testi/testF1.pins --phase=seman --dump=seman
+java compiler.Main ./testi/testF2.pins --phase=seman --dump=seman
+java compiler.Main ./testi/testF3.pins --phase=seman --dump=seman

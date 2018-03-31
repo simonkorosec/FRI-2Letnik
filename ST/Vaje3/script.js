@@ -78,12 +78,6 @@ function loadFromStorage() {
     }
 }
 
-//
-// document.addEventListener("DOMContentLoaded", () => {
-//     // This function is run after the page contents have been loaded
-//     // Put your initialization code here
-//     document.getElementById("addButton").onclick = addParticipant;
-// });
 
 //The jQuery way of doing it
 $(document).ready(() => {
