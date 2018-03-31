@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+<html lang="sl">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
 
-<title>Simple JavaScript App</title>
+<title>Hribi</title>
 
 <nav>
     <div class="navBar" id="myNavBar">
-        <a href="index.html">Domov</a>
+        <a href="index.html" >Domov</a>
         <a href="search.html">Iskanje</a>
         <a href="input.html">Vnos</a>
         <a href="list.html" class="active">Seznam Gora</a>
@@ -18,7 +19,18 @@
 </nav>
 
 
+<article>
+    <div class="pageTitleDiv">
+        <h1 class="pageTitle">Seznam Gora</h1>
+    </div>
 
+    <div class="container" id="tableContainer">
+        <table class="tableList" id="tableList">
+        </table>
+    </div>
+
+
+</article>
 
 
 <footer>
@@ -30,3 +42,13 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 <script src="js/script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // This function is run after the page contents have been loaded
+        // Put your initialization code here
+        displayMountains();
+    });
+
+</script>
+
+</html>

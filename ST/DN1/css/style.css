@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 * {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -9,7 +11,7 @@
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
     font-weight: 100;
     font-size: 12px;
     line-height: 30px;
@@ -26,7 +28,51 @@ footer {
     padding-top: 5px;
     margin: auto;
     width: 100%;
+    display: none;
 }
+
+.pageTitleDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageTitle {
+    text-align: center;
+    font-size: xx-large;
+    color: #333;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+/************* TABLE LIST *************/
+
+.tableList {
+    width: 100%;
+    background: #F9F9F9;
+    /*padding: 25px;*/
+    margin: 5% auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3), 0 5px 5px 0 rgba(0, 0, 0, 0.34);
+}
+
+.tableList td{
+    padding: 0 25px 0 25px;
+}
+
+.rangeName{
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: black;
+}
+
+.row1 {
+    background-color: #f5f5f5;
+}
+
+.row2 {
+    background-color: #eeeeee;
+}
+/************* SEARCH FORM *************/
 
 .container {
     max-width: 400px;
@@ -35,12 +81,18 @@ footer {
     position: relative;
 }
 
-.searchForm input[type="text"],
-.searchForm button[type="submit"] {
-    font: 400 12px/16px Helvetica, Arial, sans-serif;
+.inputForm input[type="text"],
+.inputForm button[type="submit"],
+.inputForm button[type="button"],
+.inputForm textarea,
+.inputForm select,
+.inputForm select option{
+    font: 400 12px/16px 'Roboto', Helvetica, Arial, sans-serif;
 }
 
-.searchForm input[type="text"] {
+.inputForm input[type="text"],
+.inputForm textarea,
+.inputForm select {
     width: 100%;
     border: 1px solid #ccc;
     background: #FFF;
@@ -48,10 +100,14 @@ footer {
     padding: 10px;
 }
 
-.searchForm {
+.inputForm textarea {
+    resize: none;
+}
+
+.inputForm {
     background: #F9F9F9;
     padding: 25px;
-    margin: 20% 0;
+    margin: 5% auto;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3), 0 5px 5px 0 rgba(0, 0, 0, 0.34);
 }
 
@@ -63,7 +119,8 @@ fieldset {
     width: 100%;
 }
 
-.searchForm button[type="submit"] {
+.inputForm button[type="submit"],
+.inputForm button[type="button"]{
     cursor: pointer;
     width: 100%;
     border: none;
@@ -74,16 +131,27 @@ fieldset {
     font-size: 15px;
 }
 
-.searchForm button[type="submit"]:hover {
+.inputForm button[type="submit"]:hover,
+.inputForm button[type="button"]:hover {
     background: #43A047;
     -webkit-transition: background 0.3s ease-in-out;
     -moz-transition: background 0.3s ease-in-out;
     transition: background-color 0.3s ease-in-out;
 }
 
+select:invalid{
+    color: #777;
+}
+
+select option {
+    color: black;
+}
+
+/************* MENU *************/
+
 /* Add a black background color to the top navigation */
 .navBar {
-    background-color: #333;
+    background-color: #2d3a3a;
     overflow: hidden;
 }
 
@@ -100,7 +168,7 @@ fieldset {
 
 /* Change the color of links on hover */
 .navBar a:hover {
-    background-color: #ddd;
+    background-color: #3fa15f;
     color: black;
 }
 
@@ -144,8 +212,16 @@ fieldset {
         /*background-size: cover;*/
     }
 
-    .searchForm {
-        margin: 50% auto;
+    .pageTitle {
+        font-size: 3.58318rem;
+    }
+
+    .pageTitleDiv {
+        margin: 4% auto;
+    }
+
+    .inputForm {
+        margin: 25% auto;
     }
 
     .navBar a:not(:first-child) {
