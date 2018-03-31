@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
@@ -333,6 +334,7 @@ public class Controller implements Initializable {
 
         Alert alert = new Alert(Alert.AlertType.NONE, about, ButtonType.OK);
         alert.setTitle("About");
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         alert.showAndWait();
     }
 
@@ -342,6 +344,7 @@ public class Controller implements Initializable {
 
         Alert alert = new Alert(Alert.AlertType.NONE, help, ButtonType.OK);
         alert.setTitle("Help");
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         alert.showAndWait();
     }
 
