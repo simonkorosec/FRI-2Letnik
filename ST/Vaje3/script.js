@@ -17,7 +17,6 @@ function domRemoveParticipant(event) {
     } else {
         return alert("User was not deleted.");
     }
-
 }
 
 function domAddParticipant(participant) {

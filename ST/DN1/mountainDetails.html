@@ -3,33 +3,48 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 <title>Hribi</title>
 
 <nav>
     <div class="navBar" id="myNavBar">
-        <a href="index.html" >Domov</a>
+        <a href="index.html">Domov</a>
         <a href="search.html">Iskanje</a>
         <a href="input.html">Vnos</a>
-        <a href="list.html">Seznam Gora</a>
-        <a href="about.html" class="active">About</a>
+        <a href="list.html" class="active">Seznam Gora</a>
+        <a href="about.html">About</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
 </nav>
 
 
+<article>
+    <div class="pageTitleDiv">
+        <h1 class="pageTitle" id="pgTitle"></h1>
+    </div>
+    <div class="container">
+        <table class="tableList" id="dtTable">
 
+        </table>
+    </div>
+</article>
 
 
 <footer>
     An example footer text. Web technologies @ UL-FRI
 </footer>
 
-
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 <script src="js/script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // This function is run after the page contents have been loaded
+        // Put your initialization code here
+        displayMountainDetails();
+    });
+</script>
 
 </html>

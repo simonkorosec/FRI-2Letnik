@@ -72,6 +72,15 @@ footer {
 .row2 {
     background-color: #eeeeee;
 }
+
+#dtTable {
+    font-size: 0.8rem;
+}
+
+#dtTable  .tdDetName {
+    font-weight: bold;
+}
+
 /************* SEARCH FORM *************/
 
 .container {
@@ -146,6 +155,7 @@ select:invalid{
 select option {
     color: black;
 }
+
 
 /************* MENU *************/
 
@@ -222,6 +232,10 @@ select option {
 
     .inputForm {
         margin: 25% auto;
+    }
+
+    .selectOdDo {
+        width: 49% !important;
     }
 
     .navBar a:not(:first-child) {
