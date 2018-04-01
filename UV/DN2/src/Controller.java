@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
@@ -80,9 +81,14 @@ public class Controller implements Initializable {
 
     @FXML
     public void changeCurrentImage() {
-        save();
 
         int index = imageListView.getSelectionModel().getSelectedIndex();
+
+        if (index == -1){
+            return;
+        }
+
+        save();
         stgImage = steganographicImages.get(index);
         imageView.setImage(images.get(index));
         centerImage();
@@ -227,6 +233,7 @@ public class Controller implements Initializable {
     public void resetImage() {
         if (stgImage != null) {
             stgImage.clear();
+            sync();
         } else {
             errorWindow("No image opened. Please open an image.");
         }
@@ -327,6 +334,7 @@ public class Controller implements Initializable {
 
         Alert alert = new Alert(Alert.AlertType.NONE, about, ButtonType.OK);
         alert.setTitle("About");
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         alert.showAndWait();
     }
 
@@ -336,6 +344,7 @@ public class Controller implements Initializable {
 
         Alert alert = new Alert(Alert.AlertType.NONE, help, ButtonType.OK);
         alert.setTitle("Help");
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         alert.showAndWait();
     }
 
