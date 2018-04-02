@@ -4,12 +4,17 @@ import compiler.Report;
 import compiler.abstr.*;
 import compiler.abstr.tree.*;
 
+import java.util.*;
+
 /**
  * Preverjanje in razresevanje imen (razen imen komponent).
- * 
+ *
  * @author sliva
  */
 public class NameChecker implements Visitor {
+
+    private static HashMap<String, AbsType> typeMap = new HashMap<>();
+
 
     @Override
     public void visit(AbsArrType acceptor) {
@@ -30,6 +35,7 @@ public class NameChecker implements Visitor {
 
     @Override
     public void visit(AbsDefs acceptor) {
+
         for (int i = 0; i < acceptor.numDefs(); i++) {
             AbsDef def = acceptor.def(i);
 
@@ -51,6 +57,7 @@ public class NameChecker implements Visitor {
                 AbsTypeDef typ = (AbsTypeDef) def;
                 try {
                     SymbTable.ins(typ.name, typ);
+                    NameChecker.typeMap.put(typ.name, typ.type);
                 } catch (SemIllegalInsertException e) {
                     Report.error(typ.position, String.format("Type '%s' alredy definded.", typ.name));
                 }
@@ -60,6 +67,8 @@ public class NameChecker implements Visitor {
         for (int i = 0; i < acceptor.numDefs(); i++) {
             acceptor.def(i).accept(this);
         }
+
+        NameChecker.checkTypeCycle();
     }
 
     @Override
@@ -144,7 +153,6 @@ public class NameChecker implements Visitor {
         }
 
         SymbDesc.setNameDef(acceptor, typDef);
-
     }
 
     @Override
@@ -182,6 +190,61 @@ public class NameChecker implements Visitor {
     public void visit(AbsWhile acceptor) {
         acceptor.cond.accept(this);
         acceptor.body.accept(this);
+    }
+
+    private static void checkTypeCycle() {
+        HashMap<String, String> graph = new HashMap<>();
+
+        for (String key : typeMap.keySet()) {
+            AbsType t = typeMap.get(key);
+
+            addType(t, graph, key);
+        }
+
+        Set<String> keys = graph.keySet();
+        LinkedList<String> visited = new LinkedList<>();
+        LinkedList<String> goodType = new LinkedList<>();
+        while (!keys.isEmpty()) {
+            String key = keys.iterator().next();
+            visited.add(key);
+            while (true) {
+                String type = graph.get(key);
+                if (type.equals("log") || type.equals("int") || type.equals("str") || goodType.contains(type)) {
+                    break;
+                }
+                if (visited.contains(type)) {
+                    AbsDef d = SymbTable.fnd(key);
+                    if (d != null) {
+                        Report.error(d.position, "Detected cycle in type assignment.");
+                    } else {
+                        Report.error("Detected cycle in type assignment.");
+                    }
+                }
+                key = type;
+                visited.add(key);
+            }
+
+            goodType.addAll(visited);
+            keys.removeAll(visited);
+            visited.clear();
+        }
+
+    }
+
+    private static void addType(AbsType t, HashMap<String, String> graph, String key) {
+        if (t instanceof AbsAtomType) {
+            if (((AbsAtomType) t).type == 0) {
+                graph.put(key, "log");
+            } else if (((AbsAtomType) t).type == 1) {
+                graph.put(key, "int");
+            } else if (((AbsAtomType) t).type == 2) {
+                graph.put(key, "str");
+            }
+        } else if (t instanceof AbsArrType) {
+            addType(((AbsArrType) t).type, graph, key);
+        } else if (t instanceof AbsTypeName) {
+            graph.put(key, ((AbsTypeName) t).name);
+        }
     }
 
 }

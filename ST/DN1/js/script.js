@@ -79,6 +79,7 @@ function resetFilter() {
 function saveMntDetails(event) {
     if (typeof(Storage) !== "undefined") {
         sessionStorage.setItem("mountainData", event.target.getAttribute("data-json-data"));
+        sessionStorage.setItem("mountainDataIndex", event.target.getAttribute("data-array-index"));
         window.location.href = "mountainDetails.html";
     } else {
         alert("Sorry! No Web Storage support");
@@ -111,7 +112,7 @@ function fitsFilter(filter, mountain) {
     if (filter.walkTimeMax !== 0 && mountain.walkTime >= filter.walkTimeMax) {
         return false;
     }
-    if (filter.name !== "" && mountain.name.toLowerCase() !== filter.name.toLowerCase()){
+    if (filter.name !== "" && mountain.name.toLowerCase() !== filter.name.toLowerCase()) {
         return false;
     }
 
@@ -119,7 +120,7 @@ function fitsFilter(filter, mountain) {
 }
 
 function saveBasicSearch() {
-    const name =document.getElementById("mountainName").value;
+    const name = document.getElementById("mountainName").value;
     saveFilter(new Filter(0, name, 0, 0, 0, 0));
 }
 
@@ -130,6 +131,18 @@ function inputNewMountain() {
     let walkTime = document.getElementById("mountainWalkTime").value;
     const description = document.getElementById("hillDescription").value;
     if (range === 0 || name === "" || height === 0 || walkTime === "" || description === "") {
+        return;
+    }
+    if (!(/^([\-A-Za-z čšžČŠŽđĐ]+)$/.test(name))) {
+        return;
+    }
+    if (!(/^([0-9]{1,4}([ ]*)?(m)?)$/.test(height))) {
+        return;
+    }
+    if (!(/^([0-9]{1,2}:[0-5][0-9])$/.test(walkTime))) {
+        return;
+    }
+    if (description.length > 500) {
         return;
     }
 
@@ -151,6 +164,9 @@ function inputNewMountain() {
 function displayMountains() {
     /* Sort by mountain range id */
     readMountains();
+    if (mountains == null){
+        return;
+    }
     mountains.sort((a, b) => a.range - b.range);
 
     /* Read filter if exists */
@@ -184,10 +200,12 @@ function displayMountains() {
         }
         const cell = row.insertCell(0);
         cell.setAttribute("data-json-data", JSON.stringify(mount));
+        cell.setAttribute("data-array-index", String(i));
         cell.addEventListener("dblclick", saveMntDetails);
         cell.innerHTML = mount.name;
     }
     resetFilter();
+    saveMountains();
 }
 
 function newSearchFilter() {
@@ -255,7 +273,17 @@ function displayMountainDetails() {
 
 }
 
-function myFunction() {
+function deleteMountain() {
+    const index = Number(sessionStorage.getItem("mountainDataIndex"));
+    console.log(index);
+    readMountains();
+    console.log(mountains);
+    mountains.splice(index, 1);
+    saveMountains();
+    console.log(mountains);
+}
+
+function menuDropDown() {
     const x = document.getElementById("myNavBar");
     if (x.className === "navBar") {
         x.className += " responsive";

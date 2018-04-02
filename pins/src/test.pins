@@ -1,4 +1,4 @@
-typ int : integer;
-fun mul ( a : integer, b : integer) : integer = ({c = a*b}) # c ni definiran
-{ where fun f(i:int) : int = g(i);
-		fun g(i:int) : int = f(i)}
+typ a : b;
+typ b : c;
+typ c : integer;
+typ d : arr[10] b

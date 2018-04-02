@@ -1,0 +1,14 @@
+AbsDefs 1:1-4:17:
+  AbsTypeDef 1:1-1:9: a
+    AbsTypeName 1:9-1:9: b
+      #defined at 2:1-2:9
+  AbsTypeDef 2:1-2:9: b
+    AbsTypeName 2:9-2:9: c
+      #defined at 3:1-3:15
+  AbsTypeDef 3:1-3:15: c
+    AbsAtomType 3:9-3:15: INTEGER
+  AbsTypeDef 4:1-4:17: d
+    AbsArrType 4:9-4:17:
+      [10]
+      AbsTypeName 4:17-4:17: b
+        #defined at 2:1-2:9
