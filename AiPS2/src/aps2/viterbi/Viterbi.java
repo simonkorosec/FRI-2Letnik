@@ -58,9 +58,9 @@ public class Viterbi {
      * probability using dynamic programming and memoization.
      */
     public final void calculateOptimalPath() {
-        int index = this.getOptimalResultingState();
         int[][] history = this.getMemoizationHistoryMatrix();
         double[][] price = this.getMemoizationPriceMatrix();
+        int index = this.indexLast(price);
 
         for (int level = history.length - 1; level >= 0; level--) {
             optPath.addFirst(new Node(index, price[level][index]));
@@ -69,20 +69,27 @@ public class Viterbi {
 
     }
 
+    private int indexLast(double[][] price) {
+        int index = 0;
+        int l =price.length - 1;
+        double max = 0.0;
+
+        for (int i = 0; i < price[l].length; i++) {
+            double p = price[l][i];
+            if (max <p){
+                index = i;
+                max = p;
+            }
+        }
+
+        return index;
+    }
+
     /**
      * @return Index of the optimal node in the last state.
      */
     public int getOptimalResultingState() {
-        double[][] priceMatrix = this.getMemoizationPriceMatrix();
-        int best = 0;
-
-        for (int i = 1; i < m; i++) {
-            if (priceMatrix[best][priceMatrix[best].length - 1] < priceMatrix[i][priceMatrix[i].length - 1]) {
-                best = i;
-            }
-        }
-
-        return best;
+        return optPath.peekLast().index;
     }
 
     /**
