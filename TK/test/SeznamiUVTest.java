@@ -18,7 +18,14 @@ public class SeznamiUVTest {
     // razsirite integracijske teste za metodo Use
     @Test
     public void testUse() {
-        fail("To funkcijo morate implementirati!");
+        assertEquals("Error: enter command", uv.processInput(""));
+        assertEquals("Error: please specify a data structure (use {pv|sk|bst})", uv.processInput("add"));
+        assertEquals("Error: please specify a correct data structure type {pv|sk|bst}", uv.processInput("use add"));
+        assertEquals("Error: please specify a data structure type {pv|sk|bst}", uv.processInput("use"));
+
+        assertEquals("OK", uv.processInput("use sk"));
+        assertEquals("OK", uv.processInput("use pv"));
+        assertEquals("OK", uv.processInput("use bst"));
     }
 
     // TO DO
@@ -28,122 +35,182 @@ public class SeznamiUVTest {
 
     @Test
     public void testUseSklad() {
-        fail("To funkcijo morate implementirati!");
+        runAllTests("sk");
     }
 
     @Test
     public void testUsePrioritetnaVrsta() {
-        fail("To funkcijo morate implementirati!");
+        runAllTests("pv");
     }
 
     @Test
     public void testUseBst() {
-        fail("To funkcijo morate implementirati!");
+        runAllTests("bst");
     }
 
     // *****************
     // POMOZNE METODE
-    // *****************   
-    public void reset() {
+    // *****************
+    private void runAllTests(String struktura){
+        assertEquals("OK", uv.processInput("use "+struktura));
+        switch (struktura) {
+            case "sk":
+                testSklad(true);
+                break;
+            case "pv":
+                testPrioritetnaVrsta(true);
+                break;
+            case "bst":
+                testBst(true);
+                break;
+        }
+        reset();
+        testAdd();
+        reset();
+        testAddNothing();
+        reset();
+        testRemoveFirst();
+        reset();
+        testRemoveFirstNothing();
+        reset();
+        testRemove();
+        reset();
+        testAddNothing();
+        reset();
+        testGetFirst();
+        reset();
+        testGetFirstNothing();
+        reset();
+        testSizeOnEmpty();
+        reset();
+        testSizeOne();
+        reset();
+        testSizeTwo();
+        reset();
+        testDepthOnEmpty();
+        reset();
+        testDepthOne();
+        reset();
+        testDepthTwo();
+        reset();
+        testExists();
+        reset();
+        testIsEmptyEmpty();
+        reset();
+        testIsEmptyNotEmpty();
+        reset();
+        testResetOnEmpty();
+        reset();
+        testResetOnFull();
+        reset();
+    }
+
+    private void reset() {
         uv.processInput("reset");
     }
 
-    public void testAdd() {
+    private void testAdd() {
         assertEquals("OK", uv.processInput("add Test1"));
         assertEquals("OK", uv.processInput("add Test2"));
     }
 
-    public void testAddNothing() {
+    private void testAddNothing() {
         assertEquals("Error: please specify a string", uv.processInput("add"));
     }
 
-    public void testRemoveFirst() {
+    private void testRemoveFirst() {
         assertEquals("OK", uv.processInput("add Test"));
         assertEquals("Test", uv.processInput("remove_first"));
     }
 
-    public void testRemoveFirstNothing() {
+    private void testRemoveFirstNothing() {
         assertEquals("Error: data structure is empty", uv.processInput("remove_first"));
         assertEquals("Error: please specify a string", uv.processInput("add"));
         assertEquals("Error: data structure is empty", uv.processInput("remove_first"));
     }
 
-    public void testGetFirst() {
+    private void testGetFirst() {
         assertEquals("OK", uv.processInput("add Test"));
         assertEquals("Test", uv.processInput("get_first"));
     }
 
-    public void testGetFirstNothing() {
+    private void testGetFirstNothing() {
         assertEquals("Error: data structure is empty", uv.processInput("get_first"));
         assertEquals("Error: please specify a string", uv.processInput("add"));
         assertEquals("Error: data structure is empty", uv.processInput("get_first"));
     }
 
-    public void testSizeOnEmpty() {
+    private void testSizeOnEmpty() {
         assertEquals("0", uv.processInput("size"));
     }
 
-    public void testSizeOne() {
+    private void testSizeOne() {
         assertEquals("OK", uv.processInput("add Test"));
         assertEquals("1", uv.processInput("size"));
     }
 
-    public void testSizeTwo() {
+    private void testSizeTwo() {
         assertEquals("OK", uv.processInput("add Test1"));
         assertEquals("OK", uv.processInput("add Test2"));
         assertEquals("2", uv.processInput("size"));
     }
 
-    public void testDepthOnEmpty() {
+    private void testDepthOnEmpty() {
         assertEquals("0", uv.processInput("depth"));
     }
 
-    public void testDepthOne() {
+    private void testDepthOne() {
         assertEquals("OK", uv.processInput("add Test"));
         assertEquals("1", uv.processInput("depth"));
     }
 
-    public void testDepthTwo() {
+    private void testDepthTwo() {
         assertEquals("OK", uv.processInput("add Test1"));
         assertEquals("OK", uv.processInput("add Test2"));
         assertEquals("2", uv.processInput("depth"));
     }
 
-    public void testIsEmptyEmpty() {
+    private void testIsEmptyEmpty() {
         assertEquals("Data structure is empty.", uv.processInput("is_empty"));
         assertEquals("Error: please specify a string", uv.processInput("add"));
         assertEquals("Data structure is empty.", uv.processInput("is_empty"));
     }
 
-    public void testIsEmptyNotEmpty() {
+    private void testIsEmptyNotEmpty() {
         assertEquals("OK", uv.processInput("add Test1"));
         assertEquals("OK", uv.processInput("add Test2"));
         assertEquals("OK", uv.processInput("add Test3"));
         assertEquals("Data structure is not empty.", uv.processInput("is_empty"));
     }
 
-    public void testResetOnEmpty() {
+    private void testResetOnEmpty() {
         assertEquals("OK", uv.processInput("reset"));
     }
 
-    public void testResetOnFull() {
+    private void testResetOnFull() {
         assertEquals("OK", uv.processInput("add Test"));
         assertEquals("OK", uv.processInput("reset"));
         assertEquals("Error: data structure is empty", uv.processInput("remove_first"));
         assertEquals("0", uv.processInput("size"));
     }
 
-    // TO DO
-    public void testExists() {
-        fail("To funkcijo morate implementirati!");
+    private void testExists() {
+        assertEquals("Error: please specify a string", uv.processInput("exists"));
+        assertEquals("OK", uv.processInput("add Test3"));
+        assertEquals("1", uv.processInput("size"));
+        assertEquals("Element exists in data structure.", uv.processInput("exists Test3"));
+        assertEquals("Element doesn't exist in data structure.", uv.processInput("exists neki"));
     }
 
-    // TO DO
-    public void testRemove() {
-        fail("To funkcijo morate implementirati!");
+    private void testRemove() {
+        testAddTestSequence();
+        assertEquals("Error: please specify a string",uv.processInput("remove"));
+        assertEquals("Test3",uv.processInput("remove Test3"));
+        assertEquals("Test1",uv.processInput("remove Test1"));
+
     }
 
-    public void testAddTestSequence() {
+    private void testAddTestSequence() {
         assertEquals("OK", uv.processInput("add Test4"));
         assertEquals("OK", uv.processInput("add Test2"));
         assertEquals("OK", uv.processInput("add Test3"));
@@ -151,7 +218,7 @@ public class SeznamiUVTest {
         assertEquals("OK", uv.processInput("add Test5"));
     }
 
-    public void testSklad(boolean add) {
+    private void testSklad(boolean add) {
         if (add) {
             testAddTestSequence();
         }
@@ -162,7 +229,7 @@ public class SeznamiUVTest {
         assertEquals("Test4", uv.processInput("remove_first"));
     }
 
-    public void testPrioritetnaVrsta(boolean add) {
+    private void testPrioritetnaVrsta(boolean add) {
         if (add) {
             testAddTestSequence();
         }
@@ -173,7 +240,7 @@ public class SeznamiUVTest {
         assertEquals("Test1", uv.processInput("remove_first"));
     }
 
-    public void testBst(boolean add) {
+    private void testBst(boolean add) {
         if (add) {
             testAddTestSequence();
         }

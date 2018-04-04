@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 public class SeznamiUV {
 
-    HashMap<String, Seznam<String>> seznami;
-    Seznam<String> seznam;
+    private final HashMap<String, Seznam<String>> seznami;
+    private Seznam<String> seznam;
 
     public SeznamiUV() {
         seznami = new HashMap<>();
@@ -48,7 +48,7 @@ public class SeznamiUV {
                 case "remove_first":
                     result = seznam.removeFirst();
                     break;
-                case "getfirst":
+                case "get_first":
                     result = seznam.getFirst();
                     break;
                 case "size":
@@ -68,7 +68,6 @@ public class SeznamiUV {
                 case "exists":
                     if (sc.hasNext()) {
                         result = "Element " + (seznam.exists(sc.next()) ? "exists " : "doesn't exist ") + "in data structure.";
-                        seznam.exists(sc.next());
                     } else {
                         result = "Error: please specify a string";
                     }

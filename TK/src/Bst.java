@@ -1,21 +1,4 @@
-
 public class Bst<Tip extends Comparable> implements Seznam<Tip> {
-
-    class ElementBST {
-
-        Tip value;
-        ElementBST left, right;
-
-        public ElementBST(Tip e) {
-            this(e, null, null);
-        }
-
-        public ElementBST(Tip e, ElementBST lt, ElementBST rt) {
-            value = e;
-            left = lt;
-            right = rt;
-        }
-    }
 
     private ElementBST rootNode;
     private Tip minNodeValue;
@@ -61,14 +44,36 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
         return node;
     }
 
-    // TO DO
     private ElementBST delete(Tip e, ElementBST node) {
+        int c = node.compare(e);
+        if (c == 0) {
+            if (node.left == null && node.right == null) {
+                node = null;
+            } else if (node.left != null && node.right != null) {
+                deleteMin(node.right);
+                node.value = minNodeValue;
+            } else if (node.left == null) {
+                node = node.right;
+            } else {
+                node = node.left;
+            }
 
-
+        } else if (c < 0) { // Izbris v levo poddrevo
+            node.left = delete(e, node.left);
+        } else {            // Izbris v desno poddrevo
+            node.right = delete(e, node.right);
+        }
+        return node;
     }
 
     private ElementBST deleteMin(ElementBST node) {
-        throw new java.util.NoSuchElementException("To funkcijo morate implementirati!");
+        if (node.left != null){
+            return deleteMin(node.left);
+        }
+
+        minNodeValue = node.value;
+        delete(minNodeValue, rootNode);
+        return node;
     }
 
     private int getDepth(ElementBST node) {
@@ -82,8 +87,7 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
         if (node == null) {
             return 0;
         }
-        int i = 1 + countNodes(node.left) + countNodes(node.right);
-        return i;
+        return 1 + countNodes(node.left) + countNodes(node.right);
     }
 
     @Override
@@ -111,8 +115,7 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
 
     @Override
     public int size() {
-        int i = countNodes(rootNode);
-        return i;
+        return countNodes(rootNode);
     }
 
     @Override
@@ -138,5 +141,25 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
     @Override
     public boolean exists(Tip e) {
         return member(e);
+    }
+
+    class ElementBST {
+
+        Tip value;
+        ElementBST left, right;
+
+        ElementBST(Tip e) {
+            this(e, null, null);
+        }
+
+        ElementBST(Tip e, ElementBST lt, ElementBST rt) {
+            value = e;
+            left = lt;
+            right = rt;
+        }
+
+        int compare(Tip e) {
+            return e.compareTo(this.value);
+        }
     }
 }

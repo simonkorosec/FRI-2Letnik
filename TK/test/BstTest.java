@@ -8,21 +8,9 @@ public class BstTest {
     public BstTest() {
     }
 
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-
     @Before
     public void setUp() {
         bst = new Bst<>();
-    }
-
-    @After
-    public void tearDown() {
     }
 
     // Praviloma bi morali testirati vsako funkcijo v razredu
@@ -41,10 +29,12 @@ public class BstTest {
 
     @Test
     public void testRemoveFirst(){
-        bst.add("a");
         bst.add("b");
         bst.add("c");
+        bst.add("a");
 
+        assertEquals("b", bst.removeFirst());
+        assertEquals("c", bst.removeFirst());
         assertEquals("a", bst.removeFirst());
     }
     
@@ -82,7 +72,17 @@ public class BstTest {
     
     @Test
     public void testSize(){
-        fail("To funkcijo morate implementirati!");
+        bst.add("test1");
+        bst.add("test2");
+        bst.add("test3");
+        assertEquals(3, bst.size());
+        bst.add("test4");
+        bst.add("test5");
+        bst.add("test6");
+        assertEquals(6, bst.size());
+        bst.removeFirst();
+        bst.removeFirst();
+        assertEquals(4, bst.size());
     }
     
     @Test
@@ -92,22 +92,62 @@ public class BstTest {
     
     @Test
     public void testDepth(){
-        fail("To funkcijo morate implementirati!");
+        bst.add("4");
+        assertEquals(1, bst.depth());
+        bst.add("2");
+        bst.add("6");
+        assertEquals(2, bst.depth());
+        bst.add("1");
+        bst.add("3");
+        bst.add("5");
+        bst.add("7");
+        assertEquals(3, bst.depth());
+        bst.remove("1");
+        bst.remove("3");
+        bst.remove("5");
+        bst.remove("7");
+        assertEquals(2, bst.depth());
+        bst.remove("2");
+        bst.remove("6");
+        assertEquals(1, bst.depth());
+        bst.remove("4");
+        assertEquals(0, bst.depth());
     }
     
     @Test
     public void isEmpty(){
-        fail("To funkcijo morate implementirati!");
+        assertTrue(bst.isEmpty());
+        bst.add("1");
+        assertFalse(bst.isEmpty());
     }
     
     @Test
     public void testExists(){
-        fail("To funkcijo morate implementirati!");
+        bst.add("5");
+        bst.add("2");
+        bst.add("7");
+        bst.add("3");
+        assertTrue(bst.exists("3"));
+        assertTrue(bst.exists("7"));
+        assertFalse(bst.exists("8"));
+        assertFalse(bst.exists("4"));
     }
     
     @Test
     public void testRemove(){
-        fail("To funkcijo morate implementirati!");
+        bst.add("5");
+        bst.add("2");
+        bst.add("7");
+        bst.add("3");
+        assertEquals("3",bst.remove("3"));
+        assertEquals("5",bst.remove("5"));
     }
-    
+
+    @Test(expected = java.util.NoSuchElementException.class)
+    public void testRemoveNotContains(){
+        bst.add("5");
+        bst.add("2");
+        bst.add("6");
+        bst.remove("3");
+    }
 }

@@ -1,7 +1,7 @@
 
 class Element<Tip> {
 
-    public Tip vrednost;
+    public final Tip vrednost;
     public Element<Tip> vezava;
 
     Element(Tip e) {
@@ -124,22 +124,7 @@ public class Sklad<Tip> implements Seznam<Tip> {
 
     @Override
     public boolean exists(Tip e) {
-        Sklad<Tip> tmp = new Sklad<>();
-        boolean rez = false;
-        while (!this.isEmpty()) {
-            Tip p = this.pop();
-            tmp.push(p);
-            if (p.equals(e)) {
-                rez = true;
-                break;
-            }
-        }
-
-        while (!tmp.isEmpty()) {
-            this.push(tmp.pop());
-        }
-
-        return rez;
+        return (this.search(e) != -1);
     }
 
 }
