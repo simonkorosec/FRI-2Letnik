@@ -9,7 +9,7 @@ class Element<Tip> {
     }
 }
 
-public class Sklad<Tip> implements Seznam {
+public class Sklad<Tip> implements Seznam<Tip> {
 
     private Element<Tip> vrh;
 
@@ -28,10 +28,10 @@ public class Sklad<Tip> implements Seznam {
         }
         Tip e = vrh.vrednost;
         vrh = vrh.vezava;
-
         return e;
     }
 
+    @Override
     public boolean isEmpty() {
         return (vrh == null);
     }
@@ -78,19 +78,18 @@ public class Sklad<Tip> implements Seznam {
     }
 
     @Override
-    public void add(Object e) {
-        //noinspection unchecked
-        this.push((Tip) e);
+    public void add(Tip e) {
+        this.push(e);
     }
 
     @Override
-    public Object removeFirst() {
+    public Tip removeFirst() {
         return this.pop();
     }
 
     @Override
-    public Object getFirst() {
-        return this.peek();
+    public Tip getFirst() {
+        return peek();
     }
 
     @Override
