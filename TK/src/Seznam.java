@@ -19,7 +19,7 @@ public interface Seznam<Tip> {
     // ali je podakovna struktura prazna
     boolean isEmpty(); 
       
-    // Odstranjevanje (in vraÄŤanje) doloÄŤenega elementa iz strukture
+    // Odstranjevanje (in vračanje) določenega elementa iz strukture
     Tip remove(Tip e);
    
     // Ali element obstaja v strukturi

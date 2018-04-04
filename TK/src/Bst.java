@@ -3,8 +3,8 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
 
     class ElementBST {
 
-        public Tip value;
-        public ElementBST left, right;
+        Tip value;
+        ElementBST left, right;
 
         public ElementBST(Tip e) {
             this(e, null, null);
@@ -17,7 +17,7 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
         }
     }
 
-    ElementBST rootNode;
+    private ElementBST rootNode;
     private Tip minNodeValue;
 
     public Bst() {
@@ -63,7 +63,8 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
 
     // TO DO
     private ElementBST delete(Tip e, ElementBST node) {
-        throw new java.util.NoSuchElementException("To funkcijo morate implementirati!");
+
+
     }
 
     private ElementBST deleteMin(ElementBST node) {

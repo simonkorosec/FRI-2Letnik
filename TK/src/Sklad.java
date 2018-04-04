@@ -4,7 +4,7 @@ class Element<Tip> {
     public Tip vrednost;
     public Element<Tip> vezava;
 
-    public Element(Tip e) {
+    Element(Tip e) {
         this.vrednost = e;
     }
 }
@@ -13,7 +13,7 @@ public class Sklad<Tip> implements Seznam<Tip> {
 
     private Element<Tip> vrh;
 
-    public Sklad() {
+    Sklad() {
     }
 
     public void push(Tip e) {
@@ -101,17 +101,45 @@ public class Sklad<Tip> implements Seznam<Tip> {
     public int depth() {
         return this.count();
     }
-     
+
     @Override
-    public Tip remove(Tip e){
-        // TODO:
-        throw new java.util.NoSuchElementException("To funckijo morate implementirati");
+    public Tip remove(Tip e) {
+        Sklad<Tip> tmp = new Sklad<>();
+        Tip rez = null;
+        while (!this.isEmpty()) {
+            Tip p = this.pop();
+            if (p.equals(e)) {
+                rez = p;
+                break;
+            }
+            tmp.push(p);
+        }
+
+        while (!tmp.isEmpty()) {
+            this.push(tmp.pop());
+        }
+
+        return rez;
     }
-    
+
     @Override
-    public boolean exists(Tip e){
-        //TODO: 
-        throw new java.util.NoSuchElementException("To funckijo morate implementirati");
+    public boolean exists(Tip e) {
+        Sklad<Tip> tmp = new Sklad<>();
+        boolean rez = false;
+        while (!this.isEmpty()) {
+            Tip p = this.pop();
+            tmp.push(p);
+            if (p.equals(e)) {
+                rez = true;
+                break;
+            }
+        }
+
+        while (!tmp.isEmpty()) {
+            this.push(tmp.pop());
+        }
+
+        return rez;
     }
-    
+
 }

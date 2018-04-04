@@ -34,13 +34,19 @@ public class BstTest {
     
     @Test
     public void testAdd() {
-       fail("To funkcijo morate implementirati!");
+       bst.add("test1");
+       bst.add("test2");
+       bst.add("test3");
     }
 
     @Test
     public void testRemoveFirst(){
-        fail("To funkcijo morate implementirati!");       
-    }   
+        bst.add("a");
+        bst.add("b");
+        bst.add("c");
+
+        assertEquals("a", bst.removeFirst());
+    }
     
     @Test
     public void testGetFirstOne() {

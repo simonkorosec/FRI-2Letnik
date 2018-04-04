@@ -183,4 +183,19 @@ public class SkladTest {
         assertTrue(instance.isEmpty());
     }
 
+    @Test
+    public void testRemove() {
+        instance.add("test1");
+        instance.add("test2");
+        assertEquals("test1", instance.remove("test1"));
+        assertEquals(null, instance.remove("test1"));
+    }
+
+    @Test
+    public void testExists() {
+        instance.add("test1");
+        instance.add("test2");
+        assertTrue(instance.exists("test1"));
+        assertFalse(instance.exists("test3"));
+    }
 }

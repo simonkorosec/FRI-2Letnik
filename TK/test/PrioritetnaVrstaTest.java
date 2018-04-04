@@ -164,4 +164,23 @@ public class PrioritetnaVrstaTest {
         pv.add("Test2");
         assertFalse(pv.isEmpty());
     }
+
+    // Test remove in exists
+
+    @Test
+    public void testRemove() {
+        pv.add("test1");
+        pv.add("test2");
+        assertEquals("test1", pv.remove("test1"));
+        assertEquals(null, pv.remove("test1"));
+    }
+
+    @Test
+    public void testExists() {
+        pv.add("test1");
+        pv.add("test2");
+        assertTrue(pv.exists("test1"));
+        assertFalse(pv.exists("test3"));
+    }
+
 }

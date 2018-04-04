@@ -95,6 +95,50 @@ public class PrioritetnaVrsta<Tip extends Comparable> implements Seznam<Tip> {
     }
 
     @Override
+    public Tip remove(Tip e) {
+        PrioritetnaVrsta<Tip> tmp = new PrioritetnaVrsta<>(this.maxSize);
+        Tip rez = null;
+
+        while (!this.isEmpty()) {
+            Tip p = this.removeFirst();
+
+            if (p.equals(e)) {
+                rez = p;
+                break;
+            }
+
+            tmp.add(p);
+        }
+
+        while (!tmp.isEmpty()) {
+            this.add(tmp.removeFirst());
+        }
+
+        return rez;
+    }
+
+    @Override
+    public boolean exists(Tip e) {
+        PrioritetnaVrsta<Tip> tmp = new PrioritetnaVrsta<>(this.maxSize);
+        boolean rez = false;
+
+        while (!this.isEmpty()) {
+            Tip p = this.removeFirst();
+            tmp.add(p);
+            if (p.equals(e)) {
+                rez = true;
+                break;
+            }
+        }
+
+        while (!tmp.isEmpty()) {
+            this.add(tmp.removeFirst());
+        }
+
+        return rez;
+    }
+
+    @Override
     public int size() {
         return end;
     }
