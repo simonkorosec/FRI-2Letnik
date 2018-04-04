@@ -101,5 +101,17 @@ public class Sklad<Tip> implements Seznam<Tip> {
     public int depth() {
         return this.count();
     }
-
+     
+    @Override
+    public Tip remove(Tip e){
+        // TODO:
+        throw new java.util.NoSuchElementException("To funckijo morate implementirati");
+    }
+    
+    @Override
+    public boolean exists(Tip e){
+        //TODO: 
+        throw new java.util.NoSuchElementException("To funckijo morate implementirati");
+    }
+    
 }

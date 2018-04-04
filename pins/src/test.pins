@@ -1,4 +1,1 @@
-typ a : b;
-typ b : c;
-typ c : integer;
-typ d : arr[10] b
+fun f(i:integer, i:integer) : integer = (5+6)
