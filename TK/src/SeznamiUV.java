@@ -25,7 +25,7 @@ public class SeznamiUV {
                 break;
             case "s_remove_first":
                 if (!sklad.isEmpty()) {
-                    result = (String) sklad.removeFirst();
+                    result = sklad.removeFirst();
                 } else {
                     result = "Error: stack is empty";
                 }
@@ -66,7 +66,7 @@ public class SeznamiUV {
                 break;
             case "s_get_first":
                 if (!sklad.isEmpty()) {
-                    result = (String) sklad.getFirst();
+                    result = sklad.getFirst();
                 } else {
                     result = "Error: stack is empty";
                 }

@@ -1,10 +1,9 @@
 import org.junit.*;
-
 import static org.junit.Assert.*;
 
 public class SkladTest {
 
-    private static Sklad<String> instance;
+    static Sklad<String> instance;
 
     public SkladTest() {
     }
@@ -47,7 +46,7 @@ public class SkladTest {
 
     @Test(expected = java.util.NoSuchElementException.class)
     public void testPopOnEmptyStack() {
-        instance.pop();
+        String a = instance.pop();
     }
 
     @Test
@@ -63,7 +62,7 @@ public class SkladTest {
 
     @Test(expected = java.util.NoSuchElementException.class)
     public void testPeekOnEmptyStack() {
-        instance.peek();
+        String a = instance.peek();
     }
 
     @Test
@@ -182,5 +181,11 @@ public class SkladTest {
         assertEquals("Test1", instance.pop());
         assertTrue(instance.isEmpty());
     }
+    
+    // Testi za add, removeFirst, getFirst, size in depth
+    // so izpuščeni, ker gre le za klice že testiranih metod! 
+    
+    // TO DO
+    // Testi za remove() in exists() ...
 
 }
