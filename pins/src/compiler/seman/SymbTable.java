@@ -8,7 +8,7 @@ import compiler.abstr.tree.*;
 public class SymbTable {
 
 	/** Simbolna tabela. */
-	private static HashMap<String, LinkedList<AbsDef>> mapping = new HashMap<>();
+	private static HashMap<String, LinkedList<AbsDef>> mapping = new HashMap<String, LinkedList<AbsDef>>();
 
 	/** Trenutna globina nivoja gnezdenja. */
 	private static int scope = 0;
@@ -46,10 +46,11 @@ public class SymbTable {
 	 * @throws SemIllegalInsertException
 	 *             Ce definicija imena na trenutnem nivoju gnezdenja ze obstaja.
 	 */
-	public static void ins(String name, AbsDef newDef) throws SemIllegalInsertException {
+	public static void ins(String name, AbsDef newDef)
+			throws SemIllegalInsertException {
 		LinkedList<AbsDef> allNameDefs = mapping.get(name);
 		if (allNameDefs == null) {
-			allNameDefs = new LinkedList<>();
+			allNameDefs = new LinkedList<AbsDef>();
 			allNameDefs.addFirst(newDef);
 			SymbDesc.setScope(newDef, scope);
 			mapping.put(name, allNameDefs);

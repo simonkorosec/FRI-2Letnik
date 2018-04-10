@@ -83,17 +83,14 @@ public class Main {
 			SynAn synAn = new SynAn(lexAn, dumpPhases.contains("synan"));
 			AbsTree source = synAn.parse();
 			if (execPhase.equals("synan")) break;
-
 			// Abstraktna sintaksa.
 			Abstr ast = new Abstr(dumpPhases.contains("ast"));
 			ast.dump(source);
 			if (execPhase.equals("ast")) break;
-
 			// Semanticna analiza.
 			SemAn semAn = new SemAn(dumpPhases.contains("seman"));
 			source.accept(new NameChecker());
-
-			//source.accept(semAn.typeChecker());
+			source.accept(new TypeChecker());
 			semAn.dump(source);
 			if (execPhase.equals("seman")) break;
 			
