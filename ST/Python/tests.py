@@ -25,7 +25,6 @@ try:
 except ImportError:
     from urllib.request import urlopen
 
-
 MISSING_REQUESTS = """[WARNING] Your system is missing the Requests package.
 
 Requests is a Python library that greatly simplifies writing HTTP requests
@@ -198,6 +197,14 @@ class ServerTest(unittest.TestCase):
         """Return code 400 when the request line is invalid"""
         response = self._manual_request("This is really not an HTTP request\n")
         self.assertTrue(response.startswith("HTTP/1.1 400"))
+
+    def test_move_trailing_slash(self):
+        """Return code 301 when the request is moved"""
+        link = str(self.server + "/" + WWW_DATA + "")
+        response = urlopen(link)
+        headers = dict(response.headers.items())
+        self.assertEqual(response.getcode(), 301)
+        self.assertEqual(headers["Location"], "text/html")
 
 
 if __name__ == '__main__':

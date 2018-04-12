@@ -63,9 +63,7 @@ public class PrioritetnaVrstaTest {
         assertEquals("Test2", pv.removeFirst());
         assertEquals("Test1", pv.removeFirst());
     }
-    
-    // metoda get
-	
+
     @Test(expected=java.util.NoSuchElementException.class)
     public void testGetFirstEmpty() {
         pv.getFirst();

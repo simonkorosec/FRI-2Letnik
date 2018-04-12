@@ -14,8 +14,6 @@ public class SeznamiUVTest {
         uv = new SeznamiUV();
     }
 
-    // TO DO 
-    // razsirite integracijske teste za metodo Use
     @Test
     public void testUse() {
         assertEquals("Error: enter command", uv.processInput(""));
@@ -27,12 +25,6 @@ public class SeznamiUVTest {
         assertEquals("OK", uv.processInput("use pv"));
         assertEquals("OK", uv.processInput("use bst"));
     }
-
-    // TO DO
-    // napišite teste za sklad, prioritetno vrsto in BS drevo
-    // testi kličejo (zaporedoma) vse operacije nad določeno strukturo 
-    // glej POMOZNE METODE
-
     @Test
     public void testUseSklad() {
         runAllTests("sk");
@@ -46,6 +38,15 @@ public class SeznamiUVTest {
     @Test
     public void testUseBst() {
         runAllTests("bst");
+    }
+
+    @Test
+    public void testErrors(){
+        assertEquals("OK", uv.processInput("use bst"));
+        assertEquals("Error: invalid command", uv.processInput("nekii"));
+        assertEquals("Error: data structure is empty", uv.processInput("get_first"));
+        assertEquals("OK", uv.processInput("add 5"));
+        assertEquals("Error: Duplicated entry", uv.processInput("add 5"));
     }
 
     // *****************

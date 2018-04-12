@@ -13,13 +13,6 @@ public class BstTest {
         bst = new Bst<>();
     }
 
-    // Praviloma bi morali testirati vsako funkcijo v razredu
-    // torej tudi: member, insert, delete, deleteMin, getDepth, countNodes
-    
-    // Glede na to, da teste zasnujemo pred poznavanjem podrobnosti implementacije
-    // zasnujemo teste za metode vmesnika: 
-    // add, removeFirst, getFirst, size,depth, isEmpty, remove, exists
-    
     @Test
     public void testAdd() {
        bst.add("test1");
@@ -149,5 +142,18 @@ public class BstTest {
         bst.add("2");
         bst.add("6");
         bst.remove("3");
+    }
+
+    @Test
+    public void testDeleteMin(){
+        bst.add("1");
+        bst.add("4");
+        bst.add("2");
+        bst.add("3");
+        bst.add("6");
+        bst.add("5");
+        bst.add("7");
+
+        assertEquals("4",bst.remove("4"));
     }
 }

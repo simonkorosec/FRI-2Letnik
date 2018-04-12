@@ -83,9 +83,7 @@ public class SeznamiUV {
                 default:
                     result = "Error: invalid command";
             }
-        } catch (UnsupportedOperationException e) {
-            result = "Error: Operation not supported";
-        } catch (IllegalArgumentException e) {
+        }  catch (IllegalArgumentException e) {
             result = "Error: Duplicated entry";
         } catch (java.util.NoSuchElementException e) {
             result = "Error: data structure is empty";
