@@ -132,7 +132,7 @@ def parse_headers(client):
             return headers
 
         key, value = line.split(":", 1)
-        headers[key.strip()] = value.strip()
+        headers[key.lower().strip()] = value.strip()
 
 
 def write_error_400(client, msg):
@@ -147,6 +147,33 @@ def write_error_301(client, port, uri):
     client.write(response.encode("utf-8"))
     client.close()
     return
+
+
+def create_rows(students):
+    rows = ""
+    for r in students:
+        rows += TABLE_ROW % (r["number"], r["first"], r["last"])
+    return rows
+
+
+def write_app_list(client, students):
+    try:
+        uri = WWW_DATA + "/app_list.html"
+        with open(uri, "r") as handel:
+            response_body = handel.read()
+
+        mime_type, _ = mimetypes.guess_type(uri)
+        if mime_type is None:
+            mime_type = "application/octet-stream"
+        rows = create_rows(students)
+        response_body = response_body.replace("{{students}}", rows)
+        response_header = HEADER_RESPONSE_200 % (mime_type, len(response_body))
+
+        client.write(response_header.encode("utf-8"))
+        client.write(response_body.encode("utf-8"))
+        client.close()
+    except IOError:
+        client.write(RESPONSE_404.encode("utf-8"))
 
 
 def process_request(connection, address, listen_port):
@@ -170,7 +197,9 @@ def process_request(connection, address, listen_port):
     headers = {}
     try:
         verb, uri, version = request_line.split(" ")
-        assert verb == "GET", write_error_400(client, "Only GET requests are supported")
+        if not (verb == "GET" or verb == "POST"):
+            write_error_400(client, "Only GET and POST requests are supported")
+            return
         assert uri[0] == "/", write_error_400(client, "Invalid uri")
         assert version == "HTTP/1.1", write_error_400(client, "Wrong HTTP version")
 
@@ -180,6 +209,21 @@ def process_request(connection, address, listen_port):
         write_error_400(client, "Wrong format of header")
         return
 
+    if "host" in headers:
+        v = headers["host"]
+        if listen_port == 80:
+            h = "localhost"
+        else:
+            h = "localhost:%d" % listen_port
+
+        if v != h:
+            write_error_400(client, "Wrong host in headers")
+            return
+    else:
+        write_error_400(client, "Missing host in headers")
+        return
+
+    # print(headers)
     print("[%s:%d] REQUEST: %s %s %s" % (address, port, verb, uri, version))
 
     # URL konča s / PREUSMERI
@@ -188,8 +232,53 @@ def process_request(connection, address, listen_port):
         return
 
     # uri = "index.html" if uri == "/" else uri[1:]
+
+    if uri == "/app-add" and verb == "POST":
+        body = str(client.read(int(headers["content-length"])).decode("utf-8"))
+        print(body)
+        body = unquote_plus(body)
+        body = body.split("&")
+        args = {}
+        for x in body:
+            k, v = x.split("=")
+            args[k] = v
+        if "first" in args and "last" in args:
+            save_to_db(args["first"], args["last"])
+            uri = "/app_add.html"
+        else:
+            write_error_400(client, "Missing arguments")
+            return
+    elif uri == "/app-add":
+        write_error_400(client, "app-add only works with POST request.")
+        return
+    elif str(uri).startswith("/app-index") and verb == "GET":
+        body = uri.split("?", 1)
+        args = {}
+        if len(body) == 2:
+            body = body[1]
+            body = unquote_plus(body)
+            body = body.split("&")
+            for x in body:
+                k, v = x.split("=")
+                args[k] = v
+
+        if "first" in args or "last" in args or "number" in args:
+            students = read_from_db(args)
+        else:
+            students = read_from_db()
+
+        write_app_list(client, students)
+        return
+    elif uri == "/app-index":
+        write_error_400(client, "app-index only works with GET request.")
+        return
+
     uri = WWW_DATA + uri
-    print(uri)
+    if isdir(uri):
+        uri = "/" + uri.split("/", 1)[1]
+        write_error_301(client, listen_port, uri + "/")
+        return
+
     try:
         with open(uri, "rb") as handel:
             response_body = handel.read()
@@ -208,16 +297,6 @@ def process_request(connection, address, listen_port):
 
     # Closes file-like object
     client.close()
-
-    # Read and parse the request line
-
-    # Read and parse headers
-
-    # Read and parse the body of the request (if applicable)
-
-    # create the response
-
-    # Write the response back to the socket
 
 
 def main(port):
@@ -239,4 +318,7 @@ def main(port):
 
 
 if __name__ == "__main__":
+    save_to_db("Simon", "Korošec")
+    save_to_db("Janko", "Nekaj")
+    save_to_db("To ", "Sm Js")
     main(8080)
