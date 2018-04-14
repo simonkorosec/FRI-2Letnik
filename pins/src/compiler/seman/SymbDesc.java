@@ -35,8 +35,7 @@ public class SymbDesc {
 	 * @return Globina nivoja vidnosti.
 	 */
 	public static Integer getScope(AbsTree node) {
-		Integer nodeScope = scope.get(node);
-		return nodeScope;
+		return scope.get(node);
 	}
 
 	/** Definicija imena. */
@@ -62,8 +61,7 @@ public class SymbDesc {
 	 * @return Definicija imena.
 	 */
 	public static AbsDef getNameDef(AbsTree node) {
-		AbsDef def = nameDef.get(node);
-		return def;
+		return nameDef.get(node);
 	}
 
 	/** Tipizacija vozlisc drevesa. */
@@ -89,8 +87,7 @@ public class SymbDesc {
 	 * @return Opis tipa.
 	 */
 	public static SemType getType(AbsTree node) {
-		SemType typ = type.get(node);
-		return typ;
+		return type.get(node);
 	}
 
 }
