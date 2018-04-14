@@ -1,2 +1,3 @@
-typ a:integer;
-var v:a
+var c : integer;
+typ int : integer;
+fun foo(a:int, b:int):int = a+b

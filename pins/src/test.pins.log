@@ -1,8 +1,0 @@
-AbsDefs 1:1-2:7:
-  AbsTypeDef 1:1-1:13: a
-    #typed as INTEGER
-    AbsAtomType 1:7-1:13: INTEGER
-      #typed as INTEGER
-  AbsVarDef 2:1-2:7: v
-    AbsTypeName 2:7-2:7: a
-      #defined at 1:1-1:13
