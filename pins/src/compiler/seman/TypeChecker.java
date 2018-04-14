@@ -94,7 +94,7 @@ public class TypeChecker implements Visitor {
                 if ((typLeft.sameStructureAs(integer) && typRight.sameStructureAs(integer)) ||
                         (typLeft.sameStructureAs(logical) && typRight.sameStructureAs(logical)) ||
                         (typLeft.sameStructureAs(string) && typRight.sameStructureAs(string))) {
-                    SymbDesc.setType(acceptor, typLeft.actualType());
+                    SymbDesc.setType(acceptor, typLeft);
                 } else {
                     Report.error(acceptor.position, "Expected {INTEGER, LOGICAL, STRING} found [" + typLeft.actualType() + ", " + typRight.actualType() + "].");
                 }
@@ -116,15 +116,16 @@ public class TypeChecker implements Visitor {
         for (int i = 0; i < acceptor.numDefs(); i++) {
             AbsDef def = acceptor.def(i);
             if (def instanceof AbsTypeDef) {
-                ((AbsTypeDef) def).type.accept(this);
-                SymbDesc.setType(def, SymbDesc.getType(((AbsTypeDef) def).type));
+                def.accept(this);
             }
         }
 
         /* Pregled spremenljivk */
         for (int i = 0; i < acceptor.numDefs(); i++) {
             AbsDef def = acceptor.def(i);
-            def.accept(this);
+            if (def instanceof AbsVarDef) {
+                def.accept(this);
+            }
         }
 
         /* Pregled funkcij */
@@ -132,8 +133,8 @@ public class TypeChecker implements Visitor {
             AbsDef def = acceptor.def(i);
             if (def instanceof AbsFunDef) {
                 AbsFunDef func = (AbsFunDef) def;
-
                 Vector<SemType> pars = new Vector<>();
+
                 for (int j = 0; j < func.numPars(); j++) {
                     func.par(j).accept(this);
                     pars.add(SymbDesc.getType(func.par(j)));
@@ -189,7 +190,7 @@ public class TypeChecker implements Visitor {
         SemFunType func = (SemFunType) SymbDesc.getType(SymbDesc.getNameDef(acceptor));
 
         if (acceptor.numArgs() != func.getNumPars()) {
-            Report.error(acceptor.position, "Expected " + func.getNumPars() + " parameter(s), found " + acceptor.numArgs() + ".");
+            Report.error(acceptor.position, "Expected " + func.getNumPars() + " parameters, found " + acceptor.numArgs() + ".");
         }
 
         for (int i = 0; i < acceptor.numArgs(); i++) {
@@ -207,7 +208,7 @@ public class TypeChecker implements Visitor {
     public void visit(AbsFunDef acceptor) {
         acceptor.expr.accept(this);
 
-        SemType expectedType = ((SemFunType) SymbDesc.getType(acceptor.type)).resultType;
+        SemType expectedType = ((SemFunType) SymbDesc.getType(acceptor)).resultType;
         SemType actualType = SymbDesc.getType(acceptor.expr);
 
         if (!expectedType.sameStructureAs(actualType)) {
@@ -249,7 +250,7 @@ public class TypeChecker implements Visitor {
     @Override
     public void visit(AbsTypeDef acceptor) {
         acceptor.type.accept(this);
-        SymbDesc.setType(acceptor, SymbDesc.getType(acceptor.type));
+        ((SemTypeName)SymbDesc.getType(acceptor)).setType(SymbDesc.getType(acceptor.type));
     }
 
     @Override
