@@ -1,4 +1,5 @@
 typ int : integer;
-fun mul ( a : integer, b : integer) : integer = ({c = a*b}) # c ni definiran
-{ where fun f(i:int) : int = g(i);
-		fun g(i:int) : int = f(i)}
+typ bool : logical;
+fun foo ( a : int, b : int) : int = (b * a);
+
+fun klic(x : int) : int = (foo(5, true), 0) # napačen tip parametra
