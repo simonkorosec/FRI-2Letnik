@@ -36,6 +36,16 @@ public class SemAtomType extends SemType {
 			return false;
 	}
 
+	/**
+	 * Vrne velikost podatkovnega tipa v bytih.
+	 *
+	 * @return Velikost podatkovnega tipa v bytih.
+	 */
+	@Override
+	public int size() {
+		return 4;
+	}
+
 	@Override
 	public String toString() {
 		switch (type) {

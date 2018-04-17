@@ -36,6 +36,16 @@ public class SemArrType extends SemType {
 			return false;
 	}
 
+	/**
+	 * Vrne velikost podatkovnega tipa v bytih.
+	 *
+	 * @return Velikost podatkovnega tipa v bytih.
+	 */
+	@Override
+	public int size() {
+		return this.size * this.type.size();
+	}
+
 	@Override
 	public String toString() {
 		return "ARR(" + size + "," + type.toString() + ")";

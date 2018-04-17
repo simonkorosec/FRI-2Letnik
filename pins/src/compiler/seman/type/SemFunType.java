@@ -66,7 +66,17 @@ public class SemFunType extends SemType {
 		} else
 			return false;
 	}
-	
+
+	/**
+	 * Vrne velikost podatkovnega tipa v bytih.
+	 *
+	 * @return Velikost podatkovnega tipa v bytih.
+	 */
+	@Override
+	public int size() {
+		return 0;
+	}
+
 	@Override
 	public String toString() {
 		String str = "";

@@ -53,10 +53,8 @@ public class TypeChecker implements Visitor {
                 break;
             }
 
-            case AbsBinExpr.ADD:
-            case AbsBinExpr.SUB:
-            case AbsBinExpr.MUL:
-            case AbsBinExpr.DIV:
+            case AbsBinExpr.ADD: case AbsBinExpr.SUB:
+            case AbsBinExpr.MUL: case AbsBinExpr.DIV:
             case AbsBinExpr.MOD: {
                 if (typLeft.sameStructureAs(integer) && typRight.sameStructureAs(integer)) {
                     SymbDesc.setType(acceptor, integer);
@@ -66,12 +64,9 @@ public class TypeChecker implements Visitor {
                 break;
             }
 
-            case AbsBinExpr.EQU:
-            case AbsBinExpr.NEQ:
-            case AbsBinExpr.LEQ:
-            case AbsBinExpr.GEQ:
-            case AbsBinExpr.LTH:
-            case AbsBinExpr.GTH: {
+            case AbsBinExpr.EQU: case AbsBinExpr.NEQ:
+            case AbsBinExpr.LEQ: case AbsBinExpr.GEQ:
+            case AbsBinExpr.LTH: case AbsBinExpr.GTH: {
                 if ((typLeft.sameStructureAs(integer) && typRight.sameStructureAs(integer)) ||
                         typLeft.sameStructureAs(logical) && typRight.sameStructureAs(logical)) {
                     SymbDesc.setType(acceptor, logical);
@@ -278,7 +273,7 @@ public class TypeChecker implements Visitor {
             case AbsUnExpr.ADD:
             case AbsUnExpr.SUB: {
                 if (SymbDesc.getType(acceptor.expr).sameStructureAs(integer)) {
-                    SymbDesc.setType(acceptor, logical);
+                    SymbDesc.setType(acceptor, integer);
                 } else {
                     Report.error(acceptor.position, "Expected INTEGER, found " + SymbDesc.getType(acceptor.expr).actualType() + ".");
                 }
@@ -317,6 +312,4 @@ public class TypeChecker implements Visitor {
         }
     }
 
-
 }
-

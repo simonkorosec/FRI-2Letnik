@@ -63,6 +63,16 @@ public class SemTypeName extends SemType {
 		return this.actualType().sameStructureAs(type.actualType());
 	}
 
+	/**
+	 * Vrne velikost podatkovnega tipa v bytih.
+	 *
+	 * @return Velikost podatkovnega tipa v bytih.
+	 */
+	@Override
+	public int size() {
+		return 0;
+	}
+
 	@Override
 	public String toString() {
 		return "TYP(" + name + ":" + (type == null ? "" : type.toString())
