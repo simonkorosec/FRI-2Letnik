@@ -1,99 +1,91 @@
-AbsDefs 1:1-8:19:
+AbsDefs 1:1-4:47:
   AbsTypeDef 1:1-1:17: int
+    #typed as TYP(int:INTEGER)
     AbsAtomType 1:11-1:17: INTEGER
-  AbsVarDef 2:1-2:23: array
-    AbsArrType 2:13-2:23:
-      [10]
-      AbsTypeName 2:21-2:23: int
+      #typed as INTEGER
+  AbsFunDef 2:1-4:47: foo
+    #typed as FUN(TYP(int:INTEGER),TYP(int:INTEGER):TYP(int:INTEGER))
+    AbsPar 2:11-2:17: a
+      #typed as TYP(int:INTEGER)
+      AbsTypeName 2:15-2:17: int
         #defined at 1:1-1:17
-  AbsVarDef 3:1-3:11: j
-    AbsTypeName 3:9-3:11: int
+        #typed as TYP(int:INTEGER)
+    AbsPar 2:20-2:26: b
+      #typed as TYP(int:INTEGER)
+      AbsTypeName 2:24-2:26: int
+        #defined at 1:1-1:17
+        #typed as TYP(int:INTEGER)
+    AbsTypeName 2:31-2:33: int
       #defined at 1:1-1:17
-  AbsFunDef 4:1-8:19: mul
-    AbsPar 4:11-4:17: a
-      AbsTypeName 4:15-4:17: int
-        #defined at 1:1-1:17
-    AbsPar 4:20-4:26: b
-      AbsTypeName 4:24-4:26: int
-        #defined at 1:1-1:17
-    AbsTypeName 4:31-4:33: int
-      #defined at 1:1-1:17
-    AbsWhere 5:1-8:19:
-      AbsExprs 5:1-7:67:
-        AbsFunCall 5:2-5:10: mul
-          #defined at 4:1-8:19
-          AbsVarName 5:6-5:6: a
-            #defined at 4:11-4:17
-          AbsVarName 5:9-5:9: b
-            #defined at 4:20-4:26
-        AbsIfThenElse 6:1-7:66:
-          AbsBinExpr 6:5-6:9: LTH
-            AbsVarName 6:5-6:5: a
-              #defined at 4:11-4:17
-            AbsVarName 6:9-6:9: b
-              #defined at 4:20-4:26
-          AbsFor 6:16-6:76:
-            AbsVarName 6:21-6:21: i
-              #defined at 8:8-8:18
-            AbsAtomConst 6:25-6:25: INTEGER(0)
-            AbsBinExpr 6:28-6:42: AND
-              AbsBinExpr 6:28-6:33: NEQ
-                AbsVarName 6:28-6:28: i
-                  #defined at 8:8-8:18
-                AbsVarName 6:33-6:33: b
-                  #defined at 4:20-4:26
-              AbsBinExpr 6:37-6:42: NEQ
-                AbsVarName 6:37-6:37: i
-                  #defined at 8:8-8:18
-                AbsVarName 6:42-6:42: a
-                  #defined at 4:11-4:17
-            AbsBinExpr 6:45-6:66: ASSIGN
-              AbsBinExpr 6:46-6:53: ARR
-                AbsVarName 6:46-6:50: array
-                  #defined at 2:1-2:23
-                AbsVarName 6:52-6:52: i
-                  #defined at 8:8-8:18
-              AbsBinExpr 6:57-6:65: SUB
-                AbsBinExpr 6:57-6:61: MUL
-                  AbsVarName 6:57-6:57: i
-                    #defined at 8:8-8:18
-                  AbsVarName 6:61-6:61: j
-                    #defined at 3:1-3:11
-                AbsVarName 6:65-6:65: j
-                  #defined at 3:1-3:11
-            AbsUnExpr 6:70-6:74: NOT
-              AbsAtomConst 6:71-6:74: LOGICAL(true)
-          AbsWhileName 7:6-7:65:
-            AbsBinExpr 7:13-7:44: IOR
-              AbsBinExpr 7:13-7:28: LTH
-                AbsBinExpr 7:13-7:20: MUL
-                  AbsAtomConst 7:13-7:16: LOGICAL(true)
-                  AbsAtomConst 7:20-7:20: INTEGER(5)
-                AbsAtomConst 7:24-7:28: LOGICAL(false)
-              AbsBinExpr 7:32-7:44: GEQ
-                AbsAtomConst 7:32-7:35: LOGICAL(true)
-                AbsAtomConst 7:40-7:44: LOGICAL(false)
-            AbsBinExpr 7:48-7:64: ASSIGN
-              AbsVarName 7:49-7:49: a
-                #defined at 4:11-4:17
-              AbsBinExpr 7:53-7:63: SUB
-                AbsBinExpr 7:53-7:55: ADD
-                  AbsVarName 7:53-7:53: b
-                    #defined at 4:20-4:26
-                  AbsVarName 7:55-7:55: a
-                    #defined at 4:11-4:17
-                AbsBinExpr 7:57-7:63: MOD
-                  AbsBinExpr 7:57-7:61: DIV
-                    AbsBinExpr 7:57-7:59: MUL
-                      AbsVarName 7:57-7:57: j
-                        #defined at 3:1-3:11
-                      AbsVarName 7:59-7:59: j
-                        #defined at 3:1-3:11
-                    AbsVarName 7:61-7:61: b
-                      #defined at 4:20-4:26
-                  AbsVarName 7:63-7:63: a
-                    #defined at 4:11-4:17
-      AbsDefs 8:8-8:18:
-        AbsVarDef 8:8-8:18: i
-          AbsTypeName 8:16-8:18: int
+      #typed as TYP(int:INTEGER)
+    AbsWhere 2:37-4:47:
+      #typed as TYP(int:INTEGER)
+      AbsExprs 2:37-3:20:
+        #typed as TYP(int:INTEGER)
+        AbsBinExpr 2:38-2:44: ASSIGN
+          #typed as TYP(int:INTEGER)
+          AbsVarName 2:39-2:39: c
+            #defined at 4:10-4:20
+            #typed as TYP(int:INTEGER)
+          AbsAtomConst 2:43-2:43: INTEGER(1)
+            #typed as INTEGER
+        AbsBinExpr 2:47-2:53: ASSIGN
+          #typed as TYP(int:INTEGER)
+          AbsVarName 2:48-2:48: x
+            #defined at 4:23-4:33
+            #typed as TYP(int:INTEGER)
+          AbsAtomConst 2:52-2:52: INTEGER(1)
+            #typed as INTEGER
+        AbsFor 2:56-3:16:
+          #typed as VOID
+          AbsVarName 2:62-2:62: i
+            #defined at 4:36-4:46
+            #typed as TYP(int:INTEGER)
+          AbsAtomConst 2:66-2:66: INTEGER(0)
+            #typed as INTEGER
+          AbsAtomConst 2:69-2:70: INTEGER(10)
+            #typed as INTEGER
+          AbsAtomConst 2:73-2:73: INTEGER(1)
+            #typed as INTEGER
+          AbsBinExpr 3:3-3:15: ASSIGN
+            #typed as TYP(int:INTEGER)
+            AbsVarName 3:4-3:4: x
+              #defined at 4:23-4:33
+              #typed as TYP(int:INTEGER)
+            AbsBinExpr 3:6-3:14: MUL
+              #typed as INTEGER
+              AbsBinExpr 3:6-3:12: MOD
+                #typed as INTEGER
+                AbsBinExpr 3:6-3:8: MUL
+                  #typed as INTEGER
+                  AbsVarName 3:6-3:6: a
+                    #defined at 2:11-2:17
+                    #typed as TYP(int:INTEGER)
+                  AbsVarName 3:8-3:8: b
+                    #defined at 2:20-2:26
+                    #typed as TYP(int:INTEGER)
+                AbsVarName 3:12-3:12: c
+                  #defined at 4:10-4:20
+                  #typed as TYP(int:INTEGER)
+              AbsVarName 3:14-3:14: x
+                #defined at 4:23-4:33
+                #typed as TYP(int:INTEGER)
+        AbsVarName 3:19-3:19: x
+          #defined at 4:23-4:33
+          #typed as TYP(int:INTEGER)
+      AbsDefs 4:10-4:46:
+        AbsVarDef 4:10-4:20: c
+          #typed as TYP(int:INTEGER)
+          AbsTypeName 4:18-4:20: int
             #defined at 1:1-1:17
+            #typed as TYP(int:INTEGER)
+        AbsVarDef 4:23-4:33: x
+          #typed as TYP(int:INTEGER)
+          AbsTypeName 4:31-4:33: int
+            #defined at 1:1-1:17
+            #typed as TYP(int:INTEGER)
+        AbsVarDef 4:36-4:46: i
+          #typed as TYP(int:INTEGER)
+          AbsTypeName 4:44-4:46: int
+            #defined at 1:1-1:17
+            #typed as TYP(int:INTEGER)
