@@ -1,5 +1,8 @@
 package seznami;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bst<Tip extends Comparable> implements Seznam<Tip> {
 
     private ElementBST rootNode;
@@ -143,6 +146,23 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
     @Override
     public boolean exists(Tip e) {
         return member(e);
+    }
+
+    @Override
+    public List<Tip> asList() {
+        return this.inorder(rootNode);
+    }
+
+    private List<Tip> inorder(ElementBST node) {
+        List<Tip> list = new ArrayList<>();
+        if (node.left != null){
+            list.addAll(inorder(node.left));
+        }
+        list.add(node.value);
+        if (node.right != null){
+            list.addAll(inorder(node.right));
+        }
+        return list;
     }
 
     class ElementBST {

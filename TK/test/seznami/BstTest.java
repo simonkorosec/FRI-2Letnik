@@ -4,6 +4,11 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import seznami.Bst;
 
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class BstTest {
 
     private Bst<String> bst;
@@ -158,5 +163,26 @@ public class BstTest {
         bst.add("7");
 
         assertEquals("4",bst.remove("4"));
+    }
+
+    /*
+     * Od tu naprej testi za domačo nalogo
+     */
+
+    @Test
+    public void testAsList(){
+        List<String> originalList = Arrays.asList("1","2","3","4","5","6","7","8","9");
+
+        bst.add("5");
+        bst.add("3");
+        bst.add("8");
+        bst.add("2");
+        bst.add("1");
+        bst.add("4");
+        bst.add("6");
+        bst.add("9");
+        bst.add("7");
+
+        assertEquals(originalList, bst.asList());
     }
 }

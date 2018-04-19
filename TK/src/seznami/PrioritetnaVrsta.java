@@ -1,5 +1,8 @@
 package seznami;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrioritetnaVrsta<Tip extends Comparable> implements Seznam<Tip> {
     private Object[] heap;
     private int end = 0;
@@ -137,6 +140,17 @@ public class PrioritetnaVrsta<Tip extends Comparable> implements Seznam<Tip> {
         }
 
         return rez;
+    }
+
+    @Override
+    public List<Tip> asList() {
+        List<Tip> list = new ArrayList<>();
+
+        for (int i = 0; i < end; i++) {
+            list.add((Tip) heap[i]);
+        }
+
+        return list;
     }
 
     @Override

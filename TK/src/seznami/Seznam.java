@@ -1,5 +1,7 @@
 package seznami;
 
+import java.util.List;
+
 public interface Seznam<Tip> {
 
     // dodajanje elementa v podatkovno strukturo
@@ -25,5 +27,8 @@ public interface Seznam<Tip> {
    
     // Ali element obstaja v strukturi
     boolean exists(Tip e);
+
+    // vrne elemente v obliki list-a
+    List<Tip> asList();
 
 }
