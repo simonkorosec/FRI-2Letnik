@@ -1,5 +1,8 @@
+package seznami;
+
 import static org.junit.Assert.*;
 import org.junit.*;
+import seznami.Bst;
 
 public class BstTest {
 

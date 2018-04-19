@@ -1,3 +1,4 @@
+package seznami;
 
 import java.util.Scanner;
 import java.util.HashMap;
@@ -67,7 +68,7 @@ public class SeznamiUV {
                     break;
                 case "exists":
                     if (sc.hasNext()) {
-                        result = "Element " + (seznam.exists(sc.next()) ? "exists " : "doesn't exist ") + "in data structure.";
+                        result = "seznami.Element " + (seznam.exists(sc.next()) ? "exists " : "doesn't exist ") + "in data structure.";
                     } else {
                         result = "Error: please specify a string";
                     }

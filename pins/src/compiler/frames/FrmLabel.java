@@ -21,7 +21,7 @@ public class FrmLabel {
 
 	@Override
 	public boolean equals(Object l) {
-		return name == ((FrmLabel)l).name;
+		return name.equals(((FrmLabel) l).name);
 	}
 
 	/**

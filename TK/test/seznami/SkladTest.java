@@ -1,4 +1,7 @@
+package seznami;
+
 import org.junit.*;
+import seznami.Sklad;
 
 import static org.junit.Assert.*;
 

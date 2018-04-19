@@ -1,5 +1,8 @@
+package seznami;
 
 import org.junit.*;
+import seznami.SeznamiUV;
+
 import static org.junit.Assert.*;
 
 public class SeznamiUVTest {
@@ -199,8 +202,8 @@ public class SeznamiUVTest {
         assertEquals("Error: please specify a string", uv.processInput("exists"));
         assertEquals("OK", uv.processInput("add Test3"));
         assertEquals("1", uv.processInput("size"));
-        assertEquals("Element exists in data structure.", uv.processInput("exists Test3"));
-        assertEquals("Element doesn't exist in data structure.", uv.processInput("exists neki"));
+        assertEquals("seznami.Element exists in data structure.", uv.processInput("exists Test3"));
+        assertEquals("seznami.Element doesn't exist in data structure.", uv.processInput("exists neki"));
     }
 
     private void testRemove() {

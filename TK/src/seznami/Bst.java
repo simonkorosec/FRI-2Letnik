@@ -1,3 +1,5 @@
+package seznami;
+
 public class Bst<Tip extends Comparable> implements Seznam<Tip> {
 
     private ElementBST rootNode;

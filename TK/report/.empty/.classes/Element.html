@@ -1,0 +1,213 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: seznami.Element</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">&lt;empty package name&gt;</a> ]
+</div>
+
+<h1>Coverage Summary for Class: seznami.Element (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">seznami.Element</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;
+<i>2</i>&nbsp;class seznami.Element&lt;Tip&gt; {
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;    public final Tip vrednost;
+<i>5</i>&nbsp;    public seznami.Element&lt;Tip&gt; vezava;
+<i>6</i>&nbsp;
+<b class="fc"><i>7</i>&nbsp;    seznami.Element(Tip e) {</b>
+<b class="fc"><i>8</i>&nbsp;        this.vrednost = e;</b>
+<i>9</i>&nbsp;    }
+<i>10</i>&nbsp;}
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;public class seznami.Sklad&lt;Tip&gt; implements seznami.Seznam&lt;Tip&gt; {
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    private seznami.Element&lt;Tip&gt; vrh;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;    seznami.Sklad() {
+<i>17</i>&nbsp;    }
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    public void push(Tip e) {
+<i>20</i>&nbsp;        seznami.Element&lt;Tip&gt; novVrh = new seznami.Element&lt;&gt;(e);
+<i>21</i>&nbsp;        novVrh.vezava = vrh;
+<i>22</i>&nbsp;        vrh = novVrh;
+<i>23</i>&nbsp;    }
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    public Tip pop() {
+<i>26</i>&nbsp;        if (vrh == null) {
+<i>27</i>&nbsp;            throw new java.util.NoSuchElementException();
+<i>28</i>&nbsp;        }
+<i>29</i>&nbsp;        Tip e = vrh.vrednost;
+<i>30</i>&nbsp;        vrh = vrh.vezava;
+<i>31</i>&nbsp;        return e;
+<i>32</i>&nbsp;    }
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    @Override
+<i>35</i>&nbsp;    public boolean isEmpty() {
+<i>36</i>&nbsp;        return (vrh == null);
+<i>37</i>&nbsp;    }
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;    public Tip peek() {
+<i>40</i>&nbsp;        if (isEmpty()) {
+<i>41</i>&nbsp;            throw new java.util.NoSuchElementException();
+<i>42</i>&nbsp;        }
+<i>43</i>&nbsp;        return vrh.vrednost;
+<i>44</i>&nbsp;    }
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;    public int count() {
+<i>47</i>&nbsp;        if (isEmpty()) {
+<i>48</i>&nbsp;            return 0;
+<i>49</i>&nbsp;        }
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;        int stElementov = 0;
+<i>52</i>&nbsp;        seznami.Element&lt;Tip&gt; tmp = vrh;
+<i>53</i>&nbsp;        while (tmp != null) {
+<i>54</i>&nbsp;            stElementov++;
+<i>55</i>&nbsp;            tmp = tmp.vezava;
+<i>56</i>&nbsp;        }
+<i>57</i>&nbsp;        return stElementov;
+<i>58</i>&nbsp;    }
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;    public boolean top(Tip e) {
+<i>61</i>&nbsp;        if (vrh == null) {
+<i>62</i>&nbsp;            throw new java.util.NoSuchElementException();
+<i>63</i>&nbsp;        }
+<i>64</i>&nbsp;        return vrh.vrednost.equals(e);
+<i>65</i>&nbsp;    }
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;    public int search(Tip e) {
+<i>68</i>&nbsp;        seznami.Element&lt;Tip&gt; tmp = vrh;
+<i>69</i>&nbsp;        int i = 0;
+<i>70</i>&nbsp;        while (null != tmp) {
+<i>71</i>&nbsp;            if (tmp.vrednost.equals(e)) {
+<i>72</i>&nbsp;                return i;
+<i>73</i>&nbsp;            }
+<i>74</i>&nbsp;            i++;
+<i>75</i>&nbsp;            tmp = tmp.vezava;
+<i>76</i>&nbsp;        }
+<i>77</i>&nbsp;        return -1;
+<i>78</i>&nbsp;    }
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;    @Override
+<i>81</i>&nbsp;    public void add(Tip e) {
+<i>82</i>&nbsp;        this.push(e);
+<i>83</i>&nbsp;    }
+<i>84</i>&nbsp;
+<i>85</i>&nbsp;    @Override
+<i>86</i>&nbsp;    public Tip removeFirst() {
+<i>87</i>&nbsp;        return this.pop();
+<i>88</i>&nbsp;    }
+<i>89</i>&nbsp;
+<i>90</i>&nbsp;    @Override
+<i>91</i>&nbsp;    public Tip getFirst() {
+<i>92</i>&nbsp;        return peek();
+<i>93</i>&nbsp;    }
+<i>94</i>&nbsp;
+<i>95</i>&nbsp;    @Override
+<i>96</i>&nbsp;    public int size() {
+<i>97</i>&nbsp;        return this.count();
+<i>98</i>&nbsp;    }
+<i>99</i>&nbsp;
+<i>100</i>&nbsp;    @Override
+<i>101</i>&nbsp;    public int depth() {
+<i>102</i>&nbsp;        return this.count();
+<i>103</i>&nbsp;    }
+<i>104</i>&nbsp;
+<i>105</i>&nbsp;    @Override
+<i>106</i>&nbsp;    public Tip remove(Tip e) {
+<i>107</i>&nbsp;        seznami.Sklad&lt;Tip&gt; tmp = new seznami.Sklad&lt;&gt;();
+<i>108</i>&nbsp;        Tip rez = null;
+<i>109</i>&nbsp;        while (!this.isEmpty()) {
+<i>110</i>&nbsp;            Tip p = this.pop();
+<i>111</i>&nbsp;            if (p.equals(e)) {
+<i>112</i>&nbsp;                rez = p;
+<i>113</i>&nbsp;                break;
+<i>114</i>&nbsp;            }
+<i>115</i>&nbsp;            tmp.push(p);
+<i>116</i>&nbsp;        }
+<i>117</i>&nbsp;
+<i>118</i>&nbsp;        while (!tmp.isEmpty()) {
+<i>119</i>&nbsp;            this.push(tmp.pop());
+<i>120</i>&nbsp;        }
+<i>121</i>&nbsp;
+<i>122</i>&nbsp;        return rez;
+<i>123</i>&nbsp;    }
+<i>124</i>&nbsp;
+<i>125</i>&nbsp;    @Override
+<i>126</i>&nbsp;    public boolean exists(Tip e) {
+<i>127</i>&nbsp;        return (this.search(e) != -1);
+<i>128</i>&nbsp;    }
+<i>129</i>&nbsp;
+<i>130</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-04-19 11:23</div>
+</div>
+</body>
+</html>

@@ -1,3 +1,4 @@
+package seznami;
 
 public interface Seznam<Tip> {
 

@@ -1,4 +1,8 @@
+package seznami;
+
 import org.junit.*;
+import seznami.PrioritetnaVrsta;
+
 import static org.junit.Assert.*;
 
 
@@ -14,7 +18,7 @@ public class PrioritetnaVrstaTest {
     }
 
 
-    /** Test metod razreda <PrioritetnaVrsta> */
+    /** Test metod razreda <seznami.PrioritetnaVrsta> */
 	
     // testi dodajanja
 

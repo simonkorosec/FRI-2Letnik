@@ -1,3 +1,4 @@
+package seznami;
 
 public class PrioritetnaVrsta<Tip extends Comparable> implements Seznam<Tip> {
     private Object[] heap;

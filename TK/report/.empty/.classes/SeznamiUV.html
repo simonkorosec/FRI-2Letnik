@@ -1,0 +1,178 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: seznami.SeznamiUV</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">&lt;empty package name&gt;</a> ]
+</div>
+
+<h1>Coverage Summary for Class: seznami.SeznamiUV (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">seznami.SeznamiUV</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (50/ 50)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;
+<i>2</i>&nbsp;import java.util.Scanner;
+<i>3</i>&nbsp;import java.util.HashMap;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;public class seznami.SeznamiUV {
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;    private final HashMap&lt;String, seznami.Seznam&lt;String&gt;&gt; seznami;
+<i>8</i>&nbsp;    private seznami.Seznam&lt;String&gt; seznam;
+<i>9</i>&nbsp;
+<b class="fc"><i>10</i>&nbsp;    public seznami.SeznamiUV() {</b>
+<b class="fc"><i>11</i>&nbsp;        seznami = new HashMap&lt;&gt;();</b>
+<b class="fc"><i>12</i>&nbsp;        seznami.put(&quot;pv&quot;, new seznami.PrioritetnaVrsta&lt;&gt;());</b>
+<b class="fc"><i>13</i>&nbsp;        seznami.put(&quot;sk&quot;, new seznami.Sklad&lt;&gt;());</b>
+<b class="fc"><i>14</i>&nbsp;        seznami.put(&quot;bst&quot;, new seznami.Bst&lt;&gt;());</b>
+<i>15</i>&nbsp;    }
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;    public String processInput(String input) {
+<b class="fc"><i>18</i>&nbsp;        Scanner sc = new Scanner(input);</b>
+<i>19</i>&nbsp;        String token;
+<b class="fc"><i>20</i>&nbsp;        String result = &quot;OK&quot;;</b>
+<b class="fc"><i>21</i>&nbsp;        if (sc.hasNext()) {</b>
+<b class="fc"><i>22</i>&nbsp;            token = sc.next();</b>
+<i>23</i>&nbsp;        } else {
+<b class="fc"><i>24</i>&nbsp;            return &quot;Error: enter command&quot;;</b>
+<i>25</i>&nbsp;        }
+<b class="fc"><i>26</i>&nbsp;        if (!token.equals(&quot;use&quot;) &amp;&amp; (null == seznam)) {</b>
+<b class="fc"><i>27</i>&nbsp;            return &quot;Error: please specify a data structure (use {pv|sk|bst})&quot;;</b>
+<i>28</i>&nbsp;        }
+<i>29</i>&nbsp;        try {
+<b class="pc"><i>30</i>&nbsp;            switch (token) {</b>
+<i>31</i>&nbsp;                case &quot;use&quot;:
+<b class="fc"><i>32</i>&nbsp;                    if (sc.hasNext()) {</b>
+<b class="fc"><i>33</i>&nbsp;                          seznam = seznami.get(sc.next());</b>
+<b class="fc"><i>34</i>&nbsp;                        if (null == seznam) {</b>
+<b class="fc"><i>35</i>&nbsp;                            result = &quot;Error: please specify a correct data structure type {pv|sk|bst}&quot;;</b>
+<i>36</i>&nbsp;                        }
+<i>37</i>&nbsp;                    } else {
+<b class="fc"><i>38</i>&nbsp;                        result = &quot;Error: please specify a data structure type {pv|sk|bst}&quot;;</b>
+<i>39</i>&nbsp;                    }
+<b class="fc"><i>40</i>&nbsp;                    break;</b>
+<i>41</i>&nbsp;                case &quot;add&quot;:
+<b class="fc"><i>42</i>&nbsp;                    if (sc.hasNext()) {</b>
+<b class="fc"><i>43</i>&nbsp;                        seznam.add(sc.next());</b>
+<i>44</i>&nbsp;                    } else {
+<b class="fc"><i>45</i>&nbsp;                        result = &quot;Error: please specify a string&quot;;</b>
+<i>46</i>&nbsp;                    }
+<b class="fc"><i>47</i>&nbsp;                    break;</b>
+<i>48</i>&nbsp;                case &quot;remove_first&quot;:
+<b class="fc"><i>49</i>&nbsp;                    result = seznam.removeFirst();</b>
+<b class="fc"><i>50</i>&nbsp;                    break;</b>
+<i>51</i>&nbsp;                case &quot;get_first&quot;:
+<b class="fc"><i>52</i>&nbsp;                    result = seznam.getFirst();</b>
+<b class="fc"><i>53</i>&nbsp;                    break;</b>
+<i>54</i>&nbsp;                case &quot;size&quot;:
+<b class="fc"><i>55</i>&nbsp;                    result = seznam.size() + &quot;&quot;;</b>
+<b class="fc"><i>56</i>&nbsp;                    break;</b>
+<i>57</i>&nbsp;                case &quot;depth&quot;:
+<b class="fc"><i>58</i>&nbsp;                    result = seznam.depth() + &quot;&quot;;</b>
+<b class="fc"><i>59</i>&nbsp;                    break;</b>
+<i>60</i>&nbsp;                case &quot;is_empty&quot;:
+<b class="fc"><i>61</i>&nbsp;                    result = &quot;Data structure is &quot; + (seznam.isEmpty() ? &quot;&quot; : &quot;not &quot;) + &quot;empty.&quot;;</b>
+<b class="fc"><i>62</i>&nbsp;                    break;</b>
+<i>63</i>&nbsp;                case &quot;reset&quot;:
+<b class="fc"><i>64</i>&nbsp;                    while (!seznam.isEmpty()) {</b>
+<b class="fc"><i>65</i>&nbsp;                        seznam.removeFirst();</b>
+<i>66</i>&nbsp;                    }
+<i>67</i>&nbsp;                    break;
+<i>68</i>&nbsp;                case &quot;exists&quot;:
+<b class="fc"><i>69</i>&nbsp;                    if (sc.hasNext()) {</b>
+<b class="fc"><i>70</i>&nbsp;                        result = &quot;seznami.Element &quot; + (seznam.exists(sc.next()) ? &quot;exists &quot; : &quot;doesn&#39;t exist &quot;) + &quot;in data structure.&quot;;</b>
+<i>71</i>&nbsp;                    } else {
+<b class="fc"><i>72</i>&nbsp;                        result = &quot;Error: please specify a string&quot;;</b>
+<i>73</i>&nbsp;                    }
+<b class="fc"><i>74</i>&nbsp;                    break;</b>
+<i>75</i>&nbsp;                case &quot;remove&quot;:
+<b class="fc"><i>76</i>&nbsp;                    if (sc.hasNext()) {</b>
+<b class="fc"><i>77</i>&nbsp;                        result = seznam.remove(sc.next());</b>
+<i>78</i>&nbsp;                    } else {
+<b class="fc"><i>79</i>&nbsp;                        result = &quot;Error: please specify a string&quot;;</b>
+<i>80</i>&nbsp;                    }
+<b class="fc"><i>81</i>&nbsp;                    break;</b>
+<i>82</i>&nbsp;
+<i>83</i>&nbsp;                default:
+<b class="fc"><i>84</i>&nbsp;                    result = &quot;Error: invalid command&quot;;</b>
+<i>85</i>&nbsp;            }
+<b class="fc"><i>86</i>&nbsp;        }  catch (IllegalArgumentException e) {</b>
+<b class="fc"><i>87</i>&nbsp;            result = &quot;Error: Duplicated entry&quot;;</b>
+<b class="fc"><i>88</i>&nbsp;        } catch (java.util.NoSuchElementException e) {</b>
+<b class="fc"><i>89</i>&nbsp;            result = &quot;Error: data structure is empty&quot;;</b>
+<b class="fc"><i>90</i>&nbsp;        }</b>
+<i>91</i>&nbsp;
+<b class="fc"><i>92</i>&nbsp;        return result;</b>
+<i>93</i>&nbsp;    }
+<i>94</i>&nbsp;
+<i>95</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-04-19 11:23</div>
+</div>
+</body>
+</html>
