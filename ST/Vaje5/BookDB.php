@@ -16,7 +16,7 @@ class BookDB
     /**
      * Returns the list of all books from the 'database'
      *
-     * @return Associative array of all books.
+     * @return array - Associative array of all books.
      */
     public static function getAllBooks()
     {

@@ -5,4 +5,3 @@ foreach($age as $x) {
     echo "Key=" . $x; # . ", Value=" . $x_value;
     echo "<br>";
 }
-?>

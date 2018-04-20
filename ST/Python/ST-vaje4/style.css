@@ -1,5 +1,5 @@
 body {
-	font-family: Arial;
+	font-family: Arial, serif;
 }
 
 table {
@@ -45,7 +45,7 @@ header {
 }
 
 footer {
-	font-family: "Consolas";
+	font-family: "Consolas", serif;
 	font-size: small;
 	text-align: center;
 	padding-bottom: 5px;

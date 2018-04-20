@@ -32,7 +32,7 @@ else :
             representing the value in the second input field.
         </li>
     </ul>
-    </p>
+
     <form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
         <p><label for="first_name">First name:</label>
             <input type="text" name="first_name" id="first_name"/></p>

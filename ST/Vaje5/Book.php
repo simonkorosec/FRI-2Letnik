@@ -5,6 +5,7 @@ class Book
     public $title = null;
     public $author = null;
     public $id = 0;
+    public $price = 0;
 
     /**
      * Constructor: creates a new instance.
