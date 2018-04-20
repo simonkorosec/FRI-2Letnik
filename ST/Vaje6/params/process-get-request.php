@@ -5,15 +5,18 @@
 <?php 
 
 // var_dump($var) simply outputs the contents of $var, its type and size
-var_dump($_GET);
+// var_dump($_GET);
 
-/*
- * TODO
- *  - check if parameters are provided -- if not the script should display an error;
- *      - you can check if a value exists with http://php.net/manual/en/function.isset.php
- *      - you can test if a value is empty with http://php.net/manual/en/function.empty.php
- *  - and output a nicely formatted string using the send variables, for instance:
- *        "Hello $first_name $last_name, the time is <current_time_in_H:i_format>."
-*/
+    if ((isset($_GET["first_name"]) && !empty($_GET["first_name]"]))
+        && (isset($_GET["last_name"]) && !empty($_GET["last_name"]))){
+        $first_name = $_GET["first_name"];
+        $last_name = $_GET["last_name"];
+        $format2 = "H:i";
+        $time = date($format2);
+
+        echo "Hello $first_name $last_name, the time is $time.";
+    } else {
+        echo "Required parameters are missing.";
+    }
 
 ?>

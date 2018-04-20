@@ -19,7 +19,7 @@ require_once ("BookDB.php");
 
 <ul>
     <?php foreach (BookDB::getAll() as $book): ?>
-        <li><a href="detail.php?id=<?= $book["id"] ?>"><?= $book["author"] ?>: <?= $book["title"] ?></a></li>
+        <li><a href="detail.php?id=<?= $book["id"] ?>"><?= $book["author"] ?>: <?= $book["title"] ?> (<?= $book["year"] ?>)</a></li>
     <?php endforeach; ?>
 </ul>
 
