@@ -1,5 +1,8 @@
 package seznami;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Element<Tip> {
 
     public final Tip vrednost;
@@ -10,7 +13,7 @@ class Element<Tip> {
     }
 }
 
-public class Sklad<Tip> implements Seznam<Tip> {
+public class Sklad<Tip extends Comparable> implements Seznam<Tip> {
 
     private Element<Tip> vrh;
 
@@ -126,6 +129,24 @@ public class Sklad<Tip> implements Seznam<Tip> {
     @Override
     public boolean exists(Tip e) {
         return (this.search(e) != -1);
+    }
+
+    @Override
+    public List<Tip> asList() {
+        List<Tip> list = new ArrayList<>();
+        Sklad<Tip> tmp = new Sklad<>();
+
+        while (!this.isEmpty()){
+            Tip e = this.pop();
+            tmp.add(e);
+            list.add(e);
+        }
+
+        while (!tmp.isEmpty()){
+            this.add(tmp.pop());
+        }
+
+        return list;
     }
 
 }

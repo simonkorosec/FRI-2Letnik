@@ -1,7 +1,9 @@
 package seznami;
 
 import org.junit.*;
-import seznami.PrioritetnaVrsta;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -174,7 +176,7 @@ public class PrioritetnaVrstaTest {
         pv.add("test1");
         pv.add("test2");
         assertEquals("test1", pv.remove("test1"));
-        assertEquals(null, pv.remove("test1"));
+        assertNull(pv.remove("test1"));
     }
 
     @Test
@@ -183,6 +185,22 @@ public class PrioritetnaVrstaTest {
         pv.add("test2");
         assertTrue(pv.exists("test1"));
         assertFalse(pv.exists("test3"));
+    }
+
+
+    /*
+     * Od tu naprej testi za domačo nalogo
+     */
+
+    @Test
+    public void testAsList(){
+        List<String> originalList = Arrays.asList("5","4","2","1","3");
+        pv.add("1");
+        pv.add("2");
+        pv.add("3");
+        pv.add("4");
+        pv.add("5");
+        assertEquals(originalList, pv.asList());
     }
 
 }
