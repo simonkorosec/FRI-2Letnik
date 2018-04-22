@@ -1,3 +1,4 @@
 var c : int;
 typ int : integer;
-fun mul ( a : integer, b : integer) : integer = (a*b)
+fun mul ( a : integer, b : integer) : integer = (g(a)*g(b)) {where fun g(x : int) : int = ({y = c+2}, x-y);
+																	var y : int}

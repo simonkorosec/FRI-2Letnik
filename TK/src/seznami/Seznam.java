@@ -2,7 +2,7 @@ package seznami;
 
 import java.util.List;
 
-public interface Seznam<Tip> {
+interface Seznam<Tip> {
 
     // dodajanje elementa v podatkovno strukturo
     void add(Tip e);
