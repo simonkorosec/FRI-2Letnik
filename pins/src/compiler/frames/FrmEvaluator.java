@@ -64,7 +64,6 @@ public class FrmEvaluator implements Visitor {
         int size = 4;
 
         for (int i = 0; i < acceptor.numArgs(); i++) {
-            //acceptor.arg(i).accept(this);
             size += SymbDesc.getType(acceptor.arg(i)).size();
         }
         int r = ((SemFunType) SymbDesc.getType(SymbDesc.getNameDef(acceptor))).resultType.size();

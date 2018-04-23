@@ -70,7 +70,7 @@ public class SemTypeName extends SemType {
 	 */
 	@Override
 	public int size() {
-		return 0;
+		return type.size();
 	}
 
 	@Override
