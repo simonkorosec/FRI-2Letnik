@@ -1,0 +1,81 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Seznam</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">seznami</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Seznam (seznami)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">Seznam</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package seznami;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.List;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;interface Seznam&lt;Tip&gt; {
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;    // dodajanje elementa v podatkovno strukturo
+<i>8</i>&nbsp;    void add(Tip e);
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;    // odstranjevanje (in vraèanje) prvega elementa iz pod. strukture
+<i>11</i>&nbsp;    Tip removeFirst();
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;    // vracanje prvega elementa iz podatkovne strukture
+<i>14</i>&nbsp;    Tip getFirst();
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;    // število elementov v podatkovni strukturi
+<i>17</i>&nbsp;    int size();
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    // globina podatkovne strukture
+<i>20</i>&nbsp;    int depth();
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    // ali je podakovna struktura prazna
+<i>23</i>&nbsp;    boolean isEmpty(); 
+<i>24</i>&nbsp;      
+<i>25</i>&nbsp;    // Odstranjevanje (in vraèanje) doloèenega elementa iz strukture
+<i>26</i>&nbsp;    Tip remove(Tip e);
+<i>27</i>&nbsp;   
+<i>28</i>&nbsp;    // Ali element obstaja v strukturi
+<i>29</i>&nbsp;    boolean exists(Tip e);
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    // vrne elemente v obliki list-a
+<i>32</i>&nbsp;    List&lt;Tip&gt; asList();
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-04-22 17:13</div>
+</div>
+</body>
+</html>

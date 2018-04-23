@@ -1,5 +1,6 @@
 package seznami;
 
+import java.util.List;
 import java.util.Scanner;
 import java.util.HashMap;
 
@@ -13,6 +14,7 @@ public class SeznamiUV {
         seznami.put("pv", new PrioritetnaVrsta<>());
         seznami.put("sk", new Sklad<>());
         seznami.put("bst", new Bst<>());
+        seznami.put("bk", new BinomialHeap<>());
     }
 
     public String processInput(String input) {
@@ -25,7 +27,7 @@ public class SeznamiUV {
             return "Error: enter command";
         }
         if (!token.equals("use") && (null == seznam)) {
-            return "Error: please specify a data structure (use {pv|sk|bst})";
+            return "Error: please specify a data structure (use {pv|sk|bst|bk})";
         }
         try {
             switch (token) {
@@ -33,10 +35,10 @@ public class SeznamiUV {
                     if (sc.hasNext()) {
                           seznam = seznami.get(sc.next());
                         if (null == seznam) {
-                            result = "Error: please specify a correct data structure type {pv|sk|bst}";
+                            result = "Error: please specify a correct data structure type {pv|sk|bst|bk}";
                         }
                     } else {
-                        result = "Error: please specify a data structure type {pv|sk|bst}";
+                        result = "Error: please specify a data structure type {pv|sk|bst|bk}";
                     }
                     break;
                 case "add":
@@ -68,7 +70,7 @@ public class SeznamiUV {
                     break;
                 case "exists":
                     if (sc.hasNext()) {
-                        result = "seznami.Element " + (seznam.exists(sc.next()) ? "exists " : "doesn't exist ") + "in data structure.";
+                        result = "Element " + (seznam.exists(sc.next()) ? "exists " : "doesn't exist ") + "in data structure.";
                     } else {
                         result = "Error: please specify a string";
                     }
@@ -80,7 +82,14 @@ public class SeznamiUV {
                         result = "Error: please specify a string";
                     }
                     break;
-
+                case "asList":
+                    List<String> list = seznam.asList();
+                    StringBuilder s = new StringBuilder();
+                    for (String aList : list) {
+                        s.append(aList).append(" ");
+                    }
+                    result = s.toString().trim();
+                    break;
                 default:
                     result = "Error: invalid command";
             }

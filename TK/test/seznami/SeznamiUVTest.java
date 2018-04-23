@@ -1,7 +1,6 @@
 package seznami;
 
 import org.junit.*;
-import seznami.SeznamiUV;
 
 import static org.junit.Assert.*;
 
@@ -20,14 +19,16 @@ public class SeznamiUVTest {
     @Test
     public void testUse() {
         assertEquals("Error: enter command", uv.processInput(""));
-        assertEquals("Error: please specify a data structure (use {pv|sk|bst})", uv.processInput("add"));
-        assertEquals("Error: please specify a correct data structure type {pv|sk|bst}", uv.processInput("use add"));
-        assertEquals("Error: please specify a data structure type {pv|sk|bst}", uv.processInput("use"));
+        assertEquals("Error: please specify a data structure (use {pv|sk|bst|bk})", uv.processInput("add"));
+        assertEquals("Error: please specify a correct data structure type {pv|sk|bst|bk}", uv.processInput("use add"));
+        assertEquals("Error: please specify a data structure type {pv|sk|bst|bk}", uv.processInput("use"));
 
         assertEquals("OK", uv.processInput("use sk"));
         assertEquals("OK", uv.processInput("use pv"));
         assertEquals("OK", uv.processInput("use bst"));
+        assertEquals("OK", uv.processInput("use bk"));
     }
+
     @Test
     public void testUseSklad() {
         runAllTests("sk");
@@ -44,7 +45,12 @@ public class SeznamiUVTest {
     }
 
     @Test
-    public void testErrors(){
+    public void testUseBk() {
+        runAllTests("bk");
+    }
+
+    @Test
+    public void testErrors() {
         assertEquals("OK", uv.processInput("use bst"));
         assertEquals("Error: invalid command", uv.processInput("nekii"));
         assertEquals("Error: data structure is empty", uv.processInput("get_first"));
@@ -55,17 +61,20 @@ public class SeznamiUVTest {
     // *****************
     // POMOZNE METODE
     // *****************
-    private void runAllTests(String struktura){
-        assertEquals("OK", uv.processInput("use "+struktura));
+    private void runAllTests(String struktura) {
+        assertEquals("OK", uv.processInput("use " + struktura));
         switch (struktura) {
             case "sk":
-                testSklad(true);
+                testSklad();
                 break;
             case "pv":
-                testPrioritetnaVrsta(true);
+                testPrioritetnaVrsta();
                 break;
             case "bst":
-                testBst(true);
+                testBst();
+                break;
+            case "bk":
+                testBk();
                 break;
         }
         reset();
@@ -91,12 +100,18 @@ public class SeznamiUVTest {
         reset();
         testSizeTwo();
         reset();
-        testDepthOnEmpty();
+
+        if (struktura.equals("bk")) {
+            testDepthBk();
+        } else {
+            testDepthOnEmpty();
+            reset();
+            testDepthOne();
+            reset();
+            testDepthTwo();
+        }
         reset();
-        testDepthOne();
-        reset();
-        testDepthTwo();
-        reset();
+
         testExists();
         reset();
         testIsEmptyEmpty();
@@ -107,7 +122,36 @@ public class SeznamiUVTest {
         reset();
         testResetOnFull();
         reset();
+        testAsList(struktura);
     }
+
+    private void testAsList(String struktura) {
+        for (int i = 15; i > 0; i--) {
+            if (i < 10) {
+                uv.processInput("add 0" + i);
+            } else {
+                uv.processInput("add " + i);
+            }
+        }
+
+        switch (struktura) {
+            case "sk":
+                assertEquals("01 02 03 04 05 06 07 08 09 10 11 12 13 14 15", uv.processInput("asList"));
+                break;
+            case "pv":
+                assertEquals("15 14 13 12 11 10 09 08 07 06 05 04 03 02 01", uv.processInput("asList"));
+                break;
+            case "bst":
+                assertEquals("01 02 03 04 05 06 07 08 09 10 11 12 13 14 15", uv.processInput("asList"));
+                break;
+            case "bk":
+                assertEquals("01 02 03 04 05 06 07 08 09 10 11 12 13 14 15", uv.processInput("asList"));
+                break;
+        }
+
+
+    }
+
 
     private void reset() {
         uv.processInput("reset");
@@ -202,19 +246,19 @@ public class SeznamiUVTest {
         assertEquals("Error: please specify a string", uv.processInput("exists"));
         assertEquals("OK", uv.processInput("add Test3"));
         assertEquals("1", uv.processInput("size"));
-        assertEquals("seznami.Element exists in data structure.", uv.processInput("exists Test3"));
-        assertEquals("seznami.Element doesn't exist in data structure.", uv.processInput("exists neki"));
+        assertEquals("Element exists in data structure.", uv.processInput("exists Test3"));
+        assertEquals("Element doesn't exist in data structure.", uv.processInput("exists neki"));
     }
 
     private void testRemove() {
-        testAddTestSequence();
-        assertEquals("Error: please specify a string",uv.processInput("remove"));
-        assertEquals("Test3",uv.processInput("remove Test3"));
-        assertEquals("Test1",uv.processInput("remove Test1"));
+        testAddSequence();
+        assertEquals("Error: please specify a string", uv.processInput("remove"));
+        assertEquals("Test3", uv.processInput("remove Test3"));
+        assertEquals("Test1", uv.processInput("remove Test1"));
 
     }
 
-    private void testAddTestSequence() {
+    private void testAddSequence() {
         assertEquals("OK", uv.processInput("add Test4"));
         assertEquals("OK", uv.processInput("add Test2"));
         assertEquals("OK", uv.processInput("add Test3"));
@@ -222,10 +266,8 @@ public class SeznamiUVTest {
         assertEquals("OK", uv.processInput("add Test5"));
     }
 
-    private void testSklad(boolean add) {
-        if (add) {
-            testAddTestSequence();
-        }
+    private void testSklad() {
+        testAddSequence();
         assertEquals("Test5", uv.processInput("remove_first"));
         assertEquals("Test1", uv.processInput("remove_first"));
         assertEquals("Test3", uv.processInput("remove_first"));
@@ -233,10 +275,8 @@ public class SeznamiUVTest {
         assertEquals("Test4", uv.processInput("remove_first"));
     }
 
-    private void testPrioritetnaVrsta(boolean add) {
-        if (add) {
-            testAddTestSequence();
-        }
+    private void testPrioritetnaVrsta() {
+        testAddSequence();
         assertEquals("Test5", uv.processInput("remove_first"));
         assertEquals("Test4", uv.processInput("remove_first"));
         assertEquals("Test3", uv.processInput("remove_first"));
@@ -244,10 +284,8 @@ public class SeznamiUVTest {
         assertEquals("Test1", uv.processInput("remove_first"));
     }
 
-    private void testBst(boolean add) {
-        if (add) {
-            testAddTestSequence();
-        }
+    private void testBst() {
+        testAddSequence();
         assertEquals("Test4", uv.processInput("remove_first"));
         assertEquals("Test5", uv.processInput("remove_first"));
         assertEquals("Test2", uv.processInput("remove_first"));
@@ -255,4 +293,24 @@ public class SeznamiUVTest {
         assertEquals("Test1", uv.processInput("remove_first"));
     }
 
+    private void testDepthBk() {
+        assertEquals("0", uv.processInput("depth"));
+        assertEquals("OK", uv.processInput("add Tes1"));
+        assertEquals("0", uv.processInput("depth"));
+        assertEquals("OK", uv.processInput("add Tes2"));
+        assertEquals("1", uv.processInput("depth"));
+        assertEquals("OK", uv.processInput("add Tes2"));
+        assertEquals("1", uv.processInput("depth"));
+    }
+
+    private void testBk() {
+        testAddSequence();
+        assertEquals("OK", uv.processInput("add Test0"));
+        assertEquals("Test5", uv.processInput("remove_first"));
+        assertEquals("Test4", uv.processInput("remove_first"));
+        assertEquals("Test3", uv.processInput("remove_first"));
+        assertEquals("Test2", uv.processInput("remove_first"));
+        assertEquals("Test1", uv.processInput("remove_first"));
+        assertEquals("Test0", uv.processInput("remove_first"));
+    }
 }

@@ -1,0 +1,450 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: BinomialHeap</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">seznami</a> ]
+</div>
+
+<h1>Coverage Summary for Class: BinomialHeap (seznami)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BinomialHeap</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (18/ 18)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (162/ 162)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">BinomialHeap$BinomialHeapNode</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (8/ 8)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (20/ 20)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (170/ 170)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package seznami;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.ArrayList;
+<i>4</i>&nbsp;import java.util.List;
+<i>5</i>&nbsp;import java.util.NoSuchElementException;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;public class BinomialHeap&lt;Tip extends Comparable&gt; implements Seznam&lt;Tip&gt; {
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;    private BinomialHeapNode&lt;Tip&gt; topNode;
+<i>10</i>&nbsp;
+<b class="fc"><i>11</i>&nbsp;    public BinomialHeap() {</b>
+<b class="fc"><i>12</i>&nbsp;        topNode = null;</b>
+<i>13</i>&nbsp;    }
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    private void merg(BinomialHeapNode&lt;Tip&gt; heap2) {
+<b class="fc"><i>16</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; heap1 = topNode;</b>
+<i>17</i>&nbsp;
+<b class="fc"><i>18</i>&nbsp;        while ((heap1 != null) &amp;&amp; (heap2 != null)) {</b>
+<b class="fc"><i>19</i>&nbsp;            if (heap1.degree == heap2.degree) {</b>
+<b class="fc"><i>20</i>&nbsp;                BinomialHeapNode&lt;Tip&gt; tmp = heap2;</b>
+<b class="fc"><i>21</i>&nbsp;                heap2 = heap2.sibling;</b>
+<b class="fc"><i>22</i>&nbsp;                tmp.sibling = heap1.sibling;</b>
+<b class="fc"><i>23</i>&nbsp;                heap1.sibling = tmp;</b>
+<b class="fc"><i>24</i>&nbsp;                heap1 = tmp.sibling;</b>
+<b class="fc"><i>25</i>&nbsp;            } else if (heap1.degree &lt; heap2.degree) {</b>
+<i>26</i>&nbsp;
+<b class="fc"><i>27</i>&nbsp;                    heap1 = heap1.sibling;</b>
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;            } else {
+<b class="fc"><i>30</i>&nbsp;                BinomialHeapNode&lt;Tip&gt; tmp = heap1;</b>
+<b class="fc"><i>31</i>&nbsp;                heap1 = heap2;</b>
+<b class="fc"><i>32</i>&nbsp;                heap2 = heap2.sibling;</b>
+<b class="fc"><i>33</i>&nbsp;                heap1.sibling = tmp;</b>
+<b class="pc"><i>34</i>&nbsp;                if (tmp == topNode) {</b>
+<b class="fc"><i>35</i>&nbsp;                    topNode = heap1;</b>
+<i>36</i>&nbsp;                }
+<b class="fc"><i>37</i>&nbsp;            }</b>
+<i>38</i>&nbsp;        }
+<i>39</i>&nbsp;
+<b class="fc"><i>40</i>&nbsp;        if (heap1 == null) {</b>
+<b class="fc"><i>41</i>&nbsp;            heap1 = topNode;</b>
+<b class="fc"><i>42</i>&nbsp;            while (heap1.sibling != null) {</b>
+<b class="fc"><i>43</i>&nbsp;                heap1 = heap1.sibling;</b>
+<i>44</i>&nbsp;            }
+<b class="fc"><i>45</i>&nbsp;            heap1.sibling = heap2;</b>
+<i>46</i>&nbsp;        }
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;    }
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;    private void union() {
+<b class="fc"><i>52</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; prejsni = null;</b>
+<b class="fc"><i>53</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; trenutni = topNode;</b>
+<b class="fc"><i>54</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; nasledni = topNode.sibling;</b>
+<i>55</i>&nbsp;
+<b class="fc"><i>56</i>&nbsp;        while (nasledni != null) {</b>
+<b class="fc"><i>57</i>&nbsp;            if ((trenutni.degree != nasledni.degree) ||</b>
+<b class="fc"><i>58</i>&nbsp;                    ((nasledni.sibling != null) &amp;&amp; (nasledni.sibling.degree == trenutni.degree))) {</b>
+<b class="fc"><i>59</i>&nbsp;                prejsni = trenutni;</b>
+<b class="fc"><i>60</i>&nbsp;                trenutni = nasledni;</b>
+<b class="fc"><i>61</i>&nbsp;            } else if (trenutni.key.compareTo(nasledni.key) &gt;= 0) {</b>
+<b class="fc"><i>62</i>&nbsp;                trenutni.sibling = nasledni.sibling;</b>
+<b class="fc"><i>63</i>&nbsp;                nasledni.parent = trenutni;</b>
+<b class="fc"><i>64</i>&nbsp;                nasledni.sibling = trenutni.child;</b>
+<b class="fc"><i>65</i>&nbsp;                trenutni.child = nasledni;</b>
+<b class="fc"><i>66</i>&nbsp;                trenutni.degree++;</b>
+<i>67</i>&nbsp;            } else {
+<b class="fc"><i>68</i>&nbsp;                if (prejsni == null) {</b>
+<b class="fc"><i>69</i>&nbsp;                    topNode = nasledni;</b>
+<i>70</i>&nbsp;                } else {
+<b class="fc"><i>71</i>&nbsp;                    prejsni.sibling = nasledni;</b>
+<i>72</i>&nbsp;                }
+<i>73</i>&nbsp;
+<b class="fc"><i>74</i>&nbsp;                trenutni.parent = nasledni;</b>
+<b class="fc"><i>75</i>&nbsp;                trenutni.sibling = nasledni.child;</b>
+<b class="fc"><i>76</i>&nbsp;                nasledni.child = trenutni;</b>
+<b class="fc"><i>77</i>&nbsp;                nasledni.degree++;</b>
+<b class="fc"><i>78</i>&nbsp;                trenutni = nasledni;</b>
+<i>79</i>&nbsp;            }
+<i>80</i>&nbsp;
+<b class="fc"><i>81</i>&nbsp;            nasledni = trenutni.sibling;</b>
+<i>82</i>&nbsp;        }
+<i>83</i>&nbsp;    }
+<i>84</i>&nbsp;
+<i>85</i>&nbsp;    private void heapUnion(BinomialHeapNode&lt;Tip&gt; node) {
+<b class="fc"><i>86</i>&nbsp;        merg(node);</b>
+<i>87</i>&nbsp;
+<b class="fc"><i>88</i>&nbsp;        union();</b>
+<i>89</i>&nbsp;    }
+<i>90</i>&nbsp;
+<i>91</i>&nbsp;    @Override
+<i>92</i>&nbsp;    public void add(Tip e) {
+<b class="fc"><i>93</i>&nbsp;        if (topNode == null) {</b>
+<b class="fc"><i>94</i>&nbsp;            topNode = new BinomialHeapNode&lt;&gt;(e);</b>
+<i>95</i>&nbsp;        } else {
+<b class="fc"><i>96</i>&nbsp;            heapUnion(new BinomialHeapNode&lt;&gt;(e));</b>
+<i>97</i>&nbsp;        }
+<i>98</i>&nbsp;    }
+<i>99</i>&nbsp;
+<i>100</i>&nbsp;    @Override
+<i>101</i>&nbsp;    public Tip removeFirst() {
+<b class="fc"><i>102</i>&nbsp;        if (isEmpty()) {</b>
+<b class="fc"><i>103</i>&nbsp;            throw new NoSuchElementException();</b>
+<i>104</i>&nbsp;        }
+<i>105</i>&nbsp;
+<b class="fc"><i>106</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; trenutni = topNode;</b>
+<b class="fc"><i>107</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; prejsni = null;</b>
+<b class="fc"><i>108</i>&nbsp;        Tip max = getFirst();</b>
+<i>109</i>&nbsp;
+<b class="fc"><i>110</i>&nbsp;        while (!trenutni.key.equals(max)) {</b>
+<b class="fc"><i>111</i>&nbsp;            prejsni = trenutni;</b>
+<b class="fc"><i>112</i>&nbsp;            trenutni = trenutni.sibling;</b>
+<i>113</i>&nbsp;        }
+<i>114</i>&nbsp;
+<b class="fc"><i>115</i>&nbsp;        if (prejsni == null) {</b>
+<b class="fc"><i>116</i>&nbsp;            topNode = trenutni.sibling;</b>
+<i>117</i>&nbsp;        } else {
+<b class="fc"><i>118</i>&nbsp;            prejsni.sibling = trenutni.sibling;</b>
+<i>119</i>&nbsp;        }
+<i>120</i>&nbsp;
+<b class="fc"><i>121</i>&nbsp;        trenutni = trenutni.child;</b>
+<i>122</i>&nbsp;
+<b class="fc"><i>123</i>&nbsp;        ArrayList&lt;BinomialHeapNode&lt;Tip&gt;&gt; tmp = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>124</i>&nbsp;        while (trenutni != null) {</b>
+<b class="fc"><i>125</i>&nbsp;            trenutni.parent = null;</b>
+<b class="fc"><i>126</i>&nbsp;            tmp.add(trenutni);</b>
+<b class="fc"><i>127</i>&nbsp;            trenutni = trenutni.sibling;</b>
+<b class="fc"><i>128</i>&nbsp;            tmp.get(tmp.size() - 1).sibling = null;</b>
+<i>129</i>&nbsp;        }
+<i>130</i>&nbsp;
+<b class="fc"><i>131</i>&nbsp;        for (BinomialHeapNode&lt;Tip&gt; node : tmp) {</b>
+<b class="fc"><i>132</i>&nbsp;            if (topNode == null) {</b>
+<b class="fc"><i>133</i>&nbsp;                topNode = node;</b>
+<i>134</i>&nbsp;            } else {
+<b class="fc"><i>135</i>&nbsp;                merg(node);</b>
+<i>136</i>&nbsp;            }
+<b class="fc"><i>137</i>&nbsp;        }</b>
+<i>138</i>&nbsp;
+<b class="fc"><i>139</i>&nbsp;        if (topNode != null) {</b>
+<b class="fc"><i>140</i>&nbsp;            union();</b>
+<i>141</i>&nbsp;        }
+<i>142</i>&nbsp;
+<b class="fc"><i>143</i>&nbsp;        return max;</b>
+<i>144</i>&nbsp;    }
+<i>145</i>&nbsp;
+<i>146</i>&nbsp;    @Override
+<i>147</i>&nbsp;    public Tip getFirst() {
+<b class="fc"><i>148</i>&nbsp;        if (isEmpty()) {</b>
+<b class="fc"><i>149</i>&nbsp;            throw new java.util.NoSuchElementException();</b>
+<i>150</i>&nbsp;        }
+<i>151</i>&nbsp;
+<b class="fc"><i>152</i>&nbsp;        Tip max = topNode.key;</b>
+<b class="fc"><i>153</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; node = topNode.sibling;</b>
+<i>154</i>&nbsp;
+<b class="fc"><i>155</i>&nbsp;        while (node != null) {</b>
+<b class="fc"><i>156</i>&nbsp;            if (max.compareTo(node.key) &lt; 0) {</b>
+<b class="fc"><i>157</i>&nbsp;                max = node.key;</b>
+<i>158</i>&nbsp;            }
+<b class="fc"><i>159</i>&nbsp;            node = node.sibling;</b>
+<i>160</i>&nbsp;        }
+<i>161</i>&nbsp;
+<b class="fc"><i>162</i>&nbsp;        return max;</b>
+<i>163</i>&nbsp;    }
+<i>164</i>&nbsp;
+<i>165</i>&nbsp;    private int calcSize() {
+<b class="fc"><i>166</i>&nbsp;        int s = 0;</b>
+<b class="fc"><i>167</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; trenutni = topNode;</b>
+<i>168</i>&nbsp;
+<b class="fc"><i>169</i>&nbsp;        while (trenutni != null) {</b>
+<b class="fc"><i>170</i>&nbsp;            s += Math.pow(2, trenutni.degree);</b>
+<b class="fc"><i>171</i>&nbsp;            trenutni = trenutni.sibling;</b>
+<i>172</i>&nbsp;        }
+<i>173</i>&nbsp;
+<b class="fc"><i>174</i>&nbsp;        return s;</b>
+<i>175</i>&nbsp;    }
+<i>176</i>&nbsp;
+<i>177</i>&nbsp;    @Override
+<i>178</i>&nbsp;    public int size() {
+<b class="fc"><i>179</i>&nbsp;        return calcSize();</b>
+<i>180</i>&nbsp;    }
+<i>181</i>&nbsp;
+<i>182</i>&nbsp;    @Override
+<i>183</i>&nbsp;    public int depth() {
+<b class="fc"><i>184</i>&nbsp;        if (topNode == null) {</b>
+<b class="fc"><i>185</i>&nbsp;            return 0;</b>
+<i>186</i>&nbsp;        }
+<i>187</i>&nbsp;
+<b class="fc"><i>188</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; node = topNode;</b>
+<b class="fc"><i>189</i>&nbsp;        while (node.sibling != null) {</b>
+<b class="fc"><i>190</i>&nbsp;            node = node.sibling;</b>
+<i>191</i>&nbsp;        }
+<b class="fc"><i>192</i>&nbsp;        return node.degree;</b>
+<i>193</i>&nbsp;    }
+<i>194</i>&nbsp;
+<i>195</i>&nbsp;    @Override
+<i>196</i>&nbsp;    public boolean isEmpty() {
+<b class="fc"><i>197</i>&nbsp;        return (topNode == null);</b>
+<i>198</i>&nbsp;    }
+<i>199</i>&nbsp;
+<i>200</i>&nbsp;    @Override
+<i>201</i>&nbsp;    public Tip remove(Tip e) {
+<b class="fc"><i>202</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; node = search(e);</b>
+<b class="fc"><i>203</i>&nbsp;        if (node == null) {</b>
+<b class="fc"><i>204</i>&nbsp;            throw new java.util.NoSuchElementException();</b>
+<i>205</i>&nbsp;        } else {
+<b class="fc"><i>206</i>&nbsp;            node.delete = true;</b>
+<b class="fc"><i>207</i>&nbsp;            siftUp(node);</b>
+<b class="fc"><i>208</i>&nbsp;            delete();</b>
+<i>209</i>&nbsp;        }
+<i>210</i>&nbsp;
+<b class="fc"><i>211</i>&nbsp;        return e;</b>
+<i>212</i>&nbsp;    }
+<i>213</i>&nbsp;
+<i>214</i>&nbsp;    private void delete() {
+<b class="fc"><i>215</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; trenutni = topNode;</b>
+<b class="fc"><i>216</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; prejsni = null;</b>
+<i>217</i>&nbsp;
+<b class="fc"><i>218</i>&nbsp;        while (!trenutni.delete) {</b>
+<b class="fc"><i>219</i>&nbsp;            prejsni = trenutni;</b>
+<b class="fc"><i>220</i>&nbsp;            trenutni = trenutni.sibling;</b>
+<i>221</i>&nbsp;        }
+<i>222</i>&nbsp;
+<b class="fc"><i>223</i>&nbsp;        if (prejsni == null) {</b>
+<b class="fc"><i>224</i>&nbsp;            topNode = trenutni.sibling;</b>
+<i>225</i>&nbsp;        } else {
+<b class="fc"><i>226</i>&nbsp;            prejsni.sibling = trenutni.sibling;</b>
+<i>227</i>&nbsp;        }
+<i>228</i>&nbsp;
+<b class="fc"><i>229</i>&nbsp;        trenutni = trenutni.child;</b>
+<i>230</i>&nbsp;
+<b class="fc"><i>231</i>&nbsp;        ArrayList&lt;BinomialHeapNode&lt;Tip&gt;&gt; tmp = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>232</i>&nbsp;        while (trenutni != null) {</b>
+<b class="fc"><i>233</i>&nbsp;            trenutni.parent = null;</b>
+<b class="fc"><i>234</i>&nbsp;            tmp.add(trenutni);</b>
+<b class="fc"><i>235</i>&nbsp;            trenutni = trenutni.sibling;</b>
+<b class="fc"><i>236</i>&nbsp;            tmp.get(tmp.size() - 1).sibling = null;</b>
+<i>237</i>&nbsp;        }
+<i>238</i>&nbsp;
+<b class="fc"><i>239</i>&nbsp;        for (BinomialHeapNode&lt;Tip&gt; node : tmp) {</b>
+<b class="fc"><i>240</i>&nbsp;            if (topNode == null) {</b>
+<b class="fc"><i>241</i>&nbsp;                topNode = node;</b>
+<i>242</i>&nbsp;            } else {
+<b class="fc"><i>243</i>&nbsp;                merg(node);</b>
+<i>244</i>&nbsp;            }
+<b class="fc"><i>245</i>&nbsp;        }</b>
+<i>246</i>&nbsp;
+<b class="pc"><i>247</i>&nbsp;        if (topNode != null) {</b>
+<b class="fc"><i>248</i>&nbsp;            union();</b>
+<i>249</i>&nbsp;        }
+<i>250</i>&nbsp;
+<i>251</i>&nbsp;    }
+<i>252</i>&nbsp;
+<i>253</i>&nbsp;    private void siftUp(BinomialHeapNode&lt;Tip&gt; node) {
+<b class="fc"><i>254</i>&nbsp;        while (node.parent != null) {</b>
+<b class="fc"><i>255</i>&nbsp;            Tip keyParent = node.parent.key;</b>
+<b class="fc"><i>256</i>&nbsp;            node.parent.key = node.key;</b>
+<b class="fc"><i>257</i>&nbsp;            node.key = keyParent;</b>
+<i>258</i>&nbsp;
+<b class="fc"><i>259</i>&nbsp;            node.parent.delete = true;</b>
+<b class="fc"><i>260</i>&nbsp;            node.delete = false;</b>
+<i>261</i>&nbsp;
+<b class="fc"><i>262</i>&nbsp;            node = node.parent;</b>
+<b class="fc"><i>263</i>&nbsp;        }</b>
+<i>264</i>&nbsp;    }
+<i>265</i>&nbsp;
+<i>266</i>&nbsp;    @Override
+<i>267</i>&nbsp;    public boolean exists(Tip e) {
+<b class="fc"><i>268</i>&nbsp;        return null != search(e);</b>
+<i>269</i>&nbsp;    }
+<i>270</i>&nbsp;
+<i>271</i>&nbsp;    /**
+<i>272</i>&nbsp;     * Method that finds the node with the same key.
+<i>273</i>&nbsp;     *
+<i>274</i>&nbsp;     * @param key searched key
+<i>275</i>&nbsp;     * @return node with the same key or null if not found
+<i>276</i>&nbsp;     */
+<i>277</i>&nbsp;    private BinomialHeapNode&lt;Tip&gt; search(Tip key) {
+<b class="fc"><i>278</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; node = null;</b>
+<b class="fc"><i>279</i>&nbsp;        BinomialHeapNode&lt;Tip&gt; trenutni = topNode;</b>
+<i>280</i>&nbsp;
+<b class="fc"><i>281</i>&nbsp;        while (trenutni != null) {</b>
+<b class="fc"><i>282</i>&nbsp;            if (trenutni.key.compareTo(key) == 0) {</b>
+<b class="fc"><i>283</i>&nbsp;                node = trenutni;</b>
+<b class="fc"><i>284</i>&nbsp;                break;</b>
+<b class="fc"><i>285</i>&nbsp;            } else if (trenutni.key.compareTo(key) &gt; 0) {</b>
+<b class="fc"><i>286</i>&nbsp;                if (trenutni.child != null) {</b>
+<b class="fc"><i>287</i>&nbsp;                    trenutni = trenutni.child;</b>
+<b class="fc"><i>288</i>&nbsp;                    continue;</b>
+<i>289</i>&nbsp;                }
+<i>290</i>&nbsp;            }
+<b class="fc"><i>291</i>&nbsp;            if (trenutni.sibling != null) {</b>
+<b class="fc"><i>292</i>&nbsp;                trenutni = trenutni.sibling;</b>
+<i>293</i>&nbsp;            } else {
+<b class="fc"><i>294</i>&nbsp;                trenutni = trenutni.parent;</b>
+<b class="fc"><i>295</i>&nbsp;                if (trenutni != null) {</b>
+<b class="fc"><i>296</i>&nbsp;                    trenutni = trenutni.sibling;</b>
+<i>297</i>&nbsp;                } else {
+<i>298</i>&nbsp;                    break;
+<i>299</i>&nbsp;                }
+<i>300</i>&nbsp;            }
+<i>301</i>&nbsp;        }
+<i>302</i>&nbsp;
+<b class="fc"><i>303</i>&nbsp;        return node;</b>
+<i>304</i>&nbsp;    }
+<i>305</i>&nbsp;
+<i>306</i>&nbsp;    @Override
+<i>307</i>&nbsp;    public List&lt;Tip&gt; asList() {
+<b class="fc"><i>308</i>&nbsp;        return postorder(topNode);</b>
+<i>309</i>&nbsp;    }
+<i>310</i>&nbsp;
+<i>311</i>&nbsp;    private List&lt;Tip&gt; postorder(BinomialHeapNode&lt;Tip&gt; node) {
+<b class="fc"><i>312</i>&nbsp;        List&lt;Tip&gt; list = new ArrayList&lt;&gt;();</b>
+<i>313</i>&nbsp;
+<b class="fc"><i>314</i>&nbsp;        if (node != null) {</b>
+<b class="fc"><i>315</i>&nbsp;            list.addAll(postorder(node.child));</b>
+<b class="fc"><i>316</i>&nbsp;            list.add(node.key);</b>
+<b class="fc"><i>317</i>&nbsp;            list.addAll(postorder(node.sibling));</b>
+<i>318</i>&nbsp;        }
+<i>319</i>&nbsp;
+<b class="fc"><i>320</i>&nbsp;        return list;</b>
+<i>321</i>&nbsp;    }
+<i>322</i>&nbsp;
+<b class="fc"><i>323</i>&nbsp;    private class BinomialHeapNode&lt;T extends Comparable&gt; {</b>
+<i>324</i>&nbsp;        private T key;
+<i>325</i>&nbsp;        private int degree;
+<i>326</i>&nbsp;        private boolean delete;
+<i>327</i>&nbsp;        private BinomialHeapNode&lt;T&gt; parent;
+<i>328</i>&nbsp;        private BinomialHeapNode&lt;T&gt; child;
+<i>329</i>&nbsp;        private BinomialHeapNode&lt;T&gt; sibling;
+<i>330</i>&nbsp;
+<b class="fc"><i>331</i>&nbsp;        BinomialHeapNode(T key) {</b>
+<b class="fc"><i>332</i>&nbsp;            this.key = key;</b>
+<b class="fc"><i>333</i>&nbsp;            this.degree = 0;</b>
+<b class="fc"><i>334</i>&nbsp;            this.parent = null;</b>
+<b class="fc"><i>335</i>&nbsp;            this.child = null;</b>
+<b class="fc"><i>336</i>&nbsp;            this.sibling = null;</b>
+<b class="fc"><i>337</i>&nbsp;            this.delete = false;</b>
+<i>338</i>&nbsp;        }
+<i>339</i>&nbsp;
+<i>340</i>&nbsp;    }
+<i>341</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-04-22 17:13</div>
+</div>
+</body>
+</html>

@@ -5,15 +5,17 @@ import compiler.abstr.tree.*;
 import compiler.seman.SymbDesc;
 import compiler.seman.type.SemFunType;
 
+import java.util.Stack;
+
 public class FrmEvaluator implements Visitor {
     // TODO
 
     private static int level = 1;
-    private static FrmFrame currFrame = null;
+    private static Stack<FrmFrame> frames = new Stack<>();
 
     @Override
     public void visit(AbsArrType acceptor) {
-        acceptor.type.accept(this);
+        //acceptor.type.accept(this);
     }
 
     @Override
@@ -49,7 +51,7 @@ public class FrmEvaluator implements Visitor {
 
     @Override
     public void visit(AbsFor acceptor) {
-        acceptor.count.accept(this);
+        //acceptor.count.accept(this);
         acceptor.lo.accept(this);
         acceptor.hi.accept(this);
         acceptor.step.accept(this);
@@ -58,33 +60,34 @@ public class FrmEvaluator implements Visitor {
 
     @Override
     public void visit(AbsFunCall acceptor) {
+        FrmFrame frame = frames.peek();
         int size = 4;
 
         for (int i = 0; i < acceptor.numArgs(); i++) {
-            acceptor.arg(i).accept(this);
+            //acceptor.arg(i).accept(this);
             size += SymbDesc.getType(acceptor.arg(i)).size();
         }
-        int r = ((SemFunType)SymbDesc.getType(SymbDesc.getNameDef(acceptor))).resultType.size();
-        size = size > r ? size : r;
-        currFrame.sizeArgs = size > currFrame.sizeArgs ? size : currFrame.sizeArgs;
+        int r = ((SemFunType) SymbDesc.getType(SymbDesc.getNameDef(acceptor))).resultType.size();
+
+        size = r > size ? r : size;
+        frame.sizeArgs = size > frame.sizeArgs ? size : frame.sizeArgs;
     }
 
     @Override
     public void visit(AbsFunDef acceptor) {
-        FrmFrame previusFrame = currFrame;
-        currFrame = new FrmFrame(acceptor, level);
+        frames.push(new FrmFrame(acceptor, level));
         level++;
 
         for (int i = 0; i < acceptor.numPars(); i++) {
             acceptor.par(i).accept(this);
         }
-        acceptor.type.accept(this);
+        //acceptor.type.accept(this);
         acceptor.expr.accept(this);
 
-        FrmDesc.setFrame(acceptor, currFrame);
+        FrmDesc.setFrame(acceptor, frames.peek());
 
         level--;
-        currFrame = previusFrame;
+        frames.pop();
     }
 
     @Override
@@ -102,8 +105,8 @@ public class FrmEvaluator implements Visitor {
 
     @Override
     public void visit(AbsPar acceptor) {
-        acceptor.type.accept(this);
-        FrmDesc.setAccess(acceptor, new FrmParAccess(acceptor, currFrame));
+        //acceptor.type.accept(this);
+        FrmDesc.setAccess(acceptor, new FrmParAccess(acceptor, frames.peek()));
     }
 
     @Override
@@ -123,14 +126,14 @@ public class FrmEvaluator implements Visitor {
 
     @Override
     public void visit(AbsVarDef acceptor) {
-        if (level == 1){
+        if (level == 1) {
             FrmDesc.setAccess(acceptor, new FrmVarAccess(acceptor));
         } else {
-            FrmDesc.setAccess(acceptor, new FrmLocAccess(acceptor, currFrame));
-            currFrame.locVars.add((FrmLocAccess) FrmDesc.getAccess(acceptor));
+            FrmDesc.setAccess(acceptor, new FrmLocAccess(acceptor, frames.peek()));
+            frames.peek().locVars.add((FrmLocAccess) FrmDesc.getAccess(acceptor));
         }
 
-        acceptor.type.accept(this);
+        //acceptor.type.accept(this);
     }
 
     @Override
