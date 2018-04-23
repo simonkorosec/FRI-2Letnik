@@ -9,7 +9,7 @@ import java.util.TreeSet;
  *
  */
 public class PatriciaSet {
-	PatriciaSetNode root;
+	private PatriciaSetNode root;
 	
 	PatriciaSet() {
 		this.root = new PatriciaSetNode("", false);
@@ -25,10 +25,12 @@ public class PatriciaSet {
 	 */
 	public boolean insert(String key) {
 		throw new UnsupportedOperationException("You need to implement this function!");
+
+        //return root.ad
 	}
 	
 	/**
-	 * Inserts the given key from PATRICIA tree. Returns false, if a key didn't
+	 * Removes the given key from PATRICIA tree. Returns false, if a key didn't
 	 * exist or wasn't a terminal node; otherwise true.
 	 */
 	public boolean remove(String key) {

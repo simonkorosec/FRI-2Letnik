@@ -206,6 +206,8 @@ public class TypeChecker implements Visitor {
         SemType expectedType = ((SemFunType) SymbDesc.getType(acceptor)).resultType;
         SemType actualType = SymbDesc.getType(acceptor.expr);
 
+        //System.out.printf("Name: %s \nExpected: %s\nActual: %s\n", acceptor.name, expectedType.actualType(), actualType.actualType());
+
         if (!expectedType.sameStructureAs(actualType)) {
             Report.error(acceptor.expr.position, "Expected " + expectedType.actualType() + ", found " + actualType.actualType() + ".");
         }

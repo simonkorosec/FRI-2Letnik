@@ -8,25 +8,18 @@ import compiler.seman.type.SemFunType;
 import java.util.Stack;
 
 public class FrmEvaluator implements Visitor {
-    // TODO
 
     private static int level = 1;
     private static Stack<FrmFrame> frames = new Stack<>();
 
     @Override
-    public void visit(AbsArrType acceptor) {
-        //acceptor.type.accept(this);
-    }
+    public void visit(AbsArrType acceptor) {}
 
     @Override
-    public void visit(AbsAtomConst acceptor) {
-        // Pass
-    }
+    public void visit(AbsAtomConst acceptor) {}
 
     @Override
-    public void visit(AbsAtomType acceptor) {
-        // Pass
-    }
+    public void visit(AbsAtomType acceptor) {}
 
     @Override
     public void visit(AbsBinExpr acceptor) {
@@ -39,7 +32,6 @@ public class FrmEvaluator implements Visitor {
         for (int i = 0; i < acceptor.numDefs(); i++) {
             acceptor.def(i).accept(this);
         }
-
     }
 
     @Override
@@ -51,7 +43,6 @@ public class FrmEvaluator implements Visitor {
 
     @Override
     public void visit(AbsFor acceptor) {
-        //acceptor.count.accept(this);
         acceptor.lo.accept(this);
         acceptor.hi.accept(this);
         acceptor.step.accept(this);
@@ -80,7 +71,6 @@ public class FrmEvaluator implements Visitor {
         for (int i = 0; i < acceptor.numPars(); i++) {
             acceptor.par(i).accept(this);
         }
-        //acceptor.type.accept(this);
         acceptor.expr.accept(this);
 
         FrmDesc.setFrame(acceptor, frames.peek());
@@ -104,19 +94,14 @@ public class FrmEvaluator implements Visitor {
 
     @Override
     public void visit(AbsPar acceptor) {
-        //acceptor.type.accept(this);
         FrmDesc.setAccess(acceptor, new FrmParAccess(acceptor, frames.peek()));
     }
 
     @Override
-    public void visit(AbsTypeDef acceptor) {
-        acceptor.type.accept(this);
-    }
+    public void visit(AbsTypeDef acceptor) {}
 
     @Override
-    public void visit(AbsTypeName acceptor) {
-        // Pass
-    }
+    public void visit(AbsTypeName acceptor) {}
 
     @Override
     public void visit(AbsUnExpr acceptor) {
@@ -131,14 +116,10 @@ public class FrmEvaluator implements Visitor {
             FrmDesc.setAccess(acceptor, new FrmLocAccess(acceptor, frames.peek()));
             frames.peek().locVars.add((FrmLocAccess) FrmDesc.getAccess(acceptor));
         }
-
-        //acceptor.type.accept(this);
     }
 
     @Override
-    public void visit(AbsVarName acceptor) {
-        // Pass
-    }
+    public void visit(AbsVarName acceptor) {}
 
     @Override
     public void visit(AbsWhere acceptor) {
