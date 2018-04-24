@@ -11,7 +11,7 @@
 require_once("UserDB.php");
 $first = $_POST["first"];
 $last = $_POST["last"];
-UserDB::save_to_db($first, $last);
+UsersDB::save_to_db($first, $last);
 
 ?>
 

@@ -44,7 +44,7 @@
         require_once("UserDB.php");
 
         $query = ["number" => $_GET["number"] ?? "", "first" => $_GET["first"] ?? "", "last" => $_GET["last"] ?? ""];
-        $hits = UserDB::read_from_db($query);
+        $hits = UsersDB::read_from_db($query);
 
         foreach ($hits as $hit):
             ?>
