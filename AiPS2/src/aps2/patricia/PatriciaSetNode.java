@@ -72,7 +72,6 @@ public class PatriciaSetNode {
      * a child was removed; otherwise false.
      */
     public boolean removeChild(char c) {
-        //throw new UnsupportedOperationException("You need to implement this function!");
         if (firstChild == null){
             return false;
         } else if (firstChild.label.charAt(0) == c){
@@ -117,7 +116,7 @@ public class PatriciaSetNode {
      * Returns the number of children.
      */
     public int countChildren() {
-        return firstChild.countSiblings();
+        return (firstChild == null) ? 0 : firstChild.countSiblings();
     }
 
     private int countSiblings() {
@@ -146,5 +145,12 @@ public class PatriciaSetNode {
 
     public void setParent(PatriciaSetNode parent) {
         this.parent = parent;
+    }
+
+    public void setParentAll(PatriciaSetNode parent){
+        this.parent = parent;
+        if (nextSibling != null){
+            nextSibling.setParentAll(parent);
+        }
     }
 }

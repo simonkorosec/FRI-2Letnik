@@ -11,5 +11,15 @@
       <user-name>root</user-name>
       <introspection-schemas>*:bookstore</introspection-schemas>
     </data-source>
+    <data-source name="mountains@localhost" uuid="1439b60a-b9d3-4115-be11-c0fe266d27e3">
+      <database-info product="MySQL" version="10.1.31-MariaDB" jdbc-version="4.2" driver-name="MariaDB connector/J" driver-version="2.2.1">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:mountains</introspection-schemas>
+    </data-source>
   </component>
 </project>

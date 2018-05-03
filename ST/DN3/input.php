@@ -1,3 +1,9 @@
+<?php
+session_start();
+include_once "php/MountainDB.php";
+include_once "php/newmountain.php";
+?>
+
 <!DOCTYPE html>
 <html lang="sl">
 
@@ -9,31 +15,46 @@
 
 <?php include_once "navigation.php"; ?>
 
-
 <article>
     <div class="pageTitleDiv">
         <h1 class="pageTitle">Vnos nove gore</h1>
     </div>
+
+    <?php include_once "php/errors.php"; ?>
+
+    <?php
+    if (isset($mountainInserted) && $mountainInserted === true):
+        ?>
+
+        <div class="success">
+            <h2>Mountain successfully inserted.</h2>
+        </div>
+
+    <?php endif; ?>
+
     <div class="container">
-        <form class="inputForm" id="newInputForm">
+        <form class="inputForm" id="newInputForm" action="input.php" method="post">
             <fieldset>
                 <label>
                     <select name="mountainRangeId" id="mountainRangeId" class="select" required tabindex="1">
-                        <option value="" disabled selected hidden>Izberite Gorovje</option>
-                        <option value="1">Goriško, Notranjsko in Snežniško hribovje</option>
-                        <option value="2">Julijske Alpe</option>
-                        <option value="3">Kamniško Savinjske Alpe</option>
-                        <option value="4">Karavanke</option>
-                        <option value="5">Pohorje in ostala severovzhodna Slovenija</option>
-                        <option value="6">Polhograjsko hribovje in Ljubljana</option>
-                        <option value="7">Škofjeloško, Cerkljansko hribovje in Jelovica</option>
-                        <option value="8">Zasavsko - Posavsko hribovje in Dolenjska</option>
+                        <option value="0" disabled selected hidden>Izberite Gorovje</option>
+
+                        <?php
+                        foreach (MountainDB::getRanges() as $range):
+                            $id = $range["id"];
+                            $name = $range["name"];
+                            ?>
+                            <option value="<?= $id ?>"><?= $name ?></option>
+                        <?php
+                        endforeach;
+                        ?>
+
                     </select>
                 </label>
             </fieldset>
             <fieldset>
                 <input placeholder="Ime Gore" type="text" tabindex="2" required name="mountainName" id="mountainName"
-                       pattern="[\-A-Za-z čšžČŠŽđĐ]+">
+                       pattern="[\-A-Za-z čšžČŠŽđĐ]+" maxlength="150">
             </fieldset>
             <fieldset>
                 <input placeholder="Višina Gore (v metrih)" type="text" tabindex="3" required name="mountainHeight"
@@ -46,11 +67,13 @@
             </fieldset>
             <fieldset>
                 <textarea placeholder="Tukaj vpišite opis gore..." name="description" id="hillDescription"
-                          tabindex="5" maxlength="500" required></textarea>
+                          tabindex="5" required></textarea>
             </fieldset>
 
             <fieldset>
-                <button name="submit" type="submit" class="searchBtn" tabindex="6" onclick="inputNewMountain()">Vnos Nove Gore</button>
+                <button name="submit" type="submit" class="searchBtn" tabindex="6">Vnos
+                    Nove Gore
+                </button>
             </fieldset>
         </form>
     </div>

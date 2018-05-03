@@ -24,10 +24,58 @@ public class PatriciaSet {
 	 * already exists in the tree; otherwise true.
 	 */
 	public boolean insert(String key) {
-		throw new UnsupportedOperationException("You need to implement this function!");
+        PatriciaSetNode node = root;
+        PatriciaSetNode current = null;
 
-        //return root.ad
-	}
+        for (int i = 0; i < key.length(); i++) {
+            String label = key.substring(i);
+            current = node.getChild(key.charAt(i));
+            if (current == null){
+                node.addChild(new PatriciaSetNode(label,true));
+                return true;
+            }
+            int j;
+            String nodeLabel = current.getLabel();
+            for (j = 0; j < nodeLabel.length() && j <label.length(); j++) {
+                if (label.charAt(j) == nodeLabel.charAt(j)){
+                    i++;
+                } else {
+                    break;
+                }
+            }
+
+            if (i == key.length() && label.length() == j){
+                return false;
+            }
+
+            if (j == nodeLabel.length() && j == label.length()){
+                return false;
+            } else if (j == nodeLabel.length()){
+                i--;
+                node = current;
+            } else {
+                PatriciaSetNode insertPrev = new PatriciaSetNode(nodeLabel.substring(j), current.isTerminal());
+                current.setLabel(nodeLabel.substring(0, j));
+                current.setTerminal(false);
+                insertPrev.firstChild = current.firstChild;
+                if (current.firstChild != null){
+                    current.firstChild.setParentAll(insertPrev);
+                }
+                current.firstChild = insertPrev;
+
+                if (j == label.length()){
+                    current.setTerminal(true);
+                    return true;
+                } else {
+                    PatriciaSetNode insertNext = new PatriciaSetNode(label.substring(j), true);
+                    current.addChild(insertNext);
+                    return true;
+                }
+            }
+        }
+
+        return true;
+    }
 	
 	/**
 	 * Removes the given key from PATRICIA tree. Returns false, if a key didn't
@@ -42,7 +90,29 @@ public class PatriciaSet {
 	 * node; otherwise false.
 	 */
 	public boolean contains(String key) {
-		throw new UnsupportedOperationException("You need to implement this function!");
+		//throw new UnsupportedOperationException("You need to implement this function!");
+		PatriciaSetNode node = root;
+        String l = "";
+
+        for (int i = 0; i < key.length(); i++) {
+            char c = key.charAt(i);
+            node = node.getChild(c);
+            if (node == null){
+                return false;
+            }
+            String label = node.getLabel();
+            l += label;
+
+            for (int j = 0; j < label.length(); j++) {
+                if (c == label.charAt(j) && ++i < key.length()){
+                    c = key.charAt(i);
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        return node.isTerminal();
 	}
 	
 	/**

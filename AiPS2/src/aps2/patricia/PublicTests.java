@@ -18,11 +18,11 @@ public class PublicTests extends TestCase {
 		PatriciaSetNode def = new PatriciaSetNode("DEF", true);
 		PatriciaSetNode ghi = new PatriciaSetNode("GHI", true);
 		PatriciaSetNode abc2 = new PatriciaSetNode("ABC2", true);
-		
-		assertEquals(true, root.addChild(ghi));
-		assertEquals(true, root.addChild(abc));
-		assertEquals(true, root.addChild(def));
-		assertEquals(false, root.addChild(abc2)); // child in direction of A already exists!
+
+		assertTrue(root.addChild(ghi));
+		assertTrue(root.addChild(abc));
+		assertTrue(root.addChild(def));
+		assertFalse(root.addChild(abc2)); // child in direction of A already exists!
 		
 		assertEquals(3, root.countChildren());
 		
@@ -37,18 +37,18 @@ public class PublicTests extends TestCase {
 		assertEquals(root, abc.getParent());
 		assertEquals(root, def.getParent());
 		assertEquals(root, ghi.getParent());
-		
-		assertEquals(true, root.removeChild('G'));
-		assertEquals(false, root.removeChild('H')); // child in direction of H doesn't exist!
+
+		assertTrue(root.removeChild('G'));
+		assertFalse(root.removeChild('H')); // child in direction of H doesn't exist!
 	}
 	
 	public void testPatriciaSetInsertion() throws Exception { 
 		PatriciaSet p = new PatriciaSet();
-		assertEquals(true, p.insert("TEST"));
-		assertEquals(true, p.insert("TEST2"));
-		assertEquals(true, p.insert("TEMPO"));
-		assertEquals(true, p.insert("TAMPO"));
-		assertEquals(false, p.insert("TEST")); // duplicate
+		assertTrue(p.insert("TEST"));
+		assertTrue(p.insert("TEST2"));
+		assertTrue(p.insert("TEMPO"));
+		assertTrue(p.insert("TAMPO"));
+		assertFalse(p.insert("TEST")); // duplicate
 		
 		assertEquals("T", p.getRoot().firstChild.getLabel());
 		assertEquals("AMPO", p.getRoot().firstChild.firstChild.getLabel());
@@ -64,24 +64,24 @@ public class PublicTests extends TestCase {
 		p.insert("TAMPO");
 		p.insert("TARPO");
 		p.insert("TE");
-		
-		assertEquals(true, p.contains("TEST"));
-		assertEquals(false, p.contains("TES"));
-		assertEquals(true, p.contains("TE"));
-		assertEquals(false, p.contains("TEST3"));
-		assertEquals(false, p.contains("TESR"));
-		assertEquals(false, p.contains("TAR"));
+
+		assertTrue(p.contains("TEST"));
+		assertFalse(p.contains("TES"));
+		assertTrue(p.contains("TE"));
+		assertFalse(p.contains("TEST3"));
+		assertFalse(p.contains("TESR"));
+		assertFalse(p.contains("TAR"));
 	}
 	
 	public void testPatriciaInsertAllSuffixes() throws Exception {
 		String text = "ABRACADABRA";
 		PatriciaSet p = new PatriciaSet();
 		for (int i=0; i<text.length(); i++) {
-			assertEquals(true, p.insert(text.substring(i)));
+            assertTrue(p.insert(text.substring(i)));
 		}
 		
 		for (int i=0; i<text.length(); i++) {
-			assertEquals(true, p.contains(text.substring(i)));
+            assertTrue(p.contains(text.substring(i)));
 		}
 	}
 }

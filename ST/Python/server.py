@@ -1,5 +1,3 @@
-# coding=utf-8
-
 """An example of a simple HTTP server."""
 from __future__ import print_function
 

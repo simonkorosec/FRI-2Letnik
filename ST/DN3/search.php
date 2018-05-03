@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+
+
 <!DOCTYPE html>
 <html lang="sl">
 
@@ -8,8 +11,6 @@
 <title>Hribi</title>
 
 <?php include_once "navigation.php"; ?>
-
-
 
 <article>
     <div class="pageTitleDiv">

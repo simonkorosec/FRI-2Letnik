@@ -104,6 +104,7 @@ footer {
 }
 
 .inputForm input[type="text"],
+.inputForm input[type="password"],
 .inputForm button[type="submit"],
 .inputForm button[type="button"],
 .inputForm textarea,
@@ -113,6 +114,7 @@ footer {
 }
 
 .inputForm input[type="text"],
+.inputForm input[type="password"],
 .inputForm textarea,
 .inputForm select {
     width: 100%;
@@ -248,6 +250,7 @@ select option {
     text-align: left;
 }
 
+
 /* Bigger screens */
 @media only screen and (min-width: 600px) {
     body {
@@ -282,6 +285,10 @@ select option {
     /* Hide the link that should open and close the navBar */
     .navBar a.icon {
         display: none;
+    }
+
+    .login {
+        float: right !important;
     }
 
 }
