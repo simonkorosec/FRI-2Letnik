@@ -2,7 +2,6 @@ package aps2.viterbi;
 
 import aps2.viterbi.Viterbi;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
@@ -15,10 +14,10 @@ import junit.framework.TestCase;
  */
 
 public class PublicTests extends TestCase {
-    protected void setUp() throws Exception {
+    protected void setUp() {
     }
 
-    public void testInitialMemoizationState() throws Exception {
+    public void testInitialMemoizationState() {
         double[][] probabilities = {{1.0, 0.0, 1.0, 0.0}};
 
         Viterbi v = new Viterbi(probabilities);
@@ -28,7 +27,7 @@ public class PublicTests extends TestCase {
         assertEquals(-1, v.getMemoizationHistoryMatrix()[0][0]);
     }
 
-    public void testMemoizationMatrixSmall() throws Exception {
+    public void testMemoizationMatrixSmall() {
         double[][] probabilities = {{0.2, 0.8, 1.0, 0.0}};
 
         Viterbi v = new Viterbi(probabilities);
@@ -43,7 +42,7 @@ public class PublicTests extends TestCase {
         assertTrue(Arrays.equals(memoizationHistoryMatrix[1], v.getMemoizationHistoryMatrix()[1]));
     }
 
-    public void testOptimalPathSmall() throws Exception {
+    public void testOptimalPathSmall() {
         double[][] probabilities = {{0.2, 0.8, 1.0, 0.0}};
         Integer[] optimalPath = {1, 0};
         LinkedList<Integer> optPath = new LinkedList(Arrays.asList(optimalPath));

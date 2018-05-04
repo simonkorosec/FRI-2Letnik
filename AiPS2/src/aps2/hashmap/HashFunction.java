@@ -1,10 +1,7 @@
 package aps2.hashmap;
 
-import static java.lang.Math.floor;
-import static java.lang.Math.sqrt;
-
 public class HashFunction {
-    public static enum HashingMethod {
+    public enum HashingMethod {
         DivisionMethod,
         KnuthMethod
     }

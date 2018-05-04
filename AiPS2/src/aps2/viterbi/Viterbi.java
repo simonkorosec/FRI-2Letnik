@@ -1,6 +1,5 @@
 package aps2.viterbi;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,11 +8,11 @@ import java.util.List;
  */
 public class Viterbi {
 
-    public double probability[][];
-    int n; // number of states
-    int m; // number of nodes per state
+    public final double[][] probability;
+    final int n; // number of states
+    final int m; // number of nodes per state
 
-    private LinkedList<Node> optPath;
+    private final LinkedList<Node> optPath;
 
     /**
      * @param probability Matrix of transition probabilities between consecutive
@@ -172,8 +171,8 @@ public class Viterbi {
     }
 
     private class Node {
-        int index;
-        double probability;
+        final int index;
+        final double probability;
 
         public Node(int index, double probability) {
             this.index = index;

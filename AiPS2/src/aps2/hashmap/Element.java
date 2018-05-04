@@ -1,8 +1,8 @@
 package aps2.hashmap;
 
 public class Element {
-	public int key;
-	public String value;
+	public final int key;
+	public final String value;
 		
 	Element(int key, String value) {
 		this.key = key;

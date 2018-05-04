@@ -1,19 +1,16 @@
 package aps2.hashmap;
 
-import org.junit.Test;
-import org.omg.PortableInterceptor.INACTIVE;
-
 /**
  * Hash map with open addressing.
  */
 public class HashMapOpenAddressing {
-    private Element table[]; // table content, if element is not present, use Integer.MIN_VALUE for Element's key
-    private boolean pomozna[];
-    private aps2.hashmap.HashFunction.HashingMethod h;
-    private CollisionProbeSequence c;
-    private int m;
+    private final Element[] table; // table content, if element is not present, use Integer.MIN_VALUE for Element's key
+    private final boolean[] pomozna;
+    private final aps2.hashmap.HashFunction.HashingMethod h;
+    private final CollisionProbeSequence c;
+    private final int m;
 
-    public static enum CollisionProbeSequence {
+    public enum CollisionProbeSequence {
         LinearProbing,    // new h(k) = (h(k) + i) mod m
         QuadraticProbing, // new h(k) = (h(k) + i^2) mod m
         DoubleHashing     // new h(k) = (h(k) + i*h(k)) mod m

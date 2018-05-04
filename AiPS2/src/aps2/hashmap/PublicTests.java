@@ -1,11 +1,12 @@
 package aps2.hashmap;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import junit.framework.TestCase;
 
 public class PublicTests extends TestCase {
-	protected void setUp() throws Exception {
+	protected void setUp() {
 	}
 
 	public void testHashFunctionDivisionMethod() {
@@ -26,10 +27,10 @@ public class PublicTests extends TestCase {
 		hm.add(10000, "Zagreb");
 		
 		LinkedList<Element> table[] = hm.getTable();
-		assertEquals(Arrays.asList(new Element(6000, "Koper")), table[0]);
-		assertEquals(Arrays.asList(), table[1]);
-		assertEquals(Arrays.asList(new Element(8000, "Novo mesto")), table[2]);
-		assertEquals(Arrays.asList(), table[3]);
+		assertEquals(Collections.singletonList(new Element(6000, "Koper")), table[0]);
+		assertEquals(Collections.emptyList(), table[1]);
+		assertEquals(Collections.singletonList(new Element(8000, "Novo mesto")), table[2]);
+		assertEquals(Collections.emptyList(), table[3]);
 		assertEquals(Arrays.asList(new Element(4000, "Kranj"), new Element(10000, "Zagreb")), table[4]);
 	}
 	

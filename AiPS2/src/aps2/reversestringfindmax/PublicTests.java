@@ -11,7 +11,7 @@ import junit.framework.TestCase;
 public class PublicTests extends TestCase {
 	ReverseStringFindMax naloga;
 
-	protected void setUp() throws Exception {
+	protected void setUp() {
 		naloga = new ReverseStringFindMax();
 	}
 	
@@ -24,7 +24,7 @@ public class PublicTests extends TestCase {
 	}
 	
 	public void testReverseStringNull() {
-		assertEquals(null, naloga.reverseString(null));
+		assertNull(naloga.reverseString(null));
 	}
 
 	public void testFindMax() {

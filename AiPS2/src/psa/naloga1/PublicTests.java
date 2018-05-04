@@ -9,7 +9,7 @@ import junit.framework.TestCase;
 public class PublicTests extends TestCase {
     private BSTSet bst;
 
-    protected void setUp() throws Exception {
+    protected void setUp() {
         bst = new BSTSet();
 
     }
@@ -69,8 +69,8 @@ public class PublicTests extends TestCase {
     // additional tests
     private BSTSet createTestData() {
         List<Integer> numbers = new ArrayList<>(Arrays.asList(35,25,40,20,45));
-        for (int i = 0; i < numbers.size(); i++) {
-            bst.add(numbers.get(i));
+        for (Integer number : numbers) {
+            bst.add(number);
         }
         return bst;
     }

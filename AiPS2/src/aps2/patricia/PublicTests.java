@@ -12,10 +12,10 @@ import java.util.Set;
  */
 
 public class PublicTests extends TestCase {
-	protected void setUp() throws Exception {
+	protected void setUp() {
 	}
 	
-	public void testPatriciaSetNode() throws Exception {
+	public void testPatriciaSetNode() {
 		PatriciaSetNode root = new PatriciaSetNode("", false);
 		PatriciaSetNode abc = new PatriciaSetNode("ABC", true);
 		PatriciaSetNode def = new PatriciaSetNode("DEF", true);
@@ -45,7 +45,7 @@ public class PublicTests extends TestCase {
 		assertFalse(root.removeChild('H')); // child in direction of H doesn't exist!
 	}
 	
-	public void testPatriciaSetInsertion() throws Exception { 
+	public void testPatriciaSetInsertion() {
 		PatriciaSet p = new PatriciaSet();
 		assertTrue(p.insert("TEST"));
 		assertTrue(p.insert("TEST2"));
@@ -59,7 +59,7 @@ public class PublicTests extends TestCase {
 		assertEquals("MPO", p.getRoot().firstChild.firstChild.nextSibling.firstChild.getLabel());
 	}
 	
-	public void testPatriciaSetFind() throws Exception { 
+	public void testPatriciaSetFind() {
 		PatriciaSet p = new PatriciaSet();
 		assertTrue(p.insert("TEST"));
 		assertTrue(p.insert("TEST2"));
@@ -76,7 +76,7 @@ public class PublicTests extends TestCase {
 		assertFalse(p.contains("TAR"));
 	}
 	
-	public void testPatriciaInsertAllSuffixes() throws Exception {
+	public void testPatriciaInsertAllSuffixes() {
 		String text = "ABRACADABRA";
 		PatriciaSet p = new PatriciaSet();
 		for (int i=0; i<text.length(); i++) {
@@ -88,7 +88,7 @@ public class PublicTests extends TestCase {
 		}
 	}
 
-	public void testPatriciaPrefix() throws Exception {
+	public void testPatriciaPrefix() {
 		String text = "ABRACADABRA";
 		PatriciaSet p = new PatriciaSet();
 		for (int i=0; i<text.length(); i++) {
@@ -98,7 +98,7 @@ public class PublicTests extends TestCase {
 		assertEquals("ACADA", p.longestPrefixOf("ACADAZAA"));
 	}
 
-    public void testPatriciaKeysPrefix() throws Exception {
+    public void testPatriciaKeysPrefix() {
         PatriciaSet p = new PatriciaSet();
 
         assertTrue(p.insert("TEST"));
@@ -111,5 +111,31 @@ public class PublicTests extends TestCase {
 
         assertEquals(s, p.keysWithPrefix("TE"));
     }
+
+	public void testPatriciaSetRemove() {
+		PatriciaSet p = new PatriciaSet();
+		assertTrue(p.insert("TEST"));
+		assertTrue(p.insert("TEST2"));
+		assertTrue(p.insert("TEMPO"));
+		assertTrue(p.insert("TAMPO"));
+
+        assertTrue(p.remove("TAMPO"));
+        assertFalse(p.remove("TAMPO"));
+
+        assertEquals("TE", p.getRoot().firstChild.getLabel());
+        assertEquals("MPO", p.getRoot().firstChild.firstChild.getLabel());
+        assertEquals("ST", p.getRoot().firstChild.firstChild.nextSibling.getLabel());
+        assertEquals("2", p.getRoot().firstChild.firstChild.nextSibling.firstChild.getLabel());
+	}
+
+    public void testPatriciaSetInsertion2() {
+        PatriciaSet p = new PatriciaSet();
+        assertTrue(p.insert("TEST"));
+        assertTrue(p.insert("APS"));
+
+        assertEquals("APS", p.getRoot().firstChild.getLabel());
+        assertEquals("TEST", p.getRoot().firstChild.nextSibling.getLabel());
+    }
+
 
 }

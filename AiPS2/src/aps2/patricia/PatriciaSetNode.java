@@ -1,7 +1,6 @@
 package aps2.patricia;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * @author matevz
@@ -53,6 +52,14 @@ public class PatriciaSetNode {
         }
     }
 
+
+    /**
+     * Adds a node as a sibling to current node
+     *
+     * @param prevNode  The previus node
+     * @param node      The node that will be added
+     * @return          true if inserted, false otherwise
+     */
     private boolean addSibling(PatriciaSetNode prevNode, PatriciaSetNode node) {
         if (label.charAt(0) == node.label.charAt(0)) {
             return false;
@@ -86,6 +93,13 @@ public class PatriciaSetNode {
 
     }
 
+    /**
+     * Removes sibling with given character
+     *
+     * @param prevNode  The previus node
+     * @param c         The charater by which we delete the node
+     * @return          true if removed, false otherwise
+     */
     private boolean removeSibling(PatriciaSetNode prevNode, char c) {
         if (label.charAt(0) == c){
             prevNode.nextSibling = this.nextSibling;
@@ -105,6 +119,12 @@ public class PatriciaSetNode {
         return (firstChild == null) ? null : firstChild.getSibling(c);
     }
 
+    /**
+     * Finds sibling by firt character
+     *
+     * @param c The chraracter that we search by
+     * @return  PatriciaSetNode which label starts with c or null if not found
+     */
     private PatriciaSetNode getSibling(char c) {
         if (label.charAt(0) == c) {
             return this;
@@ -122,6 +142,11 @@ public class PatriciaSetNode {
         return (firstChild == null) ? 0 : firstChild.countSiblings();
     }
 
+    /**
+     * Count the number of siblings
+     *
+     * @return Number of siblings
+     */
     private int countSiblings() {
         return (nextSibling == null) ? 1 : 1 + nextSibling.countSiblings();
     }
@@ -157,7 +182,12 @@ public class PatriciaSetNode {
         }
     }
 
-    public String[] getKeys() {
+    /**
+     * All terminal nodes labels
+     *
+     * @return terminal nodes keyes
+     */
+    public ArrayList<String> getKeys() {
         ArrayList<String> keys = new ArrayList<>();
         keys.add(label);
         PatriciaSetNode node = firstChild;
@@ -169,6 +199,6 @@ public class PatriciaSetNode {
             node = node.nextSibling;
         }
 
-        return keys.toArray(new String[0]);
+        return keys;
     }
 }

@@ -1,7 +1,5 @@
 package aps2.patricia;
 
-import java.util.HashSet;
-import java.util.Stack;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -9,7 +7,7 @@ import java.util.TreeSet;
  * @author matevz
  */
 public class PatriciaSet {
-    private PatriciaSetNode root;
+    private final PatriciaSetNode root;
 
     PatriciaSet() {
         this.root = new PatriciaSetNode("", false);
@@ -33,8 +31,8 @@ public class PatriciaSet {
      */
     public boolean insert(String key) {
         PatriciaSetNode node = root;
-        PatriciaSetNode current = null;
-        String neki = "";
+        PatriciaSetNode current;
+        StringBuilder neki = new StringBuilder();
 
         for (int i = 0; i < key.length(); i++) {
             String label = key.substring(i);
@@ -45,7 +43,7 @@ public class PatriciaSet {
             }
             int j;
             String nodeLabel = current.getLabel();
-            neki += nodeLabel;
+            neki.append(nodeLabel);
             for (j = 0; j < nodeLabel.length() && j < label.length(); j++) {
                 if (label.charAt(j) == nodeLabel.charAt(j)) {
                     i++;
@@ -54,10 +52,10 @@ public class PatriciaSet {
                 }
             }
 
-            if (neki.equals(key) && !current.isTerminal()) {
+            if (neki.toString().equals(key) && !current.isTerminal()) {
                 current.setTerminal(true);
                 return true;
-            } else if (neki.equals(key) && current.isTerminal()) {
+            } else if (neki.toString().equals(key) && current.isTerminal()) {
                 return false;
             }
 
@@ -95,17 +93,8 @@ public class PatriciaSet {
      * exist or wasn't a terminal node; otherwise true.
      */
     public boolean remove(String key) {
-        throw new UnsupportedOperationException("You need to implement this function!");
-    }
-
-    /**
-     * Returns true, if the given key exists in PATRICIA tree and is a terminal
-     * node; otherwise false.
-     */
-    public boolean contains(String key) {
-        //throw new UnsupportedOperationException("You need to implement this function!");
         PatriciaSetNode node = root;
-        String l = "";
+        StringBuilder l = new StringBuilder();
 
         for (int i = 0; i < key.length(); ) {
             node = node.getChild(key.charAt(i));
@@ -114,7 +103,6 @@ public class PatriciaSet {
             }
 
             String nodeLabel = node.getLabel();
-
             for (int j = 0; j < nodeLabel.length(); j++) {
                 if (i < key.length() && key.charAt(i) == nodeLabel.charAt(j)) {
                     i++;
@@ -122,10 +110,58 @@ public class PatriciaSet {
                     return false;
                 }
             }
-            l += nodeLabel;
+            l.append(nodeLabel);
         }
 
-        return node.isTerminal() && l.equals(key);
+        if (!node.isTerminal() && l.toString().equals(key)) {
+            return false;
+        }
+
+
+        String label = node.getLabel();
+        node = node.getParent();
+        node.removeChild(label.charAt(0));
+
+        if (node.firstChild.nextSibling == null){
+            PatriciaSetNode child = node.firstChild;
+            label = node.getLabel() + child.getLabel();
+            node.setLabel(label);
+            node.setTerminal(child.isTerminal());
+            node.firstChild = child.firstChild;
+            if (child.firstChild != null) {
+                child.firstChild.setParentAll(node);
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Returns true, if the given key exists in PATRICIA tree and is a terminal
+     * node; otherwise false.
+     */
+    public boolean contains(String key) {
+        PatriciaSetNode node = root;
+        StringBuilder l = new StringBuilder();
+
+        for (int i = 0; i < key.length(); ) {
+            node = node.getChild(key.charAt(i));
+            if (node == null) {
+                return false;
+            }
+
+            String nodeLabel = node.getLabel();
+            for (int j = 0; j < nodeLabel.length(); j++) {
+                if (i < key.length() && key.charAt(i) == nodeLabel.charAt(j)) {
+                    i++;
+                } else {
+                    return false;
+                }
+            }
+            l.append(nodeLabel);
+        }
+
+        return node.isTerminal() && l.toString().equals(key);
     }
 
     /**
@@ -143,7 +179,6 @@ public class PatriciaSet {
             }
 
             String nodeLabel = node.getLabel();
-
             for (int j = 0; j < nodeLabel.length(); j++) {
                 if (i < s.length() && s.charAt(i) == nodeLabel.charAt(j)) {
                     i++;
@@ -163,7 +198,7 @@ public class PatriciaSet {
     public Set<String> keysWithPrefix(String s) {
         PatriciaSetNode node = root;
         StringBuilder prefix = new StringBuilder();
-        Set<String> keys = new HashSet<>();
+        Set<String> keys = new TreeSet<>();
 
         for (int i = 0; i < s.length(); ) {
             node = node.getChild(s.charAt(i));
@@ -172,7 +207,6 @@ public class PatriciaSet {
             }
 
             String nodeLabel = node.getLabel();
-
             for (int j = 0; j < nodeLabel.length(); j++) {
                 if (i < s.length() && s.charAt(i) == nodeLabel.charAt(j)) {
                     i++;
@@ -184,9 +218,7 @@ public class PatriciaSet {
             if (prefix.toString().length() + nodeLabel.length() < s.length()) {
                 prefix.append(nodeLabel);
             }
-
         }
-
 
         if (node != null) {
             for (String k : node.getKeys()) {
@@ -195,7 +227,6 @@ public class PatriciaSet {
         }
 
         return keys;
-
     }
 
     /**
