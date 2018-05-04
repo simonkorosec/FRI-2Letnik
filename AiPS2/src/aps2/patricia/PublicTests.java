@@ -2,6 +2,9 @@ package aps2.patricia;
 
 import junit.framework.TestCase;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * insert Public Tests to this class. Public tests are written by the Instructor
  * and may be used for grading projects. This source code is made available to
@@ -58,12 +61,12 @@ public class PublicTests extends TestCase {
 	
 	public void testPatriciaSetFind() throws Exception { 
 		PatriciaSet p = new PatriciaSet();
-		p.insert("TEST");
-		p.insert("TEST2");
-		p.insert("TEMPO");
-		p.insert("TAMPO");
-		p.insert("TARPO");
-		p.insert("TE");
+		assertTrue(p.insert("TEST"));
+		assertTrue(p.insert("TEST2"));
+		assertTrue(p.insert("TEMPO"));
+		assertTrue(p.insert("TAMPO"));
+		assertTrue(p.insert("TARPO"));
+		assertTrue(p.insert("TE"));
 
 		assertTrue(p.contains("TEST"));
 		assertFalse(p.contains("TES"));
@@ -84,4 +87,29 @@ public class PublicTests extends TestCase {
             assertTrue(p.contains(text.substring(i)));
 		}
 	}
+
+	public void testPatriciaPrefix() throws Exception {
+		String text = "ABRACADABRA";
+		PatriciaSet p = new PatriciaSet();
+		for (int i=0; i<text.length(); i++) {
+            assertTrue(p.insert(text.substring(i)));
+		}
+
+		assertEquals("ACADA", p.longestPrefixOf("ACADAZAA"));
+	}
+
+    public void testPatriciaKeysPrefix() throws Exception {
+        PatriciaSet p = new PatriciaSet();
+
+        assertTrue(p.insert("TEST"));
+        assertTrue(p.insert("TEST2"));
+        assertTrue(p.insert("TAMPO"));
+
+        Set<String> s = new HashSet<>();
+        s.add("TEST");
+        s.add("TEST2");
+
+        assertEquals(s, p.keysWithPrefix("TE"));
+    }
+
 }

@@ -1,5 +1,8 @@
 package aps2.patricia;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * @author matevz
  */
@@ -152,5 +155,20 @@ public class PatriciaSetNode {
         if (nextSibling != null){
             nextSibling.setParentAll(parent);
         }
+    }
+
+    public String[] getKeys() {
+        ArrayList<String> keys = new ArrayList<>();
+        keys.add(label);
+        PatriciaSetNode node = firstChild;
+
+        while (node != null){
+            for (String str : node.getKeys()){
+                keys.add(label + str);
+            }
+            node = node.nextSibling;
+        }
+
+        return keys.toArray(new String[0]);
     }
 }
