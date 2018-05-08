@@ -189,7 +189,9 @@ public class PatriciaSetNode {
      */
     public ArrayList<String> getKeys() {
         ArrayList<String> keys = new ArrayList<>();
-        keys.add(label);
+        if (terminal) {
+            keys.add(label);
+        }
         PatriciaSetNode node = firstChild;
 
         while (node != null){
@@ -201,4 +203,5 @@ public class PatriciaSetNode {
 
         return keys;
     }
+
 }

@@ -117,22 +117,31 @@ public class PatriciaSet {
             return false;
         }
 
+        if (node.countChildren() == 0) {
+            String label = node.getLabel();
+            node = node.getParent();
+            node.removeChild(label.charAt(0));
 
-        String label = node.getLabel();
-        node = node.getParent();
-        node.removeChild(label.charAt(0));
-
-        if (node.firstChild.nextSibling == null){
-            PatriciaSetNode child = node.firstChild;
-            label = node.getLabel() + child.getLabel();
-            node.setLabel(label);
-            node.setTerminal(child.isTerminal());
-            node.firstChild = child.firstChild;
-            if (child.firstChild != null) {
-                child.firstChild.setParentAll(node);
+            if (node.countChildren() == 1) {
+                PatriciaSetNode child = node.firstChild;
+                label = node.getLabel() + child.getLabel();
+                node.setLabel(label);
+                node.setTerminal(child.isTerminal());
+                node.firstChild = child.firstChild;
+                if (child.firstChild != null) {
+                    child.firstChild.setParentAll(node);
+                }
             }
-        }
+        } else if (node.countChildren() == 1) {
+            String label = node.getLabel();
+            label += node.firstChild.getLabel();
+            node.setLabel(label);
 
+            node.firstChild.setParentAll(node);
+            node.firstChild = node.firstChild.firstChild;
+        } else {
+            node.setTerminal(!node.isTerminal());
+        }
         return true;
     }
 
@@ -238,4 +247,5 @@ public class PatriciaSet {
     public PatriciaSetNode getLongestPrefixNode() {
         throw new UnsupportedOperationException("You need to implement this function!");
     }
+
 }
