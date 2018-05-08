@@ -18,15 +18,13 @@ public class ImcSEQ extends ImcStmt {
 	 * Ustvari zaporedje stavkov.
 	 */
 	public ImcSEQ() {
-		stmts = new LinkedList<ImcStmt>();
+		stmts = new LinkedList<>();
 	}
 
 	@Override
 	public void dump(int indent) {
 		Report.dump(indent, "SEQ");
-		Iterator<ImcStmt> stmts = this.stmts.iterator();
-		while (stmts.hasNext()) {
-			ImcStmt stmt = stmts.next();
+		for (ImcStmt stmt : this.stmts) {
 			stmt.dump(indent + 2);
 		}
 	}
@@ -34,9 +32,7 @@ public class ImcSEQ extends ImcStmt {
 	@Override
 	public ImcSEQ linear() {
 		ImcSEQ lin = new ImcSEQ();
-		Iterator<ImcStmt> stmts = this.stmts.iterator();
-		while (stmts.hasNext()) {
-			ImcStmt stmt = stmts.next();
+		for (ImcStmt stmt : this.stmts) {
 			ImcSEQ linStmt = stmt.linear();
 			lin.stmts.addAll(linStmt.stmts);
 		}
