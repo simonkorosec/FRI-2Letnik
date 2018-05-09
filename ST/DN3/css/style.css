@@ -53,7 +53,7 @@ footer {
     font-size: large;
 }
 
-#about strong{
+#about strong {
     font-weight: bold;
 }
 
@@ -92,6 +92,20 @@ footer {
 
 #dtTable .tdDetName {
     font-weight: bold;
+}
+
+/************* ERROR BOX *************/
+
+.error {
+    font: bold 1.5rem 'Roboto', Helvetica, Arial, sans-serif;
+    color: black;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid #ef362c;
+    background: #FFF;
+    padding: 10px;
 }
 
 /************* SEARCH FORM *************/
@@ -250,7 +264,6 @@ select option {
     text-align: left;
 }
 
-
 /* Bigger screens */
 @media only screen and (min-width: 600px) {
     body {
@@ -258,7 +271,7 @@ select option {
         /*background-size: cover;*/
     }
 
-    .container {
+    .container, .error{
         max-width: 550px;
     }
 

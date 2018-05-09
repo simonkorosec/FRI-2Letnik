@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+session_start();
+include_once "php/MountainDB.php";
+?>
 
 
 <!DOCTYPE html>
@@ -11,6 +14,25 @@
 <title>Hribi</title>
 
 <?php include_once "navigation.php"; ?>
+
+<?php
+if (empty($_POST["range_id"])) {
+    unset($_POST["range_id"]);
+}
+if (empty($_POST["m_name"])) {
+    unset($_POST["m_name"]);
+}
+//var_dump($_POST);
+$args = (MountainDB::getMountainsQuery($_POST));
+$tmp = [];
+
+foreach ($args as $a){
+    array_push($tmp, $a);
+}
+
+$args = json_encode($tmp, JSON_HEX_TAG | JSON_HEX_AMP);
+//var_dump($args);
+?>
 
 <article>
     <div class="pageTitleDiv">
@@ -28,8 +50,9 @@
         crossorigin="anonymous"></script>
 <script src="js/script.js"></script>
 <script>
+
     document.addEventListener("DOMContentLoaded", () => {
-        displayMountains();
+        displayMountains(<?= $args ?>);
     });
 </script>
 

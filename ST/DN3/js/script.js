@@ -1,9 +1,9 @@
 "use strict";
 
 class Mountain {
-    constructor(range, name, height, walkTime, description) {
-        this.range = range;
-        this.name = name;
+    constructor(range_id, mountain_name, height, walkTime, description) {
+        this.range_id = range_id;
+        this.mountain_name = mountain_name;
         this.height = height;
         this.walkTime = walkTime;
         this.description = description;
@@ -33,12 +33,26 @@ let mountainRanges = {
     8: "Zasavsko - Posavsko hribovje in Dolenjska"
 };
 
-function readMountains() {
-    if (typeof(Storage) !== "undefined") {
-        mountains = JSON.parse(localStorage.getItem("mountains"));
-    } else {
-        alert("Sorry! No Web Storage support");
-    }
+function readMountains(args) {
+    // console.log(args);
+
+    // let xhttp = new XMLHttpRequest();
+    // xhttp.onreadystatechange = function () {
+    //     if (xhttp.readyState === 4 && xhttp.status === 200) {
+    //         const response = (xhttp.responseText);
+    //         console.log(response);
+    //     }
+    // };
+    //
+    // xhttp.open("POST", "php/getMountains.php", true);
+    // args = "args="+JSON.stringify(args);
+    // xhttp.send(args);
+
+
+    // for (let i = 0; i < args.length; i++) {
+    //     let
+    // }
+
 }
 
 function saveMountains() {
@@ -161,34 +175,29 @@ function inputNewMountain() {
     alert("Gora uspešno dodana.")
 }
 
-function displayMountains() {
+function displayMountains(args) {
     /* Sort by mountain range id */
-    readMountains();
-    if (mountains == null){
+    console.log(args);
+    //readMountains(args);
+
+    if (args == null) {
         return;
     }
-    mountains.sort((a, b) => a.range - b.range);
-
-    /* Read filter if exists */
-    const filter = readFilter();
+    args.sort((a, b) => a.range_id - b.range_id);
 
 
     const table = document.getElementById("tableList");
     let currRange = null;
 
-    for (let i = 0; i < mountains.length; i++) {
-        let mount = mountains[i];
+    for (let i = 0; i < args.length; i++) {
+        let mount = args[i];
 
-        if (filter !== null && fitsFilter(filter, mount) === false) {
-            continue;
-        }
-
-        if (currRange === null || currRange !== mount.range) {
+        if (currRange === null || currRange !== mount.range_id) {
             const row = table.insertRow(-1);
-            currRange = mount.range;
+            currRange = mount.range_id;
             row.classList.add("rangeName");
             const cell = row.insertCell(0);
-            cell.innerHTML = mountainRanges[currRange];
+            cell.innerHTML = mount.range_name;
 
         }
         const row = table.insertRow(-1);
@@ -199,10 +208,9 @@ function displayMountains() {
             row.classList.add("row2")
         }
         const cell = row.insertCell(0);
-        cell.setAttribute("data-json-data", JSON.stringify(mount));
-        cell.setAttribute("data-array-index", String(i));
+        cell.setAttribute("data-json-data", JSON.stringify(mount.id));
         cell.addEventListener("dblclick", saveMntDetails);
-        cell.innerHTML = mount.name;
+        cell.innerHTML = mount.mountain_name;
     }
     resetFilter();
     saveMountains();

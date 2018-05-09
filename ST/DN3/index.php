@@ -11,7 +11,6 @@
 
 <?php include_once "navigation.php"; ?>
 
-
 <article>
     <div class="pageTitleDiv">
         <h1 class="pageTitle">Domača Stran</h1>

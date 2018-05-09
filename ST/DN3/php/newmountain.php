@@ -16,11 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["submit"])) {
     $mountainHeight = $_POST["mountainHeight"];
     $mountainWalkTime = $_POST["mountainWalkTime"];
     $description = $_POST["description"];
-    /*
-        $retval = ereg("(\.)(com$)", $email_id);
-
-        if( $retval == true )
-        {*/
 
     if (!preg_match("/^[\-A-Za-z čšžČŠŽđĐ]+$/", $mountainName)) {
         array_push($errors, "Ime gore v napačnem formatu.");

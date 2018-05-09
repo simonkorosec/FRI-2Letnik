@@ -46,5 +46,4 @@ if (isset($_POST['reg_user'])) {
             array_push($errors, "Wrong password.");
         }
     }
-    # var_dump($errors);
 }
