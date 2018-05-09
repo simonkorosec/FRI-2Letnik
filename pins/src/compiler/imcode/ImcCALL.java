@@ -31,9 +31,7 @@ public class ImcCALL extends ImcExpr {
 	@Override
 	public void dump(int indent) {
 		Report.dump(indent, "CALL label=" + label.name());
-		Iterator<ImcExpr> args = this.args.iterator();
-		while (args.hasNext()) {
-			ImcExpr arg = args.next();
+		for (ImcExpr arg : this.args) {
 			arg.dump(indent + 2);
 		}
 	}
@@ -42,12 +40,11 @@ public class ImcCALL extends ImcExpr {
 	public ImcESEQ linear() {
 		ImcSEQ linStmt = new ImcSEQ();
 		ImcCALL linCall = new ImcCALL(label);
-		Iterator<ImcExpr> args = this.args.iterator();
-		while (args.hasNext()) {
+		for (ImcExpr arg1 : this.args) {
 			FrmTemp temp = new FrmTemp();
-			ImcExpr arg = args.next();
+			ImcExpr arg = arg1;
 			ImcESEQ linArg = arg.linear();
-			linStmt.stmts.addAll(((ImcSEQ)linArg.stmt).stmts);
+			linStmt.stmts.addAll(((ImcSEQ) linArg.stmt).stmts);
 			linStmt.stmts.add(new ImcMOVE(new ImcTEMP(temp), linArg.expr));
 			linCall.args.add(new ImcTEMP(temp));
 		}

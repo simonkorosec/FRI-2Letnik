@@ -73,8 +73,7 @@ public class ImcBINOP extends ImcExpr {
 		ImcSEQ stmt = new ImcSEQ();
 		stmt.stmts.addAll(((ImcSEQ)limc.stmt).stmts);
 		stmt.stmts.addAll(((ImcSEQ)rimc.stmt).stmts);
-		ImcESEQ lin = new ImcESEQ(stmt, new ImcBINOP(op, limc.expr, rimc.expr));
-		return lin;
+		return new ImcESEQ(stmt, new ImcBINOP(op, limc.expr, rimc.expr));
 	}
 
 }
