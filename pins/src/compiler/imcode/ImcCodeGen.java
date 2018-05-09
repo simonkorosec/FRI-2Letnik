@@ -18,6 +18,8 @@ public class ImcCodeGen implements Visitor {
         chunks = new LinkedList<>();
         frames = new Stack<>();
         imcCodeDesc = new HashMap<>();
+
+        frames.push(null);
     }
 
     @Override
@@ -51,7 +53,12 @@ public class ImcCodeGen implements Visitor {
         ImcExpr expr2 = (ImcExpr) imcCodeDesc.get(acceptor.expr2);
 
         if (acceptor.oper == AbsBinExpr.ASSIGN) {
-            imcCodeDesc.put(acceptor, new ImcMOVE(new ImcMEM(expr1), expr2));
+            ImcSEQ imcSEQ = new ImcSEQ();
+            imcSEQ.stmts.add(new ImcMOVE(expr1, expr2));
+            ImcTEMP temp = new ImcTEMP(new FrmTemp());
+            imcSEQ.stmts.add(new ImcMOVE(new ImcMEM(temp), expr1));
+
+            imcCodeDesc.put(acceptor, new ImcESEQ(imcSEQ, temp));
         } else if (acceptor.oper == AbsBinExpr.MOD) {
             ImcTEMP a = new ImcTEMP(new FrmTemp());
             ImcTEMP n = new ImcTEMP(new FrmTemp());
@@ -118,21 +125,19 @@ public class ImcCodeGen implements Visitor {
         ImcSEQ imcSEQ = new ImcSEQ();
         for (int i = 0; i < acceptor.numExprs(); i++) {
             acceptor.expr(i).accept(this);
-            ImcCode code = imcCodeDesc.get(acceptor.expr(i));
-            imcSEQ.stmts.add(code instanceof ImcStmt ? (ImcStmt) code : new ImcEXP((ImcExpr) code));
-
         }
 
-        imcCodeDesc.put(acceptor, imcSEQ);
+        for (int i = 0; i < acceptor.numExprs() - 1; i++) {
+            ImcCode code = imcCodeDesc.get(acceptor.expr(i));
+            imcSEQ.stmts.add(code instanceof ImcStmt ? (ImcStmt) code : new ImcEXP((ImcExpr) code));
+        }
 
-//        if (acceptor.numExprs() == 1){
-//            imcCodeDesc.put(acceptor, imcCodeDesc.get(acceptor.expr(0)));
-//        }
-
-//        for (int i = 0; i < acceptor.numExprs(); i++) {
-//            ImcCode code = imcCodeDesc.get(acceptor.expr(i));
-//            imcSEQ.stmts.add(code instanceof ImcStmt ? (ImcStmt)code : new ImcEXP((ImcExpr)code));
-//        }
+        if (imcCodeDesc.get(acceptor.expr(acceptor.numExprs() - 1)) instanceof ImcExpr) {
+            imcCodeDesc.put(acceptor, new ImcESEQ(imcSEQ, (ImcExpr) imcCodeDesc.get(acceptor.expr(acceptor.numExprs() - 1))));
+        } else {
+            imcSEQ.stmts.add((ImcStmt) imcCodeDesc.get(acceptor.expr(acceptor.numExprs() - 1)));
+            imcCodeDesc.put(acceptor, imcSEQ);
+        }
     }
 
     @Override
