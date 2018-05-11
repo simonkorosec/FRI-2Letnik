@@ -26,6 +26,9 @@ public class SeznamiUV {
         } else {
             return "Error: enter command";
         }
+        if (token.equalsIgnoreCase("exit")){
+            return "Have a nice day.";
+        }
         if (!token.equals("use") && (null == seznam)) {
             return "Error: please specify a data structure (use {pv|sk|bst|bk})";
         }
@@ -89,6 +92,9 @@ public class SeznamiUV {
                         s.append(aList).append(" ");
                     }
                     result = s.toString().trim();
+                    break;
+                case "print":
+                    seznam.print();
                     break;
                 default:
                     result = "Error: invalid command";

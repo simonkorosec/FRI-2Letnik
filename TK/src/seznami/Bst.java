@@ -72,7 +72,7 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
     }
 
     private ElementBST deleteMin(ElementBST node) {
-        if (node.left != null){
+        if (node.left != null) {
             return deleteMin(node.left);
         }
 
@@ -155,11 +155,11 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
 
     private List<Tip> inorder(ElementBST node) {
         List<Tip> list = new ArrayList<>();
-        if (node.left != null){
+        if (node.left != null) {
             list.addAll(inorder(node.left));
         }
         list.add(node.value);
-        if (node.right != null){
+        if (node.right != null) {
             list.addAll(inorder(node.right));
         }
         return list;
@@ -183,5 +183,20 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
         int compare(Tip e) {
             return e.compareTo(this.value);
         }
+    }
+
+    @Override
+    public void print() {
+        print(rootNode, 0);
+    }
+
+    private void print(ElementBST node, int numTabs) {
+        if (node == null)
+            return;
+        print(node.right, numTabs + 1);
+        for (int i = 0; i < numTabs; i++)
+            System.out.print('\t');
+        System.out.println(node.value);
+        print(node.left, numTabs + 1);
     }
 }

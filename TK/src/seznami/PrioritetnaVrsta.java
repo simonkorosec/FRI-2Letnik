@@ -154,6 +154,11 @@ public class PrioritetnaVrsta<Tip extends Comparable> implements Seznam<Tip> {
     }
 
     @Override
+    public void print() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    @Override
     public int size() {
         return end;
     }

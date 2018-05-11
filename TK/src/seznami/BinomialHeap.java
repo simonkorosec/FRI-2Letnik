@@ -308,6 +308,11 @@ public class BinomialHeap<Tip extends Comparable> implements Seznam<Tip> {
         return postorder(topNode);
     }
 
+    @Override
+    public void print() {
+        throw new UnsupportedOperationException("Not yet implemented.");
+    }
+
     private List<Tip> postorder(BinomialHeapNode<Tip> node) {
         List<Tip> list = new ArrayList<>();
 

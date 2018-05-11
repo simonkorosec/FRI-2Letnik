@@ -136,17 +136,22 @@ public class Sklad<Tip extends Comparable> implements Seznam<Tip> {
         List<Tip> list = new ArrayList<>();
         Sklad<Tip> tmp = new Sklad<>();
 
-        while (!this.isEmpty()){
+        while (!this.isEmpty()) {
             Tip e = this.pop();
             tmp.add(e);
             list.add(e);
         }
 
-        while (!tmp.isEmpty()){
+        while (!tmp.isEmpty()) {
             this.add(tmp.pop());
         }
 
         return list;
+    }
+
+    @Override
+    public void print() {
+        throw new UnsupportedOperationException("Not yet implemented");
     }
 
 }

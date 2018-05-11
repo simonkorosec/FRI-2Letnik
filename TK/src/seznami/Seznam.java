@@ -31,4 +31,6 @@ interface Seznam<Tip> {
     // vrne elemente v obliki list-a
     List<Tip> asList();
 
+    void print();
+
 }
