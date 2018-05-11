@@ -1,7 +1,6 @@
 package seznami;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -10,17 +9,14 @@ import java.util.NoSuchElementException;
 
 import static org.junit.Assert.*;
 
-public class BinomialHeapTest {
+public class BinomskaKopicaTest {
 
-
-    private BinomialHeap<String> bh;
-
+    private BinomskaKopica<String> bh;
 
     @Before
     public void setUp() {
-        bh = new BinomialHeap<>();
+        bh = new BinomskaKopica<>();
     }
-
 
     @Test
     public void add() {
@@ -211,8 +207,8 @@ public class BinomialHeapTest {
         s = new StringBuilder("01 14 02 03 12 13 04 05 06 07 08 09 10 11");
         assertEquals(Arrays.asList(s.toString().split(" ")), bh.asList());
     }
-    /* Testi napak */
 
+    /* Testi napak */
     @Test(expected = NoSuchElementException.class)
     public void testRemoveFirstEmpty() {
         bh.removeFirst();
