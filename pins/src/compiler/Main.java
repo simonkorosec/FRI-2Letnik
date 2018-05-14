@@ -34,7 +34,7 @@ public class Main {
 	 *            Parametri ukazne vrstice.
 	 */
 	public static void main(String[] args) {
-		System.out.printf("This is PREV compiler, v0.1:\n");
+		System.out.printf("This is PINS compiler, v0.1:\n");
 
 		// Pregled ukazne vrstice.
 		for (int argc = 0; argc < args.length; argc++) {

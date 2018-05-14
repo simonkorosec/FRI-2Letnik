@@ -1,12 +1,6 @@
-typ str : string;
-var myString : str;
-var secondString : str;
+typ int : integer;
 
-fun setString1( examp : string) : str = (
-    { myString = examp },
-    { secondString = setString2('this is an example string')}
-) { where fun setString2( passed : string): str = (
-        { passed = 'example' },
-        { thirdString = passed }
-    ) { where var thirdString : str}
-}
+var a : arr[10] arr[10] int;
+
+fun main(arg : int) : int = 
+	({a[0][0] = 0}, a[3][2])

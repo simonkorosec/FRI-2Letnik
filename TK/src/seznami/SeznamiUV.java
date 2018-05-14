@@ -14,7 +14,7 @@ public class SeznamiUV {
         seznami.put("pv", new PrioritetnaVrsta<>());
         seznami.put("sk", new Sklad<>());
         seznami.put("bst", new Bst<>());
-        seznami.put("bk", new BinomialHeap<>());
+        seznami.put("bk", new BinomskaKopica<>());
     }
 
     public String processInput(String input) {

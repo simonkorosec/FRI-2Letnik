@@ -152,7 +152,6 @@ public class SeznamiUVTest {
 
     }
 
-
     private void reset() {
         uv.processInput("reset");
     }

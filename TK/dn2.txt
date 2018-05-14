@@ -1,2 +1,0 @@
-reset -> v seznamiUV posebi ukaz
-
