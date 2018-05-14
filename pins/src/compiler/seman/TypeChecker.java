@@ -53,8 +53,10 @@ public class TypeChecker implements Visitor {
                 break;
             }
 
-            case AbsBinExpr.ADD: case AbsBinExpr.SUB:
-            case AbsBinExpr.MUL: case AbsBinExpr.DIV:
+            case AbsBinExpr.ADD:
+            case AbsBinExpr.SUB:
+            case AbsBinExpr.MUL:
+            case AbsBinExpr.DIV:
             case AbsBinExpr.MOD: {
                 if (typLeft.sameStructureAs(integer) && typRight.sameStructureAs(integer)) {
                     SymbDesc.setType(acceptor, integer);
@@ -64,9 +66,12 @@ public class TypeChecker implements Visitor {
                 break;
             }
 
-            case AbsBinExpr.EQU: case AbsBinExpr.NEQ:
-            case AbsBinExpr.LEQ: case AbsBinExpr.GEQ:
-            case AbsBinExpr.LTH: case AbsBinExpr.GTH: {
+            case AbsBinExpr.EQU:
+            case AbsBinExpr.NEQ:
+            case AbsBinExpr.LEQ:
+            case AbsBinExpr.GEQ:
+            case AbsBinExpr.LTH:
+            case AbsBinExpr.GTH: {
                 if ((typLeft.sameStructureAs(integer) && typRight.sameStructureAs(integer)) ||
                         typLeft.sameStructureAs(logical) && typRight.sameStructureAs(logical)) {
                     SymbDesc.setType(acceptor, logical);
@@ -211,6 +216,8 @@ public class TypeChecker implements Visitor {
         if (!expectedType.sameStructureAs(actualType)) {
             Report.error(acceptor.expr.position, "Expected " + expectedType.actualType() + ", found " + actualType.actualType() + ".");
         }
+
+        checkParamRetType(acceptor.type);
     }
 
     @Override
@@ -242,12 +249,14 @@ public class TypeChecker implements Visitor {
     public void visit(AbsPar acceptor) {
         acceptor.type.accept(this);
         SymbDesc.setType(acceptor, SymbDesc.getType(acceptor.type));
+
+        checkParamRetType(acceptor.type);
     }
 
     @Override
     public void visit(AbsTypeDef acceptor) {
         acceptor.type.accept(this);
-        ((SemTypeName)SymbDesc.getType(acceptor)).setType(SymbDesc.getType(acceptor.type));
+        ((SemTypeName) SymbDesc.getType(acceptor)).setType(SymbDesc.getType(acceptor.type));
     }
 
     @Override
@@ -314,4 +323,14 @@ public class TypeChecker implements Visitor {
         }
     }
 
+
+    private void checkParamRetType(AbsType type) {
+        SemType actType = SymbDesc.getType(type);
+        if (!(actType.sameStructureAs(new SemAtomType(SemAtomType.INT)) ||
+                actType.sameStructureAs(new SemAtomType(SemAtomType.STR)) ||
+                actType.sameStructureAs(new SemAtomType(SemAtomType.LOG))))
+        {
+            Report.error(type.position, "Invalid type, found [" + actType.actualType() + "] expected [LOGICAL, STRING, INTEGER].");
+        }
+    }
 }
