@@ -24,6 +24,7 @@ public class ImcCodeGen implements Visitor {
 
     @Override
     public void visit(AbsArrType acceptor) {
+        acceptor.type.accept(this);
     }
 
     @Override
@@ -33,9 +34,10 @@ public class ImcCodeGen implements Visitor {
         } else if (acceptor.type == AbsAtomConst.LOG) {
             imcCodeDesc.put(acceptor, new ImcCONST(acceptor.value.equals("true") ? 1 : 0));
         } else if (acceptor.type == AbsAtomConst.STR) {
-            imcCodeDesc.put(acceptor, new ImcCONST(-13));
+            FrmLabel label = FrmLabel.newLabel();
+            chunks.add(new ImcDataChunk(label, acceptor.value.length() + 2));
+            imcCodeDesc.put(acceptor, new ImcNAME(label));
         }
-
     }
 
     @Override
@@ -163,10 +165,11 @@ public class ImcCodeGen implements Visitor {
         imcSEQ.stmts.add(new ImcLABEL(trueLabel));
         ImcCode code = imcCodeDesc.get(acceptor.body);
         imcSEQ.stmts.add(code instanceof ImcStmt ? (ImcStmt) code : new ImcEXP((ImcExpr) code));
+        
         ImcMOVE inc = new ImcMOVE((ImcExpr) imcCodeDesc.get(acceptor.count), new ImcBINOP(ImcBINOP.ADD, (ImcExpr) imcCodeDesc.get(acceptor.count), (ImcExpr) imcCodeDesc.get(acceptor.step)));
         imcSEQ.stmts.add(inc);
         imcSEQ.stmts.add(new ImcJUMP(condLabel));
-        imcSEQ.stmts.add(new ImcJUMP(falseLabel));
+        imcSEQ.stmts.add(new ImcLABEL(falseLabel));
 
         imcCodeDesc.put(acceptor, imcSEQ);
     }
@@ -285,7 +288,6 @@ public class ImcCodeGen implements Visitor {
 
     @Override
     public void visit(AbsVarName acceptor) {
-
         FrmAccess frmAccess = FrmDesc.getAccess(SymbDesc.getNameDef(acceptor));
 
         if (frmAccess instanceof FrmVarAccess) {
@@ -342,10 +344,9 @@ public class ImcCodeGen implements Visitor {
         imcSEQ.stmts.add(code instanceof ImcStmt ? (ImcStmt) code : new ImcEXP((ImcExpr) code));
         imcSEQ.stmts.add(new ImcJUMP(condLabel));
 
-        imcSEQ.stmts.add(new ImcJUMP(falseLabel));
+        imcSEQ.stmts.add(new ImcLABEL(falseLabel));
 
         imcCodeDesc.put(acceptor, imcSEQ);
-
     }
 
 }
