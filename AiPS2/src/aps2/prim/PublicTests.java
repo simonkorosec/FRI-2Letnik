@@ -31,4 +31,25 @@ public class PublicTests extends TestCase {
         assertEquals(3, mst.MSTcost());
     }
 
+    public void testMediumTree() {
+        int[][] tree = {
+                {0, 2, 3, 3, 0, 0, 0},
+                {2, 0, 4, 3, 0, 0, 0},
+                {3, 4, 0, 5, 1, 6, 0},
+                {3, 0, 5, 0, 0, 7, 0},
+                {0, 3, 1, 0, 0, 8, 0},
+                {0, 0, 6, 7, 8, 0, 9},
+                {0, 0, 0, 0, 0, 9, 0}
+        };
+        mst = new Prim(tree);
+        assertEquals(24, mst.MSTcost());
+        int[] tmp = mst.computeMST(0);
+        assertEquals(1, tmp[0]);
+        assertEquals(2, tmp[1]);
+        assertEquals(18, tmp[2]);
+        assertEquals(3, tmp[3]);
+        assertEquals(19, tmp[4]);
+        assertEquals(41, tmp[5]);
+
+    }
 }

@@ -41,7 +41,7 @@ public class Prim {
      */
     public int MSTcost() {
         if (cost == 0) {
-            computeMST(2);
+            computeMST(0);
         }
 
         return cost;

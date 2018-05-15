@@ -1,5 +1,6 @@
 package seznami;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -165,6 +166,52 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
         return list;
     }
 
+    @Override
+    public void print() {
+        print(rootNode, 0);
+    }
+
+    private void print(ElementBST node, int numTabs) {
+        if (node == null)
+            return;
+        print(node.right, numTabs + 1);
+        for (int i = 0; i < numTabs; i++)
+            System.out.print('\t');
+        System.out.println(node.value);
+        print(node.left, numTabs + 1);
+    }
+
+    @Override
+    public void save(OutputStream outputStream) throws IOException {
+        ObjectOutputStream out = new ObjectOutputStream(outputStream);
+        out.writeInt(this.size());
+        save(rootNode, out);
+    }
+
+    private void save(ElementBST node, ObjectOutputStream out) throws IOException {
+        if (node == null)
+            return;
+        save(node.left, out);
+        out.writeObject(node.value);
+        save(node.right, out);
+    }
+
+    @Override
+    public void restore(InputStream inputStream) throws IOException, ClassNotFoundException {
+        ObjectInputStream in = new ObjectInputStream(inputStream);
+        int count = in.readInt();
+        rootNode = restore(in, count);
+    }
+
+    private ElementBST restore(ObjectInputStream in, int count) throws IOException, ClassNotFoundException {
+        if (count == 0) return null;
+        ElementBST nodeLeft = restore(in, count / 2);
+        ElementBST node = new ElementBST((Tip) in.readObject());
+        node.left = nodeLeft;
+        node.right = restore(in, (count - 1) / 2);
+        return node;
+    }
+
     class ElementBST {
 
         Tip value;
@@ -183,20 +230,5 @@ public class Bst<Tip extends Comparable> implements Seznam<Tip> {
         int compare(Tip e) {
             return e.compareTo(this.value);
         }
-    }
-
-    @Override
-    public void print() {
-        print(rootNode, 0);
-    }
-
-    private void print(ElementBST node, int numTabs) {
-        if (node == null)
-            return;
-        print(node.right, numTabs + 1);
-        for (int i = 0; i < numTabs; i++)
-            System.out.print('\t');
-        System.out.println(node.value);
-        print(node.left, numTabs + 1);
     }
 }

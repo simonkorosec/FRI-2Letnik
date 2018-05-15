@@ -1,5 +1,6 @@
 package seznami;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -151,7 +152,61 @@ public class Sklad<Tip extends Comparable> implements Seznam<Tip> {
 
     @Override
     public void print() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        Sklad<Tip> tmp = new Sklad<>();
+        boolean neki = false;
+
+        while (!this.isEmpty()) {
+            neki = true;
+            Tip e = this.pop();
+            tmp.add(e);
+            System.out.print(e + " ");
+        }
+        if (neki) {
+            System.out.println();
+        }
+
+        while (!tmp.isEmpty()) {
+            this.add(tmp.pop());
+        }
+    }
+
+    @Override
+    public void save(OutputStream outputStream) throws IOException {
+        ObjectOutputStream out = new ObjectOutputStream(outputStream);
+        out.writeInt(this.size());
+        save(vrh, out);
+    }
+
+    private void save(Element<Tip> node, ObjectOutputStream out) throws IOException {
+        if (node == null) {
+            return;
+        }
+        out.writeObject(node.vrednost);
+        save(node.vezava, out);
+    }
+
+    @Override
+    public void restore(InputStream inputStream) throws IOException, ClassNotFoundException {
+        ObjectInputStream in = new ObjectInputStream(inputStream);
+        int count = in.readInt();
+        vrh = restore(in, count);
+    }
+
+    private Element<Tip> restore(ObjectInputStream in, int count) throws IOException, ClassNotFoundException {
+        if (count == 0) {
+            return null;
+        }
+
+        Element<Tip> v = new Element<>((Tip) in.readObject());
+        v.vezava = restore(in, count - 1);
+        return v;
+
+
+//        ElementBST nodeLeft = restore(in, count / 2);
+//        ElementBST node = new ElementBST((Tip) in.readObject());
+//        node.left = nodeLeft;
+//        node.right = restore(in, (count - 1) / 2);
+//        return node;
     }
 
 }

@@ -1,5 +1,6 @@
 package seznami;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -155,7 +156,32 @@ public class PrioritetnaVrsta<Tip extends Comparable> implements Seznam<Tip> {
 
     @Override
     public void print() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        for (int i = 0; i < this.size(); i++) {
+            System.out.print(heap[i] + " ");
+            if (i == this.size() -1 ){
+                System.out.print("\n");
+            }
+        }
+    }
+
+    @Override
+    public void save(OutputStream outputStream) throws IOException {
+        ObjectOutputStream out = new ObjectOutputStream(outputStream);
+        out.writeInt(this.size());
+        for (int i = 0; i < this.size(); i++) {
+            out.writeObject(heap[i]);
+        }
+    }
+
+    @Override
+    public void restore(InputStream inputStream) throws IOException, ClassNotFoundException {
+        ObjectInputStream in = new ObjectInputStream(inputStream);
+        int count = in.readInt();
+        heap = new Object[count];
+        for (int i = 0; i < count; i++) {
+            heap[i] = in.readObject();
+        }
+
     }
 
     @Override

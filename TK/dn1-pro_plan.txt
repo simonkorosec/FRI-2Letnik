@@ -1,2 +1,0 @@
-kodiranje -> kod. testo in kod. programov
-testeranje -> sproženje testov in odpravlanje napak

@@ -1,5 +1,8 @@
 package seznami;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -301,6 +304,21 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
     @Override
     public List<Tip> asList() {
         return postorder(topNode);
+    }
+
+    @Override
+    public void print() {
+
+    }
+
+    @Override
+    public void save(OutputStream outputStream) throws IOException {
+
+    }
+
+    @Override
+    public void restore(InputStream inputStream) throws IOException, ClassNotFoundException {
+
     }
 
     private List<Tip> postorder(BinomskaKopicaNode<Tip> node) {

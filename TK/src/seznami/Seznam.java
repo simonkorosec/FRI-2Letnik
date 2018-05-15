@@ -1,5 +1,8 @@
 package seznami;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 
 interface Seznam<Tip> {
@@ -32,5 +35,9 @@ interface Seznam<Tip> {
     List<Tip> asList();
 
     void print();
+
+    void save(OutputStream outputStream) throws IOException;
+
+    void restore(InputStream inputStream) throws IOException, ClassNotFoundException;
 
 }

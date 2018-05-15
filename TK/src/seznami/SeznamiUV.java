@@ -1,5 +1,9 @@
 package seznami;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.HashMap;
@@ -96,6 +100,20 @@ public class SeznamiUV {
                 case "print":
                     seznam.print();
                     break;
+                case "save":
+                    if (sc.hasNext()) {
+                        seznam.save(new FileOutputStream(sc.next()));
+                    } else {
+                        result = "Error: please specify a file name";
+                    }
+                    break;
+                case "restore":
+                    if (sc.hasNext()) {
+                        seznam.restore(new FileInputStream(sc.next()));
+                    } else {
+                        result = "Error: please specify a file name";
+                    }
+                    break;
                 default:
                     result = "Error: invalid command";
             }
@@ -103,6 +121,12 @@ public class SeznamiUV {
             result = "Error: Duplicated entry";
         } catch (java.util.NoSuchElementException e) {
             result = "Error: data structure is empty";
+        } catch (FileNotFoundException e) {
+            result = "Error: File not found";
+        } catch (IOException e) {
+            result = "Error: IO error " + e.getMessage();
+        } catch (ClassNotFoundException e) {
+            result = "Error: Unknown format";
         }
 
         return result;
