@@ -1,6 +1,4 @@
-typ int : integer;
+var str : string;
 
-var a : arr[10] arr[10] int;
-
-fun main(arg : int) : int = 
-	({a[0][0] = 0}, a[3][2])
+fun main(arg : integer) : string =
+	{str = 'string'}

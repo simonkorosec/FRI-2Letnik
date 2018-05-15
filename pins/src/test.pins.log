@@ -1,53 +1,18 @@
-DATA CHUNK: label=_b size=4
-DATA CHUNK: label=_a size=400
+DATA CHUNK: label=_str size=4
+DATA CHUNK: label=L0 size=8
 CODE CHUNK: label=_main
-  FRAME(main: level=1,label=_main,sizeLocs=0,sizeArgs=8,size=16,FP=T0,RV=T1)
+  FRAME(main: level=1,label=_main,sizeLocs=0,sizeArgs=0,size=8,FP=T0,RV=T1)
   MOVE
     TEMP name=T1
     ESEQ
       SEQ
-        EXP
-          ESEQ
-            SEQ
-              MOVE
-                MEM
-                  BINOP op=+
-                    BINOP op=+
-                      NAME label=_a
-                      BINOP op=*
-                        CONST value=0
-                        CONST value=40
-                    BINOP op=*
-                      CONST value=0
-                      CONST value=4
-                CONST value=0
-              MOVE
-                MEM
-                  TEMP name=T2
-                MEM
-                  BINOP op=+
-                    BINOP op=+
-                      NAME label=_a
-                      BINOP op=*
-                        CONST value=0
-                        CONST value=40
-                    BINOP op=*
-                      CONST value=0
-                      CONST value=4
-            TEMP name=T2
-        EXP
+        MOVE
           MEM
-            BINOP op=+
-              BINOP op=+
-                NAME label=_a
-                BINOP op=*
-                  CONST value=3
-                  CONST value=40
-              BINOP op=*
-                CONST value=2
-                CONST value=4
-      CALL label=_main
-        MEM
-          TEMP name=T0
-        MEM
-          NAME label=_b
+            NAME label=_str
+          NAME label=L0
+        MOVE
+          MEM
+            TEMP name=T2
+          MEM
+            NAME label=_str
+      TEMP name=T2
