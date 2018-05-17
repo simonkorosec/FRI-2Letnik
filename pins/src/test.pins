@@ -1,4 +1,2 @@
-var str : string;
-
-fun main(arg : integer) : string =
-	{str = 'string'}
+fun main(i : integer) : integer = (putInt(99), getInt(v), putInt(v)) 
+{where var v:integer}

@@ -92,7 +92,7 @@ public class NameChecker implements Visitor {
         AbsDef funName = SymbTable.fnd(acceptor.name);
 
         if (!(funName instanceof AbsFunDef)) {
-            Report.error(acceptor.position, String.format("Function '%s' not definded.", funName));
+            Report.error(acceptor.position, String.format("Function '%s' not definded.", acceptor.name));
         }
 
         SymbDesc.setNameDef(acceptor, funName);

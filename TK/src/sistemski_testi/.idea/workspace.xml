@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd54116a-72d3-4239-ad34-400b721402a2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/test_pv_print.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_pv_save_restore.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_sklad_print.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_sklad_save_restore.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../AiPS2/src/aps2/prim/Prim.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../AiPS2/src/aps2/prim/Prim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../AiPS2/src/aps2/prim/PublicTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../AiPS2/src/aps2/prim/PublicTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ST/Python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ST/Python/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dn1-pro_plan.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../seznami/BinomskaKopica.java" beforeDir="false" afterPath="$PROJECT_DIR$/../seznami/BinomskaKopica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../seznami/Bst.java" beforeDir="false" afterPath="$PROJECT_DIR$/../seznami/Bst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../seznami/PrioritetnaVrsta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../seznami/PrioritetnaVrsta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../seznami/Seznam.java" beforeDir="false" afterPath="$PROJECT_DIR$/../seznami/Seznam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../seznami/SeznamiUV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../seznami/SeznamiUV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../seznami/Sklad.java" beforeDir="false" afterPath="$PROJECT_DIR$/../seznami/Sklad.java" afterDir="false" />
-    </list>
+    <list default="true" id="cd54116a-72d3-4239-ad34-400b721402a2" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,10 +99,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="975" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -289,17 +275,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32939914" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32624868" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2223382" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1109375" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="SciView" />

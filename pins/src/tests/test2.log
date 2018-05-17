@@ -1,0 +1,71 @@
+CODE CHUNK: label=_f
+  FRAME(f: level=1,label=_f,sizeLocs=4,sizeArgs=8,size=20,FP=T8,RV=T9)
+  MOVE
+    TEMP name=T9
+    ESEQ
+      SEQ
+        SEQ
+          CJUMP labels=L0,L1
+            ESEQ
+              SEQ
+              BINOP op===
+                MEM
+                  BINOP op=+
+                    TEMP name=T8
+                    CONST value=4
+                CONST value=1
+          LABEL label=L0
+          EXP
+            ESEQ
+              SEQ
+                MOVE
+                  MEM
+                    BINOP op=+
+                      TEMP name=T8
+                      CONST value=-4
+                  CONST value=1
+                MOVE
+                  MEM
+                    TEMP name=T10
+                  MEM
+                    BINOP op=+
+                      TEMP name=T8
+                      CONST value=-4
+              TEMP name=T10
+          JUMP label=L2
+          LABEL label=L1
+          EXP
+            ESEQ
+              SEQ
+                MOVE
+                  MEM
+                    BINOP op=+
+                      TEMP name=T8
+                      CONST value=-4
+                  BINOP op=*
+                    MEM
+                      BINOP op=+
+                        TEMP name=T8
+                        CONST value=4
+                    CALL label=_f
+                      MEM
+                        TEMP name=T8
+                      BINOP op=-
+                        MEM
+                          BINOP op=+
+                            TEMP name=T8
+                            CONST value=4
+                        CONST value=1
+                MOVE
+                  MEM
+                    TEMP name=T11
+                  MEM
+                    BINOP op=+
+                      TEMP name=T8
+                      CONST value=-4
+              TEMP name=T11
+          LABEL label=L2
+      MEM
+        BINOP op=+
+          TEMP name=T8
+          CONST value=-4

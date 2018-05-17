@@ -1,8 +1,10 @@
 package compiler.frames;
 
+import compiler.Report;
 import compiler.abstr.*;
 import compiler.abstr.tree.*;
 import compiler.seman.SymbDesc;
+import compiler.seman.SymbTable;
 import compiler.seman.type.SemFunType;
 
 import java.util.Stack;
@@ -11,16 +13,20 @@ public class FrmEvaluator implements Visitor {
 
     private static int level = 1;
     private static Stack<FrmFrame> frames = new Stack<>();
+    private static boolean createLibFunc = true; // Ali moraš ustvariti poznane funkcije
 
 
     @Override
-    public void visit(AbsArrType acceptor) {}
+    public void visit(AbsArrType acceptor) {
+    }
 
     @Override
-    public void visit(AbsAtomConst acceptor) {}
+    public void visit(AbsAtomConst acceptor) {
+    }
 
     @Override
-    public void visit(AbsAtomType acceptor) {}
+    public void visit(AbsAtomType acceptor) {
+    }
 
     @Override
     public void visit(AbsBinExpr acceptor) {
@@ -66,14 +72,17 @@ public class FrmEvaluator implements Visitor {
 
     @Override
     public void visit(AbsFunDef acceptor) {
-        frames.push(new FrmFrame(acceptor, level));
-        level++;
+        if (createLibFunc) {
+            libFunctions();
+            createLibFunc = false;
+        }
 
+        frames.push(new FrmFrame(acceptor, level++));
+        //level++;
         for (int i = 0; i < acceptor.numPars(); i++) {
             acceptor.par(i).accept(this);
         }
         acceptor.expr.accept(this);
-
         FrmDesc.setFrame(acceptor, frames.peek());
 
         level--;
@@ -99,10 +108,12 @@ public class FrmEvaluator implements Visitor {
     }
 
     @Override
-    public void visit(AbsTypeDef acceptor) {}
+    public void visit(AbsTypeDef acceptor) {
+    }
 
     @Override
-    public void visit(AbsTypeName acceptor) {}
+    public void visit(AbsTypeName acceptor) {
+    }
 
     @Override
     public void visit(AbsUnExpr acceptor) {
@@ -120,7 +131,8 @@ public class FrmEvaluator implements Visitor {
     }
 
     @Override
-    public void visit(AbsVarName acceptor) {}
+    public void visit(AbsVarName acceptor) {
+    }
 
     @Override
     public void visit(AbsWhere acceptor) {
@@ -134,4 +146,30 @@ public class FrmEvaluator implements Visitor {
         acceptor.body.accept(this);
     }
 
+    private void libFunctions() {
+        if (createLibFunc) {
+            create("putInt");
+            create("getInt");
+            create("putString");
+            create("getString");
+
+            createLibFunc = false;
+        }
+    }
+
+    private void create(String name) {
+        AbsFunDef funDef = (AbsFunDef) SymbTable.fnd(name);
+        if (funDef != null) {
+            FrmFrame frame = new FrmFrame(funDef, 1);
+            frames.push(frame);
+            funDef.type.accept(this);
+            for (int i = 0; i < funDef.numPars(); i++) {
+                funDef.par(i).accept(this);
+            }
+            FrmDesc.setFrame(funDef, frame);
+            frames.pop();
+        } else {
+            Report.error("[FrmEvaluator] Cannot find AbsFunDef '" + name + "'");
+        }
+    }
 }

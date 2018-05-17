@@ -1,6 +1,8 @@
 package compiler;
 
+import compiler.interpreter.Interpreter;
 import compiler.lexan.*;
+import compiler.lincode.CodeGenerator;
 import compiler.synan.*;
 import compiler.abstr.*;
 import compiler.abstr.tree.*;
@@ -19,13 +21,13 @@ public class Main {
 	private static String sourceFileName;
 
 	/** Seznam vseh faz prevajalnika. */
-	private static String allPhases = "(lexan|synan|ast|seman|frames|imcode)";
+	private static String allPhases = "(lexan|synan|ast|seman|frames|imcode|exec)";
 
 	/** Doloca zadnjo fazo prevajanja, ki se bo se izvedla. */
-	private static String execPhase = "imcode";
+	private static String execPhase = "exec";
 
 	/** Doloca faze, v katerih se bodo izpisali vmesni rezultati. */
-	private static String dumpPhases = "imcode";
+	private static String dumpPhases = "exec";
 
 	/**
 	 * Metoda, ki izvede celotni proces prevajanja.
@@ -106,7 +108,13 @@ public class Main {
 			source.accept(imcodegen);
 			imcode.dump(imcodegen.chunks);
 			if (execPhase.equals("imcode")) break;
-			
+			// Izvajanje vmesne kode
+            CodeGenerator codegen = new CodeGenerator();
+            codegen.generate(imcodegen.chunks);
+            //imcode.dump(imcodegen.chunks);
+            Interpreter.debug = true;
+            Interpreter interpreter = new Interpreter();
+            if (execPhase.equals("exec")) break;
 			// Neznana faza prevajanja.
 			if (! execPhase.equals(""))
 				Report.warning("Unknown compiler phase specified.");

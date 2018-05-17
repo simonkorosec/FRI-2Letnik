@@ -2,10 +2,12 @@ package compiler.imcode;
 
 import java.util.*;
 
+import compiler.Report;
 import compiler.abstr.*;
 import compiler.abstr.tree.*;
 import compiler.frames.*;
 import compiler.seman.SymbDesc;
+import compiler.seman.SymbTable;
 import compiler.seman.type.SemArrType;
 
 public class ImcCodeGen implements Visitor {
@@ -36,8 +38,7 @@ public class ImcCodeGen implements Visitor {
             imcCodeDesc.put(acceptor, new ImcCONST(acceptor.value.equals("true") ? 1 : 0));
         } else if (acceptor.type == AbsAtomConst.STR) {
             FrmLabel label = FrmLabel.newLabel();
-            chunks.add(new ImcDataChunk(label, acceptor.value.length() + 2));
-            imcCodeDesc.put(acceptor, new ImcNAME(label));
+            imcCodeDesc.put(acceptor, new ImcCONST(acceptor.value));
         }
     }
 
@@ -70,7 +71,7 @@ public class ImcCodeGen implements Visitor {
 
             imcCodeDesc.put(acceptor, new ImcESEQ(imcSEQ, new ImcBINOP(ImcBINOP.SUB, a, new ImcBINOP(ImcBINOP.MUL, n, new ImcBINOP(ImcBINOP.DIV, a, n)))));
         } else if (acceptor.oper == AbsBinExpr.ARR) {
-            imcCodeDesc.put(acceptor, new ImcMEM(new ImcBINOP(ImcBINOP.ADD, ((ImcMEM)expr1).expr, new ImcBINOP(ImcBINOP.MUL, expr2, new ImcCONST(((SemArrType)SymbDesc.getType(acceptor.expr1).actualType()).type.size())))));
+            imcCodeDesc.put(acceptor, new ImcMEM(new ImcBINOP(ImcBINOP.ADD, ((ImcMEM) expr1).expr, new ImcBINOP(ImcBINOP.MUL, expr2, new ImcCONST(((SemArrType) SymbDesc.getType(acceptor.expr1).actualType()).type.size())))));
         } else {
             int opr = 0;
             switch (acceptor.oper) {
@@ -132,7 +133,7 @@ public class ImcCodeGen implements Visitor {
 
         for (int i = 0; i < acceptor.numExprs() - 1; i++) {
             ImcCode code = imcCodeDesc.get(acceptor.expr(i));
-            if (code instanceof ImcStmt){
+            if (code instanceof ImcStmt) {
                 imcSEQ.stmts.add((ImcStmt) code);
             } else {
                 imcSEQ.stmts.add(new ImcEXP((ImcExpr) code));
@@ -182,8 +183,14 @@ public class ImcCodeGen implements Visitor {
     @Override
     public void visit(AbsFunCall acceptor) {
         FrmFrame fun = FrmDesc.getFrame(SymbDesc.getNameDef(acceptor));
-        ImcCALL imcCALL = new ImcCALL(fun.label);
+        if (isLibCall(fun.label.name())) {
+            ImcCALL call = (ImcCALL) libCall(fun.label.name(), acceptor);
+            ImcESEQ eseq = new ImcESEQ(new ImcEXP(call), new ImcCONST(0));
+            imcCodeDesc.put(acceptor, eseq);
+            return;
+        }
 
+        ImcCALL imcCALL = new ImcCALL(fun.label);
         ImcExpr staticLink = new ImcTEMP(frames.peek().FP);
         for (int i = 0; i <= frames.peek().level - fun.level; i++) {
             staticLink = new ImcMEM(staticLink);
@@ -198,6 +205,7 @@ public class ImcCodeGen implements Visitor {
 
         imcCodeDesc.put(acceptor, imcCALL);
     }
+
 
     @Override
     public void visit(AbsFunDef acceptor) {
@@ -280,7 +288,7 @@ public class ImcCodeGen implements Visitor {
         } else if (acceptor.oper == AbsUnExpr.SUB) {
             imcCodeDesc.put(acceptor, new ImcBINOP(ImcBINOP.SUB, new ImcCONST(0), (ImcExpr) imcCodeDesc.get(acceptor.expr)));
         } else if (acceptor.oper == AbsUnExpr.NOT) {
-            imcCodeDesc.put(acceptor, new ImcBINOP(ImcBINOP.EQU, new ImcCONST(-1), (ImcExpr) imcCodeDesc.get(acceptor.expr)));
+            imcCodeDesc.put(acceptor, new ImcBINOP(ImcBINOP.EQU, new ImcCONST(0), (ImcExpr) imcCodeDesc.get(acceptor.expr)));
         }
     }
 
@@ -300,11 +308,9 @@ public class ImcCodeGen implements Visitor {
         } else if (frmAccess instanceof FrmLocAccess) {
             FrmFrame currFrm = frames.peek();
             ImcExpr tmp = new ImcTEMP(currFrm.FP);
-
             for (int i = 0; i < currFrm.level - ((FrmLocAccess) frmAccess).frame.level; i++) {
                 tmp = new ImcMEM(tmp);
             }
-
             ImcCONST offset = new ImcCONST(((FrmLocAccess) frmAccess).offset);
             ImcMEM mem = new ImcMEM(new ImcBINOP(ImcBINOP.ADD, tmp, offset));
             imcCodeDesc.put(acceptor, mem);
@@ -312,11 +318,9 @@ public class ImcCodeGen implements Visitor {
         } else if (frmAccess instanceof FrmParAccess) {
             FrmFrame currFrm = frames.peek();
             ImcExpr tmp = new ImcTEMP(currFrm.FP);
-
             for (int i = 0; i < currFrm.level - ((FrmParAccess) frmAccess).frame.level; i++) {
                 tmp = new ImcMEM(tmp);
             }
-
             ImcCONST offset = new ImcCONST(((FrmParAccess) frmAccess).offset);
             ImcMEM mem = new ImcMEM(new ImcBINOP(ImcBINOP.ADD, tmp, offset));
             imcCodeDesc.put(acceptor, mem);
@@ -352,6 +356,62 @@ public class ImcCodeGen implements Visitor {
         imcSEQ.stmts.add(new ImcLABEL(falseLabel));
 
         imcCodeDesc.put(acceptor, imcSEQ);
+    }
+
+
+    private boolean isLibCall(String name) {
+        return name.equals("_putInt") || name.equals("_getInt") || name.equals("_putString") || name.equals("_getString");
+    }
+
+    private ImcCode libCall(String name, AbsFunCall acceptor) {
+        if (name.equals("_putInt") || name.equals("_putString")) {
+            return createPut(acceptor);
+        } else {
+            return createGet(acceptor);
+        }
+    }
+
+    private ImcCode createPut(AbsFunCall acceptor) {
+        FrmFrame fun = FrmDesc.getFrame(SymbDesc.getNameDef(acceptor));
+        ImcCALL imcCALL = new ImcCALL(fun.label);
+        for (int i = 0; i < acceptor.numArgs(); i++) {
+            acceptor.arg(i).accept(this);
+            imcCALL.args.add((ImcExpr) imcCodeDesc.get(acceptor.arg(i)));
+        }
+        return imcCALL;
+    }
+
+    private ImcCode createGet(AbsFunCall acceptor) {
+        FrmFrame fun = FrmDesc.getFrame(SymbDesc.getNameDef(acceptor));
+        ImcCALL imcCALL = new ImcCALL(fun.label);
+//        for (int i = 0; i < acceptor.numArgs(); i++) {
+//            acceptor.arg(i).accept(this);
+////            ImcMEM mem = new ImcMEM((ImcExpr) imcCodeDesc.get(acceptor.arg(i)));
+////            imcCALL.args.add(mem);
+//
+//            imcCALL.args.add((ImcExpr) imcCodeDesc.get(acceptor.arg(i)));
+//        }
+
+        FrmAccess frmAccess =  FrmDesc.getAccess(SymbDesc.getNameDef(acceptor.arg(0)));
+
+        if (frmAccess instanceof FrmParAccess) {
+            FrmFrame currFrm = frames.peek();
+            ImcExpr tmp = new ImcTEMP(currFrm.FP);
+            for (int i = 0; i < currFrm.level - ((FrmParAccess)frmAccess).frame.level; i++) {
+                tmp = new ImcMEM(tmp);
+            }
+            ImcCONST offset = new ImcCONST(((FrmParAccess)frmAccess).offset);
+            imcCALL.args.add(new ImcBINOP(ImcBINOP.ADD, tmp, offset));
+        } else if (frmAccess instanceof FrmLocAccess){
+            FrmFrame currFrm = frames.peek();
+            ImcExpr tmp = new ImcTEMP(currFrm.FP);
+            for (int i = 0; i < currFrm.level - ((FrmLocAccess)frmAccess).frame.level; i++) {
+                tmp = new ImcMEM(tmp);
+            }
+            ImcCONST offset = new ImcCONST(((FrmLocAccess)frmAccess).offset);
+            imcCALL.args.add(new ImcBINOP(ImcBINOP.ADD, tmp, offset));
+        }
+        return imcCALL;
     }
 
 }

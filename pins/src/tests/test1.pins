@@ -1,4 +1,1 @@
-fun f(a:integer,b:integer):integer=(f(a+b,0),i);
-var i:integer;
-var j:integer
-
+fun main(i:integer,j:integer):integer = 2*(i+j)

@@ -1,0 +1,42 @@
+CODE CHUNK: label=_main
+  FRAME(main: level=1,label=_main,sizeLocs=4,sizeArgs=8,size=20,FP=T8,RV=T9)
+  SEQ
+    MOVE
+      TEMP name=T16
+      CONST value=99
+    MOVE
+      TEMP name=T17
+      CALL label=_putInt
+        TEMP name=T16
+    EXP
+      TEMP name=T17
+    EXP
+      CONST value=0
+    MOVE
+      TEMP name=T18
+      BINOP op=+
+        TEMP name=T8
+        CONST value=-4
+    MOVE
+      TEMP name=T19
+      CALL label=_getInt
+        TEMP name=T18
+    EXP
+      TEMP name=T19
+    EXP
+      CONST value=0
+    MOVE
+      TEMP name=T20
+      MEM
+        BINOP op=+
+          TEMP name=T8
+          CONST value=-4
+    MOVE
+      TEMP name=T21
+      CALL label=_putInt
+        TEMP name=T20
+    EXP
+      TEMP name=T21
+    MOVE
+      TEMP name=T9
+      CONST value=0
