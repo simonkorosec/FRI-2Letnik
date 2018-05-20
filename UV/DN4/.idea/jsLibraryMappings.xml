@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/js/script.js" libraries="{jquery-3.3.1}" />
+    <file url="file://$PROJECT_DIR$/prosnje/izpis.html" libraries="{jquery-3.3.1}" />
+    <file url="file://$PROJECT_DIR$/prosnje/nadaljevanjeStudija.html" libraries="{jquery-3.3.1}" />
+    <file url="file://$PROJECT_DIR$/prosnje/sportnik.html" libraries="{jquery-3.3.1}" />
+  </component>
+</project>

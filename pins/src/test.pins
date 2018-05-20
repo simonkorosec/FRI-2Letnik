@@ -1,2 +1,5 @@
-fun main(i : integer) : integer = (putInt(99), getInt(v), putInt(v)) 
-{where var v:integer}
+
+fun main(i : integer) : integer = 
+({x=f(2)}, putInt(x)) 
+{where var x:integer;
+		fun f(a:integer):integer = a}

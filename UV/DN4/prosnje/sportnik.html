@@ -3,7 +3,7 @@
 
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../css/style.css">
-<title>Prošnja za izpis iz fakultete</title>
+<title>Prošnja za dodelitev statusa študenta športnika</title>
 
 <nav>
     <div class="navBar" id="myNavBar">
@@ -12,10 +12,9 @@
     </div>
 </nav>
 
-
 <article>
     <div class="pageTitleDiv">
-        <h1 class="pageTitle">Prošnja za izpis iz fakultete</h1>
+        <h1 class="pageTitle">Prošnja za dodelitev statusa študenta športnika</h1>
     </div>
 
     <div id="error" class="error-hide">
@@ -37,10 +36,12 @@
                 <input placeholder="Naslov stalnega bivališča" type="text" tabindex="3" required name="naslov"
                        id="naslov">
             </fieldset>
+
             <fieldset>
-                <input placeholder="Študijsko leto vpisa" type="text" tabindex="4" required name="letnikVpisa"
-                       id="letnikVpisa" class="width75">
+                    <input placeholder="Študijsko leto vpisa" type="text" tabindex="4" required name="letnikVpisa" id="letnikVpisa" class="width75">
+                    <input placeholder="Letnik" type="number" tabindex="5" required name="letnik" id="letnik" class="width25" min="1" max="4">
             </fieldset>
+
             <fieldset >
                 <legend>Program:</legend>
                 <input type="radio" tabindex="7" name="smer" id="BUN-RI" value="BUN-RI" required> <label
@@ -55,13 +56,21 @@
             </fieldset>
 
             <fieldset>
-                <p class="opomba">Prosimo priložite sliko študentske izkaznice, na kateri se razločno vidijo vsi
-                    podatki.</p>
-                <input type="file" id="file" name="file" required>
+                <legend>Priloga:</legend>
+                <label>
+                    <input type="radio" tabindex="14" name="priloga" value="1" required> Potrdilo Olimpijskega komiteja Slovenije (OKS) o kategorizaciji statusa športnika
+                </label> <br>
+                <label>
+                    <input type="radio" tabindex="15" name="priloga" value="2">
+                    <input type="text" name="prilogaDrugo" id="prilogaDrugo" placeholder="Drugo" class="width95">
+                </label>
             </fieldset>
             <fieldset>
-                <input name="submit" type="submit" class="searchBtn" tabindex="6" value="Pošlji"
-                       onclick="validateFormIzpis()">
+                <input type="file" id="file" name="file" required>
+            </fieldset>
+
+            <fieldset>
+                <input name="submit" type="submit" class="searchBtn" tabindex="6" value="Pošlji" onclick="validateFormSportnik()">
             </fieldset>
         </form>
     </div>
@@ -72,5 +81,4 @@
         crossorigin="anonymous"></script>
 
 <script src="../js/script.js"></script>
-
 </html>

@@ -9,13 +9,15 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class CodeGenerator {
-    public static HashMap<FrmLabel, FrmFrame> framesByLabel;
-    public static HashMap<FrmLabel, ImcCode> codesByLabel;
-    public static FrmLabel main;
+    public static HashMap<FrmLabel, FrmFrame> framesByLabel;    // Labela in frame za funkcije
+    public static HashMap<FrmLabel, ImcCode> codesByLabel;      // Labela in koda za funkcije
+    public static HashMap<String, Integer> variableByLabel;     // Labela in velikost globalnih spr
+    public static FrmLabel main;                                // Labela main()
 
     public CodeGenerator() {
         framesByLabel = new HashMap<>();
         codesByLabel = new HashMap<>();
+        variableByLabel = new HashMap<>();
         main = null;
     }
 
@@ -38,6 +40,8 @@ public class CodeGenerator {
                 if (frame.label.name().equals("_main")){
                     main = frame.label;
                 }
+            } else if (chunk instanceof ImcDataChunk){
+                variableByLabel.put(((ImcDataChunk) chunk).label.name(), ((ImcDataChunk) chunk).size);
             }
         }
     }

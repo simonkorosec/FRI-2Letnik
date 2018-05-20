@@ -10,13 +10,31 @@ import compiler.lincode.CodeGenerator;
 public class Interpreter {
 
     public static boolean debug = false;
+    public static boolean setGlobal = true;    // ali so globalne spr nastavlene
 
     /*--- staticni del navideznega stroja ---*/
+
+    /**
+     * Preslikava globalnih spremenljivk v njihove naslove
+     * */
+    public static HashMap<String, Integer> globSpr = new HashMap<>();
 
     /**
      * Pomnilnik navideznega stroja.
      */
     public static HashMap<Integer, Object> mems = new HashMap<>();
+
+    public static void stM(Integer address, Object value) {
+        if (debug) System.out.println(" [" + address + "] <= " + value);
+        mems.put(address, value);
+    }
+
+    public static Object ldM(Integer address) {
+        Object value = mems.get(address);
+        if (debug) System.out.println(" [" + address + "] => " + value);
+        return value;
+    }
+
     /**
      * Kazalec na vrh klicnega zapisa.
      */
@@ -25,16 +43,37 @@ public class Interpreter {
      * Kazalec na dno klicnega zapisa.
      */
     private static int sp = 1000;
+
+    /*--- dinamicni del navideznega stroja ---*/
+
     /**
      * Zacasne spremenljivke (`registri') navideznega stroja.
      */
     public HashMap<FrmTemp, Object> temps = new HashMap<>();
+
+    public void stT(FrmTemp temp, Object value) {
+        if (debug) System.out.println(" " + temp.name() + " <= " + value);
+        temps.put(temp, value);
+    }
+
+    public Object ldT(FrmTemp temp) {
+        Object value = temps.get(temp);
+        if (debug) System.out.println(" " + temp.name() + " => " + value);
+        return value;
+    }
+
+    /*--- Izvajanje navideznega stroja. ---*/
 
     public Interpreter(){
         this(compiler.lincode.CodeGenerator.framesByLabel.get(CodeGenerator.mainLabel()), (ImcSEQ) compiler.lincode.CodeGenerator.codesByLabel.get(CodeGenerator.mainLabel()));
     }
 
     public Interpreter(FrmFrame frame, ImcSEQ code) {
+        if (setGlobal){
+            setGlobalVar();
+            stM(1004, 0);
+        }
+
         if (debug) {
             System.out.println("[START OF " + frame.label.name() + "]");
         }
@@ -45,7 +84,6 @@ public class Interpreter {
         sp = sp - frame.size();
         stT(frame.FP, fp);
         stT(frame.RV, sp);
-        stM(1004, 0);
         if (debug) {
             System.out.println("[FP=" + fp + "]");
             System.out.println("[SP=" + sp + "]");
@@ -58,10 +96,10 @@ public class Interpreter {
             ImcCode instruction = code.stmts.get(pc);
             //ImcCode instruction = code.stmts.elementAt(pc);
             result = execute(instruction);
-            if (result instanceof ImcLABEL) {
+            if (result instanceof FrmLabel) {
                 for (pc = 0; pc < code.stmts.size(); pc++) {
                     instruction = code.stmts.get(pc);
-                    if ((instruction instanceof ImcLABEL) && (((ImcLABEL) instruction).label.equals(((ImcLABEL) result).label)))
+                    if ((instruction instanceof ImcLABEL) && (((ImcLABEL) instruction).label.name().equals(((FrmLabel) result).name())))
                         break;
                 }
             } else {
@@ -86,32 +124,6 @@ public class Interpreter {
             System.out.println("[END OF " + frame.label.name() + "]");
         }
     }
-
-    /*--- dinamicni del navideznega stroja ---*/
-
-    public static void stM(Integer address, Object value) {
-        if (debug) System.out.println(" [" + address + "] <= " + value);
-        mems.put(address, value);
-    }
-
-    public static Object ldM(Integer address) {
-        Object value = mems.get(address);
-        if (debug) System.out.println(" [" + address + "] => " + value);
-        return value;
-    }
-
-    public void stT(FrmTemp temp, Object value) {
-        if (debug) System.out.println(" " + temp.name() + " <= " + value);
-        temps.put(temp, value);
-    }
-
-    public Object ldT(FrmTemp temp) {
-        Object value = temps.get(temp);
-        if (debug) System.out.println(" " + temp.name() + " => " + value);
-        return value;
-    }
-
-    /*--- Izvajanje navideznega stroja. ---*/
 
     public Object execute(ImcCode instruction) {
 
@@ -270,6 +282,7 @@ public class Interpreter {
             ImcNAME instr = (ImcNAME) instruction;
             if (instr.label.name().equals("FP")) return fp;
             if (instr.label.name().equals("SP")) return sp;
+            return globSpr.get(instr.label.name());
         }
 
         if (instruction instanceof ImcTEMP) {
@@ -277,26 +290,20 @@ public class Interpreter {
             return ldT(instr.temp);
         }
 
-//		if (instruction instanceof ImcUNOP) {
-//			ImUNOP instr = (ImUNOP) instruction;
-//			Object subValue = execute(instr.subExpr);
-//			switch (instr.oper) {
-//			case ImUNOP.ADDi:
-//				return +(((Integer) subValue).intValue());
-//			case ImUNOP.SUBi:
-//				return -(((Integer) subValue).intValue());
-//			case ImUNOP.ADDr:
-//				return +(((Float) subValue).floatValue());
-//			case ImUNOP.SUBr:
-//				return +(((Float) subValue).floatValue());
-//			case ImUNOP.NOT:
-//				return (((Integer) subValue).intValue() == 0 ? 1 : 0);
-//			}
-//			Report.error("Internal error.", 1);
-//			return null;
-//		}
 
         return null;
     }
 
+
+    /*--- Nastavitev globalnih spremenljivk ---*/
+
+    private static void setGlobalVar(){
+        int addr = 3000;
+        for (String name : CodeGenerator.variableByLabel.keySet()) {
+            globSpr.put(name, addr);
+            mems.put(addr, 0);
+            addr += CodeGenerator.variableByLabel.get(name);
+        }
+        setGlobal = false;
+    }
 }
