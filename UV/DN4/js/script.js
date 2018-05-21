@@ -25,11 +25,13 @@ function menuDropDown() {
 function validName() {
     name = $("#name").val().trim();
 
-    if (name.split(" ").length !== 2) {
+    if (name.split(" ").length < 2) {
         errors.push("Vnesite ime in priimek");
         //$("#name").setCustomValidity("Vnesite ime in priimek");
         name = "";
+        return false;
     }
+    return true;
 }
 
 function validVpisna() {
@@ -37,10 +39,11 @@ function validVpisna() {
 
     let pattern = new RegExp("^63([0-9]{2})([0-9]{4})$");
     if (pattern.test(vpisnaSt)) {
-        //console.log(vpisnaSt);
+        return true;
     } else {
         errors.push("Vpisna številka ni v skladu s FRI pravili.");
         vpisnaSt = "";
+        return false;
         //$("#vpisnaSt").setCustomValidity("Vpisna številka ni v prave formatu");
     }
 }
@@ -65,11 +68,14 @@ function validLetnikVpisa() {
         if (letnica1 !== vpisnaSt.substr(2, 2)) {
             errors.push("Letnica vpisa in vpisna številka se ne ujemata.");
             letnikVpisa = "";
+            return false;
         }
     } else {
-        errors.push("Letnica vpisa in vpisna številka se ne ujemata.");
+        errors.push("Letnica vpisa ni v skladu z pravili.");
         letnikVpisa = "";
+        return false;
     }
+    return true;
 }
 
 function validLetnik() {
@@ -102,7 +108,7 @@ function validEmail() {
     email = $("#email").val().trim();
     if (name.split(" ").length !== 2) {
         errors.push("Email se ne ujema s pravili FRI.");
-        return;
+        return false;
     }
 
     let zacetek = name.split(" ")[0].charAt(0) + name.split(" ")[1].charAt(0);
@@ -110,11 +116,11 @@ function validEmail() {
     let pattern = new RegExp("^" + zacetek + "[0-9]{4}");
 
     if (email.startsWith(zacetek) && pattern.test(email.split("@")[0]) && email.split("@")[1] === "student.uni-lj.si") {
-        //console.log(email);
+        return true;
     } else {
         errors.push("Email se ne ujema s pravili FRI.");
+        return false;
     }
-
 }
 
 function validGSM() {
@@ -123,9 +129,10 @@ function validGSM() {
     let pattern = new RegExp("^(([0-9]{3})([ /-]?)([0-9]{3})([ /-]?)([0-9]{3}))$");
 
     if (pattern.test(gsm)) {
-        console.log(gsm);
+        return true;
     } else {
         errors.push("Neveljavna telefonska številka");
+        return false;
     }
 }
 
@@ -144,6 +151,8 @@ function showErrors() {
             let li = "<li>" + errors[i] + "</li>";
             errorList.append(li);
         }
+    } else {
+        x.className = "error-hide";
     }
 }
 
@@ -156,8 +165,8 @@ function validateFormSportnik() {
     validProgram();
     validPrilogaVrsta();
 
-    showErrors();
     if (errors.length === 0) {
+        $("#error").attr("class", "error-hide");
         let prosnja = {
             "name": name,
             "email": email,
@@ -171,13 +180,14 @@ function validateFormSportnik() {
 
         if (typeof(Storage) !== "undefined") {
             localStorage.setItem("prosnja", JSON.stringify(prosnja));
+            console.log(JSON.stringify(prosnja));
         } else {
             alert("Sorry! No Web Storage support");
         }
     } else {
-        errors = [];
-        $("#error").attr("class", "error-hide");
+        showErrors();
     }
+    errors = [];
 }
 
 function validateFormNad() {
@@ -191,8 +201,7 @@ function validateFormNad() {
     validCasPrek();
 
     if (errors.length === 0) {
-        // const x = document.getElementById("error");
-        // x.className = "error-hide";
+        $("#error").attr("class", "error-hide");
 
         let prosnja = {
             "gsm": gsm,
@@ -223,8 +232,9 @@ function validateFormIzpis() {
     validLetnikVpisa();
     validProgram();
 
-    showErrors();
+
     if (errors.length === 0) {
+        $("#error").attr("class", "error-hide");
         let prosnja = {
             "name": name,
             "vpisnaSt": vpisnaSt,
@@ -239,7 +249,7 @@ function validateFormIzpis() {
             alert("Sorry! No Web Storage support");
         }
     } else {
-        $("#error").attr("class", "error-hide");
+        showErrors();
     }
     errors = [];
 }

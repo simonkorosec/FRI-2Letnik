@@ -31,8 +31,12 @@ $urls = [
         MountainController::about();
     },
     "input" => function () {
-        $_SESSION["currPage"] = "home";
-        MountainController::input();
+        if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
+            $_SESSION["currPage"] = "input";
+            MountainController::input();
+        } else{
+            ViewHelper::redirect(BASE_URL . "home");
+        }
     },
     "login" => function () {
         $_SESSION["currPage"] = "login";
@@ -55,7 +59,7 @@ $urls = [
         MountainController::parseNewMountain();
     },
     "mountainDetails" => function () {
-        echo "helolo";
+        MountainController::showDetails();
     },
     "" => function () {
         $_SESSION["currPage"] = "home";

@@ -20,11 +20,13 @@ include_once "navigation.php";
         <table class="tableList" id="dtTable">
 
         </table>
-        <form class="deleteForm" action="list.php">
-            <fieldset>
-                <button name="delete" type="submit" id="deleteBtn" >Izbriši Goro</button>
-            </fieldset>
-        </form>
+
+<!--        <form class="deleteForm" action="list.php">-->
+<!--            <fieldset>-->
+<!--                <button name="delete" type="submit" id="deleteBtn" >Izbriši Goro</button>-->
+<!--            </fieldset>-->
+<!--        </form>-->
+
     </div>
 </article>
 
@@ -34,7 +36,7 @@ include_once "navigation.php";
 <script src="../js/script.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        displayMountainDetails();
+        displayMountainDetails(<?= $mnt ?>);
     });
 </script>
 

@@ -77,7 +77,7 @@ class MountainController {
                 array_push($errors, "Čas hoje v napačnem formatu.");
             }
 
-            $vars =[
+            $vars = [
                 "errors" => $errors,
                 "range_id" => $rangeId,
                 "name" => $mountainName,
@@ -86,7 +86,7 @@ class MountainController {
                 "description" => $description
             ];
 
-            if (count($errors) > 0){
+            if (count($errors) > 0) {
                 ViewHelper::render("view/input.php", $vars);
                 return;
             }
@@ -100,7 +100,7 @@ class MountainController {
             try {
                 MountainDB::insertNewMountain($rangeId, $mountainName, $mountainHeight, $mountainWalkTime, $description, $authorId);
 
-                $vars =[
+                $vars = [
                     "errors" => [],
                     "range_id" => "",
                     "name" => "",
@@ -112,7 +112,7 @@ class MountainController {
 
                 ViewHelper::render("view/input.php", $vars);
 
-            } catch (PDOException $e){
+            } catch (PDOException $e) {
                 array_push($errors, "Neznana napaka: $e");
                 $vars["errors"] = $errors;
                 ViewHelper::render("view/input.php", $vars);
@@ -121,4 +121,11 @@ class MountainController {
 
 
     }
+
+    public static function showDetails() {
+        $mnt = MountainDB::getMountainById($_GET["id"]);
+        //var_dump($mnt);
+        ViewHelper::render("view/mountainDetails.php", ["mnt" => json_encode($mnt, JSON_HEX_TAG | JSON_HEX_AMP)]);
+    }
+
 }

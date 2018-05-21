@@ -1,13 +1,17 @@
 "use strict";
 
-function saveMntDetails(event) {
-    if (typeof(Storage) !== "undefined") {
-        sessionStorage.setItem("mountainData", event.target.getAttribute("data-json-data"));
-        sessionStorage.setItem("mountainDataIndex", event.target.getAttribute("data-array-index"));
-        window.location.href = "mountainDetails";
+function menuDropDown() {
+    const x = document.getElementById("myNavBar");
+    if (x.className === "navBar") {
+        x.className += " responsive";
     } else {
-        alert("Sorry! No Web Storage support");
+        x.className = "navBar";
     }
+}
+
+function showDetails(event) {
+    let id = JSON.parse(event.target.getAttribute("data-json-data"));
+    window.location.href = "mountainDetails?id=" + id;
 }
 
 function readMntDetails() {
@@ -49,19 +53,8 @@ function displayMountains(args) {
         }
         const cell = row.insertCell(0);
         cell.setAttribute("data-json-data", JSON.stringify(mount.id));
-        // cell.addEventListener("dblclick", saveMntDetails);
-        // cell.addEventListener("dblclick", test);
+        cell.addEventListener("dblclick", showDetails);
         cell.innerHTML = mount.mountain_name;
-    }
-}
-
-function test() {
-    if (typeof(Storage) !== "undefined") {
-        let m_id = Number(JSON.parse(sessionStorage.getItem("mountainData")));
-        console.log(m_id);
-        $.get("")
-    } else {
-        alert("Sorry! No Web Storage support");
     }
 }
 
@@ -72,11 +65,11 @@ function walkTime(walkTime) {
     return "" + h + " h " + min + " min";
 }
 
-function displayMountainDetails() {
-    const mountain = readMntDetails();
+function displayMountainDetails(mnt) {
+    const mountain = mnt[0];
     const table = document.getElementById("dtTable");
 
-    document.getElementById("pgTitle").innerHTML = mountain.name;
+    document.getElementById("pgTitle").innerHTML = mountain.mountain_name;
 
     /* Gorovje */
     let row = table.insertRow(-1);
@@ -86,7 +79,7 @@ function displayMountainDetails() {
     cell.innerHTML = "Gorovje:";
     cell = row.insertCell(1);
     cell.classList.add("tdDetContent");
-    cell.innerHTML = mountainRanges[mountain.range];
+    cell.innerHTML = mountain.range_name;
 
     /* Čas Hoje */
     row = table.insertRow(-1);
@@ -96,7 +89,7 @@ function displayMountainDetails() {
     cell.innerHTML = "Čas Hoje:";
     cell = row.insertCell(1);
     cell.classList.add("tdDetContent");
-    cell.innerHTML = walkTime(mountain.walkTime);
+    cell.innerHTML = walkTime(mountain.walk_time);
 
     /* Višina Gore */
     row = table.insertRow(-1);
@@ -118,11 +111,3 @@ function displayMountainDetails() {
 
 }
 
-function menuDropDown() {
-    const x = document.getElementById("myNavBar");
-    if (x.className === "navBar") {
-        x.className += " responsive";
-    } else {
-        x.className = "navBar";
-    }
-}

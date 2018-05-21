@@ -38,11 +38,13 @@
             </fieldset>
 
             <fieldset>
-                    <input placeholder="Študijsko leto vpisa" type="text" tabindex="4" required name="letnikVpisa" id="letnikVpisa" class="width75">
-                    <input placeholder="Letnik" type="number" tabindex="5" required name="letnik" id="letnik" class="width25" min="1" max="4">
+                <input placeholder="Študijsko leto vpisa" type="text" tabindex="4" required name="letnikVpisa"
+                       id="letnikVpisa" class="width75">
+                <input placeholder="Letnik" type="number" tabindex="5" required name="letnik" id="letnik"
+                       class="width25" min="1" max="4">
             </fieldset>
 
-            <fieldset >
+            <fieldset>
                 <legend>Program:</legend>
                 <input type="radio" tabindex="7" name="smer" id="BUN-RI" value="BUN-RI" required> <label
                     for="BUN-RI">BUN-RI</label> <br>
@@ -52,16 +54,18 @@
                     for="BUN-RM">BUN-RM</label> <br>
                 <input type="radio" tabindex="10" name="smer" id="BM-RI" value="BM-RI"> <label for="BM-RI">BM-RI</label>
                 <br>
-                <input type="radio" tabindex="13" name="smer" id="drugo" value="drugo"> <label for="drugo"><input type="text" name="smer_drugo" id="smer_drugo" placeholder="Drugo" class="width95"></label>
+                <input type="radio" tabindex="13" name="smer" id="drugo" value="drugo"> <label for="drugo"><input
+                    type="text" name="smer_drugo" id="smer_drugo" placeholder="Drugo" class="width95"></label>
             </fieldset>
 
             <fieldset>
                 <legend>Priloga:</legend>
                 <label>
-                    <input type="radio" tabindex="14" name="priloga" value="1" required> Potrdilo Olimpijskega komiteja Slovenije (OKS) o kategorizaciji statusa športnika
+                    <input type="radio" tabindex="14" name="priloga" value="1" required> Potrdilo Olimpijskega komiteja
+                    Slovenije (OKS) o kategorizaciji statusa športnika
                 </label> <br>
                 <label>
-                    <input type="radio" tabindex="15" name="priloga" value="2">
+                    <input type="radio" tabindex="15" name="priloga" id="priloga_drugo" value="2">
                     <input type="text" name="prilogaDrugo" id="prilogaDrugo" placeholder="Drugo" class="width95">
                 </label>
             </fieldset>
@@ -70,7 +74,8 @@
             </fieldset>
 
             <fieldset>
-                <input name="submit" type="submit" class="searchBtn" tabindex="6" value="Pošlji" onclick="validateFormSportnik()">
+                <input name="submit" type="submit" class="searchBtn" tabindex="6" value="Pošlji"
+                       onclick="validateFormSportnik()">
             </fieldset>
         </form>
     </div>
@@ -81,4 +86,50 @@
         crossorigin="anonymous"></script>
 
 <script src="../js/script.js"></script>
+
+<script>
+    document.getElementById("smer_drugo").addEventListener("focus", () => {
+        document.getElementById("drugo").checked = true;
+    });
+    document.getElementById("prilogaDrugo").addEventListener("focus", () => {
+        document.getElementById("priloga_drugo").checked = true;
+    });
+
+    document.getElementById("name").addEventListener("blur",
+        () => {
+            if (!validName()) {
+                document.getElementById("name").setCustomValidity("Vnesite ime in Priimek");
+            } else {
+                document.getElementById("name").setCustomValidity("")
+            }
+        });
+
+    document.getElementById("vpisnaSt").addEventListener("blur",
+        () => {
+            if (!validVpisna()) {
+                document.getElementById("vpisnaSt").setCustomValidity("Vpisna številka ni v skladu s FRI pravili.");
+            } else {
+                document.getElementById("vpisnaSt").setCustomValidity("")
+            }
+        });
+
+/*    document.getElementById("naslov").addEventListener("blur",
+        () => {
+            if (!validNaslov()) {
+                document.getElementById("naslov").setCustomValidity("Vnesite ime in Priimek");
+            } else {
+                document.getElementById("naslov").setCustomValidity("")
+            }
+        });*/
+
+    document.getElementById("letnikVpisa").addEventListener("blur",
+        () => {
+            if (!validLetnikVpisa()) {
+                document.getElementById("letnikVpisa").setCustomValidity("Letnica vpisa ni v skladu z pravili.");
+            } else {
+                document.getElementById("letnikVpisa").setCustomValidity("")
+            }
+        });
+
+</script>
 </html>

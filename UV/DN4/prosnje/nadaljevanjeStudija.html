@@ -89,5 +89,64 @@
         crossorigin="anonymous"></script>
 
 <script src="../js/script.js"></script>
+<script>
+    document.getElementById("smer_drugo").addEventListener("focus", () => {
+        document.getElementById("drugo").checked = true;
+    });
 
+    document.getElementById("name").addEventListener("blur",
+        () => {
+            if (!validName()) {
+                document.getElementById("name").setCustomValidity("Vnesite ime in Priimek");
+            } else {
+                document.getElementById("name").setCustomValidity("")
+            }
+        });
+
+    document.getElementById("vpisnaSt").addEventListener("blur",
+        () => {
+            if (!validVpisna()) {
+                document.getElementById("vpisnaSt").setCustomValidity("Vpisna številka ni v skladu s FRI pravili.");
+            } else {
+                document.getElementById("vpisnaSt").setCustomValidity("")
+            }
+        });
+
+    /*document.getElementById("naslov").addEventListener("blur",
+        () => {
+            if (!validNaslov()) {
+                document.getElementById("naslov").setCustomValidity("Vnesite ime in Priimek");
+            } else {
+                document.getElementById("naslov").setCustomValidity("")
+            }
+        });*/
+
+    document.getElementById("letnikVpisa").addEventListener("blur",
+        () => {
+            if (!validLetnikVpisa()) {
+                document.getElementById("letnikVpisa").setCustomValidity("Letnica vpisa ni v skladu z pravili.");
+            } else {
+                document.getElementById("letnikVpisa").setCustomValidity("")
+            }
+        });
+
+    document.getElementById("gsm").addEventListener("blur",
+        () => {
+            if (!validGSM()) {
+                document.getElementById("gsm").setCustomValidity("Neveljavna telefonska številka.");
+            } else {
+                document.getElementById("gsm").setCustomValidity("")
+            }
+        });
+
+    document.getElementById("email").addEventListener("blur",
+        () => {
+            if (!validEmail()) {
+                document.getElementById("email").setCustomValidity("Email se ne ujema s pravili FRI.");
+            } else {
+                document.getElementById("email").setCustomValidity("")
+            }
+        });
+
+</script>
 </html>

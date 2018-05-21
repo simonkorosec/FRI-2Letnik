@@ -93,4 +93,13 @@ class MountainDB {
 
     }
 
+    public static function getMountainById($id){
+        $db = DBInit::getInstance();
+
+        $statement = $db->prepare("SELECT * FROM `alldetails` WHERE `id`=:id");
+        $statement->bindParam(":id", $id);
+
+        $statement->execute();
+        return $statement->fetchAll();
+    }
 }
