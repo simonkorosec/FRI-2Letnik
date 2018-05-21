@@ -1,7 +1,6 @@
 
-fun main(i : integer) : integer = 
-	(getInt(x), putInt(x)) {where var x:integer}
 
-#({x=f(2)}, putInt(x)) 
-#{where var x:integer;
-#		fun f(a:integer):integer = a}
+fun main(i : integer) : integer = 
+(getString(str), {str = f(str)}, putString(str))
+{where var str : string;
+fun f(s:string):string = (putString(s),'abc')}

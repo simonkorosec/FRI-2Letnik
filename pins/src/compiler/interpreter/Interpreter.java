@@ -11,6 +11,7 @@ public class Interpreter {
 
     public static boolean debug = false;
     public static boolean setGlobal = true;    // ali so globalne spr nastavlene
+    public static FrmFrame oldFrame = null;
 
     /*--- staticni del navideznega stroja ---*/
 
@@ -69,16 +70,25 @@ public class Interpreter {
     }
 
     public Interpreter(FrmFrame frame, ImcSEQ code) {
-        if (setGlobal){
-            setGlobalVar();
-            stM(1004, 0);
-        }
-
         if (debug) {
             System.out.println("[START OF " + frame.label.name() + "]");
         }
 
-        stM(sp + frame.size(), fp);
+        if (setGlobal){
+            setGlobalVar();
+            stM(1004, 0);
+        }
+        int offset;
+        if (frame.level == 1){
+            offset = 0;
+            oldFrame = frame;
+        } else {
+            offset = oldFrame.size();
+            oldFrame = frame;
+        }
+
+        stM(sp + offset, fp);
+        //stM(sp + frame.size(), fp);
         //stM(sp + frame.oldFPoffset, fp);
         fp = sp;
         sp = sp - frame.size();
@@ -107,7 +117,8 @@ public class Interpreter {
             }
         }
 
-        fp = (Integer) ldM(fp + frame.size());
+        fp = (Integer) ldM(fp + offset);
+        //fp = (Integer) ldM(fp + frame.size());
         //fp = (Integer) ldM(fp + frame.oldFPoffset);
         sp = sp + frame.size();
         if (debug) {
@@ -189,35 +200,38 @@ public class Interpreter {
             ImcCALL instr = (ImcCALL) instruction;
             int offset = 0;
             //stM(sp + offset, execute(instr.sl));
-            offset += 4;
+            //offset += 4;
             for (ImcCode arg : instr.args) {
                 stM(sp + offset, execute(arg));
                 offset += 4;
             }
             if (instr.label.name().equals("_putInt")) {
                 //System.out.println((Integer) ldM(sp + 8));
-                System.out.println((Integer) ldM(sp + 4));
+                //System.out.println((Integer) ldM(sp + 4));
+                System.out.println((Integer) ldM(sp + 0));
                 return null;
             }
             if (instr.label.name().equals("_getInt")) {
                 Scanner scanner = new Scanner(System.in);
-                stM((Integer) ldM(sp + 4), scanner.nextInt());
+                stM((Integer) ldM(sp +0), scanner.nextInt());
                 return null;
             }
             if (instr.label.name().equals("_putString")) {
-                System.out.println((String) ldM(sp + 4));
+                System.out.println((String) ldM(sp + 0));
                 return null;
             }
             if (instr.label.name().equals("_getString")) {
                 Scanner scanner = new Scanner(System.in);
-                stM((Integer) ldM(sp + 4), scanner.next());
+                stM((Integer) ldM(sp + 0), scanner.next());
                 return null;
             }
 
 //            new Interpreter(compiler.compiler.lincode.CodeGenerator.framesByLabel.get(instr.fun), (ImcSEQ) compiler.compiler.lincode.CodeGenerator.codesByLabel.get(instr.fun));
 
             new Interpreter(compiler.lincode.CodeGenerator.framesByLabel.get(instr.label), (ImcSEQ) compiler.lincode.CodeGenerator.codesByLabel.get(instr.label));
-            return null;
+            return ldM(sp);
+
+            //return null;
         }
 
         if (instruction instanceof ImcCJUMP) {

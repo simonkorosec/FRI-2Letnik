@@ -210,7 +210,6 @@ public class ImcCodeGen implements Visitor {
         imcCodeDesc.put(acceptor, imcCALL);
     }
 
-
     @Override
     public void visit(AbsFunDef acceptor) {
         frames.push(FrmDesc.getFrame(acceptor));
