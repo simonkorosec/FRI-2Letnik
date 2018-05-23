@@ -123,9 +123,21 @@ class MountainController {
     }
 
     public static function showDetails() {
-        $mnt = MountainDB::getMountainById($_GET["id"]);
+        $id = $_GET["id"];
+        $mnt = MountainDB::getMountainById($id);
         //var_dump($mnt);
-        ViewHelper::render("view/mountainDetails.php", ["mnt" => json_encode($mnt, JSON_HEX_TAG | JSON_HEX_AMP)]);
+
+        $comments = MountainDB::getComments($id);
+
+        ViewHelper::render("view/mountainDetails.php", ["id" => $id, "mnt" => json_encode($mnt, JSON_HEX_TAG | JSON_HEX_AMP), "comments" => $comments]);
     }
 
+    public static function addComment() {
+        $id = $_POST["id_mountain"];
+        $comment = $_POST["comment"];
+        $user_name = $_POST["user_name"];
+
+        MountainDB::insertComment($id, $user_name, $comment);
+
+    }
 }

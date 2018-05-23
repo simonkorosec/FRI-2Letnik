@@ -82,8 +82,8 @@ class MountainDB {
 
         $q .= " 1";
 
-        //$statement->bindParam(":query", $q);
         $statement = $db->prepare("SELECT `id`, `range_id`, `range_name`, `mountain_name`, `height`, `walk_time`, `description`, `author_id` FROM `alldetails` WHERE $q");
+        //$statement->bindParam(":q", $q);
 
         //var_dump($statement);
 
@@ -101,5 +101,28 @@ class MountainDB {
 
         $statement->execute();
         return $statement->fetchAll();
+    }
+
+    public static function getComments($id) {
+        $db = DBInit::getInstance();
+
+        $statement = $db->prepare("SELECT * FROM `comments` WHERE `id_mountain`=:id");
+        $statement->bindParam(":id", $id);
+
+        $statement->execute();
+        return $statement->fetchAll();
+    }
+
+    public static function insertComment($id_mountain, $user_name, $comment){
+        $db = DBInit::getInstance();
+        $time =
+
+        $statement = $db->prepare("INSERT INTO `comments`(`id_mountain`, `user_name`, `time`, `comment`) VALUES (:id_mountain, :user_name, Now(), :comment)");
+        $statement->bindParam(":id_mountain", $id_mountain);
+        $statement->bindParam(":user_name", $user_name);
+        //$statement->bindParam(":time", $time);
+        $statement->bindParam(":comment", $comment);
+
+        $statement->execute();
     }
 }
