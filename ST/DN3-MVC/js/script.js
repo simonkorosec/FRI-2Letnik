@@ -14,6 +14,7 @@ function showDetails(event) {
     window.location.href = "mountainDetails?id=" + id;
 }
 
+/*
 function readMntDetails() {
     if (typeof(Storage) !== "undefined") {
         return JSON.parse(sessionStorage.getItem("mountainData"));
@@ -21,6 +22,7 @@ function readMntDetails() {
         alert("Sorry! No Web Storage support");
     }
 }
+*/
 
 function displayMountains(args) {
     /* Sort by mountain range id */
@@ -99,7 +101,7 @@ function displayMountainDetails(mnt) {
     cell.innerHTML = "Višina:";
     cell = row.insertCell(1);
     cell.classList.add("tdDetContent");
-    cell.innerHTML = mountain.height + "m";
+    cell.innerHTML = mountain.height + " m";
 
     /* Opis Gore */
     row = table.insertRow(-1);

@@ -61,6 +61,9 @@ $urls = [
     "mountainDetails" => function () {
         MountainController::showDetails();
     },
+    "addComment" => function () {
+        MountainController::addComment();
+    },
     "" => function () {
         $_SESSION["currPage"] = "home";
         ViewHelper::redirect(BASE_URL . "home");

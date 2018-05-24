@@ -100,6 +100,11 @@
                 document.getElementById("name").setCustomValidity("Vnesite ime in Priimek");
             } else {
                 document.getElementById("name").setCustomValidity("")
+				if (!validEmail()) {
+                document.getElementById("email").setCustomValidity("Email se ne ujema s pravili FRI.");
+            } else {
+                document.getElementById("email").setCustomValidity("")
+            }
             }
         });
 
