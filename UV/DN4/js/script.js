@@ -180,7 +180,7 @@ function validateFormSportnik() {
 
         if (typeof(Storage) !== "undefined") {
             localStorage.setItem("prosnja", JSON.stringify(prosnja));
-            console.log(JSON.stringify(prosnja));
+            console.log(prosnja);
         } else {
             alert("Sorry! No Web Storage support");
         }
@@ -216,6 +216,7 @@ function validateFormNad() {
 
         if (typeof(Storage) !== "undefined") {
             localStorage.setItem("prosnja", JSON.stringify(prosnja));
+			console.log(prosnja);
         } else {
             alert("Sorry! No Web Storage support");
         }
@@ -245,6 +246,7 @@ function validateFormIzpis() {
 
         if (typeof(Storage) !== "undefined") {
             localStorage.setItem("prosnja", JSON.stringify(prosnja));
+			console.log(prosnja);
         } else {
             alert("Sorry! No Web Storage support");
         }
