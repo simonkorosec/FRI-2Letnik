@@ -118,7 +118,7 @@ class MountainController {
                 array_push($errors, "Neznana napaka: $e");
                 $vars["errors"] = $errors;
                 ViewHelper::render("view/input.php", $vars);
-            } catch (Exception $e){
+            } catch (Exception $e) {
                 $db->rollBack();
                 array_push($errors, $e->getMessage());
                 $vars["errors"] = $errors;
@@ -134,7 +134,17 @@ class MountainController {
 
         $comments = MountainDB::getComments($id);
 
-        ViewHelper::render("view/mountainDetails.php", ["id" => $id, "mnt" => json_encode($mnt, JSON_HEX_TAG | JSON_HEX_AMP), "comments" => $comments]);
+        $images = MountainDB::getImages($id);
+
+        $vars = [
+            "id" => $id,
+            "mnt" => json_encode($mnt, JSON_HEX_TAG | JSON_HEX_AMP),
+            "comments" => $comments,
+            "images" => $images,
+            "numImgs" => count($images)
+        ];
+
+        ViewHelper::render("view/mountainDetails.php", $vars);
     }
 
     public static function addComment() {

@@ -33,7 +33,8 @@ include_once "navigation.php";
         <div class="container">
             <form class="inputForm" id="comment-form" action="<?= BASE_URL . "addComment" ?>" method="post">
                 <fieldset>
-                    <textarea class="comment-tx" title="comment-input" name="comment" required placeholder="Vnesite komentar..."></textarea>
+                    <textarea class="comment-tx" title="comment-input" name="comment" required
+                              placeholder="Vnesite komentar..."></textarea>
                 </fieldset>
 
                 <fieldset>
@@ -45,22 +46,52 @@ include_once "navigation.php";
         </div>
     <?php endif ?>
 
-    <?php if (count($comments) > 0):?>
-    <div class="container" id="comment-section">
-        <table id="comment-table">
-        <?php foreach ($comments as $comment):?>
-            <tr class="comment">
-                <td class="comment-info">
-                    <p class="comment-userName"><?= $comment["user_name"]?></p>
-                    <p class="comment-time"><?= $comment["time"]?></p>
-                </td>
-                <td class="comment-text">
-                    <p><?= $comment["comment"]?></p>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-        </table>
-    </div>
+    <?php if ($numImgs > 0): ?>
+        <div class="container" id="slideshow">
+            <div class="slideshow-container">
+                <?php $i = 1;
+                foreach ($images as $img): ?>
+
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                        <div class="numbertext"><?= $i++ ?> / <?= $numImgs ?></div>
+                        <img src="../<?= $img["path"] ?>" style="width:100%;">
+                        <!--<div class="text">Slika 1</div>-->
+                    </div>
+
+                <?php endforeach; ?>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center;">
+                <?php for ($i = 1; $i <= $numImgs; $i++): ?>
+                    <span class="dot" onclick="currentSlide(<?= $i ?>)"></span>
+                <?php endfor; ?>
+            </div>
+
+        </div>
+    <?php endif; ?>
+
+    <?php if (count($comments) > 0): ?>
+        <div class="container" id="comment-section">
+            <table id="comment-table">
+                <?php foreach ($comments as $comment): ?>
+                    <tr class="comment">
+                        <td class="comment-info">
+                            <p class="comment-userName"><?= $comment["user_name"] ?></p>
+                            <p class="comment-time"><?= $comment["time"] ?></p>
+                        </td>
+                        <td class="comment-text">
+                            <p><?= $comment["comment"] ?></p>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
     <?php endif; ?>
 
 </article>
@@ -72,6 +103,7 @@ include_once "navigation.php";
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         displayMountainDetails(<?= $mnt ?>);
+        showSlides(slideIndex);
     });
 </script>
 

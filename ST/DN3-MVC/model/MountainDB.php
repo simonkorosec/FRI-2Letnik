@@ -154,14 +154,23 @@ class MountainDB {
         }
     }
 
-    public
-    static function getMountainByName($mountainName) {
+    public static function getMountainByName($mountainName) {
         $db = DBInit::getInstance();
 
         $statement = $db->prepare("SELECT `id` FROM `alldetails` WHERE `mountain_name` = :name LIMIT 1");
         $statement->bindParam(":name", $mountainName);
         $statement->execute();
         return $statement->fetch();
+    }
+
+    public static function getImages($id) {
+        $db = DBInit::getInstance();
+
+        $statement = $db->prepare("SELECT `path` FROM `images` WHERE `id_mountain` = :id");
+        $statement->bindParam(":id", $id);
+
+        $statement->execute();
+        return $statement->fetchAll();
     }
 
 }

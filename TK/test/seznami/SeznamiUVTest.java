@@ -1,8 +1,18 @@
 package seznami;
 
+import org.easymock.EasyMock;
 import org.junit.*;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import static org.junit.Assert.*;
+
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
+
 
 public class SeznamiUVTest {
 
@@ -56,6 +66,18 @@ public class SeznamiUVTest {
         assertEquals("Error: data structure is empty", uv.processInput("get_first"));
         assertEquals("OK", uv.processInput("add 5"));
         assertEquals("Error: Duplicated entry", uv.processInput("add 5"));
+    }
+
+    @Test
+    public void testErrorNoSpace() {
+        assertEquals("OK", uv.addTmp(new BstMock<>(), "bstMock"));
+
+        assertEquals("OK", uv.processInput("use bstMock"));
+        assertEquals("Error: IO error There is not enough space on the disk", uv.processInput("save test.bin"));
+    }
+
+    @Test
+    public void testErrorNoSpaceMock() throws IOException {
     }
 
     // *****************

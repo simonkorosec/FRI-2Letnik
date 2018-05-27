@@ -23,7 +23,7 @@ include_once "navigation.php";
                        pattern="[\-A-Za-z]+">
             </fieldset>
             <fieldset>
-                <button name="submit" type="submit" class="searchBtn" tabindex="2">Iskanje</button>
+                <input name="submit" type="submit" class="searchBtn" tabindex="2" value="Iskanje" >
             </fieldset>
         </form>
     </div>
