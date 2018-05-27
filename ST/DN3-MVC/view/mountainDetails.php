@@ -31,7 +31,7 @@ include_once "navigation.php";
 
     <?php if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) : ?>
         <div class="container">
-            <form class="inputForm" action="<?= BASE_URL . "addComment" ?>" method="post">
+            <form class="inputForm" id="comment-form" action="<?= BASE_URL . "addComment" ?>" method="post">
                 <fieldset>
                     <textarea class="comment-tx" title="comment-input" name="comment" required placeholder="Vnesite komentar..."></textarea>
                 </fieldset>
@@ -45,6 +45,7 @@ include_once "navigation.php";
         </div>
     <?php endif ?>
 
+    <?php if (count($comments) > 0):?>
     <div class="container" id="comment-section">
         <table id="comment-table">
         <?php foreach ($comments as $comment):?>
@@ -60,6 +61,8 @@ include_once "navigation.php";
         <?php endforeach; ?>
         </table>
     </div>
+    <?php endif; ?>
+
 </article>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -70,8 +73,6 @@ include_once "navigation.php";
     document.addEventListener("DOMContentLoaded", () => {
         displayMountainDetails(<?= $mnt ?>);
     });
-
-
 </script>
 
 </html>

@@ -967,211 +967,240 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="243" parent="4" name="comments"/>
-    <table id="244" parent="4" name="mountain"/>
-    <table id="245" parent="4" name="rangenames"/>
-    <table id="246" parent="4" name="users"/>
-    <view id="247" parent="4" name="alldetails"/>
-    <column id="248" parent="243" name="id_comment">
+    <table id="244" parent="4" name="images"/>
+    <table id="245" parent="4" name="mountain"/>
+    <table id="246" parent="4" name="rangenames"/>
+    <table id="247" parent="4" name="users"/>
+    <view id="248" parent="4" name="alldetails"/>
+    <column id="249" parent="243" name="id_comment">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="243" name="id_mountain">
+    <column id="250" parent="243" name="id_mountain">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="243" name="user_name">
+    <column id="251" parent="243" name="user_name">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="243" name="time">
+    <column id="252" parent="243" name="time">
       <Position>4</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="243" name="comment">
+    <column id="253" parent="243" name="comment">
       <Position>5</Position>
       <DataType>varchar(250)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="253" parent="243" name="id_mountain">
+    <index id="254" parent="243" name="id_mountain">
       <ColNames>id_mountain</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="254" parent="243" name="PRIMARY">
+    <key id="255" parent="243" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_comment</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="255" parent="243" name="comments_ibfk_1">
+    <foreign-key id="256" parent="243" name="comments_ibfk_1">
       <ColNames>id_mountain</ColNames>
       <RefSchemaName>mountains</RefSchemaName>
       <RefTableName>mountain</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="256" parent="244" name="id">
+    <column id="257" parent="244" name="id_file">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="244" name="range_id">
+    <column id="258" parent="244" name="id_mountain">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="244" name="name">
+    <column id="259" parent="244" name="path">
+      <Position>3</Position>
+      <DataType>varchar(500)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="260" parent="244" name="fk">
+      <ColNames>id_mountain</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="261" parent="244" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_file</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="262" parent="245" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="263" parent="245" name="range_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="264" parent="245" name="name">
       <Position>3</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="244" name="height">
+    <column id="265" parent="245" name="height">
       <Position>4</Position>
       <DataType>int(4)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="244" name="walk_time">
+    <column id="266" parent="245" name="walk_time">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="244" name="description">
+    <column id="267" parent="245" name="description">
       <Position>6</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="244" name="author_id">
+    <column id="268" parent="245" name="author_id">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="263" parent="244" name="range_id">
+    <index id="269" parent="245" name="range_id">
       <ColNames>range_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="264" parent="244" name="author_id">
+    <index id="270" parent="245" name="author_id">
       <ColNames>author_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="265" parent="244" name="PRIMARY">
+    <key id="271" parent="245" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="266" parent="244" name="mountain_ibfk_1">
+    <foreign-key id="272" parent="245" name="mountain_ibfk_1">
       <ColNames>range_id</ColNames>
       <RefSchemaName>mountains</RefSchemaName>
       <RefTableName>rangenames</RefTableName>
       <RefColNames>range_id</RefColNames>
     </foreign-key>
-    <foreign-key id="267" parent="244" name="mountain_ibfk_2">
+    <foreign-key id="273" parent="245" name="mountain_ibfk_2">
       <ColNames>author_id</ColNames>
       <RefSchemaName>mountains</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="268" parent="245" name="range_id">
+    <column id="274" parent="246" name="range_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="269" parent="245" name="name">
+    <column id="275" parent="246" name="name">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="270" parent="245" name="PRIMARY">
+    <key id="276" parent="246" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>range_id</ColNames>
       <Primary>1</Primary>
-    </key>
-    <column id="271" parent="246" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="272" parent="246" name="username">
-      <Position>2</Position>
-      <DataType>varchar(30)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="273" parent="246" name="password">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="274" parent="246" name="username">
-      <ColNames>username</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <key id="275" parent="246" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="276" parent="246" name="username">
-      <ColNames>username</ColNames>
-      <UnderlyingIndexName>username</UnderlyingIndexName>
     </key>
     <column id="277" parent="247" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="247" name="range_id">
+    <column id="278" parent="247" name="username">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="279" parent="247" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="280" parent="247" name="username">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="281" parent="247" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="282" parent="247" name="username">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>username</UnderlyingIndexName>
+    </key>
+    <column id="283" parent="248" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="284" parent="248" name="range_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="279" parent="247" name="range_name">
+    <column id="285" parent="248" name="range_name">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="280" parent="247" name="mountain_name">
+    <column id="286" parent="248" name="mountain_name">
       <Position>4</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="281" parent="247" name="height">
+    <column id="287" parent="248" name="height">
       <Position>5</Position>
       <DataType>int(4)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="282" parent="247" name="walk_time">
+    <column id="288" parent="248" name="walk_time">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="283" parent="247" name="description">
+    <column id="289" parent="248" name="description">
       <Position>7</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="284" parent="247" name="author_id">
+    <column id="290" parent="248" name="author_id">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>

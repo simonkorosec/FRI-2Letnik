@@ -15,7 +15,7 @@ body {
     font-weight: 100;
     font-size: 12px;
     line-height: 30px;
-    color: #777;
+    color: #414141;
     background: #E0E0E0;
 }
 
@@ -278,6 +278,7 @@ select option {
 
 #comment-table{
     border-spacing: 10px;
+    border-collapse: collapse;
 }
 
 .comment-info p {
@@ -286,6 +287,18 @@ select option {
 
 .comment-time {
     font-size: x-small;
+}
+
+.comment-text p {
+    padding-left: 20px;
+}
+
+.comment {
+    border-bottom: 1pt solid black;
+}
+
+#comment-form {
+    margin: 5% auto !important;
 }
 
 /*.comment-info{*/

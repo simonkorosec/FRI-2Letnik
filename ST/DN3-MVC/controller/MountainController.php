@@ -79,7 +79,7 @@ class MountainController {
 
             $vars = [
                 "errors" => $errors,
-                "range_id" => $rangeId,
+                "ranges" => MountainDB::getRanges(),
                 "name" => $mountainName,
                 "height" => $mountainHeight,
                 "walk_time" => $mountainWalkTime,
@@ -94,32 +94,37 @@ class MountainController {
             $mountainHeight = str_replace("m", "", $mountainWalkTime);
             $mountainWalkTime = explode(":", $mountainWalkTime);
             $mountainWalkTime = $mountainWalkTime[0] * 60 + $mountainWalkTime[1];
-
             $authorId = $_SESSION["id"];
 
+            $db = DBInit::getInstance();
             try {
+                $db->beginTransaction();
                 MountainDB::insertNewMountain($rangeId, $mountainName, $mountainHeight, $mountainWalkTime, $description, $authorId);
+                MountainDB::insertFiles($mountainName, $_FILES["images"]);
+                $db->commit();
 
                 $vars = [
                     "errors" => [],
-                    "range_id" => "",
+                    "ranges" => MountainDB::getRanges(),
                     "name" => "",
                     "height" => "",
                     "walk_time" => "",
                     "description" => "",
                     "mountainInserted" => true
                 ];
-
                 ViewHelper::render("view/input.php", $vars);
-
             } catch (PDOException $e) {
+                $db->rollBack();
                 array_push($errors, "Neznana napaka: $e");
+                $vars["errors"] = $errors;
+                ViewHelper::render("view/input.php", $vars);
+            } catch (Exception $e){
+                $db->rollBack();
+                array_push($errors, $e->getMessage());
                 $vars["errors"] = $errors;
                 ViewHelper::render("view/input.php", $vars);
             }
         }
-
-
     }
 
     public static function showDetails() {

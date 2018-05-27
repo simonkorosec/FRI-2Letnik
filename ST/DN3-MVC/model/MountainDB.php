@@ -47,10 +47,6 @@ class MountainDB {
     public static function getMountainsQuery($query) {
         $db = DBInit::getInstance();
 
-//        $statement = $db->prepare("SELECT `id`, `range_id`, `Range Name`, `Mountain Name`, `height`, `walk_time`, `description`, `author_id`, `username`
-//FROM `alldetails`
-//WHERE :query");
-
         $q = "";
         $min_H = -13;
         $max_H = 9999;
@@ -93,7 +89,7 @@ class MountainDB {
 
     }
 
-    public static function getMountainById($id){
+    public static function getMountainById($id) {
         $db = DBInit::getInstance();
 
         $statement = $db->prepare("SELECT * FROM `alldetails` WHERE `id`=:id");
@@ -113,9 +109,8 @@ class MountainDB {
         return $statement->fetchAll();
     }
 
-    public static function insertComment($id_mountain, $user_name, $comment){
+    public static function insertComment($id_mountain, $user_name, $comment) {
         $db = DBInit::getInstance();
-        $time =
 
         $statement = $db->prepare("INSERT INTO `comments`(`id_mountain`, `user_name`, `time`, `comment`) VALUES (:id_mountain, :user_name, Now(), :comment)");
         $statement->bindParam(":id_mountain", $id_mountain);
@@ -125,4 +120,48 @@ class MountainDB {
 
         $statement->execute();
     }
+
+    public static function insertFiles($mountainName, $files) {
+        $db = DBInit::getInstance();
+
+        $id = MountainDB::getMountainByName($mountainName)["id"];
+        $basePath = BASE_IMG_DIR . $mountainName;
+
+        if (!is_dir($basePath)) {
+            mkdir($basePath, 0777, true);
+        }
+        $basePath = $basePath . "/";
+
+        $statement = $db->prepare("INSERT INTO `images`(`id_mountain`, `path`) VALUES (:id, :path)");
+        $statement->bindParam(":id", $id);
+        $statement->bindParam(":path", $path);
+
+        $total = count($files["name"]);
+        for ($i = 0; $i < $total; $i++) {
+            $f = explode('.', $files["name"][$i]);
+            $file_ext = strtolower(end($f));
+            $extensions= array("jpeg","jpg","png");
+            if(in_array($file_ext,$extensions)=== false){
+                throw new Exception("Samo datoteke tipa PNG in JPEG so dovoljene.");
+            }
+
+            $path = $basePath . $files["name"][$i];
+            if (move_uploaded_file($files["tmp_name"][$i], $path)) {
+                $statement->execute();
+            } else {
+                throw new Exception("Napaka pri prenosu datoteke.");
+            }
+        }
+    }
+
+    public
+    static function getMountainByName($mountainName) {
+        $db = DBInit::getInstance();
+
+        $statement = $db->prepare("SELECT `id` FROM `alldetails` WHERE `mountain_name` = :name LIMIT 1");
+        $statement->bindParam(":name", $mountainName);
+        $statement->execute();
+        return $statement->fetch();
+    }
+
 }

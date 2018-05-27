@@ -27,7 +27,8 @@ include_once "navigation.php";
     <?php endif; ?>
 
     <div class="container">
-        <form class="inputForm" id="newInputForm" action="<?= BASE_URL . "parseNewMountain" ?>" method="post">
+        <form class="inputForm" id="newInputForm" action="<?= BASE_URL . "parseNewMountain" ?>" method="post"
+              enctype="multipart/form-data">
             <fieldset>
                 <label>
                     <select name="range_id" id="range_id" class="select" required tabindex="1">
@@ -56,6 +57,9 @@ include_once "navigation.php";
             <fieldset>
                 <textarea placeholder="Tukaj vpišite opis gore..." name="description" id="description"
                           tabindex="5" required <?= $description ?> ></textarea>
+            </fieldset>
+            <fieldset>
+                <input type="file" name="images[]" multiple>
             </fieldset>
 
             <fieldset>
