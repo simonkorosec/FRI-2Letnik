@@ -3,6 +3,7 @@ import QtQuick 2.0
 Item {
     id: root
     property string colorKey
+    property string colorText
     property string crka: modelData
     property bool isCorectPos: true
 
@@ -36,7 +37,7 @@ Item {
 
             Text {
                 anchors.fill: parent
-                color: "white"
+                color: colorText
                 font.pixelSize: 48
                 text: modelData
                 horizontalAlignment:Text.AlignHCenter
@@ -62,16 +63,27 @@ Item {
         }
 
         function drop(){
+            var prevPar = parent;
             parent = tile.Drag.target !== null ? tile.Drag.target : root;
 
             if (parent !== root && parent.crka === root.crka) {
                 console.log("uspeh");
                 root.isCorectPos = true;
+                parent.isCorectPos = true;
+
+                parent.parent.stPravilnih += 1;
+                console.log(parent.parent.stPravilnih);
+
             } else if (parent !== root && parent.crka !== root.crka){
                 console.log("ne");
+                prevPar.isCorectPos = false;
                 root.isCorectPos = false;
+
+                parent.parent.stPravilnih -= 1;
             } else if (parent === root) {
+                prevPar.isCorectPos = false;
                 root.isCorectPos = true;
+                prevPar.parent.stPravilnih -= 1;
             }
         }
     }

@@ -6,6 +6,10 @@ Rectangle {
     color: "lightgrey"
     width: 1024
     height: 768
+    property string barva: "black"
+    property string barvaPloscic: "red"
+    property string barvaCrk: "white"
+
 
     ColumnLayout {
         anchors.fill: parent
@@ -14,7 +18,7 @@ Rectangle {
             ColumnLayout {
                 Rectangle {
                     id: pomoc
-                    color: "blue"
+                    color: barva  //"blue"
                     Layout.preferredHeight: main.height/3
                     Layout.fillWidth: true
 
@@ -24,16 +28,20 @@ Rectangle {
                         text: "napaka"
                         font.pointSize: 24
                         font.capitalization: Font.AllUppercase
+                        font.letterSpacing: 16
                     }
                 }
                 Rectangle {
                     id: vnos
-                    color: "green"
+                    color: barva //"green"
                     Layout.preferredHeight: main.height/3
                     Layout.fillWidth: true
 
                     Row {
                         id: crkeDestination
+                        property string name: "row"
+                        property real stPravilnih: 0
+                        property real stVseh: 0
 
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
@@ -42,11 +50,21 @@ Rectangle {
 
                         width: 64
                         spacing: 10
-                        opacity: 0.5
 
                         Repeater {
                             model: vnosModel
-                            delegate: DropTile { colorKey: "red" }
+                            delegate: DropTile {
+                                colorKey: main.barvaPloscic
+                                colorText: main.barvaCrk
+                                displayLetter: true
+                            }
+                        }
+
+                        states: State {
+                            when: stPravilnih === 1
+                            StateChangeScript {
+                                script: console.log("delllll")
+                            }
                         }
                     }
 
@@ -61,9 +79,10 @@ Rectangle {
                 id: slika
                 Layout.preferredHeight: main.height * 2/3
                 Layout.preferredWidth: main.width / 3
-                color: "red"
+                color: barva //"red"
                 Image {
                     id: slikaImg
+                    anchors.verticalCenter: parent.verticalCenter
                     //source: "./images/raca.png"
                     width: parent.width
                     fillMode: Image.PreserveAspectFit
@@ -75,7 +94,7 @@ Rectangle {
             id: crke
             Layout.preferredHeight: main.height/3
             Layout.fillWidth: true
-            color: "yellow"
+            color: barva  //"yellow"
             anchors.left: parent.left
             anchors.right: parent.right
 
@@ -94,7 +113,7 @@ Rectangle {
 
                 Repeater {
                     model: crkeModel
-                    delegate: DragTile { colorKey: "red" }
+                    delegate: DragTile { colorKey: main.barvaPloscic; colorText: main.barvaCrk }
                 }
             }
 
@@ -119,10 +138,12 @@ Rectangle {
                     //console.log("response", settings.responseText)
                     var result = JSON.parse(settings.responseText);
                     var color = result["bgColor"];
-                    main.color = color;
+                    main.barva = color;
                     var cap = result["fontCapitalization"];
-                    var iskanaBeseda = "avto";
+                    main.barvaPloscic = result["barvaPloscic"];
+                    main.barvaCrk = result["barvaCrk"];
 
+                    var iskanaBeseda = "avto";
                     readWord(cap, iskanaBeseda);
                 } else {
                     console.log("HTTP:", settings.status, settings.statusText);

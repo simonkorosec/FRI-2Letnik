@@ -1462,7 +1462,7 @@
                       <option name="descriptionText" value="&lt;h2&gt;Introduction&lt;/h2&gt;&#10;&lt;p&gt;This part was inspired by &lt;a href=&quot;https://github.com/goldmansachs/gs-collections-kata&quot;&gt;GS Collections Kata&lt;/a&gt;.&lt;/p&gt;&#10;&lt;p&gt;Default collections in Kotlin are Java collections, but there are lots of useful extension functions for them. For example, operations that transform a collection to another one, starting with 'to': &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/to-set.html&quot;&gt;&lt;code&gt;toSet&lt;/code&gt;&lt;/a&gt; or &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/to-list.html&quot;&gt;&lt;code&gt;toList&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&#10;&lt;p&gt;Implement an extension function &lt;code&gt;Shop.getSetOfCustomers()&lt;/code&gt;. The class &lt;code&gt;Shop&lt;/code&gt; and all related classes can be found at &lt;code&gt;Shop.kt&lt;/code&gt;.&lt;/p&gt;" />
                       <option name="index" value="1" />
                       <option name="name" value="Introduction" />
-                      <option name="status" value="Unchecked" />
+                      <option name="status" value="Solved" />
                       <option name="stepId" value="234740" />
                       <option name="testsText">
                         <map>
@@ -1505,19 +1505,19 @@
                                           <option name="offset" value="46" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
+                                      <option name="length" value="22" />
                                       <option name="offset" value="46" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="customers.toSet()" />
-                                      <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="selected" value="true" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
                                   </list>
                                 </option>
-                                <option name="highlightErrors" value="false" />
+                                <option name="highlightErrors" value="true" />
                                 <option name="trackChanges" value="true" />
                                 <option name="trackLengths" value="true" />
                                 <option name="userCreated" value="false" />
@@ -1553,7 +1553,7 @@
                       <option name="descriptionText" value="&lt;h2&gt;Filter; map&lt;/h2&gt;&#10;&lt;p&gt;Implement extension functions &lt;code&gt;Shop.getCitiesCustomersAreFrom()&lt;/code&gt; and &lt;code&gt;Shop.getCustomersFrom()&lt;/code&gt; using functions &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/map.html&quot;&gt;&lt;code&gt;map&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/filter.html&quot;&gt;&lt;code&gt;filter&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&lt;pre&gt;&lt;code data-lang=&quot;text/x-kotlin&quot;&gt;val numbers = listOf(1, -1, 2)&#10;numbers.filter { it &amp;gt; 0 } == listOf(1, 2)&#10;numbers.map { it * it } == listOf(1, 1, 4)&#10;&lt;/code&gt;&lt;/pre&gt;" />
                       <option name="index" value="2" />
                       <option name="name" value="Filter map" />
-                      <option name="status" value="Unchecked" />
+                      <option name="status" value="Solved" />
                       <option name="stepId" value="234741" />
                       <option name="testsText">
                         <map>
@@ -1596,13 +1596,13 @@
                                           <option name="offset" value="101" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
+                                      <option name="length" value="38" />
                                       <option name="offset" value="101" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="customers.map { it.city }.toSet()" />
-                                      <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="selected" value="true" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
@@ -1619,19 +1619,19 @@
                                           <option name="offset" value="226" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
-                                      <option name="offset" value="226" />
+                                      <option name="length" value="50" />
+                                      <option name="offset" value="258" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="customers.filter { it.city == city }" />
-                                      <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="selected" value="true" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
                                   </list>
                                 </option>
-                                <option name="highlightErrors" value="false" />
+                                <option name="highlightErrors" value="true" />
                                 <option name="trackChanges" value="true" />
                                 <option name="trackLengths" value="true" />
                                 <option name="userCreated" value="false" />
@@ -1667,7 +1667,7 @@
                       <option name="descriptionText" value="&lt;h2&gt;All, Any and other predicates&lt;/h2&gt;&#10;&lt;p&gt;Implement all the functions below using &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/all.html&quot;&gt;&lt;code&gt;all&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/any.html&quot;&gt;&lt;code&gt;any&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/count.html&quot;&gt;&lt;code&gt;count&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/find.html&quot;&gt;&lt;code&gt;find&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&lt;pre&gt;&lt;code data-lang=&quot;text/x-kotlin&quot;&gt;val numbers = listOf(-1, 0, 2)&#10;val isZero: (Int) -&amp;gt; Boolean = { it == 0 }&#10;numbers.any(isZero) == true&#10;numbers.all(isZero) == false&#10;numbers.count(isZero) == 1&#10;numbers.find { it &amp;gt; 0 } == 2&#10;&lt;/code&gt;&lt;/pre&gt;" />
                       <option name="index" value="3" />
                       <option name="name" value="All Any and other predicates" />
-                      <option name="status" value="Unchecked" />
+                      <option name="status" value="Solved" />
                       <option name="stepId" value="234742" />
                       <option name="testsText">
                         <map>
@@ -1710,13 +1710,13 @@
                                           <option name="offset" value="113" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
+                                      <option name="length" value="38" />
                                       <option name="offset" value="113" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="customers.all { it.city == city }" />
-                                      <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="selected" value="true" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
@@ -1733,13 +1733,13 @@
                                           <option name="offset" value="238" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
-                                      <option name="offset" value="238" />
+                                      <option name="length" value="36" />
+                                      <option name="offset" value="270" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="customers.any { it.city == city }" />
-                                      <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="selected" value="true" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
@@ -1756,13 +1756,13 @@
                                           <option name="offset" value="347" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
-                                      <option name="offset" value="347" />
+                                      <option name="length" value="38" />
+                                      <option name="offset" value="409" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="customers.count { it.city == city }" />
                                       <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
@@ -1779,19 +1779,19 @@
                                           <option name="offset" value="484" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
-                                      <option name="offset" value="484" />
+                                      <option name="length" value="37" />
+                                      <option name="offset" value="578" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="customers.find { it.city == city }" />
                                       <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
                                   </list>
                                 </option>
-                                <option name="highlightErrors" value="false" />
+                                <option name="highlightErrors" value="true" />
                                 <option name="trackChanges" value="true" />
                                 <option name="trackLengths" value="true" />
                                 <option name="userCreated" value="false" />
@@ -1827,7 +1827,7 @@
                       <option name="descriptionText" value="&lt;h2&gt;FlatMap&lt;/h2&gt;&#10;&lt;p&gt;Implement &lt;code&gt;Customer.getOrderedProducts()&lt;/code&gt; and &lt;code&gt;Shop.getAllOrderedProducts()&lt;/code&gt; using &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/flat-map.html&quot;&gt;&lt;code&gt;flatMap&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&lt;pre&gt;&lt;code data-lang=&quot;text/x-kotlin&quot;&gt;val result = listOf(&amp;quot;abc&amp;quot;, &amp;quot;12&amp;quot;).flatMap { it.toCharList() }&#10;result == listOf(&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;)&#10;&lt;/code&gt;&lt;/pre&gt;" />
                       <option name="index" value="4" />
                       <option name="name" value="FlatMap" />
-                      <option name="status" value="Unchecked" />
+                      <option name="status" value="Solved" />
                       <option name="stepId" value="234743" />
                       <option name="testsText">
                         <map>
@@ -1870,13 +1870,13 @@
                                           <option name="offset" value="99" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
+                                      <option name="length" value="43" />
                                       <option name="offset" value="99" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="orders.flatMap { it.products }.toSet()" />
-                                      <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="selected" value="true" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
@@ -1893,19 +1893,19 @@
                                           <option name="offset" value="222" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
-                                      <option name="offset" value="222" />
+                                      <option name="length" value="58" />
+                                      <option name="offset" value="259" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="customers.flatMap { it.getOrderedProducts() }.toSet()" />
                                       <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
                                   </list>
                                 </option>
-                                <option name="highlightErrors" value="false" />
+                                <option name="highlightErrors" value="true" />
                                 <option name="trackChanges" value="true" />
                                 <option name="trackLengths" value="true" />
                                 <option name="userCreated" value="false" />
@@ -1941,7 +1941,7 @@
                       <option name="descriptionText" value="&lt;h2&gt;Max; min&lt;/h2&gt;&#10;&lt;p&gt;Implement &lt;code&gt;Shop.getCustomerWithMaximumNumberOfOrders()&lt;/code&gt; and &lt;code&gt;Customer.getMostExpensiveOrderedProduct()&lt;/code&gt; using &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/max.html&quot;&gt;&lt;code&gt;max&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/min.html&quot;&gt;&lt;code&gt;min&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/max-by.html&quot;&gt;&lt;code&gt;maxBy&lt;/code&gt;&lt;/a&gt;, or &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/min-by.html&quot;&gt;&lt;code&gt;minBy&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&lt;pre&gt;&lt;code data-lang=&quot;text/x-kotlin&quot;&gt;listOf(1, 42, 4).max() == 42&#10;listOf(&amp;quot;a&amp;quot;, &amp;quot;ab&amp;quot;).minBy { it.length } == &amp;quot;a&amp;quot;&#10;&lt;/code&gt;&lt;/pre&gt;" />
                       <option name="index" value="5" />
                       <option name="name" value="Max min" />
-                      <option name="status" value="Unchecked" />
+                      <option name="status" value="Solved" />
                       <option name="stepId" value="234744" />
                       <option name="testsText">
                         <map>
@@ -1984,13 +1984,13 @@
                                           <option name="offset" value="135" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
+                                      <option name="length" value="34" />
                                       <option name="offset" value="135" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="customers.maxBy { it.orders.size }" />
                                       <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
@@ -2007,19 +2007,19 @@
                                           <option name="offset" value="261" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
-                                      <option name="offset" value="261" />
+                                      <option name="length" value="49" />
+                                      <option name="offset" value="289" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="orders.flatMap { it.products }.maxBy { it.price }" />
-                                      <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="selected" value="true" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
                                   </list>
                                 </option>
-                                <option name="highlightErrors" value="false" />
+                                <option name="highlightErrors" value="true" />
                                 <option name="trackChanges" value="true" />
                                 <option name="trackLengths" value="true" />
                                 <option name="userCreated" value="false" />
@@ -2055,7 +2055,7 @@
                       <option name="descriptionText" value="&lt;h2&gt;Sort&lt;/h2&gt;&#10;&lt;p&gt;Implement &lt;code&gt;Shop.getCustomersSortedByNumberOfOrders()&lt;/code&gt; using &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/sorted.html&quot;&gt;&lt;code&gt;sorted&lt;/code&gt;&lt;/a&gt; or &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/sorted-by.html&quot;&gt;&lt;code&gt;sortedBy&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&lt;pre&gt;&lt;code data-lang=&quot;text/x-kotlin&quot;&gt;listOf(&amp;quot;bbb&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;cc&amp;quot;).sorted() == listOf(&amp;quot;a&amp;quot;, &amp;quot;bbb&amp;quot;, &amp;quot;cc&amp;quot;)&#10;listOf(&amp;quot;bbb&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;cc&amp;quot;).sortedBy { it.length } == listOf(&amp;quot;a&amp;quot;, &amp;quot;cc&amp;quot;, &amp;quot;bbb&amp;quot;)&#10;&lt;/code&gt;&lt;/pre&gt;" />
                       <option name="index" value="6" />
                       <option name="name" value="Sort" />
-                      <option name="status" value="Unchecked" />
+                      <option name="status" value="Solved" />
                       <option name="stepId" value="234745" />
                       <option name="testsText">
                         <map>
@@ -2098,19 +2098,19 @@
                                           <option name="offset" value="146" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
+                                      <option name="length" value="37" />
                                       <option name="offset" value="146" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="customers.sortedBy { it.orders.size }" />
                                       <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
                                   </list>
                                 </option>
-                                <option name="highlightErrors" value="false" />
+                                <option name="highlightErrors" value="true" />
                                 <option name="trackChanges" value="true" />
                                 <option name="trackLengths" value="true" />
                                 <option name="userCreated" value="false" />
@@ -2146,7 +2146,7 @@
                       <option name="descriptionText" value="&lt;h2&gt;Sum&lt;/h2&gt;&#10;&lt;p&gt;Implement &lt;code&gt;Customer.getTotalOrderPrice()&lt;/code&gt; using &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/sum.html&quot;&gt;&lt;code&gt;sum&lt;/code&gt;&lt;/a&gt; or &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/sum-by.html&quot;&gt;&lt;code&gt;sumBy&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&lt;pre&gt;&lt;code data-lang=&quot;text/x-kotlin&quot;&gt;listOf(1, 5, 3).sum() == 9&#10;listOf(&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;cc&amp;quot;).sumBy { it.length() } == 4&#10;&lt;/code&gt;&lt;/pre&gt;&#10;&lt;p&gt;If you want to sum the double values, use &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/sum-by-double.html&quot;&gt;&lt;code&gt;sumByDouble&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;" />
                       <option name="index" value="7" />
                       <option name="name" value="Sum" />
-                      <option name="status" value="Unchecked" />
+                      <option name="status" value="Solved" />
                       <option name="stepId" value="234746" />
                       <option name="testsText">
                         <map>
@@ -2189,19 +2189,19 @@
                                           <option name="offset" value="185" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
+                                      <option name="length" value="55" />
                                       <option name="offset" value="185" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="orders.flatMap { it.products }.sumByDouble { it.price }" />
-                                      <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="selected" value="true" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
                                   </list>
                                 </option>
-                                <option name="highlightErrors" value="false" />
+                                <option name="highlightErrors" value="true" />
                                 <option name="trackChanges" value="true" />
                                 <option name="trackLengths" value="true" />
                                 <option name="userCreated" value="false" />
@@ -2237,7 +2237,7 @@
                       <option name="descriptionText" value="&lt;h2&gt;Group By&lt;/h2&gt;&#10;&lt;p&gt;Implement &lt;code&gt;Shop.groupCustomersByCity()&lt;/code&gt; using &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/group-by.html&quot;&gt;&lt;code&gt;groupBy&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&lt;pre&gt;&lt;code data-lang=&quot;text/x-kotlin&quot;&gt;val result = listOf(&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;ba&amp;quot;, &amp;quot;ccc&amp;quot;, &amp;quot;ad&amp;quot;).groupBy { it.length() }&#10;result == mapOf(1 to listOf(&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;), 2 to listOf(&amp;quot;ba&amp;quot;, &amp;quot;ad&amp;quot;), 3 to listOf(&amp;quot;ccc&amp;quot;))&#10;&lt;/code&gt;&lt;/pre&gt;" />
                       <option name="index" value="8" />
                       <option name="name" value="GroupBy" />
-                      <option name="status" value="Unchecked" />
+                      <option name="status" value="Solved" />
                       <option name="stepId" value="234747" />
                       <option name="testsText">
                         <map>
@@ -2280,19 +2280,19 @@
                                           <option name="offset" value="114" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
+                                      <option name="length" value="29" />
                                       <option name="offset" value="114" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="customers.groupBy { it.city }" />
-                                      <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="selected" value="true" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
                                   </list>
                                 </option>
-                                <option name="highlightErrors" value="false" />
+                                <option name="highlightErrors" value="true" />
                                 <option name="trackChanges" value="true" />
                                 <option name="trackLengths" value="true" />
                                 <option name="userCreated" value="false" />
@@ -2328,7 +2328,7 @@
                       <option name="descriptionText" value="&lt;h2&gt;Partition&lt;/h2&gt;&#10;&lt;p&gt;Implement &lt;code&gt;Shop.getCustomersWithMoreUndeliveredOrdersThanDelivered()&lt;/code&gt; using &lt;a href=&quot;https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/kotlin.-iterable/partition.html&quot;&gt;&lt;code&gt;partition&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&lt;pre&gt;&lt;code data-lang=&quot;text/x-kotlin&quot;&gt;val numbers = listOf(1, 3, -4, 2, -11)&#10;val (positive, negative) = numbers.partition { it &amp;gt; 0 }&#10;positive == listOf(1, 3, 2)&#10;negative == listOf(-4, -11)&#10;&lt;/code&gt;&lt;/pre&gt;&#10;&lt;p&gt;Note that &lt;a href=&quot;http://kotlinlang.org/docs/reference/multi-declarations.html&quot;&gt;destructuring declaration&lt;/a&gt; syntax is used in this example.&lt;/p&gt;" />
                       <option name="index" value="9" />
                       <option name="name" value="Partition" />
-                      <option name="status" value="Unchecked" />
+                      <option name="status" value="Solved" />
                       <option name="stepId" value="234748" />
                       <option name="testsText">
                         <map>
@@ -2371,19 +2371,19 @@
                                           <option name="offset" value="147" />
                                         </MyInitialState>
                                       </option>
-                                      <option name="length" value="6" />
+                                      <option name="length" value="140" />
                                       <option name="offset" value="147" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="customers.filter {&#10;    val (delivered, undelivered) = it.orders.partition { it.isDelivered }&#10;    undelivered.size &gt; delivered.size&#10;}.toSet()" />
-                                      <option name="selected" value="false" />
-                                      <option name="status" value="Unchecked" />
+                                      <option name="selected" value="true" />
+                                      <option name="status" value="Solved" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
                                     </AnswerPlaceholder>
                                   </list>
                                 </option>
-                                <option name="highlightErrors" value="false" />
+                                <option name="highlightErrors" value="true" />
                                 <option name="trackChanges" value="true" />
                                 <option name="trackLengths" value="true" />
                                 <option name="userCreated" value="false" />

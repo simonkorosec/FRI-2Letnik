@@ -18,6 +18,7 @@ Rectangle {
             anchors.horizontalCenterOffset: 85
             Column{
                 anchors.verticalCenter: parent.verticalCenter
+                anchors.leftMargin: 50
                 Text {
                     text: tekst
                     font.pointSize: 38
@@ -27,7 +28,9 @@ Rectangle {
             }
 
             Column {
-                anchors.fill: parent
+                //anchors.fill: parent
+                anchors.right: parent.right
+                anchors.rightMargin: 50
                 anchors.verticalCenter: parent.verticalCenter
 
                 Image {
@@ -51,20 +54,20 @@ Rectangle {
 
     GridView {
         id: mreza
-        width: 921
+        width: 930
         anchors.top: parent.top
         anchors.topMargin: 8
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 8
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.horizontalCenterOffset: 27
+        anchors.horizontalCenterOffset: -80
 
         cellWidth: parent.width / 1.9
         cellHeight: 250
 
         model: besedaModel
         delegate: besedaDelegate
-//        highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
+        highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
         focus: true
     }
 

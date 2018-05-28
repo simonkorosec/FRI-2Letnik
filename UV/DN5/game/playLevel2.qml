@@ -1,72 +1,120 @@
 import QtQuick 2.0
+import QtQuick.Layouts 1.3
 
 Rectangle {
-    id: rect
-    width: 1280
-    height: 800
-    property real stopnja: 1
+    id: main
+    color: "lightgrey"
+    width: 1024
+    height: 768
+    property string barva: "black"
+    property string barvaPloscic: "red"
+    property string barvaCrk: "white"
 
-    ListModel {
-        id: besedaModel
-    }
 
-    Component {
-        id: besedaDelegate
-        Item {
-            width: mreza.cellWidth; height: mreza.cellHeight
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.horizontalCenterOffset: 85
-            Column{
-                anchors.verticalCenter: parent.verticalCenter
-                Text {
-                    text: tekst
-                    font.pointSize: 38
-                    font.capitalization: capitalization
-                    anchors.horizontalCenter: parent.horizontalCenter
+    ColumnLayout {
+        anchors.fill: parent
+
+        RowLayout {
+            ColumnLayout {
+                Rectangle {
+                    id: pomoc
+                    color: barva  //"blue"
+                    Layout.preferredHeight: main.height/3
+                    Layout.fillWidth: true
+
+                    Text {
+                        id: pomocTekst
+                        anchors.centerIn: parent
+                        text: "napaka"
+                        font.pointSize: 24
+                        font.capitalization: Font.AllUppercase
+                        font.letterSpacing: 16
+                    }
+                }
+                Rectangle {
+                    id: vnos
+                    color: barva //"green"
+                    Layout.preferredHeight: main.height/3
+                    Layout.fillWidth: true
+
+                    Row {
+                        id: crkeDestination
+
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.left: parent.left
+                        anchors.leftMargin: 64*2
+                        anchors.margins: 5
+
+                        width: 64
+                        spacing: 10
+                        opacity: 0.5
+
+                        Repeater {
+                            model: vnosModel
+                            delegate: DropTile {
+                                colorKey: main.barvaPloscic
+                                colorText: main.barvaCrk
+                                displayLetter: false
+                            }
+                        }
+                    }
+
+                    ListModel {
+                        id: vnosModel
+                    }
+
                 }
             }
 
-            Column {
-                anchors.fill: parent
-                anchors.verticalCenter: parent.verticalCenter
-
+            Rectangle { // Rectangle -> Item
+                id: slika
+                Layout.preferredHeight: main.height * 2/3
+                Layout.preferredWidth: main.width / 3
+                color: barva //"red"
                 Image {
-                    width: 200
-                    height: 200
+                    id: slikaImg
+                    anchors.verticalCenter: parent.verticalCenter
+                    //source: "./images/raca.png"
+                    width: parent.width
                     fillMode: Image.PreserveAspectFit
-                    source: slika
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
-            }
-
-            MouseArea {
-                anchors.fill: parent
-
-                onClicked: {
-                    console.log("Stopnja: " + rect.stopnja + " Beseda: " + tekst);
                 }
             }
         }
+
+        Rectangle {
+            id: crke
+            Layout.preferredHeight: main.height/3
+            Layout.fillWidth: true
+            color: barva  //"yellow"
+            anchors.left: parent.left
+            anchors.right: parent.right
+
+
+            Row {
+                id: crkeSource
+
+                //anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.left: parent.left
+                anchors.leftMargin: 64*2
+
+//                anchors.margins: 5
+                width: 64
+                spacing: 10
+
+                Repeater {
+                    model: crkeModel
+                    delegate: DragTile { colorKey: main.barvaPloscic; colorText: main.barvaCrk }
+                }
+            }
+
+            ListModel {
+                id: crkeModel
+            }
+
+        }
     }
 
-    GridView {
-        id: mreza
-        width: 921
-        anchors.top: parent.top
-        anchors.topMargin: 8
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 8
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.horizontalCenterOffset: 27
-
-        cellWidth: parent.width / 1.9
-        cellHeight: 250
-
-        model: besedaModel
-        delegate: besedaDelegate
-//        highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
-        focus: true
-    }
 
     Component.onCompleted: {
         readSettings();
@@ -81,12 +129,13 @@ Rectangle {
                     //console.log("response", settings.responseText)
                     var result = JSON.parse(settings.responseText);
                     var color = result["bgColor"];
-                    rect.color = color;
+                    main.barva = color;
                     var cap = result["fontCapitalization"];
+                    main.barvaPloscic = result["barvaPloscic"];
+                    main.barvaCrk = result["barvaCrk"];
 
-                    rect.stopnja = result["stopnja"];
-
-                    readWords(cap);
+                    var iskanaBeseda = "avto";
+                    readWord(cap, iskanaBeseda);
                 } else {
                     console.log("HTTP:", settings.status, settings.statusText);
                 }
@@ -95,7 +144,7 @@ Rectangle {
         settings.send();
     }
 
-    function readWords(capitalization){
+    function readWord(capitalization, iskanaBeseda){
         if (capitalization === "Font.AllUppercase"){
             capitalization = Font.AllUppercase;
         } else {
@@ -111,11 +160,15 @@ Rectangle {
                     var result = JSON.parse(request.responseText);
                     var list = result["slike"];
                     for (var i in list) {
-                        besedaModel.append({
-                                               "slika": list[i].slika,
-                                               "tekst": list[i].tekst,
-                                               "capitalization": capitalization
-                                           })
+                        if (list[i].tekst === iskanaBeseda.toLowerCase()){
+                            pomocTekst.text = iskanaBeseda;
+                            pomocTekst.font.capitalization = capitalization;
+
+                            slikaImg.source = list[i].slika;
+
+                            pomesajCrke(iskanaBeseda);
+                            return;
+                        }
                     }
                 } else {
                     console.log("HTTP:", request.status, request.statusText);
@@ -125,6 +178,28 @@ Rectangle {
         request.send();
     }
 
+    function pomesajCrke(beseda) {
+        var a = beseda.split("");
+        var n = a.length;
+
+        for(var c in a){
+            vnosModel.append({"crka" : a[c]});
+        }
+
+        for(var i = n - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i];
+            a[i] = a[j];
+            a[j] = tmp;
+        }
+
+        beseda = a.join("");
+
+        for(c in a){
+            crkeModel.append({"crka" : a[c]});
+        }
+
+    }
+
+
 }
-
-

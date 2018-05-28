@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestSum" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-05-27T17:03:48" hostname="Lenovo-320" time="0.037">
+  <properties/>
+  <testcase name="testGetTotalOrderPrice" classname="TestSum" time="0.037"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
