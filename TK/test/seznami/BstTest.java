@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import seznami.Bst;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -183,4 +186,25 @@ public class BstTest {
 
         assertEquals(originalList, bst.asList());
     }
+
+
+    /*
+        test za save poln
+     */
+/*
+    @Ignore
+    @Test
+    public void testSaveFull(){
+        for (int i = 0; i < 5000000; i++) {
+            bst.add(Integer.toString(i));
+        }
+
+        try {
+            bst.save(new FileOutputStream("G:/test2.bin"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+*/
 }

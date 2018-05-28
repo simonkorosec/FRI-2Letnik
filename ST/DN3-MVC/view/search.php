@@ -96,7 +96,7 @@ include_once "navigation.php";
                 </label>
             </fieldset>
             <fieldset>
-                <button name="submit" type="submit" class="searchBtn" tabindex="7">Iskanje Gore</button>
+                <input name="submit" type="submit" class="searchBtn" tabindex="7" value="Iskanje Gore" >
             </fieldset>
         </form>
     </div>

@@ -132,4 +132,8 @@ public class SeznamiUV {
         return result;
     }
 
+    public String addTmp(Seznam<String> struktura, String key) {
+        seznami.put(key, struktura);
+        return "OK";
+    }
 }

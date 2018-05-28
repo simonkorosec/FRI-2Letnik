@@ -39,7 +39,7 @@ include_once "navigation.php";
             </fieldset>
 
             <fieldset>
-                <button name="reg_user" type="submit" class="searchBtn" tabindex="4">Registracija</button>
+                <input name="reg_user" type="submit" class="searchBtn" tabindex="4" value="Registracija" >
             </fieldset>
 
         </form>

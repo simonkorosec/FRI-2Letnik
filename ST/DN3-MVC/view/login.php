@@ -31,7 +31,7 @@ include_once "navigation.php";
                        pattern="[\-A-Za-z0-9]+">
             </fieldset>
             <fieldset>
-                <button name="login_user" type="submit" class="searchBtn" tabindex="3">Prijava</button>
+                <input name="login_user" type="submit" class="searchBtn" tabindex="3" value="Prijava" >
             </fieldset>
         </form>
     </div>

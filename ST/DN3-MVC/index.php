@@ -6,6 +6,7 @@ require_once("controller/UserController.php");
 
 # Define a global constant pointing to the URL of the application
 define("BASE_URL", $_SERVER["SCRIPT_NAME"] . "/");
+define("BASE_IMG_DIR", "images/upload" . "/");
 
 # Request path after /index.php/ with leading and trailing slashes removed
 $path = isset($_SERVER["PATH_INFO"]) ? trim($_SERVER["PATH_INFO"], "/") : "";
@@ -63,6 +64,12 @@ $urls = [
     },
     "addComment" => function () {
         MountainController::addComment();
+    },
+    "file" => function () {
+        if (!is_dir(BASE_IMG_DIR . "testeramo ce dela")) {
+            mkdir(BASE_IMG_DIR . "testeramo ce dela", 0777, true);
+        }
+
     },
     "" => function () {
         $_SESSION["currPage"] = "home";
