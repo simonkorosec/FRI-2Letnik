@@ -1,36 +1,96 @@
-<?php session_start(); ?>
+<?php
+session_start();
 
-<!DOCTYPE html>
-<html lang="sl">
+require_once("controller/MountainController.php");
+require_once("controller/UserController.php");
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/style.css"/>
+# Define a global constant pointing to the URL of the application
+define("BASE_URL", $_SERVER["SCRIPT_NAME"] . "/");
+define("BASE_IMG_DIR", "images/upload" . "/");
 
-<title>Hribi</title>
+# Request path after /index.php/ with leading and trailing slashes removed
+$path = isset($_SERVER["PATH_INFO"]) ? trim($_SERVER["PATH_INFO"], "/") : "";
 
-<?php include_once "navigation.php"; ?>
+# The mapping of URLs. It is a simple array where:
+# - keys represent URLs
+# - values represent functions to be called when a client requests that URL
+$urls = [
+    "home" => function () {
+        $_SESSION["currPage"] = "home";
+        MountainController::home();
+    },
+    "search" => function () {
+        $_SESSION["currPage"] = "search";
+        MountainController::search();
+    },
+    "list" => function () {
+        $_SESSION["currPage"] = "list";
+        MountainController::list();
+    },
+    "about" => function () {
+        $_SESSION["currPage"] = "about";
+        MountainController::about();
+    },
+    "input" => function () {
+        if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
+            $_SESSION["currPage"] = "input";
+            MountainController::input();
+        } else{
+            ViewHelper::redirect(BASE_URL . "home");
+        }
+    },
+    "login" => function () {
+        $_SESSION["currPage"] = "login";
+        UserController::login();
+    },
+    "register" => function () {
+        $_SESSION["currPage"] = "register";
+        UserController::register();
+    },
+    "parseLogin" => function () {
+        UserController::parseLogin();
+    },
+    "parseRegister" => function () {
+        UserController::parseRegister();
+    },
+    "logout" => function () {
+        UserController::logout();
+    },
+    "parseNewMountain" => function () {
+        MountainController::parseNewMountain();
+    },
+    "mountainDetails" => function () {
+        MountainController::showDetails();
+    },
+    "addComment" => function () {
+        MountainController::addComment();
+    },
+    "file" => function () {
+        if (!is_dir(BASE_IMG_DIR . "testeramo ce dela")) {
+            mkdir(BASE_IMG_DIR . "testeramo ce dela", 0777, true);
+        }
 
-<article>
-    <div class="pageTitleDiv">
-        <h1 class="pageTitle">Domača Stran</h1>
-    </div>
-    <div class="container">
-        <form class="inputForm" id="basicSearch" action="list.php">
-            <fieldset>
-                <input placeholder="Ime Gore" type="text" tabindex="1" required autofocus name="mountainName" id="mountainName"
-                       pattern="[\-A-Za-z]+">
-            </fieldset>
-            <fieldset>
-                <button name="submit" type="submit" class="searchBtn" tabindex="2" onclick="saveBasicSearch()">Iskanje</button>
-            </fieldset>
-        </form>
-    </div>
-</article>
+    },
+    "" => function () {
+        $_SESSION["currPage"] = "home";
+        ViewHelper::redirect(BASE_URL . "home");
+    }
+];
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-<script src="js/script.js"></script>
-
-</html>
+# The actual router.
+# Tries to invoke the function that is mapped for the given path
+try {
+    if (isset($urls[$path])) {
+        # Great, the path is defined in the router
+        $urls[$path](); // invokes function that calls the controller
+    } else {
+        # Fail, the path is not defined. Show an error message.
+        echo "No controller for '$path'";
+    }
+} catch (Exception $e) {
+    # Provisional: whenever there is an exception, display some info about it
+    # this should be disabled in production
+    ViewHelper::error400($e);
+} finally {
+    exit();
+}

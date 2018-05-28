@@ -111,9 +111,7 @@ public class Main {
 			// Izvajanje vmesne kode
             CodeGenerator codegen = new CodeGenerator();
 			codegen.generate(imcodegen.chunks);
-			new ImCode(dumpPhases.contains("exec")).dump(imcodegen.chunks);
-            Interpreter.debug = false;
-            Interpreter interpreter = new Interpreter();
+			new Interpreter();
             if (execPhase.equals("exec")) break;
 			// Neznana faza prevajanja.
 			if (! execPhase.equals(""))

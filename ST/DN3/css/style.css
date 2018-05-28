@@ -4,9 +4,9 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    /*-webkit-font-smoothing: antialiased;*/
-    /*-moz-font-smoothing: antialiased;*/
-    /*-o-font-smoothing: antialiased;*/
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
 
@@ -15,7 +15,7 @@ body {
     font-weight: 100;
     font-size: 12px;
     line-height: 30px;
-    color: #777;
+    color: #414141;
     background: #E0E0E0;
 }
 
@@ -119,8 +119,10 @@ footer {
 
 .inputForm input[type="text"],
 .inputForm input[type="password"],
+.inputForm input[type="submit"],
 .inputForm button[type="submit"],
 .inputForm button[type="button"],
+.inputForm input[type="file"],
 .inputForm textarea,
 .inputForm select,
 .inputForm select option {
@@ -129,6 +131,7 @@ footer {
 
 .inputForm input[type="text"],
 .inputForm input[type="password"],
+.inputForm input[type="file"],
 .inputForm textarea,
 .inputForm select {
     width: 100%;
@@ -157,6 +160,7 @@ fieldset {
     width: 100%;
 }
 
+.inputForm input[type="submit"],
 .inputForm button[type="submit"],
 .inputForm button[type="button"] {
     cursor: pointer;
@@ -169,6 +173,7 @@ fieldset {
     font-size: 15px;
 }
 
+.inputForm input[type="submit"]:hover,
 .inputForm button[type="submit"]:hover,
 .inputForm button[type="button"]:hover {
     background: #43A047;
@@ -264,14 +269,159 @@ select option {
     text-align: left;
 }
 
+/************* Comment section *************/
+
+#comment-section {
+    background: #F9F9F9;
+    padding: 10px;
+    margin: 5% auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3), 0 5px 5px 0 rgba(0, 0, 0, 0.34);
+}
+
+#comment-table {
+    border-spacing: 10px;
+    border-collapse: collapse;
+}
+
+.comment-info p {
+    margin: auto;
+}
+
+.comment-time {
+    font-size: x-small;
+}
+
+.comment-text p {
+    padding-left: 20px;
+}
+
+.comment {
+    border-bottom: 1pt solid black;
+}
+
+#comment-form {
+    margin: 5% auto !important;
+}
+
+/*.comment-info{*/
+/*display: inline-block;*/
+/*flex: 0 1 auto;*/
+/*}*/
+
+.comment-text {
+    width: 100%;
+}
+
+/************* Image slides *************/
+/* {
+    box-sizing: border-box;
+}*/
+
+/* Slideshow container */
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+#slideshow {
+    background: #F9F9F9;
+    padding: 3px;
+    /*margin: 5% auto;*/
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3), 0 5px 5px 0 rgba(0, 0, 0, 0.34);
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Bigger screens */
 @media only screen and (min-width: 600px) {
     body {
         background: linear-gradient(rgba(224, 224, 224, .7), rgba(224, 224, 224, .7)), url("../images/bg-01.jpg") no-repeat;
         /*background-size: cover;*/
+        background-attachment: fixed;
     }
 
-    .container, .error{
+    .container, .error {
         max-width: 550px;
     }
 
@@ -295,7 +445,6 @@ select option {
         display: block;
     }
 
-    /* Hide the link that should open and close the navBar */
     .navBar a.icon {
         display: none;
     }

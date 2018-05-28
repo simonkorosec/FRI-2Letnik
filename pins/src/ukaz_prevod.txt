@@ -1,3 +1,3 @@
 javac compiler\Main.java
-java compiler.Main ./testi/testP1.pins --phase=frames --dump=frames
-java compiler.Main ./testi/testP2.pins --phase=frames --dump=frames
+java compiler.Main ./test.pins --phase=exec --dump=exec
+

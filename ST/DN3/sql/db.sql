@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 27, 2018 at 06:32 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Gostitelj: 127.0.0.1
+-- Čas nastanka: 28. maj 2018 ob 13.10
+-- Različica strežnika: 10.1.31-MariaDB
+-- Različica PHP: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mountains`
+-- Zbirka podatkov: `mountains`
 --
 CREATE DATABASE IF NOT EXISTS `mountains` DEFAULT CHARACTER SET utf8 COLLATE utf8_slovenian_ci;
 USE `mountains`;
@@ -27,8 +27,8 @@ USE `mountains`;
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `alldetails`
--- (See below for the actual view)
+-- Nadomestna struktura pogleda `alldetails`
+-- (Oglejte si spodaj za resnični pogled)
 --
 CREATE TABLE `alldetails` (
 `id` int(11)
@@ -44,7 +44,7 @@ CREATE TABLE `alldetails` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Struktura tabele `comments`
 --
 
 CREATE TABLE `comments` (
@@ -58,7 +58,7 @@ CREATE TABLE `comments` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `images`
+-- Struktura tabele `images`
 --
 
 CREATE TABLE `images` (
@@ -67,10 +67,19 @@ CREATE TABLE `images` (
   `path` varchar(500) COLLATE utf8_slovenian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
+--
+-- Odloži podatke za tabelo `images`
+--
+
+INSERT INTO `images` (`id_file`, `id_mountain`, `path`) VALUES
+(1, 1, 'images/upload/Snežnik/Sneznik.jpg'),
+(2, 1, 'images/upload/Snežnik/spomin_na_vzpon.jpg'),
+(3, 1, 'images/upload/Snežnik/vrh.jpg');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mountain`
+-- Struktura tabele `mountain`
 --
 
 CREATE TABLE `mountain` (
@@ -83,10 +92,17 @@ CREATE TABLE `mountain` (
   `author_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
+--
+-- Odloži podatke za tabelo `mountain`
+--
+
+INSERT INTO `mountain` (`id`, `range_id`, `name`, `height`, `walk_time`, `description`, `author_id`) VALUES
+(1, 1, 'Snežnik', 3, 195, 'Snežnik oz. Veliki Snežnikje z višino 1796 m najvišji vrh v bližnji in daljni okolici, zato je z njega lep razgled po večjem delu Slovenije in bližnje sosednje Hrvaške. Ob lepem vremenu tako vidimo najvišje vrhove Gorskega Kotarja in Istre, kjer izstopajo Risnjak, Snježnik in Učka. Na slovensko stran pa prek prostranih gozdov Notranjske vidimo tudi najvišje vrhove Julijskih Alp, Kamniško Savinjskih Alp in Karavank.\r\nLe nekaj metrov pod vrhom pa se nahaja tudi zavetišče Draga Karolina na Velikem Snežniku. ', 8);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rangenames`
+-- Struktura tabele `rangenames`
 --
 
 CREATE TABLE `rangenames` (
@@ -95,7 +111,7 @@ CREATE TABLE `rangenames` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 --
--- Dumping data for table `rangenames`
+-- Odloži podatke za tabelo `rangenames`
 --
 
 INSERT INTO `rangenames` (`range_id`, `name`) VALUES
@@ -111,7 +127,7 @@ INSERT INTO `rangenames` (`range_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktura tabele `users`
 --
 
 CREATE TABLE `users` (
@@ -121,7 +137,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 --
--- Dumping data for table `users`
+-- Odloži podatke za tabelo `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
@@ -132,107 +148,86 @@ INSERT INTO `users` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure for view `alldetails`
+-- Struktura pogleda `alldetails`
 --
 DROP TABLE IF EXISTS `alldetails`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `alldetails`  AS  select `m`.`id` AS `id`,`m`.`range_id` AS `range_id`,`r`.`name` AS `range_name`,`m`.`name` AS `mountain_name`,`m`.`height` AS `height`,`m`.`walk_time` AS `walk_time`,`m`.`description` AS `description`,`m`.`author_id` AS `author_id` from ((`mountain` `m` join `rangenames` `r` on((`m`.`range_id` = `r`.`range_id`))) join `users` `u` on((`m`.`author_id` = `u`.`id`))) ;
 
 --
--- Indexes for dumped tables
+-- Indeksi zavrženih tabel
 --
 
 --
--- Indexes for table `comments`
+-- Indeksi tabele `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id_comment`),
   ADD KEY `id_mountain` (`id_mountain`);
 
 --
--- Indexes for table `images`
+-- Indeksi tabele `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id_file`),
-  ADD KEY `fk` (`id_mountain`);
+  ADD KEY `id_mountain` (`id_mountain`);
 
 --
--- Indexes for table `mountain`
+-- Indeksi tabele `mountain`
 --
 ALTER TABLE `mountain`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `range_id` (`range_id`),
-  ADD KEY `author_id` (`author_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `rangenames`
+-- Indeksi tabele `rangenames`
 --
 ALTER TABLE `rangenames`
   ADD PRIMARY KEY (`range_id`);
 
 --
--- Indexes for table `users`
+-- Indeksi tabele `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT zavrženih tabel
 --
 
 --
--- AUTO_INCREMENT for table `comments`
+-- AUTO_INCREMENT tabele `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `images`
+-- AUTO_INCREMENT tabele `images`
 --
 ALTER TABLE `images`
-  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `mountain`
+-- AUTO_INCREMENT tabele `mountain`
 --
 ALTER TABLE `mountain`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `rangenames`
---
-ALTER TABLE `rangenames`
-  MODIFY `range_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
-
---
--- Constraints for dumped tables
+-- Omejitve tabel za povzetek stanja
 --
 
 --
--- Constraints for table `comments`
+-- Omejitve za tabelo `comments`
 --
 ALTER TABLE `comments`
-  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`id_mountain`) REFERENCES `mountain` (`id`);
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`id_mountain`) REFERENCES `mountain` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `images`
+-- Omejitve za tabelo `images`
 --
 ALTER TABLE `images`
-  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`id_mountain`) REFERENCES `mountain` (`id`);
-
---
--- Constraints for table `mountain`
---
-ALTER TABLE `mountain`
-  ADD CONSTRAINT `mountain_ibfk_1` FOREIGN KEY (`range_id`) REFERENCES `rangenames` (`range_id`),
-  ADD CONSTRAINT `mountain_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`id_mountain`) REFERENCES `mountain` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
