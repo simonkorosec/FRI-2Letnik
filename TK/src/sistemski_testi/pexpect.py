@@ -15,9 +15,8 @@ class pexpect:
     def __init__(self):
         commandLine = ["java",
                        "-cp",
-                       "C:\\Users\\" + os.environ[
-                           'USERNAME'] + "\\Documents\\GitHub\\FRI-2Letnik\\TK\\out\\production\\TK",
-                       "seznami/PodatkovnaBaza"]
+                       os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "..", "..", "out", "production", "TK"),
+                       "projekt/Volilci"]
         self.process = subprocess.Popen(commandLine,
                                         stdin=subprocess.PIPE,
                                         stdout=subprocess.PIPE,
