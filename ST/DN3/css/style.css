@@ -238,7 +238,8 @@ select option {
 
 /* Add an active class to highlight the current page */
 .active {
-    background-color: #4CAF50;
+    /*background-color: #4CAF50;*/
+    background: #4CAF50;
     color: white;
 }
 
@@ -383,7 +384,7 @@ select option {
     transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active-dot, .dot:hover {
     background-color: #717171;
 }
 

@@ -88,7 +88,6 @@ public class Interpreter {
         }
 
         stM(sp + offset, fp);
-        //stM(sp + frame.size(), fp);
         //stM(sp + frame.oldFPoffset, fp);
         fp = sp;
         sp = sp - frame.size();
