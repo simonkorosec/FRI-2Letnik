@@ -123,7 +123,6 @@ class BookController {
     }    
 
     public static function edit() {
-        // TODO: Implement server-side validation, similar to the one for adding books
         $rules = [
             "author" => [
                 // Only letters, dots, spaces and dashes are allowed

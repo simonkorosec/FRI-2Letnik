@@ -103,17 +103,4 @@ class BookController {
         //echo json_encode($hits);
         echo json_encode($_GET);
     }
-
-    /* TODO: Assignment 2
-
-    Step 1) Create a controler (and a corresponding router entry) that will take
-    a search query and return a JSON-encoded list of search results.
-
-    In PHP, you can encode an associative array into a JSON array by using
-    json_encode($data) function:
-        http://php.net/manual/en/function.json-encode.php
-
-    Before returning the results in JSON, set the the content-type header field to
-    'application/json'; hint -- use header to set content-type.
-    */
 }

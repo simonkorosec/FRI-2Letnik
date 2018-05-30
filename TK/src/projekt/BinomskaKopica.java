@@ -86,10 +86,13 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
     }
 
     @Override
-    public void add(Tip e) {
+    public void add(Tip e) throws IllegalArgumentException{
         if (topNode == null) {
             topNode = new BinomskaKopicaNode<>(e);
         } else {
+            if (exists(e)){
+                throw new IllegalArgumentException();
+            }
             heapUnion(new BinomskaKopicaNode<>(e));
         }
     }
@@ -319,12 +322,6 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
         return null != find(ime, priimek);
     }
 
-    /**
-     * Method that finds the node with the same key.
-     *
-     * @param key searched key
-     * @return node with the same key or null if not found
-     */
    /* private BinomskaKopicaNode<Tip> find(Tip key) {
         BinomskaKopicaNode<Tip> node = null;
         BinomskaKopicaNode<Tip> trenutni = topNode;
@@ -443,8 +440,9 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
     @Override
     public void save(OutputStream outputStream) throws IOException {
         ObjectOutputStream out = new ObjectOutputStream(outputStream);
-        out.writeInt(this.size());
-        save(topNode, out);
+        //out.writeInt(this.size());
+        //save(topNode, out);
+        out.writeObject(topNode);
     }
 
     private void save(BinomskaKopicaNode node, ObjectOutputStream out) throws IOException {
@@ -460,8 +458,10 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
     @Override
     public void restore(InputStream inputStream) throws IOException, ClassNotFoundException {
         ObjectInputStream in = new ObjectInputStream(inputStream);
-        int count = in.readInt();
-        restore(in, count);
+//        int count = in.readInt();
+//        restore(in, count);
+
+        topNode = (BinomskaKopicaNode<Tip>) in.readObject();
     }
 
     private void restore(ObjectInputStream in, int count) throws IOException, ClassNotFoundException {
@@ -473,7 +473,7 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
         restore(in, count - 1);
     }
 
-    private class BinomskaKopicaNode<T extends Comparable> {
+    private class BinomskaKopicaNode<T extends Comparable> implements Serializable{
         private T key;
         private int degree;
         private boolean delete;

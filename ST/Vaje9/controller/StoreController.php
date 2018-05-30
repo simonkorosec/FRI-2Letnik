@@ -47,10 +47,6 @@ class StoreController {
         }
     }
 
-    // TODO: You may have to update the implementation of the next two methods
-    // to implement AJAX requests that update and purge cart contents. Check 
-    // how method addToCart is implemented.
-
     public static function updateCart() {
         $id = (isset($_POST["id"])) ? intval($_POST["id"]) : null;
         $quantity = (isset($_POST["quantity"])) ? intval($_POST["quantity"]) : null;

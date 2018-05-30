@@ -117,7 +117,6 @@ public class Interpreter {
         }
 
         fp = (Integer) ldM(fp + offset);
-        //fp = (Integer) ldM(fp + frame.size());
         //fp = (Integer) ldM(fp + frame.oldFPoffset);
         sp = sp + frame.size();
         if (debug) {

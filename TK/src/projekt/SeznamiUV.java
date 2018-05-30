@@ -37,12 +37,13 @@ public class SeznamiUV {
                     int starost = Integer.parseInt(arg[3].trim());
 
                     Oseba o = new Oseba(EMSO, ime, priimek, starost);
-                    if (seznam.exists(o)) {
-                        result = "Person already exists";
-                    } else {
-                        seznam.add(o);
-                        result = "OK";
-                    }
+                    seznam.add(o);
+//                    if (seznam.exists(o)) {
+//                        result = "Person already exists";
+//                    } else {
+//
+//                        result = "OK";
+//                    }
                     break;
                 case "remove":
                     arg = sc.nextLine().split(",");
@@ -105,8 +106,9 @@ public class SeznamiUV {
             result = "IO error: " + e.getMessage();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            result = "Person already exists";
         }
-
         return result;
     }
 }

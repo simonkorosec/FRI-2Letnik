@@ -30,7 +30,6 @@ $urls = [
         ViewHelper::redirect(BASE_URL . "book");
     }
 
-    // TODO: Add router entries for 1) search, 2) book/edit and 3) book/delete
 ];
 
 # The actual router.

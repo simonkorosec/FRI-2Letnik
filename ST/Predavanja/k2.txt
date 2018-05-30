@@ -1,0 +1,58 @@
+1.
+SOAP je protokol za zapis zahtevkov/odgovorov storitev, ki temelji na obliki XML in komunikaciji preko HTTP.
+REST je način definiranja operacij za komunikacijo s storitvami, ki so identificirane z enoličnim naslovom URL
+SOAP pošilja podatke v obliki XML, REST jih lahko pošilja v JSON, XML, HTML ali kaj drugega.
+SOAP je varnejši a je zahtevnejši in tako tudi počasnejši.
+
+
+2.
+Semantični splet je razširitev svetovnega spleta skozi standarde, ki jih je
+postavil W3C.
+Je splet dokumentov, podatkov in omogoča povezavo med podatki. Namen je omogočiti računalnikom razumeti pomen podatkov.
+
+
+
+3.
+<!ELEMENT avtomobili (avtomobil)+>
+
+<!ELEMENT avtomobil (znamka,tip,letnik)>
+<!ATTLIST avtomobil
+  registracija CDATA #REQUIRED>
+  
+<!ELEMENT znamka (#PCDATA)>
+<!ELEMENT tip (#PCDATA)>
+<!ELEMENT letnik (#PCDATA)>
+
+
+4.
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+  <html>
+  <body>
+    <ul>
+	<xsl:for-each select="avtomobili/avtomobil">
+      <li>
+		  <xsl:value-of select="@registracija"/> 
+		  <xsl:value-of select="znamka"/> 
+		  <xsl:value-of select="tip"/> 
+	  </li>
+    </xsl:for-each>
+	</ul>
+  </body>
+  </html>
+</xsl:template>
+</xsl:stylesheet> 
+
+
+5.
+metapodatki – strukturirane informacije, opisujejo in omogočajo lažje
+pridobivanje ali upravljanje virov
+– opisovalni metpodatki: opisujejo vire
+– strukturni metapodatki: opisujejo kako so deli objektov sestavljeni
+– administrativni podatki: dajejo informacijo, ki pomaga pri upravljanju
+
+

@@ -1,0 +1,21 @@
+<!ELEMENT studenti (student)+>
+<!ATTLIST studenti fakulteta CDATA #REQUIRED>
+
+<!ELEMENT student (ime, letnik)>
+<!ATTLIST student vpisna CDATA #REQUIRED>
+
+<!ELEMENT ime (#PCDATA)>
+<!ELEMENT letnik (#PCDATA)>
+
+
+<xsl:template match="/">
+<html>
+	<body>
+		<ol>
+			<xsl:for-each select="studenti/student">
+				<li> <xsl:value-of select="ime" /> </li>
+			</xsl:for-each>
+		</ol>
+	</body>
+</html>
+</xsl:template>

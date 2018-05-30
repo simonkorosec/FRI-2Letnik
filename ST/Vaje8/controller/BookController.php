@@ -38,5 +38,4 @@ class BookController {
         }
     }
 
-    # TODO: Implement controlers for searching, editing and deleting books
 }

@@ -85,14 +85,11 @@ class OsebaComparator implements Comparator {
 
     @Override
     public int compare(Object o1, Object o2) {
-        //if (o1 instanceof Oseba && o2 instanceof Oseba) {
-            int c = ((Oseba) o1).getPriimek().compareTo(((Oseba) o2).getPriimek());
-            if (c == 0) {
-                return ((Oseba) o1).getIme().compareTo(((Oseba) o2).getIme());
-            } else {
-                return c;
-            }
-        //}
-        //return 0;
+        int c = ((Oseba) o1).getPriimek().compareTo(((Oseba) o2).getPriimek());
+        if (c == 0) {
+            return ((Oseba) o1).getIme().compareTo(((Oseba) o2).getIme());
+        } else {
+            return c;
+        }
     }
 }

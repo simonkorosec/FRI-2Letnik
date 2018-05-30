@@ -1,17 +1,5 @@
 <script>
     $(document).ready(() => {
-        /* TODO: Implement jQuery AJAX:
-            1) one event listener that purges all items from the cart
-            2) another that updates the quantity of one item in the cart
-
-            Hint 0: Check how cart additions are implemented.
-
-            Hint 1: you may use AJAX shorthand methods, like $.post or $.get.
-                https://api.jquery.com/jquery.post
-
-            Hint 2: for updating the quantity, use the change event listener.
-                https://api.jquery.com/change/
-        */
 
         $("#purge-cart").click(function () {
             $.post("<?= BASE_URL . "store/purge-cart" ?>",
