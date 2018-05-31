@@ -20,29 +20,6 @@ Rectangle {
     property bool palyBgMusic
     property real divider: 5
 
-    Button {
-        id: playBtn
-        text: "Shrani"
-        font.capitalization: Font.AllUppercase
-        font.wordSpacing: 1
-        font.letterSpacing: 0
-        padding: 12
-        font.pointSize: 34
-//            anchors.top: parent.top
-//            anchors.topMargin: 15
-//            anchors.left: parent.left
-//            anchors.leftMargin: 15
-
-        x: 0
-        y: 0
-
-        onClicked: {
-            correctMove.play();
-            saveSettings();
-        }
-
-    }
-
     Rectangle {
         id: container
         anchors.right: parent.right
@@ -54,13 +31,14 @@ Rectangle {
         anchors.top: parent.top
         anchors.topMargin: 0
 
+
         ScrollBar {
             id: vbar
-            hoverEnabled: true
+            //hoverEnabled: true
             active: hovered || pressed
             orientation: Qt.Vertical
             size: 0.01
-            width: parent.width - 200
+            width: parent.width
             anchors.top: parent.top
             anchors.right: parent.right
             anchors.bottom: parent.bottom
@@ -74,11 +52,11 @@ Rectangle {
             y: -vbar.position * height * 3.2
 
             ComboBox {
-                id: tezavnost
                 x: 540
                 y: 80
-                currentIndex: 0
+                currentIndex: 2
                 model: ListModel {
+                    id: tezavnost
                     ListElement { text: "1" }
                     ListElement { text: "2"}
                     ListElement { text: "3"}
@@ -120,15 +98,15 @@ Rectangle {
             height: settingsWin.height / divider
 
             ComboBox {
-                id: fontCapt
                 x: 540
                 y: 80
                 width: 200
                 anchors.verticalCenter: parent.verticalCenter
-                currentIndex: 0
+                currentIndex: 2
                 anchors.right: parent.right
                 anchors.rightMargin: 50
                 model: ListModel {
+                    id: fontCapt
                     ListElement {
                         text: "Velike"
                         //value: "Font.AllUppercase"
@@ -186,7 +164,7 @@ Rectangle {
             Rectangle{
                 id: colorOzadja
                 x: 540
-                anchors.verticalCenter: parent.verticalCenter
+                y: 93
                 width: 200
                 height: 40
                 border.color: "black"
@@ -196,12 +174,13 @@ Rectangle {
                     title: "Please choose a color"
                     onAccepted: {
                         console.log("You chose: " + colorDialogOzadje.color);
-                        bgColor = colorDialogOzadje.color;
+                        barvaPloscic = colorDialogOzadje.color;
                         colorOzadja.color = colorDialogOzadje.color;
                     }
                     onRejected: {
                         console.log("Canceled")
                     }
+                    //Component.onCompleted: visible = true
                 }
 
                 MouseArea {
@@ -242,8 +221,7 @@ Rectangle {
             Rectangle{
                 id: colorPloscica
                 x: 540
-                //y: 93
-                anchors.verticalCenter: parent.verticalCenter
+                y: 93
                 width: 200
                 height: 40
                 border.color: "black"
@@ -254,7 +232,6 @@ Rectangle {
                     onAccepted: {
                         console.log("You chose: " + colorDialogPloscica.color);
                         barvaPloscic = colorDialogPloscica.color;
-                        colorPloscica.color = colorDialogPloscica.color;
                     }
                     onRejected: {
                         console.log("Canceled")
@@ -300,7 +277,7 @@ Rectangle {
             Rectangle{
                 id: colorCrk
                 x: 540
-                anchors.verticalCenter: parent.verticalCenter
+                y: 93
                 width: 200
                 height: 40
                 border.color: "black"
@@ -310,8 +287,7 @@ Rectangle {
                     title: "Please choose a color"
                     onAccepted: {
                         console.log("You chose: " + colorDialogCrk.color);
-                        barvaCrk = colorDialogCrk.color;
-                        colorCrk.color = colorDialogCrk.color;
+                        barvaPloscic = colorDialogCrk.color;
                     }
                     onRejected: {
                         console.log("Canceled")
@@ -355,9 +331,9 @@ Rectangle {
             }
 
             Rectangle{
-                id: colorCorrectR
+                id: colorCorrect
                 x: 540
-                anchors.verticalCenter: parent.verticalCenter
+                y: 93
                 width: 200
                 height: 40
                 border.color: "black"
@@ -367,8 +343,7 @@ Rectangle {
                     title: "Please choose a color"
                     onAccepted: {
                         console.log("You chose: " + colorDialogCorrect.color);
-                        colorCorrect = colorDialogCorrect.color;
-                        colorCorrectR.color = colorDialogCorrect.color;
+                        barvaPloscic = colorDialogCorrect.color;
                     }
                     onRejected: {
                         console.log("Canceled")
@@ -412,9 +387,9 @@ Rectangle {
             }
 
             Rectangle{
-                id: colorWrongR
+                id: colorWrong
                 x: 540
-                anchors.verticalCenter: parent.verticalCenter
+                y: 93
                 width: 200
                 height: 40
                 border.color: "black"
@@ -424,8 +399,7 @@ Rectangle {
                     title: "Please choose a color"
                     onAccepted: {
                         console.log("You chose: " + colorDialogWrong.color);
-                        colorWrong = colorDialogWrong.color;
-                        colorWrongR.color = colorDialogWrong.color;
+                        barvaPloscic = colorDialogWrong.color;
                     }
                     onRejected: {
                         console.log("Canceled")
@@ -469,13 +443,13 @@ Rectangle {
             }
 
             ComboBox {
-                id: glasba
                 x: 540
                 y: 80
                 currentIndex: 2
                 model: ListModel {
+                    id: glasba
                     ListElement { text: "Da" }
-                    ListElement { text: "Ne" }
+                    ListElement { text: "Ne"}
                 }
                 width: 200
                 anchors.right: parent.right
@@ -513,21 +487,8 @@ Rectangle {
                     colorOzadja.color = bgColor;
                     colorPloscica.color = barvaPloscic;
                     colorCrk.color = barvaCrk;
-                    colorCorrectR.color = settingsWin.colorCorrect;
-                    colorWrongR.color = settingsWin.colorWrong;
-
-                    tezavnost.currentIndex = tezavnost.find(stopnja);
-                    if (settingsWin.fontCapitalization === "Font.AllUppercase"){
-                        fontCapt.currentIndex = 0;
-                    } else {
-                        fontCapt.currentIndex = 1;
-                    }
-
-                    if (palyBgMusic){
-                        glasba.currentIndex = 0;
-                    } else {
-                        glasba.currentIndex = 1;
-                    }
+                    colorCorrect.color = settingsWin.colorCorrect;
+                    colorWrong.color = settingsWin.colorWrong;
                 } else {
                     console.log("HTTP:", request.status, request.statusText)
                 }
@@ -536,37 +497,10 @@ Rectangle {
         request.send()
     }
 
+
+
     SoundEffect {
         id: correctMove
         source: "sounds/correct-move.wav"
-    }
-
-    function saveSettings() {
-        var capt = (fontCapt.currentText === "Velike") ? "Font.AllUppercase" : "Font.AllLowercase";
-        var glas = (glasba.currentText === "Da") ? true : false;
-
-
-        var settings = {
-            "bgColor": bgColor,
-            "settingPressAndHoldInterval": 3000,
-            "fontCapitalization": capt,
-            "stopnja": Number(tezavnost.currentText),
-            "barvaPloscic": barvaPloscic,
-            "barvaCrk": barvaCrk,
-            "colorCorrect": colorCorrect,
-            "colorWrong": colorWrong,
-            "palyBgMusic": glas
-        };
-
-
-        var str = JSON.stringify(settings);
-        //console.log(str);
-
-        var request = new XMLHttpRequest();
-        request.open("PUT", "json/settings.json", false);
-        request.send(str);
-        console.log(request.status);
-
-        settingsWin.destroy(10);
     }
 }

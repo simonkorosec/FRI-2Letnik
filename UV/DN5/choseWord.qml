@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtMultimedia 5.8
+import QtQuick.Controls 2.2
 
 Rectangle {
     id: choseWord
@@ -71,6 +72,27 @@ Rectangle {
         delegate: besedaDelegate
         //highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
         focus: true
+    }
+
+    Button {
+        id: nazajBtn
+        text: "Nazaj"
+        font.capitalization: Font.AllUppercase
+        font.wordSpacing: 1
+        font.letterSpacing: 0
+        padding: 12
+        font.pointSize: 9
+        anchors.top: parent.top
+        anchors.topMargin: 5
+        anchors.left: parent.left
+        anchors.leftMargin: 5
+
+        onClicked: {
+            //console.log("Odpri choseWord.qml");
+            correctMove.play();
+            choseWord.destroy(1);
+        }
+
     }
 
     Component.onCompleted: {

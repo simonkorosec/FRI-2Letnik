@@ -1,10 +1,1 @@
-{
-	"bgColor": "lightskyblue",					
-	"settingPressAndHoldInterval": 5000,
-	"fontCapitalization": "Font.AllUppercase",
-	"stopnja": 1,
-	"barvaPloscic": "white",
-	"barvaCrk": "black",
-	"colorCorrect": "green",
-	"colorWrong": "red"
-}
+{"barvaCrk":"black","barvaPloscic":"#2150e8","bgColor":"lightskyblue","colorCorrect":"#0ceb32","colorWrong":"#dd9fd8","fontCapitalization":"Font.AllUppercase","palyBgMusic":true,"settingPressAndHoldInterval":3000,"stopnja":2}

@@ -77,7 +77,7 @@ Item {
                 tile.color = colorCorrect;
 
                 //console.log(parent.parent.stPravilnih);
-                lvl1.preveriPravilnost();
+                lvl.preveriPravilnost();
 
                 correctMove.play();
             } else if (parent !== root && parent.crka !== root.crka){

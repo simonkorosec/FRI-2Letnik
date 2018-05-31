@@ -81,7 +81,7 @@ Rectangle {
                             delegate: DropTile {
                                 colorKey: lvl.barvaPloscic
                                 colorText: lvl.barvaCrk
-                                displayLetter: true
+                                displayLetter: false
                             }
                         }
 

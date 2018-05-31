@@ -48,7 +48,7 @@ Window {
             onPressAndHold: {
                 console.log("Odpri settings.qml");
                 correctMove.play();
-                //openSettings();
+                openSettings();
             }
         }
     }
@@ -77,6 +77,15 @@ Window {
 
     function openChoseWord(){
         var component = Qt.createComponent("choseWord.qml");
+        var choseWord = component.createObject(mainWindow, {"x": 0, "y": 0});
+        if (choseWord === null) {
+            // Error Handling
+            console.log("Error creating object");
+        }
+    }
+
+    function openSettings(){
+        var component = Qt.createComponent("settings.qml");
         var choseWord = component.createObject(mainWindow, {"x": 0, "y": 0});
         if (choseWord === null) {
             // Error Handling

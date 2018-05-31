@@ -81,7 +81,7 @@ Rectangle {
                             delegate: DropTile {
                                 colorKey: lvl.barvaPloscic
                                 colorText: lvl.barvaCrk
-                                displayLetter: true
+                                displayLetter: false
                             }
                         }
 
@@ -201,8 +201,8 @@ Rectangle {
                     var list = result["slike"];
                     for (var i in list) {
                         if (list[i].tekst === iskanaBeseda.toLowerCase()){
-                            pomocTekst.text = iskanaBeseda;
-                            pomocTekst.font.capitalization = capitalization;
+                            pomocTekst.text = "";
+//                            pomocTekst.font.capitalization = capitalization;
 
                             slikaImg.source = list[i].slika;
 
