@@ -20,31 +20,7 @@ include_once "navigation.php";
         <table class="tableList" id="dtTable">
 
         </table>
-
-        <!--        <form class="deleteForm" action="list.php">-->
-        <!--            <fieldset>-->
-        <!--                <button name="delete" type="submit" id="deleteBtn" >Izbriši Goro</button>-->
-        <!--            </fieldset>-->
-        <!--        </form>-->
-
     </div>
-
-    <?php if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) : ?>
-        <div class="container">
-            <form class="inputForm" id="comment-form" action="<?= BASE_URL . "addComment" ?>" method="post">
-                <fieldset>
-                    <textarea class="comment-tx" title="comment-input" name="comment" required
-                              placeholder="Vnesite komentar..."></textarea>
-                </fieldset>
-
-                <fieldset>
-                    <input name="submit" type="submit" class="searchBtn" value="Komentiraj">
-                    <input hidden type="text" name="id_mountain" value="<?= $id ?>">
-                    <input hidden type="text" name="user_name" value="<?= htmlspecialchars($_SESSION["username"]) ?>">
-                </fieldset>
-            </form>
-        </div>
-    <?php endif ?>
 
     <?php if ($numImgs > 0): ?>
         <div class="container" id="slideshow">
@@ -75,6 +51,23 @@ include_once "navigation.php";
 
         </div>
     <?php endif; ?>
+
+    <?php if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) : ?>
+        <div class="container">
+            <form class="inputForm" id="comment-form" action="<?= BASE_URL . "addComment" ?>" method="post">
+                <fieldset>
+                    <textarea class="comment-tx" title="comment-input" name="comment" required
+                              placeholder="Vnesite komentar..."></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <input name="submit" type="submit" class="searchBtn" value="Komentiraj">
+                    <input hidden type="text" name="id_mountain" value="<?= $id ?>">
+                    <input hidden type="text" name="user_name" value="<?= htmlspecialchars($_SESSION["username"]) ?>">
+                </fieldset>
+            </form>
+        </div>
+    <?php endif ?>
 
     <?php if (count($comments) > 0): ?>
         <div class="container" id="comment-section">

@@ -190,27 +190,18 @@ select option {
     color: black;
 }
 
-/************* DELETE BTN *************/
+/************* LIST *************/
 
-#deleteBtn {
-    font: 400 12px/16px 'Roboto', Helvetica, Arial, sans-serif;
+.tableList .click-td{
     cursor: pointer;
-    width: 100%;
-    border: none;
-    background: #4CAF50;
-    color: #FFF;
-    margin: 0 0 5px;
-    padding: 10px;
-    font-size: 15px;
 }
 
-#deleteBtn:hover {
-    background: #43A047;
-    -webkit-transition: background 0.3s ease-in-out;
-    -moz-transition: background 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out;
+.success{
+    font-size: 1.5rem;
+    padding: 5pt;
+    background: #F9F9F9;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3), 0 5px 5px 0 rgba(0, 0, 0, 0.34);
 }
-
 /************* MENU *************/
 
 /* Add a black background color to the top navigation */
@@ -431,11 +422,11 @@ select option {
     }
 
     .pageTitleDiv {
-        margin: 4% auto;
+        margin: 2% auto;
     }
 
     .inputForm {
-        margin: 25% auto;
+        margin: 20% auto;
     }
 
     .selectOdDo {
@@ -453,5 +444,10 @@ select option {
     .login {
         float: right !important;
     }
+}
 
+@media only screen and (min-width: 850px) {
+    .container, .error {
+        max-width: 800px;
+    }
 }

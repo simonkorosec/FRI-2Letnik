@@ -154,5 +154,6 @@ class MountainController {
 
         MountainDB::insertComment($id, $user_name, $comment);
 
+        ViewHelper::redirect("mountainDetails?id=$id");
     }
 }

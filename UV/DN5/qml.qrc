@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>choseWord.qml</file>
+        <file>DragTile.qml</file>
+        <file>DropTile.qml</file>
+        <file>playLevel1.qml</file>
+        <file>playLevel2.qml</file>
+        <file>playLevel3.qml</file>
+        <file>playLevel4.qml</file>
+        <file>settings.qml</file>
+    </qresource>
+</RCC>

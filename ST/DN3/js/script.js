@@ -43,9 +43,10 @@ function displayMountains(args) {
         else {
             row.classList.add("row2")
         }
+        row.classList.add("click-td");
         const cell = row.insertCell(0);
         cell.setAttribute("data-json-data", JSON.stringify(mount.id));
-        cell.addEventListener("dblclick", showDetails);
+        cell.addEventListener("click", showDetails);
         cell.innerHTML = mount.mountain_name;
     }
 }
