@@ -55,6 +55,10 @@ Window {
 
 
     Component.onCompleted: {
+readSettings();
+    }
+
+    function readSettings() {
         var request = new XMLHttpRequest()
         request.open('GET', './json/settings.json');
         request.onreadystatechange = function() {
@@ -66,6 +70,14 @@ Window {
 
                     var hold = result["settingPressAndHoldInterval"];
                     settingsBtnMA.pressAndHoldInterval = hold;
+
+                    var glasba = result["palyBgMusic"];
+                    if (glasba){
+                        bgMusic.play();
+                    } else {
+                        bgMusic.stop();
+                    }
+
                 } else {
                     console.log("HTTP:", request.status, request.statusText)
                 }
@@ -73,7 +85,7 @@ Window {
         }
         request.send()
 
-    }  
+    }
 
     function openChoseWord(){
         var component = Qt.createComponent("choseWord.qml");
@@ -94,7 +106,13 @@ Window {
     }
 
     SoundEffect {
-            id: correctMove
-            source: "sounds/correct-move.wav"
-        }
+        id: correctMove
+        source: "sounds/correct-move.wav"
+    }
+
+    SoundEffect {
+        id: bgMusic
+        source: "sounds/calm-music.wav"
+        volume: 0.5
+    }
 }

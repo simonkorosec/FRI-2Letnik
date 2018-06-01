@@ -30,6 +30,7 @@ DropArea {
             text: model.crka
             horizontalAlignment:Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
+            font.capitalization: model.capitalization
         }
 
         states: [

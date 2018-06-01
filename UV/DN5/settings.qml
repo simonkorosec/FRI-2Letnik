@@ -26,8 +26,8 @@ Rectangle {
         font.capitalization: Font.AllUppercase
         font.wordSpacing: 1
         font.letterSpacing: 0
-        padding: 12
-        font.pointSize: 34
+        padding: 5
+        font.pointSize: 21
 //            anchors.top: parent.top
 //            anchors.topMargin: 15
 //            anchors.left: parent.left
@@ -567,6 +567,7 @@ Rectangle {
         request.send(str);
         console.log(request.status);
 
+        mainWindow.readSettings();
         settingsWin.destroy(10);
     }
 }

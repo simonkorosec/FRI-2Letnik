@@ -14,7 +14,7 @@ Rectangle {
     property string barvaPloscic: "red"
     property string barvaCrk: "white"
     property string beseda: "avto"
-    property var zadniPregled
+    property var capitalization
 
     ColumnLayout {
         anchors.fill: parent
@@ -156,9 +156,6 @@ Rectangle {
 
 
     Component.onCompleted: {
-        zadniPregled = Date.now();
-        setInterval(ponudiPomoc(), 500);
-
         readSettings();
     }
 
@@ -172,14 +169,25 @@ Rectangle {
 
                     var result = JSON.parse(settings.responseText);
                     lvl.barva = result["bgColor"];
-                    var cap = result["fontCapitalization"];
+                    capitalization = result["fontCapitalization"];
                     lvl.barvaPloscic = result["barvaPloscic"];
                     lvl.barvaCrk = result["barvaCrk"];
                     lvl.colorCorrect = result["colorCorrect"];
                     lvl.colorWrong = result["colorWrong"];
 
                     var iskanaBeseda = beseda;
-                    readWord(cap, iskanaBeseda);
+
+                    if (capitalization === "Font.AllUppercase"){
+                        capitalization = Font.AllUppercase;
+                        console.log("upper");
+                        console.log(Font.AllUppercase);
+                    } else {
+                        console.log("lower");
+                        console.log(Font.AllLowercase);
+                        capitalization = Font.AllLowercase;
+                    }
+
+                    readWord(iskanaBeseda, capitalization);
                 } else {
                     console.log("HTTP:", settings.status, settings.statusText);
                 }
@@ -188,12 +196,12 @@ Rectangle {
         settings.send();
     }
 
-    function readWord(capitalization, iskanaBeseda){
-        if (capitalization === "Font.AllUppercase"){
-            capitalization = Font.AllUppercase;
-        } else {
-            capitalization = Font.AllLowercase;
-        }
+    function readWord(iskanaBeseda, capit){
+//        if (capitalization === "Font.AllUppercase"){
+//            capitalization = Font.AllUppercase;
+//        } else {
+//            capitalization = Font.AllLowercase;
+//        }
 
         var request = new XMLHttpRequest();
         request.open('GET', './json/words.json');
@@ -206,11 +214,11 @@ Rectangle {
                     for (var i in list) {
                         if (list[i].tekst === iskanaBeseda.toLowerCase()){
                             pomocTekst.text = iskanaBeseda;
-                            pomocTekst.font.capitalization = capitalization;
+                            pomocTekst.font.capitalization = capit;
 
                             slikaImg.source = list[i].slika;
 
-                            pomesajCrke(iskanaBeseda);
+                            pomesajCrke(iskanaBeseda, capit);
                             return;
                         }
                     }
@@ -222,12 +230,12 @@ Rectangle {
         request.send();
     }
 
-    function pomesajCrke(beseda) {
+    function pomesajCrke(beseda, capit) {
         var a = beseda.split("");
         var n = a.length;
 
         for(var c in a){
-            vnosModel.append({"crka" : a[c], "indeks": c});
+            vnosModel.append({"crka" : a[c], "indeks": c, "capitalization":capitalization});
         }
 
         for(var i = n - 1; i > 0; i--) {
@@ -240,8 +248,7 @@ Rectangle {
         beseda = a.join("");
 
         for(c in a){
-            crkeModel.append({"crka" : a[c]});
-            crkeSource.arr.append({"crka" : a[c]});
+            crkeModel.append({"crka" : a[c], "capitalization":capitalization});
         }
     }
 
@@ -254,27 +261,6 @@ Rectangle {
         }
         console.log("vsi pravilni");
         gameFinished.play();
-    }
-
-    function ponudiPomoc() {
-        console.log("POMOC");
-        var endDate   = new Date();
-        var seconds = (endDate.getTime() - zadniPregled.getTime()) / 1000;
-        var iskanaCrka;
-        if (seconds >= 3) {
-            for(var i = 0; i < crkeDestination.arr.count; i++) {
-                if (!crkeDestination.arr.get(i).drop.isCorectPos){
-                    iskanaCrka = crkeDestination.arr.get(i).drop.crka;
-                    break;
-                }
-            }
-
-            for(i = 0; i < crkeSource.arr.count; i++) {
-                if (crkeSource.arr.get(i).drag.crka === iskanaCrka) {
-                    crkeSource.arr.get(i).drag.color = "red";
-                }
-            }
-        }
     }
 
     SoundEffect {

@@ -7,8 +7,9 @@ Item {
     property string colorWrong
     property string colorKey
     property string colorText
-    property string crka: modelData
+    property string crka: model.crka
     property bool isCorectPos: true
+
 
     width: 75; height: 75
 
@@ -42,9 +43,10 @@ Item {
                 anchors.fill: parent
                 color: colorText
                 font.pixelSize: 48
-                text: modelData
+                text: model.crka
                 horizontalAlignment:Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                font.capitalization: model.capitalization
             }
 
             states: [
@@ -97,18 +99,13 @@ Item {
     }
 
     SoundEffect {
-            id: correctMove
-            source: "sounds/correct-move.wav"
-        }
+        id: correctMove
+        source: "sounds/correct-move.wav"
+    }
 
     SoundEffect {
-            id: wrongMove
-            source: "sounds/wrong-move.wav"
-        }
-
-    Component.onCompleted: function() {
-        console.log(crkeSource);
-        crkeSource.array.append({"drag":this});
+        id: wrongMove
+        source: "sounds/wrong-move.wav"
     }
 
 }
