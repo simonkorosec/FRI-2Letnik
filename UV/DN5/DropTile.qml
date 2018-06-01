@@ -11,14 +11,13 @@ DropArea {
     property bool isCorectPos: false
 
 
-    width: 64; height: 64
+    width: 75; height: 75
     opacity: 0.5
     keys: [ colorKey ]
 
     Rectangle {
         id: dropRectangle
-        property string name: "dropRectangle"
-        property real indeks
+        property string crka
 
         anchors.fill: parent
         color: colorKey
@@ -59,11 +58,12 @@ DropArea {
     }
 
     Component.onCompleted: function() {
-                               if(displayLetter === false){
-                                   tekst.text = ""
-                               }
+        //crka = tekst.text;
+        if(displayLetter === false){
+            tekst.text = ""
+        }
 
-                               parent.arr.append({"drop":this});
-                           }
+        parent.arr.append({"drop":this});
+    }
 
 }

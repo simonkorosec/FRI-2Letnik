@@ -1,4 +1,0 @@
-typ int : integer;
-typ bool : logical;
-fun foo ( a : int, b : int) : int = (c * a) {where var c : bool}
-								# množenje logical * integer

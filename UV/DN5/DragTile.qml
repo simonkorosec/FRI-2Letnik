@@ -10,12 +10,12 @@ Item {
     property string crka: modelData
     property bool isCorectPos: true
 
-    width: 64; height: 64
+    width: 75; height: 75
 
     MouseArea {
         id: mouseArea
 
-        width: 64; height: 64
+        width: parent.width; height: parent.height
         anchors.centerIn: parent
 
         drag.target: tile
@@ -27,7 +27,7 @@ Item {
         Rectangle {
             id: tile
 
-            width: 64; height: 64
+            width: parent.width; height: parent.height
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
 
@@ -58,8 +58,8 @@ Item {
                     when: isCorectPos === false
                     PropertyChanges {
                         target: tile
-                        width: 74
-                        height: 74
+                        width: root.width + 10
+                        height: root.height + 10
                     }
                 }
             ]
@@ -106,5 +106,9 @@ Item {
             source: "sounds/wrong-move.wav"
         }
 
+    Component.onCompleted: function() {
+        console.log(crkeSource);
+        crkeSource.array.append({"drag":this});
+    }
 
 }

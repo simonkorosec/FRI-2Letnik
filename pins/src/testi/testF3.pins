@@ -1,4 +1,0 @@
-typ int : integer;
-typ bool : logical;
-fun mul ( a : int, b : int) : int =  a == (5+a*b/3) 
-# pričakovan tip se ne ujema z dejanskim tipom v funkciji

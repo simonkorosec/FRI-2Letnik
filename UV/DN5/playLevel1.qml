@@ -14,6 +14,7 @@ Rectangle {
     property string barvaPloscic: "red"
     property string barvaCrk: "white"
     property string beseda: "avto"
+    property var zadniPregled
 
     ColumnLayout {
         anchors.fill: parent
@@ -65,7 +66,6 @@ Rectangle {
 
                     Row {
                         id: crkeDestination
-                        property string name: "row"
                         property ListModel arr: ListModel {}
 
                         anchors.verticalCenter: parent.verticalCenter
@@ -96,7 +96,6 @@ Rectangle {
                     ListModel {
                         id: vnosModel
                     }
-
                 }
             }
 
@@ -126,6 +125,7 @@ Rectangle {
 
             Row {
                 id: crkeSource
+                property ListModel array: ListModel {}
 
                 //anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
@@ -138,7 +138,8 @@ Rectangle {
 
                 Repeater {
                     model: crkeModel
-                    delegate: DragTile { colorKey: lvl.barvaPloscic
+                    delegate: DragTile {
+                        colorKey: lvl.barvaPloscic
                         colorText: lvl.barvaCrk
                         colorCorrect: lvl.colorCorrect
                         colorWrong: lvl.colorWrong
@@ -155,6 +156,9 @@ Rectangle {
 
 
     Component.onCompleted: {
+        zadniPregled = Date.now();
+        setInterval(ponudiPomoc(), 500);
+
         readSettings();
     }
 
@@ -237,6 +241,7 @@ Rectangle {
 
         for(c in a){
             crkeModel.append({"crka" : a[c]});
+            crkeSource.arr.append({"crka" : a[c]});
         }
     }
 
@@ -249,6 +254,27 @@ Rectangle {
         }
         console.log("vsi pravilni");
         gameFinished.play();
+    }
+
+    function ponudiPomoc() {
+        console.log("POMOC");
+        var endDate   = new Date();
+        var seconds = (endDate.getTime() - zadniPregled.getTime()) / 1000;
+        var iskanaCrka;
+        if (seconds >= 3) {
+            for(var i = 0; i < crkeDestination.arr.count; i++) {
+                if (!crkeDestination.arr.get(i).drop.isCorectPos){
+                    iskanaCrka = crkeDestination.arr.get(i).drop.crka;
+                    break;
+                }
+            }
+
+            for(i = 0; i < crkeSource.arr.count; i++) {
+                if (crkeSource.arr.get(i).drag.crka === iskanaCrka) {
+                    crkeSource.arr.get(i).drag.color = "red";
+                }
+            }
+        }
     }
 
     SoundEffect {
