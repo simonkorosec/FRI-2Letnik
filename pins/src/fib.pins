@@ -1,7 +1,0 @@
-fun main(i : integer) : integer = 
-(putString('Vnesite stevilo: '), getInt(x), {x = fib(x)}, putInt(x))
-{where var x:integer};
-
-fun fib(n:integer):integer = 
-({if (n <= 2) then {x = 1} else {x = fib(n-1) + fib(n-2)}}, x)
-{where var x:integer}

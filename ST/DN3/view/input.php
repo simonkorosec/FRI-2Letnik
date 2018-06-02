@@ -21,7 +21,7 @@ include_once "navigation.php";
 
     <?php
     if (isset($mountainInserted) && $mountainInserted === true):?>
-        <div class="success">
+        <div class="success container">
             <h2>Mountain successfully inserted.</h2>
         </div>
     <?php endif; ?>
@@ -43,7 +43,7 @@ include_once "navigation.php";
             </fieldset>
             <fieldset>
                 <input placeholder="Ime Gore" type="text" tabindex="2" required name="name" id="name"
-                       pattern="[\-A-Za-z čšžČŠŽđĐ]+" maxlength="150" value="<?= $name ?>">
+                       pattern="[\-A-Za-z čšžČŠŽđĐ0-9]+" maxlength="150" value="<?= $name ?>">
             </fieldset>
             <fieldset>
                 <input placeholder="Višina Gore (v metrih)" type="text" tabindex="3" required name="height"

@@ -1,5 +1,0 @@
-var a : integer;
-var b : logical;
-var c : string;
-
-fun mul ( a : integer, b : integer) : integer = (neki(a)*b) {where fun neki(a:integer):integer = a}

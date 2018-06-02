@@ -35,7 +35,7 @@ public class PublicTests extends TestCase {
 		
 		int[] res = bp.binPackingExact();
 		assertTrue(checkBinsAndItemsValidity(items, res, m));
-		HashSet<Integer> uniqueBins = new HashSet();
+		HashSet<Integer> uniqueBins = new HashSet<>();
 		for (int bin: res) {
 			uniqueBins.add(bin);
 		}
@@ -49,7 +49,7 @@ public class PublicTests extends TestCase {
 		
 		int[] res = bp.binPackingApproximate();
 		assertTrue(checkBinsAndItemsValidity(items, res, m));
-		HashSet<Integer> uniqueBins = new HashSet();
+		HashSet<Integer> uniqueBins = new HashSet<>();
 		for (int bin: res) {
 			uniqueBins.add(bin);
 		}

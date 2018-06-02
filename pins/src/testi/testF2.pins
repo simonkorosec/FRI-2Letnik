@@ -1,5 +1,0 @@
-typ int : integer;
-typ bool : logical;
-fun foo ( a : int, b : int) : int = (b * a);
-
-fun klic(x : int) : int = (foo(5, true), 0) # napačen tip parametra

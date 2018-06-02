@@ -1,4 +1,0 @@
-typ int : integer;
-fun foo ( a : int, b : int) : int = ({c = 1}, {x = 1}, { for i = 0, 10, 1 : 
-		{x=a*b % c*x}}, x)
-		{where var c : int; var x : int; var i : int}
