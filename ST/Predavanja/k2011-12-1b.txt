@@ -10,12 +10,23 @@
 
 <xsl:template match="/">
 <html>
-	<body>
-		<ol>
-			<xsl:for-each select="studenti/student">
-				<li> <xsl:value-of select="ime" /> </li>
-			</xsl:for-each>
-		</ol>
-	</body>
+  <body>
+	<ol>
+	  <xsl:for-each select="studenti/student">
+		<li> <xsl:value-of select="ime" /> </li>
+	  </xsl:for-each>
+	</ol>
+  </body>
 </html>
+</xsl:template>
+
+
+<xsl:template match="/">
+<delavci>
+  <xsl:for-each select="delavci/student">
+	<student>
+		<ime><xsl:value-of select="ime" /></ime>
+	</student>
+  </xsl:for-each>
+</delavci>
 </xsl:template>
