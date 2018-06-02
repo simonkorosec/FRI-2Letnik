@@ -98,6 +98,54 @@ public class BinPacking {
      * @return Array of size n which stores the index of bin, where each item is stored in.
      */
     public int[] binPackingApproximate() {
+        //return myFirstFit();
+        return firstFit();
+    }
+
+    private int[] firstFit() {
+        bins = new int[items.length*2];
+
+        TreeMap<Integer, Integer> order = order2();
+
+        for (int i : order.keySet()) {
+            int velikost = items[i];
+            int ff = Query(1, velikost, 1, items.length);
+            Update(1, ff, velikost, 1, items.length);
+            bestRazporeditev[i] = ff;
+        }
+
+        return bestRazporeditev;
+    }
+
+    private void Update(int idx, int x, int val, int left, int right) {
+        if (left == right){
+            bins[idx] += val;
+            return;
+        }
+        int mid = ((left+right) / 2);
+
+        if (x <= mid){
+            Update(2*idx, x, val, left, mid);
+        } else {
+            Update(2*idx+1, x, val, mid+1, right);
+        }
+
+        bins[idx] = Math.min(bins[2*idx], bins[2*idx+1]);
+    }
+
+    private int Query(int idx, int val, int left, int right) {
+        if (left == right){
+            return left;
+        }
+        int mid = ((left+right) / 2);
+        if (bins[2*idx] <= m - val){
+            return Query(2*idx, val, left, mid);
+        } else {
+            return Query(2*idx+1,val, mid+1, right);
+        }
+    }
+
+    private int[] myFirstFit() {
         int binNum = 0;
         bins = new int[items.length];
 
@@ -123,6 +171,7 @@ public class BinPacking {
         }
 
         return bestRazporeditev;
+
     }
 
     private int[] order() {
@@ -149,4 +198,17 @@ public class BinPacking {
         return zap;
     }
 
+    private TreeMap<Integer, Integer> order2() {
+        TreeMap<Integer, Integer> order = new TreeMap<>((o1, o2) -> {
+            int c = items[o2] - items[o1];
+            if (c == 0) return 1;
+            return c;
+        });
+
+        for (int i = 0; i < items.length; i++) {
+            order.put(i, items[i]);
+        }
+
+        return order;
+    }
 }
