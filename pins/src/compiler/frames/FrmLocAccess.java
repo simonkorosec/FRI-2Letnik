@@ -13,7 +13,7 @@ import compiler.seman.type.*;
 public class FrmLocAccess extends FrmAccess {
 
 	/** Opis spremenljivke.  */
-	public final AbsVarDef var;
+	private final AbsVarDef var;
 
 	/** Klicni zapis funkcije, v kateri je spremenljivka deklarirana.  */
 	public final FrmFrame frame;

@@ -1,2 +1,0 @@
-fun f(i:integer,j:integer):integer = i*a[j];
-var a:arr[10]integer

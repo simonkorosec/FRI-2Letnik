@@ -1,4 +1,4 @@
-package compiler.lincode;
+package compiler.interpreter;
 
 import compiler.Report;
 import compiler.frames.FrmFrame;
@@ -9,10 +9,10 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class CodeGenerator {
-    public static HashMap<FrmLabel, FrmFrame> framesByLabel;    // Labela in frame za funkcije
-    public static HashMap<FrmLabel, ImcCode> codesByLabel;      // Labela in koda za funkcije
-    public static HashMap<String, Integer> variableByLabel;     // Labela in velikost globalnih spr
-    public static FrmLabel main;                                // Labela main()
+    static HashMap<FrmLabel, FrmFrame> framesByLabel;    // Labela in frame za funkcije
+    static HashMap<FrmLabel, ImcCode> codesByLabel;      // Labela in koda za funkcije
+    static HashMap<String, Integer> variableByLabel;     // Labela in velikost globalnih spr
+    private static FrmLabel main;                        // Labela funkcije main()
 
     public CodeGenerator() {
         framesByLabel = new HashMap<>();
@@ -21,7 +21,7 @@ public class CodeGenerator {
         main = null;
     }
 
-    public static FrmLabel mainLabel() {
+    public static FrmLabel getMain() {
         if (main == null){
             Report.error("Program does not contain main()");
         }

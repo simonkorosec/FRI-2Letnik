@@ -13,10 +13,10 @@ import compiler.frames.*;
 public class ImcCALL extends ImcExpr {
 
 	/** Labela funkcije.  */
-	public FrmLabel label;
+	public final FrmLabel label;
 
 	/** Argumenti funkcijskega klica (vkljucno s FP).  */
-	public LinkedList<ImcExpr> args;
+	public final LinkedList<ImcExpr> args;
 
 	/**
 	 * Ustvari nov klic funkcije.
@@ -25,7 +25,7 @@ public class ImcCALL extends ImcExpr {
 	 */
 	public ImcCALL(FrmLabel label) {
 		this.label = label;
-		this.args = new LinkedList<ImcExpr>();
+		this.args = new LinkedList<>();
 	}
 
 	@Override
@@ -42,8 +42,7 @@ public class ImcCALL extends ImcExpr {
 		ImcCALL linCall = new ImcCALL(label);
 		for (ImcExpr arg1 : this.args) {
 			FrmTemp temp = new FrmTemp();
-			ImcExpr arg = arg1;
-			ImcESEQ linArg = arg.linear();
+			ImcESEQ linArg = arg1.linear();
 			linStmt.stmts.addAll(((ImcSEQ) linArg.stmt).stmts);
 			linStmt.stmts.add(new ImcMOVE(new ImcTEMP(temp), linArg.expr));
 			linCall.args.add(new ImcTEMP(temp));

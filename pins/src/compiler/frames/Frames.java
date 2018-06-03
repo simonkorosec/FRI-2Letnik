@@ -14,7 +14,7 @@ import compiler.seman.type.*;
 public class Frames implements Visitor {
 
 	/** Ali se izpisujejo vmesni rezultati. */
-	private boolean dump;
+	private final boolean dump;
 
 	/**
 	 * Izracun klicnih zapisov.

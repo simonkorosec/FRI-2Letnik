@@ -17,7 +17,7 @@ public class LexAn {
     /**
      * Ali se izpisujejo vmesni rezultati.
      */
-    private boolean dump;
+    private final boolean dump;
     private FileInputStream fis;
     private int currChar;           /* Trenutni znak za pregled */
     private int lineNum;            /* Trenutna vrstica */
@@ -61,7 +61,7 @@ public class LexAn {
     private Symbol nextSymbol() {
         while (true) {
             String error;
-            StringBuilder string = new StringBuilder("");
+            StringBuilder string = new StringBuilder();
             int col = this.colNum;
             int line = this.lineNum;
 
@@ -225,11 +225,13 @@ public class LexAn {
             if ((this.currChar >= (int) 'A' && this.currChar <= (int) 'Z') ||
                     (this.currChar >= (int) 'a' && this.currChar <= (int) 'z') ||
                     this.currChar == (int) '_') {
+
                 while (true) {
                     if ((this.currChar >= (int) 'A' && this.currChar <= (int) 'Z') ||
                             (this.currChar >= (int) 'a' && this.currChar <= (int) 'z') ||
                             (this.currChar >= (int) '0' && this.currChar <= (int) '9') ||
                             this.currChar == (int) '_') {
+
                         string.append((char) this.currChar);
                         nextCharr();
                     } else {
@@ -304,9 +306,7 @@ public class LexAn {
             }
 
             error(null);
-
         }
-
     }
 
 

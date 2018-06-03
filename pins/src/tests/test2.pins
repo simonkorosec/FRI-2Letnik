@@ -1,3 +1,0 @@
-fun f(n:integer):integer =
-  ({ if (n==1) then {a=1} else {a=n*f(n-1)} },a) {where var a:integer}
-

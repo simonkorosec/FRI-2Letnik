@@ -13,7 +13,7 @@ import compiler.seman.type.*;
 public class SemAn implements Visitor {
 
 	/** Ali se izpisujejo vmesni rezultati. */
-	private boolean dump;
+	private final boolean dump;
 
 	/**
 	 * Semanticni analizator.

@@ -13,7 +13,7 @@ import compiler.abstr.*;
 public class AbsDefs extends AbsTree {
 
 	/** Elementi seznama definicij. */
-	private AbsDef defs[];
+	private final AbsDef[] defs;
 
 	/**
 	 * Ustvari nov seznam definicij.

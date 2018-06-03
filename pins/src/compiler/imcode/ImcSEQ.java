@@ -12,7 +12,7 @@ import compiler.*;
 public class ImcSEQ extends ImcStmt {
 
 	/* Stavki.  */
-	public LinkedList<ImcStmt> stmts;
+	public final LinkedList<ImcStmt> stmts;
 
 	/**
 	 * Ustvari zaporedje stavkov.

@@ -12,7 +12,7 @@ import compiler.*;
 public class ImCode {
 
 	/** Ali se izpisujejo vmesni rezultati. */
-	private boolean dump;
+	private final boolean dump;
 
 	/**
 	 * Izracun fragmentov vmesne kode.
@@ -33,8 +33,9 @@ public class ImCode {
 	public void dump(LinkedList<ImcChunk> chunks) {
 		if (! dump) return;
 		if (Report.dumpFile() == null) return;
-		for (int chunk = 0; chunk < chunks.size(); chunk++)
-			chunks.get(chunk).dump();
+		for (ImcChunk chunk1 : chunks) {
+			chunk1.dump();
+		}
 	}
 
 }

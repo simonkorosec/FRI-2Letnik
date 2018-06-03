@@ -11,7 +11,7 @@ import compiler.frames.*;
 public class ImcJUMP extends ImcStmt {
 
 	/** Labela skoka.  */
-	public FrmLabel label;
+	public final FrmLabel label;
 
 	/** Ustvari brezpogojni skok. */
 	public ImcJUMP(FrmLabel label) {

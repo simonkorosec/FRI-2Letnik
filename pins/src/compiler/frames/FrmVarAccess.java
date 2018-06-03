@@ -10,7 +10,7 @@ import compiler.abstr.tree.*;
 public class FrmVarAccess extends FrmAccess {
 
 	/** Opis spremenljivke.  */
-	public final AbsVarDef var;
+	private final AbsVarDef var;
 
 	/** Labela spremenljivke.  */
 	public final FrmLabel label;

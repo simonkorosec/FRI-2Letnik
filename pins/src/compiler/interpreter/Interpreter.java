@@ -5,32 +5,31 @@ import java.util.*;
 import compiler.*;
 import compiler.frames.*;
 import compiler.imcode.*;
-import compiler.lincode.CodeGenerator;
 
 public class Interpreter {
 
     public static boolean debug = false;
-    public static boolean setGlobal = true;    // ali so globalne spr nastavlene
-    public static FrmFrame oldFrame = null;
+    private static boolean setGlobal = true;    // ali so globalne spr nastavlene
+    private static FrmFrame oldFrame = null;
 
     /*--- staticni del navideznega stroja ---*/
 
     /**
      * Preslikava globalnih spremenljivk v njihove naslove
      * */
-    public static HashMap<String, Integer> globSpr = new HashMap<>();
+    private static final HashMap<String, Integer> globSpr = new HashMap<>();
 
     /**
      * Pomnilnik navideznega stroja.
      */
-    public static HashMap<Integer, Object> mems = new HashMap<>();
+    private static final HashMap<Integer, Object> mems = new HashMap<>();
 
-    public static void stM(Integer address, Object value) {
+    private static void stM(Integer address, Object value) {
         if (debug) System.out.println(" [" + address + "] <= " + value);
         mems.put(address, value);
     }
 
-    public static Object ldM(Integer address) {
+    private static Object ldM(Integer address) {
         Object value = mems.get(address);
         if (debug) System.out.println(" [" + address + "] => " + value);
         return value;
@@ -50,14 +49,14 @@ public class Interpreter {
     /**
      * Zacasne spremenljivke (`registri') navideznega stroja.
      */
-    public HashMap<FrmTemp, Object> temps = new HashMap<>();
+    private final HashMap<FrmTemp, Object> temps = new HashMap<>();
 
-    public void stT(FrmTemp temp, Object value) {
+    private void stT(FrmTemp temp, Object value) {
         if (debug) System.out.println(" " + temp.name() + " <= " + value);
         temps.put(temp, value);
     }
 
-    public Object ldT(FrmTemp temp) {
+    private Object ldT(FrmTemp temp) {
         Object value = temps.get(temp);
         if (debug) System.out.println(" " + temp.name() + " => " + value);
         return value;
@@ -66,17 +65,17 @@ public class Interpreter {
     /*--- Izvajanje navideznega stroja. ---*/
 
     public Interpreter(){
-        this(compiler.lincode.CodeGenerator.framesByLabel.get(CodeGenerator.mainLabel()), (ImcSEQ) compiler.lincode.CodeGenerator.codesByLabel.get(CodeGenerator.mainLabel()));
+        this(CodeGenerator.framesByLabel.get(CodeGenerator.getMain()), (ImcSEQ) CodeGenerator.codesByLabel.get(CodeGenerator.getMain()));
     }
 
-    public Interpreter(FrmFrame frame, ImcSEQ code) {
+    private Interpreter(FrmFrame frame, ImcSEQ code) {
         if (debug) {
             System.out.println("[START OF " + frame.label.name() + "]");
         }
 
         if (setGlobal){
             setGlobalVar();
-            stM(1004, 0);
+            stM(1004, 0);   // začetni argument funkcije main()
         }
         int offset;
         if (frame.level == 1){
@@ -103,7 +102,6 @@ public class Interpreter {
         while (pc < code.stmts.size()) {
             if (debug) System.out.println("pc=" + pc);
             ImcCode instruction = code.stmts.get(pc);
-            //ImcCode instruction = code.stmts.elementAt(pc);
             result = execute(instruction);
             if (result instanceof FrmLabel) {
                 for (pc = 0; pc < code.stmts.size(); pc++) {
@@ -117,7 +115,6 @@ public class Interpreter {
         }
 
         fp = (Integer) ldM(fp + offset);
-        //fp = (Integer) ldM(fp + frame.oldFPoffset);
         sp = sp + frame.size();
         if (debug) {
             System.out.println("[FP=" + fp + "]");
@@ -134,8 +131,7 @@ public class Interpreter {
         }
     }
 
-    public Object execute(ImcCode instruction) {
-
+    private Object execute(ImcCode instruction) {
         if (instruction instanceof ImcBINOP) {
             ImcBINOP instr = (ImcBINOP) instruction;
             Object fstSubValue = execute(instr.limc);
@@ -206,27 +202,27 @@ public class Interpreter {
             if (instr.label.name().equals("_putInt")) {
                 //System.out.println((Integer) ldM(sp + 8));
                 //System.out.println((Integer) ldM(sp + 4));
-                System.out.println((Integer) ldM(sp + 0));
+                System.out.println(ldM(sp));
                 return null;
             }
             if (instr.label.name().equals("_getInt")) {
                 Scanner scanner = new Scanner(System.in);
-                stM((Integer) ldM(sp +0), scanner.nextInt());
+                stM((Integer) ldM(sp), scanner.nextInt());
                 return null;
             }
             if (instr.label.name().equals("_putString")) {
-                System.out.println((String) ldM(sp + 0));
+                System.out.println((String) ldM(sp));
                 return null;
             }
             if (instr.label.name().equals("_getString")) {
                 Scanner scanner = new Scanner(System.in);
-                stM((Integer) ldM(sp + 0), scanner.next());
+                stM((Integer) ldM(sp), scanner.next());
                 return null;
             }
 
-//            new Interpreter(compiler.compiler.lincode.CodeGenerator.framesByLabel.get(instr.fun), (ImcSEQ) compiler.compiler.lincode.CodeGenerator.codesByLabel.get(instr.fun));
+//            new Interpreter(compiler.compiler.interpreter.CodeGenerator.framesByLabel.get(instr.fun), (ImcSEQ) compiler.compiler.interpreter.CodeGenerator.codesByLabel.get(instr.fun));
 
-            new Interpreter(compiler.lincode.CodeGenerator.framesByLabel.get(instr.label), (ImcSEQ) compiler.lincode.CodeGenerator.codesByLabel.get(instr.label));
+            new Interpreter(CodeGenerator.framesByLabel.get(instr.label), (ImcSEQ) CodeGenerator.codesByLabel.get(instr.label));
             return ldM(sp);
 
             //return null;

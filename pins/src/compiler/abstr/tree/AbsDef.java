@@ -15,7 +15,7 @@ public abstract class AbsDef extends AbsTree {
 	 * @param pos
 	 *            Polozaj stavcne oblike tega drevesa.
 	 */
-	public AbsDef(Position pos) {
+    AbsDef(Position pos) {
 		super(pos);
 	}
 

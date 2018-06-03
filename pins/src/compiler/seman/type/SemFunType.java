@@ -62,9 +62,7 @@ public class SemFunType extends SemType {
                         funType.getParType(par)))
                     return false;
             }
-            if (!this.resultType.sameStructureAs(funType.resultType))
-                return false;
-            return true;
+            return this.resultType.sameStructureAs(funType.resultType);
         } else
             return false;
     }
@@ -81,13 +79,14 @@ public class SemFunType extends SemType {
 
     @Override
     public String toString() {
-        String str = "";
-        str += "FUN(";
-        for (int par = 0; par < parTypes.length; par++)
-            str += (par > 0 ? "," : "") + parTypes[par].toString();
-        str += ":" + resultType.toString();
-        str += ")";
-        return str;
+        StringBuilder str = new StringBuilder();
+        str.append("FUN(");
+        for (int par = 0; par < parTypes.length; par++) {
+            str.append(par > 0 ? "," : "").append(parTypes[par].toString());
+        }
+        str.append(":").append(resultType.toString());
+        str.append(")");
+        return str.toString();
     }
 
 }

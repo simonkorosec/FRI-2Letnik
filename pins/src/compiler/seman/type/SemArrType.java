@@ -11,7 +11,7 @@ public class SemArrType extends SemType {
 	public final SemType type;
 
 	/** Velikost tabele. */
-	public final int size;
+	private final int size;
 
 	/**
 	 * Ustvari nov opis tabelaricnega tipa.

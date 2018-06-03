@@ -6,9 +6,9 @@ package compiler.seman;
  * 
  * @author sliva
  */
-public class SemIllegalInsertException extends Exception {
+class SemIllegalInsertException extends Exception {
 
-	static final long serialVersionUID = 0l;
+	static final long serialVersionUID = 0L;
 
 	public SemIllegalInsertException() {
 	}

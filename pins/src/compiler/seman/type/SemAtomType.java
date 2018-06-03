@@ -15,7 +15,7 @@ public class SemAtomType extends SemType {
 	public static final int VOID = 3;
 
 	/* Tip. */
-	public final int type;
+	private final int type;
 
 	/**
 	 * Ustvari nov opis atomarnega tipa.

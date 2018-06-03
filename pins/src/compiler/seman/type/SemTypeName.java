@@ -10,7 +10,7 @@ import compiler.*;
 public class SemTypeName extends SemType {
 
 	/** Ime tipa. */
-	public final String name;
+	private final String name;
 
 	/** Opis tipa. */
 	private SemType type;

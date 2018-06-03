@@ -11,10 +11,10 @@ import compiler.frames.*;
 public class ImcCodeChunk extends ImcChunk {
 
 	/** Klicni zapis funkcije.  */
-	public FrmFrame frame;
+	public final FrmFrame frame;
 
 	/** Vmesna koda funkcije.  */
-	public ImcStmt imcode;
+	public final ImcStmt imcode;
 
 	/** Linearna vmesna koda.  */
 	public ImcStmt lincode;

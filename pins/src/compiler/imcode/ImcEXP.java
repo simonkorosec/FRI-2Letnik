@@ -10,12 +10,12 @@ import compiler.*;
 public class ImcEXP extends ImcStmt {
 
 	/** Izraz.  */
-	public ImcExpr expr;
+    private final ImcExpr expr;
 
 	/**
 	 * Ustvari izraz kot stavek.
 	 * 
-	 * @param expr
+	 * @param expr izraz
 	 */
 	public ImcEXP(ImcExpr expr) {
 		this.expr = expr;

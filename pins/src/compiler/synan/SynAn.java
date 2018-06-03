@@ -17,14 +17,14 @@ public class SynAn {
     /**
      * Leksikalni analizator.
      */
-    private LexAn lexAn;
-    private Symbol currSybol;
-    private Symbol prevSybol;
+    private final LexAn lexAn;
+    private Symbol currSybol;       // Trenutni gledan simbol
+    private Symbol prevSybol;       // Prejšnji simbol
 
     /**
      * Ali se izpisujejo vmesni rezultati.
      */
-    private boolean dump;
+    private final boolean dump;
 
     /**
      * Ustvari nov sintaksni analizator.
@@ -39,6 +39,7 @@ public class SynAn {
 
     /**
      * Opravi sintaksno analizo.
+     * Pravila analize v datoteki "pins-gram.txt"
      */
     public AbsTree parse() {
         currSybol = lexAn.lexAn();

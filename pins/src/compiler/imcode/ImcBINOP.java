@@ -23,13 +23,13 @@ public class ImcBINOP extends ImcExpr {
 	public static final int OR  = 11;
 
 	/** Operator.  */
-	public int op;
+	public final int op;
 
 	/** Koda levega podizraza.  */
-	public ImcExpr limc;
+	public final ImcExpr limc;
 
 	/** Koda desnega podizraza.  */
-	public ImcExpr rimc;
+	public final ImcExpr rimc;
 
 	/**
 	 * Ustvari novo binarno operacijo.

@@ -11,7 +11,7 @@ import compiler.frames.*;
 public class ImcLABEL extends ImcStmt {
 
 	/** Labela imenovane lokacije.  */
-	public FrmLabel label;
+	public final FrmLabel label;
 
 	/**
 	 * Ustvari novo labelo.

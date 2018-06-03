@@ -13,7 +13,7 @@ public class SymbTable {
     /**
      * Simbolna tabela.
      */
-    private static HashMap<String, LinkedList<AbsDef>> mapping = new HashMap<String, LinkedList<AbsDef>>();
+    private static final HashMap<String, LinkedList<AbsDef>> mapping = new HashMap<>();
 
     /**
      * Trenutna globina nivoja gnezdenja.
@@ -35,12 +35,12 @@ public class SymbTable {
      * predhodni nivo gnezdenja.
      */
     public static void oldScope() {
-        LinkedList<String> allNames = new LinkedList<String>();
+        LinkedList<String> allNames = new LinkedList<>();
         allNames.addAll(mapping.keySet());
         for (String name : allNames) {
             try {
                 SymbTable.del(name);
-            } catch (SemIllegalDeleteException __) {
+            } catch (SemIllegalDeleteException ignored) {
             }
         }
         scope--;
@@ -53,11 +53,11 @@ public class SymbTable {
      * @param newDef Nova definicija.
      * @throws SemIllegalInsertException Ce definicija imena na trenutnem nivoju gnezdenja ze obstaja.
      */
-    public static void ins(String name, AbsDef newDef)
+    static void ins(String name, AbsDef newDef)
             throws SemIllegalInsertException {
         LinkedList<AbsDef> allNameDefs = mapping.get(name);
         if (allNameDefs == null) {
-            allNameDefs = new LinkedList<AbsDef>();
+            allNameDefs = new LinkedList<>();
             allNameDefs.addFirst(newDef);
             SymbDesc.setScope(newDef, scope);
             mapping.put(name, allNameDefs);
@@ -81,7 +81,7 @@ public class SymbTable {
      * @param name Ime.
      * @throws SemIllegalDeleteException Ce definicije imena na trenutnem nivoju gnezdenja ni.
      */
-    public static void del(String name) throws SemIllegalDeleteException {
+    private static void del(String name) throws SemIllegalDeleteException {
         LinkedList<AbsDef> allNameDefs = mapping.get(name);
         if (allNameDefs == null)
             throw new SemIllegalDeleteException();

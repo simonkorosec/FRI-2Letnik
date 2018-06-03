@@ -12,7 +12,7 @@ import compiler.abstr.tree.*;
 public class FrmDesc {
 
 	/** Klicni zapisi. */
-	private static HashMap<AbsFunDef, FrmFrame> frames = new HashMap<AbsFunDef, FrmFrame>();
+	private static final HashMap<AbsFunDef, FrmFrame> frames = new HashMap<>();
 
 	/**
 	 * Poveze funkcijo s klicnim zapisom.
@@ -35,7 +35,7 @@ public class FrmDesc {
 	}
 
 	/** Opisi dostopa. */
-	private static HashMap<AbsDef, FrmAccess> acceses = new HashMap<AbsDef, FrmAccess>();
+	private static final HashMap<AbsDef, FrmAccess> acceses = new HashMap<>();
 
 	/**
 	 * Poveze spremenljivko, parameter ali komponento z opisom dostopa.

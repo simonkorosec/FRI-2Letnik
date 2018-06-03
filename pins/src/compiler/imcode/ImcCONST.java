@@ -33,7 +33,7 @@ public class ImcCONST extends ImcExpr {
         if (value != null) {
             Report.dump(indent, "CONST value=" + value.toString());
         } else {
-            Report.dump(indent, "CONST value=" + strValue.toString());
+            Report.dump(indent, "CONST value=" + strValue);
         }
     }
 

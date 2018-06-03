@@ -11,13 +11,13 @@ import compiler.frames.*;
 public class ImcCJUMP extends ImcStmt {
 
 	/** Koda pogoja.  */
-	public ImcExpr cond;
+	public final ImcExpr cond;
 
 	/** Labela skoka, ce je pogoj izpolnjen.  */
-	public FrmLabel trueLabel;
+	public final FrmLabel trueLabel;
 
 	/** Lanbela skoka, ce pogoj ni izpolnjen. */
-	public FrmLabel falseLabel;
+	public final FrmLabel falseLabel;
 
 	/**
 	 * Ustvari nov pogojni skok.

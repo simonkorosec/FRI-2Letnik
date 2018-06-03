@@ -18,7 +18,7 @@ public abstract class AbsTree {
 	 * @param pos
 	 *            Polozaj stavcne oblike tega drevesa.
 	 */
-	public AbsTree(Position pos) {
+    AbsTree(Position pos) {
 		this.position = pos;
 	}
 

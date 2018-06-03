@@ -13,7 +13,7 @@ import compiler.seman.type.*;
 public class SymbDesc {
 
 	/** Nivo vidnosti. */
-	private static HashMap<AbsTree, Integer> scope = new HashMap<AbsTree, Integer>();
+	private static final HashMap<AbsTree, Integer> scope = new HashMap<>();
 
 	/**
 	 * Doloci globino nivoja vidnosti za dano definicijo imena.
@@ -24,7 +24,7 @@ public class SymbDesc {
 	 *            Globina nivoja vidnosti.
 	 */
 	public static void setScope(AbsTree node, int nodeScope) {
-		scope.put(node, new Integer(nodeScope));
+		scope.put(node, nodeScope);
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class SymbDesc {
 	}
 
 	/** Definicija imena. */
-	private static HashMap<AbsTree, AbsDef> nameDef = new HashMap<AbsTree, AbsDef>();
+	private static final HashMap<AbsTree, AbsDef> nameDef = new HashMap<>();
 
 	/**
 	 * Poveze vozlisce drevesa z definicijo imena.
@@ -65,7 +65,7 @@ public class SymbDesc {
 	}
 
 	/** Tipizacija vozlisc drevesa. */
-	private static HashMap<AbsTree, SemType> type = new HashMap<AbsTree, SemType>();
+	private static final HashMap<AbsTree, SemType> type = new HashMap<>();
 
 	/**
 	 * Poveze vozlisce drevesa z opisom tipa.

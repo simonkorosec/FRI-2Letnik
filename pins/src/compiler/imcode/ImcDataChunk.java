@@ -11,10 +11,10 @@ import compiler.frames.*;
 public class ImcDataChunk extends ImcChunk {
 
 	/** Naslov spremenljivke v pomnilniku.  */
-	public FrmLabel label;
+	public final FrmLabel label;
 
 	/** Velikost spremenljivke v pomnilniku.  */
-	public int size;
+	public final int size;
 
 	/**
 	 * Ustvari novfragment podatkov.

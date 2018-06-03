@@ -10,10 +10,10 @@ import compiler.*;
 public class ImcMOVE extends ImcStmt {
 
 	/** Ponor.  */
-	public ImcExpr dst;
+	public final ImcExpr dst;
 
 	/** Izvor.  */
-	public ImcExpr src;
+	public final ImcExpr src;
 
 	/** Ustvari nov prenos.
 	 * 

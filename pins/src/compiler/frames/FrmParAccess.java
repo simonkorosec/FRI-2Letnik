@@ -12,13 +12,13 @@ import compiler.seman.type.*;
 public class FrmParAccess extends FrmAccess {
 
 	/** Opis argumenta.  */
-	public AbsPar par;
+    private final AbsPar par;
 
 	/** Klicni zapis funkcije, v kateri je parameter deklariran.  */
-	public FrmFrame frame;
+	public final FrmFrame frame;
 
 	/** Odmik od FPja.  */
-	public int offset;
+	public final int offset;
 
 	/** Ustvari nov dostop do parametra.
 	 * 
@@ -30,7 +30,7 @@ public class FrmParAccess extends FrmAccess {
 		this.frame = frame;
 		
 		SemType type = SymbDesc.getType(this.par).actualType();
-		this.offset = 0 + frame.sizePars;
+		this.offset = frame.sizePars;
 		frame.sizePars = frame.sizePars + type.size();
 		frame.numPars++;
 	}

@@ -13,7 +13,7 @@ import java.util.*;
  */
 public class NameChecker implements Visitor {
 
-    private static HashMap<String, AbsType> typeMap = new HashMap<>();
+    private static final HashMap<String, AbsType> typeMap = new HashMap<>();
 
 
     @Override

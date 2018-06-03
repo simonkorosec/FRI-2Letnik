@@ -12,13 +12,13 @@ import compiler.abstr.tree.*;
 public class FrmFrame {
 
 	/** Opis funckije.  */
-	public AbsFunDef fun;
+    private final AbsFunDef fun;
 
 	/** Staticni nivo funkcije.  */
-	public int level;
+	public final int level;
 
 	/** Vstopna labela.  */
-	public FrmLabel label;
+	public final FrmLabel label;
 
 	/** Stevilo parametrov.  */
 	public int numPars;
@@ -27,28 +27,28 @@ public class FrmFrame {
 	public int sizePars;
 
 	/** Lokalne spremenljivke podprograma.  */
-	LinkedList<FrmLocAccess> locVars;
+	final LinkedList<FrmLocAccess> locVars;
 
 	/** Velikost bloka lokalnih spremenljivk.  */
 	public int sizeLocs;
 
 	/** Velikost bloka za oldFP in retAddr.  */
-	public int sizeFPRA;
+    private final int sizeFPRA;
 
 	/** Velikost bloka zacasnih spremenljivk.  */
-	public int sizeTmps;
+    private final int sizeTmps;
 
 	/** Velikost bloka registrov.  */
-	public int sizeRegs;
+    private final int sizeRegs;
 
 	/** Velikost izhodnih argumentov.  */
 	public int sizeArgs;
 
 	/** Kazalec FP.  */
-	public FrmTemp FP;
+	public final FrmTemp FP;
 
 	/** Spremenljivka z rezultatom funkcije.  */
-	public FrmTemp RV;
+	public final FrmTemp RV;
 
 	/**
 	 * Ustvari nov klicni zapis funkcije.
@@ -62,7 +62,7 @@ public class FrmFrame {
 		this.label = (level == 1 ? FrmLabel.newLabel(fun.name) : FrmLabel.newLabel());
 		this.numPars = 0;
 		this.sizePars = 4;
-		this.locVars = new LinkedList<FrmLocAccess> ();
+		this.locVars = new LinkedList<>();
 		this.sizeLocs = 0;
 		this.sizeFPRA = 8;
 		this.sizeTmps = 0;

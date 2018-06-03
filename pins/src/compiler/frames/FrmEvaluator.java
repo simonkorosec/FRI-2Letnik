@@ -12,7 +12,7 @@ import java.util.Stack;
 public class FrmEvaluator implements Visitor {
 
     private static int level = 1;
-    private static Stack<FrmFrame> frames = new Stack<>();
+    private static final Stack<FrmFrame> frames = new Stack<>();
     private static boolean createLibFunc = true; // Ali moraš ustvariti poznane funkcije
 
 
@@ -152,7 +152,6 @@ public class FrmEvaluator implements Visitor {
             create("getInt");
             create("putString");
             create("getString");
-
             createLibFunc = false;
         }
     }

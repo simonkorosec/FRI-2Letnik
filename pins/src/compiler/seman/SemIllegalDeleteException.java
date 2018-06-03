@@ -5,9 +5,9 @@ package compiler.seman;
  * 
  * @author sliva
  */
-public class SemIllegalDeleteException extends Exception {
+class SemIllegalDeleteException extends Exception {
 
-	static final long serialVersionUID = 0l;
+	static final long serialVersionUID = 0L;
 
 	public SemIllegalDeleteException() {
 	}

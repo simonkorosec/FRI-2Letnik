@@ -11,7 +11,7 @@ import compiler.frames.*;
 public class ImcTEMP extends ImcExpr {
 
 	/** Zacasna spremenljivka.  */
-	public FrmTemp temp;
+	public final FrmTemp temp;
 
 	/**
 	 * Ustvari novo zacasno spremenljivko.

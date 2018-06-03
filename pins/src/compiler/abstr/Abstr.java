@@ -9,7 +9,7 @@ import compiler.abstr.tree.*;
 public class Abstr implements Visitor {
 
 	/** Ali se izpisujejo vmesni rezultati. */
-	private boolean dump;
+	private final boolean dump;
 
 	public Abstr(boolean dump) {
 		this.dump = dump;

@@ -17,7 +17,7 @@ import java.io.PrintStream;
 public class Report {
 
 	/** Doloca, ali se obvestila o poteku prevajanja izpisujejo ali ne. */
-	public static boolean reporting = true;
+	private static final boolean reporting = true;
 
 	/**
 	 * Izpise obvestilo o poteku prevajanja.
@@ -25,7 +25,7 @@ public class Report {
 	 * @param message
 	 *            Obvestilo o poteku prevajanja.
 	 */
-	public static void report(String message) {
+	private static void report(String message) {
 		if (reporting)
 			System.err.println(":-) " + message);
 	}
@@ -61,7 +61,7 @@ public class Report {
 	 * @param message
 	 *            Opozorilo o napaki.
 	 */
-	public static void warning(Position pos, String message) {
+	private static void warning(Position pos, String message) {
 		warning("[" + pos.toString() + "] " + message);
 	}
 

@@ -2,19 +2,17 @@ package compiler.imcode;
 
 import java.util.*;
 
-import compiler.Report;
 import compiler.abstr.*;
 import compiler.abstr.tree.*;
 import compiler.frames.*;
 import compiler.seman.SymbDesc;
-import compiler.seman.SymbTable;
 import compiler.seman.type.SemArrType;
 
 public class ImcCodeGen implements Visitor {
 
     private static Stack<FrmFrame> frames;
     private static HashMap<AbsTree, ImcCode> imcCodeDesc;
-    public LinkedList<ImcChunk> chunks;
+    public final LinkedList<ImcChunk> chunks;
 
 
     public ImcCodeGen() {

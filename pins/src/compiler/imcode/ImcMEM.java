@@ -10,7 +10,7 @@ import compiler.*;
 public class ImcMEM extends ImcExpr {
 
 	/** Opis dostopa do pomnilnika.  */
-	public ImcExpr expr;
+	public final ImcExpr expr;
 
 	/**
 	 * Ustvari nov dostop do pomnilnika.
