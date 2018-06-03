@@ -3,7 +3,7 @@ package projekt;
 import java.io.Serializable;
 import java.util.Comparator;
 
-public class Oseba implements Comparable, Serializable {
+class Oseba implements Comparable, Serializable {
     private String EMSO;
     private String ime;
     private String priimek;

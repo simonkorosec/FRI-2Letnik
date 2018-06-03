@@ -5,7 +5,7 @@ import java.io.*;
 
 /** Aplikacija - vstopna točka programa */
 
-public class PodatkovnaBaza {
+class PodatkovnaBaza {
     
     public static void main(String[] args) {
         SeznamiUV seznamiUV = new SeznamiUV();

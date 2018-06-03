@@ -4,9 +4,6 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import seznami.Bst;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 

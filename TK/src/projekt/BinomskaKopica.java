@@ -2,7 +2,6 @@ package projekt;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -440,37 +439,13 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
     @Override
     public void save(OutputStream outputStream) throws IOException {
         ObjectOutputStream out = new ObjectOutputStream(outputStream);
-        //out.writeInt(this.size());
-        //save(topNode, out);
         out.writeObject(topNode);
-    }
-
-    private void save(BinomskaKopicaNode node, ObjectOutputStream out) throws IOException {
-        if (node == null) {
-            return;
-        }
-
-        out.writeObject(node.key);
-        save(node.child, out);
-        save(node.sibling, out);
     }
 
     @Override
     public void restore(InputStream inputStream) throws IOException, ClassNotFoundException {
         ObjectInputStream in = new ObjectInputStream(inputStream);
-//        int count = in.readInt();
-//        restore(in, count);
-
         topNode = (BinomskaKopicaNode<Tip>) in.readObject();
-    }
-
-    private void restore(ObjectInputStream in, int count) throws IOException, ClassNotFoundException {
-        if (count == 0) {
-            return;
-        }
-
-        this.add((Tip) in.readObject());
-        restore(in, count - 1);
     }
 
     private class BinomskaKopicaNode<T extends Comparable> implements Serializable{

@@ -3,7 +3,8 @@ import subprocess
 import select
 import time
 import threading
-import Queue
+import queue as Queue
+
 
 def enqueue_output(out, queue):
     c = out.read(1)
@@ -11,12 +12,14 @@ def enqueue_output(out, queue):
         queue.put(c)
         c = out.read(1)
 
+
 class pexpect:
     def __init__(self):
         commandLine = ["java",
                        "-cp",
-                       os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "..", "..", "out", "production", "TK"),
-                       "projekt/Volilci"]
+                       "C:\\Users\\"+os.environ['USERNAME']+"\\Documents\\FRI-2Letnik\\TK\\out\\production\\TK",
+                       "imenik/PodatkovnaBaza"]
+
         self.process = subprocess.Popen(commandLine,
                                         stdin=subprocess.PIPE,
                                         stdout=subprocess.PIPE,
@@ -54,7 +57,8 @@ class pexpect:
 
         actualString = actualString.strip('\n\r')
         if not actualString == expectedString:
-            print "\nERROR: Wrong output received:\n\tExpected: '%s'\n\tActual:   '%s'\n" % (expectedString, actualString)
+            print("\nERROR: Wrong output received:\n\tExpected: '%s'\n\tActual:   '%s'\n" % (
+            expectedString, actualString))
             self.kill()
             assert False
 

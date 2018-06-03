@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Volilci {
+class Volilci {
 
     public static void main(String[] args) {
         SeznamiUV seznamiUV = new SeznamiUV();

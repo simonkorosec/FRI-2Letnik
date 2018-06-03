@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.HashMap;
 
-public class SeznamiUV {
+class SeznamiUV {
 
     private final HashMap<String, Seznam<String>> seznami;
     private Seznam<String> seznam;
