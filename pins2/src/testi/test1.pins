@@ -1,0 +1,4 @@
+typ int:integer;
+var a:int;
+fun main(x:int):integer = ({a = x*8},f(a));
+fun f(x:integer):int = ({i=3},x*i) {where var i : integer}

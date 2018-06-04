@@ -1,0 +1,5 @@
+typ int : integer;
+
+fun main(i:int) : int = (
+	(i + 5*i +1), 0
+)

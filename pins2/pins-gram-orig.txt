@@ -1,0 +1,56 @@
+source -> defnitions .
+defnitions -> defnition .
+defnitions -> defnitions ; defnition .
+defnition -> type_defnition .
+defnition -> function_defnition .
+defnition -> variable_defnition .
+type_defnition -> typ identifer : type .
+type -> identifer .
+type -> logical .
+type -> integer .
+type -> string .
+type -> arr [ int const ] type .
+function_defnition -> fun identifer ( parameters ) : type = expression .
+parameters -> parameter .
+parameters -> parameters , parameter .
+parameter -> identifer : type .
+expression -> logical_ior_expression .
+expression -> logical_ior_expression { WHERE defnitions } .
+logical_ior_expression -> logical_ior_expression | logical_and_expression .
+logical_ior_expression -> logical_and_expression .
+logical_and_expression -> logical_and_expression & compare_expression .
+logical_and_expression -> compare_expression .
+compare_expression -> additive_expression == additive_expression .
+compare_expression -> additive_expression != additive_expression .
+compare_expression -> additive_expression <= additive_expression .
+compare_expression -> additive_expression >= additive_expression .
+compare_expression -> additive_expression < additive_expression .
+compare_expression -> additive_expression > additive_expression .
+compare_expression -> additive_expression .
+additive_expression -> additive_expression + multiplicative_expression .
+additive_expression -> additive_expression - multiplicative_expression .
+additive_expression -> multiplicative_expression .
+multiplicative_expression -> multiplicative_expression * prefx_expression .
+multiplicative_expression -> multiplicative_expression / prefx_expression .
+multiplicative_expression -> multiplicative_expression % prefx_expression .
+multiplicative_expression -> prefx_expression .
+prefx_expression -> + prefx_expression .
+prefx_expression -> - prefx_expression .
+prefx_expression -> ! prefx_expression .
+prefx_expression -> postfx_expression .
+postfx_expression -> postfx_expression [ expression ] .
+postfx_expression -> atom_expression .
+atom_expression -> log constant .
+atom_expression -> int constant .
+atom_expression -> str constant .
+atom_expression -> identifer .
+atom_expression -> identifer ( expressions ) .
+atom_expression -> { expression = expression } .
+atom_expression -> { if expression then expression } .
+atom_expression -> { if expression then expression else expression } .
+atom_expression -> { while expression : expression } .
+atom_expression -> { for identifer = expression , expression , expression : expression } .
+atom_expression -> ( expressions ) .
+expressions -> expression .
+expressions -> expressions , expression .
+variable_defnition -> var identifer : type .
