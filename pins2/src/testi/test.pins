@@ -1,20 +1,8 @@
-var x:integer;
 
-fun main(i : integer) : integer = 
-(
-putString('Vnesite stevilo: '), 
-getInt(a), {a = foo(a)}, putInt(a),
-getString(str), putString(str)
-)
-{where var a:integer; var str:string};
-
-
-fun foo(n:integer):integer = 
-({if (n < 5) then {x = n} else {x = g(n) + h(n-2)}}, x)
-{where var x:integer;
-fun g(n:integer):integer = ({for i=0,n,1: {y = i}}, putInt(y), y){where var i:integer; var y:integer};
-fun h(n:integer):integer = ({n=k(n)}, putInt(n), n)
-};
-
-fun k(n:integer):integer = ({i = 0},{while (i<n): ({i = i+1})}, {x = {x=0} + i}) 
-{where var i:integer}
+fun main(i : integer) : integer = (
+	{x = 0},
+	{until x > 10 : (putInt(x), {x = x +1})},
+	putString('izven'),
+	putInt(x),
+	0
+) {where var x:integer}

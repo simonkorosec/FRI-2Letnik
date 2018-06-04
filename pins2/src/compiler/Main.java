@@ -43,7 +43,7 @@ class Main {
      * @param args Parametri ukazne vrstice.
      */
     public static void main(String[] args) {
-        System.out.print("This is PINS compiler, v0.1:\n");
+        System.out.print("This is PINS compiler, v0.2:\n");
 
         // Pregled ukazne vrstice.
         for (String arg : args) {
