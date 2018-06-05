@@ -1,8 +1,10 @@
-import pexpect
+from __future__ import print_function
+
+import pexpect_imenik
 
 
 def test_exit_no_use():
-    baza = pexpect.pexpect()
+    baza = pexpect_imenik.pexpect()
 
     try:
         baza.expect("Enter command: ")
@@ -19,7 +21,7 @@ def test_exit_no_use():
 
 
 def test_exit_use_bst():
-    baza = pexpect.pexpect()
+    baza = pexpect_imenik.pexpect()
 
     try:
         baza.expect("Enter command: ")

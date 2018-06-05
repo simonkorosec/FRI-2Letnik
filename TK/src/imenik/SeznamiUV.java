@@ -106,8 +106,7 @@ class SeznamiUV {
                     break;
                 case "print":
                     seznamPoImenu.print();
-                    System.out.println("\n");
-                    seznamPoTelSt.print();
+                    result = "OK";
                     break;
                 case "save":
                     if (params.length == 2) {

@@ -1,6 +1,0 @@
-var x:integer;
-fun foo(n:integer):integer = n;
-
-fun main(i : integer) : integer = 
-(getInt(n),{i = 0},{while (i<n): ({i = i+1}, putInt(i))}, 0) 
-{where var i:integer; var n:integer}

@@ -1,8 +1,8 @@
-import pexpect
+import pexpect_imenik
 
 
 def test_bst_print():
-    baza = pexpect.pexpect()
+    baza = pexpect_imenik.pexpect()
 
     try:
         baza.expect("Enter command: ")

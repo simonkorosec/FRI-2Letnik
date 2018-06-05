@@ -21,6 +21,10 @@ class PodatkovnaBaza
             {
                 System.out.print("Enter command: ");
                 input = br.readLine();
+                if (input.equalsIgnoreCase("exit")){
+                    System.out.println("Have a nice day.");
+                    System.exit(0);
+                }
                 output = seznamiUV.processInput(input);
                 System.out.println(output);
             }

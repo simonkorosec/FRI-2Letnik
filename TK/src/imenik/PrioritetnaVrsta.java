@@ -158,8 +158,8 @@ public class PrioritetnaVrsta<Tip> implements Seznam<Tip> {
     @Override
     public void restore(InputStream inputStream) throws IOException, ClassNotFoundException {
         ObjectInputStream in = new ObjectInputStream(inputStream);
-        int count = in.readInt();
-        heap = new Object[count];
+        end = in.readInt();
+        heap = new Object[end];
         for (int i = 0; i < end; i++) {
             heap[i] = in.readObject();
         }
