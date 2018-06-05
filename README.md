@@ -1,1 +1,1 @@
-# FRI-2Letnik
+# FRI-2Letnik: Simon Korošec
