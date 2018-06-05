@@ -1,9 +1,8 @@
 package projekt;
 
 import java.io.Serializable;
-import java.util.Comparator;
 
-class Oseba implements Comparable, Serializable {
+class Oseba implements Serializable {
     private String EMSO;
     private String ime;
     private String priimek;
@@ -52,44 +51,32 @@ class Oseba implements Comparable, Serializable {
         return String.format("%s | %s, %s | %d - %s", EMSO, priimek, ime, starost, (starost >= 18) ? "lahko voli" : "ne more voliti");
     }
 
-    @Override
-    public int compareTo(Object o) {
-        if (o instanceof String) {
-            return compareToEMSO((String) o);
-        } else if (o instanceof String[]) {
-            return compareToImePriimek((String[]) o);
-        } else {
-            return EMSO.compareTo(((Oseba) o).EMSO);
-        }
-    }
-
-    private int compareToImePriimek(String[] s) {
-        String ime = s[0];
-        String priimek = s[1];
-
-        int c = this.priimek.compareTo(priimek);
-        if (c == 0) {
-            return this.ime.compareTo(ime);
-        } else {
-            return c;
-        }
-    }
-
-    private int compareToEMSO(String EMSO) {
-        return this.EMSO.compareTo(EMSO);
-    }
+//    @Override
+//    public int compareTo(Object o) {
+//        if (o instanceof String) {
+//            return compareToEMSO((String) o);
+//        } else if (o instanceof String[]) {
+//            return compareToImePriimek((String[]) o);
+//        } else {
+//            return EMSO.compareTo(((Oseba) o).EMSO);
+//        }
+//    }
+//
+//    private int compareToImePriimek(String[] s) {
+//        String ime = s[0];
+//        String priimek = s[1];
+//
+//        int c = this.priimek.compareTo(priimek);
+//        if (c == 0) {
+//            return this.ime.compareTo(ime);
+//        } else {
+//            return c;
+//        }
+//    }
+//
+//    private int compareToEMSO(String EMSO) {
+//        return this.EMSO.compareTo(EMSO);
+//    }
 
 }
 
-class OsebaComparator implements Comparator {
-
-    @Override
-    public int compare(Object o1, Object o2) {
-        int c = ((Oseba) o1).getPriimek().compareTo(((Oseba) o2).getPriimek());
-        if (c == 0) {
-            return ((Oseba) o1).getIme().compareTo(((Oseba) o2).getIme());
-        } else {
-            return c;
-        }
-    }
-}

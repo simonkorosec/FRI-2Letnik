@@ -148,7 +148,7 @@ public class SeznamiUVTest {
 
     @Test
     public void restoreNotFound() {
-        assertEquals("IO error: nime.bin (The system cannot find the file specified)", uv.processInput("restore nime.bin"));
+        assertEquals("IO error: E_nime.bin (The system cannot find the file specified)", uv.processInput("restore nime.bin"));
     }
 
     @Test

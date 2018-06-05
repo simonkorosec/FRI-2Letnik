@@ -161,8 +161,7 @@ public class Bst<Tip> implements Seznam<Tip> {
 
     @Override
     public int size() {
-        int i = countNodes(rootNode);
-        return i;
+        return countNodes(rootNode);
     }
 
     @Override

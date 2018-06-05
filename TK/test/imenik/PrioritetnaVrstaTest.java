@@ -25,16 +25,7 @@ public class PrioritetnaVrstaTest {
         pv.add("Test1");
         pv.add("Test2");
     }
-    
-    @Ignore("To be implemented later")
-    @Test
-    public void testAddOverflow() {
-        pv = new PrioritetnaVrsta<>(2, new StringComparator());
-        pv.add("Test1");
-        pv.add("Test2");
-        pv.add("Test3");
-    }
-    
+
     @Test(expected=java.util.NoSuchElementException.class)
     public void testRemoveFirstEmpty() {
         pv.removeFirst();

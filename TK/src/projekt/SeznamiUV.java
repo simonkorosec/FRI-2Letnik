@@ -7,10 +7,12 @@ import java.util.Scanner;
 
 class SeznamiUV {
 
-    private Seznam<Oseba> seznam;
+    private Seznam<Oseba> seznamEMSO;
+    private Seznam<Oseba> seznamIME;
 
     public SeznamiUV() {
-        seznam = new BinomskaKopica<>();
+        seznamEMSO = new BinomskaKopica<>(new ComperatorEMSO());
+        seznamIME = new BinomskaKopica<>(new ComperatorImePriimek());
     }
 
     public String processInput(String input) {
@@ -35,13 +37,8 @@ class SeznamiUV {
                     int starost = Integer.parseInt(arg[3].trim());
 
                     Oseba o = new Oseba(EMSO, ime, priimek, starost);
-                    seznam.add(o);
-//                    if (seznam.exists(o)) {
-//                        result = "Person already exists";
-//                    } else {
-//
-//                        result = "OK";
-//                    }
+                    seznamEMSO.add(o);
+                    seznamIME.add(o);
                     break;
                 case "remove":
                     arg = sc.nextLine().split(",");
@@ -52,12 +49,14 @@ class SeznamiUV {
                         o.setIme(ime);
                         o.setPriimek(priimek);
 
-                        seznam.remove(o);
+                        o = seznamIME.remove(o);
+                        seznamEMSO.remove(o);
                     } else {
                         EMSO = arg[0].trim();
                         o = new Oseba();
                         o.setEMSO(EMSO);
-                        seznam.remove(o);
+                        o = seznamEMSO.remove(o);
+                        seznamIME.remove(o);
                     }
                     break;
                 case "search":
@@ -68,32 +67,39 @@ class SeznamiUV {
                         o = new Oseba();
                         o.setIme(ime);
                         o.setPriimek(priimek);
-                        result = seznam.search(o).toString();
+                        result = seznamIME.search(o).toString();
                     } else {
                         EMSO = arg[0].trim();
                         o = new Oseba();
                         o.setEMSO(EMSO);
-                        result = seznam.search(o).toString();
+                        result = seznamEMSO.search(o).toString();
                     }
                     break;
                 case "count":
-                    result = "No. of persons: " + seznam.size() + "";
+                    result = "No. of persons: " + seznamEMSO.size() + "";
                     break;
                 case "reset":
-                    while (!seznam.isEmpty()) {
-                        seznam.removeFirst();
+                    while (!seznamEMSO.isEmpty()) {
+                        seznamEMSO.removeFirst();
+                    }
+                    while (!seznamIME.isEmpty()) {
+                        seznamIME.removeFirst();
                     }
                     break;
                 case "print":
-                    System.out.println("No. of persons: " + seznam.size() + "");
-                    seznam.print();
+                    System.out.println("No. of persons: " + seznamIME.size() + "");
+                    seznamIME.print();
                     result = "";
                     break;
                 case "save":
-                    seznam.save(new FileOutputStream(sc.next()));
+                    String filename = sc.next();
+                    seznamEMSO.save(new FileOutputStream("E_"+filename));
+                    seznamIME.save(new FileOutputStream("I_"+filename));
                     break;
                 case "restore":
-                    seznam.restore(new FileInputStream(sc.next()));
+                    filename = sc.next();
+                    seznamEMSO.restore(new FileInputStream("E_"+filename));
+                    seznamIME.restore(new FileInputStream("I_"+filename));
                     break;
                 default:
                     result = "Invalid command";
@@ -101,7 +107,7 @@ class SeznamiUV {
         } catch (java.util.NoSuchElementException e) {
             result = "Person does not exist";
         } catch (IOException e) {
-            result = "IO error: " + e.getMessage();
+            result = "I/O Error: " + e.getMessage();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IllegalArgumentException e) {

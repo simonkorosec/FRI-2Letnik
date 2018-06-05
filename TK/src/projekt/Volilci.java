@@ -19,7 +19,7 @@ class Volilci {
                 cmd = br.readLine().split(" ");
                 input = cmd[0];
                 if (input.equals("exit")) {
-                    System.out.print("Goodbye");
+                    System.out.print(">> Goodbye");
                 } else {
                     switch (input) {
                         case "add":
@@ -46,6 +46,10 @@ class Volilci {
                                 System.out.print("remove> PRIIMEK: ");
                                 input += br.readLine();
                             } else if (cmd.length == 2) {
+                                if (!checkEMSO(cmd[1])){
+                                    System.out.println(">> Invalid input data");
+                                    continue;
+                                }
                                 input += " " + cmd[1];
                             } else {
                                 System.out.println(">> Invalid input data");
@@ -60,6 +64,10 @@ class Volilci {
                                 System.out.print("search> PRIIMEK: ");
                                 input += br.readLine();
                             } else if (cmd.length == 2) {
+                                if (!checkEMSO(cmd[1])){
+                                    System.out.println(">> Invalid input data");
+                                    continue;
+                                }
                                 input += " " + cmd[1];
                             } else {
                                 System.out.println(">> Invalid input data");
@@ -94,7 +102,7 @@ class Volilci {
                             System.out.print(">> ");
                             break;
                         default:
-                            System.out.println(">> Invalid argument");
+                            System.out.println(">> Invalid command");
                             continue;
                     }
                     output = seznamiUV.processInput(input);

@@ -2,100 +2,246 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd54116a-72d3-4239-ad34-400b721402a2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../AiPS2/Predavanja/2Kolokvij/APS2_03-FRI.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../AiPS2/Predavanja/2Kolokvij/TOR-osnove.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../AiPS2/Predavanja/2Kolokvij/Turingovi_stroji.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TK.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TK.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MenjalnoRazmerje.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MenjalnoRazmerje.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imenik/test_pv_save_restore.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imenik/test_sk_save_restore.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_add.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_count_reset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_osnove.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_print.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_remove.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_save_restore.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../neki.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../save.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MenjalnoRazmerje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Valuta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imenik/Bst.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imenik/Bst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imenik/PodatkovnaBaza.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imenik/PodatkovnaBaza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imenik/Prijatelj.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imenik/Prijatelj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imenik/PrioritetnaVrsta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imenik/PrioritetnaVrsta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imenik/SeznamiUV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imenik/SeznamiUV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imenik/Sklad.java" beforeDir="false" afterPath="$PROJECT_DIR$/../imenik/Sklad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projekt/BinomskaKopica.java" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/BinomskaKopica.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projekt/Oseba.java" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/Oseba.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projekt/SeznamiUV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/SeznamiUV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projekt/Volilci.java" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/Volilci.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../seznami/PodatkovnaBaza.java" beforeDir="false" afterPath="$PROJECT_DIR$/../seznami/PodatkovnaBaza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../seznami/SeznamiUV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../seznami/SeznamiUV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sistemski_testi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sistemski_testi.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pexpect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imenik/pexpect.py" beforeDir="false" afterPath="$PROJECT_DIR$/imenik/pexpect_imenik.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imenik/test_bst_print.py" beforeDir="false" afterPath="$PROJECT_DIR$/imenik/test_bst_print.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imenik/test_bst_save_no_perm.py" beforeDir="false" afterPath="$PROJECT_DIR$/imenik/test_bst_save_no_perm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imenik/test_bst_save_restore.py" beforeDir="false" afterPath="$PROJECT_DIR$/imenik/test_bst_save_restore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imenik/test_exit.py" beforeDir="false" afterPath="$PROJECT_DIR$/imenik/test_exit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pexpect_projekt.py" beforeDir="false" afterPath="$PROJECT_DIR$/pexpect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test/MenjalnoRazmerjeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test/imenik/PrioritetnaVrstaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/imenik/PrioritetnaVrstaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test/projekt/BinomskaKopicaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/projekt/BinomskaKopicaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../test/projekt/SeznamiUVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/projekt/SeznamiUVTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/seznami/BstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/seznami/BstTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/seznami/SeznamiUVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/seznami/SeznamiUVTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/Position.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/Report.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/Abstr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsArrType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsAtomConst.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsAtomType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsBinExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsDef.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsDefs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsExprs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsFor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsFunCall.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsFunDef.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsIfThen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsIfThenElse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsPar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsTree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsTypeDef.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsTypeName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsUnExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsVarDef.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsVarName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsWhere.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/abstr/tree/AbsWhile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/frames/Frames.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/frames/FrmAccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/frames/FrmDesc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/frames/FrmEvaluator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/frames/FrmFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/frames/FrmLabel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/frames/FrmLocAccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/frames/FrmParAccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/frames/FrmTemp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/frames/FrmVarAccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcBINOP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcCALL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcCJUMP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcCONST.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcChunk.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcCodeChunk.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcCodeGen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcDataChunk.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcESEQ.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcEXP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcJUMP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcLABEL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcMEM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcMOVE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcNAME.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcSEQ.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcStmt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/imcode/ImcTEMP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/interpreter/Interpreter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/lexan/LexAn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/lexan/Symbol.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/lexan/Token.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/lincode/CodeGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/seman/NameChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/seman/SemAn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/seman/SemIllegalDeleteException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/seman/SemIllegalInsertException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/seman/SymbDesc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/seman/SymbTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/seman/TypeChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/seman/type/SemArrType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/seman/type/SemAtomType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/seman/type/SemFunType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/seman/type/SemType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/seman/type/SemTypeName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pins/src/compiler/synan/SynAn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/pins-gram-orig.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/pins-gram.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/pins.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/pins.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/Report.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/Abstr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/Visitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsArrType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsAtomConst.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsAtomType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsBinExpr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsDef.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsDefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsExpr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsExprs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsFor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsFunCall.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsFunDef.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsIfThen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsIfThenElse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsPar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsTypeDef.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsTypeName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsUnExpr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsVarDef.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsVarName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsWhere.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/AbsWhile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/abstr/tree/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/frames/Frames.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/frames/FrmAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/frames/FrmDesc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/frames/FrmEvaluator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/frames/FrmFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/frames/FrmLabel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/frames/FrmLocAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/frames/FrmParAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/frames/FrmTemp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/frames/FrmVarAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcBINOP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcCALL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcCJUMP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcCONST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcChunk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcCodeChunk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcCodeGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcDataChunk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcESEQ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcEXP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcExpr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcJUMP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcLABEL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcMEM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcMOVE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcNAME.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcSEQ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcStmt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/imcode/ImcTEMP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/interpreter/CodeGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/interpreter/Interpreter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/lexan/LexAn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/lexan/Symbol.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/lexan/Token.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/lexan/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/NameChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/SemAn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/SemIllegalDeleteException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/SemIllegalInsertException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/SymbDesc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/SymbTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/TypeChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/type/SemArrType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/type/SemAtomType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/type/SemFunType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/type/SemType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/type/SemTypeName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/seman/type/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/synan/SynAn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/compiler/synan/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/testi/fib.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/testi/fib3.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/testi/test.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/testi/test1.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/testi/test3.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/testi/test4.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/testi/test5.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/testi/test6.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins2/src/ukaz_prevod.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/pins-gram-orig.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/pins-gram.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/pins.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/pins.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/Report.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/Abstr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/Visitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsArrType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsAtomConst.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsAtomType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsBinExpr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsDef.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsDefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsExpr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsExprs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsFor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsFunCall.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsFunDef.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsIfThen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsIfThenElse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsPar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsTypeDef.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsTypeName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsUnExpr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsVarDef.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsVarName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsWhere.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/AbsWhile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/abstr/tree/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/frames/Frames.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/frames/FrmAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/frames/FrmDesc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/frames/FrmEvaluator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/frames/FrmFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/frames/FrmLabel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/frames/FrmLocAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/frames/FrmParAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/frames/FrmTemp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/frames/FrmVarAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcBINOP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcCALL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcCJUMP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcCONST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcChunk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcCodeChunk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcCodeGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcDataChunk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcESEQ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcEXP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcExpr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcJUMP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcLABEL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcMEM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcMOVE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcNAME.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcSEQ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcStmt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/imcode/ImcTEMP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/interpreter/CodeGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/interpreter/Interpreter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/lexan/LexAn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/lexan/Symbol.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/lexan/Token.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/lexan/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/NameChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/SemAn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/SemIllegalDeleteException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/SemIllegalInsertException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/SymbDesc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/SymbTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/TypeChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/type/SemArrType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/type/SemAtomType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/type/SemFunType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/type/SemType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/type/SemTypeName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/seman/type/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/synan/SynAn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/compiler/synan/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/testi/fib.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/testi/fib3.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/testi/test.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/testi/test1.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/testi/test3.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/testi/test4.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/testi/test5.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/testi/test6.pins" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pins3/src/ukaz_prevod.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -105,15 +251,66 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/sistemski_testi$test_exit.coverage" NAME="test_exit Coverage Results" MODIFIED="1528024760192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/imenik" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_bst_save_no_perm.coverage" NAME="test_bst_save_no_perm Coverage Results" MODIFIED="1528195398814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/imenik" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_bst_print.coverage" NAME="test_bst_print Coverage Results" MODIFIED="1528194924276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/imenik" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_exit.coverage" NAME="test_exit Coverage Results" MODIFIED="1528200331484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_add.coverage" NAME="test_add Coverage Results" MODIFIED="1528200998969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sistemski_testi$test_pv_print.coverage" NAME="test_pv_print Coverage Results" MODIFIED="1526412131394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_save_restore.coverage" NAME="test_save_restore Coverage Results" MODIFIED="1528202921767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_pv_save_restore.coverage" NAME="test_pv_save_restore Coverage Results" MODIFIED="1528196220808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/imenik" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_sk_save_restore.coverage" NAME="test_sk_save_restore Coverage Results" MODIFIED="1528195776467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/imenik" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_remove.coverage" NAME="test_remove Coverage Results" MODIFIED="1528201725071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_osnove.coverage" NAME="test_osnove Coverage Results" MODIFIED="1528200586446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_search.coverage" NAME="test_search Coverage Results" MODIFIED="1528201834426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sistemski_testi$test_sklad_save_restore.coverage" NAME="test_sklad_save_restore Coverage Results" MODIFIED="1526411454779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sistemski_testi$test_sklad_print.coverage" NAME="test_sklad_print Coverage Results" MODIFIED="1526410343744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sistemski_testi$test_bst_print.coverage" NAME="test_bst_print Coverage Results" MODIFIED="1526409812291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sistemski_testi$test_bst_save_restore.coverage" NAME="test_bst_save_restore Coverage Results" MODIFIED="1526409816457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_bst_save_restore.coverage" NAME="test_bst_save_restore Coverage Results" MODIFIED="1528195442752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/imenik" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_print.coverage" NAME="test_print Coverage Results" MODIFIED="1528202295999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="pexpect.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pexpect.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_save_restore.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_save_restore.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_count_reset.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_count_reset.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="test_bst_save_no_perm.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imenik/test_bst_save_no_perm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="45" column="66" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="66" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -129,18 +326,27 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test_bst_print.py" />
-        <option value="$PROJECT_DIR$/test_exit.py" />
         <option value="$PROJECT_DIR$/test_sklad_print.py" />
         <option value="$PROJECT_DIR$/test_bst_save_restore.py" />
         <option value="$PROJECT_DIR$/test_sklad_save_restore.py" />
         <option value="$PROJECT_DIR$/test_pv_print.py" />
         <option value="$PROJECT_DIR$/test_pv_save_restore.py" />
-        <option value="$PROJECT_DIR$/pexpect.py" />
-        <option value="$PROJECT_DIR$/imenik/pexpect.py" />
         <option value="$PROJECT_DIR$/imenik/test_bst_print.py" />
+        <option value="$PROJECT_DIR$/imenik/test_exit.py" />
+        <option value="$PROJECT_DIR$/imenik/pexpect.py" />
         <option value="$PROJECT_DIR$/imenik/test_bst_save_no_perm.py" />
         <option value="$PROJECT_DIR$/imenik/test_bst_save_restore.py" />
-        <option value="$PROJECT_DIR$/imenik/test_exit.py" />
+        <option value="$PROJECT_DIR$/imenik/test_sk_save_restore.py" />
+        <option value="$PROJECT_DIR$/imenik/test_pv_save_restore.py" />
+        <option value="$PROJECT_DIR$/pexpect_projekt.py" />
+        <option value="$PROJECT_DIR$/pexpect.py" />
+        <option value="$PROJECT_DIR$/test_exit.py" />
+        <option value="$PROJECT_DIR$/test_osnove.py" />
+        <option value="$PROJECT_DIR$/test_add.py" />
+        <option value="$PROJECT_DIR$/test_remove.py" />
+        <option value="$PROJECT_DIR$/test_search.py" />
+        <option value="$PROJECT_DIR$/test_print.py" />
+        <option value="$PROJECT_DIR$/test_save_restore.py" />
       </list>
     </option>
   </component>
@@ -153,11 +359,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="975" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -171,11 +376,6 @@
             <path>
               <item name="sistemski_testi" type="b2602c69:ProjectViewProjectNode" />
               <item name="sistemski_testi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sistemski_testi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sistemski_testi" type="462c0819:PsiDirectoryNode" />
-              <item name="imenik" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -195,6 +395,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Simon Korošec\Documents\GitHub\FRI-2Letnik\TK\src\sistemski_testi" />
+      <recent name="C:\Users\Simon Korošec\Documents\GitHub\FRI-2Letnik\TK\src\sistemski_testi\imenik" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -209,8 +410,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test_exit">
-    <configuration name="test_bst_save_restore" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.test_save_restore">
+    <configuration name="test_add" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="sistemski_testi" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -223,32 +424,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_bst_save_restore.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_add.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test_exit" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="sistemski_testi" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/imenik" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/imenik/test_exit.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="test_pv_print" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test_print" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="sistemski_testi" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -261,13 +443,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_pv_print.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_print.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test_sklad_print" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test_remove" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="sistemski_testi" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -280,13 +462,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_sklad_print.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_remove.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test_sklad_save_restore" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test_save_restore" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="sistemski_testi" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -299,26 +481,45 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_sklad_save_restore.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_save_restore.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="test_search" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sistemski_testi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_search.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.test_bst_save_restore" />
-      <item itemvalue="Python.test_sklad_print" />
-      <item itemvalue="Python.test_sklad_save_restore" />
-      <item itemvalue="Python.test_pv_print" />
-      <item itemvalue="Python.test_exit" />
+      <item itemvalue="Python.test_add" />
+      <item itemvalue="Python.test_remove" />
+      <item itemvalue="Python.test_search" />
+      <item itemvalue="Python.test_print" />
+      <item itemvalue="Python.test_save_restore" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_exit" />
-        <item itemvalue="Python.test_pv_print" />
-        <item itemvalue="Python.test_sklad_save_restore" />
-        <item itemvalue="Python.test_sklad_print" />
-        <item itemvalue="Python.test_bst_save_restore" />
+        <item itemvalue="Python.test_save_restore" />
+        <item itemvalue="Python.test_print" />
+        <item itemvalue="Python.test_search" />
+        <item itemvalue="Python.test_remove" />
+        <item itemvalue="Python.test_add" />
       </list>
     </recent_temporary>
   </component>
@@ -336,28 +537,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="13" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.32517007" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32939914" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.110677086" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22129436" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.3292517" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32939914" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.39863947" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39806867" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.3292517" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
     </layout>
@@ -372,33 +573,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test_sklad_save_restore.py</url>
+          <url>file://$PROJECT_DIR$/imenik/test_bst_print.py</url>
           <line>7</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/imenik/test_exit.py</url>
-          <line>42</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/imenik/pexpect.py</url>
-          <line>28</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/imenik/test_exit.py</url>
-          <line>7</line>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="16" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/os.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/subprocess.py" />
-    <entry file="file://$PROJECT_DIR$/test_exit.py" />
     <entry file="file://$PROJECT_DIR$/test_bst_print.py" />
     <entry file="file://$PROJECT_DIR$/test_bst_save_restore.py" />
     <entry file="file://$PROJECT_DIR$/test_pv_print.py" />
@@ -409,66 +594,147 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imenik/test_bst_save_no_perm.py">
+    <entry file="file://C:/Program Files/Python36/Lib/os.py" />
+    <entry file="file://C:/Program Files/Python36/Lib/subprocess.py" />
+    <entry file="file://$PROJECT_DIR$/imenik/test_exit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imenik/test_bst_print.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Python36/Lib/os.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="669" selection-start-line="669" selection-end-line="669" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imenik/pexpect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Python36/Lib/subprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="849" selection-start-line="849" selection-end-line="849" />
+        <state relative-caret-position="646">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imenik/test_bst_save_restore.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        <state relative-caret-position="1054">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imenik/test_exit.py">
+    <entry file="file://$PROJECT_DIR$/imenik/test_sk_save_restore.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="493">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="32" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imenik/test_pv_save_restore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="48" column="35" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_osnove.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="39" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pexpect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_add.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="110" lean-forward="true" selection-end-line="115" />
+          <folding>
+            <element signature="e#77#335#0" />
+            <element signature="e#609#1113#0" />
+            <element signature="e#1175#1706#0" />
+            <element signature="e#1218#1617#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_remove.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+          <folding>
+            <element signature="e#79#583#0" />
+            <element signature="e#614#1145#0" />
+            <element signature="e#1178#2471#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="e#1299#1592#0" />
+            <element signature="e#1629#2517#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imenik/pexpect_imenik.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_print.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="97" selection-start-line="97" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imenik/test_bst_save_no_perm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="66" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_save_restore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_count_reset.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

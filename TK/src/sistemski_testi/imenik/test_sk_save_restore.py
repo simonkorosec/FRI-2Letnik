@@ -1,15 +1,13 @@
-from __future__ import print_function
-
 import pexpect_imenik
 
 
-def test_bst_save_restore():
+def test_sk_save_restore():
     baza = pexpect_imenik.pexpect()
 
     try:
         baza.expect("Enter command: ")
 
-        baza.send("use bst")
+        baza.send("use sk")
         baza.expect("OK")
         baza.expect("Enter command: ")
 
@@ -26,8 +24,8 @@ def test_bst_save_restore():
         baza.expect("Enter command: ")
 
         baza.send("print")
-        baza.expect("\t\tNovak, Janez - 014567890")
-        baza.expect("\tNovak, Andrej - 013456789")
+        baza.expect("Novak, Janez - 014567890")
+        baza.expect("Novak, Andrej - 013456789")
         baza.expect("Levak, Janez - 012345678")
         baza.expect("OK")
         baza.expect("Enter command: ")
@@ -53,9 +51,9 @@ def test_bst_save_restore():
         baza.expect("Enter command: ")
 
         baza.send("print")
-        baza.expect("\tNovak, Janez - 014567890")
+        baza.expect("Novak, Janez - 014567890")
         baza.expect("Novak, Andrej - 013456789")
-        baza.expect("\tLevak, Janez - 012345678")
+        baza.expect("Levak, Janez - 012345678")
         baza.expect("OK")
         baza.expect("Enter command: ")
 
@@ -69,4 +67,4 @@ def test_bst_save_restore():
 
 
 if __name__ == "__main__":
-    test_bst_save_restore()
+    test_sk_save_restore()

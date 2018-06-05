@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Comparator;
 
 
-class Element<Tip> {
+class Element<Tip> implements Serializable{
 
     Tip vrednost;
     Element<Tip> vezava;
@@ -131,7 +131,7 @@ public class Sklad<Tip> implements Seznam<Tip> {
         Sklad<Tip> tmpSklad = new Sklad<>(comparator);
         while (!this.isEmpty()) {
             Tip tmp = this.pop();
-            System.out.print(tmp);
+            System.out.println(tmp);
             tmpSklad.push(tmp);
         }
         while (!tmpSklad.isEmpty()) {

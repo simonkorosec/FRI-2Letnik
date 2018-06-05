@@ -1,16 +1,21 @@
 package projekt;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
-public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
+public class BinomskaKopica<Tip> implements Seznam<Tip>, Serializable {
 
     private BinomskaKopicaNode<Tip> topNode;
+    private Comparator<Tip> comparator;
 
-    public BinomskaKopica() {
+
+    BinomskaKopica() {
         topNode = null;
+    }
+
+    public BinomskaKopica(Comparator<Tip> comparator) {
+        super();
+        this.comparator = comparator;
     }
 
     private void merg(BinomskaKopicaNode<Tip> heap2) {
@@ -55,7 +60,8 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
                     ((nasledni.sibling != null) && (nasledni.sibling.degree == trenutni.degree))) {
                 prejsni = trenutni;
                 trenutni = nasledni;
-            } else if (trenutni.key.compareTo(nasledni.key) >= 0) {
+                //} else if (trenutni.key.compareTo(nasledni.key) >= 0) {
+            } else if (comparator.compare(trenutni.key, nasledni.key) >= 0) {
                 trenutni.sibling = nasledni.sibling;
                 nasledni.parent = trenutni;
                 nasledni.sibling = trenutni.child;
@@ -85,11 +91,11 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
     }
 
     @Override
-    public void add(Tip e) throws IllegalArgumentException{
+    public void add(Tip e) throws IllegalArgumentException {
         if (topNode == null) {
             topNode = new BinomskaKopicaNode<>(e);
         } else {
-            if (exists(e)){
+            if (exists(e)) {
                 throw new IllegalArgumentException();
             }
             heapUnion(new BinomskaKopicaNode<>(e));
@@ -152,7 +158,8 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
         BinomskaKopicaNode<Tip> node = topNode.sibling;
 
         while (node != null) {
-            if (max.compareTo(node.key) < 0) {
+            if (comparator.compare(max, node.key) < 0) {
+            //if (max.compareTo(node.key) < 0) {
                 max = node.key;
             }
             node = node.sibling;
@@ -199,14 +206,7 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
     @Override
     public Tip search(Tip e) {
         BinomskaKopicaNode<Tip> node = null;
-        if (e instanceof Oseba) {
-            if (((Oseba) e).getEMSO() != null) {
-                node = find(((Oseba) e).getEMSO());
-            } else {
-                node = find(((Oseba) e).getIme(), ((Oseba) e).getPriimek());
-            }
-        }
-
+        node = find(e);
         if (node == null) {
             throw new NoSuchElementException();
         }
@@ -215,17 +215,19 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
 
     @Override
     public Tip remove(Tip e) {
-        if (e instanceof Oseba) {
-            if (((Oseba) e).getEMSO() != null) {
-                remove(((Oseba) e).getEMSO());
-            } else {
-                remove(((Oseba) e).getIme(), ((Oseba) e).getPriimek());
-            }
+        BinomskaKopicaNode<Tip> node = find(e);
+        if (node == null) {
+            throw new NoSuchElementException();
+        } else {
+            Tip key = node.key;
+            node.delete = true;
+            siftUp(node);
+            delete();
+            return key;
         }
-
-        return e;
     }
 
+/*
     public Tip remove(String EMSO) {
         BinomskaKopicaNode<Tip> node = find(EMSO);
         if (node == null) {
@@ -251,6 +253,7 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
 
         return node.key;
     }
+*/
 
     private void delete() {
         BinomskaKopicaNode<Tip> trenutni = topNode;
@@ -306,90 +309,18 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
 
     @Override
     public boolean exists(Tip e) {
-        //if (e instanceof Oseba) {
-            return exists(((Oseba) e).getEMSO()) || exists(((Oseba) e).getIme(), ((Oseba) e).getPriimek());
-        //} else {
-        //    return null != find(e);
-        //}
+        return null != find(e);
     }
 
-    public boolean exists(String EMSO) {
-        return null != find(EMSO);
-    }
-
-    public boolean exists(String ime, String priimek) {
-        return null != find(ime, priimek);
-    }
-
-   /* private BinomskaKopicaNode<Tip> find(Tip key) {
+    private BinomskaKopicaNode<Tip> find(Tip key) {
         BinomskaKopicaNode<Tip> node = null;
         BinomskaKopicaNode<Tip> trenutni = topNode;
 
         while (trenutni != null) {
-            if (trenutni.key.compareTo(key) == 0) {
+            if (comparator.compare(trenutni.key, key) == 0) {
                 node = trenutni;
                 break;
-            } else if (trenutni.key.compareTo(key) > 0) {
-                if (trenutni.child != null) {
-                    trenutni = trenutni.child;
-                    continue;
-                }
-            }
-            if (trenutni.sibling != null) {
-                trenutni = trenutni.sibling;
-            } else {
-                trenutni = trenutni.parent;
-                if (trenutni != null) {
-                    trenutni = trenutni.sibling;
-                } else {
-                    break;
-                }
-            }
-        }
-
-        return node;
-    }
-*/
-
-    private BinomskaKopicaNode<Tip> find(String EMSO) {
-        BinomskaKopicaNode<Tip> node = null;
-        BinomskaKopicaNode<Tip> trenutni = topNode;
-
-        while (trenutni != null) {
-            if (trenutni.key.compareTo(EMSO) == 0) {
-                node = trenutni;
-                break;
-            } else if (trenutni.key.compareTo(EMSO) > 0) {
-                if (trenutni.child != null) {
-                    trenutni = trenutni.child;
-                    continue;
-                }
-            }
-            if (trenutni.sibling != null) {
-                trenutni = trenutni.sibling;
-            } else {
-                trenutni = trenutni.parent;
-                if (trenutni != null) {
-                    trenutni = trenutni.sibling;
-                } else {
-                    break;
-                }
-            }
-        }
-
-        return node;
-    }
-
-    private BinomskaKopicaNode<Tip> find(String ime, String priimek) {
-        BinomskaKopicaNode<Tip> node = null;
-        BinomskaKopicaNode<Tip> trenutni = topNode;
-        String[] s = new String[]{ime, priimek};
-
-        while (trenutni != null) {
-            if (trenutni.key.compareTo(s) == 0) {
-                node = trenutni;
-                break;
-            } else /*if (trenutni.key.compareTo(s) > 0)*/ {
+            } else if (comparator.compare(trenutni.key, key) > 0) {
                 if (trenutni.child != null) {
                     trenutni = trenutni.child;
                     continue;
@@ -412,25 +343,24 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
 
     @Override
     public List<Tip> asList() {
-        return postorder(topNode);
-    }
-
-    private List<Tip> postorder(BinomskaKopicaNode<Tip> node) {
         List<Tip> list = new ArrayList<>();
-
-        if (node != null) {
-            list.addAll(postorder(node.child));
-            list.add(node.key);
-            list.addAll(postorder(node.sibling));
+        while (!isEmpty()){
+            list.add(removeFirst());
         }
-
+        for (Tip e : list) {
+            add(e);
+        }
+        Collections.reverse(list);
         return list;
+
+        //return postorder(topNode);
     }
+
 
     @Override
     public void print() {
         List<Tip> list = asList();
-        list.sort(new OsebaComparator());
+        //list.sort(new ComperatorImePriimek());
         for (Tip t : list) {
             System.out.println("\t" + t);
         }
@@ -448,7 +378,7 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
         topNode = (BinomskaKopicaNode<Tip>) in.readObject();
     }
 
-    private class BinomskaKopicaNode<T extends Comparable> implements Serializable{
+    private class BinomskaKopicaNode<T> implements Serializable {
         private T key;
         private int degree;
         private boolean delete;
@@ -464,6 +394,26 @@ public class BinomskaKopica<Tip extends Comparable> implements Seznam<Tip> {
             this.sibling = null;
             this.delete = false;
         }
+    }
+}
 
+class ComperatorImePriimek implements Comparator<Oseba>, Serializable {
+
+    @Override
+    public int compare(Oseba o1, Oseba o2) {
+        int c = o1.getPriimek().compareTo(o2.getPriimek());
+        if (c == 0) {
+            return o1.getIme().compareTo(o2.getIme());
+        } else {
+            return c;
+        }
+    }
+}
+
+class ComperatorEMSO implements Comparator<Oseba>, Serializable {
+
+    @Override
+    public int compare(Oseba o1, Oseba o2) {
+        return o1.getEMSO().compareTo(o2.getEMSO());
     }
 }
