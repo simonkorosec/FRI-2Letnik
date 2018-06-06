@@ -54,8 +54,10 @@ def test_invalid_arg():
         baza.kill()
 
 
-if __name__ == "__main__":
+def run_all():
     test_exit()
     test_invalid_cmd()
-    # test_invalid_arg()
 
+
+if __name__ == "__main__":
+    run_all()

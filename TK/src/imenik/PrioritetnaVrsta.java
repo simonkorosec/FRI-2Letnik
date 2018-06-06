@@ -7,7 +7,7 @@ public class PrioritetnaVrsta<Tip> implements Seznam<Tip> {
 
     private Object[] heap;
     private int end = 0;
-    private Comparator<Tip> comparator;
+    private final Comparator<Tip> comparator;
 
     public PrioritetnaVrsta(Comparator<Tip> comparator) {
         this(100, comparator);

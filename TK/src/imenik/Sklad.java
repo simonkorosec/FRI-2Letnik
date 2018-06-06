@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 class Element<Tip> implements Serializable{
 
-    Tip vrednost;
+    final Tip vrednost;
     Element<Tip> vezava;
 
     Element(Tip e) {
@@ -17,7 +17,7 @@ class Element<Tip> implements Serializable{
 public class Sklad<Tip> implements Seznam<Tip> {
 
     private Element<Tip> vrh;
-    private Comparator<Tip> comparator;
+    private final Comparator<Tip> comparator;
 
     public Sklad(Comparator<Tip> comparator) {
         this.comparator = comparator;

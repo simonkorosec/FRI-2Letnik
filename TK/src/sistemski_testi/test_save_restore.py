@@ -31,7 +31,7 @@ def test_save_restore_ok():
 
         baza.expect("command>")
         baza.send("reset")
-        baza.expect("reset> Are you sure (y|n): ")
+        baza.expect("reset> Are you sure(y|n): ")
         baza.send("y")
         baza.expect(">> OK")
 
@@ -103,6 +103,10 @@ def test_save_no_perm():
         os.remove(t_filename)
 
 
-if __name__ == "__main__":
+def run_all():
     test_save_restore_ok()
     test_save_no_perm()
+
+
+if __name__ == "__main__":
+    run_all()

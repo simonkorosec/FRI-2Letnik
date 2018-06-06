@@ -108,7 +108,11 @@ def test_remove_not_exists():
         baza.kill()
 
 
-if __name__ == "__main__":
+def run_all():
     test_remove_ok()
     test_remove_invalid()
     test_remove_not_exists()
+
+
+if __name__ == "__main__":
+    run_all()

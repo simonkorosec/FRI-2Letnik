@@ -2,8 +2,6 @@ package seznami;
 
 import org.junit.*;
 
-import java.io.IOException;
-
 import static org.junit.Assert.*;
 
 

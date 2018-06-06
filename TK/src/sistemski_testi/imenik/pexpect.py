@@ -1,9 +1,14 @@
+from __future__ import print_function
+
 import os
 import subprocess
-import select
-import time
 import threading
-import queue as Queue
+import time
+
+try:
+    import queue as Queue
+except:
+    import Queue
 
 
 def enqueue_output(out, queue):
@@ -17,7 +22,7 @@ class pexpect:
     def __init__(self):
         commandLine = ["java",
                        "-cp",
-                       "C:\\Users\\"+os.environ['USERNAME']+"\\Documents\\FRI-2Letnik\\TK\\out\\production\\TK",
+                       "C:\\Users\\" + os.environ['USERNAME'] + "\\Documents\\FRI-2Letnik\\TK\\out\\production\\TK",
                        "imenik/PodatkovnaBaza"]
 
         self.process = subprocess.Popen(commandLine,
@@ -34,19 +39,19 @@ class pexpect:
 
     def kill(self):
         if self.killable:
-            if None == self.process.poll():
+            if self.process.poll() is None:
                 self.process.kill()
             self.thread.join()
             self.killable = False
 
-    def expect(self, expectedString):
+    def expect(self, expected_string):
         actualString = ""
         readRetries = 0
 
-        while (self.queue.empty()):
+        while self.queue.empty():
             time.sleep(0.1)
             ++readRetries
-            if (readRetries > 100):
+            if readRetries > 100:
                 self.kill()
                 assert False
 
@@ -56,12 +61,11 @@ class pexpect:
                 break
 
         actualString = actualString.strip('\n\r')
-        if not actualString == expectedString:
+        if not actualString == expected_string:
             print("\nERROR: Wrong output received:\n\tExpected: '%s'\n\tActual:   '%s'\n" % (
-            expectedString, actualString))
+                expected_string, actualString))
             self.kill()
             assert False
 
     def send(self, inputString):
         self.process.stdin.write(inputString + "\n")
-

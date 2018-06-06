@@ -160,7 +160,7 @@ public class SeznamiUVTest {
     
     @Test
     public void testAddMemoryFullMock() {
-        uv.addImpl("skmock", new SkladMock<Prijatelj>(), new SkladMock<Prijatelj>());
+        uv.addImpl("skmock", new SkladMock<>(), new SkladMock<Prijatelj>());
         assertEquals("OK", uv.processInput("use skmock"));
         assertEquals("Error: not enough memory, operation failed",
                 uv.processInput("add Ime Priimek TelefonskaStevilka"));

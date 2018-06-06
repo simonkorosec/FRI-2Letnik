@@ -64,7 +64,7 @@ def test_print_three():
         baza.expect("add> IME: ")
         baza.send("Boris")
         baza.expect("add> PRIIMEK: ")
-        baza.send("Anderlič")
+        baza.send("Anderlic")
         baza.expect("add> STAROST: ")
         baza.send("53")
         baza.expect(">> OK")
@@ -96,7 +96,7 @@ def test_print_three():
         baza.expect("command>")
         baza.send("print")
         baza.expect(">> No. of persons: 3")
-        baza.expect("\t2111965500138 | Anderlič, Boris | 53 - lahko voli")
+        baza.expect("\t2111965500138 | Anderlic, Boris | 53 - lahko voli")
         baza.expect("\t3105000500232 | Novak, Jan Vid | 18 - lahko voli")
         baza.expect("\t1310004505091 | Svet, Amadeja | 14 - ne more voliti")
 
@@ -109,7 +109,11 @@ def test_print_three():
         baza.kill()
 
 
-if __name__ == "__main__":
+def run_all():
     test_print_zero()
     test_print_one()
     test_print_three()
+
+
+if __name__ == "__main__":
+    run_all()

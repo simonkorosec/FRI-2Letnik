@@ -91,7 +91,7 @@ class Volilci {
                             }
                             break;
                         case "reset":
-                            System.out.print("reset> Are you sure (y|n): ");
+                            System.out.print("reset> Are you sure(y|n): ");
                             if (!br.readLine().equalsIgnoreCase("y")) {
                                 continue;
                             }

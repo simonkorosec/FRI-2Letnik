@@ -1,11 +1,10 @@
 from __future__ import print_function
 
+import Queue
 import os
 import subprocess
-import select
-import time
 import threading
-import Queue
+import time
 
 
 def enqueue_output(out, queue):
@@ -19,7 +18,8 @@ class pexpect:
     def __init__(self):
         commandLine = ["java",
                        "-cp",
-                       "C:\\Users\\"+os.environ['USERNAME']+"\\Documents\\GitHub\\FRI-2Letnik\\TK\\out\\production\\TK",
+                       "C:\\Users\\" + os.environ[
+                           'USERNAME'] + "\\Documents\\GitHub\\FRI-2Letnik\\TK\\out\\production\\TK",
                        "imenik/PodatkovnaBaza"]
 
         self.process = subprocess.Popen(commandLine,
@@ -45,10 +45,10 @@ class pexpect:
         actualString = ""
         readRetries = 0
 
-        while (self.queue.empty()):
+        while self.queue.empty():
             time.sleep(0.1)
             ++readRetries
-            if (readRetries > 100):
+            if readRetries > 100:
                 self.kill()
                 assert False
 
@@ -60,10 +60,9 @@ class pexpect:
         actualString = actualString.strip('\n\r')
         if not actualString == expectedString:
             print("\nERROR: Wrong output received:\n\tExpected: '%s'\n\tActual:   '%s'\n" % (
-            expectedString, actualString))
+                expectedString, actualString))
             self.kill()
             assert False
 
     def send(self, inputString):
         self.process.stdin.write(inputString + "\n")
-

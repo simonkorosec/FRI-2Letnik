@@ -3,22 +3,24 @@ package projekt;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 class SeznamiUV {
 
-    private Seznam<Oseba> seznamEMSO;
-    private Seznam<Oseba> seznamIME;
+    Seznam<Oseba> seznamEMSO;
+    Seznam<Oseba> seznamIME;
 
     public SeznamiUV() {
         seznamEMSO = new BinomskaKopica<>(new ComperatorEMSO());
         seznamIME = new BinomskaKopica<>(new ComperatorImePriimek());
     }
 
-    public String processInput(String input) {
+    String processInput(String input) {
         Scanner sc = new Scanner(input);
         String token;
         String result = "OK";
+
         if (sc.hasNext()) {
             token = sc.next();
         } else {
@@ -104,7 +106,7 @@ class SeznamiUV {
                 default:
                     result = "Invalid command";
             }
-        } catch (java.util.NoSuchElementException e) {
+        } catch (NoSuchElementException e) {
             result = "Person does not exist";
         } catch (IOException e) {
             result = "I/O Error: " + e.getMessage();
@@ -112,6 +114,8 @@ class SeznamiUV {
             e.printStackTrace();
         } catch (IllegalArgumentException e) {
             result = "Person already exists";
+        } catch (OutOfMemoryError e) {
+            return "Error: not enough memory, operation failed";
         }
         return result;
     }

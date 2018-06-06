@@ -205,7 +205,7 @@ public class BinomskaKopica<Tip> implements Seznam<Tip>, Serializable {
 
     @Override
     public Tip search(Tip e) {
-        BinomskaKopicaNode<Tip> node = null;
+        BinomskaKopicaNode<Tip> node;
         node = find(e);
         if (node == null) {
             throw new NoSuchElementException();
@@ -226,34 +226,6 @@ public class BinomskaKopica<Tip> implements Seznam<Tip>, Serializable {
             return key;
         }
     }
-
-/*
-    public Tip remove(String EMSO) {
-        BinomskaKopicaNode<Tip> node = find(EMSO);
-        if (node == null) {
-            throw new NoSuchElementException();
-        } else {
-            node.delete = true;
-            siftUp(node);
-            delete();
-        }
-
-        return node.key;
-    }
-
-    public Tip remove(String ime, String priimek) {
-        BinomskaKopicaNode<Tip> node = find(ime, priimek);
-        if (node == null) {
-            throw new NoSuchElementException();
-        } else {
-            node.delete = true;
-            siftUp(node);
-            delete();
-        }
-
-        return node.key;
-    }
-*/
 
     private void delete() {
         BinomskaKopicaNode<Tip> trenutni = topNode;

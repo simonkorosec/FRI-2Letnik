@@ -96,7 +96,11 @@ def test_search_not_exists():
         baza.kill()
 
 
-if __name__ == "__main__":
+def run_all():
     test_search_ok()
     test_search_invalid()
     test_search_not_exists()
+
+
+if __name__ == "__main__":
+    run_all()

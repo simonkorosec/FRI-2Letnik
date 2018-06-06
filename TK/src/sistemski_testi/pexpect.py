@@ -2,10 +2,13 @@ from __future__ import print_function
 
 import os
 import subprocess
-import select
-import time
 import threading
-import Queue
+import time
+
+try:
+    import queue as Queue
+except:
+    import Queue
 
 
 def enqueue_output(out, queue):
@@ -19,7 +22,7 @@ class pexpect:
     def __init__(self):
         commandLine = ["java",
                        "-cp",
-                       "C:\\Users\\"+os.environ['USERNAME']+"\\Documents\\GitHub\\FRI-2Letnik\\TK\\out\\production\\TK",
+                       "C:\\Users\\"+os.environ['USERNAME']+"\\Documents\\FRI-2Letnik\\TK\\out\\production\\TK",
                        "projekt/Volilci"]
         self.process = subprocess.Popen(commandLine,
                                         stdin=subprocess.PIPE,
@@ -44,10 +47,10 @@ class pexpect:
         actualString = ""
         readRetries = 0
 
-        while (self.queue.empty()):
+        while self.queue.empty():
             time.sleep(0.1)
             ++readRetries
-            if (readRetries > 100):
+            if readRetries > 100:
                 self.kill()
                 assert False
 

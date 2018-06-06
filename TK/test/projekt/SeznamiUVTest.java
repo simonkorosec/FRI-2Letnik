@@ -1,15 +1,18 @@
 package projekt;
 
+import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import java.io.*;
 
 import static org.junit.Assert.*;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
 
 public class SeznamiUVTest {
+
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     private SeznamiUV uv;
@@ -148,11 +151,28 @@ public class SeznamiUVTest {
 
     @Test
     public void restoreNotFound() {
-        assertEquals("IO error: E_nime.bin (The system cannot find the file specified)", uv.processInput("restore nime.bin"));
+        assertEquals("I/O Error: E_nime.bin (The system cannot find the file specified)", uv.processInput("restore nime.bin"));
     }
 
     @Test
     public void testExit() {
         assertEquals("Goodbye", uv.processInput("exit"));
+    }
+
+    @Test
+    public void testOutOfMemory() {
+        uv.seznamEMSO = new BinKopicaMock<>();
+        assertEquals("Error: not enough memory, operation failed", uv.processInput("add 2111965500138,Boris,Anderlič,53"));
+    }
+
+    @Test
+    public void testNoDiskSpace() throws IOException {
+            Seznam mock = EasyMock.createNiceMock(Seznam.class);
+            mock.save(EasyMock.anyObject());
+            EasyMock.expectLastCall().andThrow(new IOException("not enough space on disk"));
+            replay(mock);
+            uv.seznamEMSO = mock;
+            assertEquals("I/O Error: not enough space on disk", uv.processInput("save test.bin"));
+            verify(mock);
     }
 }

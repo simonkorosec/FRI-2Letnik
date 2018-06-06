@@ -3,66 +3,15 @@ from __future__ import print_function
 import pexpect
 
 
-def test_add_ok():
+def test_count():
     baza = pexpect.pexpect()
 
     try:
         baza.expect("command>")
+        baza.send("count")
+        baza.expect(">> No. of persons: 0")
 
-        baza.send("add")
-        baza.expect("add> EMSO: ")
-        baza.send("3105000500232")
-        baza.expect("add> IME: ")
-        baza.send("Jan Vid")
-        baza.expect("add> PRIIMEK: ")
-        baza.send("Novak")
-        baza.expect("add> STAROST: ")
-        baza.send("18")
-
-        baza.expect(">> OK")
-
-        print("PASSED\ttest_add_ok")
-
-    except:
-        print("FAILED\ttest_add_ok")
-
-    finally:
-        baza.kill()
-
-
-def test_add_invalid():
-    baza = pexpect.pexpect()
-
-    try:
         baza.expect("command>")
-
-        baza.send("add")
-        baza.expect("add> EMSO: ")
-        baza.send("31050005002320")
-        baza.expect("add> IME: ")
-        baza.send("Jan Vid")
-        baza.expect("add> PRIIMEK: ")
-        baza.send("Novak")
-        baza.expect("add> STAROST: ")
-        baza.send("18")
-
-        baza.expect(">> Invalid input data")
-
-        print("PASSED\ttest_add_invalid")
-
-    except:
-        print("FAILED\ttest_add_invalid")
-
-    finally:
-        baza.kill()
-
-
-def test_add_duplicate():
-    baza = pexpect.pexpect()
-
-    try:
-        baza.expect("command>")
-
         baza.send("add")
         baza.expect("add> EMSO: ")
         baza.send("3105000500232")
@@ -74,42 +23,41 @@ def test_add_duplicate():
         baza.send("18")
         baza.expect(">> OK")
 
-        # Enaka EMSA
         baza.expect("command>")
-        baza.send("add")
-        baza.expect("add> EMSO: ")
-        baza.send("3105000500232")
-        baza.expect("add> IME: ")
-        baza.send("Jan")
-        baza.expect("add> PRIIMEK: ")
-        baza.send("Hrib")
-        baza.expect("add> STAROST: ")
-        baza.send("18")
-        baza.expect(">> Person already exists")
+        baza.send("count")
+        baza.expect(">> No. of persons: 1")
 
-        # Enaka Ime Priimek
         baza.expect("command>")
-        baza.send("add")
-        baza.expect("add> EMSO: ")
-        baza.send("2105000500232")
-        baza.expect("add> IME: ")
-        baza.send("Jan Vid")
-        baza.expect("add> PRIIMEK: ")
-        baza.send("Novak")
-        baza.expect("add> STAROST: ")
-        baza.send("18")
-        baza.expect(">> Person already exists")
+        baza.send("reset")
+        baza.expect("reset> Are you sure(y|n): ")
+        baza.send("n")
 
-        print("PASSED\ttest_add_duplicate")
+        baza.expect("command>")
+        baza.send("count")
+        baza.expect(">> No. of persons: 1")
+
+        baza.expect("command>")
+        baza.send("reset")
+        baza.expect("reset> Are you sure(y|n): ")
+        baza.send("y")
+        baza.expect(">> OK")
+
+        baza.expect("command>")
+        baza.send("count")
+        baza.expect(">> No. of persons: 0")
+
+        print("PASSED\ttest_count")
 
     except:
-        print("FAILED\ttest_add_duplicate")
+        print("FAILED\ttest_count")
 
     finally:
         baza.kill()
+
+
+def run_all():
+    test_count()
 
 
 if __name__ == "__main__":
-    test_add_ok()
-    test_add_invalid()
-    test_add_duplicate()
+    run_all()

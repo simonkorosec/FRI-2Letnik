@@ -6,7 +6,7 @@ import java.io.*;
 
 class SeznamiUV {
 
-    private HashMap<String, Seznam<Prijatelj>> seznamiPoImenu;
+    private final HashMap<String, Seznam<Prijatelj>> seznamiPoImenu;
     private HashMap<String, Seznam<Prijatelj>> seznamiPoTelSt;
     private Seznam<Prijatelj> seznamPoImenu;
     private Seznam<Prijatelj> seznamPoTelSt;

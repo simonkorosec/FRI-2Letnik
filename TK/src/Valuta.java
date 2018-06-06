@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Valuta {
     
-    private String oznaka;
+    private final String oznaka;
     private long znesek;
     private int centi;
     

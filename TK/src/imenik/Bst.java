@@ -25,7 +25,7 @@ public class Bst<Tip> implements Seznam<Tip> {
     }
     private ElementBST rootNode;
     private Tip minNodeValue;
-    private Comparator<Tip> comparator;
+    private final Comparator<Tip> comparator;
 
 
     public Bst(Comparator<Tip> comparator) {

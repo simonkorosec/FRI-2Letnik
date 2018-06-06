@@ -109,7 +109,11 @@ def test_add_duplicate():
         baza.kill()
 
 
-if __name__ == "__main__":
+def run_all():
     test_add_ok()
     test_add_invalid()
     test_add_duplicate()
+
+
+if __name__ == "__main__":
+    run_all()
