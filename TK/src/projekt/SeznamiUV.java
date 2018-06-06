@@ -7,7 +7,6 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 class SeznamiUV {
-
     Seznam<Oseba> seznamEMSO;
     Seznam<Oseba> seznamIME;
 

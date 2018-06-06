@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cd54116a-72d3-4239-ad34-400b721402a2" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../ST/Python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ST/Python/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/MenjalnoRazmerje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/Valuta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/imenik/Bst.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/imenik/PodatkovnaBaza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/imenik/Prijatelj.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/imenik/PrioritetnaVrsta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/imenik/Seznam.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/imenik/SeznamiUV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/imenik/Sklad.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/imenik/SkladMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/projekt/Oseba.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/projekt/Oseba.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/projekt/Seznam.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/projekt/Seznam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/projekt/SeznamiUV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/projekt/SeznamiUV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/projekt/Volilci.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/projekt/Volilci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/seznami/BinomskaKopica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/seznami/Bst.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/seznami/BstMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/seznami/PodatkovnaBaza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/seznami/PrioritetnaVrsta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/seznami/Seznam.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/seznami/SeznamiUV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/seznami/Sklad.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/.idea/sistemski_testi.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/imenik/pexpect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/imenik/pexpect_imenik.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/imenik/test_bst_print.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/imenik/test_bst_save_no_perm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/imenik/test_bst_save_restore.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/imenik/test_exit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/imenik/test_pv_save_restore.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/imenik/test_sk_save_restore.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/pexpect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/sistemski_testi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/test_add.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/test_count_reset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/test_osnove.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/test_print.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/test_remove.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/test_save_restore.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/sistemski_testi/test_search.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MenjalnoRazmerjeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imenik/BstTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imenik/PrioritetnaVrstaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imenik/SeznamiUVTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imenik/SkladTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projekt/SeznamiUVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../projekt/SeznamUVTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seznami/BinomskaKopicaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seznami/BstTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seznami/PrioritetnaVrstaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seznami/SeznamiUVTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seznami/SkladTest.java" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_exit.coverage" NAME="test_exit Coverage Results" MODIFIED="1528200331484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_pv_save_restore.coverage" NAME="test_pv_save_restore Coverage Results" MODIFIED="1528196220808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/imenik" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$sistemski_testi.coverage" NAME="sistemski_testi Coverage Results" MODIFIED="1528303235643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_osnove.coverage" NAME="test_osnove Coverage Results" MODIFIED="1528200586446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_bst_save_no_perm.coverage" NAME="test_bst_save_no_perm Coverage Results" MODIFIED="1528195398814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/imenik" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_remove.coverage" NAME="test_remove Coverage Results" MODIFIED="1528201725071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_sklad_save_restore.coverage" NAME="test_sklad_save_restore Coverage Results" MODIFIED="1526411454779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_add.coverage" NAME="test_add Coverage Results" MODIFIED="1528219149536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_count_reset.coverage" NAME="test_count_reset Coverage Results" MODIFIED="1528221156748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_sk_save_restore.coverage" NAME="test_sk_save_restore Coverage Results" MODIFIED="1528195776467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/imenik" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_search.coverage" NAME="test_search Coverage Results" MODIFIED="1528201834426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_save_restore.coverage" NAME="test_save_restore Coverage Results" MODIFIED="1528202921767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_pv_print.coverage" NAME="test_pv_print Coverage Results" MODIFIED="1526412131394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_sklad_print.coverage" NAME="test_sklad_print Coverage Results" MODIFIED="1526410343744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_bst_print.coverage" NAME="test_bst_print Coverage Results" MODIFIED="1528194924276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/imenik" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_bst_save_restore.coverage" NAME="test_bst_save_restore Coverage Results" MODIFIED="1528195442752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/imenik" />
+    <SUITE FILE_PATH="coverage/sistemski_testi$test_print.coverage" NAME="test_print Coverage Results" MODIFIED="1528202295999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="sistemski_testi.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sistemski_testi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_print.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_print.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="e#16#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_save_restore.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_save_restore.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_count_reset.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_count_reset.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/test_bst_print.py" />
+        <option value="$PROJECT_DIR$/test_sklad_print.py" />
+        <option value="$PROJECT_DIR$/test_bst_save_restore.py" />
+        <option value="$PROJECT_DIR$/test_sklad_save_restore.py" />
+        <option value="$PROJECT_DIR$/test_pv_print.py" />
+        <option value="$PROJECT_DIR$/test_pv_save_restore.py" />
+        <option value="$PROJECT_DIR$/imenik/test_bst_print.py" />
+        <option value="$PROJECT_DIR$/imenik/test_exit.py" />
+        <option value="$PROJECT_DIR$/imenik/test_bst_save_no_perm.py" />
+        <option value="$PROJECT_DIR$/imenik/test_bst_save_restore.py" />
+        <option value="$PROJECT_DIR$/imenik/test_sk_save_restore.py" />
+        <option value="$PROJECT_DIR$/imenik/test_pv_save_restore.py" />
+        <option value="$PROJECT_DIR$/pexpect_projekt.py" />
+        <option value="$PROJECT_DIR$/test_exit.py" />
+        <option value="$PROJECT_DIR$/test_osnove.py" />
+        <option value="$PROJECT_DIR$/test_remove.py" />
+        <option value="$PROJECT_DIR$/test_search.py" />
+        <option value="$PROJECT_DIR$/test_add.py" />
+        <option value="$PROJECT_DIR$/sistemski_testi.py" />
+        <option value="$PROJECT_DIR$/test_print.py" />
+        <option value="$PROJECT_DIR$/pexpect.py" />
+        <option value="$PROJECT_DIR$/imenik/pexpect.py" />
+        <option value="$PROJECT_DIR$/test_count_reset.py" />
+        <option value="$PROJECT_DIR$/test_save_restore.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="910" />
+    <option name="y" value="-15" />
+    <option name="width" value="975" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="sistemski_testi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sistemski_testi" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Simon Korošec\Documents\GitHub\FRI-2Letnik\TK\src\sistemski_testi" />
+      <recent name="C:\Users\Simon Korošec\Documents\GitHub\FRI-2Letnik\TK\src\sistemski_testi\imenik" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.sistemski_testi">
+    <configuration name="sistemski_testi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sistemski_testi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sistemski_testi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="test_add" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sistemski_testi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_add.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="test_count_reset" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sistemski_testi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_count_reset.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="test_print" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sistemski_testi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_print.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="test_save_restore" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sistemski_testi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_save_restore.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.test_add" />
+      <item itemvalue="Python.test_print" />
+      <item itemvalue="Python.test_save_restore" />
+      <item itemvalue="Python.sistemski_testi" />
+      <item itemvalue="Python.test_count_reset" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.sistemski_testi" />
+        <item itemvalue="Python.test_count_reset" />
+        <item itemvalue="Python.test_add" />
+        <item itemvalue="Python.test_save_restore" />
+        <item itemvalue="Python.test_print" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cd54116a-72d3-4239-ad34-400b721402a2" name="Default" comment="" />
+      <created>1526407389842</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1526407389842</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Python Console" order="13" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.42993197" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11002604" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39319727" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.62312925" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3287483" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/imenik/test_bst_print.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="18" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/sistemski_testi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_print.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#16#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_count_reset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_save_restore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pexpect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imenik/test_bst_save_no_perm.py" />
+    <entry file="file://$PROJECT_DIR$/pexpect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imenik/test_bst_save_no_perm.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/os.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/subprocess.py" />
+    <entry file="file://$PROJECT_DIR$/test_bst_print.py" />
+    <entry file="file://$PROJECT_DIR$/test_bst_save_restore.py" />
+    <entry file="file://$PROJECT_DIR$/test_pv_print.py" />
+    <entry file="file://$PROJECT_DIR$/test_sklad_print.py" />
+    <entry file="file://$PROJECT_DIR$/test_sklad_save_restore.py" />
+    <entry file="file://$PROJECT_DIR$/test_pv_save_restore.py" />
+    <entry file="file://$PROJECT_DIR$/pexpect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python36/Lib/os.py" />
+    <entry file="file://C:/Program Files/Python36/Lib/subprocess.py" />
+    <entry file="file://$PROJECT_DIR$/imenik/test_exit.py" />
+    <entry file="file://$PROJECT_DIR$/imenik/test_bst_print.py" />
+    <entry file="file://$PROJECT_DIR$/imenik/test_bst_save_restore.py" />
+    <entry file="file://$PROJECT_DIR$/imenik/test_sk_save_restore.py" />
+    <entry file="file://$PROJECT_DIR$/imenik/test_pv_save_restore.py" />
+    <entry file="file://$PROJECT_DIR$/imenik/pexpect_imenik.py" />
+    <entry file="file://$PROJECT_DIR$/imenik/test_bst_save_no_perm.py" />
+    <entry file="file://$PROJECT_DIR$/pexpect_projekt.py" />
+    <entry file="file://$PROJECT_DIR$/test_osnove.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+          <folding>
+            <element signature="e#77#321#0" />
+            <element signature="e#120#239#0" />
+            <element signature="e#352#621#0" />
+            <element signature="e#395#532#0" />
+            <element signature="e#652#921#0" />
+            <element signature="e#695#832#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_remove.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+          <folding>
+            <element signature="e#82#1265#0" />
+            <element signature="e#125#1178#0" />
+            <element signature="e#1299#1592#0" />
+            <element signature="e#1342#1500#0" />
+            <element signature="e#1629#2517#0" />
+            <element signature="e#1672#2422#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="98" column="14" lean-forward="true" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="14" />
+          <folding>
+            <element signature="e#82#1010#0" />
+            <element signature="e#125#923#0" />
+            <element signature="e#1044#1338#0" />
+            <element signature="e#1087#1246#0" />
+            <element signature="e#1375#2263#0" />
+            <element signature="e#1418#2168#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_add.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="111" column="7" lean-forward="true" selection-start-line="111" selection-start-column="7" selection-end-line="111" selection-end-column="7" />
+          <folding>
+            <element signature="e#79#583#0" />
+            <element signature="e#614#1145#0" />
+            <element signature="e#1178#2471#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imenik/pexpect.py" />
+    <entry file="file://$PROJECT_DIR$/pexpect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_count_reset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_print.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#16#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_save_restore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sistemski_testi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

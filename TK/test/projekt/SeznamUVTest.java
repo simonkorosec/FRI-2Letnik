@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 
-public class SeznamiUVTest {
+public class SeznamUVTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 

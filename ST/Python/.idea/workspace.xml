@@ -2,9 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="475cf785-8d97-4117-8de1-48494fd81bad" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../AiPS2/src/aps2/prim/Prim.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiPS2/src/aps2/prim/Prim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AiPS2/src/aps2/prim/PublicTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AiPS2/src/aps2/prim/PublicTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TK/dn1-pro_plan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/MenjalnoRazmerje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/Valuta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/imenik/Bst.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/imenik/PodatkovnaBaza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/imenik/Prijatelj.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/imenik/PrioritetnaVrsta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/imenik/Seznam.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/imenik/SeznamiUV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/imenik/Sklad.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/imenik/SkladMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/projekt/Oseba.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TK/src/projekt/Oseba.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/projekt/Seznam.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TK/src/projekt/Seznam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/projekt/SeznamiUV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TK/src/projekt/SeznamiUV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/projekt/Volilci.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TK/src/projekt/Volilci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/seznami/BinomskaKopica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/seznami/Bst.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/seznami/BstMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/seznami/PodatkovnaBaza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/seznami/PrioritetnaVrsta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/seznami/Seznam.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/seznami/SeznamiUV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/seznami/Sklad.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/.idea/sistemski_testi.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/imenik/pexpect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/imenik/pexpect_imenik.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/imenik/test_bst_print.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/imenik/test_bst_save_no_perm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/imenik/test_bst_save_restore.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/imenik/test_exit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/imenik/test_pv_save_restore.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/imenik/test_sk_save_restore.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/pexpect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/sistemski_testi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/test_add.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/test_count_reset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/test_osnove.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/test_print.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/test_remove.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/test_save_restore.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/src/sistemski_testi/test_search.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/test/MenjalnoRazmerjeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/test/imenik/BstTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/test/imenik/PrioritetnaVrstaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/test/imenik/SeznamiUVTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/test/imenik/SkladTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/test/projekt/SeznamiUVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TK/test/projekt/SeznamUVTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/test/seznami/BinomskaKopicaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/test/seznami/BstTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/test/seznami/PrioritetnaVrstaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/test/seznami/SeznamiUVTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TK/test/seznami/SkladTest.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +83,18 @@
     <option name="width" value="975" />
     <option name="height" value="1050" />
   </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TK/test/sistemski_testi" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -59,7 +122,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -68,7 +131,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -79,9 +142,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">

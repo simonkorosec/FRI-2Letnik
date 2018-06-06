@@ -22,9 +22,8 @@ class pexpect:
     def __init__(self):
         commandLine = ["java",
                        "-cp",
-                       "C:\\Users\\" + os.environ['USERNAME'] + "\\Documents\\FRI-2Letnik\\TK\\out\\production\\TK",
-                       "imenik/PodatkovnaBaza"]
-
+                       "C:\\Users\\"+os.environ['USERNAME']+"\\Documents\\FRI-2Letnik\\TK\\out\\production\\TK",
+                       "projekt/Volilci"]
         self.process = subprocess.Popen(commandLine,
                                         stdin=subprocess.PIPE,
                                         stdout=subprocess.PIPE,
@@ -39,12 +38,12 @@ class pexpect:
 
     def kill(self):
         if self.killable:
-            if self.process.poll() is None:
+            if None == self.process.poll():
                 self.process.kill()
             self.thread.join()
             self.killable = False
 
-    def expect(self, expected_string):
+    def expect(self, expectedString):
         actualString = ""
         readRetries = 0
 
@@ -61,9 +60,9 @@ class pexpect:
                 break
 
         actualString = actualString.strip('\n\r')
-        if not actualString == expected_string:
+        if not actualString == expectedString:
             print("\nERROR: Wrong output received:\n\tExpected: '%s'\n\tActual:   '%s'\n" % (
-                expected_string, actualString))
+                expectedString, actualString))
             self.kill()
             assert False
 

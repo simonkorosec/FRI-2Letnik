@@ -33,7 +33,7 @@ class Volilci {
                             input += br.readLine() + ",";
                             System.out.print("add> STAROST: ");
                             input += br.readLine();
-                            if (!checkEMSO(emso)) {
+                            if (checkEMSO(emso)) {
                                 System.out.println(">> Invalid input data");
                                 continue;
                             }
@@ -46,7 +46,7 @@ class Volilci {
                                 System.out.print("remove> PRIIMEK: ");
                                 input += br.readLine();
                             } else if (cmd.length == 2) {
-                                if (!checkEMSO(cmd[1])){
+                                if (checkEMSO(cmd[1])){
                                     System.out.println(">> Invalid input data");
                                     continue;
                                 }
@@ -64,7 +64,7 @@ class Volilci {
                                 System.out.print("search> PRIIMEK: ");
                                 input += br.readLine();
                             } else if (cmd.length == 2) {
-                                if (!checkEMSO(cmd[1])){
+                                if (checkEMSO(cmd[1])){
                                     System.out.println(">> Invalid input data");
                                     continue;
                                 }
@@ -117,11 +117,12 @@ class Volilci {
         }
     }
 
+    /**
+     *
+     * @param emso
+     * @return true če je emsa neveljavan false drugače
+     */
     private static boolean checkEMSO(String emso) {
-        if (emso.length() == 13) {
-            return true;
-        } else {
-            return false;
-        }
+        return emso.length() != 13 || (!emso.contains("500") && !emso.contains("505"));
     }
 }
