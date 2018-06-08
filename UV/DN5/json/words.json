@@ -19,6 +19,26 @@
 		{
 		"slika": "./images/tiger.jpg",
 		"tekst" : "tiger"
+		},
+		{
+		"slika": "./images/hisa.jpg",
+		"tekst" : "hiša"
+		},
+		{
+		"slika": "./images/letalo.jpg",
+		"tekst" : "letalo"
+		},
+		{
+		"slika": "./images/lev.jpg",
+		"tekst" : "lev"
+		},
+		{
+		"slika": "./images/sonce.jpg",
+		"tekst" : "sonce"
+		},
+		{
+		"slika": "./images/delfin.jpg",
+		"tekst" : "delfin"
 		}
 	]
 }

@@ -19,7 +19,7 @@ include_once "navigation.php";
     <div class="container">
         <form class="inputForm" id="basicSearch" action="<?= BASE_URL . "list" ?>">
             <fieldset>
-                <input placeholder="Ime Gore" type="text" tabindex="1" required autofocus name="mountainName" id="mountainName"
+                <input placeholder="Ime Gore" type="text" tabindex="1" required autofocus name="m_name" id="mountainName"
                        pattern="[\-A-Za-z]+">
             </fieldset>
             <fieldset>

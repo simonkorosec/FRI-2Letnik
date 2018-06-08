@@ -34,16 +34,6 @@ class MountainDB {
         $statement->execute();
     }
 
-    public static function getAllMountains() {
-        $db = DBInit::getInstance();
-
-        $statement = $db->prepare("SELECT `id`, `range_id`, `Range Name`, `Mountain Name`, `height`, `walk_time`, `description`, `author_id`, `username` FROM `alldetails`");
-
-        $statement->execute();
-
-        return $statement->fetchAll();
-    }
-
     public static function getMountainsQuery($query) {
         $db = DBInit::getInstance();
 
@@ -73,20 +63,18 @@ class MountainDB {
             $q .= "`range_id` = $query[range_id] AND ";
         }
         if (isset($query["m_name"]) || array_key_exists("m_name", $query)) {
-            $q .= "`Mountain Name` LIKE \"%$query[m_name]%\" AND ";
+            $q .= "`mountain_name` LIKE \"%$query[m_name]%\" AND ";
         }
+
 
         $q .= " 1";
 
         $statement = $db->prepare("SELECT `id`, `range_id`, `range_name`, `mountain_name`, `height`, `walk_time`, `description`, `author_id` FROM `alldetails` WHERE $q");
+
         //$statement->bindParam(":q", $q);
 
-        //var_dump($statement);
-
         $statement->execute();
-
         return $statement->fetchAll();
-
     }
 
     public static function getMountainById($id) {
@@ -140,8 +128,8 @@ class MountainDB {
         for ($i = 0; $i < $total; $i++) {
             $f = explode('.', $files["name"][$i]);
             $file_ext = strtolower(end($f));
-            $extensions= array("jpeg","jpg","png");
-            if(in_array($file_ext,$extensions)=== false){
+            $extensions = array("jpeg", "jpg", "png");
+            if (in_array($file_ext, $extensions) === false) {
                 throw new Exception("Samo datoteke tipa PNG in JPEG so dovoljene.");
             }
 

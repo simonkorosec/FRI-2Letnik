@@ -24,7 +24,7 @@ include_once "navigation.php";
                         <option value="0" disabled selected hidden>Izberite Gorovje</option>
                         <?php
                         foreach ($ranges as $range):
-                            $id = $range["id"];
+                            $id = $range["range_id"];
                             $name = $range["name"];
                             ?>
                             <option value="<?= $id ?>"><?= $name ?></option>
