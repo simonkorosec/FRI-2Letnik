@@ -49,7 +49,7 @@ class pexpect:
 
         while self.queue.empty():
             time.sleep(0.1)
-            ++readRetries
+            readRetries += 1
             if readRetries > 100:
                 self.kill()
                 assert False
