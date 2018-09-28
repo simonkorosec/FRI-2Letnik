@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestExtensionFunctions" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-05-24T19:32:41" hostname="Lenovo-320" time="0.007">
-  <properties/>
-  <testcase name="testPairExtension" classname="TestExtensionFunctions" time="0.007"/>
-  <testcase name="testIntExtension" classname="TestExtensionFunctions" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestMaxMin" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-05-27T17:01:37" hostname="Lenovo-320" time="0.037">
-  <properties/>
-  <testcase name="testTheMostExpensiveOrderedProduct" classname="TestMaxMin" time="0.037"/>
-  <testcase name="testCustomerWithMaximumNumberOfOrders" classname="TestMaxMin" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestGroupBy" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-05-27T17:04:58" hostname="Lenovo-320" time="0.038">
-  <properties/>
-  <testcase name="testGroupCustomersByCity" classname="TestGroupBy" time="0.038"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestFilterMap" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-05-27T16:49:42" hostname="Lenovo-320" time="0.038">
-  <properties/>
-  <testcase name="testCitiesCustomersAreFrom" classname="TestFilterMap" time="0.037"/>
-  <testcase name="testCustomersFromCity" classname="TestFilterMap" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
